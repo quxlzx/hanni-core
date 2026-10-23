@@ -276,6 +276,7 @@ def main() -> None:
             for m in dash_cfg["models"]:
                 for k in [k for k in m if k.startswith("native_")]:
                     del m[k]
+                m["backend"] = "llama.cpp"
                 if chosen:
                     m["model_file"] = str(STICK / "models" / chosen)
                     q = _re.search(r"(Q\d[\w]*)", chosen or "")
