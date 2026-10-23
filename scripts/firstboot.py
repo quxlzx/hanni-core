@@ -250,6 +250,7 @@ def main() -> None:
     cfg_path = CORE / "config" / "models.fleet.local.yaml"
     cfg_path.parent.mkdir(parents=True, exist_ok=True)
     cfg_path.write_text(json.dumps(cfg, indent=1).replace(": true", ": true"))  # json is valid yaml here
+
     print(f"selected: {chosen} ({measured:.1f} tok/s) -> {cfg_path}")
 
     proc, cmd = None, None
@@ -266,6 +267,22 @@ def main() -> None:
         # skills, soul, memories and tool calls are ready immediately
         state = STICK / "state"
         state.mkdir(exist_ok=True)
+        # dashboard-safe model config twin: the Hanni OS loader rejects the
+        # native_* keys and wants model_file/quantization for its status line
+        dash_cfg_path = None
+        import re as _re
+        if _re.match(r"https?://(127\.0\.0\.1|localhost)(:\d+)?", endpoint):
+            dash_cfg = json.loads(json.dumps(cfg))
+            for m in dash_cfg["models"]:
+                for k in [k for k in m if k.startswith("native_")]:
+                    del m[k]
+                if chosen:
+                    m["model_file"] = str(STICK / "models" / chosen)
+                    q = _re.search(r"(Q\d[\w]*)", chosen or "")
+                    if q:
+                        m["quantization"] = q.group(1)
+            dash_cfg_path = state / "models.dashboard.yaml"
+            dash_cfg_path.write_text(json.dumps(dash_cfg, indent=1))
         mem = STICK / "soul" / "memory.sqlite3"
         if mem.is_file() and not (state / "memory.sqlite3").is_file():
             shutil.copy2(mem, state / "memory.sqlite3")
@@ -299,7 +316,8 @@ def main() -> None:
                 cwd=CORE, env={**os.environ, "PYTHONPATH": str(CORE / "src")},
                 stdout=clog, stderr=subprocess.STDOUT, **detach_kwargs())
             print(f"cron daemon pid {cron.pid} — recurring tasks fire automatically "
-                  "(python -m hanni.native.cron --root state add --prompt ... --interval ...)")
+                  "(from the repo root: set PYTHONPATH=src&& python -m hanni.native.cron "
+                  "--root state add --prompt ... --interval ...)")
         ui_port = None
         ui = None
         if args.ui:
@@ -315,6 +333,7 @@ def main() -> None:
                      "PYTHONPATH": str(CORE / "src"),
                      "HANNI_SOUL": str(STICK / "soul" / "SOUL.md"),
                      "HANNI_SKILLS_DIR": str(STICK / "soul" / "skills"),
+                     **({"HANNI_MODEL_CONFIG": str(dash_cfg_path)} if dash_cfg_path else {}),
                      "HANNI_BRIDGE_URL": f"http://127.0.0.1:{args.port + 1}",
                      "HANNI_BRIDGE_TOKEN_FILE": str(token_file)},
                 stdout=uilog, stderr=subprocess.STDOUT, **detach_kwargs())
@@ -366,6 +385,7 @@ def main() -> None:
                              "PYTHONPATH": str(CORE / "src"),
                              "HANNI_SOUL": str(STICK / "soul" / "SOUL.md"),
                              "HANNI_SKILLS_DIR": str(STICK / "soul" / "skills"),
+                             **({"HANNI_MODEL_CONFIG": str(dash_cfg_path)} if dash_cfg_path else {}),
                              "HANNI_BRIDGE_URL": f"http://127.0.0.1:{args.port + 1}",
                              "HANNI_BRIDGE_TOKEN_FILE": str(token_file)},
                         stdout=uilog, stderr=subprocess.STDOUT, **detach_kwargs())
