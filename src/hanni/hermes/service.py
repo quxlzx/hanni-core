@@ -98,6 +98,11 @@ class Bridge:
             return receive(body, self.shared_root)
         if method == 'GET' and path == '/health':
             return {'protocol': 1, 'ready': not self.stop.is_set(), 'gateway_started': False}
+        if method == 'GET' and path == '/tools':
+            from ..native.local_tools import local_tool_specs
+            return {'tools': [{'name': t['name'],
+                               'description': t['schema']['function']['description']}
+                              for t in local_tool_specs()]}
         if method == 'GET' and path == '/tasks':
             return {'tasks': self.store.list()}
         if method == 'GET' and path.startswith('/submissions/'):

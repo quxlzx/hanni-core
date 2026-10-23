@@ -52,6 +52,8 @@ const fmt = (seconds: number) =>
 
 export function TasksPage({ token }: { token: string }) {
   const list = usePrivateResource<BridgeTasks>("/api/bridge/tasks", token, 4000);
+  const tools = usePrivateResource<{ tools: { name: string; description: string }[] }>(
+    "/api/bridge/tools", token, 60000);
   const [selected, setSelected] = useState<string | null>(null);
   const detail = usePrivateResource<BridgeTaskDetail>(
     selected ? `/api/bridge/task/${selected}` : "/api/bridge/tasks", token, 3000);
@@ -106,6 +108,12 @@ export function TasksPage({ token }: { token: string }) {
             <strong>{t.state}</strong><span>{fmt(t.created)}</span>
           </button>
         )) : <p className="subtle">Nothing waiting. Approvals appear here when a task requests a capability.</p>}
+        <h3 className="nav-group">Tool menu ({tools.data?.tools?.length ?? 0})</h3>
+        {tools.data?.tools?.map((tl) => (
+          <div key={tl.name} className="task-row">
+            <strong>{tl.name}</strong><span>{tl.description.slice(0, 90)}</span>
+          </div>
+        ))}
         <h3 className="nav-group">Recent ({done.length})</h3>
         {done.slice(0, 12).map((t) => (
           <button key={t.id} className={`task-row ${selected === t.id ? "selected" : ""}`}

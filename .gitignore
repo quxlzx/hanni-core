@@ -117,7 +117,7 @@ laya-shadow-audit/
 **/adapter_model*
 **/pytorch_model*
 config/models.fleet.local.yaml
-/skills/
+skills/
 
 # ---- belt and braces: runtime secrets at any depth ----
 **/bridge.token

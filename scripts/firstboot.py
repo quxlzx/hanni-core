@@ -185,7 +185,7 @@ def main() -> None:
         # a stale HANNI on this port (or a zombie llama-server) poisons the
         # bench cascade — refuse loudly instead of measuring garbage.
         import socket as _sock
-        for _p in (args.port, args.port + 1):
+        for _p in (args.port, args.port + 1, args.port + 100):
             _s = _sock.socket()
             try:
                 _in_use = _s.connect_ex(("127.0.0.1", _p)) == 0
@@ -238,7 +238,7 @@ def main() -> None:
                   "(or see config/models.fleet.example.yaml)")
             sys.exit(2)
 
-    endpoint = args.brain_url or f"http://127.0.0.1:{args.port}/v1"
+    endpoint = args.brain_url or f"http://127.0.0.1:{args.port + 100}/v1"
     cfg = {
         "idle_unload_seconds": 0, "ram_reserve_mb": 0, "vram_reserve_mb": 0,
         "critical_ram_percent": 95,
@@ -255,12 +255,12 @@ def main() -> None:
     proc, cmd = None, None
     if args.serve and not args.brain_url:
         cmd = [str(stick_exe(bin_dir, "llama-server")), "-m", str(STICK / "models" / chosen),
-               "-c", "16384", "--host", "127.0.0.1", "--port", str(args.port),
+               "-c", "16384", "--host", "127.0.0.1", "--port", str(args.port + 100),
                "--alias", "stick-brain", "-ngl", "99"]
         log = open(STICK / "llama-server.log", "w")
         proc = subprocess.Popen(cmd, stdout=log, stderr=subprocess.STDOUT, **detach_kwargs(),
                                 env={**os.environ, "LD_LIBRARY_PATH": str(bin_dir)})
-        print(f"llama-server pid {proc.pid} on :{args.port} (log: llama-server.log)")
+        print(f"llama-server pid {proc.pid} on :{args.port + 100} (internal model server)")
 
         # full stack: seed the state root, then start the native bridge so
         # skills, soul, memories and tool calls are ready immediately
@@ -290,7 +290,7 @@ def main() -> None:
             stdout=blog, stderr=subprocess.STDOUT, **detach_kwargs())
         print(f"native bridge pid {bridge.pid} on :{args.port + 1} "
               f"(token: {token_file}) — soul, skills, memories and tool calls are live")
-        print("point Hanni OS at http://127.0.0.1:" + str(args.port + 1))
+        print("Hanni OS: http://127.0.0.1:" + str(args.port) + "  (agent API: :" + str(args.port + 1) + ")")
         cron = None
         if not args.no_cron:
             clog = open(STICK / "cron.log", "w")
@@ -303,7 +303,7 @@ def main() -> None:
         ui_port = None
         ui = None
         if args.ui:
-            ui_port = args.port + 2
+            ui_port = args.port  # Hanni OS IS the front page; model server hides
             uilog = open(STICK / "dashboard.log", "w")
             ui = subprocess.Popen(
                 [sys.executable, "-m", "hanni.dashboard.launcher",
@@ -313,6 +313,8 @@ def main() -> None:
                 cwd=CORE,
                 env={**os.environ,
                      "PYTHONPATH": str(CORE / "src"),
+                     "HANNI_SOUL": str(STICK / "soul" / "SOUL.md"),
+                     "HANNI_SKILLS_DIR": str(STICK / "soul" / "skills"),
                      "HANNI_BRIDGE_URL": f"http://127.0.0.1:{args.port + 1}",
                      "HANNI_BRIDGE_TOKEN_FILE": str(token_file)},
                 stdout=uilog, stderr=subprocess.STDOUT, **detach_kwargs())
@@ -362,6 +364,8 @@ def main() -> None:
                         cwd=CORE,
                         env={**os.environ,
                              "PYTHONPATH": str(CORE / "src"),
+                             "HANNI_SOUL": str(STICK / "soul" / "SOUL.md"),
+                             "HANNI_SKILLS_DIR": str(STICK / "soul" / "skills"),
                              "HANNI_BRIDGE_URL": f"http://127.0.0.1:{args.port + 1}",
                              "HANNI_BRIDGE_TOKEN_FILE": str(token_file)},
                         stdout=uilog, stderr=subprocess.STDOUT, **detach_kwargs())
