@@ -17,7 +17,9 @@ as a normal task and the bridge runs it with the native worker. Restarts
 never double-fire (idempotency key = job id + scheduled slot).
 
 ## Create a job
-From the repo root, while HANNI is running:
+From the repo root, while HANNI is running. The CLI needs the
+package on the path: prefix with `set PYTHONPATH=src&& ` (Windows) or
+`PYTHONPATH=src ` (Linux).
 
 ```
 # daily AI-news digest (writes a dated report into the workspace)
