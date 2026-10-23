@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 import shlex
 import subprocess
 import time
@@ -188,6 +189,10 @@ def execute_local(name: str, arguments: dict, workspace: Path) -> dict:
             if problem:
                 return {"ok": False, "error": problem}
             argv = shlex.split(arguments["command"])
+            if os.name == "nt" and os.path.basename(argv[0]).lower() in ("python", "python3"):
+                # Windows PATH often holds the Microsoft Store stub, not a
+                # real interpreter — point at the one running HANNI.
+                argv[0] = sys.executable
             try:
                 done = subprocess.run(argv, cwd=workspace, capture_output=True, text=True,
                                       timeout=TERMINAL_TIMEOUT, shell=False)

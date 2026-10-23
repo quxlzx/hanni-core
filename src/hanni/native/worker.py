@@ -17,7 +17,7 @@ from .skills import load_skills, match_skills
 from .memory_inject import memory_block
 from .local_tools import auto_approved, await_local, execute_local, local_tool_specs
 
-from ..hermes.state import TaskStore, TERMINAL, digest
+from ..hermes.state import Conflict, TaskStore, TERMINAL, digest
 from ..hermes.worker import discover, bounded_menu, await_authority
 
 
@@ -75,10 +75,17 @@ def run(db_path, task_id, catalog):
                 return {"ok": False, "error": "Capability outside task scope; no broader authority granted."}
             from jsonschema import Draft202012Validator
             Draft202012Validator(spec["schema"]["function"]["parameters"]).validate(arguments)
-            action = store.request_action(task_id, call_id or name, spec, arguments)
+            try:
+                action = store.request_action(task_id, call_id or name, spec, arguments)
+            except Conflict as exc:
+                return {"ok": False, "error": str(exc)}
             if spec["target"] == "local":
                 workspace = Path(db_path).parent / "workspace"
                 if auto_approved(task, name):
+                    if action["state"] == "fulfilled":
+                        # Identical repeated call: hand back the settled
+                        # receipt as an observation instead of crashing.
+                        return action["receipt"]
                     store.settle(action["id"], "dispatching")
                     receipt = execute_local(name, arguments, workspace)
                     receipt["approved_by"] = "task_policy"
