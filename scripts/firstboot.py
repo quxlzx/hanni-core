@@ -170,6 +170,16 @@ def main() -> None:
     parser.add_argument("--secure", action="store_true",
                         help="keep the token wall and approval gates "
                              "(default is open, Hermes-like: tools just run)")
+    parser.add_argument("--tier", choices=("auto", "2b", "3.7b", "7b"),
+                        default="auto",
+                        help="force a model tier instead of the auto cascade")
+    parser.add_argument("--model", default=None, metavar="FILE.gguf",
+                        help="use a specific GGUF from models/ (skips the cascade)")
+    parser.add_argument("--brain-url", default=None, metavar="URL",
+                        help="skip local models entirely and use a remote "
+                             "OpenAI-compatible endpoint (…/v1)")
+    parser.add_argument("--no-cron", action="store_true",
+                        help="do not start the recurring-task (cron) daemon")
     args = parser.parse_args()
     if args.serve:
         # a stale HANNI on this port (or a zombie llama-server) poisons the
@@ -187,31 +197,53 @@ def main() -> None:
         ensure_deps()
 
     facts = probe(str(STICK))
-    bin_dir = pick_binary(facts)
-    if bin_dir is None:
-        print("No runnable llama.cpp binary — see binaries/README.txt (build on first use).")
-        sys.exit(1)
-    vram = max((g["vram_gb"] for g in facts.gpus), default=0.0)
 
-    chosen, measured = None, None
-    for model in candidates(facts):
-        tps = micro_bench(bin_dir, model)
-        print(f"bench {model}: {tps:.1f} tok/s decode")
-        if tps >= 15:  # real-agent floor for this model: take it
-            chosen, measured = model, tps
-            break
-        if tps >= 8 and (measured is None or tps > measured):  # pocket-grade: keep the best
-            chosen, measured = model, tps
-    if chosen is None:
-        print("This host cannot host any stick tier locally. Use a remote brain "
-              "(LAN/tailnet) — see hanni-core/config/models.fleet.example.yaml")
-        sys.exit(2)
+    chosen, measured, bin_dir = None, None, None
+    if args.brain_url:
+        print(f"remote brain mode: {args.brain_url} (no local model)")
+    else:
+        bin_dir = pick_binary(facts)
+        if bin_dir is None:
+            print("No runnable llama.cpp binary — see binaries/README.txt (build on first use).")
+            sys.exit(1)
+        if args.model:
+            if not (STICK / "models" / args.model).is_file():
+                sys.exit(f"models/{args.model} not found — put it there or run scripts/get_models.py")
+            chosen = args.model
+            measured = micro_bench(bin_dir, chosen)
+            print(f"forced model {chosen}: {measured:.1f} tok/s decode")
+        else:
+            pool = candidates(facts)
+            if args.tier != "auto":
+                want = MODEL_FOR_TIER[{"2b": "pocket", "3.7b": "small",
+                                       "7b": "large"}[args.tier]]
+                if want not in pool:
+                    sys.exit(f"tier {args.tier} ({want}) not available — "
+                             "run scripts/get_models.py first")
+                pool = [want]
+            for model in pool:
+                tps = micro_bench(bin_dir, model)
+                print(f"bench {model}: {tps:.1f} tok/s decode")
+                if args.tier != "auto":  # user chose: take it regardless
+                    chosen, measured = model, tps
+                    break
+                if tps >= 15:  # real-agent floor for this model: take it
+                    chosen, measured = model, tps
+                    break
+                if tps >= 8 and (measured is None or tps > measured):  # pocket-grade: keep the best
+                    chosen, measured = model, tps
+        if chosen is None:
+            print("This host cannot host any tier locally. Pick one anyway with "
+                  "--tier/--model, or use a remote brain: --brain-url URL "
+                  "(or see config/models.fleet.example.yaml)")
+            sys.exit(2)
 
+    endpoint = args.brain_url or f"http://127.0.0.1:{args.port}/v1"
     cfg = {
         "idle_unload_seconds": 0, "ram_reserve_mb": 0, "vram_reserve_mb": 0,
         "critical_ram_percent": 95,
         "models": [{"id": "stick-brain", "role": "supervisor", "api_model": "stick-brain",
-                    "endpoint": f"http://127.0.0.1:{args.port}/v1", "keep_loaded": True,
+                    "endpoint": endpoint, "keep_loaded": True,
                     "context_length": 16384, "native_max_tokens": 1200,
                     "native_temperature": 0.6, "native_reasoning_budget": 512}],
     }
@@ -220,7 +252,8 @@ def main() -> None:
     cfg_path.write_text(json.dumps(cfg, indent=1).replace(": true", ": true"))  # json is valid yaml here
     print(f"selected: {chosen} ({measured:.1f} tok/s) -> {cfg_path}")
 
-    if args.serve:
+    proc, cmd = None, None
+    if args.serve and not args.brain_url:
         cmd = [str(stick_exe(bin_dir, "llama-server")), "-m", str(STICK / "models" / chosen),
                "-c", "16384", "--host", "127.0.0.1", "--port", str(args.port),
                "--alias", "stick-brain", "-ngl", "99"]
@@ -258,6 +291,15 @@ def main() -> None:
         print(f"native bridge pid {bridge.pid} on :{args.port + 1} "
               f"(token: {token_file}) — soul, skills, memories and tool calls are live")
         print("point Hanni OS at http://127.0.0.1:" + str(args.port + 1))
+        cron = None
+        if not args.no_cron:
+            clog = open(STICK / "cron.log", "w")
+            cron = subprocess.Popen(
+                [sys.executable, "-m", "hanni.native.cron", "--root", str(state), "daemon"],
+                cwd=CORE, env={**os.environ, "PYTHONPATH": str(CORE / "src")},
+                stdout=clog, stderr=subprocess.STDOUT, **detach_kwargs())
+            print(f"cron daemon pid {cron.pid} — recurring tasks fire automatically "
+                  "(python -m hanni.native.cron --root state add --prompt ... --interval ...)")
         ui_port = None
         ui = None
         if args.ui:
@@ -291,20 +333,59 @@ def main() -> None:
                       + str(ui_port or args.port + 1) + "/ yourself)")
         if args.wait:
             import time as _t
-            restarts = 0
-            while restarts < 3:
-                while (proc.poll() is None and bridge.poll() is None
+            restarts = ui_restarts = 0
+            stopped_by_user = False
+            while True:
+                while (bridge.poll() is None
+                       and (proc is None or proc.poll() is None)
                        and (ui is None or ui.poll() is None)):
                     _t.sleep(5)
                 if bridge.poll() is not None:
+                    print("bridge exited; shutting the stack down.")
                     break
-                if proc.poll() is not None:
+                if ui is not None and ui.poll() is not None:
+                    if ui.returncode == 0:
+                        # The dashboard's Stop HANNI button: clean exit.
+                        stopped_by_user = True
+                        print("Stop requested from Hanni OS — closing everything.")
+                        break
+                    ui_restarts += 1
+                    if ui_restarts > 3:
+                        break
+                    print(f"dashboard exited; restarting (attempt {ui_restarts}/3)")
+                    uilog = open(STICK / "dashboard.log", "a")
+                    ui = subprocess.Popen(
+                        [sys.executable, "-m", "hanni.dashboard.launcher",
+                         "--dashboard-only", "--port", str(ui_port), "--no-browser",
+                         "--config-dir", str(STICK / "config"),
+                         "--data-dir", str(state)],
+                        cwd=CORE,
+                        env={**os.environ,
+                             "PYTHONPATH": str(CORE / "src"),
+                             "HANNI_BRIDGE_URL": f"http://127.0.0.1:{args.port + 1}",
+                             "HANNI_BRIDGE_TOKEN_FILE": str(token_file)},
+                        stdout=uilog, stderr=subprocess.STDOUT, **detach_kwargs())
+                    continue
+                if proc is not None and proc.poll() is not None:
                     restarts += 1
+                    if restarts > 3:
+                        break
                     print(f"llama-server exited; restarting (attempt {restarts}/3)")
                     log = open(STICK / "llama-server.log", "a")
                     proc = subprocess.Popen(cmd, stdout=log, stderr=subprocess.STDOUT,
                                             **detach_kwargs(),
                                             env={**os.environ, "LD_LIBRARY_PATH": str(bin_dir)})
+            # tear down everything we own: model server, bridge, cron, dashboard
+            for victim in (proc, bridge, cron, ui):
+                if victim is not None and victim.poll() is None:
+                    victim.terminate()
+            for victim in (proc, bridge, cron, ui):
+                if victim is not None:
+                    try:
+                        victim.wait(timeout=8)
+                    except Exception:
+                        victim.kill()
+            sys.exit(0 if stopped_by_user else 1)
     else:
         print("(dry run — add --serve to start the brain)")
 

@@ -168,5 +168,56 @@ class CronTests(unittest.TestCase):
             store.add("x", 5)
 
 
+class NewToolTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
+        self.ws = Path(self.tmp.name) / "workspace"
+        self.ws.mkdir()
+        (self.ws / "notes.txt").write_text("alpha line\nbeta needle gamma\n")
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_list_dir(self):
+        r = execute_local("local_list_dir", {"path": "."}, self.ws)
+        self.assertTrue(r["ok"])
+        self.assertEqual(r["data"]["entries"][0]["name"], "notes.txt")
+
+    def test_list_dir_escape_blocked(self):
+        r = execute_local("local_list_dir", {"path": ".."}, self.ws)
+        self.assertFalse(r["ok"])
+
+    def test_search_files(self):
+        r = execute_local("local_search_files", {"pattern": "needle"}, self.ws)
+        self.assertTrue(r["ok"])
+        self.assertEqual(r["data"]["matches"][0]["line"], 2)
+
+    def test_append_file(self):
+        r = execute_local("local_append_file", {"path": "log.txt", "content": "one\n"}, self.ws)
+        self.assertTrue(r["ok"])
+        execute_local("local_append_file", {"path": "log.txt", "content": "two\n"}, self.ws)
+        self.assertEqual((self.ws / "log.txt").read_text(), "one\ntwo\n")
+
+    def test_python_snippet(self):
+        r = execute_local("local_python", {"code": "print(6*7)"}, self.ws)
+        self.assertTrue(r["ok"])
+        self.assertIn("42", r["data"]["stdout"])
+
+    def test_python_timeout(self):
+        r = execute_local("local_python", {"code": "import time; time.sleep(90)"}, self.ws)
+        # 60s cap — slow CI, so just assert it is not reported as a success
+        self.assertFalse(r["ok"])
+
+    def test_system_info(self):
+        r = execute_local("system_info", {}, self.ws)
+        self.assertTrue(r["ok"])
+        self.assertIn("ram_total_gb", r["data"])
+
+    def test_specs_advertised(self):
+        names = {s["name"] for s in local_tool_specs()}
+        self.assertLessEqual({"local_list_dir", "local_search_files", "local_append_file",
+                              "local_python", "system_info"}, names)
+
+
 if __name__ == "__main__":
     unittest.main()
