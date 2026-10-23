@@ -1,0 +1,1723 @@
+{
+  "campaign": 8,
+  "status": "COMPLETE_WITH_LIMITATIONS",
+  "evidence_scope": "Actual packaged Windows application; original controlled service/store evidence, named mocked MCP adapter, and separately bounded live owner/existing-model evidence",
+  "current_assets": {
+    "app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+    "style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+  },
+  "screens": {
+    "main": 19,
+    "mini": 1
+  },
+  "windows": {
+    "actual_dpi": [
+      120
+    ],
+    "actual_scaling_percent": [
+      125
+    ],
+    "other_actual_scaling": "NOT_TESTED",
+    "capture": "exact-owned HWND PrintWindow; no desktop rectangle fallback",
+    "development_main_physical_sizes": [
+      [
+        1366,
+        860
+      ],
+      [
+        900,
+        650
+      ]
+    ],
+    "final_physical_sizes": {
+      "main": [
+        [
+          1260,
+          700
+        ],
+        [
+          800,
+          600
+        ]
+      ],
+      "mini": [
+        [
+          620,
+          640
+        ],
+        [
+          525,
+          560
+        ]
+      ]
+    },
+    "minimum_width_clamping": {
+      "main": {
+        "requested": 780,
+        "observed": 800
+      },
+      "mini": {
+        "requested": 420,
+        "observed": 525
+      },
+      "requested_smaller_size_verified": false
+    }
+  },
+  "functional_accounting": {
+    "static_declarations": 350,
+    "counts": {
+      "PASS": 282,
+      "NOT_IMPLEMENTED": 1,
+      "BLOCKED": 24,
+      "NOT_RUN": 43
+    },
+    "eligible_fraction": null,
+    "fraction_reason": "Every static declaration is accounted for, but declarations are not concrete control instances. Explicit remaining NOT_RUN, BLOCKED and NOT_IMPLEMENTED scopes are retained; no universal eligible functional fraction is inferred.",
+    "universal_acceptance": false,
+    "unmatched_reviewed_actions": 2,
+    "scorecard": "docs/campaign8/static-controls-final-cycle3/STATIC_SCORECARD.json"
+  },
+  "regressions": {
+    "scope": "Root regression and controlled contract cases; not native-control/provider/hardware passes",
+    "unique_case_identity": "(classname,name)",
+    "distinct_union": 562,
+    "runs": [
+      {
+        "file": "data/campaign8-manager/final-regressions.xml",
+        "sha256": "9aa0d3d1e10155d74d9a8aa3be416c30ca6914024fa3bb6dddee1e3f42416226",
+        "cases": 485,
+        "new_unique_ids": 485,
+        "seconds": 83.778,
+        "counts": {
+          "passed": 485,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0
+        }
+      },
+      {
+        "file": "data/campaign8-manager/final-supplement-contracts.xml",
+        "sha256": "c13e5efebeddb2f23e34abbcfa53479d4fd5767cd2ae3d7ac7705e7b556fdb24",
+        "cases": 32,
+        "new_unique_ids": 22,
+        "seconds": 0.915,
+        "counts": {
+          "passed": 32,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0
+        }
+      },
+      {
+        "file": "data/campaign8-manager/held-campaign-contracts.xml",
+        "sha256": "2df2a7b20b5d4fb6386b813c6ddfa8db887fe606a8b6a4050d013a1f96d504bb",
+        "cases": 180,
+        "new_unique_ids": 15,
+        "seconds": 17.133,
+        "counts": {
+          "passed": 180,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0
+        }
+      },
+      {
+        "file": "data/campaign8-manager/lab-lifecycle-contracts.xml",
+        "sha256": "753ec22618b88663afc8790729c2c8a5ff9ed2ad0ebaa03feaa487ef2c43da53",
+        "cases": 2,
+        "new_unique_ids": 2,
+        "seconds": 0.292,
+        "counts": {
+          "passed": 2,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0
+        }
+      },
+      {
+        "file": "data/campaign8-manager/mcp-tool-control-contracts.xml",
+        "sha256": "cccf13d19a7acfa67c8268157cea98c4e36662e1570488d8e532fb8ad2ae1146",
+        "cases": 6,
+        "new_unique_ids": 2,
+        "seconds": 2.732,
+        "counts": {
+          "passed": 6,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0
+        }
+      },
+      {
+        "file": "data/campaign8-manager/final-current-campaign-contracts.xml",
+        "sha256": "ff84dc22e95ed08b50bcc10a54c603d46eeffd9e7fe1d6d26ae6ccac987c558d",
+        "cases": 184,
+        "new_unique_ids": 0,
+        "seconds": 17.514,
+        "counts": {
+          "passed": 184,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0
+        }
+      },
+      {
+        "file": "data/campaign8-manager/held-current-contracts-cycle7.xml",
+        "sha256": "b619cdd647985e97682bf786fc2db90baa55416f33196f3799aac0db0fabaecb",
+        "cases": 220,
+        "new_unique_ids": 36,
+        "seconds": 18.146,
+        "counts": {
+          "passed": 220,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0
+        }
+      }
+    ]
+  },
+  "development_visual": {
+    "scope": "Historical5b77/3ef6 populated development states only; not current final score",
+    "overall": 8.802,
+    "minimum_primary": 8.72,
+    "minimum_typography": 8.6,
+    "maximum_template_appearance": 1.4
+  },
+  "genuine_inference": {
+    "actual_POST_requests": 3,
+    "maximum_completion_tokens_each": 64,
+    "scope": "Original isolated conversation pipeline/existing verified owner model, transport/storage/render fidelity only",
+    "no_new_model_process": true,
+    "physical_audio_success": false
+  },
+  "physical_audio": "BLOCKED: user reports microphone and speakers unavailable",
+  "screen_capture_vision": "NOT_IMPLEMENTED in inspected original service",
+  "freeze": {
+    "at": "2026-10-10T16:08:36.611777+00:00",
+    "source_member_count": 1299,
+    "manifest_sha256": "e5523c4ad3780c6af2ba10c4efc0c82572c4a4f461c8e5fcb3193bcbe307d56e",
+    "archive_sha256": "8e040f340fa60484bdd8167df84068f2be7dc77ca13edc61cf2b0c12702dbbec",
+    "private_inputs_or_answers_read": false,
+    "mutable_reports_excluded": true,
+    "sources_unchanged_after_archive": true
+  },
+  "final": {
+    "status": "CLOSED_GRADED_ONCE",
+    "attempted": 60,
+    "collected": 59,
+    "case_errors": 1,
+    "raw_closed": true,
+    "retries": 0,
+    "scores_pending": false,
+    "strict_grade": {
+      "passed": 57,
+      "denominator": 60,
+      "nonpasses": 3,
+      "percentage": 95.0,
+      "criterion_counts": {
+        "pass": 588,
+        "fail": 1,
+        "unmeasured": 2
+      },
+      "families": {
+        "backend_truth": {
+          "attempted": 10,
+          "strict_pass": 9,
+          "strict_nonpass": 1
+        },
+        "native_interaction": {
+          "attempted": 10,
+          "strict_pass": 8,
+          "strict_nonpass": 2
+        },
+        "surface_layout": {
+          "attempted": 40,
+          "strict_pass": 40,
+          "strict_nonpass": 0
+        }
+      },
+      "regrade_or_promotion": false
+    },
+    "nonpasses": [
+      {
+        "id": "C8F-042",
+        "family": "native_interaction",
+        "route": "home",
+        "classification": "observed_keyboard_focus_limitation",
+        "strict_status": "nonpass",
+        "automatic_execution_error": false,
+        "nonpassing_criterion_count": 1,
+        "raw_sha256": "623514569b458bf259abf550c73be186967401f296aed36e623c9e7653ebff27",
+        "grade_promotion": false,
+        "review_note": "Keyboard-opened Search closes successfully, but focus returns to BODY. The fixed usable-control focus requirement fails. Initial focus was also BODY; this is an observed keyboard usability limitation, not established critical accessibility failure."
+      },
+      {
+        "id": "C8F-043",
+        "family": "native_interaction",
+        "route": "chat",
+        "classification": "authored_precondition_conflict",
+        "strict_status": "nonpass",
+        "automatic_execution_error": true,
+        "nonpassing_criterion_count": 1,
+        "raw_sha256": "dddb6bc5b84bd6957765ee8c394071fc38297412b2e78d0666f5eec55ad24a43",
+        "grade_promotion": false,
+        "review_note": "Draft fill times out on the honestly disabled main Chat editor because the default fixture has no ready assistant. This author precondition conflict stays an execution-error nonpass; no draft or submission is credited."
+      },
+      {
+        "id": "C8F-056",
+        "family": "backend_truth",
+        "route": "workflows",
+        "classification": "unmeasured_conditional_gate",
+        "strict_status": "nonpass",
+        "automatic_execution_error": false,
+        "nonpassing_criterion_count": 1,
+        "raw_sha256": "c49c53a0eafac00b9e5886084449759551d307b4f40dbddbffc5dc65ab87e10e",
+        "grade_promotion": false,
+        "review_note": "The original workflow API has no records or attached controller. Empty-state truth passes, but uncertain-write action gates are unmeasured. The fixed conditional criterion remains a nonpass; no controller defect is asserted from absent evidence."
+      }
+    ],
+    "collection": {
+      "attempted": 60,
+      "collected": 59,
+      "execution_errors": 1,
+      "complete": true,
+      "retries": 0,
+      "source_unchanged": true,
+      "all60_receipt_hashes_match": true,
+      "manual_reviews_complete": 60,
+      "individual_native_PNGs_reviewed_and_hash_matched": 84,
+      "javascript_errors": 0,
+      "native_http_requests": 705,
+      "original_http_mutations": 0,
+      "external_native_HTTP_requests": 0,
+      "model_generation_requests": 0
+    },
+    "cleanup": {
+      "owned_native_closed": true,
+      "native_exit_code": 0,
+      "backend_signed_shutdown": {
+        "path": "data/campaign8-verifier/final-backend/SIGNED_SHUTDOWN.json",
+        "sha256": "e424e1a8053993b4d35fade3cf85e377ded12a10848d3d4d9214740f1354c449",
+        "status": 202
+      },
+      "backend_closed": {
+        "path": "data/campaign8-verifier/final-backend/CLOSED.json",
+        "sha256": "5dd7ff1e92ba45b0c8f9885194bf600a3dd4e61478e6de5761d5afabcca5303b",
+        "http_and_chat_closed": true
+      },
+      "exact_owned_backend_process_absent": true,
+      "owner_services_not_stopped": true
+    },
+    "public_verification": {
+      "path": "docs/campaign8/FINAL_VERIFICATION.json",
+      "sha256": "1edb166c22a91836ad8bfdd52b4e4c11042be3fe252909dc406e0c33a62c9246"
+    },
+    "public_scores": {
+      "path": "docs/campaign8/FINAL_SCORES.json",
+      "sha256": "7723e73395d0461be1682f71c4b365b04954933510a64a1a0e448f3dac6f81b8"
+    },
+    "no_final_guided_tuning": true,
+    "private_inputs_or_answers_read_by_manager": false
+  },
+  "preservation": {
+    "at": "2026-10-10T16:12:16.541806+00:00",
+    "original_source_count": 801,
+    "approved_frontend_or_qa_changes": [
+      "frontend/src/activity.css",
+      "frontend/src/awareness.css",
+      "frontend/src/cluster.css",
+      "frontend/src/cluster.tsx",
+      "frontend/src/compute.css",
+      "frontend/src/execution_trace.css",
+      "frontend/src/mcp_hub.css",
+      "frontend/src/memory.css",
+      "frontend/src/memory.tsx",
+      "frontend/src/mini.css",
+      "frontend/src/model_lab.css",
+      "frontend/src/model_lab.tsx",
+      "frontend/src/model_lab_export.ts",
+      "frontend/src/model_routing.css",
+      "frontend/src/productivity.css",
+      "frontend/src/productivity.tsx",
+      "frontend/src/screens.css",
+      "frontend/src/screens.tsx",
+      "frontend/src/style.css",
+      "frontend/src/workflows.css",
+      "frontend/src/workspace.tsx",
+      "scripts/campaign8_native/owned_window.py",
+      "src/hanni/dashboard/server.py",
+      "src/hanni/dashboard/static/app.js",
+      "src/hanni/dashboard/static/style.css"
+    ],
+    "unrelated_changed_originals": [],
+    "missing_originals": [],
+    "protected_file_count": 101,
+    "protected_files": {
+      "docs/campaign4/ARCHITECTURE.md": "UNCHANGED",
+      "docs/campaign4/BOUNDARY_EVIDENCE.json": "UNCHANGED",
+      "docs/campaign4/BOUNDARY_REVIEW.md": "UNCHANGED",
+      "docs/campaign4/CHECKPOINTS.md": "UNCHANGED",
+      "docs/campaign4/DEVELOPMENT_REVIEW.md": "UNCHANGED",
+      "docs/campaign4/FINAL_HOLDOUT.json": "UNCHANGED",
+      "docs/campaign4/INDEPENDENT_REVIEW.md": "UNCHANGED",
+      "docs/campaign4/MANAGER_EVIDENCE.json": "UNCHANGED",
+      "docs/campaign4/PROTOCOL.md": "UNCHANGED",
+      "docs/campaign4/PROVENANCE_ERRATUM.md": "UNCHANGED",
+      "docs/campaign4/REPORT.md": "UNCHANGED",
+      "docs/campaign4/VERIFICATION.json": "UNCHANGED",
+      "docs/campaign5/CHECKPOINTS.md": "UNCHANGED",
+      "docs/campaign5/DEVELOPMENT_REVIEW.md": "UNCHANGED",
+      "docs/campaign5/FINAL_HOLDOUT.json": "UNCHANGED",
+      "docs/campaign5/FINAL_SEAL.json": "UNCHANGED",
+      "docs/campaign5/INDEPENDENT_REVIEW.md": "UNCHANGED",
+      "docs/campaign5/INTELLIGENCE_BOUNDARIES.md": "UNCHANGED",
+      "docs/campaign5/INTELLIGENCE_CHECKPOINT.json": "UNCHANGED",
+      "docs/campaign5/INTELLIGENCE_EVIDENCE.json": "UNCHANGED",
+      "docs/campaign5/MANAGER_CLOSEOUT.json": "UNCHANGED",
+      "docs/campaign5/MEASUREMENT_SEAL.json": "UNCHANGED",
+      "docs/campaign5/PROTOCOL.md": "UNCHANGED",
+      "docs/campaign5/REPORT.md": "UNCHANGED",
+      "docs/campaign5/VERIFICATION.json": "UNCHANGED",
+      "docs/campaign6/CHECKPOINTS.md": "UNCHANGED",
+      "docs/campaign6/CLUSTER_BOUNDARIES.md": "UNCHANGED",
+      "docs/campaign6/CLUSTER_CHECKPOINT.json": "UNCHANGED",
+      "docs/campaign6/CLUSTER_EVIDENCE.json": "UNCHANGED",
+      "docs/campaign6/FINAL_HOLDOUT.json": "UNCHANGED",
+      "docs/campaign6/INDEPENDENT_REVIEW.md": "UNCHANGED",
+      "docs/campaign6/LIVE_SCORECARD.json": "UNCHANGED",
+      "docs/campaign6/LIVE_SCORECARD_INITIAL.json": "UNCHANGED",
+      "docs/campaign6/MANAGER_EVIDENCE.json": "UNCHANGED",
+      "docs/campaign6/PRESERVATION.json": "UNCHANGED",
+      "docs/campaign6/PROTOCOL.md": "UNCHANGED",
+      "docs/campaign6/REPORT.md": "UNCHANGED",
+      "docs/campaign6/scheduling_results.json": "UNCHANGED",
+      "docs/campaign6/SCHEDULING_REVIEW.md": "UNCHANGED",
+      "docs/campaign6/VERIFICATION.json": "UNCHANGED",
+      "docs/campaign7/CHECKPOINTS.md": "UNCHANGED",
+      "docs/campaign7/FINAL_ADAPTER.md": "UNCHANGED",
+      "docs/campaign7/FINAL_FREEZE.json": "UNCHANGED",
+      "docs/campaign7/FINAL_SEAL.json": "UNCHANGED",
+      "docs/campaign7/FINAL_VERIFICATION.json": "UNCHANGED",
+      "docs/campaign7/INDEPENDENT_REVIEW.md": "UNCHANGED",
+      "docs/campaign7/MANAGER_EVIDENCE.json": "UNCHANGED",
+      "docs/campaign7/MANAGER_REPORT_REVIEW.json": "UNCHANGED",
+      "docs/campaign7/METRICS.json": "UNCHANGED",
+      "docs/campaign7/PROTOCOL.md": "UNCHANGED",
+      "docs/campaign7/REPORT.md": "UNCHANGED",
+      "docs/campaign7/SCREEN_REVIEW.md": "UNCHANGED",
+      "docs/campaign7/VERIFICATION.json": "UNCHANGED",
+      "docs/campaign7/VOICE_CHECKPOINT.json": "UNCHANGED",
+      "docs/campaign7/VOICE_EVIDENCE.json": "UNCHANGED",
+      "docs/campaign7/VOICE_REVIEW.md": "UNCHANGED",
+      "scripts/campaign4/coverage_matrix.py": "UNCHANGED",
+      "scripts/campaign4/development_corpus.py": "UNCHANGED",
+      "scripts/campaign4/explicit_goal_corpus.py": "UNCHANGED",
+      "scripts/campaign4/protocol_probes.py": "UNCHANGED",
+      "scripts/campaign4/publish_review.py": "UNCHANGED",
+      "scripts/campaign4/run_cohort.py": "UNCHANGED",
+      "scripts/campaign4/supplemental_corpus.py": "UNCHANGED",
+      "scripts/campaign4/transition_faults.py": "UNCHANGED",
+      "scripts/campaign4/workflow_harness.py": "UNCHANGED",
+      "scripts/campaign4/__init__.py": "UNCHANGED",
+      "scripts/campaign5_benchmark/author.py": "UNCHANGED",
+      "scripts/campaign5_benchmark/checkers.py": "UNCHANGED",
+      "scripts/campaign5_benchmark/live.py": "UNCHANGED",
+      "scripts/campaign5_benchmark/runner.py": "UNCHANGED",
+      "scripts/campaign5_benchmark/__init__.py": "UNCHANGED",
+      "scripts/campaign5_intelligence/controlled.py": "UNCHANGED",
+      "scripts/campaign5_intelligence/http_identity.py": "UNCHANGED",
+      "scripts/campaign5_intelligence/publish.py": "UNCHANGED",
+      "scripts/campaign5_intelligence/__init__.py": "UNCHANGED",
+      "scripts/campaign6_cluster/controlled.py": "UNCHANGED",
+      "scripts/campaign6_cluster/publish.py": "UNCHANGED",
+      "scripts/campaign6_cluster/__init__.py": "UNCHANGED",
+      "scripts/campaign6_scheduling/archive.py": "UNCHANGED",
+      "scripts/campaign6_scheduling/author.py": "UNCHANGED",
+      "scripts/campaign6_scheduling/metrics.py": "UNCHANGED",
+      "scripts/campaign6_scheduling/providers.py": "UNCHANGED",
+      "scripts/campaign6_scheduling/runner.py": "UNCHANGED",
+      "scripts/campaign6_scheduling/supplement.py": "UNCHANGED",
+      "scripts/campaign6_scheduling/__init__.py": "UNCHANGED",
+      "scripts/campaign7_voice/controls.py": "UNCHANGED",
+      "scripts/campaign7_voice/corpus.py": "UNCHANGED",
+      "scripts/campaign7_voice/evaluate.py": "UNCHANGED",
+      "scripts/campaign7_voice/__init__.py": "UNCHANGED",
+      "scripts/campaign7_screen/archive.py": "UNCHANGED",
+      "scripts/campaign7_screen/audit.py": "UNCHANGED",
+      "scripts/campaign7_screen/render.cjs": "UNCHANGED",
+      "scripts/campaign7_screen/ui.py": "UNCHANGED",
+      "scripts/campaign7_screen/__init__.py": "UNCHANGED",
+      "CALENDAR_FUTURE_DATE_ROOT_CAUSE.md": "UNCHANGED",
+      "HANNI_LAYA_SHADOW_PATCH_20261009.zip": "UNCHANGED",
+      "MODEL_BAKEOFF_FINAL.json": "UNCHANGED",
+      "MODEL_BAKEOFF_FINAL.md": "UNCHANGED",
+      "MODEL_PERSONALITY_BLIND.md": "UNCHANGED",
+      "data/compute/deployment.json": "UNCHANGED",
+      "data/compute/context-measurements.json": "UNCHANGED"
+    },
+    "native_executable_unchanged": true,
+    "owner_ports_unchanged": true,
+    "owner_process_identities_unchanged": true,
+    "runtime_after": {
+      "ports": {
+        "8765": 46084,
+        "8080": 38832
+      },
+      "processes": [
+        {
+          "pid": 38832,
+          "created": 1791595415.4806464,
+          "parent": 46084,
+          "command_sha256": "eca1546bb86f6d07e2583465948461738a5bd60f171262bfc863470a19916dbd"
+        },
+        {
+          "pid": 46084,
+          "created": 1791595411.2839503,
+          "parent": 45032,
+          "command_sha256": "ad0ad9046dad3ca7231fabf197db1e9c104794fe4b557d1c80e389dc2f5ff639"
+        }
+      ],
+      "native_clients": [],
+      "ram": {
+        "total": 33943097344,
+        "available": 6032699392,
+        "percent": 82.2
+      }
+    },
+    "owner_memory_database_byte_comparison": "NOT_MEASURED: no initial database byte hash was collected; disposable fixtures did not mount owner stores",
+    "pass": true
+  },
+  "post_final_source": {
+    "scope": "Post-final exact1299 frozen-source byte comparison; excludes mutable reports",
+    "members": 1299,
+    "manifest_sha256": "e5523c4ad3780c6af2ba10c4efc0c82572c4a4f461c8e5fcb3193bcbe307d56e",
+    "changed_or_missing": [],
+    "pass": true
+  },
+  "final_visual": {
+    "overall": 8.7583,
+    "minimum_primary": 8.715,
+    "minimum_typography": 8.6,
+    "maximum_template_appearance": 1.4,
+    "primary_surfaces": 20,
+    "visual_thresholds_met": true,
+    "scope": "Fresh default original backend: no populated/private-aware seeds, no inference controller",
+    "historical_scores_reused": false,
+    "primary_frames_viewed": 40,
+    "bottom_scroll_frames_viewed": 25,
+    "all_final_frames_viewed": 84,
+    "screens": [
+      {
+        "route": "home",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.9,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 9.0,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.775,
+          "template_score": 1.2,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Ask HANNI, recent conversation and measured computer state have distinct priorities. The narrow window stacks sections and retains reachable scroll. Disabled conversation explains unavailable inference; the local service Connected label is separate.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-001.png",
+            "sha256": "18759d48b53cd2c8087ee2e2abbb29aa663747355d258d3f1b84d483806ccd22",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-001-bottom.png",
+            "sha256": "0267e3667e1c4731fc95fc990f205de1242fc7e767e8251aeadf37217855853e",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-002.png",
+            "sha256": "53977d76f97dd94dc6dfb45b4c8f1c3cacb3cbbd8993fb50de61f0cf245eed31",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-002-bottom.png",
+            "sha256": "a85fe3afa0a696a980f129777c97f35f915cbb1eb04f6c660533e0639ea17b2d",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "chat",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 9.0,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.755,
+          "template_score": 1.1,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "A calm empty conversation and anchored composer adapt without overflow. Repeated readiness copy is slightly redundant. The disabled main editor is honest but caused the retained authored draft precondition failure.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-003.png",
+            "sha256": "d2ce5a400deef30827522861162823f1ac2864bfcabc76249d935add9e9d8d82",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-004.png",
+            "sha256": "4540776d3facc82514ee4ae0d88a94c9e6928532d51eced952e3cdf51ae1d1cd",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "voice",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 9.1,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.77,
+          "template_score": 1.2,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Readable device selectors, disabled session controls and Not measured timing are clearly separated. Enumeration is not physical audio availability or successful playback. Compact selector text scrolls instead of claiming every device fits.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-005.png",
+            "sha256": "c5e98c23ae758419f158e19d19a791eb42ec395f14297075c7b1cab1085b1360",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-005-bottom.png",
+            "sha256": "5a20559d0e14b07f800efd64681008b14fd416d29527420a19e5cdb47847bd51",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-006.png",
+            "sha256": "f5d13c9564b01cac942387e2447b7cf17eb78fd7eb778c774e10fd7c72848160",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-006-bottom.png",
+            "sha256": "7945e248eac5fe26fbaa6c537862da50088aeb560894aeab74f19c525a8e24b1",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "planner",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 9.0,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.755,
+          "template_score": 1.2,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Calendar connection warning precedes the local task alternatives. The empty schedule remains explicit; backup and navigation controls are grouped without pretending an external calendar is connected.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-007.png",
+            "sha256": "e731e90043a9ebdd33a9877d139365abda9738a108cc1bab403ad30561c4e6e0",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-007-bottom.png",
+            "sha256": "047bd019673c9a843ac67b882066e027df0a7cad8a916e7c368b01913e1f133c",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-008.png",
+            "sha256": "1dd2e407f739d3240098d6362dd647e7abd5b14f6ea8f2069e07ee5180c5ab58",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-008-bottom.png",
+            "sha256": "cac82d92be22a46af4639dfc61bcb5d3302f3cc3855f605d5ecfb0a9487fd9cf",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "workflows",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 9.0,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.755,
+          "template_score": 1.1,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "The unavailable runner reason and disabled New goal precede an uncluttered empty history. Completion is not invented. This frame cannot verify uncertain-write resume/retry gates because no workflow exists.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-009.png",
+            "sha256": "1e09efb734d2c537e42fccbd231da3920fad54f5008c0708d0842321605f58de",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-010.png",
+            "sha256": "aec2e09375d2e8d05a56f36749cf1d869dfff6ed3eb03e85265bfc475577b930",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "tasks",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.8,
+          "truthful_states": 8.9,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.755,
+          "template_score": 1.1,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Task search, state filters and backup actions form a readable toolbar. Empty task space is intentional. No final task update or due-date persistence is inferred from this default empty overview.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-011.png",
+            "sha256": "09a008257672eb7a1121ef1d12b2de167be7f0e3f7ad32c99dfd87f3cc50e623",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-012.png",
+            "sha256": "af833b68980ecda32b338cd28a730e7a835c94c44c8de35dbe99fd6063e48c6d",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "calendar",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.6,
+          "truthful_states": 9.1,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.755,
+          "template_score": 1.1,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Connection and local deadlines are distinct; Not connected agrees with the original provider API. The compact final navigation link approaches the scroll boundary; rectangle/scroll evidence establishes reachability, not perfect edge paint.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-013.png",
+            "sha256": "332c34b120c7c3d3ed1fe930edc19d1012d6d1071f5193cb529a1f8b3b56e303",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-014.png",
+            "sha256": "ed206b1792f59ccb2246bd754c43a74a5c2ab54a150aa450d614a6703b459a8a",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-014-bottom.png",
+            "sha256": "6808d15c342896296d3a94f651213e7081ae86e67e22e728caad1fbcd9f25b2a",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "projects",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 8.9,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.74,
+          "template_score": 1.2,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Master/detail regions stack coherently in the compact window. Empty-project instructions are restrained. Populated project CRUD and aliases remain separately reviewed development evidence.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-015.png",
+            "sha256": "0c1cc49f4104f4d1ffe0e59bc5821a2e4ba74663e63b9bc1a3017333af37610e",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-016.png",
+            "sha256": "fe20cd161020104e8387ff1a73619fd7d7bf47c2d53f882717a540c297430703",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "memory",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.9,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 9.0,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.775,
+          "template_score": 1.2,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Stored memories, review queue and project context remain visibly distinct. Four labelled filters adapt to two columns. LAYA-disabled and empty-record states do not imply recall or ranking success.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-017.png",
+            "sha256": "ed145e9036c2c2ae6daba5336fb7319738af46976765b3abbe92c1ee32f759ac",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-017-bottom.png",
+            "sha256": "52a97ab59241228a299f54d68779e32b86984a520cd8adf2beb41a9dfd2f5686",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-018.png",
+            "sha256": "4f7272df12d0e96fdaff05698de3a412ddd1aaac29af7ffed076336111cbf51f",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-018-bottom.png",
+            "sha256": "3c69974bf9a3a689a71bf5665aa02eb786c114d2a3af1bb648ae9ff3c6cb28a9",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "mission",
+        "dimensions": {
+          "typography": 8.6,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 9.0,
+          "windows_interaction": 8.4,
+          "finishing": 8.7
+        },
+        "result": {
+          "score": 8.73,
+          "template_score": 1.2,
+          "typography_score": 8.6,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Observed CPU/RAM plots, sampled time and configured model residency use coherent sections. Missing GPU readings stay unavailable. The raw exit-127 diagnostic is truthful but technical and visually denser than the other empty states.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-019.png",
+            "sha256": "9c6d5479910a4a718caf403f1bf8450d14e094a33a0c17e9ca9beaa4ba830d9f",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-019-bottom.png",
+            "sha256": "6dbec6614ffd6a44fddd891ec896297ffa289330b74c7c0690e38a33a9c559e7",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-020.png",
+            "sha256": "0eb25ece265ca999fedd0ee986b698799a49657548eb68570c56d8f666f71613",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-020-bottom.png",
+            "sha256": "5844146cdf84f1e23ec7dd39dda85df9da4ff1ebc3f3115a348b9919fbf54f05",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "cluster",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 9.1,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.77,
+          "template_score": 1.3,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Roster identity, unavailable readings and repair state remain separate at compact width. Numeric readings use monospace while Unavailable uses plain text. Requested member emojis are intentional labels; presence is not authenticated telemetry.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-021.png",
+            "sha256": "a9da37c9394bb120135d32b7611aad959b503404b150a0b6fc84137557de75d4",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-021-bottom.png",
+            "sha256": "2b9a5c859cc8f5086707f0e3e936422b7e6f5b9df3e77123d68a12a39ffa06fa",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-022.png",
+            "sha256": "9e251f3f1251233288fa933f1e3093191304e594fae41ec3cfd3f0b76df31674",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-022-bottom.png",
+            "sha256": "a2a89915d1b048ec4a8f794499708c06c072bff1aeb5f2db13252c9f9e689f8b",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "models",
+        "dimensions": {
+          "typography": 8.6,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.6,
+          "truthful_states": 9.0,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.72,
+          "template_score": 1.4,
+          "typography_score": 8.6,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Flat endpoint details and one page inset preserve hierarchy. Compact model basenames wrap across several lines, while configured/installed/loaded/available fields remain distinct. This is readable but still the densest table.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-023.png",
+            "sha256": "f0c41f5ba85e14617fbff239fa57e94623ea732d7c4c65edc034eba5a57b8452",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-023-bottom.png",
+            "sha256": "b045c164905b0da77d1fd79d169d67a81a673415bcb574da324bafbcea394b9e",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-024.png",
+            "sha256": "b080e2e105fdfcd6042f701f8d535e415e06dca972620e06e09fc45cd1820d0f",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-024-bottom.png",
+            "sha256": "3064a0da9f3fbd84904709f3d119de897bfc36db18174ee6cf5915ea072aaa8c",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "model-routing",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 9.1,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.77,
+          "template_score": 1.3,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Policy controls, unhealthy endpoint and unverified context are distinct. No attached controller and absent latency samples remain explicit. Longer lower-page provenance copy is useful but adds reading density.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-025.png",
+            "sha256": "1951d8e1d6f35884bbe44c66a8eee2b4fd8bebad4be5eac1e0a55f005fa776c5",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-025-bottom.png",
+            "sha256": "e2fe830c805e1f0e4387dc493075688dd102b2d641acdb1860fe9db65d0152c7",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-026.png",
+            "sha256": "11545d811a0f94aefe6d03c4cc59ab3541bf41046da1ae972032de8da2209e9d",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-026-bottom.png",
+            "sha256": "105a5a04a1d56ef898a8c1f72d60eac24dd4a7b4aa7ed68023f61762cc07706a",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "agents",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 8.9,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.74,
+          "template_score": 1.2,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Capability inventory and agent activity have separate regions that stack at compact width. Permission/risk metadata remain readable. Registered definitions and zero activity are not successful agent execution.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-027.png",
+            "sha256": "519c29847698da3eb5f62bc4b305971a26c2f1048b3488e2400906b8af9ce56d",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-027-bottom.png",
+            "sha256": "486a5b1584435a6eac225ddb679c471b1a4adef64350ca8a0944b0a33a0c03a1",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-028.png",
+            "sha256": "1b01ab137cb96bd72cf77c4cc1ee0465e36366f22e59e4725cd53f98413de802",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-028-bottom.png",
+            "sha256": "794c9cd0d929c54e66964d799f9529822567181a3dcc5c92a3eb56ca8b0cfa73",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "activity",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 9.0,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.755,
+          "template_score": 1.1,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Task history and execution trace filters have distinct labels. The empty record state contains no invented successful actions. Default final evidence does not exercise expansion of populated trace records.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-029.png",
+            "sha256": "49f87e1cfe621a60455857d011c74824f45bc52452ac1710bae10d6bd5adac04",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-030.png",
+            "sha256": "d84bd7f78d0d0e4e055bbe716db2bf50eb286dc8ffffccef78b6c2523c31832e",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-030-bottom.png",
+            "sha256": "0df2df28c16ddccd67347caf59fc1c470eb9f5607f919ec43fd7f9d107da0c8d",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "screen",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.9,
+          "spacing": 8.8,
+          "density": 8.8,
+          "truthful_states": 9.3,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.835,
+          "template_score": 1.1,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Inactive capture, absent pipeline and disabled Analyze are prominent. Saved 120-second retention is described as configuration, not an active captured context. Policy content stacks rather than overlapping at compact width.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-031.png",
+            "sha256": "bff481b8891b168bceb4741b85c89816aed4aebcc8c29e58a54cc1d6fe1cb806",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-032.png",
+            "sha256": "9a888b2047abd1a04822a7ae0f362b7d480289bdb0c438ea288a74315622e4b6",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-032-bottom.png",
+            "sha256": "07c6ec4ff064e7854a15c63319583755974337c64776fe54658b108f7c8a4982",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "notifications",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 9.0,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.755,
+          "template_score": 1.2,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "An original temporary-backend model-unavailable event carries its timestamp and readable read/dismiss affordances. Notification review is not authority approval. No final read/dismiss mutation is credited.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-033.png",
+            "sha256": "3fcd3e022fb7e338061ace3409f01a1b618455b455dfa8c8592449c044b31d06",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-034.png",
+            "sha256": "0cad818d46a095fce8996823fd893238cdd7577aeaa60764c618f8eeac62f9f7",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-034-bottom.png",
+            "sha256": "8981f8c4318f6a531ba602eaaccb9081f30c6e0008415d0da7ba95f522fc6755",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "settings",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 9.0,
+          "windows_interaction": 8.4,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.755,
+          "template_score": 1.2,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Integration, audio, GPU, permission and session sections maintain readable anchors and labels. GPU failure is explicit. Stop confirmation distinguishes the owned assistant from externally managed services; final confirmation is cancelled.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-035.png",
+            "sha256": "1ddb3f52037c6deb5e94e9e441134a6bb793137c5fd7a0160196c68139ce4d70",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-035-bottom.png",
+            "sha256": "c7a0f9494fd45d367e47e801ec864da7ad3079a2b9156d5db519a3ad9b57a937",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-036.png",
+            "sha256": "db40e4c69b60040f3e2f941d45eb89a7be6b9418c6f861429efe3741e566c818",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-036-bottom.png",
+            "sha256": "2f52c3892d774c9142650115b670a54e031d90a1e97bb6a4eb5aa9d90342f1b4",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "mcp",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.7,
+          "spacing": 8.8,
+          "density": 8.6,
+          "truthful_states": 9.0,
+          "windows_interaction": 8.4,
+          "finishing": 8.7
+        },
+        "result": {
+          "score": 8.715,
+          "template_score": 1.4,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "Five zero counters and repeated Add server affordances slightly repeat the empty inventory. Approval-first copy is truthful and compact wrapping remains readable. No configured server, connected SDK or executable external tool is claimed.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-037.png",
+            "sha256": "e6b9c5b6f0617aeb746f236f0c94d9a01c51d74ed2d70b411ee65cb82f4ee4e9",
+            "physical_size": [
+              1260,
+              700
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-038.png",
+            "sha256": "dcd589c53e446f999c3420e9da36315d59de263b0f9a6fb700fc977fbd8271c8",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-038-bottom.png",
+            "sha256": "9de3d516ea95992c872f96584fc6c7d28abac7d6ef71f2a3b0c6c70cf1c2d94b",
+            "physical_size": [
+              800,
+              600
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      },
+      {
+        "route": "mini",
+        "dimensions": {
+          "typography": 8.7,
+          "hierarchy": 8.8,
+          "spacing": 8.8,
+          "density": 8.7,
+          "truthful_states": 9.0,
+          "windows_interaction": 8.7,
+          "finishing": 8.8
+        },
+        "result": {
+          "score": 8.785,
+          "template_score": 1.1,
+          "typography_score": 8.7,
+          "eligible": true,
+          "critical_defects": [],
+          "accepted": true,
+          "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+        },
+        "observation": "The compact genuine Mini window retains a readable draft area, offline reason and disabled physical voice/Send controls. HWND show/dismiss is measured; global hotkey/tray invocation is separate development evidence.",
+        "captures": [
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-039.png",
+            "sha256": "607d171c275943abf5eb8160274afef2c7515908f927db027941fdbb67d0d52f",
+            "physical_size": [
+              620,
+              640
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          },
+          {
+            "path": "data/campaign8-native/independent-final-once/screenshots/C8F-040.png",
+            "sha256": "c1c82bb7babc45d64c1876fff8b709923002254692f5a631e1e07d07d2455d3b",
+            "physical_size": [
+              525,
+              560
+            ],
+            "dpi": 120,
+            "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+            "independently_viewed": true
+          }
+        ]
+      }
+    ]
+  },
+  "acceptance": {
+    "visual_thresholds": true,
+    "all_private_functional_cases_pass": false,
+    "every_implemented_control_exhaustively_verified": false,
+    "complete_campaign_acceptance": false,
+    "no_critical_layout_defect_observed": true,
+    "critical_accessibility_absence_exhaustively_proved": false,
+    "no_fake_telemetry_in_observed_default_states": true,
+    "all_real_Windows_scaling_levels_tested": false
+  },
+  "limitations": [
+    "Default final fixture cannot validate uncertain workflow gates or positive provider/MCP/model-serving states; strict missing evidence remains nonpass.",
+    "Zero original HTTP mutations in this final collection is not a blanket zero-SQL-write or general authority guarantee: original temporary telemetry may persist notifications.",
+    "Final native resize observes app minimum-size clamping and actual125%WindowsDPI only; no other OS scaling setting was changed.",
+    "350 static source slots are not a count of all concrete reachable UI states or runtime-defined controls.",
+    "Default final screenshots do not inherit populated historical pixels or mocked/live integration successes."
+  ]
+}

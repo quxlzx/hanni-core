@@ -1,0 +1,128 @@
+{
+  "at": "2026-10-10T16:31:08.591106+00:00",
+  "reviewer": "independent verifier",
+  "scope": "Final held manager report/metrics/defect ledger/checkpoints content and hash audit; no workflow, native, model or test execution",
+  "accepted_as_scoped_report": true,
+  "complete_campaign_acceptance": false,
+  "documents": {
+    "REPORT.md": {
+      "path": "docs/campaign8/REPORT.md",
+      "sha256": "19216ddeb98731f27e8b441e59c993a756d6c5bca38c432bf611ece5e75dd210",
+      "reviewed": true
+    },
+    "METRICS.json": {
+      "path": "docs/campaign8/METRICS.json",
+      "sha256": "975d7da2fa7202576d21e7110756be9cd007fef556158ae6baf052221b979b13",
+      "reviewed": true
+    },
+    "DEFECTS.md": {
+      "path": "docs/campaign8/DEFECTS.md",
+      "sha256": "9b6035948dc7a7a9e7165c286ad2acc9dd4791388a04c13a92f2505f9b231654",
+      "reviewed": true
+    },
+    "CHECKPOINTS.md": {
+      "path": "docs/campaign8/CHECKPOINTS.md",
+      "sha256": "3717cd820d98fcf9521d2b0c77d9b1d89239111c157db69cb7e4f5d98af1b513",
+      "reviewed": true
+    }
+  },
+  "material_corrections_required": [],
+  "final_evidence": {
+    "verification": {
+      "path": "docs/campaign8/FINAL_VERIFICATION.json",
+      "sha256": "1edb166c22a91836ad8bfdd52b4e4c11042be3fe252909dc406e0c33a62c9246"
+    },
+    "scores": {
+      "path": "docs/campaign8/FINAL_SCORES.json",
+      "sha256": "7723e73395d0461be1682f71c4b365b04954933510a64a1a0e448f3dac6f81b8"
+    },
+    "independent_report": {
+      "path": "docs/campaign8/INDEPENDENT_REVIEW.md",
+      "sha256": "afe791cf192ca295a5026b3299cd95bbddf1c34f71d695fd2d21abf9a3754738"
+    },
+    "closed": {
+      "path": "data/campaign8-verifier/final-once/CLOSED.json",
+      "sha256": "39560561d9ec7452f8772b7bd58f4f3399dcbb9dd0e124cb0207485924fa593a"
+    },
+    "native": {
+      "path": "C:\\Projects\\HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING\\data\\campaign8-native\\independent-final-once\\RESULTS.json",
+      "sha256": "e9df5da781e9e122b014e190456414e5ed3786a48cd01219933588d9d8f4e959"
+    },
+    "private_review_sha256": "38b7cd91454e3004189e69af292565296863485226c6d0d8d37ae9626e5cbeea",
+    "private_grade_sha256": "680262d5397326eb27e8252fb03dd66e839056e2238fcc2299b2aba0ca29f41d"
+  },
+  "content_crosschecks": {
+    "sixty_unique_frozen_receipt_bound_reviews": true,
+    "strict_57_of_60_and_families_40_of_40_8_of_10_9_of_10_match": true,
+    "criterion_588_pass_1_fail_2_unmeasured_match": true,
+    "all_three_nonpasses_retained_without_promotion": true,
+    "focus_started_and_ended_BODY_not_asserted_critical_violation": true,
+    "disabled_draft_author_precondition_not_inferred_product_defect": true,
+    "conditional_workflow_gate_unmeasured_not_inferred_pass_or_defect": true,
+    "twenty_fresh_visual_rows_seven_dimensions_match": true,
+    "mean_8_7583_min_8_715_typo_8_6_template_1_4_match": true,
+    "actual_clamped_sizes_and_DPI120_separate_from_emulation": true,
+    "84_individually_viewed_native_frames_not_browser_preview": true,
+    "original_default_fixture_separate_from_historical_populated_states": true,
+    "native_CDP_defaults_confound_and_faithful_retakes_preserved": true,
+    "three_real_development_POSTs_separate_from_zero_final_inference": true,
+    "model_output_fidelity_not_semantic_benchmark": true,
+    "mocked_MCP_and_manually_seeded_workflows_not_live_autonomous_passes": true,
+    "zero_HTTP_mutation_scope_not_zero_SQL_or_general_authority_claim": true,
+    "owner_database_equality_NOT_MEASURED_and_next_launch_backend_fix_explicit": true,
+    "physical_audio_user_unavailable_and_screen_pipeline_absent": true,
+    "source_slots_350_282pass_24blocked_1notimplemented_43notrun_null_fraction_match": true,
+    "all_report_links_exist": true,
+    "raw_seven_JUnit_files_hashes_and_distinct_562_pass_union_reproduced_read_only": true
+  },
+  "unresolved_acceptance_limits": [
+    "Three final strict nonpasses remain; no retuning or retries.",
+    "All implemented concrete UI states and controls are not exhaustively verified; static slot outcome coverage is not full functional acceptance.",
+    "Only one actual Windows DPI level observed; CDP emulations do not prove other OS scaling.",
+    "Physical audio unavailable, screen pipeline absent, live external provider/SDK and remote action branches untested or blocked."
+  ],
+  "source_and_owner_preservation": {
+    "parent_manifest": {
+      "path": "data/campaign8-manager/final-freeze/MANIFEST.json",
+      "sha256": "e5523c4ad3780c6af2ba10c4efc0c82572c4a4f461c8e5fcb3193bcbe307d56e",
+      "members": 1299
+    },
+    "executor_CLOSED_source_unchanged": true,
+    "post_final_source_check": {
+      "path": "data/campaign8-manager/POST_FINAL_SOURCE_CHECK.json",
+      "sha256": "4dff92d004acad6fef0582efb572e3c9fe8dd396a0306805b85a7518ccd57371",
+      "scope": "Read existing exact parent post-final proof; no additional bulk source check"
+    },
+    "preservation": {
+      "path": "docs/campaign8/PRESERVATION.json",
+      "sha256": "736c6cf6f63ce73fa4af5e51b99381e4c8896de2b5298687828866336e277152",
+      "scope": "Read existing manager owner/config/source comparison; DB byte equality remains unmeasured"
+    },
+    "independent_owner_interval": {
+      "whitelisted_owner_service_pid_create_command_parent_hashes_unchanged": true,
+      "owner_databases_never_mounted_by_fixtures": true,
+      "owner_database_byte_equality": "NOT_MEASURED: no initial database hash",
+      "all_owner_database_writes_independently_audited": false,
+      "original_read_only_resource_observation_is_not_owner_process_control": true
+    },
+    "owned_cleanup": {
+      "owned_native_closed": true,
+      "native_exit_code": 0,
+      "backend_signed_shutdown": {
+        "path": "data/campaign8-verifier/final-backend/SIGNED_SHUTDOWN.json",
+        "sha256": "e424e1a8053993b4d35fade3cf85e377ded12a10848d3d4d9214740f1354c449",
+        "status": 202
+      },
+      "backend_closed": {
+        "path": "data/campaign8-verifier/final-backend/CLOSED.json",
+        "sha256": "5dd7ff1e92ba45b0c8f9885194bf600a3dd4e61478e6de5761d5afabcca5303b",
+        "http_and_chat_closed": true
+      },
+      "exact_owned_backend_process_absent": true,
+      "owner_services_not_stopped": true
+    },
+    "review_performed_only_reads_and_new_excluded_report_JSON": true,
+    "frozen_source_tests_inputs_oracles_assets_changed_by_review": false,
+    "final_rerun_or_new_native_model_operation": false
+  }
+}

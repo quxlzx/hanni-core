@@ -1,0 +1,1813 @@
+{
+  "edges": 65,
+  "rows": [
+    {
+      "source": "awaiting_plan_approval",
+      "target": "blocked",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "awaiting_plan_approval",
+      "target": "cancelled",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-13-04"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "awaiting_plan_approval",
+      "target": "paused",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-14-04"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "awaiting_plan_approval",
+      "target": "planning",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "awaiting_plan_approval",
+      "target": "ready",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-04",
+          "WFDEV-05-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-05",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-01",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-05",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-01",
+          "WFDEV-16-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-18-04",
+          "WFDEV-18-05",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-06"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "awaiting_step_approval",
+      "target": "blocked",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-09-01"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "awaiting_step_approval",
+      "target": "cancelled",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-09-06"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "awaiting_step_approval",
+      "target": "failed",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "awaiting_step_approval",
+      "target": "paused",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "awaiting_step_approval",
+      "target": "ready",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "awaiting_step_approval",
+      "target": "running",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-08-02"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "blocked",
+      "target": "awaiting_plan_approval",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "blocked",
+      "target": "cancelled",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "blocked",
+      "target": "failed",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "blocked",
+      "target": "paused",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "blocked",
+      "target": "planning",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "blocked",
+      "target": "ready",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "paused",
+      "target": "awaiting_plan_approval",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "paused",
+      "target": "blocked",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "paused",
+      "target": "cancelled",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "paused",
+      "target": "planning",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "paused",
+      "target": "ready",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-14-01"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "paused",
+      "target": "running",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-14-02"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "planning",
+      "target": "awaiting_plan_approval",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-04",
+          "WFDEV-05-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-05",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-01",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-04",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-04",
+          "WFDEV-14-05",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-01",
+          "WFDEV-16-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-18-04",
+          "WFDEV-18-05",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-06"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "planning",
+      "target": "blocked",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-01-03",
+          "WFDEV-01-04",
+          "WFDEV-01-06",
+          "WFDEV-02-02",
+          "WFDEV-02-03",
+          "WFDEV-02-04",
+          "WFDEV-02-05",
+          "WFDEV-02-06",
+          "WFDEV-03-03",
+          "WFDEV-03-04",
+          "WFDEV-03-05",
+          "WFDEV-03-06",
+          "WFDEV-04-01",
+          "WFDEV-04-02",
+          "WFDEV-04-03",
+          "WFDEV-04-04",
+          "WFDEV-04-06",
+          "WFDEV-05-03",
+          "WFDEV-05-05",
+          "WFDEV-06-01",
+          "WFDEV-06-02",
+          "WFDEV-06-03",
+          "WFDEV-06-04",
+          "WFDEV-06-05",
+          "WFDEV-06-06",
+          "WFDEV-11-02",
+          "WFDEV-11-03",
+          "WFDEV-20-05"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "planning",
+      "target": "cancelled",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "planning",
+      "target": "failed",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "planning",
+      "target": "paused",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "ready",
+      "target": "awaiting_step_approval",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "ready",
+      "target": "blocked",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "ready",
+      "target": "cancelled",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-13-01"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "ready",
+      "target": "paused",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-09-05",
+          "WFDEV-14-01",
+          "WFDEV-14-05"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "ready",
+      "target": "running",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-04",
+          "WFDEV-05-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-18-04",
+          "WFDEV-18-05",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-06"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "recovering",
+      "target": "blocked",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "recovering",
+      "target": "cancelled",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "recovering",
+      "target": "failed",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "recovering",
+      "target": "paused",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "retrying",
+      "target": "blocked",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "retrying",
+      "target": "cancelled",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "retrying",
+      "target": "failed",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "retrying",
+      "target": "paused",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "retrying",
+      "target": "running",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "running",
+      "target": "awaiting_step_approval",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-06"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "running",
+      "target": "blocked",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-03-02",
+          "WFDEV-04-05",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-19-04",
+          "WFDEV-20-03"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "running",
+      "target": "cancelled",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "running",
+      "target": "completed",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-02",
+          "WFDEV-08-06",
+          "WFDEV-10-01",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-20-01"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "running",
+      "target": "failed",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "running",
+      "target": "partially_completed",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-05-04",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-19-05",
+          "WFDEV-20-02",
+          "WFDEV-20-06"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "running",
+      "target": "paused",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "running",
+      "target": "recovering",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "running",
+      "target": "retrying",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "running",
+      "target": "verifying",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-04",
+          "WFDEV-05-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-06"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "submitted",
+      "target": "awaiting_plan_approval",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "submitted",
+      "target": "blocked",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "submitted",
+      "target": "cancelled",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "submitted",
+      "target": "paused",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "submitted",
+      "target": "planning",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-03",
+          "WFDEV-01-04",
+          "WFDEV-01-05",
+          "WFDEV-01-06",
+          "WFDEV-02-01",
+          "WFDEV-02-02",
+          "WFDEV-02-03",
+          "WFDEV-02-04",
+          "WFDEV-02-05",
+          "WFDEV-02-06",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-03-03",
+          "WFDEV-03-04",
+          "WFDEV-03-05",
+          "WFDEV-03-06",
+          "WFDEV-04-01",
+          "WFDEV-04-02",
+          "WFDEV-04-03",
+          "WFDEV-04-04",
+          "WFDEV-04-05",
+          "WFDEV-04-06",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-03",
+          "WFDEV-05-04",
+          "WFDEV-05-05",
+          "WFDEV-05-06",
+          "WFDEV-06-01",
+          "WFDEV-06-02",
+          "WFDEV-06-03",
+          "WFDEV-06-04",
+          "WFDEV-06-05",
+          "WFDEV-06-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-05",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-02",
+          "WFDEV-11-03",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-01",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-04",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-04",
+          "WFDEV-14-05",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-01",
+          "WFDEV-16-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-18-04",
+          "WFDEV-18-05",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-05",
+          "WFDEV-20-06"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "verifying",
+      "target": "blocked",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "verifying",
+      "target": "cancelled",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-16-05",
+          "WFDEV-20-04"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "verifying",
+      "target": "completed",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "verifying",
+      "target": "failed",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "verifying",
+      "target": "partially_completed",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "verifying",
+      "target": "paused",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-14-02",
+          "WFDEV-14-03"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "verifying",
+      "target": "retrying",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [],
+        "reachability": "UNREACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    },
+    {
+      "source": "verifying",
+      "target": "running",
+      "direct_stale_CAS_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-final\\summary.json",
+        "scope": "original_store_commit_boundary"
+      },
+      "direct_postprojection_checkpoint_fault": {
+        "passed": true,
+        "receipt": "data\\campaign4-development\\candidate-transition-faults-final\\results.json",
+        "scope": "original_store_sqlite_transaction_rollback"
+      },
+      "native_scheduler": {
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-04",
+          "WFDEV-05-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-06"
+        ],
+        "reachability": "REACHED",
+        "transition_specific_before_and_after_fault_proof": "NOT_ESTABLISHED_BY_THIS_REACHABILITY_TRACE"
+      }
+    }
+  ],
+  "store_pre_fault_pass": 65,
+  "store_post_fault_pass": 65,
+  "native_reached": 22,
+  "native_unreached": 43
+}

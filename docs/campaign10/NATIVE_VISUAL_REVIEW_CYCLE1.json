@@ -1,0 +1,781 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-10-10T17:38:22.911135+00:00",
+  "state": "PRESENTATION_MEASURED_FULL_VISUAL_ACCEPTANCE_INCOMPLETE",
+  "reviewer": "independent Campaign10 verifier",
+  "source_receipt_sha256": "0b85b51eefd2a24b1bca1278976449c61f188e94b6d48787bc6766d8616a710a",
+  "source_sha256": "ac3a1e65b4e4670f1ddb78c147c86d104868fc89f17230ac98f28164438a1acc",
+  "assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+    "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+  },
+  "executable_sha256": "9bf90dc1438e1776369f668117d88c2a5f76a33fc6f796c4d9f41a8a7e586263",
+  "rubric": {
+    "path": "docs/campaign8/VISUAL_RUBRIC.md",
+    "sha256": "72b8199b7dc93ef46c7f5989d8d86c16f70c15f04155191890ebcbe65cba7338",
+    "weights": {
+      "typography": 0.2,
+      "hierarchy": 0.2,
+      "spacing": 0.15,
+      "density": 0.15,
+      "truthful_states": 0.15,
+      "windows_interaction": 0.1,
+      "finishing": 0.05
+    }
+  },
+  "actual_dpi": 120,
+  "actual_scaling_percent": 125,
+  "actual_window_sizes": [
+    [
+      1280,
+      850
+    ],
+    [
+      1000,
+      700
+    ]
+  ],
+  "viewed_screenshots": 38,
+  "routes": 19,
+  "template_max": 1.2,
+  "minimum_typography": 8.65,
+  "mean_measured_presentation_score": 8.7304,
+  "minimum_measured_presentation_score": 8.2833,
+  "complete_weighted_visual_score": null,
+  "complete_visual_acceptance": null,
+  "all_route_horizontal_overflow_observed": false,
+  "javascript_errors": [],
+  "historical_scores_reused": false,
+  "screens": [
+    {
+      "route": "home",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.5,
+        "spacing": 8.8,
+        "density": 8.6,
+        "truthful_states": 6.5,
+        "windows_interaction": null,
+        "finishing": 8.6
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.2833,
+      "template_appearance": 1.1,
+      "observations": "Clear sections and readable metadata. Assistant ready conflicts with unavailable conversation; no current controller-ready readback for this frame.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-home.png",
+          "sha256": "1435fecd1ee3f53e0c2e1d9ebd3637375bc69293fdc67fd3a116eed78d5c77cb",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-home.png",
+          "sha256": "88f4bd5bfc30b323d9a626fb915faa266d8f3f7b346101f1e33b22be9dce18aa",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "chat",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.9,
+        "spacing": 8.8,
+        "density": 8.8,
+        "truthful_states": 8.8,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.7944,
+      "template_appearance": 1.0,
+      "observations": "Unavailable composition is disabled with clear instructions; comfortable history/composer separation at both sizes.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-chat.png",
+          "sha256": "655d8e59f49758309734edec44d0cb96f38273ba54f040044e0ce4879544875d",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-chat.png",
+          "sha256": "bb1e036851c5faa139c0cfda4de3ba672ebd4d48d1cd40d2426d4bb12c64ae91",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "voice",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.4,
+        "truthful_states": 8.7,
+        "windows_interaction": null,
+        "finishing": 8.6
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.6833,
+      "template_appearance": 1.1,
+      "observations": "Unavailable/Not measured labels avoid physical success claims. Wide device section is still skeleton loading; compact controls wrap without overlap.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-voice.png",
+          "sha256": "8de277222f6595f2591bd082393d8af0e313d49037d145de2a24ad73968abbe6",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-voice.png",
+          "sha256": "ded07edab3526da5f2a86bfb9ea0eb2d0bbb6a6489b0caface4fbbda1494739a",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "planner",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.9,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 8.8,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.7778,
+      "template_appearance": 1.1,
+      "observations": "Attention and upcoming events separate cleanly; compact layout stacks sections. Empty state does not invent work.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-planner.png",
+          "sha256": "f240e9b39a8a949fe91b1882abc16b30e180699936a7cc2ce181c4c661528404",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-planner.png",
+          "sha256": "9f108a3d96c318ca648534e40cb6e4841005534d192641188c1946ef8e6d7dfb",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "tasks",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.9,
+        "spacing": 8.8,
+        "density": 8.8,
+        "truthful_states": 8.9,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.8111,
+      "template_appearance": 1.0,
+      "observations": "New-task action and filters are legible; empty state agrees with exact empty original-store readback.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-tasks.png",
+          "sha256": "e2a7528ba7033cc424cc2368000bcd029818a66910fc22f7f947a1a5b278edd4",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-tasks.png",
+          "sha256": "985804d4313830c4ae551b82218afa4f3f6e8e77037f70c19641606d8eb97db3",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "calendar",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 8.8,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.7556,
+      "template_appearance": 1.1,
+      "observations": "Explicit no-events-loaded instruction and separate local deadlines. Connected indicates account metadata only; no provider event read is demonstrated.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-calendar.png",
+          "sha256": "5624e93e437d080caed681218dcc81dafc37583070b9aaee6ad3f13a4ff5ef50",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-calendar.png",
+          "sha256": "b1432a3547b1fa1d050140666a1f0c80424c614e9a471473ea598b4bfae903bd",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "projects",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.8,
+        "truthful_states": 8.9,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.7889,
+      "template_appearance": 1.0,
+      "observations": "Simple master/detail empty state; typography and divisions remain clear at both sizes.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-projects.png",
+          "sha256": "f92a244d0a62de8dc3d9f5b4e3059da148295c12af457099e6e4d611e209ca0c",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-projects.png",
+          "sha256": "9c05799540f0139e1ec2ced3e40ab8e6a280f000744d5f7b5ef4e503be5161eb",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "memory",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.9,
+        "spacing": 8.7,
+        "density": 8.6,
+        "truthful_states": 8.9,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.7611,
+      "template_appearance": 1.0,
+      "observations": "LAYA disabled, stored count zero, search scope and review separation are readable; compact filters reflow into two columns.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-memory.png",
+          "sha256": "ecd52d9f8bfb367aa6ab5e3865217c628fcd7a7284645c98f51fb8c3c59b73b2",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-memory.png",
+          "sha256": "9867b210e2a222ece92073cafb079c45018b39a70439f072d332977975a890c5",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "mission",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.6,
+        "truthful_states": 8.7,
+        "windows_interaction": null,
+        "finishing": 8.6
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.7167,
+      "template_appearance": 1.2,
+      "observations": "Telemetry and residency sections are clear; missing RAM is explicitly unavailable. Compact lower content requires scroll not exercised here.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-mission.png",
+          "sha256": "6a8c197a443ee72a5a4b901fb9f3c2a67626e82a452207190c1ba03d74faa38c",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-mission.png",
+          "sha256": "4f57689d87d6f00519330e1ac8d6558db4c3a491a2e0a4a0ccfd825f6c7b6512",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "models",
+      "dimensions": {
+        "typography": 8.65,
+        "hierarchy": 8.8,
+        "spacing": 8.7,
+        "density": 8.55,
+        "truthful_states": 8.8,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.7028,
+      "template_appearance": 1.2,
+      "observations": "Model filename wraps at compact width without horizontal overflow. Healthy/loaded state is distinguished from verified context and installed identity.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-models.png",
+          "sha256": "ca8d138717484b743c1fe10079dc2130f66d195815128eafadcbd15afa38cd84",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-models.png",
+          "sha256": "8bcd6b9edba3f52df9a21924cd4851c67e0def1cd5b32e7268a6a41e6e6db556",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "agents",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.7,
+        "density": 8.6,
+        "truthful_states": 8.9,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.7389,
+      "template_appearance": 1.1,
+      "observations": "Actual controller unavailable state and172 capabilities agree with readback; capability table and history remain legible.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-agents.png",
+          "sha256": "b22dd7645aab5870c37d49dce68e017bfbdd8a7fa773461be32ebb8616eeffd3",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-agents.png",
+          "sha256": "e7df3bffcbe421380c77e35e9744d209e4c3d90c8716c119ac1af0ce1bc4f36b",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "cluster",
+      "dimensions": {
+        "typography": 8.65,
+        "hierarchy": 8.8,
+        "spacing": 8.7,
+        "density": 8.6,
+        "truthful_states": 8.9,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.7278,
+      "template_appearance": 1.1,
+      "observations": "Checking changes to unreachable across elapsed capture time; unavailable CPU/RAM are never zero. Compact filters stack; lower nodes require scroll.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-cluster.png",
+          "sha256": "ffd859646384a296dbc23ae50163aed83ce803f7380368f74c9062036ca8ece0",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-cluster.png",
+          "sha256": "681782e33433db31b77d73d098bb917109f7d624eb20189c20dbecabe6370cc7",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "activity",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.8,
+        "truthful_states": 8.8,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.7722,
+      "template_appearance": 1.0,
+      "observations": "Separates execution from evidence checks; empty trace/history remains clear. Captured supplemental DOM/readback missing for this route.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-activity.png",
+          "sha256": "cdc40ca8c04f5bbda6b9d7fa57e732a7b1ee80f5401ad466dd50fd6ea5901f63",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-activity.png",
+          "sha256": "d39b132a244a914a425dec88100729cfa264244e8b7a61ea726a421c97329454",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "screen",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.9,
+        "spacing": 8.8,
+        "density": 8.8,
+        "truthful_states": 8.9,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.8111,
+      "template_appearance": 1.0,
+      "observations": "Capture/context unavailable and saved retention policy are explicit. Disabled analysis avoids a false screen-awareness claim.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-screen.png",
+          "sha256": "ba99da1d1b25b402098c1b2b3a2948ea56c52b0800afe319932d7615f7ac0200",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-screen.png",
+          "sha256": "8c9e9e1fe436d6d4d3bf76e615bb9b11d5cec17f872d7bb2f870e48939d6b297",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "notifications",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.8,
+        "truthful_states": 8.9,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.7889,
+      "template_appearance": 1.0,
+      "observations": "Recorded events only, clear unread/category filters, and no false approval implication.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-notifications.png",
+          "sha256": "e50b03d66836abfccddb9ea739df4215f8394f2b8f61128d05af98818f44d0fb",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-notifications.png",
+          "sha256": "b9fa88eb92aa0abee9d8338f549bcfe1b0d8bbf6093ea810902ddc61695cb199",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "settings",
+      "dimensions": {
+        "typography": 8.65,
+        "hierarchy": 8.8,
+        "spacing": 8.7,
+        "density": 8.5,
+        "truthful_states": 8.7,
+        "windows_interaction": null,
+        "finishing": 8.6
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.6722,
+      "template_appearance": 1.1,
+      "observations": "Audio labels and next-start GPU state are clear. Wide GPU section remains loading; compact form stays inside viewport.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-settings.png",
+          "sha256": "1beb5860555bcfdc2acd31d2ad8835b506f548664fa372863d4415080d387278",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-settings.png",
+          "sha256": "8e01a3bff4a2a696f0ee0db200665bb0da84c774b82e039bbd462bfdea981232",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "mcp",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.9,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 8.9,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.7944,
+      "template_appearance": 1.1,
+      "observations": "Zero connected/discovered tools agrees with original readback; approval explanation and empty state distinguish configuration from tool execution.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-mcp.png",
+          "sha256": "aacc99a6f57a1577be92a85c41a996ec917d339569771acd8cc0a99566fd7daf",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-mcp.png",
+          "sha256": "fdc60202b03d7a69f99cc9492fd30819847148bd41c85e56fb3ac230dba0e509",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "workflows",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.9,
+        "spacing": 8.8,
+        "density": 8.8,
+        "truthful_states": 8.8,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.7944,
+      "template_appearance": 1.0,
+      "observations": "No-saved-workflow state is clear and describes approval before execution; does not establish working planning/model quality.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-workflows.png",
+          "sha256": "e5dd94c0bf0c4033a31bcd79cc565d0a299d6aedf1338f1e700a57f081e8020e",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-workflows.png",
+          "sha256": "d75caf2c53e92cb19024f3535405aaae3bc5d937530d207943184dd72da31771",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    },
+    {
+      "route": "model-routing",
+      "dimensions": {
+        "typography": 8.65,
+        "hierarchy": 8.8,
+        "spacing": 8.7,
+        "density": 8.55,
+        "truthful_states": 8.8,
+        "windows_interaction": null,
+        "finishing": 8.7
+      },
+      "weighted_complete_score": null,
+      "measured_presentation_score": 8.7028,
+      "template_appearance": 1.1,
+      "observations": "Unverified context, unknown queue and unmeasured timing are explicit; compact endpoint metrics reflow. Current keyboard policy controls untested.",
+      "viewed_captures": [
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1280-model-routing.png",
+          "sha256": "57f4fc5b2b8a4411d167cf13ff0f155e8c6a270ff47ebdae31690f67d38b9fb2",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            850
+          ]
+        },
+        {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-desktop-cycle1/screenshots/1000-model-routing.png",
+          "sha256": "99bd1e037d38b008012815bc8a6f9a04703b51f1f4ce14138463a4434387ba3d",
+          "window_rect": [
+            0,
+            0,
+            1000,
+            700
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "No fresh keyboard/focus/minimize/restore evidence in route-only capture.",
+    "No lower-scroll reachability, Mini surface or populated-state evidence in this cycle.",
+    "Home ready/unavailable wording contradicts current controller presentation.",
+    "Wide voice/GPU settings include pending loading skeletons.",
+    "Account metadata availability does not establish live calendar provider reads.",
+    "No physical microphone, speaker, HANNI screen capture or perception evidence."
+  ]
+}

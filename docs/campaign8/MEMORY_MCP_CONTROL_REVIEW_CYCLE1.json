@@ -1,0 +1,340 @@
+{
+  "scope": "Separate exposed-development 12-case original Memory/MCP native batch. Not private final, not acoustic/provider proof, not a promotion of setup failures. PASS counts apply only to the written narrow scopes.",
+  "raw": {
+    "path": "data/campaign8-native/cycle25-original-memory-mcp-final12/RESULTS.json",
+    "sha256": "2cf9370d27074600291602cd2519212633ea054f462fd78dbdb6f8cf5727f024"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "c03f94985c8501c58da5c4cf9be122830a65edd4646116fa44952c711b1dcfc0",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "counts": {
+    "cases": 12,
+    "executed": 4,
+    "PASS_scoped": 4,
+    "HARNESS_ERROR": 8,
+    "final_or_error_PNGs_viewed": 12,
+    "additional_intermediate_PNGs_viewed": 4,
+    "actual_generation": 0
+  },
+  "case_grades": [
+    {
+      "id": "local-final-memory-create-proposal",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "Exact tab name omitted the visible pending count; actual accessible/text projection is Review queue 26. No proposal creation executed.",
+      "input_sha256": "9cf9b3c43a53ad486923e62a074d22823d959782521b2137da24c8e453dded98",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle25-original-memory-mcp-final12/screenshots/local-final-memory-create-proposal-error.png",
+        "sha256": "6f01b393edefeb99d6ed0e9da117fd5c9d6943acd435793f602e2460386c0a02"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "faea1dad72a99a0998a62e3487c6f8a9809aaad48e0d95e8fc87d21574000188"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "e095b81aa5618b874c1bd589c8b1bf69fb47e52279d58cffbb5f58c460c26327"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"tab\", name=\"Review queue\", exact=True).first\n"
+      },
+      "grade_promotion": false,
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "local-final-memory-consolidate",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "Required Review queue tab setup absent; original Stored memories view has no Find related records button. No consolidation executed.",
+      "input_sha256": "d18b4f9bbea6a007a4bd07add553f10b530f671dc65ff2a47dc973bcd2ba1bf5",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle25-original-memory-mcp-final12/screenshots/local-final-memory-consolidate-error.png",
+        "sha256": "6f01b393edefeb99d6ed0e9da117fd5c9d6943acd435793f602e2460386c0a02"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "faea1dad72a99a0998a62e3487c6f8a9809aaad48e0d95e8fc87d21574000188"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "e095b81aa5618b874c1bd589c8b1bf69fb47e52279d58cffbb5f58c460c26327"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Find related records\", exact=True).first\n"
+      },
+      "grade_promotion": false,
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "local-final-memory-review-index",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "Required Review queue tab setup absent; Pending memory suggestions section not rendered.",
+      "input_sha256": "31830940736d88d7d5c6853ffababf091efe7517a0797983543b557e3ad4729c",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle25-original-memory-mcp-final12/screenshots/local-final-memory-review-index-error.png",
+        "sha256": "6f01b393edefeb99d6ed0e9da117fd5c9d6943acd435793f602e2460386c0a02"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "faea1dad72a99a0998a62e3487c6f8a9809aaad48e0d95e8fc87d21574000188"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "e095b81aa5618b874c1bd589c8b1bf69fb47e52279d58cffbb5f58c460c26327"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"section[aria-label=\\\"Pending memory suggestions\\\"] .memory-index-row\").first\n"
+      },
+      "grade_promotion": false,
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "local-final-memory-correction-fields-cancel",
+      "status": "PASS",
+      "observed_scope": "Original correction dialog opens; statement type changes historical then statement, followed by Cancel. Original record ID/content/project/status, stored=36 and pending=26 remain unchanged. The broad Project selector did not change the modal Project value; modal Unassigned selection is unmeasured, not credited.",
+      "input_sha256": "19a50005d9a5ee3fdd6c99bf4e08c7aed0afb9a3bec4edf4bbe6e9e1be74a84c",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle25-original-memory-mcp-final12/screenshots/local-final-memory-correction-fields-cancel.png",
+        "sha256": "6f01b393edefeb99d6ed0e9da117fd5c9d6943acd435793f602e2460386c0a02"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "faea1dad72a99a0998a62e3487c6f8a9809aaad48e0d95e8fc87d21574000188"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "e095b81aa5618b874c1bd589c8b1bf69fb47e52279d58cffbb5f58c460c26327"
+        }
+      ],
+      "original_error_retained": null,
+      "grade_promotion": false,
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "local-final-memory-history-old-row",
+      "status": "PASS",
+      "observed_scope": "Original older-history pagination and first summary expansion show actual revision 0 text and source in owned HWND pixels; Newer returns the collapsed current page. Actual selected record ID matches original explorer readback. This separate supplement closes the prior older-row pixel gap without changing the earlier partial grade.",
+      "input_sha256": "00e8ab6bb121ec9e66aa5eb2ee32872104125eef6456a8853bb8cd53b90f0991",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle25-original-memory-mcp-final12/screenshots/local-final-memory-history-old-row.png",
+        "sha256": "00e25ab616859169f1fa6c8108d39c1ff87927e6012f53f8cbf5174c25c47b10"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "faea1dad72a99a0998a62e3487c6f8a9809aaad48e0d95e8fc87d21574000188"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "e095b81aa5618b874c1bd589c8b1bf69fb47e52279d58cffbb5f58c460c26327"
+        }
+      ],
+      "original_error_retained": null,
+      "grade_promotion": false,
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "local-final-mcp-first-server-draft",
+      "status": "PASS",
+      "observed_scope": "Original empty-state Add your first server opens Add MCP server dialog with stdio fields; Cancel closes it and original inventory remains empty/revision 0. No command is launched.",
+      "input_sha256": "235ffa1ae84a0e2d2277478b3cb2adc69371a70226cb8973e1ab4b4b69187780",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle25-original-memory-mcp-final12/screenshots/local-final-mcp-first-server-draft.png",
+        "sha256": "52b671e94258c323bbb292f07d2c2811fc78a31f21fd7dab7eff9236f87dc80f"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "f371d11a7f5820581c86e1cd9bafad0fd51e55acd6c627093394df649ab7b74b"
+        }
+      ],
+      "original_error_retained": null,
+      "grade_promotion": false,
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "local-final-mcp-file-preview",
+      "status": "PASS",
+      "observed_scope": "Original file input receives the fixed 141-byte JSON fixture (SHA 90450fc92161755f9098d46533e256213e926ac91d17cfbb01d613ba343bfdaa). Actual native preview shows exactly one selected stdio candidate, command campaign8-no-launch.exe and auto_connect=false. Original inventory remains empty/revision 0. Preview is not import, connection, SDK discovery or invocation.",
+      "input_sha256": "a84e35e58d9addffa8eb854a50eaa6ad4a0f7500829170b84a5ba34fa88f1a3f",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle25-original-memory-mcp-final12/screenshots/local-final-mcp-file-preview.png",
+        "sha256": "479cb5a226d07553fd3ca116af2034d43354afcdbc1eda6155710d511e1b712a"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "f371d11a7f5820581c86e1cd9bafad0fd51e55acd6c627093394df649ab7b74b"
+        }
+      ],
+      "original_error_retained": null,
+      "grade_promotion": false,
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "local-final-mcp-import-selection",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "Per-case navigation remounted and closed the prior local import dialog; candidate checkbox absent.",
+      "input_sha256": "a4d5fc01aebc983f8575ee05e2326ca9f4c16d1ac7afed7be89f568bf3afe9dd",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle25-original-memory-mcp-final12/screenshots/local-final-mcp-import-selection-error.png",
+        "sha256": "52b671e94258c323bbb292f07d2c2811fc78a31f21fd7dab7eff9236f87dc80f"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "f371d11a7f5820581c86e1cd9bafad0fd51e55acd6c627093394df649ab7b74b"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\"dialog .mcp-import-candidate input[type=\\\"checkbox\\\"]\").first\n"
+      },
+      "grade_promotion": false,
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "local-final-mcp-import-confirm",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "Per-case navigation closed prior import preview; Import selected absent and inventory remains empty.",
+      "input_sha256": "09b285b7f586c3d3cab118de7cb9d71fcf45145ae6026d248fb1ea573fe8ba77",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle25-original-memory-mcp-final12/screenshots/local-final-mcp-import-confirm-error.png",
+        "sha256": "52b671e94258c323bbb292f07d2c2811fc78a31f21fd7dab7eff9236f87dc80f"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "f371d11a7f5820581c86e1cd9bafad0fd51e55acd6c627093394df649ab7b74b"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Import selected\", exact=True).first\n"
+      },
+      "grade_promotion": false,
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "local-final-mcp-enable-local",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "Earlier import never executed, so no server row exists. No enable action executed.",
+      "input_sha256": "9521a15ad5533cbe3770622ba76fec4b3590ecc39c6ead365e1f3717251f4da5",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle25-original-memory-mcp-final12/screenshots/local-final-mcp-enable-local-error.png",
+        "sha256": "52b671e94258c323bbb292f07d2c2811fc78a31f21fd7dab7eff9236f87dc80f"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "f371d11a7f5820581c86e1cd9bafad0fd51e55acd6c627093394df649ab7b74b"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\".mcp-server-row\").first\n"
+      },
+      "grade_promotion": false,
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "local-final-mcp-disable-local",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "No imported/selected server exists, so Disable server absent. No disable action executed.",
+      "input_sha256": "3e30c0f9a0a14d13f169a66599782bb9d0df76e25242c577c74eb8230aecd60e",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle25-original-memory-mcp-final12/screenshots/local-final-mcp-disable-local-error.png",
+        "sha256": "52b671e94258c323bbb292f07d2c2811fc78a31f21fd7dab7eff9236f87dc80f"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "f371d11a7f5820581c86e1cd9bafad0fd51e55acd6c627093394df649ab7b74b"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Disable server\", exact=True).first\n"
+      },
+      "grade_promotion": false,
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "local-final-mcp-private-export-select",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "No selected server and Back to servers control absent; export/select actions not reached.",
+      "input_sha256": "7a5e0323fa6726b9dd27a47c4e39caa8e357c2c2305d1ea2952a804f0476afbf",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle25-original-memory-mcp-final12/screenshots/local-final-mcp-private-export-select-error.png",
+        "sha256": "52b671e94258c323bbb292f07d2c2811fc78a31f21fd7dab7eff9236f87dc80f"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "f371d11a7f5820581c86e1cd9bafad0fd51e55acd6c627093394df649ab7b74b"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Back to servers\", exact=True).first\n"
+      },
+      "grade_promotion": false,
+      "scope_complete_only_as_described": true
+    }
+  ],
+  "unmeasured_modal_project_change": true,
+  "fresh_private_final_attempts": 0,
+  "native": {
+    "pid": 31288,
+    "create_time": 1791641900.150303,
+    "dpi": 120,
+    "native_exit_code": 0,
+    "owned_native_cleanup": true,
+    "javascript_errors": 0,
+    "foreign_requests": 0
+  },
+  "limitations": [
+    "Original Project draft selector did not establish modal Project change.",
+    "Eight setup errors remain unchanged; separately sealed self-contained retakes are additional development evidence.",
+    "Uploaded file preview does not establish OS file-picker navigation or external MCP connection.",
+    "Owner memories/configuration/providers are not mounted."
+  ]
+}

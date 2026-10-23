@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "required_tool_recall": "A supported tool case passes if every required group has at least one retrieved capability; report initial and rediscovered menus separately. Denied providers are routing-only fixtures, never live executions.",
+  "simple_task_success": "Live cases only: all required groups executed successfully, result data passes independent finite/bounds/schema predicates, returned answer contains corresponding measured evidence and no unsupported success claims. Failures remain in denominator.",
+  "brevity": "At most three complete sentences, each <=35 words, unless detail explicitly requested. Sentence segmentation ignores decimals and abbreviations. No truncation of failed cases from denominator.",
+  "thresholds": {
+    "required_tool_recall": 0.95,
+    "simple_task_success": 0.9,
+    "brevity": 0.9
+  },
+  "responsiveness": "P50/P95 interpolated milliseconds per scope, routing, observable local lease wait, server queue (null unless measured), first model content, tool, verification, first useful visible sentence, total, chars/words/sentences. Owner speech to acoustic onset is NOT TESTED unless measured with physical audio.",
+  "hardware": "Record actual local model identity, props, configured settings and psutil hardware; no remote services or model downloads.",
+  "no_tuning": "Freeze this file and heldout.json SHA256 before implementation. Do not modify either file or tune implementation against heldout evaluation failures."
+}

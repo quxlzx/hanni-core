@@ -1,0 +1,1000 @@
+{
+  "baseline_commit": "0aede831853b6876bc8904838a41f7b2ce8f3967",
+  "baseline_failure_cycles": [
+    {
+      "changed_sources": [],
+      "counts": {
+        "failed": 2,
+        "passed": 20,
+        "skipped": 0
+      },
+      "duration_seconds": 4.028009200002998,
+      "failed_nodeids": [
+        "tests/integration/test_campaign4_boundaries.py::test_owner_control_at_committed_pre_dispatch_boundary_has_truthful_state[pause]",
+        "tests/integration/test_campaign4_boundaries.py::test_owner_control_at_committed_pre_dispatch_boundary_has_truthful_state[cancel]"
+      ],
+      "manifest_sha256": "0e470b34641517318422290afc5c8a90aff47ebb46565999c09e64552074b837",
+      "results_sha256": "f4423ce42958e531c1f0bc3fb02327ff9ae7bd929cf085ec5995a8ce3c0cb6b3",
+      "run": "native-baseline-01",
+      "source_cohort": "original service before control-state repair"
+    },
+    {
+      "changed_sources": [],
+      "counts": {
+        "failed": 2,
+        "passed": 25,
+        "skipped": 0
+      },
+      "duration_seconds": 4.877324999892153,
+      "failed_nodeids": [
+        "tests/integration/test_campaign4_boundaries.py::test_withdrawn_committed_write_retains_uncertainty_and_never_replays[pause]",
+        "tests/integration/test_campaign4_boundaries.py::test_uncertain_paused_artifact_cannot_admit_an_independent_second_write"
+      ],
+      "manifest_sha256": "d1d24a0c56b384cf33a618e82ee974e2beeb6987616dc92b3ca20180df237da7",
+      "results_sha256": "865807b452ded3a9ccef0e76c50c7713bb9ce1f548ddeeb0c882dfcbc1174013",
+      "run": "uncertain-scope-before-corrected",
+      "source_cohort": "control-state repair; original continuation guard"
+    },
+    {
+      "changed_sources": [],
+      "counts": {
+        "failed": 3,
+        "passed": 9,
+        "skipped": 0
+      },
+      "duration_seconds": 1.897651500068605,
+      "failed_nodeids": [
+        "tests/integration/test_campaign4_boundaries_source.py::test_generated_outline_cannot_substitute_a_different_static_read_source",
+        "tests/integration/test_campaign4_boundaries_source.py::test_static_binding_cannot_override_literal_owner_requested_read_source",
+        "tests/integration/test_campaign4_boundaries_source.py::test_unquoted_source_prefix_is_not_a_complete_path"
+      ],
+      "manifest_sha256": "c2a0ebf0eac51fae3f83a3d692ed7d016f2554d66b47c66f182da400a34709a9",
+      "results_sha256": "05ca10205fd3c11042b16d4044fec85a8c48631d591dc359fbb3896cbc2b572b",
+      "run": "source-controls-before-corrected",
+      "source_cohort": "original planner; repaired service"
+    }
+  ],
+  "controlled_compute": {
+    "capacity_observations": "Synthetic protected context/resource fixtures, not measured inference capacity.",
+    "case_count": 8,
+    "http_post_count": 10,
+    "receipts": [
+      {
+        "active_reservations_at_settlement": {
+          "controlled_worker_0": 0
+        },
+        "all_phase_evidence_sha256": {
+          "native_compute_evidence": "3705aa126905ae72e5e98324b1620183fe3b0bc92ce7608a78bcb8db173490b0"
+        },
+        "http_payload_sha256": [
+          "731cb28b5430ffa1390bf60a41713d2c71d137a151badec83713fee53c2412ad"
+        ],
+        "http_post_count": 1,
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_worker_socket_disconnect_respects_fallback_and_preserves_receipts[False]",
+        "observed_socket_disconnections": 1,
+        "original_job_states": [
+          "LOST_CONNECTION"
+        ],
+        "real_cluster": false,
+        "real_model": false,
+        "scope": "native workflow + original compute registry/scheduler/HTTP transport; controlled loopback data",
+        "workflow_status": "blocked"
+      },
+      {
+        "active_reservations_at_settlement": {
+          "controlled_worker_0": 0
+        },
+        "all_phase_evidence_sha256": {
+          "native_compute_evidence": "4948afdbfbb1f152e4d00abbab5d8eb48b1e17af54f9aac11e3d307e125da8d0"
+        },
+        "http_payload_sha256": [
+          "ca1baa5775988e0c67c722e1e4e67853473b7dcdda2a85386654216cde80c3b3"
+        ],
+        "http_post_count": 1,
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_worker_socket_disconnect_respects_fallback_and_preserves_receipts[True]",
+        "observed_socket_disconnections": 1,
+        "original_job_states": [
+          "LOST_CONNECTION"
+        ],
+        "real_cluster": false,
+        "real_model": false,
+        "scope": "native workflow + original compute registry/scheduler/HTTP transport; controlled loopback data",
+        "workflow_status": "completed"
+      },
+      {
+        "active_reservations_at_settlement": {
+          "controlled_worker_0": 0,
+          "controlled_worker_1": 0
+        },
+        "all_phase_evidence_sha256": {
+          "native_compute_evidence": "289f9f81641d0bba963f6d741375cdf9350971deaef7f14ed2512213fa53e8ba"
+        },
+        "http_payload_sha256": [
+          "de698ead6bd0a2d2fb774f93b97b0ac3b034ddd149959b0f377c83b6e1a94e5c",
+          "6bb9803fa012299c371eac86d0ecaabe9b75518a21bcd2f57bd8a99fdddd4b24"
+        ],
+        "http_post_count": 2,
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_disconnect_reassignment_uses_original_job_and_verified_sources",
+        "observed_socket_disconnections": 1,
+        "original_job_states": [
+          "VERIFIED"
+        ],
+        "real_cluster": false,
+        "real_model": false,
+        "scope": "native workflow + original compute registry/scheduler/HTTP transport; controlled loopback data",
+        "workflow_status": "completed"
+      },
+      {
+        "active_reservations_at_settlement": {
+          "controlled_worker_0": 0
+        },
+        "all_phase_evidence_sha256": {
+          "native_compute_evidence": "8164d03e98f83391ee32b947f9384bfb71a5b5c9b2db31a86922056764bd366d"
+        },
+        "http_payload_sha256": [
+          "aa733ff535e2e9c2684c14f93b82d016ccc2a2a150702cf5000d2e4423540d50"
+        ],
+        "http_post_count": 1,
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_complete_http_response_requires_original_source_verification[40]",
+        "observed_socket_disconnections": 0,
+        "original_job_states": [
+          "VERIFIED"
+        ],
+        "real_cluster": false,
+        "real_model": false,
+        "scope": "native workflow + original compute registry/scheduler/HTTP transport; controlled loopback data",
+        "workflow_status": "completed"
+      },
+      {
+        "active_reservations_at_settlement": {
+          "controlled_worker_0": 0
+        },
+        "all_phase_evidence_sha256": {
+          "native_compute_evidence": "a3e3d892040e46d6cad3f5666186774a4e4d9c5f48d5f0b1af4726f587d197f0"
+        },
+        "http_payload_sha256": [
+          "85708cc31a7f38c5605fa1ff0803457377ebc3437771bf76e0a6aa1d0ad7cb80"
+        ],
+        "http_post_count": 1,
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_complete_http_response_requires_original_source_verification[41]",
+        "observed_socket_disconnections": 0,
+        "original_job_states": [
+          "FAILED"
+        ],
+        "real_cluster": false,
+        "real_model": false,
+        "scope": "native workflow + original compute registry/scheduler/HTTP transport; controlled loopback data",
+        "workflow_status": "partially_completed"
+      },
+      {
+        "active_reservations_at_settlement": {
+          "controlled_worker_0": 0
+        },
+        "all_phase_evidence_sha256": {
+          "native_compute_evidence": "c3edd52a5808eb8ac3ed0d02795573612cfd953b3d21ee72ff6aa7bb3cacb94d"
+        },
+        "http_payload_sha256": [
+          "79a5e8546c9122e784a55d6709941c96dcd9d113f1b5df5765901ceef7faf5d6"
+        ],
+        "http_post_count": 1,
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_late_worker_response_cannot_finish_after_owner_control[pause]",
+        "observed_socket_disconnections": 0,
+        "original_job_states": [
+          "BLOCKED"
+        ],
+        "real_cluster": false,
+        "real_model": false,
+        "scope": "native workflow + original compute registry/scheduler/HTTP transport; controlled loopback data",
+        "workflow_status": "paused"
+      },
+      {
+        "active_reservations_at_settlement": {
+          "controlled_worker_0": 0
+        },
+        "all_phase_evidence_sha256": {
+          "native_compute_evidence": "e0e2e58435296c6d3b660d3620c18752448c8d29ed4000a36888be19f145e6ee"
+        },
+        "http_payload_sha256": [
+          "6abb75412d73aed225a3b44d21e7bed016f54f9a98226de1230d17e12a170744"
+        ],
+        "http_post_count": 1,
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_late_worker_response_cannot_finish_after_owner_control[cancel]",
+        "observed_socket_disconnections": 0,
+        "original_job_states": [
+          "BLOCKED"
+        ],
+        "real_cluster": false,
+        "real_model": false,
+        "scope": "native workflow + original compute registry/scheduler/HTTP transport; controlled loopback data",
+        "workflow_status": "cancelled"
+      },
+      {
+        "active_reservations_at_settlement": {
+          "controlled_worker_0": 0
+        },
+        "all_phase_evidence_sha256": {
+          "native_compute_evidence": "3abad50d1dd4bc5e35c7cce6d3936f7f06d61fc4ac44a147effd81cdc1e97a13",
+          "native_timeout_evidence": "0cb9f487563fb2c98021d1a19bf0f51a0e3df89e44c93edb99ef187a8e032c35"
+        },
+        "http_payload_sha256": [
+          "d4a2d53a2eb579ccd571305c8857f224f5c2299869223720c506fbb835e11b8c",
+          "89d97b8de934606440ad6c20601e279c4052228d26f20a130aba9d1bd959f695"
+        ],
+        "http_post_count": 2,
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_http_timeout_preserves_failed_job_then_explicit_refresh_recovers_new_work",
+        "observed_socket_disconnections": 0,
+        "original_job_states": [
+          "VERIFIED"
+        ],
+        "real_cluster": false,
+        "real_model": false,
+        "scope": "native workflow + original compute registry/scheduler/HTTP transport; controlled loopback data",
+        "workflow_status": "completed"
+      }
+    ]
+  },
+  "focused_final": {
+    "changed_sources": [],
+    "counts": {
+      "failed": 0,
+      "passed": 66,
+      "skipped": 0
+    },
+    "duration_seconds": 22.093507100013085,
+    "existing_model_context_checks": 12,
+    "junit_sha256": "ec1f4faf5322d52c393531bd1f763354aeebabb8298fe5be8fda136d1b60b0c1",
+    "manifest_sha256": "8e76d59cd77e1cecaac9a4927124b2857ecebcc34ade2a1f3b629cb229394c24",
+    "new_checks": 54,
+    "node_receipts": [
+      {
+        "duration_seconds": 0.2467689000768587,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_original_unavailable_or_busy_controller_does_not_plan[resources]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.23618040001019835,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_original_unavailable_or_busy_controller_does_not_plan[foreground]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.028398099937476218,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_original_unavailable_or_busy_controller_does_not_plan[detached]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.20622090005781502,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_original_dependencies_preserve_three_operation_order_and_receipts",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.2153249999973923,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_control_waits_for_active_call_then_withdraws_descendant[pause]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.14277049992233515,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_control_waits_for_active_call_then_withdraws_descendant[cancel]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.11001649999525398,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_owner_control_at_committed_pre_dispatch_boundary_has_truthful_state[pause]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.11059339996427298,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_owner_control_at_committed_pre_dispatch_boundary_has_truthful_state[cancel]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.13687259994912893,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_missing_or_partial_required_read_never_admits_report_write[False]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.1550370000768453,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_missing_or_partial_required_read_never_admits_report_write[True]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.1742647000355646,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_optional_failed_leaf_retains_required_completion_as_partial",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.13253309996798635,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_original_chat_only_permission_denies_actual_read_leaf",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.07718600006774068,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_invalid_controlled_planner_output_blocks_without_any_dispatch[malformed]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.07800760003738105,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_invalid_controlled_planner_output_blocks_without_any_dispatch[unsupported]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.10328169993590564,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_invalid_controlled_planner_output_blocks_without_any_dispatch[cycle]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.0768047000747174,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_invalid_controlled_planner_output_blocks_without_any_dispatch[invented_binding]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.1943605000851676,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_model_authority_in_goal_and_source_never_replaces_owner_review",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.09661950008012354,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_reviewed_plan_scope_change_prevents_initial_dispatch[definition]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.0819018998881802,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_reviewed_plan_scope_change_prevents_initial_dispatch[expired]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.0752756999572739,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_payload_bound_request_replay_keeps_one_goal_and_two_planner_passes",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.48785699997097254,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_known_local_reads_overlap_only_without_dependencies[False]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.1912587999831885,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_known_local_reads_overlap_only_without_dependencies[True]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.18499450001399964,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_parallel_guard_exception_does_not_hide_other_active_invocation[pause]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.18027360003907233,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_parallel_guard_exception_does_not_hide_other_active_invocation[cancel]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.20413700002245605,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_withdrawn_committed_write_retains_uncertainty_and_never_replays[pause]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.25189830001909286,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_withdrawn_committed_write_retains_uncertainty_and_never_replays[cancel]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.23511070001404732,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries.py::test_uncertain_paused_artifact_cannot_admit_an_independent_second_write",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.10203010006807745,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_generated_outline_cannot_substitute_a_different_static_read_source",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.08938700007274747,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_static_binding_cannot_override_literal_owner_requested_read_source",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.28753480000887066,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_second_explicitly_requested_source_remains_authorized",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.022572699934244156,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_complete_owner_source_with_spaces_remains_a_literal_path[]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.02145520003978163,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_complete_owner_source_with_spaces_remains_a_literal_path[\"]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.025035299942828715,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_complete_owner_source_with_spaces_remains_a_literal_path[']",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.025140500045381486,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_normalized_source_spelling_and_explicit_relative_path_remain_valid",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.023460600059479475,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_quoted_unc_literal_preserved_without_touching_a_network_share",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.025229700026102364,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_source_after_an_unrelated_registered_calculation_remains_valid",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.02545700001064688,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_path_free_objective_keeps_original_reviewed_source_binding",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.3794704000465572,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_verified_generated_artifact_path_reference_survives_explicit_owner_source",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.02171600004658103,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_unquoted_source_prefix_is_not_a_complete_path",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.025272200000472367,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_complete_literal_file_path_does_not_absorb_following_prose[and preserve its verified contents.]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.025118799996562302,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_complete_literal_file_path_does_not_absorb_following_prose[then retain the observed material.]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.024220699910074472,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_complete_literal_file_path_does_not_absorb_following_prose[and produce a digest from its contents.]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.05420999997295439,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_unquoted_path_component_conjunction_is_not_a_request_boundary[owner and source directory-literal.txt]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.025810700026340783,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_unquoted_path_component_conjunction_is_not_a_request_boundary[version.v1 and source-full and actual.txt]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.026445999974384904,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_plural_explicit_file_sources_with_following_adverb_preserve_both_paths",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.031052500009536743,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/integration/test_campaign4_boundaries_source.py::test_unquoted_file_basename_spaces_do_not_authorize_a_shorter_dotted_prefix",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 1.4876110000768676,
+        "evidence_property_sha256": {
+          "native_compute_evidence": "3705aa126905ae72e5e98324b1620183fe3b0bc92ce7608a78bcb8db173490b0"
+        },
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_worker_socket_disconnect_respects_fallback_and_preserves_receipts[False]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 1.3652693000622094,
+        "evidence_property_sha256": {
+          "native_compute_evidence": "4948afdbfbb1f152e4d00abbab5d8eb48b1e17af54f9aac11e3d307e125da8d0"
+        },
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_worker_socket_disconnect_respects_fallback_and_preserves_receipts[True]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 2.4689166999887675,
+        "evidence_property_sha256": {
+          "native_compute_evidence": "289f9f81641d0bba963f6d741375cdf9350971deaef7f14ed2512213fa53e8ba"
+        },
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_disconnect_reassignment_uses_original_job_and_verified_sources",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 1.392460300005041,
+        "evidence_property_sha256": {
+          "native_compute_evidence": "8164d03e98f83391ee32b947f9384bfb71a5b5c9b2db31a86922056764bd366d"
+        },
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_complete_http_response_requires_original_source_verification[40]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 1.4064644000027329,
+        "evidence_property_sha256": {
+          "native_compute_evidence": "a3e3d892040e46d6cad3f5666186774a4e4d9c5f48d5f0b1af4726f587d197f0"
+        },
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_complete_http_response_requires_original_source_verification[41]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 1.3707704999251291,
+        "evidence_property_sha256": {
+          "native_compute_evidence": "c3edd52a5808eb8ac3ed0d02795573612cfd953b3d21ee72ff6aa7bb3cacb94d"
+        },
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_late_worker_response_cannot_finish_after_owner_control[pause]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 1.5744598000310361,
+        "evidence_property_sha256": {
+          "native_compute_evidence": "e0e2e58435296c6d3b660d3620c18752448c8d29ed4000a36888be19f145e6ee"
+        },
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_late_worker_response_cannot_finish_after_owner_control[cancel]",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 3.291017199982889,
+        "evidence_property_sha256": {
+          "native_compute_evidence": "3abad50d1dd4bc5e35c7cce6d3936f7f06d61fc4ac44a147effd81cdc1e97a13",
+          "native_timeout_evidence": "0cb9f487563fb2c98021d1a19bf0f51a0e3df89e44c93edb99ef187a8e032c35"
+        },
+        "nodeid": "tests/integration/test_campaign4_boundaries_compute.py::test_actual_http_timeout_preserves_failed_job_then_explicit_refresh_recovers_new_work",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.008072500000707805,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/unit/test_workflow_model_context.py::test_original_full_schema_is_model_readable_in_both_passes",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.008273499901406467,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/unit/test_workflow_model_context.py::test_original_discovery_metadata_is_real_advisory_and_cannot_run_handlers",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.007505099987611175,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/unit/test_workflow_model_context.py::test_untrusted_metadata_stays_in_data_message_and_cannot_change_output_contract",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.04751270008273423,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/unit/test_workflow_model_context.py::test_combined_schema_instructions_and_payload_bound_before_inference",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.0003961999900639057,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/unit/test_workflow_model_context.py::test_schema_messages_do_not_rewrite_input_or_allow_private_credentials",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.19516810006462038,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/unit/test_workflow_model_context.py::test_real_report_call_receives_full_schema_and_generic_source_operation_contract",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.02151160000357777,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/unit/test_workflow_model_context.py::test_explicit_capability_catalog_matches_original_binding_and_full_owner_path",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.020307399914599955,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/unit/test_workflow_model_context.py::test_wire_name_binding_is_still_rejected_not_silently_rewritten",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.10230839997529984,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/unit/test_workflow_model_context.py::test_undeclared_result_criterion_is_not_replaced_or_promoted",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.01977339992299676,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/unit/test_workflow_model_context.py::test_binding_contract_exposes_exact_object_reference_schema_and_postresolution_types",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.0002741001080721617,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/unit/test_workflow_model_context.py::test_reference_objects_resolve_but_quoted_reference_text_is_not_auto_repaired",
+        "outcome": "passed",
+        "phase": "call"
+      },
+      {
+        "duration_seconds": 0.00023239990696310997,
+        "evidence_property_sha256": {},
+        "nodeid": "tests/unit/test_workflow_model_context.py::test_json_valid_accepts_encoded_text_and_refuses_decoded_data_without_criterion_rewrite",
+        "outcome": "passed",
+        "phase": "call"
+      }
+    ],
+    "results_sha256": "93cc22c84f5a61f10cf3d67611031a6b31b7416475a653b99fc5821539cc3458",
+    "run": "focused-final-01"
+  },
+  "independent_final": {
+    "outcome": "32/40 once-only held-out contracts; partial acceptance and eight retained failures. All source is unchanged.",
+    "report": "docs/campaign4/INDEPENDENT_REVIEW.md",
+    "scorecard": "docs/campaign4/FINAL_HOLDOUT.json"
+  },
+  "limits": [
+    "Scripted structured planning is contract coverage, not goal understanding.",
+    "Literal source anchor does not prove retention of all natural-language operations or constrain every dynamic reference.",
+    "Quoted paths disambiguate unusual filenames and extensionless paths with following prose.",
+    "File.read remains non-retry-safe. Interrupted analysis is not automatically replayed.",
+    "HTTP tests prove controlled loopback transport behavior, not physical worker availability or hardware performance."
+  ],
+  "model_intelligence_measured": false,
+  "original_source_archive_manifest_sha256": "11d1f6c740d385e6d3adee2c73f93cbb573f3c7d07181cf5e5d9f9dec18313cb",
+  "owned_restart_challenges": [
+    {
+      "changed_sources": [],
+      "children": [
+        {
+          "executable_path_sha256": "d6ca1284c7bd7ae5870c8ab738ede617c834b0c6d27e733d7d2a522b2e1e0f98",
+          "exit_code": 83,
+          "launcher_or_direct_parent_verified": true,
+          "launcher_pid": 41620,
+          "phase": "interrupt",
+          "same_owned_identity_running_after_run": false,
+          "worker_create_time": 1791623395.7473464,
+          "worker_parent_pid": 41620,
+          "worker_pid": 7332
+        },
+        {
+          "executable_path_sha256": "d6ca1284c7bd7ae5870c8ab738ede617c834b0c6d27e733d7d2a522b2e1e0f98",
+          "exit_code": 0,
+          "launcher_or_direct_parent_verified": true,
+          "launcher_pid": 49232,
+          "phase": "recover",
+          "same_owned_identity_running_after_run": false,
+          "worker_create_time": 1791623397.5516236,
+          "worker_parent_pid": 49232,
+          "worker_pid": 35320
+        }
+      ],
+      "completed_first_invocation_identity_unchanged": true,
+      "completed_first_step_invocations_observed": 1,
+      "duration_seconds": 2.9078790000639856,
+      "interrupted_fence": 1,
+      "invocations": 6,
+      "original_tool_audit_counts": {
+        "completed_first_read_entries": 1,
+        "file_write_entries": 1,
+        "nonowner_sensitive_entries": 0,
+        "sensitive_entries": 1,
+        "unconfirmed_sensitive_entries": 0,
+        "unexpected_tool_ids": [],
+        "workflow_entries": 6
+      },
+      "receipt_sha256": {
+        "completed.json": "e76e46302062c73810fb41c983217c7eda2169e6d66603e22599b9799b5e0f33",
+        "hash-worker-failed.json": "8693aef8e6f394c3cc444a783051ffb1043023531394daa8e74bc0c34a43c6eb",
+        "interrupt-worker-start.json": "8db8868d084024874950f0eb29926a9accff3ba14aa24b6f502679490c1c5d90",
+        "interrupted.json": "bc5a7eb74252f74026cf0705498457a2ec2e4f527489927a21f797c754eb758a",
+        "recover-worker-start.json": "931587530f6cd07350d240b0df15ce33806cfe6b96d1be2fbdbf21773073a78d",
+        "run/state/logs/tool_audit.jsonl": "c6fabc1d856694bb9d9bd7cb0c326dc773d0fdd2b8c0d871f10554e33d0285f7"
+      },
+      "recovered_fence": 2,
+      "recovery_model_calls": 0,
+      "report": {
+        "independent_content_readback": true,
+        "sha256": "519ba1c3965ab413b3fd141811f325a2d5051ea81602020c8b98fedfeb839317",
+        "verification": {
+          "checks": {
+            "execution_succeeded": true,
+            "original_result_verified": true,
+            "required_criteria_met": true
+          },
+          "criteria": [
+            {
+              "met": true,
+              "operator": "present",
+              "passed": true,
+              "path": "/data/path"
+            }
+          ],
+          "independent": true,
+          "method": "workflow_acceptance",
+          "original_scope": "requested_filesystem_state",
+          "scope": "required_step_criteria",
+          "status": "VERIFIED"
+        }
+      },
+      "results_sha256": "925ead67ce75ca06fa2590eb7de5bc050287478ab7eb076b1dca7ab06e7606e9",
+      "resumed_explicitly": true,
+      "run": "restart-final-01",
+      "scenario": "safe_checkpoint",
+      "scope": "actual original workflow-owned helper restart; controlled planner and original local file implementations",
+      "status": "passed",
+      "steps": {
+        "blocked": 0,
+        "failed": 0,
+        "pending": 0,
+        "required": 5,
+        "running": 0,
+        "total": 5,
+        "unverified": 0,
+        "verified": 5
+      },
+      "workflow_status": "completed"
+    },
+    {
+      "changed_sources": [],
+      "children": [
+        {
+          "executable_path_sha256": "d6ca1284c7bd7ae5870c8ab738ede617c834b0c6d27e733d7d2a522b2e1e0f98",
+          "exit_code": 83,
+          "launcher_or_direct_parent_verified": true,
+          "launcher_pid": 41156,
+          "phase": "interrupt",
+          "same_owned_identity_running_after_run": false,
+          "worker_create_time": 1791623399.3382294,
+          "worker_parent_pid": 41156,
+          "worker_pid": 5820
+        },
+        {
+          "executable_path_sha256": "d6ca1284c7bd7ae5870c8ab738ede617c834b0c6d27e733d7d2a522b2e1e0f98",
+          "exit_code": 0,
+          "launcher_or_direct_parent_verified": true,
+          "launcher_pid": 60884,
+          "phase": "recover",
+          "same_owned_identity_running_after_run": false,
+          "worker_create_time": 1791623401.1098356,
+          "worker_parent_pid": 60884,
+          "worker_pid": 24228
+        }
+      ],
+      "completed_first_invocation_identity_unchanged": true,
+      "completed_first_step_invocations_observed": 1,
+      "duration_seconds": 2.4809681000187993,
+      "interrupted_fence": 1,
+      "invocations": 2,
+      "original_tool_audit_counts": {
+        "completed_first_read_entries": 1,
+        "file_write_entries": 0,
+        "nonowner_sensitive_entries": 0,
+        "sensitive_entries": 0,
+        "unconfirmed_sensitive_entries": 0,
+        "unexpected_tool_ids": [],
+        "workflow_entries": 1
+      },
+      "receipt_sha256": {
+        "completed.json": "0123e392c514ac2ea60c14230a323d9d116c3ef96c217ab3930a794c8d5bcd5d",
+        "interrupt-worker-start.json": "6a84761eebf963b3ee2a78d3171b74f5b750fb139c0cd0b532ab37c768aed4e3",
+        "interrupted.json": "165f4cde8c2208c7e6b177a5ad734fde63fed918ba0053b4a091b8f2dc15c158",
+        "recover-worker-start.json": "62726091c03e8f558ebdd84efa5abe7fc9c69d60ecbbe8777b2688560cd95745",
+        "run/state/logs/tool_audit.jsonl": "864fc3de19e0bfacc0c776e0183ac6ef40825ae6b0733d050e1dd7dc5b77a213"
+      },
+      "recovered_fence": 2,
+      "recovery_model_calls": 0,
+      "report": {
+        "exists": false,
+        "sha256": null,
+        "verified": false
+      },
+      "results_sha256": "395de5bc250d70b139a0a2de4eff50198bb494580ce4d4a6d81412bc07f89e34",
+      "resumed_explicitly": false,
+      "run": "ambiguous-before-final-01",
+      "scenario": "ambiguous_before",
+      "scope": "actual original workflow-owned helper restart; controlled planner and original local file implementations",
+      "status": "passed",
+      "steps": {
+        "blocked": 1,
+        "failed": 0,
+        "pending": 0,
+        "required": 2,
+        "running": 0,
+        "total": 2,
+        "unverified": 0,
+        "verified": 1
+      },
+      "workflow_status": "blocked"
+    },
+    {
+      "changed_sources": [],
+      "children": [
+        {
+          "executable_path_sha256": "d6ca1284c7bd7ae5870c8ab738ede617c834b0c6d27e733d7d2a522b2e1e0f98",
+          "exit_code": 83,
+          "launcher_or_direct_parent_verified": true,
+          "launcher_pid": 56392,
+          "phase": "interrupt",
+          "same_owned_identity_running_after_run": false,
+          "worker_create_time": 1791623402.4973977,
+          "worker_parent_pid": 56392,
+          "worker_pid": 41060
+        },
+        {
+          "executable_path_sha256": "d6ca1284c7bd7ae5870c8ab738ede617c834b0c6d27e733d7d2a522b2e1e0f98",
+          "exit_code": 0,
+          "launcher_or_direct_parent_verified": true,
+          "launcher_pid": 22356,
+          "phase": "recover",
+          "same_owned_identity_running_after_run": false,
+          "worker_create_time": 1791623404.32678,
+          "worker_parent_pid": 22356,
+          "worker_pid": 41120
+        }
+      ],
+      "completed_first_invocation_identity_unchanged": true,
+      "completed_first_step_invocations_observed": 1,
+      "duration_seconds": 2.5047812000848353,
+      "interrupted_fence": 1,
+      "invocations": 2,
+      "original_tool_audit_counts": {
+        "completed_first_read_entries": 1,
+        "file_write_entries": 1,
+        "nonowner_sensitive_entries": 0,
+        "sensitive_entries": 1,
+        "unconfirmed_sensitive_entries": 0,
+        "unexpected_tool_ids": [],
+        "workflow_entries": 2
+      },
+      "receipt_sha256": {
+        "completed.json": "809f2f927e4d82141f560be1a0176de9927d7799ddccd0652147cfbbc3918536",
+        "interrupt-worker-start.json": "dade4c151b330c6e2ff2727e6529d174718368c4c6a49213b3bec740e660bce0",
+        "interrupted.json": "72d2033d44a1b2f617cd78b9451531eaec9615b11d49d3f51fdd4921a11de1a4",
+        "recover-worker-start.json": "0fe1d9ef1eb80d55aa8fdd945448b1ded15ecd2182cc250b7727ee8bc66ed812",
+        "run/state/logs/tool_audit.jsonl": "22ce229b2b2ec52ad89241f5dc253e1ad47bfba24b6346eb8fb092b56428a371"
+      },
+      "recovered_fence": 2,
+      "recovery_model_calls": 0,
+      "report": {
+        "exists": true,
+        "sha256": "71a7d4f8bed8678f2140ee7628a8c9d8596632b98f8d335ac543375305337b87",
+        "verified": false
+      },
+      "results_sha256": "2edb9caaf1763ee6ac5495a51854566664848f117bef783886839eba96864ea1",
+      "resumed_explicitly": false,
+      "run": "ambiguous-after-final-01",
+      "scenario": "ambiguous_after",
+      "scope": "actual original workflow-owned helper restart; controlled planner and original local file implementations",
+      "status": "passed",
+      "steps": {
+        "blocked": 1,
+        "failed": 0,
+        "pending": 0,
+        "required": 2,
+        "running": 0,
+        "total": 2,
+        "unverified": 0,
+        "verified": 1
+      },
+      "workflow_status": "blocked"
+    }
+  ],
+  "owner_db_read_or_mutated": false,
+  "owner_model_or_hanni_restarted": false,
+  "physical_cluster_measured": false,
+  "postrepair_safety_scope": "Zero denied leaf entries and no duplicate managed writes are observed in the scoped assertions/owned audit ledgers; not a claim about all baseline faults or untested tools.",
+  "production_sha256": {
+    "src/hanni/workflows/planner.py": "427faa317c795de6fd47abad7ffbf9fd71afc1666b69c64197607439d7c8e039",
+    "src/hanni/workflows/service.py": "ef0d76309eb314a8ab58a1b101b45918f36b04a4bc8ec4f83a44353753b7827c"
+  },
+  "schema_version": 1,
+  "scope": "Original isolated implementation contract tests; controlled planner responses and owned loopback inference data; real helper restart and original file effects.",
+  "whole_final_freeze": {
+    "archive_sha256": "09de198ca6101c7cc1699464f1d1242d1fb0ed31ead88aa5c5524951cb17bf08",
+    "independent_final_results": "Pending",
+    "manifest_sha256": "f7f3ef6ca9a9772223b0a3dd2a0947826e4f7b942f43a5bce53e2c36eda42e49",
+    "owner": "Manager"
+  }
+}

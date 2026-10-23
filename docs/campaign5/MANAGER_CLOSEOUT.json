@@ -1,0 +1,123 @@
+{
+  "public_final_aggregate_contract": "PASS",
+  "public_provenance_hashes": [
+    {
+      "path": "data/campaign5-verifier/implementation-before/tests.xml",
+      "matches": true
+    },
+    {
+      "path": "data/campaign5-verifier/implementation-before-v2/tests.xml",
+      "matches": true
+    },
+    {
+      "path": "data/campaign5-verifier/implementation-before-v2/ERRATUM.json",
+      "matches": true
+    },
+    {
+      "path": "data/campaign5-verifier/http-identity-before/tests.xml",
+      "matches": true
+    },
+    {
+      "path": "data/campaign5-verifier/http-identity-repair/tests.xml",
+      "matches": true
+    },
+    {
+      "path": "data/campaign5-verifier/identity-attribution-before/tests.xml",
+      "matches": true
+    },
+    {
+      "path": "data/campaign5-verifier/final-source-ready/tests.xml",
+      "matches": true
+    },
+    {
+      "path": "data/campaign5-verifier/final-source-ready/SUMMARY.json",
+      "matches": true
+    },
+    {
+      "path": "data/campaign5-verifier/final-freeze-check.json",
+      "matches": true
+    },
+    {
+      "path": "data/campaign5-verifier/novelty-current-development.json",
+      "matches": true
+    },
+    {
+      "path": "data/campaign5-verifier/final-runtime-preservation.json",
+      "matches": true
+    },
+    {
+      "path": "data/campaign5-verifier/final-once/CLOSED.json",
+      "matches": true
+    },
+    {
+      "path": "data/campaign5-verifier/final-once/receipts.jsonl",
+      "matches": true
+    },
+    {
+      "path": "data/campaign5-verifier/final-once/GRADES.json",
+      "matches": true
+    },
+    {
+      "path": "data/campaign5-verifier/final-once/ADMISSION_CAUSES.json",
+      "matches": true
+    },
+    {
+      "path": "docs/campaign5/FINAL_HOLDOUT.json",
+      "matches": true
+    },
+    {
+      "path": "docs/campaign5/MEASUREMENT_SEAL.json",
+      "matches": true
+    },
+    {
+      "path": "docs/campaign5/INDEPENDENT_REVIEW.md",
+      "matches": true
+    }
+  ],
+  "independently_read_test_reports": [
+    {
+      "path": "data/campaign5-intelligence/cycle2-relevant-b.xml",
+      "tests": 356,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "data/campaign5-intelligence/cycle2-final-focused.xml",
+      "tests": 235,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "data/campaign5-verifier/final-source-ready/tests.xml",
+      "tests": 61,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "data/campaign5-development/checker-contracts-cycle3.xml",
+      "tests": 31,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "final_generation_http": 0,
+  "final_semantic_responses": 0,
+  "model_quality": "UNMEASURED",
+  "baseline_replacement": "NO_EVIDENCE",
+  "private_tasks_or_oracles_inspected": false,
+  "post_independent_report_review": {
+    "current_evidence_hashes_matched": 19,
+    "manager_report_review": {
+      "path": "docs/campaign5/REPORT.md",
+      "sha256": "e5e39a7623ae62619e82a6f92a2aeb48ef833799e58c1826afab9d7eb911cb78",
+      "accepted_with_scopes": true,
+      "links_valid": true
+    },
+    "verification_sha256": "c6516dd58ea369cb00f82a48e1aaef28558ac54f61c451a19a71746b05292f66",
+    "report_sha256": "e5e39a7623ae62619e82a6f92a2aeb48ef833799e58c1826afab9d7eb911cb78"
+  }
+}

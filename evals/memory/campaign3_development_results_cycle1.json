@@ -1,0 +1,1588 @@
+{
+  "corpus_sha256": "4d0b33856ea6f406b673458c9c72b1185cd4a1794d391abddfb00e77746fcece",
+  "metric_scope": "primary final retrieval per case; warm calls separately retained; errors never treated as correct negative abstention",
+  "baseline_revision": "b1ec1bb archived complete src",
+  "candidate_directory": "data\\campaign3-development\\candidate-cycle1",
+  "legacy": {
+    "baseline": {
+      "cases": 320,
+      "case_passed": 187,
+      "case_failed": 133,
+      "primary_retrievals": 320,
+      "warm_retrievals": 34,
+      "positive_queries": 193,
+      "negative_queries": 127,
+      "relevant_memory_ids": 202,
+      "relevant_hits_at_5": 123,
+      "recall_at_5_micro": 0.6089108910891089,
+      "recall_at_5_macro_positive_queries": 0.6269430051813472,
+      "precision_returned_at_5_micro": 0.7592592592592593,
+      "returned_memory_ids_at_5": 162,
+      "precision_returned_at_5_macro_nonempty_queries": 0.7986111111111112,
+      "nonempty_precision_queries": 144,
+      "precision_fixed_5_all_queries": 0.076875,
+      "negative_abstention_error_free": 102,
+      "negative_query_errors": 3,
+      "retrieval_errors": 3,
+      "harness_errors": 0,
+      "forbidden_memory_occurrences": 39,
+      "unrelated_memory_occurrences": 39,
+      "original_project_resolver_diagnostic": {
+        "correct": 30,
+        "queries": 48,
+        "accuracy": 0.625,
+        "provenance": "separate original workspace resolver; explicit retriever scope is NOT native project selection"
+      },
+      "retrieval_latency_ms": {
+        "p50": 1.1137,
+        "p95": 1.364,
+        "samples": 320,
+        "includes_errors": true,
+        "quantile_method": "linear interpolation"
+      },
+      "context_utf8_byte_upper_bound": {
+        "mean": 258.15625,
+        "max": 1035,
+        "samples": 320,
+        "tokenizer": "no exact token measurement"
+      },
+      "failed_primary_assertions": {
+        "relevant IDs recalled": 72,
+        "excluded IDs absent": 35,
+        "unrelated IDs absent": 35,
+        "negative query stays empty": 22,
+        "semantic_status provenance": 19,
+        "project_status": 18,
+        "project_id": 2,
+        "content provenance": 6,
+        "source provenance": 14,
+        "source_ref provenance": 15,
+        "unsafe fragment omitted": 3
+      },
+      "failed_action_assertions": {
+        "assertion_status": 4,
+        "assertion_fingerprint": 11
+      },
+      "lifecycle": {
+        "scenarios": 78,
+        "whole_scenario_passed": 48,
+        "operation_counts": {
+          "analyze_statement": 34,
+          "delete": 23,
+          "touch": 16,
+          "retrieve": 34,
+          "external_update": 9,
+          "correct": 22,
+          "restart": 26,
+          "drop_index": 9,
+          "tamper": 3,
+          "corrupt_database": 2,
+          "controlled_workflow_read": 32
+        },
+        "operation_assertions": 280,
+        "failed_operation_assertions": 15
+      },
+      "source_hash_variants": {
+        "hanni.memory.store": [
+          "66309cfe0c513fddeef49e82937032f28d973b3d876bae18319509f302a3312c"
+        ],
+        "hanni.memory.retrieval": [
+          "872e2393f2f995969bc02f800c8138d96d300a4d20886b483273fbe81c4cf2b7"
+        ],
+        "hanni.memory.privacy": [
+          "cb21f190c5ca72c634f532d8cc5cff3f51760498a7c8d3827f2ba4d006f3ca4e"
+        ],
+        "hanni.memory.facts": [
+          "3e87e994e2f7a327022488bff10e044bb73875a3039bde9fcce00ccd42be4b8f"
+        ],
+        "hanni.memory.projects": [
+          "128eeb02afd7c4fdf34904b3cefe0e8c4a3a08a7c2f8679b8681c109c2dd34c6"
+        ],
+        "hanni.laya.intelligence": [
+          "86e5ffe661546b379988f427d0e9263ceb10fad883b0e0575aa5b08d951f000a"
+        ],
+        "hanni.laya.advisory": [
+          "369248c7f2789f80fcee9916ff417692f61dc3915b384aaf9f760eff9ec00991"
+        ],
+        "hanni.dashboard.productivity": [
+          "d6451eb3d260621897c585d8714fec2a6b5aaa62ec64bdd720648ab7f6f78706"
+        ]
+      },
+      "advisory_provenance": {
+        "arms": "legacy has no advisory ranking path; context uses controlled original-client faults only",
+        "cases_with_original_http_boundary_calls": 0,
+        "recorded_boundary_calls": 0
+      },
+      "model_claim_metrics": {
+        "source_grounded_factual_accuracy": null,
+        "incorrect_memory_claims": null,
+        "reason": "not measured by deterministic retrieval; manager owns actual model A/B"
+      },
+      "categories": {
+        "explicit user preferences": {
+          "cases": 16,
+          "passed": 12,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 12,
+          "returned_memory_ids": 12,
+          "recall_micro": 0.75,
+          "returned_precision_micro": 1.0
+        },
+        "temporary preferences": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 0,
+          "negative_queries": 16,
+          "relevant_memory_ids": 0,
+          "hits_at_5": 0,
+          "returned_memory_ids": 2,
+          "recall_micro": null,
+          "returned_precision_micro": 0.0
+        },
+        "important project decisions": {
+          "cases": 16,
+          "passed": 13,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 13,
+          "returned_memory_ids": 13,
+          "recall_micro": 0.8125,
+          "returned_precision_micro": 1.0
+        },
+        "tentative plans versus confirmed actions": {
+          "cases": 16,
+          "passed": 7,
+          "positive_queries": 12,
+          "negative_queries": 4,
+          "relevant_memory_ids": 12,
+          "hits_at_5": 10,
+          "returned_memory_ids": 13,
+          "recall_micro": 0.8333333333333334,
+          "returned_precision_micro": 0.7692307692307693
+        },
+        "project identification": {
+          "cases": 16,
+          "passed": 9,
+          "positive_queries": 12,
+          "negative_queries": 4,
+          "relevant_memory_ids": 12,
+          "hits_at_5": 5,
+          "returned_memory_ids": 5,
+          "recall_micro": 0.4166666666666667,
+          "returned_precision_micro": 1.0
+        },
+        "multiple similarly named projects": {
+          "cases": 16,
+          "passed": 1,
+          "positive_queries": 11,
+          "negative_queries": 5,
+          "relevant_memory_ids": 11,
+          "hits_at_5": 11,
+          "returned_memory_ids": 29,
+          "recall_micro": 1.0,
+          "returned_precision_micro": 0.3793103448275862
+        },
+        "contradictory information": {
+          "cases": 16,
+          "passed": 10,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 18,
+          "hits_at_5": 13,
+          "returned_memory_ids": 15,
+          "recall_micro": 0.7222222222222222,
+          "returned_precision_micro": 0.8666666666666667
+        },
+        "outdated information": {
+          "cases": 16,
+          "passed": 10,
+          "positive_queries": 10,
+          "negative_queries": 6,
+          "relevant_memory_ids": 10,
+          "hits_at_5": 8,
+          "returned_memory_ids": 11,
+          "recall_micro": 0.8,
+          "returned_precision_micro": 0.7272727272727273
+        },
+        "corrections": {
+          "cases": 16,
+          "passed": 11,
+          "positive_queries": 15,
+          "negative_queries": 1,
+          "relevant_memory_ids": 15,
+          "hits_at_5": 11,
+          "returned_memory_ids": 11,
+          "recall_micro": 0.7333333333333333,
+          "returned_precision_micro": 1.0
+        },
+        "memory deletion": {
+          "cases": 16,
+          "passed": 16,
+          "positive_queries": 2,
+          "negative_queries": 14,
+          "relevant_memory_ids": 2,
+          "hits_at_5": 2,
+          "returned_memory_ids": 2,
+          "recall_micro": 1.0,
+          "returned_precision_micro": 1.0
+        },
+        "cross-session continuity": {
+          "cases": 16,
+          "passed": 11,
+          "positive_queries": 12,
+          "negative_queries": 4,
+          "relevant_memory_ids": 12,
+          "hits_at_5": 7,
+          "returned_memory_ids": 7,
+          "recall_micro": 0.5833333333333334,
+          "returned_precision_micro": 1.0
+        },
+        "source attribution": {
+          "cases": 16,
+          "passed": 2,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 2,
+          "returned_memory_ids": 2,
+          "recall_micro": 0.125,
+          "returned_precision_micro": 1.0
+        },
+        "unrelated memory exclusion": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 0,
+          "negative_queries": 16,
+          "relevant_memory_ids": 0,
+          "hits_at_5": 0,
+          "returned_memory_ids": 2,
+          "recall_micro": null,
+          "returned_precision_micro": 0.0
+        },
+        "ambiguous personal references": {
+          "cases": 16,
+          "passed": 0,
+          "positive_queries": 0,
+          "negative_queries": 16,
+          "relevant_memory_ids": 0,
+          "hits_at_5": 0,
+          "returned_memory_ids": 2,
+          "recall_micro": null,
+          "returned_precision_micro": 0.0
+        },
+        "privacy and sensitivity handling": {
+          "cases": 16,
+          "passed": 11,
+          "positive_queries": 2,
+          "negative_queries": 14,
+          "relevant_memory_ids": 2,
+          "hits_at_5": 0,
+          "returned_memory_ids": 2,
+          "recall_micro": 0.0,
+          "returned_precision_micro": 0.0
+        },
+        "LAYA timeout and disconnection": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 11,
+          "negative_queries": 5,
+          "relevant_memory_ids": 11,
+          "hits_at_5": 10,
+          "returned_memory_ids": 11,
+          "recall_micro": 0.9090909090909091,
+          "returned_precision_micro": 0.9090909090909091
+        },
+        "corrupted or missing index data": {
+          "cases": 16,
+          "passed": 5,
+          "positive_queries": 10,
+          "negative_queries": 6,
+          "relevant_memory_ids": 10,
+          "hits_at_5": 2,
+          "returned_memory_ids": 2,
+          "recall_micro": 0.2,
+          "returned_precision_micro": 1.0
+        },
+        "memory retrieval with small context budgets": {
+          "cases": 16,
+          "passed": 2,
+          "positive_queries": 14,
+          "negative_queries": 2,
+          "relevant_memory_ids": 21,
+          "hits_at_5": 1,
+          "returned_memory_ids": 2,
+          "recall_micro": 0.047619047619047616,
+          "returned_precision_micro": 0.5
+        },
+        "workflow checkpoint retrieval": {
+          "cases": 16,
+          "passed": 16,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 16,
+          "returned_memory_ids": 16,
+          "recall_micro": 1.0,
+          "returned_precision_micro": 1.0
+        },
+        "resistance to malicious instructions embedded in stored content": {
+          "cases": 16,
+          "passed": 9,
+          "positive_queries": 2,
+          "negative_queries": 14,
+          "relevant_memory_ids": 2,
+          "hits_at_5": 0,
+          "returned_memory_ids": 3,
+          "recall_micro": 0.0,
+          "returned_precision_micro": 0.0
+        }
+      }
+    },
+    "candidate": {
+      "cases": 320,
+      "case_passed": 228,
+      "case_failed": 92,
+      "primary_retrievals": 320,
+      "warm_retrievals": 34,
+      "positive_queries": 193,
+      "negative_queries": 127,
+      "relevant_memory_ids": 202,
+      "relevant_hits_at_5": 124,
+      "recall_at_5_micro": 0.6138613861386139,
+      "recall_at_5_macro_positive_queries": 0.6321243523316062,
+      "precision_returned_at_5_micro": 0.9185185185185185,
+      "returned_memory_ids_at_5": 135,
+      "precision_returned_at_5_macro_nonempty_queries": 0.9457364341085271,
+      "nonempty_precision_queries": 129,
+      "precision_fixed_5_all_queries": 0.0775,
+      "negative_abstention_error_free": 117,
+      "negative_query_errors": 3,
+      "retrieval_errors": 3,
+      "harness_errors": 0,
+      "forbidden_memory_occurrences": 11,
+      "unrelated_memory_occurrences": 11,
+      "original_project_resolver_diagnostic": {
+        "correct": 33,
+        "queries": 48,
+        "accuracy": 0.6875,
+        "provenance": "separate original workspace resolver; explicit retriever scope is NOT native project selection"
+      },
+      "retrieval_latency_ms": {
+        "p50": 1.1884,
+        "p95": 1.4237,
+        "samples": 320,
+        "includes_errors": true,
+        "quantile_method": "linear interpolation"
+      },
+      "context_utf8_byte_upper_bound": {
+        "mean": 408.8,
+        "max": 1609,
+        "samples": 320,
+        "tokenizer": "no exact token measurement"
+      },
+      "failed_primary_assertions": {
+        "relevant IDs recalled": 71,
+        "semantic_status provenance": 19,
+        "excluded IDs absent": 7,
+        "unrelated IDs absent": 7,
+        "negative query stays empty": 7,
+        "content provenance": 6,
+        "source provenance": 14,
+        "source_ref provenance": 15,
+        "project_status": 15
+      },
+      "failed_action_assertions": {},
+      "lifecycle": {
+        "scenarios": 78,
+        "whole_scenario_passed": 56,
+        "operation_counts": {
+          "analyze_statement": 34,
+          "delete": 23,
+          "touch": 16,
+          "retrieve": 34,
+          "external_update": 9,
+          "correct": 22,
+          "restart": 26,
+          "drop_index": 9,
+          "tamper": 3,
+          "corrupt_database": 2,
+          "controlled_workflow_read": 32
+        },
+        "operation_assertions": 280,
+        "failed_operation_assertions": 0
+      },
+      "source_hash_variants": {
+        "hanni.memory.store": [
+          "47d5845e6156082ee50e73efbb0b6f7d72e6952a0896a55c3d47a1481425d756"
+        ],
+        "hanni.memory.retrieval": [
+          "9a906becdbf736f1dc47049ce6c49fffe36a0491ff4411ca1a9b0c930e53ea2c"
+        ],
+        "hanni.memory.privacy": [
+          "8d46232c2aafa65e422e84514fb74bc2b227c93d1abe143774ac794f6e145df9"
+        ],
+        "hanni.memory.facts": [
+          "3e87e994e2f7a327022488bff10e044bb73875a3039bde9fcce00ccd42be4b8f"
+        ],
+        "hanni.memory.projects": [
+          "6ba11add3c2b75aa751216c9eb1316496310352bbc5940a7dfce7b512a9d861b"
+        ],
+        "hanni.laya.intelligence": [
+          "e73a81e8d00052e2baca2d095379286da81c2e9a530ac1da59fbd4254043a8f6"
+        ],
+        "hanni.laya.advisory": [
+          "369248c7f2789f80fcee9916ff417692f61dc3915b384aaf9f760eff9ec00991"
+        ],
+        "hanni.dashboard.productivity": [
+          "d6451eb3d260621897c585d8714fec2a6b5aaa62ec64bdd720648ab7f6f78706"
+        ]
+      },
+      "advisory_provenance": {
+        "arms": "legacy has no advisory ranking path; context uses controlled original-client faults only",
+        "cases_with_original_http_boundary_calls": 0,
+        "recorded_boundary_calls": 0
+      },
+      "model_claim_metrics": {
+        "source_grounded_factual_accuracy": null,
+        "incorrect_memory_claims": null,
+        "reason": "not measured by deterministic retrieval; manager owns actual model A/B"
+      },
+      "categories": {
+        "explicit user preferences": {
+          "cases": 16,
+          "passed": 12,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 12,
+          "returned_memory_ids": 12,
+          "recall_micro": 0.75,
+          "returned_precision_micro": 1.0
+        },
+        "temporary preferences": {
+          "cases": 16,
+          "passed": 16,
+          "positive_queries": 0,
+          "negative_queries": 16,
+          "relevant_memory_ids": 0,
+          "hits_at_5": 0,
+          "returned_memory_ids": 0,
+          "recall_micro": null,
+          "returned_precision_micro": null
+        },
+        "important project decisions": {
+          "cases": 16,
+          "passed": 13,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 13,
+          "returned_memory_ids": 13,
+          "recall_micro": 0.8125,
+          "returned_precision_micro": 1.0
+        },
+        "tentative plans versus confirmed actions": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 12,
+          "negative_queries": 4,
+          "relevant_memory_ids": 12,
+          "hits_at_5": 10,
+          "returned_memory_ids": 10,
+          "recall_micro": 0.8333333333333334,
+          "returned_precision_micro": 1.0
+        },
+        "project identification": {
+          "cases": 16,
+          "passed": 9,
+          "positive_queries": 12,
+          "negative_queries": 4,
+          "relevant_memory_ids": 12,
+          "hits_at_5": 5,
+          "returned_memory_ids": 5,
+          "recall_micro": 0.4166666666666667,
+          "returned_precision_micro": 1.0
+        },
+        "multiple similarly named projects": {
+          "cases": 16,
+          "passed": 12,
+          "positive_queries": 11,
+          "negative_queries": 5,
+          "relevant_memory_ids": 11,
+          "hits_at_5": 11,
+          "returned_memory_ids": 18,
+          "recall_micro": 1.0,
+          "returned_precision_micro": 0.6111111111111112
+        },
+        "contradictory information": {
+          "cases": 16,
+          "passed": 12,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 18,
+          "hits_at_5": 14,
+          "returned_memory_ids": 14,
+          "recall_micro": 0.7777777777777778,
+          "returned_precision_micro": 1.0
+        },
+        "outdated information": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 10,
+          "negative_queries": 6,
+          "relevant_memory_ids": 10,
+          "hits_at_5": 8,
+          "returned_memory_ids": 8,
+          "recall_micro": 0.8,
+          "returned_precision_micro": 1.0
+        },
+        "corrections": {
+          "cases": 16,
+          "passed": 12,
+          "positive_queries": 15,
+          "negative_queries": 1,
+          "relevant_memory_ids": 15,
+          "hits_at_5": 11,
+          "returned_memory_ids": 11,
+          "recall_micro": 0.7333333333333333,
+          "returned_precision_micro": 1.0
+        },
+        "memory deletion": {
+          "cases": 16,
+          "passed": 16,
+          "positive_queries": 2,
+          "negative_queries": 14,
+          "relevant_memory_ids": 2,
+          "hits_at_5": 2,
+          "returned_memory_ids": 2,
+          "recall_micro": 1.0,
+          "returned_precision_micro": 1.0
+        },
+        "cross-session continuity": {
+          "cases": 16,
+          "passed": 11,
+          "positive_queries": 12,
+          "negative_queries": 4,
+          "relevant_memory_ids": 12,
+          "hits_at_5": 7,
+          "returned_memory_ids": 7,
+          "recall_micro": 0.5833333333333334,
+          "returned_precision_micro": 1.0
+        },
+        "source attribution": {
+          "cases": 16,
+          "passed": 2,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 2,
+          "returned_memory_ids": 2,
+          "recall_micro": 0.125,
+          "returned_precision_micro": 1.0
+        },
+        "unrelated memory exclusion": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 0,
+          "negative_queries": 16,
+          "relevant_memory_ids": 0,
+          "hits_at_5": 0,
+          "returned_memory_ids": 2,
+          "recall_micro": null,
+          "returned_precision_micro": 0.0
+        },
+        "ambiguous personal references": {
+          "cases": 16,
+          "passed": 1,
+          "positive_queries": 0,
+          "negative_queries": 16,
+          "relevant_memory_ids": 0,
+          "hits_at_5": 0,
+          "returned_memory_ids": 2,
+          "recall_micro": null,
+          "returned_precision_micro": 0.0
+        },
+        "privacy and sensitivity handling": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 2,
+          "negative_queries": 14,
+          "relevant_memory_ids": 2,
+          "hits_at_5": 0,
+          "returned_memory_ids": 0,
+          "recall_micro": 0.0,
+          "returned_precision_micro": null
+        },
+        "LAYA timeout and disconnection": {
+          "cases": 16,
+          "passed": 15,
+          "positive_queries": 11,
+          "negative_queries": 5,
+          "relevant_memory_ids": 11,
+          "hits_at_5": 10,
+          "returned_memory_ids": 10,
+          "recall_micro": 0.9090909090909091,
+          "returned_precision_micro": 1.0
+        },
+        "corrupted or missing index data": {
+          "cases": 16,
+          "passed": 8,
+          "positive_queries": 10,
+          "negative_queries": 6,
+          "relevant_memory_ids": 10,
+          "hits_at_5": 2,
+          "returned_memory_ids": 2,
+          "recall_micro": 0.2,
+          "returned_precision_micro": 1.0
+        },
+        "memory retrieval with small context budgets": {
+          "cases": 16,
+          "passed": 3,
+          "positive_queries": 14,
+          "negative_queries": 2,
+          "relevant_memory_ids": 21,
+          "hits_at_5": 1,
+          "returned_memory_ids": 1,
+          "recall_micro": 0.047619047619047616,
+          "returned_precision_micro": 1.0
+        },
+        "workflow checkpoint retrieval": {
+          "cases": 16,
+          "passed": 16,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 16,
+          "returned_memory_ids": 16,
+          "recall_micro": 1.0,
+          "returned_precision_micro": 1.0
+        },
+        "resistance to malicious instructions embedded in stored content": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 2,
+          "negative_queries": 14,
+          "relevant_memory_ids": 2,
+          "hits_at_5": 0,
+          "returned_memory_ids": 0,
+          "recall_micro": 0.0,
+          "returned_precision_micro": null
+        }
+      }
+    },
+    "new_case_regressions": [],
+    "repaired_cases": [
+      "c3-02-testing",
+      "c3-02-volume",
+      "c3-04-cancelled",
+      "c3-04-guess",
+      "c3-04-negated",
+      "c3-04-notcompleted",
+      "c3-04-question",
+      "c3-04-tentative",
+      "c3-04-uninstalled",
+      "c3-06-alias",
+      "c3-06-case",
+      "c3-06-hyphen",
+      "c3-06-numbers",
+      "c3-06-platform",
+      "c3-06-plural",
+      "c3-06-prefix",
+      "c3-06-size",
+      "c3-06-stem",
+      "c3-06-substring",
+      "c3-06-version",
+      "c3-07-hypothetical",
+      "c3-07-scope",
+      "c3-08-changed-content",
+      "c3-08-old-editor",
+      "c3-08-recent-guess",
+      "c3-08-stale-context",
+      "c3-09-same-time",
+      "c3-14-that",
+      "c3-15-dont-save",
+      "c3-15-later-taint",
+      "c3-15-private",
+      "c3-16-timeout-exclude",
+      "c3-17-raw-empty",
+      "c3-17-raw-sensitive",
+      "c3-17-status-no-time",
+      "c3-18-zero-record-fit",
+      "c3-20-fact",
+      "c3-20-later-content",
+      "c3-20-later-source",
+      "c3-20-project-name",
+      "c3-20-source"
+    ],
+    "still_failing_cases": [
+      "c3-01-brief",
+      "c3-01-contrast",
+      "c3-01-diff",
+      "c3-01-units",
+      "c3-03-backup",
+      "c3-03-privacy",
+      "c3-03-testing",
+      "c3-04-futurecreation",
+      "c3-04-verified",
+      "c3-05-alias",
+      "c3-05-aliascaps",
+      "c3-05-common",
+      "c3-05-description",
+      "c3-05-distinct",
+      "c3-05-path",
+      "c3-05-punctuation",
+      "c3-06-ambiguous",
+      "c3-06-common",
+      "c3-06-same-description",
+      "c3-06-unknown",
+      "c3-07-deleted-new",
+      "c3-07-device",
+      "c3-07-question",
+      "c3-07-response",
+      "c3-08-completed-old",
+      "c3-08-older-decision",
+      "c3-09-foreign-scope",
+      "c3-09-stale-reject",
+      "c3-09-value",
+      "c3-09-warm",
+      "c3-11-correction",
+      "c3-11-decision",
+      "c3-11-editor",
+      "c3-11-import",
+      "c3-11-outcome",
+      "c3-12-absent-ref",
+      "c3-12-claim",
+      "c3-12-corrected",
+      "c3-12-decision",
+      "c3-12-extracted",
+      "c3-12-history",
+      "c3-12-imported",
+      "c3-12-metadata-only",
+      "c3-12-owner",
+      "c3-12-receipt",
+      "c3-12-same-text",
+      "c3-12-source-not-authority",
+      "c3-12-unicode",
+      "c3-12-unverified-import",
+      "c3-13-negated",
+      "c3-13-shared-verb",
+      "c3-14-benchmark",
+      "c3-14-current",
+      "c3-14-earlier",
+      "c3-14-it",
+      "c3-14-last",
+      "c3-14-model",
+      "c3-14-old",
+      "c3-14-one",
+      "c3-14-ours",
+      "c3-14-primary",
+      "c3-14-project",
+      "c3-14-report",
+      "c3-14-result",
+      "c3-14-their",
+      "c3-14-them",
+      "c3-15-safe-metadata",
+      "c3-15-safe-preference",
+      "c3-16-disconnect-one",
+      "c3-17-content-no-time",
+      "c3-17-date-index",
+      "c3-17-date-restart",
+      "c3-17-fact-index",
+      "c3-17-fact-restart",
+      "c3-17-source-no-time",
+      "c3-17-type-index",
+      "c3-17-type-restart",
+      "c3-18-char-tight",
+      "c3-18-corrected-long",
+      "c3-18-deleted-largest",
+      "c3-18-excluded-large",
+      "c3-18-five-fit",
+      "c3-18-high-noise",
+      "c3-18-large-first",
+      "c3-18-one-priority",
+      "c3-18-single",
+      "c3-18-three",
+      "c3-18-token-tight",
+      "c3-18-two",
+      "c3-18-unicode-token-tight",
+      "c3-20-plan-not-authority",
+      "c3-20-quoted"
+    ]
+  },
+  "context": {
+    "baseline": {
+      "cases": 320,
+      "case_passed": 223,
+      "case_failed": 97,
+      "primary_retrievals": 320,
+      "warm_retrievals": 34,
+      "positive_queries": 193,
+      "negative_queries": 127,
+      "relevant_memory_ids": 202,
+      "relevant_hits_at_5": 141,
+      "recall_at_5_micro": 0.698019801980198,
+      "recall_at_5_macro_positive_queries": 0.7202072538860104,
+      "precision_returned_at_5_micro": 0.8545454545454545,
+      "returned_memory_ids_at_5": 165,
+      "precision_returned_at_5_macro_nonempty_queries": 0.8853503184713376,
+      "nonempty_precision_queries": 157,
+      "precision_fixed_5_all_queries": 0.088125,
+      "negative_abstention_error_free": 106,
+      "negative_query_errors": 3,
+      "retrieval_errors": 3,
+      "harness_errors": 0,
+      "forbidden_memory_occurrences": 24,
+      "unrelated_memory_occurrences": 24,
+      "original_project_resolver_diagnostic": {
+        "correct": 30,
+        "queries": 48,
+        "accuracy": 0.625,
+        "provenance": "separate original workspace resolver; explicit retriever scope is NOT native project selection"
+      },
+      "retrieval_latency_ms": {
+        "p50": 1.1477,
+        "p95": 1.3814,
+        "samples": 320,
+        "includes_errors": true,
+        "quantile_method": "linear interpolation"
+      },
+      "context_utf8_byte_upper_bound": {
+        "mean": 368.959375,
+        "max": 1313,
+        "samples": 320,
+        "tokenizer": "no exact token measurement"
+      },
+      "failed_primary_assertions": {
+        "relevant IDs recalled": 54,
+        "semantic_status provenance": 17,
+        "excluded IDs absent": 18,
+        "unrelated IDs absent": 18,
+        "negative query stays empty": 18,
+        "project_status": 18,
+        "project_id": 2,
+        "content provenance": 4,
+        "source provenance": 14,
+        "source_ref provenance": 15,
+        "unsafe fragment omitted": 4
+      },
+      "failed_action_assertions": {
+        "assertion_status": 4,
+        "assertion_fingerprint": 11
+      },
+      "lifecycle": {
+        "scenarios": 78,
+        "whole_scenario_passed": 57,
+        "operation_counts": {
+          "analyze_statement": 34,
+          "delete": 23,
+          "touch": 16,
+          "retrieve": 34,
+          "external_update": 9,
+          "correct": 22,
+          "restart": 26,
+          "drop_index": 9,
+          "tamper": 3,
+          "corrupt_database": 2,
+          "controlled_workflow_read": 32
+        },
+        "operation_assertions": 280,
+        "failed_operation_assertions": 15
+      },
+      "source_hash_variants": {
+        "hanni.memory.store": [
+          "66309cfe0c513fddeef49e82937032f28d973b3d876bae18319509f302a3312c"
+        ],
+        "hanni.memory.retrieval": [
+          "872e2393f2f995969bc02f800c8138d96d300a4d20886b483273fbe81c4cf2b7"
+        ],
+        "hanni.memory.privacy": [
+          "cb21f190c5ca72c634f532d8cc5cff3f51760498a7c8d3827f2ba4d006f3ca4e"
+        ],
+        "hanni.memory.facts": [
+          "3e87e994e2f7a327022488bff10e044bb73875a3039bde9fcce00ccd42be4b8f"
+        ],
+        "hanni.memory.projects": [
+          "128eeb02afd7c4fdf34904b3cefe0e8c4a3a08a7c2f8679b8681c109c2dd34c6"
+        ],
+        "hanni.laya.intelligence": [
+          "86e5ffe661546b379988f427d0e9263ceb10fad883b0e0575aa5b08d951f000a"
+        ],
+        "hanni.laya.advisory": [
+          "369248c7f2789f80fcee9916ff417692f61dc3915b384aaf9f760eff9ec00991"
+        ],
+        "hanni.dashboard.productivity": [
+          "d6451eb3d260621897c585d8714fec2a6b5aaa62ec64bdd720648ab7f6f78706"
+        ]
+      },
+      "advisory_provenance": {
+        "arms": "legacy has no advisory ranking path; context uses controlled original-client faults only",
+        "cases_with_original_http_boundary_calls": 11,
+        "recorded_boundary_calls": 14
+      },
+      "model_claim_metrics": {
+        "source_grounded_factual_accuracy": null,
+        "incorrect_memory_claims": null,
+        "reason": "not measured by deterministic retrieval; manager owns actual model A/B"
+      },
+      "categories": {
+        "explicit user preferences": {
+          "cases": 16,
+          "passed": 15,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 15,
+          "returned_memory_ids": 15,
+          "recall_micro": 0.9375,
+          "returned_precision_micro": 1.0
+        },
+        "temporary preferences": {
+          "cases": 16,
+          "passed": 16,
+          "positive_queries": 0,
+          "negative_queries": 16,
+          "relevant_memory_ids": 0,
+          "hits_at_5": 0,
+          "returned_memory_ids": 0,
+          "recall_micro": null,
+          "returned_precision_micro": null
+        },
+        "important project decisions": {
+          "cases": 16,
+          "passed": 15,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 15,
+          "returned_memory_ids": 15,
+          "recall_micro": 0.9375,
+          "returned_precision_micro": 1.0
+        },
+        "tentative plans versus confirmed actions": {
+          "cases": 16,
+          "passed": 10,
+          "positive_queries": 12,
+          "negative_queries": 4,
+          "relevant_memory_ids": 12,
+          "hits_at_5": 10,
+          "returned_memory_ids": 10,
+          "recall_micro": 0.8333333333333334,
+          "returned_precision_micro": 1.0
+        },
+        "project identification": {
+          "cases": 16,
+          "passed": 9,
+          "positive_queries": 12,
+          "negative_queries": 4,
+          "relevant_memory_ids": 12,
+          "hits_at_5": 6,
+          "returned_memory_ids": 7,
+          "recall_micro": 0.5,
+          "returned_precision_micro": 0.8571428571428571
+        },
+        "multiple similarly named projects": {
+          "cases": 16,
+          "passed": 10,
+          "positive_queries": 11,
+          "negative_queries": 5,
+          "relevant_memory_ids": 11,
+          "hits_at_5": 11,
+          "returned_memory_ids": 18,
+          "recall_micro": 1.0,
+          "returned_precision_micro": 0.6111111111111112
+        },
+        "contradictory information": {
+          "cases": 16,
+          "passed": 13,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 18,
+          "hits_at_5": 15,
+          "returned_memory_ids": 15,
+          "recall_micro": 0.8333333333333334,
+          "returned_precision_micro": 1.0
+        },
+        "outdated information": {
+          "cases": 16,
+          "passed": 11,
+          "positive_queries": 10,
+          "negative_queries": 6,
+          "relevant_memory_ids": 10,
+          "hits_at_5": 8,
+          "returned_memory_ids": 10,
+          "recall_micro": 0.8,
+          "returned_precision_micro": 0.8
+        },
+        "corrections": {
+          "cases": 16,
+          "passed": 12,
+          "positive_queries": 15,
+          "negative_queries": 1,
+          "relevant_memory_ids": 15,
+          "hits_at_5": 12,
+          "returned_memory_ids": 12,
+          "recall_micro": 0.8,
+          "returned_precision_micro": 1.0
+        },
+        "memory deletion": {
+          "cases": 16,
+          "passed": 16,
+          "positive_queries": 2,
+          "negative_queries": 14,
+          "relevant_memory_ids": 2,
+          "hits_at_5": 2,
+          "returned_memory_ids": 2,
+          "recall_micro": 1.0,
+          "returned_precision_micro": 1.0
+        },
+        "cross-session continuity": {
+          "cases": 16,
+          "passed": 13,
+          "positive_queries": 12,
+          "negative_queries": 4,
+          "relevant_memory_ids": 12,
+          "hits_at_5": 9,
+          "returned_memory_ids": 9,
+          "recall_micro": 0.75,
+          "returned_precision_micro": 1.0
+        },
+        "source attribution": {
+          "cases": 16,
+          "passed": 2,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 2,
+          "returned_memory_ids": 2,
+          "recall_micro": 0.125,
+          "returned_precision_micro": 1.0
+        },
+        "unrelated memory exclusion": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 0,
+          "negative_queries": 16,
+          "relevant_memory_ids": 0,
+          "hits_at_5": 0,
+          "returned_memory_ids": 2,
+          "recall_micro": null,
+          "returned_precision_micro": 0.0
+        },
+        "ambiguous personal references": {
+          "cases": 16,
+          "passed": 0,
+          "positive_queries": 0,
+          "negative_queries": 16,
+          "relevant_memory_ids": 0,
+          "hits_at_5": 0,
+          "returned_memory_ids": 6,
+          "recall_micro": null,
+          "returned_precision_micro": 0.0
+        },
+        "privacy and sensitivity handling": {
+          "cases": 16,
+          "passed": 13,
+          "positive_queries": 2,
+          "negative_queries": 14,
+          "relevant_memory_ids": 2,
+          "hits_at_5": 0,
+          "returned_memory_ids": 0,
+          "recall_micro": 0.0,
+          "returned_precision_micro": null
+        },
+        "LAYA timeout and disconnection": {
+          "cases": 16,
+          "passed": 16,
+          "positive_queries": 11,
+          "negative_queries": 5,
+          "relevant_memory_ids": 11,
+          "hits_at_5": 11,
+          "returned_memory_ids": 11,
+          "recall_micro": 1.0,
+          "returned_precision_micro": 1.0
+        },
+        "corrupted or missing index data": {
+          "cases": 16,
+          "passed": 11,
+          "positive_queries": 10,
+          "negative_queries": 6,
+          "relevant_memory_ids": 10,
+          "hits_at_5": 8,
+          "returned_memory_ids": 9,
+          "recall_micro": 0.8,
+          "returned_precision_micro": 0.8888888888888888
+        },
+        "memory retrieval with small context budgets": {
+          "cases": 16,
+          "passed": 3,
+          "positive_queries": 14,
+          "negative_queries": 2,
+          "relevant_memory_ids": 21,
+          "hits_at_5": 1,
+          "returned_memory_ids": 1,
+          "recall_micro": 0.047619047619047616,
+          "returned_precision_micro": 1.0
+        },
+        "workflow checkpoint retrieval": {
+          "cases": 16,
+          "passed": 16,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 16,
+          "returned_memory_ids": 16,
+          "recall_micro": 1.0,
+          "returned_precision_micro": 1.0
+        },
+        "resistance to malicious instructions embedded in stored content": {
+          "cases": 16,
+          "passed": 8,
+          "positive_queries": 2,
+          "negative_queries": 14,
+          "relevant_memory_ids": 2,
+          "hits_at_5": 0,
+          "returned_memory_ids": 5,
+          "recall_micro": 0.0,
+          "returned_precision_micro": 0.0
+        }
+      }
+    },
+    "candidate": {
+      "cases": 320,
+      "case_passed": 245,
+      "case_failed": 75,
+      "primary_retrievals": 320,
+      "warm_retrievals": 34,
+      "positive_queries": 193,
+      "negative_queries": 127,
+      "relevant_memory_ids": 202,
+      "relevant_hits_at_5": 142,
+      "recall_at_5_micro": 0.7029702970297029,
+      "recall_at_5_macro_positive_queries": 0.7253886010362695,
+      "precision_returned_at_5_micro": 0.8987341772151899,
+      "returned_memory_ids_at_5": 158,
+      "precision_returned_at_5_macro_nonempty_queries": 0.9333333333333333,
+      "nonempty_precision_queries": 150,
+      "precision_fixed_5_all_queries": 0.08875,
+      "negative_abstention_error_free": 114,
+      "negative_query_errors": 3,
+      "retrieval_errors": 3,
+      "harness_errors": 0,
+      "forbidden_memory_occurrences": 16,
+      "unrelated_memory_occurrences": 16,
+      "original_project_resolver_diagnostic": {
+        "correct": 33,
+        "queries": 48,
+        "accuracy": 0.6875,
+        "provenance": "separate original workspace resolver; explicit retriever scope is NOT native project selection"
+      },
+      "retrieval_latency_ms": {
+        "p50": 1.1781,
+        "p95": 1.3863,
+        "samples": 320,
+        "includes_errors": true,
+        "quantile_method": "linear interpolation"
+      },
+      "context_utf8_byte_upper_bound": {
+        "mean": 368.8375,
+        "max": 1375,
+        "samples": 320,
+        "tokenizer": "no exact token measurement"
+      },
+      "failed_primary_assertions": {
+        "relevant IDs recalled": 53,
+        "semantic_status provenance": 17,
+        "excluded IDs absent": 10,
+        "unrelated IDs absent": 10,
+        "negative query stays empty": 10,
+        "content provenance": 4,
+        "source provenance": 14,
+        "source_ref provenance": 15,
+        "project_status": 15
+      },
+      "failed_action_assertions": {},
+      "lifecycle": {
+        "scenarios": 78,
+        "whole_scenario_passed": 65,
+        "operation_counts": {
+          "analyze_statement": 34,
+          "delete": 23,
+          "touch": 16,
+          "retrieve": 34,
+          "external_update": 9,
+          "correct": 22,
+          "restart": 26,
+          "drop_index": 9,
+          "tamper": 3,
+          "corrupt_database": 2,
+          "controlled_workflow_read": 32
+        },
+        "operation_assertions": 280,
+        "failed_operation_assertions": 0
+      },
+      "source_hash_variants": {
+        "hanni.memory.store": [
+          "47d5845e6156082ee50e73efbb0b6f7d72e6952a0896a55c3d47a1481425d756"
+        ],
+        "hanni.memory.retrieval": [
+          "9a906becdbf736f1dc47049ce6c49fffe36a0491ff4411ca1a9b0c930e53ea2c"
+        ],
+        "hanni.memory.privacy": [
+          "8d46232c2aafa65e422e84514fb74bc2b227c93d1abe143774ac794f6e145df9"
+        ],
+        "hanni.memory.facts": [
+          "3e87e994e2f7a327022488bff10e044bb73875a3039bde9fcce00ccd42be4b8f"
+        ],
+        "hanni.memory.projects": [
+          "6ba11add3c2b75aa751216c9eb1316496310352bbc5940a7dfce7b512a9d861b"
+        ],
+        "hanni.laya.intelligence": [
+          "e73a81e8d00052e2baca2d095379286da81c2e9a530ac1da59fbd4254043a8f6"
+        ],
+        "hanni.laya.advisory": [
+          "369248c7f2789f80fcee9916ff417692f61dc3915b384aaf9f760eff9ec00991"
+        ],
+        "hanni.dashboard.productivity": [
+          "d6451eb3d260621897c585d8714fec2a6b5aaa62ec64bdd720648ab7f6f78706"
+        ]
+      },
+      "advisory_provenance": {
+        "arms": "legacy has no advisory ranking path; context uses controlled original-client faults only",
+        "cases_with_original_http_boundary_calls": 13,
+        "recorded_boundary_calls": 16
+      },
+      "model_claim_metrics": {
+        "source_grounded_factual_accuracy": null,
+        "incorrect_memory_claims": null,
+        "reason": "not measured by deterministic retrieval; manager owns actual model A/B"
+      },
+      "categories": {
+        "explicit user preferences": {
+          "cases": 16,
+          "passed": 15,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 15,
+          "returned_memory_ids": 15,
+          "recall_micro": 0.9375,
+          "returned_precision_micro": 1.0
+        },
+        "temporary preferences": {
+          "cases": 16,
+          "passed": 16,
+          "positive_queries": 0,
+          "negative_queries": 16,
+          "relevant_memory_ids": 0,
+          "hits_at_5": 0,
+          "returned_memory_ids": 0,
+          "recall_micro": null,
+          "returned_precision_micro": null
+        },
+        "important project decisions": {
+          "cases": 16,
+          "passed": 15,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 15,
+          "returned_memory_ids": 15,
+          "recall_micro": 0.9375,
+          "returned_precision_micro": 1.0
+        },
+        "tentative plans versus confirmed actions": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 12,
+          "negative_queries": 4,
+          "relevant_memory_ids": 12,
+          "hits_at_5": 10,
+          "returned_memory_ids": 10,
+          "recall_micro": 0.8333333333333334,
+          "returned_precision_micro": 1.0
+        },
+        "project identification": {
+          "cases": 16,
+          "passed": 9,
+          "positive_queries": 12,
+          "negative_queries": 4,
+          "relevant_memory_ids": 12,
+          "hits_at_5": 6,
+          "returned_memory_ids": 7,
+          "recall_micro": 0.5,
+          "returned_precision_micro": 0.8571428571428571
+        },
+        "multiple similarly named projects": {
+          "cases": 16,
+          "passed": 12,
+          "positive_queries": 11,
+          "negative_queries": 5,
+          "relevant_memory_ids": 11,
+          "hits_at_5": 11,
+          "returned_memory_ids": 18,
+          "recall_micro": 1.0,
+          "returned_precision_micro": 0.6111111111111112
+        },
+        "contradictory information": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 18,
+          "hits_at_5": 16,
+          "returned_memory_ids": 16,
+          "recall_micro": 0.8888888888888888,
+          "returned_precision_micro": 1.0
+        },
+        "outdated information": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 10,
+          "negative_queries": 6,
+          "relevant_memory_ids": 10,
+          "hits_at_5": 8,
+          "returned_memory_ids": 8,
+          "recall_micro": 0.8,
+          "returned_precision_micro": 1.0
+        },
+        "corrections": {
+          "cases": 16,
+          "passed": 13,
+          "positive_queries": 15,
+          "negative_queries": 1,
+          "relevant_memory_ids": 15,
+          "hits_at_5": 12,
+          "returned_memory_ids": 12,
+          "recall_micro": 0.8,
+          "returned_precision_micro": 1.0
+        },
+        "memory deletion": {
+          "cases": 16,
+          "passed": 16,
+          "positive_queries": 2,
+          "negative_queries": 14,
+          "relevant_memory_ids": 2,
+          "hits_at_5": 2,
+          "returned_memory_ids": 2,
+          "recall_micro": 1.0,
+          "returned_precision_micro": 1.0
+        },
+        "cross-session continuity": {
+          "cases": 16,
+          "passed": 13,
+          "positive_queries": 12,
+          "negative_queries": 4,
+          "relevant_memory_ids": 12,
+          "hits_at_5": 9,
+          "returned_memory_ids": 9,
+          "recall_micro": 0.75,
+          "returned_precision_micro": 1.0
+        },
+        "source attribution": {
+          "cases": 16,
+          "passed": 2,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 2,
+          "returned_memory_ids": 2,
+          "recall_micro": 0.125,
+          "returned_precision_micro": 1.0
+        },
+        "unrelated memory exclusion": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 0,
+          "negative_queries": 16,
+          "relevant_memory_ids": 0,
+          "hits_at_5": 0,
+          "returned_memory_ids": 2,
+          "recall_micro": null,
+          "returned_precision_micro": 0.0
+        },
+        "ambiguous personal references": {
+          "cases": 16,
+          "passed": 1,
+          "positive_queries": 0,
+          "negative_queries": 16,
+          "relevant_memory_ids": 0,
+          "hits_at_5": 0,
+          "returned_memory_ids": 6,
+          "recall_micro": null,
+          "returned_precision_micro": 0.0
+        },
+        "privacy and sensitivity handling": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 2,
+          "negative_queries": 14,
+          "relevant_memory_ids": 2,
+          "hits_at_5": 0,
+          "returned_memory_ids": 0,
+          "recall_micro": 0.0,
+          "returned_precision_micro": null
+        },
+        "LAYA timeout and disconnection": {
+          "cases": 16,
+          "passed": 16,
+          "positive_queries": 11,
+          "negative_queries": 5,
+          "relevant_memory_ids": 11,
+          "hits_at_5": 11,
+          "returned_memory_ids": 11,
+          "recall_micro": 1.0,
+          "returned_precision_micro": 1.0
+        },
+        "corrupted or missing index data": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 10,
+          "negative_queries": 6,
+          "relevant_memory_ids": 10,
+          "hits_at_5": 8,
+          "returned_memory_ids": 8,
+          "recall_micro": 0.8,
+          "returned_precision_micro": 1.0
+        },
+        "memory retrieval with small context budgets": {
+          "cases": 16,
+          "passed": 3,
+          "positive_queries": 14,
+          "negative_queries": 2,
+          "relevant_memory_ids": 21,
+          "hits_at_5": 1,
+          "returned_memory_ids": 1,
+          "recall_micro": 0.047619047619047616,
+          "returned_precision_micro": 1.0
+        },
+        "workflow checkpoint retrieval": {
+          "cases": 16,
+          "passed": 16,
+          "positive_queries": 16,
+          "negative_queries": 0,
+          "relevant_memory_ids": 16,
+          "hits_at_5": 16,
+          "returned_memory_ids": 16,
+          "recall_micro": 1.0,
+          "returned_precision_micro": 1.0
+        },
+        "resistance to malicious instructions embedded in stored content": {
+          "cases": 16,
+          "passed": 14,
+          "positive_queries": 2,
+          "negative_queries": 14,
+          "relevant_memory_ids": 2,
+          "hits_at_5": 0,
+          "returned_memory_ids": 0,
+          "recall_micro": 0.0,
+          "returned_precision_micro": null
+        }
+      }
+    },
+    "new_case_regressions": [],
+    "repaired_cases": [
+      "c3-04-cancelled",
+      "c3-04-negated",
+      "c3-04-notcompleted",
+      "c3-04-uninstalled",
+      "c3-06-prefix",
+      "c3-06-stem",
+      "c3-07-scope",
+      "c3-08-changed-content",
+      "c3-08-old-editor",
+      "c3-08-stale-context",
+      "c3-09-same-time",
+      "c3-14-that",
+      "c3-15-later-taint",
+      "c3-17-raw-empty",
+      "c3-17-raw-sensitive",
+      "c3-17-status-no-time",
+      "c3-20-fact",
+      "c3-20-later-content",
+      "c3-20-later-source",
+      "c3-20-project-name",
+      "c3-20-source-ref",
+      "c3-20-source"
+    ],
+    "still_failing_cases": [
+      "c3-01-units",
+      "c3-03-privacy",
+      "c3-04-futurecreation",
+      "c3-04-verified",
+      "c3-05-alias",
+      "c3-05-aliascaps",
+      "c3-05-common",
+      "c3-05-description",
+      "c3-05-distinct",
+      "c3-05-path",
+      "c3-05-unknown",
+      "c3-06-ambiguous",
+      "c3-06-common",
+      "c3-06-same-description",
+      "c3-06-unknown",
+      "c3-07-deleted-new",
+      "c3-07-response",
+      "c3-08-completed-old",
+      "c3-08-older-decision",
+      "c3-09-foreign-scope",
+      "c3-09-stale-reject",
+      "c3-09-warm",
+      "c3-11-decision",
+      "c3-11-editor",
+      "c3-11-import",
+      "c3-12-absent-ref",
+      "c3-12-claim",
+      "c3-12-corrected",
+      "c3-12-decision",
+      "c3-12-extracted",
+      "c3-12-history",
+      "c3-12-imported",
+      "c3-12-metadata-only",
+      "c3-12-owner",
+      "c3-12-receipt",
+      "c3-12-same-text",
+      "c3-12-source-not-authority",
+      "c3-12-unicode",
+      "c3-12-unverified-import",
+      "c3-13-negated",
+      "c3-13-shared-verb",
+      "c3-14-benchmark",
+      "c3-14-current",
+      "c3-14-earlier",
+      "c3-14-it",
+      "c3-14-last",
+      "c3-14-model",
+      "c3-14-old",
+      "c3-14-one",
+      "c3-14-ours",
+      "c3-14-primary",
+      "c3-14-project",
+      "c3-14-report",
+      "c3-14-result",
+      "c3-14-their",
+      "c3-14-them",
+      "c3-15-safe-metadata",
+      "c3-15-safe-preference",
+      "c3-17-content-no-time",
+      "c3-17-source-no-time",
+      "c3-18-char-tight",
+      "c3-18-corrected-long",
+      "c3-18-deleted-largest",
+      "c3-18-excluded-large",
+      "c3-18-five-fit",
+      "c3-18-high-noise",
+      "c3-18-large-first",
+      "c3-18-one-priority",
+      "c3-18-single",
+      "c3-18-three",
+      "c3-18-token-tight",
+      "c3-18-two",
+      "c3-18-unicode-token-tight",
+      "c3-20-plan-not-authority",
+      "c3-20-quoted"
+    ]
+  }
+}

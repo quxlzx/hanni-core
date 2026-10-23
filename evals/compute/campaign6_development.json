@@ -1,0 +1,4162 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "C6DEV-correct_worker_selection-01",
+      "category": "correct_worker_selection",
+      "description": "Pinned placement overrides faster eligible neighbor.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 1
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 100
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15,
+        "allowed_worker_ids": [
+          "w1"
+        ]
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-correct_worker_selection-02",
+      "category": "correct_worker_selection",
+      "description": "Trusted synthetic category filters conversation-only node.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-correct_worker_selection-03",
+      "category": "correct_worker_selection",
+      "description": "Structured schema requires original structured capability.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15,
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-correct_worker_selection-04",
+      "category": "correct_worker_selection",
+      "description": "Verified allocation filters otherwise fast node.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 64,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 1
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 100
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-correct_worker_selection-05",
+      "category": "correct_worker_selection",
+      "description": "Reserved interactive-only node excludes background work.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 1,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-correct_worker_selection-06",
+      "category": "correct_worker_selection",
+      "description": "Strata-compatible protocol remains original bounded HTTP.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "protocol": "strata_openai"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-worker_unavailable-01",
+      "category": "worker_unavailable",
+      "description": "Disabled worker",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": false,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-worker_unavailable-02",
+      "category": "worker_unavailable",
+      "description": "Unhealthy observation",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "health": "unhealthy"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-worker_unavailable-03",
+      "category": "worker_unavailable",
+      "description": "Stale heartbeat",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "heartbeat_age_seconds": 31
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-worker_unavailable-04",
+      "category": "worker_unavailable",
+      "description": "Future heartbeat",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "heartbeat_age_seconds": -5
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-worker_unavailable-05",
+      "category": "worker_unavailable",
+      "description": "Different loaded model",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "health_model": "unregistered"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-worker_unavailable-06",
+      "category": "worker_unavailable",
+      "description": "Absent context proof",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": null,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-worker_busy-01",
+      "category": "worker_busy",
+      "description": "Single occupied slot queues second request.",
+      "scenario": "background_queue",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "background": [
+        {
+          "worker_id": "w0",
+          "label": "background"
+        }
+      ]
+    },
+    {
+      "id": "C6DEV-worker_busy-02",
+      "category": "worker_busy",
+      "description": "Reserve keeps second background request queued.",
+      "scenario": "background_queue",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 2,
+          "interactive_reserve": 1,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "background": [
+        {
+          "worker_id": "w0",
+          "label": "background"
+        }
+      ]
+    },
+    {
+      "id": "C6DEV-worker_busy-03",
+      "category": "worker_busy",
+      "description": "Interactive request uses reserve during background work.",
+      "scenario": "background_queue",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 2,
+          "interactive_reserve": 1,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15,
+        "interactive": true
+      },
+      "scope": "original_guarded_controlled_provider",
+      "background": [
+        {
+          "worker_id": "w0",
+          "label": "background"
+        }
+      ],
+      "release": "after_main_entered"
+    },
+    {
+      "id": "C6DEV-worker_busy-04",
+      "category": "worker_busy",
+      "description": "Pinned busy neighbor does not block unrelated idle worker.",
+      "scenario": "background_queue",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15,
+        "allowed_worker_ids": [
+          "w1"
+        ]
+      },
+      "scope": "original_guarded_controlled_provider",
+      "background": [
+        {
+          "worker_id": "w0",
+          "label": "background"
+        }
+      ],
+      "release": "after_main_entered"
+    },
+    {
+      "id": "C6DEV-worker_busy-05",
+      "category": "worker_busy",
+      "description": "Queue deadline refuses occupied worker without dispatch.",
+      "scenario": "background_queue",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.05
+      },
+      "scope": "original_guarded_controlled_provider",
+      "background": [
+        {
+          "worker_id": "w0",
+          "label": "background"
+        }
+      ],
+      "release": "after_main_finished"
+    },
+    {
+      "id": "C6DEV-worker_busy-06",
+      "category": "worker_busy",
+      "description": "Queued cancellation leaves occupying job intact.",
+      "scenario": "background_queue",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "background": [
+        {
+          "worker_id": "w0",
+          "label": "background"
+        }
+      ],
+      "control": "cancel_queued"
+    },
+    {
+      "id": "C6DEV-context_too_large-01",
+      "category": "context_too_large",
+      "description": "Prompt plus output exceed verified capacity.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 512,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-context_too_large-02",
+      "category": "context_too_large",
+      "description": "Configured allocation cannot be overridden by imported proof.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 64,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-context_too_large-03",
+      "category": "context_too_large",
+      "description": "Reported current allocation constrains prior proof.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 64,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-context_too_large-04",
+      "category": "context_too_large",
+      "description": "Invalid output budget is rejected before queue.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 8193,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-context_too_large-05",
+      "category": "context_too_large",
+      "description": "Schema bytes participate in original context accounting.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 256,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15,
+        "response_format": {
+          "type": "json_schema",
+          "json_schema": {
+            "name": "fixture",
+            "schema": {
+              "type": "object",
+              "description": "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+            }
+          }
+        }
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-context_too_large-06",
+      "category": "context_too_large",
+      "description": "Small request fits genuine controlled current bounds.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 512,
+          "context_reported": 512,
+          "verified_context": 512,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-insufficient_vram-01",
+      "category": "insufficient_vram",
+      "description": "Zero GPU reserve",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": 0
+          },
+          "response_behavior": "complete",
+          "node_id": "fixture_remote",
+          "gpu": "fixture_gpu"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-insufficient_vram-02",
+      "category": "insufficient_vram",
+      "description": "Just below reserve",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": 268435455
+          },
+          "response_behavior": "complete",
+          "node_id": "fixture_remote",
+          "gpu": "fixture_gpu"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-insufficient_vram-03",
+      "category": "insufficient_vram",
+      "description": "Exact GPU reserve",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": 268435456
+          },
+          "response_behavior": "complete",
+          "node_id": "fixture_remote",
+          "gpu": "fixture_gpu"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-insufficient_vram-04",
+      "category": "insufficient_vram",
+      "description": "Unknown GPU reserve",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "node_id": "fixture_remote",
+          "gpu": "fixture_gpu"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-insufficient_vram-05",
+      "category": "insufficient_vram",
+      "description": "Malformed GPU reserve",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": "unknown"
+          },
+          "response_behavior": "complete",
+          "node_id": "fixture_remote",
+          "gpu": "fixture_gpu"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-insufficient_vram-06",
+      "category": "insufficient_vram",
+      "description": "Old resource reading cannot certify current capacity.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": 2147483648
+          },
+          "response_behavior": "complete",
+          "node_id": "fixture_remote",
+          "gpu": "fixture_gpu",
+          "resource_sample_age_seconds": 60
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-multiple_eligible_workers-01",
+      "category": "multiple_eligible_workers",
+      "description": "Measured latency ranks eligible neighbors.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 100
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 1
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-multiple_eligible_workers-02",
+      "category": "multiple_eligible_workers",
+      "description": "Equal measurements use deterministic registered ID.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 1
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 1
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-multiple_eligible_workers-03",
+      "category": "multiple_eligible_workers",
+      "description": "Current load selects unoccupied worker.",
+      "scenario": "background_queue",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 2,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "background": [
+        {
+          "worker_id": "w0",
+          "label": "background"
+        }
+      ],
+      "release": "after_main_entered"
+    },
+    {
+      "id": "C6DEV-multiple_eligible_workers-04",
+      "category": "multiple_eligible_workers",
+      "description": "Context constraint beats measured latency.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 64,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 1
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 100
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-multiple_eligible_workers-05",
+      "category": "multiple_eligible_workers",
+      "description": "Privacy membership beats measured latency.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 1
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "memory"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 100
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "memory"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-multiple_eligible_workers-06",
+      "category": "multiple_eligible_workers",
+      "description": "Structured capability beats measured latency.",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 1
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 100
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15,
+        "response_format": {
+          "type": "json_object"
+        }
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-parallel_tasks-01",
+      "category": "parallel_tasks",
+      "description": "Two slots on one worker",
+      "scenario": "parallel",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 2,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "batch": 2,
+      "release_after_entries": 2,
+      "interactive_index": null
+    },
+    {
+      "id": "C6DEV-parallel_tasks-02",
+      "category": "parallel_tasks",
+      "description": "Independent nodes overlap",
+      "scenario": "parallel",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "batch": 2,
+      "release_after_entries": 2,
+      "interactive_index": null
+    },
+    {
+      "id": "C6DEV-parallel_tasks-03",
+      "category": "parallel_tasks",
+      "description": "Single slot serializes three jobs",
+      "scenario": "parallel",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "batch": 3,
+      "release_after_entries": 1,
+      "interactive_index": null
+    },
+    {
+      "id": "C6DEV-parallel_tasks-04",
+      "category": "parallel_tasks",
+      "description": "Two slots queue third job",
+      "scenario": "parallel",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 2,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "batch": 3,
+      "release_after_entries": 2,
+      "interactive_index": null
+    },
+    {
+      "id": "C6DEV-parallel_tasks-05",
+      "category": "parallel_tasks",
+      "description": "Background jobs preserve per-node reserve",
+      "scenario": "parallel",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 2,
+          "interactive_reserve": 1,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 2,
+          "interactive_reserve": 1,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "batch": 2,
+      "release_after_entries": 2,
+      "interactive_index": null
+    },
+    {
+      "id": "C6DEV-parallel_tasks-06",
+      "category": "parallel_tasks",
+      "description": "Interactive job shares reserved second slot",
+      "scenario": "parallel",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 2,
+          "interactive_reserve": 1,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "batch": 2,
+      "release_after_entries": 2,
+      "interactive_index": 1
+    },
+    {
+      "id": "C6DEV-queue_saturation-01",
+      "category": "queue_saturation",
+      "description": "One waiting ticket exhausts configured queue.",
+      "scenario": "queue_saturation",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "queue_limit": 1,
+      "queued_count": 1
+    },
+    {
+      "id": "C6DEV-queue_saturation-02",
+      "category": "queue_saturation",
+      "description": "Two waiting tickets exhaust larger queue.",
+      "scenario": "queue_saturation",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "queue_limit": 2,
+      "queued_count": 2
+    },
+    {
+      "id": "C6DEV-queue_saturation-03",
+      "category": "queue_saturation",
+      "description": "Queue timeout never dispatches blocked request.",
+      "scenario": "background_queue",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.05
+      },
+      "scope": "original_guarded_controlled_provider",
+      "background": [
+        {
+          "worker_id": "w0",
+          "label": "background"
+        }
+      ],
+      "release": "after_main_finished"
+    },
+    {
+      "id": "C6DEV-queue_saturation-04",
+      "category": "queue_saturation",
+      "description": "Within-class queue preserves admission order.",
+      "scenario": "ordered_queue",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "queued_count": 2
+    },
+    {
+      "id": "C6DEV-queue_saturation-05",
+      "category": "queue_saturation",
+      "description": "Interactive tickets precede waiting background class.",
+      "scenario": "ordered_queue",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15,
+        "interactive": true
+      },
+      "scope": "original_guarded_controlled_provider",
+      "queued_count": 1
+    },
+    {
+      "id": "C6DEV-queue_saturation-06",
+      "category": "queue_saturation",
+      "description": "Cancelled waiting ticket does not consume future slot.",
+      "scenario": "background_queue",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "background": [
+        {
+          "worker_id": "w0",
+          "label": "background"
+        }
+      ],
+      "control": "cancel_queued"
+    },
+    {
+      "id": "C6DEV-safe_reassignment-01",
+      "category": "safe_reassignment",
+      "description": "Socket loss reassigns same invocation once.",
+      "scenario": "reassignment",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "disconnect",
+          "latency_ms": 1
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 100
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "retry_policy": 1
+    },
+    {
+      "id": "C6DEV-safe_reassignment-02",
+      "category": "safe_reassignment",
+      "description": "HTTP failure reassigns same invocation once.",
+      "scenario": "reassignment",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "http500",
+          "latency_ms": 1
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 100
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "retry_policy": 1
+    },
+    {
+      "id": "C6DEV-safe_reassignment-03",
+      "category": "safe_reassignment",
+      "description": "Incomplete response reassigns same invocation once.",
+      "scenario": "reassignment",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "truncated",
+          "latency_ms": 1
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 100
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "retry_policy": 1
+    },
+    {
+      "id": "C6DEV-safe_reassignment-04",
+      "category": "safe_reassignment",
+      "description": "Different response model reassigns same invocation once.",
+      "scenario": "reassignment",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "wrong_model",
+          "latency_ms": 1
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 100
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "retry_policy": 1
+    },
+    {
+      "id": "C6DEV-safe_reassignment-05",
+      "category": "safe_reassignment",
+      "description": "Prospective zero retry bound prevents alternate dispatch.",
+      "scenario": "reassignment",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "disconnect"
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15,
+        "retry_override": 0
+      },
+      "scope": "original_guarded_controlled_provider",
+      "retry_policy": 1
+    },
+    {
+      "id": "C6DEV-safe_reassignment-06",
+      "category": "safe_reassignment",
+      "description": "Failed worker is excluded rather than repeated.",
+      "scenario": "reassignment",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "disconnect"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "retry_policy": 1
+    },
+    {
+      "id": "C6DEV-network_interruption-01",
+      "category": "network_interruption",
+      "description": "Actual socket disconnect",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "disconnect"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-network_interruption-02",
+      "category": "network_interruption",
+      "description": "HTTP status failure",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "http500"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-network_interruption-03",
+      "category": "network_interruption",
+      "description": "Malformed JSON bytes",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "malformed"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-network_interruption-04",
+      "category": "network_interruption",
+      "description": "Non-object response",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "array"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-network_interruption-05",
+      "category": "network_interruption",
+      "description": "Original transport timeout rejects unreturned result.",
+      "scenario": "timeout",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-network_interruption-06",
+      "category": "network_interruption",
+      "description": "Manual health refresh recovers new work without replay.",
+      "scenario": "reconnect",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "disconnect"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-result_verification-01",
+      "category": "result_verification",
+      "description": "Checked forty percent matches source",
+      "scenario": "workflow_verification",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-result_verification-02",
+      "category": "result_verification",
+      "description": "Wrong arithmetic rejected",
+      "scenario": "workflow_verification",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "wrong_value"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-result_verification-03",
+      "category": "result_verification",
+      "description": "Invalid report schema rejected",
+      "scenario": "workflow_verification",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "invalid_report"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-result_verification-04",
+      "category": "result_verification",
+      "description": "Unknown source rejected",
+      "scenario": "workflow_verification",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "wrong_source"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-result_verification-05",
+      "category": "result_verification",
+      "description": "Wrong numeric type rejected",
+      "scenario": "workflow_verification",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "string_value"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-result_verification-06",
+      "category": "result_verification",
+      "description": "Truncated transport result rejected",
+      "scenario": "workflow_verification",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "truncated"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-supplemental_controls-01",
+      "category": "supplemental_controls",
+      "description": "Cancel before dispatcher entry",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "control": "cancel_before"
+    },
+    {
+      "id": "C6DEV-supplemental_controls-02",
+      "category": "supplemental_controls",
+      "description": "Cancel after actual HTTP dispatch",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "control": "cancel_running"
+    },
+    {
+      "id": "C6DEV-supplemental_controls-03",
+      "category": "supplemental_controls",
+      "description": "Protected worker disabled at admission",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "control": "revoke_worker"
+    },
+    {
+      "id": "C6DEV-supplemental_controls-04",
+      "category": "supplemental_controls",
+      "description": "Protected categories withdrawn at admission",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "control": "revoke_categories"
+    },
+    {
+      "id": "C6DEV-supplemental_controls-05",
+      "category": "supplemental_controls",
+      "description": "Protected model changes at admission",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "control": "change_model"
+    },
+    {
+      "id": "C6DEV-supplemental_controls-06",
+      "category": "supplemental_controls",
+      "description": "Resource capacity withdrawn at admission",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "control": "resources_down"
+    },
+    {
+      "id": "C6DEV-supplemental_controls-07",
+      "category": "supplemental_controls",
+      "description": "Authority withdrawn after response dispatch",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "control": "revoke_after"
+    },
+    {
+      "id": "C6DEV-supplemental_controls-08",
+      "category": "supplemental_controls",
+      "description": "Runtime changes after response dispatch",
+      "scenario": "selection",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "control": "runtime_after"
+    },
+    {
+      "id": "C6DEV-supplemental_controls-09",
+      "category": "supplemental_controls",
+      "description": "Owned restart marks prior unverified delivery lost.",
+      "scenario": "scheduler_restart",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider"
+    },
+    {
+      "id": "C6DEV-supplemental_controls-10",
+      "category": "supplemental_controls",
+      "description": "Strata controlled context protocol context_complete",
+      "scenario": "context_probe",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": null,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "context_complete",
+          "protocol": "strata_openai"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "target_tokens": 1024
+    },
+    {
+      "id": "C6DEV-supplemental_controls-11",
+      "category": "supplemental_controls",
+      "description": "Strata controlled context protocol context_underfilled",
+      "scenario": "context_probe",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": null,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "context_underfilled",
+          "protocol": "strata_openai"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "target_tokens": 1024
+    },
+    {
+      "id": "C6DEV-supplemental_controls-12",
+      "category": "supplemental_controls",
+      "description": "Strata controlled context protocol context_wrong",
+      "scenario": "context_probe",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": null,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "context_wrong",
+          "protocol": "strata_openai"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "target_tokens": 1024
+    },
+    {
+      "id": "C6DEV-supplemental_controls-13",
+      "category": "supplemental_controls",
+      "description": "Strata controlled context protocol context_truncated",
+      "scenario": "context_probe",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": null,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "context_truncated",
+          "protocol": "strata_openai"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "target_tokens": 1024
+    }
+  ]
+}

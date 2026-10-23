@@ -1,0 +1,29 @@
+# Privacy policy (Master Spec §15 Privacy Buffers, §17 Privacy Exclusions; V1 plan §8-10).
+#
+# Ephemeral buffers are capped at 120 seconds IN CODE. Larger values are rejected
+# at load time; these settings can only shorten retention.
+
+ephemeral_retention:
+  raw_audio_seconds: 120
+  transcript_seconds: 120
+  screen_frames_seconds: 120
+
+# Surfaces that are never captured, sent to the vision model, or turned into memory.
+# Patterns are Python regular expressions; the owner may extend this list.
+screen_exclusions:
+  process_names:
+    - 1Password.exe
+    - Bitwarden.exe
+    - KeePassXC.exe
+    - KeePass.exe
+  window_title_patterns:
+    - "(?i)\\bpassword\\b"
+    - "(?i)\\bsign in\\b"
+    - "(?i)\\blog in\\b"
+    - "(?i)two[- ]factor|\\b2fa\\b|authenticator"
+    - "(?i)\\bbank(ing)?\\b"
+    - "(?i)recovery (phrase|code)|seed phrase|private key"
+    - "(?i)inprivate|incognito"
+  url_patterns:
+    - "(?i)https?://[^/]*(bank|chase|wellsfargo|paypal|venmo|coinbase)\\."
+    - "(?i)/(login|signin|auth|oauth|2fa|mfa)(/|\\?|$)"

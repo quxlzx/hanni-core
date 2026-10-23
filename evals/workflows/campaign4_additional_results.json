@@ -1,0 +1,1369 @@
+{
+  "scope": "Frozen public development execution; exposed supplements are separate denominators; no real semantic-model or private-holdout result",
+  "freeze_manifest_sha256": "f7f3ef6ca9a9772223b0a3dd2a0947826e4f7b942f43a5bce53e2c36eda42e49",
+  "runs": {
+    "original_main": {
+      "cases": 120,
+      "passed": 114,
+      "harness_errors": 0,
+      "scopes": {
+        "native_original_scheduler": 102,
+        "direct_original_store": 18
+      },
+      "status_counts": {
+        "completed": 33,
+        "blocked": 43,
+        "partially_completed": 15,
+        "awaiting_step_approval": 7,
+        "paused": 8,
+        "cancelled": 7,
+        "ready": 6,
+        "running": 1
+      },
+      "semantic_goal_plan_quality": "NOT_MEASURED_CONTROLLED_CLIENT_CONTRACT_TESTS",
+      "completion": {
+        "eligible": 34,
+        "whole_case_pass": 32,
+        "status_pass": 32,
+        "workflow_observed_duration_ms": {
+          "n": 34,
+          "p50": 132.50000000698492,
+          "p95": 218.99999992456287
+        }
+      },
+      "recovery": {
+        "eligible": 10,
+        "whole_case_pass": 7,
+        "status_pass": 7,
+        "workflow_observed_duration_ms": {
+          "n": 6,
+          "p50": 125.0,
+          "p95": 140.99999994505197
+        }
+      },
+      "cancel": {
+        "eligible": 7,
+        "whole_case_pass": 7,
+        "status_pass": 7,
+        "workflow_observed_duration_ms": {
+          "n": 7,
+          "p50": 109.00000005494803,
+          "p95": 125.0
+        }
+      },
+      "partial": {
+        "eligible": 15,
+        "whole_case_pass": 15,
+        "status_pass": 15,
+        "workflow_observed_duration_ms": {
+          "n": 15,
+          "p50": 140.99999994505197,
+          "p95": 187.99999996554106
+        }
+      },
+      "duration_ms": {
+        "n": 120,
+        "p50": 156.00000007543713,
+        "p95": 233.9999999385327,
+        "scope": "whole isolated case including setup/cleanup and controlled faults"
+      },
+      "workflow_observed_duration_ms": {
+        "n": 102,
+        "p50": 125.0,
+        "p95": 187.99999996554106,
+        "scope": "original scheduler submit through observed stopping outcome; excludes setup and cleanup",
+        "nonzero_clock_offsets": 0
+      },
+      "write_effects": {
+        "entries": 19,
+        "actual_effects": 16,
+        "unauthorized_entries": 0,
+        "unauthorized_effects": 0
+      },
+      "checkpoint_sequence_correctness": {
+        "eligible_original_scheduler_cases": 102,
+        "strict_sequence_pass": 102,
+        "scope": "persisted sequence monotonicity, not full restart proof"
+      },
+      "by_category": {
+        "Ambiguous prior write outcomes": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Approval rejection": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Backend interruption": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Bounded retries": {
+          "cases": 6,
+          "passed": 4
+        },
+        "Capability availability": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Checkpoint persistence": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Dependency ordering": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Goal understanding": {
+          "cases": 6,
+          "passed": 5
+        },
+        "Multi-step tool usage": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Partial completion": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Pause and resume": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Permission requests": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Plan generation": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Recovery after restart": {
+          "cases": 6,
+          "passed": 4
+        },
+        "Safe parallel execution": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Sequential execution": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Step verification": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Task cancellation": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Worker disconnection": {
+          "cases": 6,
+          "passed": 5
+        },
+        "Workflow completion reporting": {
+          "cases": 6,
+          "passed": 6
+        }
+      },
+      "corpus_sha256": "fa167f0a69b059c3ff6320a6d813f6eb8d6f6754447cd7648a5ef54862285db5",
+      "source_uniform": true,
+      "raw_path": "data/campaign4-development/true-original-cycle3",
+      "source_before_after_identical": true,
+      "source_module_count": 192,
+      "controlled_helper_count": 0,
+      "direct_cas_faults": {
+        "declared_edges": 65,
+        "passed": 65,
+        "scope": "direct original store stale compare-and-swap boundary"
+      },
+      "native_edge_reachability": {
+        "declared_edges": 65,
+        "reached": 22,
+        "unreached": 43,
+        "fault_coverage_not_inferred": true
+      },
+      "failed_cases": [
+        {
+          "id": "WFDEV-01-03",
+          "status": "completed",
+          "assertion_errors": [
+            "final stopping state",
+            "invocations"
+          ]
+        },
+        {
+          "id": "WFDEV-12-01",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "invocations",
+            "retry_checkpoints"
+          ]
+        },
+        {
+          "id": "WFDEV-12-02",
+          "status": "blocked",
+          "assertion_errors": [
+            "invocations"
+          ]
+        },
+        {
+          "id": "WFDEV-16-02",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state"
+          ]
+        },
+        {
+          "id": "WFDEV-18-04",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state"
+          ]
+        },
+        {
+          "id": "WFDEV-18-05",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "invocations"
+          ]
+        }
+      ],
+      "final_native_ledger_contract_present": true,
+      "consequential_duplicate_logical_operations": 0,
+      "duplicate_effects_beyond_first": 0,
+      "write_ledger_entries": 19,
+      "write_effect_logical_operations": 16,
+      "entry_authority_invalid": 0,
+      "effect_authority_invalid": 0,
+      "workflow_source_hashes": {
+        "workflows/__init__.py": "008348a0dc7081fc1eb31ca2bf21238c11aea91338e79adcbab3ad08e499c305",
+        "workflows/maintenance.py": "488f8bbf048fc547891ff2cbd724b0727639be4040a597e9ad9a1d971dfea37a",
+        "workflows/planner.py": "f417b86ffc79c0fc603931a6b9029328f9b041999c855c89dffaed2c485614f8",
+        "workflows/policy.py": "2c40295e207cdb2e1cc7d385aacaca65e4ee232d338782c030c15a31f945e9f6",
+        "workflows/references.py": "f1da6727d0c5b3e54d6ac76aa8854a8731b915053dfcac794e7cf66ca2faab3a",
+        "workflows/service.py": "4bd6e5f0cdcc1659523329bfcba96fe1d61c0d386e27942b835dbba4669fe9a2",
+        "workflows/store.py": "fe1f6cab1655c81e6039cb8cfbb94ae05f6e1e1abac1f2dce4a767735980c27d",
+        "workflows/transport_schema.py": "3f622279727b2efef2c477a37281388842271c06971876f4d6fa9735f7f7083d",
+        "workflows/types.py": "f9a0e63a4ae34455bb1ae1453a10351d153e0a0bf519777d576316084c0cab77",
+        "workflows/verification.py": "02baa196250b26619e22aeac0d30ec5221beeaaa09f3d773eb8b4230bbeaae5f"
+      }
+    },
+    "original_main_final_helpers": {
+      "cases": 120,
+      "passed": 114,
+      "harness_errors": 0,
+      "scopes": {
+        "native_original_scheduler": 102,
+        "direct_original_store": 18
+      },
+      "status_counts": {
+        "completed": 33,
+        "blocked": 43,
+        "partially_completed": 15,
+        "awaiting_step_approval": 7,
+        "paused": 8,
+        "cancelled": 7,
+        "ready": 6,
+        "running": 1
+      },
+      "semantic_goal_plan_quality": "NOT_MEASURED_CONTROLLED_CLIENT_CONTRACT_TESTS",
+      "completion": {
+        "eligible": 34,
+        "whole_case_pass": 32,
+        "status_pass": 32,
+        "workflow_observed_duration_ms": {
+          "n": 34,
+          "p50": 141.0000000614673,
+          "p95": 250.0
+        }
+      },
+      "recovery": {
+        "eligible": 10,
+        "whole_case_pass": 7,
+        "status_pass": 7,
+        "workflow_observed_duration_ms": {
+          "n": 6,
+          "p50": 125.0,
+          "p95": 141.0000000614673
+        }
+      },
+      "cancel": {
+        "eligible": 7,
+        "whole_case_pass": 7,
+        "status_pass": 7,
+        "workflow_observed_duration_ms": {
+          "n": 7,
+          "p50": 125.0,
+          "p95": 140.00000001396984
+        }
+      },
+      "partial": {
+        "eligible": 15,
+        "whole_case_pass": 15,
+        "status_pass": 15,
+        "workflow_observed_duration_ms": {
+          "n": 15,
+          "p50": 140.99999994505197,
+          "p95": 187.99999996554106
+        }
+      },
+      "duration_ms": {
+        "n": 120,
+        "p50": 170.99999997299165,
+        "p95": 250.0,
+        "scope": "whole isolated case including setup/cleanup and controlled faults"
+      },
+      "workflow_observed_duration_ms": {
+        "n": 102,
+        "p50": 125.0,
+        "p95": 203.00000009592623,
+        "scope": "original scheduler submit through observed stopping outcome; excludes setup and cleanup",
+        "nonzero_clock_offsets": 0
+      },
+      "write_effects": {
+        "entries": 19,
+        "actual_effects": 16,
+        "unauthorized_entries": 0,
+        "unauthorized_effects": 0
+      },
+      "checkpoint_sequence_correctness": {
+        "eligible_original_scheduler_cases": 102,
+        "strict_sequence_pass": 102,
+        "scope": "persisted sequence monotonicity, not full restart proof"
+      },
+      "by_category": {
+        "Ambiguous prior write outcomes": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Approval rejection": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Backend interruption": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Bounded retries": {
+          "cases": 6,
+          "passed": 4
+        },
+        "Capability availability": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Checkpoint persistence": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Dependency ordering": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Goal understanding": {
+          "cases": 6,
+          "passed": 5
+        },
+        "Multi-step tool usage": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Partial completion": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Pause and resume": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Permission requests": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Plan generation": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Recovery after restart": {
+          "cases": 6,
+          "passed": 4
+        },
+        "Safe parallel execution": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Sequential execution": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Step verification": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Task cancellation": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Worker disconnection": {
+          "cases": 6,
+          "passed": 5
+        },
+        "Workflow completion reporting": {
+          "cases": 6,
+          "passed": 6
+        }
+      },
+      "corpus_sha256": "fa167f0a69b059c3ff6320a6d813f6eb8d6f6754447cd7648a5ef54862285db5",
+      "source_uniform": true,
+      "raw_path": "data/campaign4-development/true-original-final-helpers",
+      "source_before_after_identical": true,
+      "source_module_count": 192,
+      "controlled_helper_count": 13,
+      "direct_cas_faults": {
+        "declared_edges": 65,
+        "passed": 65,
+        "scope": "direct original store stale compare-and-swap boundary"
+      },
+      "native_edge_reachability": {
+        "declared_edges": 65,
+        "reached": 22,
+        "unreached": 43,
+        "fault_coverage_not_inferred": true
+      },
+      "failed_cases": [
+        {
+          "id": "WFDEV-01-03",
+          "status": "completed",
+          "assertion_errors": [
+            "final stopping state",
+            "invocations"
+          ]
+        },
+        {
+          "id": "WFDEV-12-01",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "invocations",
+            "retry_checkpoints"
+          ]
+        },
+        {
+          "id": "WFDEV-12-02",
+          "status": "blocked",
+          "assertion_errors": [
+            "invocations"
+          ]
+        },
+        {
+          "id": "WFDEV-16-02",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state"
+          ]
+        },
+        {
+          "id": "WFDEV-18-04",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state"
+          ]
+        },
+        {
+          "id": "WFDEV-18-05",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "invocations"
+          ]
+        }
+      ],
+      "final_native_ledger_contract_present": true,
+      "consequential_duplicate_logical_operations": 0,
+      "duplicate_effects_beyond_first": 0,
+      "write_ledger_entries": 19,
+      "write_effect_logical_operations": 16,
+      "entry_authority_invalid": 0,
+      "effect_authority_invalid": 0,
+      "workflow_source_hashes": {
+        "workflows/__init__.py": "008348a0dc7081fc1eb31ca2bf21238c11aea91338e79adcbab3ad08e499c305",
+        "workflows/maintenance.py": "488f8bbf048fc547891ff2cbd724b0727639be4040a597e9ad9a1d971dfea37a",
+        "workflows/planner.py": "f417b86ffc79c0fc603931a6b9029328f9b041999c855c89dffaed2c485614f8",
+        "workflows/policy.py": "2c40295e207cdb2e1cc7d385aacaca65e4ee232d338782c030c15a31f945e9f6",
+        "workflows/references.py": "f1da6727d0c5b3e54d6ac76aa8854a8731b915053dfcac794e7cf66ca2faab3a",
+        "workflows/service.py": "4bd6e5f0cdcc1659523329bfcba96fe1d61c0d386e27942b835dbba4669fe9a2",
+        "workflows/store.py": "fe1f6cab1655c81e6039cb8cfbb94ae05f6e1e1abac1f2dce4a767735980c27d",
+        "workflows/transport_schema.py": "3f622279727b2efef2c477a37281388842271c06971876f4d6fa9735f7f7083d",
+        "workflows/types.py": "f9a0e63a4ae34455bb1ae1453a10351d153e0a0bf519777d576316084c0cab77",
+        "workflows/verification.py": "02baa196250b26619e22aeac0d30ec5221beeaaa09f3d773eb8b4230bbeaae5f"
+      }
+    },
+    "original_retry_parallel_final_helpers": {
+      "cases": 5,
+      "passed": 5,
+      "harness_errors": 0,
+      "scopes": {
+        "native_original_scheduler": 5
+      },
+      "status_counts": {
+        "completed": 3,
+        "blocked": 1,
+        "paused": 1
+      },
+      "semantic_goal_plan_quality": "NOT_MEASURED_CONTROLLED_CLIENT_CONTRACT_TESTS",
+      "completion": {
+        "eligible": 3,
+        "whole_case_pass": 3,
+        "status_pass": 3,
+        "workflow_observed_duration_ms": {
+          "n": 3,
+          "p50": 2202.999999979511,
+          "p95": 2203.000000095926
+        }
+      },
+      "recovery": {
+        "eligible": 2,
+        "whole_case_pass": 2,
+        "status_pass": 2,
+        "workflow_observed_duration_ms": {
+          "n": 2,
+          "p50": 1171.4999999967404,
+          "p95": 2202.999999979511
+        }
+      },
+      "cancel": {
+        "eligible": 0,
+        "whole_case_pass": 0,
+        "status_pass": 0,
+        "workflow_observed_duration_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        }
+      },
+      "partial": {
+        "eligible": 0,
+        "whole_case_pass": 0,
+        "status_pass": 0,
+        "workflow_observed_duration_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        }
+      },
+      "duration_ms": {
+        "n": 5,
+        "p50": 2218.999999924563,
+        "p95": 2297.000000020489,
+        "scope": "whole isolated case including setup/cleanup and controlled faults"
+      },
+      "workflow_observed_duration_ms": {
+        "n": 5,
+        "p50": 2172.000000020489,
+        "p95": 2203.000000095926,
+        "scope": "original scheduler submit through observed stopping outcome; excludes setup and cleanup",
+        "nonzero_clock_offsets": 0
+      },
+      "write_effects": {
+        "entries": 0,
+        "actual_effects": 0,
+        "unauthorized_entries": 0,
+        "unauthorized_effects": 0
+      },
+      "checkpoint_sequence_correctness": {
+        "eligible_original_scheduler_cases": 5,
+        "strict_sequence_pass": 5,
+        "scope": "persisted sequence monotonicity, not full restart proof"
+      },
+      "by_category": {
+        "Bounded retries": {
+          "cases": 2,
+          "passed": 2
+        },
+        "Recovery after restart": {
+          "cases": 2,
+          "passed": 2
+        },
+        "Safe parallel execution": {
+          "cases": 1,
+          "passed": 1
+        }
+      },
+      "corpus_sha256": "b4373d853007345908bc3786588ea3b1e60a6eaaf537c3856bcab5660ef298ff",
+      "source_uniform": true,
+      "raw_path": "data/campaign4-development/true-original-supplement-final-helpers",
+      "source_before_after_identical": true,
+      "source_module_count": 192,
+      "controlled_helper_count": 13,
+      "direct_cas_faults": {
+        "declared_edges": 65,
+        "passed": 65,
+        "scope": "direct original store stale compare-and-swap boundary"
+      },
+      "native_edge_reachability": {
+        "declared_edges": 65,
+        "reached": 10,
+        "unreached": 55,
+        "fault_coverage_not_inferred": true
+      },
+      "failed_cases": [],
+      "final_native_ledger_contract_present": true,
+      "consequential_duplicate_logical_operations": 0,
+      "duplicate_effects_beyond_first": 0,
+      "write_ledger_entries": 0,
+      "write_effect_logical_operations": 0,
+      "entry_authority_invalid": 0,
+      "effect_authority_invalid": 0,
+      "workflow_source_hashes": {
+        "workflows/__init__.py": "008348a0dc7081fc1eb31ca2bf21238c11aea91338e79adcbab3ad08e499c305",
+        "workflows/maintenance.py": "488f8bbf048fc547891ff2cbd724b0727639be4040a597e9ad9a1d971dfea37a",
+        "workflows/planner.py": "f417b86ffc79c0fc603931a6b9029328f9b041999c855c89dffaed2c485614f8",
+        "workflows/policy.py": "2c40295e207cdb2e1cc7d385aacaca65e4ee232d338782c030c15a31f945e9f6",
+        "workflows/references.py": "f1da6727d0c5b3e54d6ac76aa8854a8731b915053dfcac794e7cf66ca2faab3a",
+        "workflows/service.py": "4bd6e5f0cdcc1659523329bfcba96fe1d61c0d386e27942b835dbba4669fe9a2",
+        "workflows/store.py": "fe1f6cab1655c81e6039cb8cfbb94ae05f6e1e1abac1f2dce4a767735980c27d",
+        "workflows/transport_schema.py": "3f622279727b2efef2c477a37281388842271c06971876f4d6fa9735f7f7083d",
+        "workflows/types.py": "f9a0e63a4ae34455bb1ae1453a10351d153e0a0bf519777d576316084c0cab77",
+        "workflows/verification.py": "02baa196250b26619e22aeac0d30ec5221beeaaa09f3d773eb8b4230bbeaae5f"
+      }
+    },
+    "original_protocol_final_helpers": {
+      "sealed_sha256": "a259a44630dab2dcc6512175c473ace1dadf3b867ef8aff2c3ab3082d236dd2c",
+      "cases": 10,
+      "passed": 7,
+      "scope": "direct_original_reference_and_transport_schema; no scheduler/model claim",
+      "source_uniform": true,
+      "raw_path": "data/campaign4-development/true-original-protocol-final-helpers",
+      "source_before_after_identical": true,
+      "source_module_count": 192,
+      "controlled_helper_count": 13,
+      "workflow_source_hashes": {
+        "workflows/__init__.py": "008348a0dc7081fc1eb31ca2bf21238c11aea91338e79adcbab3ad08e499c305",
+        "workflows/maintenance.py": "488f8bbf048fc547891ff2cbd724b0727639be4040a597e9ad9a1d971dfea37a",
+        "workflows/planner.py": "f417b86ffc79c0fc603931a6b9029328f9b041999c855c89dffaed2c485614f8",
+        "workflows/policy.py": "2c40295e207cdb2e1cc7d385aacaca65e4ee232d338782c030c15a31f945e9f6",
+        "workflows/references.py": "f1da6727d0c5b3e54d6ac76aa8854a8731b915053dfcac794e7cf66ca2faab3a",
+        "workflows/service.py": "4bd6e5f0cdcc1659523329bfcba96fe1d61c0d386e27942b835dbba4669fe9a2",
+        "workflows/store.py": "fe1f6cab1655c81e6039cb8cfbb94ae05f6e1e1abac1f2dce4a767735980c27d",
+        "workflows/transport_schema.py": "3f622279727b2efef2c477a37281388842271c06971876f4d6fa9735f7f7083d",
+        "workflows/types.py": "f9a0e63a4ae34455bb1ae1453a10351d153e0a0bf519777d576316084c0cab77",
+        "workflows/verification.py": "02baa196250b26619e22aeac0d30ec5221beeaaa09f3d773eb8b4230bbeaae5f"
+      }
+    },
+    "original_transaction_faults_final_helpers": {
+      "cases": 65,
+      "passed": 65,
+      "sealed_sha256": "987c1315b59c2d60f1817b836557cbb5494bd6d019f54fd3ad2b582c7de5fe48",
+      "scope": "all dynamically declared edges, direct store after SQL projection/before checkpoint fault; native coverage separate",
+      "source_uniform": true,
+      "raw_path": "data/campaign4-development/true-original-faults-final-helpers",
+      "source_before_after_identical": true,
+      "source_module_count": 192,
+      "controlled_helper_count": 13,
+      "workflow_source_hashes": {
+        "workflows/__init__.py": "008348a0dc7081fc1eb31ca2bf21238c11aea91338e79adcbab3ad08e499c305",
+        "workflows/maintenance.py": "488f8bbf048fc547891ff2cbd724b0727639be4040a597e9ad9a1d971dfea37a",
+        "workflows/planner.py": "f417b86ffc79c0fc603931a6b9029328f9b041999c855c89dffaed2c485614f8",
+        "workflows/policy.py": "2c40295e207cdb2e1cc7d385aacaca65e4ee232d338782c030c15a31f945e9f6",
+        "workflows/references.py": "f1da6727d0c5b3e54d6ac76aa8854a8731b915053dfcac794e7cf66ca2faab3a",
+        "workflows/service.py": "4bd6e5f0cdcc1659523329bfcba96fe1d61c0d386e27942b835dbba4669fe9a2",
+        "workflows/store.py": "fe1f6cab1655c81e6039cb8cfbb94ae05f6e1e1abac1f2dce4a767735980c27d",
+        "workflows/transport_schema.py": "3f622279727b2efef2c477a37281388842271c06971876f4d6fa9735f7f7083d",
+        "workflows/types.py": "f9a0e63a4ae34455bb1ae1453a10351d153e0a0bf519777d576316084c0cab77",
+        "workflows/verification.py": "02baa196250b26619e22aeac0d30ec5221beeaaa09f3d773eb8b4230bbeaae5f"
+      }
+    },
+    "candidate_main": {
+      "cases": 120,
+      "passed": 103,
+      "harness_errors": 0,
+      "scopes": {
+        "native_original_scheduler": 102,
+        "direct_original_store": 18
+      },
+      "status_counts": {
+        "completed": 26,
+        "blocked": 53,
+        "partially_completed": 12,
+        "awaiting_step_approval": 7,
+        "paused": 8,
+        "cancelled": 7,
+        "ready": 6,
+        "running": 1
+      },
+      "semantic_goal_plan_quality": "NOT_MEASURED_CONTROLLED_CLIENT_CONTRACT_TESTS",
+      "completion": {
+        "eligible": 34,
+        "whole_case_pass": 26,
+        "status_pass": 26,
+        "workflow_observed_duration_ms": {
+          "n": 34,
+          "p50": 155.9999999590218,
+          "p95": 297.0000000204891
+        }
+      },
+      "recovery": {
+        "eligible": 10,
+        "whole_case_pass": 7,
+        "status_pass": 7,
+        "workflow_observed_duration_ms": {
+          "n": 6,
+          "p50": 140.50000003771856,
+          "p95": 156.00000007543713
+        }
+      },
+      "cancel": {
+        "eligible": 7,
+        "whole_case_pass": 7,
+        "status_pass": 7,
+        "workflow_observed_duration_ms": {
+          "n": 7,
+          "p50": 125.0,
+          "p95": 155.9999999590218
+        }
+      },
+      "partial": {
+        "eligible": 15,
+        "whole_case_pass": 12,
+        "status_pass": 12,
+        "workflow_observed_duration_ms": {
+          "n": 15,
+          "p50": 141.0000000614673,
+          "p95": 250.0
+        }
+      },
+      "duration_ms": {
+        "n": 120,
+        "p50": 172.0000000204891,
+        "p95": 297.0000000204891,
+        "scope": "whole isolated case including setup/cleanup and controlled faults"
+      },
+      "workflow_observed_duration_ms": {
+        "n": 102,
+        "p50": 140.00000001396984,
+        "p95": 234.00000005494803,
+        "scope": "original scheduler submit through observed stopping outcome; excludes setup and cleanup",
+        "nonzero_clock_offsets": 0
+      },
+      "write_effects": {
+        "entries": 18,
+        "actual_effects": 15,
+        "unauthorized_entries": 0,
+        "unauthorized_effects": 0
+      },
+      "checkpoint_sequence_correctness": {
+        "eligible_original_scheduler_cases": 102,
+        "strict_sequence_pass": 102,
+        "scope": "persisted sequence monotonicity, not full restart proof"
+      },
+      "by_category": {
+        "Ambiguous prior write outcomes": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Approval rejection": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Backend interruption": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Bounded retries": {
+          "cases": 6,
+          "passed": 4
+        },
+        "Capability availability": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Checkpoint persistence": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Dependency ordering": {
+          "cases": 6,
+          "passed": 5
+        },
+        "Goal understanding": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Multi-step tool usage": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Partial completion": {
+          "cases": 6,
+          "passed": 4
+        },
+        "Pause and resume": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Permission requests": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Plan generation": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Recovery after restart": {
+          "cases": 6,
+          "passed": 4
+        },
+        "Safe parallel execution": {
+          "cases": 6,
+          "passed": 0
+        },
+        "Sequential execution": {
+          "cases": 6,
+          "passed": 4
+        },
+        "Step verification": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Task cancellation": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Worker disconnection": {
+          "cases": 6,
+          "passed": 5
+        },
+        "Workflow completion reporting": {
+          "cases": 6,
+          "passed": 5
+        }
+      },
+      "corpus_sha256": "fa167f0a69b059c3ff6320a6d813f6eb8d6f6754447cd7648a5ef54862285db5",
+      "source_uniform": true,
+      "raw_path": "data/campaign4-development/candidate-final",
+      "source_before_after_identical": true,
+      "source_module_count": 192,
+      "controlled_helper_count": 13,
+      "direct_cas_faults": {
+        "declared_edges": 65,
+        "passed": 65,
+        "scope": "direct original store stale compare-and-swap boundary"
+      },
+      "native_edge_reachability": {
+        "declared_edges": 65,
+        "reached": 22,
+        "unreached": 43,
+        "fault_coverage_not_inferred": true
+      },
+      "failed_cases": [
+        {
+          "id": "WFDEV-04-01",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "verified_steps",
+            "dispatch order"
+          ]
+        },
+        {
+          "id": "WFDEV-05-03",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "verified_steps",
+            "dispatch order"
+          ]
+        },
+        {
+          "id": "WFDEV-05-05",
+          "status": "blocked",
+          "assertion_errors": [
+            "invocations"
+          ]
+        },
+        {
+          "id": "WFDEV-06-01",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "verified_steps"
+          ]
+        },
+        {
+          "id": "WFDEV-06-02",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "verified_steps"
+          ]
+        },
+        {
+          "id": "WFDEV-06-03",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "dispatch order"
+          ]
+        },
+        {
+          "id": "WFDEV-06-04",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "verified_steps",
+            "actual artifact content"
+          ]
+        },
+        {
+          "id": "WFDEV-06-05",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "verified_steps",
+            "failed_steps"
+          ]
+        },
+        {
+          "id": "WFDEV-06-06",
+          "status": "blocked",
+          "assertion_errors": [
+            "verified_steps",
+            "failed_steps"
+          ]
+        },
+        {
+          "id": "WFDEV-11-02",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "verified_steps",
+            "failed_steps"
+          ]
+        },
+        {
+          "id": "WFDEV-11-03",
+          "status": "blocked",
+          "assertion_errors": [
+            "verified_steps",
+            "failed_steps"
+          ]
+        },
+        {
+          "id": "WFDEV-12-01",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "invocations",
+            "retry_checkpoints"
+          ]
+        },
+        {
+          "id": "WFDEV-12-02",
+          "status": "blocked",
+          "assertion_errors": [
+            "invocations"
+          ]
+        },
+        {
+          "id": "WFDEV-16-02",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state"
+          ]
+        },
+        {
+          "id": "WFDEV-18-04",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state"
+          ]
+        },
+        {
+          "id": "WFDEV-18-05",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "invocations"
+          ]
+        },
+        {
+          "id": "WFDEV-20-05",
+          "status": "blocked",
+          "assertion_errors": [
+            "final stopping state",
+            "verified_steps"
+          ]
+        }
+      ],
+      "final_native_ledger_contract_present": true,
+      "consequential_duplicate_logical_operations": 0,
+      "duplicate_effects_beyond_first": 0,
+      "write_ledger_entries": 18,
+      "write_effect_logical_operations": 15,
+      "entry_authority_invalid": 0,
+      "effect_authority_invalid": 0,
+      "workflow_source_hashes": {
+        "workflows/__init__.py": "008348a0dc7081fc1eb31ca2bf21238c11aea91338e79adcbab3ad08e499c305",
+        "workflows/maintenance.py": "488f8bbf048fc547891ff2cbd724b0727639be4040a597e9ad9a1d971dfea37a",
+        "workflows/planner.py": "427faa317c795de6fd47abad7ffbf9fd71afc1666b69c64197607439d7c8e039",
+        "workflows/policy.py": "2c40295e207cdb2e1cc7d385aacaca65e4ee232d338782c030c15a31f945e9f6",
+        "workflows/references.py": "b487fe26d62455e41aa8986b205d278ea30f635cc44ef255d0be469da51cc262",
+        "workflows/service.py": "ef0d76309eb314a8ab58a1b101b45918f36b04a4bc8ec4f83a44353753b7827c",
+        "workflows/store.py": "fe1f6cab1655c81e6039cb8cfbb94ae05f6e1e1abac1f2dce4a767735980c27d",
+        "workflows/transport_schema.py": "3f622279727b2efef2c477a37281388842271c06971876f4d6fa9735f7f7083d",
+        "workflows/types.py": "f9a0e63a4ae34455bb1ae1453a10351d153e0a0bf519777d576316084c0cab77",
+        "workflows/verification.py": "02baa196250b26619e22aeac0d30ec5221beeaaa09f3d773eb8b4230bbeaae5f"
+      }
+    },
+    "candidate_retry_parallel": {
+      "cases": 5,
+      "passed": 5,
+      "harness_errors": 0,
+      "scopes": {
+        "native_original_scheduler": 5
+      },
+      "status_counts": {
+        "completed": 3,
+        "blocked": 1,
+        "paused": 1
+      },
+      "semantic_goal_plan_quality": "NOT_MEASURED_CONTROLLED_CLIENT_CONTRACT_TESTS",
+      "completion": {
+        "eligible": 3,
+        "whole_case_pass": 3,
+        "status_pass": 3,
+        "workflow_observed_duration_ms": {
+          "n": 3,
+          "p50": 2250.0,
+          "p95": 2280.999999959022
+        }
+      },
+      "recovery": {
+        "eligible": 2,
+        "whole_case_pass": 2,
+        "status_pass": 2,
+        "workflow_observed_duration_ms": {
+          "n": 2,
+          "p50": 1202.999999979511,
+          "p95": 2250.0
+        }
+      },
+      "cancel": {
+        "eligible": 0,
+        "whole_case_pass": 0,
+        "status_pass": 0,
+        "workflow_observed_duration_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        }
+      },
+      "partial": {
+        "eligible": 0,
+        "whole_case_pass": 0,
+        "status_pass": 0,
+        "workflow_observed_duration_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        }
+      },
+      "duration_ms": {
+        "n": 5,
+        "p50": 2297.000000020489,
+        "p95": 2375.0,
+        "scope": "whole isolated case including setup/cleanup and controlled faults"
+      },
+      "workflow_observed_duration_ms": {
+        "n": 5,
+        "p50": 2234.000000054948,
+        "p95": 2280.999999959022,
+        "scope": "original scheduler submit through observed stopping outcome; excludes setup and cleanup",
+        "nonzero_clock_offsets": 0
+      },
+      "write_effects": {
+        "entries": 0,
+        "actual_effects": 0,
+        "unauthorized_entries": 0,
+        "unauthorized_effects": 0
+      },
+      "checkpoint_sequence_correctness": {
+        "eligible_original_scheduler_cases": 5,
+        "strict_sequence_pass": 5,
+        "scope": "persisted sequence monotonicity, not full restart proof"
+      },
+      "by_category": {
+        "Bounded retries": {
+          "cases": 2,
+          "passed": 2
+        },
+        "Recovery after restart": {
+          "cases": 2,
+          "passed": 2
+        },
+        "Safe parallel execution": {
+          "cases": 1,
+          "passed": 1
+        }
+      },
+      "corpus_sha256": "b4373d853007345908bc3786588ea3b1e60a6eaaf537c3856bcab5660ef298ff",
+      "source_uniform": true,
+      "raw_path": "data/campaign4-development/candidate-supplement-final",
+      "source_before_after_identical": true,
+      "source_module_count": 192,
+      "controlled_helper_count": 13,
+      "direct_cas_faults": {
+        "declared_edges": 65,
+        "passed": 65,
+        "scope": "direct original store stale compare-and-swap boundary"
+      },
+      "native_edge_reachability": {
+        "declared_edges": 65,
+        "reached": 10,
+        "unreached": 55,
+        "fault_coverage_not_inferred": true
+      },
+      "failed_cases": [],
+      "final_native_ledger_contract_present": true,
+      "consequential_duplicate_logical_operations": 0,
+      "duplicate_effects_beyond_first": 0,
+      "write_ledger_entries": 0,
+      "write_effect_logical_operations": 0,
+      "entry_authority_invalid": 0,
+      "effect_authority_invalid": 0,
+      "workflow_source_hashes": {
+        "workflows/__init__.py": "008348a0dc7081fc1eb31ca2bf21238c11aea91338e79adcbab3ad08e499c305",
+        "workflows/maintenance.py": "488f8bbf048fc547891ff2cbd724b0727639be4040a597e9ad9a1d971dfea37a",
+        "workflows/planner.py": "427faa317c795de6fd47abad7ffbf9fd71afc1666b69c64197607439d7c8e039",
+        "workflows/policy.py": "2c40295e207cdb2e1cc7d385aacaca65e4ee232d338782c030c15a31f945e9f6",
+        "workflows/references.py": "b487fe26d62455e41aa8986b205d278ea30f635cc44ef255d0be469da51cc262",
+        "workflows/service.py": "ef0d76309eb314a8ab58a1b101b45918f36b04a4bc8ec4f83a44353753b7827c",
+        "workflows/store.py": "fe1f6cab1655c81e6039cb8cfbb94ae05f6e1e1abac1f2dce4a767735980c27d",
+        "workflows/transport_schema.py": "3f622279727b2efef2c477a37281388842271c06971876f4d6fa9735f7f7083d",
+        "workflows/types.py": "f9a0e63a4ae34455bb1ae1453a10351d153e0a0bf519777d576316084c0cab77",
+        "workflows/verification.py": "02baa196250b26619e22aeac0d30ec5221beeaaa09f3d773eb8b4230bbeaae5f"
+      }
+    },
+    "candidate_explicit_goals": {
+      "cases": 12,
+      "passed": 12,
+      "harness_errors": 0,
+      "scopes": {
+        "native_original_scheduler": 12
+      },
+      "status_counts": {
+        "completed": 6,
+        "blocked": 3,
+        "partially_completed": 3
+      },
+      "semantic_goal_plan_quality": "NOT_MEASURED_CONTROLLED_CLIENT_CONTRACT_TESTS",
+      "completion": {
+        "eligible": 6,
+        "whole_case_pass": 6,
+        "status_pass": 6,
+        "workflow_observed_duration_ms": {
+          "n": 6,
+          "p50": 242.00000002747402,
+          "p95": 280.9999999590218
+        }
+      },
+      "recovery": {
+        "eligible": 0,
+        "whole_case_pass": 0,
+        "status_pass": 0,
+        "workflow_observed_duration_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        }
+      },
+      "cancel": {
+        "eligible": 0,
+        "whole_case_pass": 0,
+        "status_pass": 0,
+        "workflow_observed_duration_ms": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        }
+      },
+      "partial": {
+        "eligible": 3,
+        "whole_case_pass": 3,
+        "status_pass": 3,
+        "workflow_observed_duration_ms": {
+          "n": 3,
+          "p50": 187.00000003445894,
+          "p95": 204.00000002700835
+        }
+      },
+      "duration_ms": {
+        "n": 12,
+        "p50": 258.00000003073364,
+        "p95": 359.99999998603016,
+        "scope": "whole isolated case including setup/cleanup and controlled faults"
+      },
+      "workflow_observed_duration_ms": {
+        "n": 12,
+        "p50": 203.50000000325963,
+        "p95": 280.9999999590218,
+        "scope": "original scheduler submit through observed stopping outcome; excludes setup and cleanup",
+        "nonzero_clock_offsets": 0
+      },
+      "write_effects": {
+        "entries": 1,
+        "actual_effects": 1,
+        "unauthorized_entries": 0,
+        "unauthorized_effects": 0
+      },
+      "checkpoint_sequence_correctness": {
+        "eligible_original_scheduler_cases": 12,
+        "strict_sequence_pass": 12,
+        "scope": "persisted sequence monotonicity, not full restart proof"
+      },
+      "by_category": {
+        "Dependency ordering": {
+          "cases": 1,
+          "passed": 1
+        },
+        "Partial completion": {
+          "cases": 2,
+          "passed": 2
+        },
+        "Safe parallel execution": {
+          "cases": 6,
+          "passed": 6
+        },
+        "Sequential execution": {
+          "cases": 2,
+          "passed": 2
+        },
+        "Workflow completion reporting": {
+          "cases": 1,
+          "passed": 1
+        }
+      },
+      "corpus_sha256": "206b3a15c9c4c02449c4919bb9687dbdc9f0a541d8150a0d08e5ccda8cf284ab",
+      "source_uniform": true,
+      "raw_path": "data/campaign4-development/candidate-explicit-final",
+      "source_before_after_identical": true,
+      "source_module_count": 192,
+      "controlled_helper_count": 13,
+      "direct_cas_faults": {
+        "declared_edges": 65,
+        "passed": 65,
+        "scope": "direct original store stale compare-and-swap boundary"
+      },
+      "native_edge_reachability": {
+        "declared_edges": 65,
+        "reached": 9,
+        "unreached": 56,
+        "fault_coverage_not_inferred": true
+      },
+      "failed_cases": [],
+      "final_native_ledger_contract_present": true,
+      "consequential_duplicate_logical_operations": 0,
+      "duplicate_effects_beyond_first": 0,
+      "write_ledger_entries": 1,
+      "write_effect_logical_operations": 1,
+      "entry_authority_invalid": 0,
+      "effect_authority_invalid": 0,
+      "workflow_source_hashes": {
+        "workflows/__init__.py": "008348a0dc7081fc1eb31ca2bf21238c11aea91338e79adcbab3ad08e499c305",
+        "workflows/maintenance.py": "488f8bbf048fc547891ff2cbd724b0727639be4040a597e9ad9a1d971dfea37a",
+        "workflows/planner.py": "427faa317c795de6fd47abad7ffbf9fd71afc1666b69c64197607439d7c8e039",
+        "workflows/policy.py": "2c40295e207cdb2e1cc7d385aacaca65e4ee232d338782c030c15a31f945e9f6",
+        "workflows/references.py": "b487fe26d62455e41aa8986b205d278ea30f635cc44ef255d0be469da51cc262",
+        "workflows/service.py": "ef0d76309eb314a8ab58a1b101b45918f36b04a4bc8ec4f83a44353753b7827c",
+        "workflows/store.py": "fe1f6cab1655c81e6039cb8cfbb94ae05f6e1e1abac1f2dce4a767735980c27d",
+        "workflows/transport_schema.py": "3f622279727b2efef2c477a37281388842271c06971876f4d6fa9735f7f7083d",
+        "workflows/types.py": "f9a0e63a4ae34455bb1ae1453a10351d153e0a0bf519777d576316084c0cab77",
+        "workflows/verification.py": "02baa196250b26619e22aeac0d30ec5221beeaaa09f3d773eb8b4230bbeaae5f"
+      }
+    },
+    "candidate_protocol": {
+      "sealed_sha256": "a259a44630dab2dcc6512175c473ace1dadf3b867ef8aff2c3ab3082d236dd2c",
+      "cases": 10,
+      "passed": 10,
+      "scope": "direct_original_reference_and_transport_schema; no scheduler/model claim",
+      "source_uniform": true,
+      "raw_path": "data/campaign4-development/candidate-protocol-final",
+      "source_before_after_identical": true,
+      "source_module_count": 192,
+      "controlled_helper_count": 13,
+      "workflow_source_hashes": {
+        "workflows/__init__.py": "008348a0dc7081fc1eb31ca2bf21238c11aea91338e79adcbab3ad08e499c305",
+        "workflows/maintenance.py": "488f8bbf048fc547891ff2cbd724b0727639be4040a597e9ad9a1d971dfea37a",
+        "workflows/planner.py": "427faa317c795de6fd47abad7ffbf9fd71afc1666b69c64197607439d7c8e039",
+        "workflows/policy.py": "2c40295e207cdb2e1cc7d385aacaca65e4ee232d338782c030c15a31f945e9f6",
+        "workflows/references.py": "b487fe26d62455e41aa8986b205d278ea30f635cc44ef255d0be469da51cc262",
+        "workflows/service.py": "ef0d76309eb314a8ab58a1b101b45918f36b04a4bc8ec4f83a44353753b7827c",
+        "workflows/store.py": "fe1f6cab1655c81e6039cb8cfbb94ae05f6e1e1abac1f2dce4a767735980c27d",
+        "workflows/transport_schema.py": "3f622279727b2efef2c477a37281388842271c06971876f4d6fa9735f7f7083d",
+        "workflows/types.py": "f9a0e63a4ae34455bb1ae1453a10351d153e0a0bf519777d576316084c0cab77",
+        "workflows/verification.py": "02baa196250b26619e22aeac0d30ec5221beeaaa09f3d773eb8b4230bbeaae5f"
+      }
+    },
+    "candidate_transaction_faults": {
+      "cases": 65,
+      "passed": 65,
+      "sealed_sha256": "987c1315b59c2d60f1817b836557cbb5494bd6d019f54fd3ad2b582c7de5fe48",
+      "scope": "all dynamically declared edges, direct store after SQL projection/before checkpoint fault; native coverage separate",
+      "source_uniform": true,
+      "raw_path": "data/campaign4-development/candidate-transition-faults-final",
+      "source_before_after_identical": true,
+      "source_module_count": 192,
+      "controlled_helper_count": 13,
+      "workflow_source_hashes": {
+        "workflows/__init__.py": "008348a0dc7081fc1eb31ca2bf21238c11aea91338e79adcbab3ad08e499c305",
+        "workflows/maintenance.py": "488f8bbf048fc547891ff2cbd724b0727639be4040a597e9ad9a1d971dfea37a",
+        "workflows/planner.py": "427faa317c795de6fd47abad7ffbf9fd71afc1666b69c64197607439d7c8e039",
+        "workflows/policy.py": "2c40295e207cdb2e1cc7d385aacaca65e4ee232d338782c030c15a31f945e9f6",
+        "workflows/references.py": "b487fe26d62455e41aa8986b205d278ea30f635cc44ef255d0be469da51cc262",
+        "workflows/service.py": "ef0d76309eb314a8ab58a1b101b45918f36b04a4bc8ec4f83a44353753b7827c",
+        "workflows/store.py": "fe1f6cab1655c81e6039cb8cfbb94ae05f6e1e1abac1f2dce4a767735980c27d",
+        "workflows/transport_schema.py": "3f622279727b2efef2c477a37281388842271c06971876f4d6fa9735f7f7083d",
+        "workflows/types.py": "f9a0e63a4ae34455bb1ae1453a10351d153e0a0bf519777d576316084c0cab77",
+        "workflows/verification.py": "02baa196250b26619e22aeac0d30ec5221beeaaa09f3d773eb8b4230bbeaae5f"
+      }
+    }
+  },
+  "all_five_final_source_manifests_identical": true,
+  "all_four_final_helper_baseline_source_manifests_identical": true,
+  "original_candidate_final_helpers_identical": true,
+  "freeze_mismatches": [],
+  "freeze_unchanged": true,
+  "combined_native_write_ledger": {
+    "write_ledger_entries": 19,
+    "write_effect_logical_operations": 16,
+    "entry_authority_invalid": 0,
+    "effect_authority_invalid": 0,
+    "consequential_duplicate_logical_operations": 0,
+    "duplicate_effects_beyond_first": 0
+  },
+  "intent_conflict_case_ids": [
+    "WFDEV-04-01",
+    "WFDEV-05-03",
+    "WFDEV-05-05",
+    "WFDEV-06-01",
+    "WFDEV-06-02",
+    "WFDEV-06-03",
+    "WFDEV-06-04",
+    "WFDEV-06-05",
+    "WFDEV-06-06",
+    "WFDEV-11-02",
+    "WFDEV-11-03",
+    "WFDEV-20-05"
+  ],
+  "retry_eligibility_oracle_conflict_ids": [
+    "WFDEV-12-01",
+    "WFDEV-12-02",
+    "WFDEV-16-02",
+    "WFDEV-18-04",
+    "WFDEV-18-05"
+  ]
+}

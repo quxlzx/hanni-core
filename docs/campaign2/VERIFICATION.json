@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "campaign": 2,
+  "scope": "Independent dynamic evidence coverage, original authority/contract checks, adversarial probes, actual SDK transport and bounded controlled dependencies. Live model and deployment limits are explicit.",
+  "baseline": "e673ccc",
+  "evidence_coverage_accepted": true,
+  "campaign_acceptance": "partial: live model validation blocked, routing misses retained, repaired source not deployed to preserved running owner",
+  "inventory_sha256": "c44f94e7737e9bc75b1cb24787c59c6f46e044c0235c634f5f4ef344738a46be",
+  "discovered_capabilities": 172,
+  "owner_enabled_mcp_tool_count": 0,
+  "input_schema_problems": [],
+  "dimension_outcomes": {
+    "valid_arguments": {
+      "pass": 172
+    },
+    "invalid_arguments": {
+      "pass": 172
+    },
+    "missing_parameter": {
+      "pass": 172
+    },
+    "permission_enforcement": {
+      "pass": 172
+    },
+    "dependency_unavailable": {
+      "pass": 158,
+      "not_applicable": 14
+    },
+    "output_contract": {
+      "pass": 172
+    },
+    "natural_language_selection": {
+      "pass": 149,
+      "fail": 23
+    },
+    "end_to_end": {
+      "pass": 172
+    }
+  },
+  "evidence_modes": {
+    "live_read": 244,
+    "original_gate": 344,
+    "original_mock_dependency": 426,
+    "retrieval_only": 172,
+    "isolated_original": 176,
+    "pure_in_process": 14
+  },
+  "end_to_end_scope": "Original registered tool invocation and readback, with controlled foreign/GUI/provider leaves and submission-only evidence where specified; not conversational model end-to-end completion.",
+  "natural_language_selection_scope": "Original metadata menu retrieval or owner-policy exclusion; never model reasoning.",
+  "coverage_is_not_success": true,
+  "claims_violations": [],
+  "independent_contract_capabilities_passed": 172,
+  "independent_pre_handler_boundary_receipts": 688,
+  "independent_tests": {
+    "suites": [
+      {
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "42",
+        "time": "7.446"
+      }
+    ],
+    "scope": "Independent test run; separate final frozen action tests and receipt audits also listed."
+  },
+  "final_action_claim_checks": {
+    "cases": 5,
+    "passed": 5,
+    "owned_temp_removed": true
+  },
+  "mcp_publication_reference_checks": {
+    "checks": 128,
+    "passed": 128,
+    "raw_test_count": 157,
+    "source_hashes_match": true
+  },
+  "published_raw_artifact_checks": {
+    "artifacts": 349,
+    "mismatches": []
+  },
+  "actual_guarded_model_validation": {
+    "attempts": 173,
+    "blocked": 173,
+    "actual_model_http_requests": 0,
+    "inference_success_verified": false,
+    "separate_original_selection_diagnostic": "insufficient_ram_reserve; not inferred retrospectively onto uninstrumented native paths"
+  },
+  "public_schema_metadata_addendum": {
+    "accepted": true,
+    "changed_rows": 4,
+    "behavioral_fields_unchanged": true,
+    "historical_v1_worktree_sha256": "70468c1c186ef69b6f065120ea548f6698dc39dc2676e0afa98c10d178930833",
+    "strict_original_audit_coverage_function_AST_unchanged": true
+  },
+  "full_regression": {
+    "pytest_passed": 2752,
+    "pytest_failed": 3,
+    "pytest_skipped": 2,
+    "subtests_passed": 33,
+    "two_schema_failures_followup_tests_passed": 5,
+    "remaining_limitation": "Unchanged local CLI fake-endpoint test refused by original real-host resource admission; preserved, no guard relaxation."
+  },
+  "preserved_runtime": {
+    "http_status": 200,
+    "active_names_match_source": true,
+    "active_shell_permission_level": 2,
+    "active_shell_risk_level": 2,
+    "repaired_source_shell_permission_level": 3,
+    "repaired_source_shell_risk_level": 3,
+    "repaired_shell_gate_deployed": false,
+    "original_model_and_launcher_preserved": true,
+    "no_owner_restart_performed": true
+  },
+  "owned_sdk_cleanup_complete": true,
+  "artifact_references_sha256": {
+    "data/campaign2-verifier/inventory-final/inventory.json": "b303248eb12bb37cae8787fb5f5cf06837fa4e3c61cbe3c2bc88d3e12417e67f",
+    "data/campaign2-verifier/final-claims.json": "0b72565422b0fc72e4bc57c1e08a2f8eb0259bec33cd089702b3a8ec97b0c7cf",
+    "data/campaign2-verifier/final-contract-crosscheck.json": "b958b4fb7d01318352cae33126b18ac72bf7fff1d209ff3417c409a11335ea89",
+    "data/campaign2-verifier/publication-crosscheck.json": "7aa1c3bb7c101bf3a87fdaa82afd9873aeba42990239b67d90b89012f4bd1cf8",
+    "data/campaign2-verifier/metadata-addendum-invariants.json": "61eb89e59688de36d9e51a8257568fb6660eb790b07c4ef512162115e509b18b",
+    "data/campaign2-verifier/mcp-matrix-claims.json": "ddcdc6c1c4ecb722aaf51797e9b52bf537e5046762c8a35706885b5e3927e150",
+    "data/campaign2-verifier/root-claims-after/results.json": "69e30a3f12da360396d5628cb102916d1cc03358b07a4f15dcbf7ee1abc83610",
+    "data/campaign2-verifier/runtime-final.json": "00189472887e3f7fe3c938224bd0bf663768fa072890ba9c6a8cfbf847027773",
+    "data/campaign2-verifier/closure-final.json": "a26e71f03ae2942eccf360848c3bf5bd4d081158246b1bf65a20da678b52bc1b",
+    "data/campaign2-verifier/independent-final-tests.xml": "e58fee49a2964d0964bab2fb5dae47bc22be80499b355af33559ba482c4655b4",
+    "data/campaign2-verifier/platform-original-a/results.json": "4a2e9270e1bf98ef431035eae65e70f06366f34bf9b98e626dbe93143c2790c4",
+    "data/campaign2-verifier/platform-current-final/results.json": "56521ddbc9dc1cc7eba3c185907f5f4ded86ccf8b72cae5adeaf3994a36baf19",
+    "data/campaign2-verifier/provider-types-after/results.json": "42d82c6a0184097d50bebacc0893682c1a1a08467176cd1e4b7c3a45e3463a64",
+    "data/campaign2-verifier/dynamic-gates-a/results.json": "f0745ff90d43f3d0a731701f92b6357e7b2fb39a4aaf21b3ebc60c71d573213d",
+    "data/campaign2-verifier/shell-gate-before/results.json": "e5f064d93e4b55df46f51d95032921c892f1d6a68b310fd65d8deb8337fd598c",
+    "data/campaign2-verifier/shell-gate-after/results.json": "bb37c6773c8b90ad5f44bf8da82b75afe1d450f45fbf217971f711861e13f96a",
+    "data/campaign2-manager/final-cycle2/SCORECARD.json": "61f033ed6dbf538450c9ca1223774cd88d44a9ab59c948daf2f7c14d5be0efbb",
+    "data/campaign2-manager/full-regression.xml": "973f0e340b055ef8ccf48ab4ce767bc02fa54b2dd1287bfcdb71b679c0cb85b1",
+    "data/campaign2-manager/metadata-regression-fixed.xml": "e72cb14e6a4913262b218b8e0ec3bc7bf1c471633f10c2ae94cf8b0eb61d7ae5",
+    "data/campaign2-verifier/fixture-generator-verification.json": "b69823c5ebbd0a543e1f1634afc58cee776f9f32a5ab2e4af354bf4aa02343d1",
+    "data/campaign2-verifier/inventory-after-fixture-generator/inventory.json": "b303248eb12bb37cae8787fb5f5cf06837fa4e3c61cbe3c2bc88d3e12417e67f",
+    "data/campaign2-manager/nullable-fixture-fixed.xml": "d8f3946c5640373599993e38ca81c219da21e8fdab7760f6c4045f669b861f48",
+    "src/hanni/evals/llm_coverage.py": "20912ea872a6c0b97178b4299fe1ad68e7789b1ba9117edc03bb87f6cee738ce"
+  },
+  "metadata_fixture_generator_repair": {
+    "accepted": true,
+    "scope": "Actual synthetic fixture generator only; no capability handler or model execution.",
+    "registered_definitions_checked": 172,
+    "output_fields_checked": 470,
+    "passed_definitions": 172,
+    "supplemental_descriptor_checks": 6,
+    "capability_handler_entries": 0,
+    "audit_coverage_AST_identical_to_baseline": true,
+    "all_module_AST_except_fixture_for_identical_to_baseline": true,
+    "audit_AST_sha256": "b75413985fefe1cbdd7e98f2673c8111b8b4c47abce6ee43a7fd2ca3db75d0aa",
+    "current_module_sha256": "20912ea872a6c0b97178b4299fe1ad68e7789b1ba9117edc03bb87f6cee738ce",
+    "public_v1_bytes_unchanged": true,
+    "public_v2_bytes_unchanged": true,
+    "affected_coordinator_checks_passed": 29,
+    "inventory_sha256_unchanged": true
+  }
+}

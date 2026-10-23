@@ -1,0 +1,239 @@
+{
+  "scope": "Separate prospectively sealed self-contained eight exposed-development retakes. Narrow independent observed grades do not regrade the earlier twelve errors or replace immutable semantic oracles. No private final execution.",
+  "raw": {
+    "path": "data/campaign8-native/cycle26-self-contained-memory-mcp-retake8/RESULTS.json",
+    "sha256": "dab3b01b4441612965ee884aa0a0e77583e3320fe030b0d544baa4446a6077ab"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "c03f94985c8501c58da5c4cf9be122830a65edd4646116fa44952c711b1dcfc0",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "counts": {
+    "cases": 8,
+    "executed": 7,
+    "PASS_scoped": 6,
+    "BLOCKED_authority": 1,
+    "HARNESS_ERROR": 1,
+    "final_or_error_PNGs_viewed": 8,
+    "additional_intermediate_PNGs_viewed": 3,
+    "actual_generation": 0
+  },
+  "case_grades": [
+    {
+      "id": "local-final-memory-create-proposal",
+      "status": "PASS",
+      "observed_scope": "Original local-rule request returns an honest empty result: 0 suggestions, no conservative candidate. Stored=36 and pending=26 remain unchanged; UI shows Nothing was saved. This proves request/empty feedback, not positive suggestion creation or model extraction.",
+      "input_sha256": "069a4f430ec6d9e11a68d16f50685dbbc487894c6b1138b7e8a132aeebecbe27",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle26-self-contained-memory-mcp-retake8/screenshots/local-final-memory-create-proposal.png",
+        "sha256": "62789a8330e27c592dc8397a5a155208b5b880c65e945e3cf9a1e334e2c29b3f"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "14df5ec1234ec620431936425eb228aaedcb95b525278791a1bb92cf50efa3df"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "d7d450d4ac255d40ea75965ed5a5f61c1f0e5c8674872a736f2aa358527a633b"
+        }
+      ],
+      "original_error_retained": null,
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "local-final-memory-consolidate",
+      "status": "PASS",
+      "observed_scope": "Original Find related records creates 50 pending related proposals: pending 26?76, stored remains36, untrusted/local-rule disclosure and review requirement visible. No approval, memory deletion or inference credited.",
+      "input_sha256": "5ef69da31a0320e1a351a6c40657b3512cf25606da2b1300f35fec96069a00de",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle26-self-contained-memory-mcp-retake8/screenshots/local-final-memory-consolidate.png",
+        "sha256": "fb68a4a90286f5fbf49b9f0bc6f9ab3a381527670a28e62fee876e919ffd7e6d"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "19fcf1ffc0d6e4f3c4ffeea89e8ede0ec728058657a0ed2ba1da1cc99e4ba03c"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "fd22ac649446f2610ec4f217f5811cf7697313502908a0cbbc0f495bd15c2b20"
+        }
+      ],
+      "original_error_retained": null,
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "local-final-memory-review-index",
+      "status": "PASS",
+      "observed_scope": "Actual pending-index first-row selection shows matching controlled related proposal content/source and pending status. Original suggestion list and native detail agree. No approval executes.",
+      "input_sha256": "62b26712fee30279beebb107bd2616b72e277f0b313025a0ccacfa0cf78da792",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle26-self-contained-memory-mcp-retake8/screenshots/local-final-memory-review-index.png",
+        "sha256": "314c88e72007f5186775808897cc35968ad493ecd0342598829c4d2aa26d0c7d"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "19fcf1ffc0d6e4f3c4ffeea89e8ede0ec728058657a0ed2ba1da1cc99e4ba03c"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "fd22ac649446f2610ec4f217f5811cf7697313502908a0cbbc0f495bd15c2b20"
+        }
+      ],
+      "original_error_retained": null,
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "local-final-mcp-import-selection",
+      "status": "PASS",
+      "observed_scope": "Self-contained fixed-file preview opens one original candidate; actual checkbox true?false?true visible and recorded, then Cancel. Original inventory remains empty/revision0.",
+      "input_sha256": "40e7f842f5981fa7528e97aecfc556173127ff23f87d8ab55f0b44e9250150c1",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle26-self-contained-memory-mcp-retake8/screenshots/local-final-mcp-import-selection.png",
+        "sha256": "067acb063615ca765dc4c16d72d421c41f20e9b84bed8ac55eac73b5871ec3c6"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "f371d11a7f5820581c86e1cd9bafad0fd51e55acd6c627093394df649ab7b74b"
+        }
+      ],
+      "original_error_retained": null,
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "local-final-mcp-import-confirm",
+      "status": "PASS",
+      "observed_scope": "Actual original Import selected/Confirm persists one opaque server ID with exact controlled command, stdio, args/env empty, auto_connect=false, enabled=false/state=disabled, revision1, no discovery/last connection. This is configuration persistence only.",
+      "input_sha256": "1ae1b2ceeb5d5737dd942cbdde81ac26ef578d5f2246de92dc2c724d5d58f003",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle26-self-contained-memory-mcp-retake8/screenshots/local-final-mcp-import-confirm.png",
+        "sha256": "817e79959adccd968983c89e62fa7b165c2eccdca359ce5aba3feecde257c077"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "9fe2f408a7ebe3f6881ddcea92985bf3c4d69c52626b83a76b329aadd73716a3"
+        }
+      ],
+      "original_error_retained": null,
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "local-final-mcp-enable-local",
+      "status": "BLOCKED",
+      "observed_scope": "Actual Enable/Confirm reaches original approval gate and returns HTTP400/approval-required dialog. Original server stays enabled=false/state=disabled with no connection/discovery. Manager enable_server calls connect, so auto_connect=false is not authority for a local enable toggle. Correctly denied unapproved external authority; no enable success.",
+      "input_sha256": "9521a15ad5533cbe3770622ba76fec4b3590ecc39c6ead365e1f3717251f4da5",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle26-self-contained-memory-mcp-retake8/screenshots/local-final-mcp-enable-local.png",
+        "sha256": "28056077730c942de50475d110eb822aea332bc55cd6a242feb950cdd4a9bc50"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "9fe2f408a7ebe3f6881ddcea92985bf3c4d69c52626b83a76b329aadd73716a3"
+        }
+      ],
+      "original_error_retained": null,
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "local-final-mcp-disable-local",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "Original detail selection remained active between cases; authored table .mcp-server-row is absent. The preceding enabled attempt was correctly denied, and the server remains disabled. No Disable control executed; no idempotent disable success inferred.",
+      "input_sha256": "de398fb0a46db3d65004a082efa3d13c177c85645dd6e366d8c47fe75ed34cfc",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle26-self-contained-memory-mcp-retake8/screenshots/local-final-mcp-disable-local-error.png",
+        "sha256": "8617ef10e4ecbcaa9951c0911a8e40285799d2589c9e6b1727fa217c5ea52ad5"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "9fe2f408a7ebe3f6881ddcea92985bf3c4d69c52626b83a76b329aadd73716a3"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\".mcp-server-row\").first\n"
+      },
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "local-final-mcp-private-export-select",
+      "status": "PASS",
+      "observed_scope": "Original Export writes a non-secret owned fixture JSON file; independently read file equals displayed parsed JSON. Actual path selection range0..157 and JSON range0..458, then close. No clipboard Copy, browser download or credential resolution/transmission executed.",
+      "input_sha256": "37ad58f00b1d2c131640e4ecb62e1efae2c8b10477a5b388a8694ba3a157701a",
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle26-self-contained-memory-mcp-retake8/screenshots/local-final-mcp-private-export-select.png",
+        "sha256": "7f87d66398cde7ea923d263478413658b001c4a8a6143a433553c81c2b118343"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "9fe2f408a7ebe3f6881ddcea92985bf3c4d69c52626b83a76b329aadd73716a3"
+        }
+      ],
+      "original_error_retained": null,
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    }
+  ],
+  "export_readback": {
+    "owned_file_sha256": "7d89fad338160416f37911a2a53ee3acadb97073ee3934db475fd9893aabfb32",
+    "file_equals_displayed_parsed_json": true,
+    "selection_ranges": {
+      "path": [
+        0,
+        157
+      ],
+      "JSON": [
+        0,
+        458
+      ]
+    },
+    "clipboard_or_browser_download_tested": false
+  },
+  "native": {
+    "pid": 34820,
+    "create_time": 1791642132.2590148,
+    "dpi": 120,
+    "native_exit_code": 0,
+    "owned_native_cleanup": true,
+    "javascript_errors": 0,
+    "foreign_requests": 0
+  },
+  "limitations": [
+    "Zero created statement suggestions is truthful empty-result feedback, not positive creation.",
+    "Unapproved Enable is correctly blocked and cannot count as enabled=true.",
+    "Disable selector error remains unpassed.",
+    "No SDK connect/discovery/tool invocation, clipboard, actual external provider or model inference is exercised."
+  ]
+}

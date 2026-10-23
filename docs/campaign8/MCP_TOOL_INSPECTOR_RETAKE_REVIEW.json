@@ -1,0 +1,105 @@
+{
+  "scope": "Three separately prospectively declared state-correct retakes of the original manager/hash-bound tool controls with fixed synthetic metadata and CONTROLLED_MOCK list dependency. Earlier three errors remain unchanged.",
+  "raw": {
+    "path": "data/campaign8-native/cycle31-state-correct-mcp-tool-retakes3/RESULTS.json",
+    "sha256": "faa81f8bed8309472dd4ee286ab26478bd7f4dcdc18ec99a144af9afca86cfe6"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "c03f94985c8501c58da5c4cf9be122830a65edd4646116fa44952c711b1dcfc0",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "counts": {
+    "cases": 3,
+    "PASS_scoped_CONTROLLED_MOCK": 3,
+    "final_PNGs_viewed": 3,
+    "additional_intermediate_PNGs_viewed": 2,
+    "generation_requests": 0,
+    "actual_tool_execution": 0
+  },
+  "case_grades": [
+    {
+      "id": "mcp-tool-controls-approve-disable",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_MOCK",
+      "observed_scope": "State-correct original navigation opens the synthetic tool inspector, chooses read_only, and confirms exact definition-hash approval. Intermediate native pixels show Available/Read-only and actual original approval persists with the matching definition hash. Disable tool then yields enabled=false/available=false while retaining read_only classification and approval. Connection/list is CONTROLLED_MOCK, no actual tool request is issued.",
+      "input_sha256": "317ddaf90d1434461dac343714047b70e28a014dc09d351e9ff4f9e96285b26e",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle31-state-correct-mcp-tool-retakes3/screenshots/mcp-tool-controls-approve-disable.png",
+        "sha256": "ad97922999afef2278e13a6842b29a74b003a70277eaa119f085f6b94d3da2c1"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "a1e278f487188a2902beb8b1a2cdbbe2d98f497fa81834e062250fadc3e4f969"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "mcp-tool-controls-bulk-approval-disable",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_MOCK",
+      "observed_scope": "Actual Select checkbox, bulk classification, Approve selected and exact confirmation make the one controlled definition available; intermediate pixels show1 enabled. Reselect/Disable selected yields0 enabled, native disabled state and original API enabled=false/available=false with matching persisted approval. This proves one-item bulk mechanics, not multiple-tool selection, live discovery, external invocation or provider execution.",
+      "input_sha256": "911500ae2b705bd8cf713b2517bb1cde52dba61774ea99ba941c82d12ae6805b",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle31-state-correct-mcp-tool-retakes3/screenshots/mcp-tool-controls-bulk-approval-disable.png",
+        "sha256": "5e8bef606f9c9bfdd5789a7352b5c0d2d1fc814fa85ac625a4396ffa3666cb2f"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "187526f34bf72ca6ef67b1d1bb1b68650aebbbd021b9ada9a4f497b075023d3b"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "mcp-tool-controls-close-inspector",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_MOCK",
+      "observed_scope": "Actual Close tool inspector removes its detail pane from native pixels while preserving original server/tool configuration, disabled state and exact approval. This is local inspector dismissal only, not server disconnect or permission revocation.",
+      "input_sha256": "89d36c06693419d3e49e186264ec8072eac3fa6a745aa510b1e53c85b8a13259",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle31-state-correct-mcp-tool-retakes3/screenshots/mcp-tool-controls-close-inspector.png",
+        "sha256": "4fc6c1246c73292c91e0023910bf3d5ad760b6a404e7c6173864ae4d86db8653"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "187526f34bf72ca6ef67b1d1bb1b68650aebbbd021b9ada9a4f497b075023d3b"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    }
+  ],
+  "intermediate_pixels": [
+    {
+      "path": "data/campaign8-native/cycle31-state-correct-mcp-tool-retakes3/screenshots/mcp-tool-controls-approve-disable-step-6.png",
+      "sha256": "9d42e1d1b0da001619b83f81e97950379164da2fb63aeb7bfca27654ec46c1cd"
+    },
+    {
+      "path": "data/campaign8-native/cycle31-state-correct-mcp-tool-retakes3/screenshots/mcp-tool-controls-bulk-approval-disable-step-7.png",
+      "sha256": "cfb0953b9101ea3623323025d3332bd7aedd673d9f143bb6bf79603a619571e4"
+    }
+  ],
+  "cleanup": {
+    "native_exit_code": 0,
+    "owned_native_cleanup": true,
+    "backend_closed": {
+      "path": "data/campaign8-ui/native-backend-cycle20-mcp-tool-retakes/CLOSED.json",
+      "sha256": "6dc5b15103a6ce2e549d7302a9b5c58d04ffbc8884660378efe8d7cf2b7f3366"
+    },
+    "source_uniform": true,
+    "owner_runtime_modified": false
+  },
+  "no_private_final_access": true
+}

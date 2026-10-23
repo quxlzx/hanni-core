@@ -1,0 +1,433 @@
+{
+  "scope": "Seventeen prospectively declared exposed native controls;15 narrow controlled passes and two preserved setup failures. Final/error pixels and original readbacks independently reviewed; no promotion of earlier grades.",
+  "raw": {
+    "path": "data/campaign8-native/cycle32-original-visible-safe17/RESULTS.json",
+    "sha256": "50c0efda8ba065e6313e314cb5f7464f5d49f59e7bbd291ee4f2320c8d082810"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "c03f94985c8501c58da5c4cf9be122830a65edd4646116fa44952c711b1dcfc0",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "counts": {
+    "cases": 17,
+    "PASS_scoped_CONTROLLED": 15,
+    "HARNESS_ERROR": 2,
+    "final_PNGs_viewed": 17,
+    "additional_intermediate_PNGs_viewed": 5,
+    "generation_requests": 0
+  },
+  "case_grades": [
+    {
+      "id": "visible-final-prepared-memory-draft",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Actual Home Check memory usage navigates to Conversation and sets the exact44-character textarea draft. Native pixels show the unready assistant/disabled send. No prompt, resource ranking, memory retrieval or generation occurs.",
+      "input_sha256": "974f10ad1f93f5c929d648d478fa72af68c8f91633ad1f2500cf72de9081c0ee",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-prepared-memory-draft.png",
+        "sha256": "56f7aaf788adaf4198515e542af39f6fbb8ae47e21fe70e2e08022b99f3194dd"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ebc65080f05e3b63f4c4752a120b07c107c0ebfea55860d1117908332c849954"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-prepared-calendar-draft",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Actual Home Today's calendar navigates to Conversation and sets the exact28-character calendar question. Send remains unavailable. No calendar-provider read, prompt submission or generation occurs.",
+      "input_sha256": "4a66b0a02af388f5c7ae3610a1c9f9c0f061bad799bdbb44ab3cb90731085c72",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-prepared-calendar-draft.png",
+        "sha256": "f051e8cad4aa862ffdf9467f67474d702ddfcba040ff48a254c299cd4ffe5a27"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ebc65080f05e3b63f4c4752a120b07c107c0ebfea55860d1117908332c849954"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-compact-navigation",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "At actual physical800x650/DPI120 (requested720 width constrained by original minimum), the original compact Open navigation exposes the sidebar and Close navigation dismisses it. Settings remains selected. This proves compact navigation at this size, not additional OS scaling.",
+      "input_sha256": "90b2cef1b806449df1f8c634d2240b7655814b8900ea57cc5129d6699b55d959",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-compact-navigation.png",
+        "sha256": "cf50e92eb5f8699d70efc371c4dbe25910b5c1094d57ed4f7b836def2969cc85"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ebc65080f05e3b63f4c4752a120b07c107c0ebfea55860d1117908332c849954"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-notifications-sidebar",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "The original Notifications sidebar control navigates to its route; actual native records and original authenticated notification API200 agree. This is navigation/read projection, not notification delivery or permission change.",
+      "input_sha256": "31050b9a6ab58bc13cd2639da336753d3892922a20a40a4366733b72084a131d",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-notifications-sidebar.png",
+        "sha256": "7772e0906e7136af9398856fe91983233a6728aeb9fae7379380f954ae89cb1e"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "536685f247edbbf7765e438d065414e132362ff4109ed7bcf0af60a41c5c42ea"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-settings-sidebar",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "The original Settings sidebar control reaches Settings with its existing configuration/unavailable-device projection. No settings mutation or hardware activation occurs.",
+      "input_sha256": "d7ce26732ecc46d38a639779884452ea8d5f9cac4634f9e097a04d5c5b16af15",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-settings-sidebar.png",
+        "sha256": "4da11ea7ff99964045e8cd9fc2e9771949aa915c11da944b7ab73d54287913c5"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ebc65080f05e3b63f4c4752a120b07c107c0ebfea55860d1117908332c849954"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-voice-controls-navigation",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original footer Show voice details then Voice controls reaches Voice. Native disabled listen/mute/interrupt and original voice API reflect the absent controlled voice session. This proves navigation/status, not physical voice operation.",
+      "input_sha256": "cf494f3ef7bb03404f9ac2e72c94cbf82a87e69591d2fed0ed2da72a20a1e247",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-voice-controls-navigation.png",
+        "sha256": "d74511650ce41f943d899b21322f135f4d6fcea02ca929e16b5a698a25a08839"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/voice",
+          "status": 200,
+          "data_sha256": "a1f29de8410d6dc79a64abe5e160b7808f38535668a98e63b2e1df0173ee75ca"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-audio-settings-navigation",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original footer Show voice details then Audio settings reaches the Settings audio region. No Apply, configuration write or audio activation occurs.",
+      "input_sha256": "a13efe50336d579bcb9c7843c89e2d14a8361c57f51e02d2d71a3f82d09d0457",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-audio-settings-navigation.png",
+        "sha256": "c03bf07db37e28e2a52ef2c181d076ddad588b9c340757fa911bc0dd2994dd14"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ebc65080f05e3b63f4c4752a120b07c107c0ebfea55860d1117908332c849954"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-project-task-draft",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Selecting the original controlled project and Add task opens New task with that project's actual selected field; Cancel dismisses it. Original productivity still contains exactly one task. This proves project-bound draft/cancel, not task creation.",
+      "input_sha256": "500d6c106e6e33c3f869853648aaa8f31a9ada8fb203568726a45f6c077e0866",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-project-task-draft.png",
+        "sha256": "c7ae7be176fc8874272abde0c3040b7cd962f6e957b5f224efaba5f1532fd375"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ebc65080f05e3b63f4c4752a120b07c107c0ebfea55860d1117908332c849954"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-project-file-draft",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Clicking the original project's file link navigates to Conversation and fills the exact263-character original path/permission-check draft. Its DOM value is complete while pixels show the wrapped visible portion; send is unavailable. No file-open dispatch or file-content read occurs.",
+      "input_sha256": "969de8bfa9a747a474a5272f1eeaa6fe94fe77f253fd1dc1934b91a6cccbb529",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-project-file-draft.png",
+        "sha256": "43b48f71b32e171ab04e3a834ed423f10611d1836ac129120b0e4805b8a6c567"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ebc65080f05e3b63f4c4752a120b07c107c0ebfea55860d1117908332c849954"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-planner-deadline-target",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Clicking the original Planner deadline link navigates to Tasks with the existing task list. This proves navigation only, not selecting a particular task detail or changing its deadline.",
+      "input_sha256": "9ddbe0bab0839b80ec80d53762518717476f83ab069b74cdf7bd68417e211b1d",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-planner-deadline-target.png",
+        "sha256": "9f06f449696ab9d12f06a5e2ee7cc751a00c5105ca152bbdef1e770df646e80c"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ebc65080f05e3b63f4c4752a120b07c107c0ebfea55860d1117908332c849954"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-planner-all-tasks",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Planner Open all tasks navigates to Tasks and its original list. No task mutation occurs.",
+      "input_sha256": "60f4aab54aeb8d370e7667a94ea004a9205547e99ffc76e5597de04d791275e7",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-planner-all-tasks.png",
+        "sha256": "9f06f449696ab9d12f06a5e2ee7cc751a00c5105ca152bbdef1e770df646e80c"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ebc65080f05e3b63f4c4752a120b07c107c0ebfea55860d1117908332c849954"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-memory-project-sources",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "The original Memory Project context selection opens the controlled project's source/disclosure sections and context-package summary. Native prose distinguishes saved plans from completed work, explicitly reporting no linked verified workflow. The lower package body is not wholly pixel-observed; no model recall, autonomous completion or source-file content read is credited.",
+      "input_sha256": "2952acdd571769760c248628a7c9761f8a482312507d2c93a0936290dc755ab0",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-memory-project-sources.png",
+        "sha256": "5db8ec56551edb5fdf639de28c029dbbf5d2f9a25ff55c08a24c53b067137f5e"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "1006fe9896bdae3694b81e779ffc33573a17d9e03380028e2924fd09bd97a941"
+        },
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ebc65080f05e3b63f4c4752a120b07c107c0ebfea55860d1117908332c849954"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-memory-alias-add-remove",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Add alias/Save change renders Controlled final local alias and a local-save receipt; Remove/Save change then removes it. Two original /api/memory POST200 responses and the final exact project's empty alias list support the round trip in disposable stores. Stored memory count36 and pending26 remain unchanged.",
+      "input_sha256": "2e19a6bf709e4b475cfcdd3cec29865b511b579ace38aa745cd8b009a0784545",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-memory-alias-add-remove.png",
+        "sha256": "8e2cd8a090fd84b093121c8f1e89daf7fa94cc948ceecd873e156e6f4ecbb606"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "1006fe9896bdae3694b81e779ffc33573a17d9e03380028e2924fd09bd97a941"
+        },
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ebc65080f05e3b63f4c4752a120b07c107c0ebfea55860d1117908332c849954"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-workflow-arguments-details",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original completed workflow selection/Refresh exposes control-unavailability reasons and planned/resolved file.write arguments plus the exact58-byte artifact receipt/SHA38703ce53446a80133798c0c6f66abdb8680c766e461a408fef132609d60190e. The verified fixture was manually seeded through original handlers/store; no autonomous planning, scheduler execution or model quality is established.",
+      "input_sha256": "6abd06f5bdb29521c4acfbb002ab951e8aad65efad961e7f2f69348244d88be5",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-workflow-arguments-details.png",
+        "sha256": "f9f5a6d80e6bbb802c871f154d3d986cd8b14a64f1f4e49a839c79980653a454"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/workflows",
+          "status": 200,
+          "data_sha256": "bfb15fa8e5f0caf280e454810a18a1b7aa1b1dbdbff83dc56c0325546d6d4451"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-workflow-activity-navigation",
+      "status": "HARNESS_ERROR",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original attempt fails before any intended control: the prior selected workflow detail remains mounted so Workflow status is absent. The observed verified detail remains truthful, but intended Activity navigation is unmeasured. This is preserved setup/locator failure, not a demonstrated product defect.",
+      "input_sha256": "5ae7e762a80a53adbbafd7cb515c6237f0a25e00ba197715cf4c983bfe277f3f",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-workflow-activity-navigation-error.png",
+        "sha256": "10725e83af36a24cd3427c2554799be5280013f4edd726a752e8adb45de9131f"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/agents",
+          "status": 200,
+          "data_sha256": "6b6ec0403f02575f2a69048b2c5dc0cf94c0113e2c8218f99ca1c4d14b140327"
+        },
+        {
+          "path": "/api/workflows",
+          "status": 200,
+          "data_sha256": "e562d6ccf1b56ec41098f87e357178a57d77e7e31b379d89db4402ffeb18036e"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-settings-inspector",
+      "status": "HARNESS_ERROR",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Show inspector succeeds, then the attempted underlying Settings Hide inspector button is covered by the actual inspector overlay. The intended second action times out; the overlay's own close was not used. Preserve this setup failure and do not claim dismissal or a product defect.",
+      "input_sha256": "114acec1e71b1595e01ea3b4ea243a5953424b9b0ad92ffa8a3cb58b01b7f090",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-settings-inspector-error.png",
+        "sha256": "7f88d6e47d97a219ca5233e7d41a30a8a0cb38c203021346c45f3d5c83e4f630"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ebc65080f05e3b63f4c4752a120b07c107c0ebfea55860d1117908332c849954"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-settings-shutdown-cancel",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Stop HANNI opens the exact confirmation explaining owned versus external model shutdown; Cancel closes it and the same disposable backend remains readable. No confirmed shutdown, owner process stop or generation occurs.",
+      "input_sha256": "9019f0bd5005f78f5bcb2fdf4a4e035b19efe3f8886319d146ff0b5184e9a462",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-settings-shutdown-cancel.png",
+        "sha256": "64224b4e67a5e525e809c177a16a49d185a4df9b1726174dca9efb6fddec0df6"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ebc65080f05e3b63f4c4752a120b07c107c0ebfea55860d1117908332c849954"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    }
+  ],
+  "intermediate_PNGs_viewed": [
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-compact-navigation-step-0.png",
+      "sha256": "cc9dcc4d636854a1b74711c48c44e892f9c61d054a0404af2e3214e0ed9e3b8c"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-project-task-draft-step-1.png",
+      "sha256": "07863eec978cf8174ee864200ca4791937d3424ae9df26611ea74d4cda80d54d"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-memory-alias-add-remove-step-4.png",
+      "sha256": "ff403b1287e3a2bae79235e6791d035f6d4b032de6bc467742ad5422adba8c62"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-workflow-arguments-details-step-3.png",
+      "sha256": "142fd6a986f89d34438fd813f5ef75cdba5dcc9da34423a6ecb9d2a2258501c5"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle32-original-visible-safe17/screenshots/visible-final-settings-shutdown-cancel-step-0.png",
+      "sha256": "8733635504e6976d9852df3042e931a68773b2c3d7e834fcbd27e1725eb67614"
+    }
+  ],
+  "native_cleanup": true,
+  "native_exit_code": 0,
+  "javascript_errors": [],
+  "network_nonGET": [
+    {
+      "method": "POST",
+      "path": "/api/memory",
+      "same_origin": true,
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/memory",
+      "same_origin": true,
+      "status": 200
+    }
+  ],
+  "unchanged_private_holdout": "Sealed60 remain unclaimed and unexecuted; these are exposed development controls."
+}

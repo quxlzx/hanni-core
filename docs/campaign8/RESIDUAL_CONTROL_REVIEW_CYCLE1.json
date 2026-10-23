@@ -1,0 +1,318 @@
+{
+  "scope": "Prospective exposed residual10+export2. Nine narrow functional/control passes, one preserved extra-cleanup lookup error, two delivery-unmeasured exports with independently confirmed adapter confounding.",
+  "raw": {
+    "path": "data/campaign8-native/cycle35-original-residual-controls-exports12/RESULTS.json",
+    "sha256": "2bf4375105fe67c1421e4f6252ba81ffc41f2f504ac4ded41e3cd9c77b862389"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "c03f94985c8501c58da5c4cf9be122830a65edd4646116fa44952c711b1dcfc0",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "counts": {
+    "cases": 12,
+    "PASS_scoped_CONTROLLED": 9,
+    "HARNESS_ERROR": 1,
+    "PARTIAL_native_export_unmeasured": 2,
+    "final_PNGs_viewed": 12,
+    "additional_intermediate_PNGs_viewed": 3,
+    "model_generation_requests": 0
+  },
+  "case_grades": [
+    {
+      "id": "residual-final-planner-refresh",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Planner Refresh reloads calendar/productivity projections; native shows no connected Google account and the existing local task. This is local read/status refresh, not provider access or model work.",
+      "input_sha256": "341e334c96d1d0b8066aef49abdd6ec727167ffb924100f5809a8a17f70f8f6a",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/residual-final-planner-refresh.png",
+        "sha256": "e3785ad001835f0b2596b0932cb2a997d7e15a61c391835e6d005c5b5f67ec85"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/calendar",
+          "status": 200,
+          "data_sha256": "61730280ec9b52b5fdc7ddd8412b95a33c412e945950ffb5daad6222957c5ffb"
+        },
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "0bd2f1d91e99425f1afa41e47927a333de0784edb7f0ff9a54098188bcb1b276"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "residual-final-planner-open-calendar",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Planner Open calendar navigates to Calendar and its actual local task-deadline projection, explicitly Not connected. No external calendar event read or mutation occurs.",
+      "input_sha256": "2b95a40f5aafb378f7e7d82bf175969728334cca338047a719936f7dd9d4629e",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/residual-final-planner-open-calendar.png",
+        "sha256": "a9f6b372991b33b9a3c7965a370cb8fb07b0b8a7cf4b942065cea7f73c4b72a8"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/calendar",
+          "status": 200,
+          "data_sha256": "61730280ec9b52b5fdc7ddd8412b95a33c412e945950ffb5daad6222957c5ffb"
+        },
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "0bd2f1d91e99425f1afa41e47927a333de0784edb7f0ff9a54098188bcb1b276"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "residual-final-inspector-review-settings",
+      "status": "HARNESS_ERROR",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Show inspector and Review settings succeed, reaching Settings; the extra Hide inspector lookup times out because original navigate closes inspector at innerWidth<=1100 (actual viewport1010CSSpx). Retain the whole-case harness error; no product defect is established and this review does not promote the case to PASS.",
+      "input_sha256": "0ffce496d53aa5c6a5b0bfe379e6c49b97e5f52cffc02983d6f12a6db1f5024e",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/residual-final-inspector-review-settings-error.png",
+        "sha256": "54822fdc8e539e50bc3e8e8eb371a0ebcd5735de4375def46411d526435ced65"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "0bd2f1d91e99425f1afa41e47927a333de0784edb7f0ff9a54098188bcb1b276"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "residual-final-palette-close-icon",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Actual Search workspace opens the original dialog; accessible Close dialog dismisses it. Native before/final frames confirm local palette dismissal, with no capability execution or backend mutation.",
+      "input_sha256": "8e76370454806c3e3bd3079f67b938d84c0f557341bc6dfe7b02b771f5e89648",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/residual-final-palette-close-icon.png",
+        "sha256": "b8ce2bac6407f3787e8313b2994dd992c13852b8386c72e5a50fa3df8afdac45"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "0bd2f1d91e99425f1afa41e47927a333de0784edb7f0ff9a54098188bcb1b276"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "residual-final-palette-escape",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Actual Search workspace opens the original dialog and its Escape key dismisses it, returning Home. This is local keyboard dismissal only.",
+      "input_sha256": "5ee8dd58eabee80c8cdeaf1149080e0710070561fec4578d5f68e1272f2625ac",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/residual-final-palette-escape.png",
+        "sha256": "6b02b1be685e374d42ae5c6dc813f414677d377f2380212e186d10d7ce06fb39"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "0bd2f1d91e99425f1afa41e47927a333de0784edb7f0ff9a54098188bcb1b276"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "residual-final-palette-capability-draft",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original palette search file.stat and the matching capability entry prepare the exact Tell me about the file.stat capability and what permission it needs. Conversation draft. Native send is unavailable. No file.stat call, prompt submission or inferred permission grant occurs.",
+      "input_sha256": "43144e46ee4d995b60a4dda085c456262d55b8deea15757742cc7093aa71fa3d",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/residual-final-palette-capability-draft.png",
+        "sha256": "c9e4f02beb978e5575ba7b987b797c38302556682002cd9dfcc6b666eb84aa07"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "ee30207a1312184635e8cf0e1272828324473b0ac38a736be7cacf02990f0c09"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "residual-final-workflow-output-close",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original View output displays the saved58-byte controlled-report excerpt, explicitly stating it neither opens files nor runs tools. Close output dismisses the dialog. The manually seeded original verified fixture is retained; no autonomous workflow execution or new file write occurs.",
+      "input_sha256": "8aa655ea34cb665cad75bd6cc86cb07284d817ae41a9c1079f48c63b4ff21c2a",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/residual-final-workflow-output-close.png",
+        "sha256": "e07cef3992810d7f9dab1dc7f84fc45c7bb3c81a39345da9899316aa9f1a50b9"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/workflows",
+          "status": 200,
+          "data_sha256": "b1016959f616d33d3feda00032d54feff8355100f9c4284d6bd8a51f1a81c47e"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "residual-final-results-cancel-resume",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original model-free routing run starts, requests Cancel after case, opens saved results and Resume checkpoint; the same original run completes10/10. Native intermediate cancellation frame remains in flight with2saved, so settled-cancel pixels are not claimed. Original controls/API persist completed10/10, and controlled original-evaluation delay is excluded from performance/model quality. No model inference or tool execution occurs.",
+      "input_sha256": "16a46f09727339c1bfd04964e0b26a826bc2c8b73ffae5f27df1bb5d888dec68",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/residual-final-results-cancel-resume.png",
+        "sha256": "8109aa3dbe0d7a710009d5e27ba2ef546f6cea2cce642d8bfe07b58d1046e062"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "ed1a90ef6bf58560963ab57a49d82a4dcd043c625522a0120dd091e002d268fa"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "residual-final-history-title-inspect",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Actual original Lab history title link opens the matching completed10/10 routing run detail. Native run ID and authenticated original history agree. This is persisted-result selection, not a new benchmark or model-quality proof.",
+      "input_sha256": "e35c269d63747ca8ce7dc03cd2252fef44f263f52701237e3b3c6f017fe2ae7a",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/residual-final-history-title-inspect.png",
+        "sha256": "5d44ae2f260b851ea39b4896071d57f5d8418ed9583e001bec4e6c82506e565b"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "2790c84a447c1541342f375489277168a16ca4e64bbc284152cf66b146cea607"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "residual-final-history-button-inspect",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Actual original Lab history Inspect button opens the same completed10/10 routing run detail. Source/native/API agreement proves this separate history selection control only.",
+      "input_sha256": "93174799340ff23e1b6916a1f737fc511b321c7b7fbb87d05e5e730c59f03cd2",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/residual-final-history-button-inspect.png",
+        "sha256": "34f01014a734258585789fde358c46090af8ed30ca79e6412d89cae4bdfeced2"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "2790c84a447c1541342f375489277168a16ca4e64bbc284152cf66b146cea607"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "export-before-detail-native-denial",
+      "status": "PARTIAL",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Actual detail Export JSON obtains original serialized persisted results and renders Complete redacted JSON export prepared:10persistedcases. CDP reports19992bytes completed under an IMPLICIT Playwright connect-over-CDP allowAndName override. No original native delivery, saved OS file, native denial or visible JSON preview is established; original-policy outcome is unmeasured and no functional export PASS is granted.",
+      "input_sha256": "4a67039f072c17dfaa982a78e68cf2930710d4d230908ea11468521056e4f13b",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/export-before-detail-native-denial.png",
+        "sha256": "f638ba5e12310e4ded0d764645b3eb683be2bc6571a6166ebfcbfd9e96e758de"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "2790c84a447c1541342f375489277168a16ca4e64bbc284152cf66b146cea607"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "export-before-comparison-native-denial",
+      "status": "PARTIAL",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Actual two-run comparison Export obtains the selected original serialized result and CDP reports19994bytes completed under the same implicit adapter policy override. Comparison remains the original deterministic routing results with neural metrics unmeasured. File delivery/denial under normal native policy is unmeasured; no functional export PASS is granted.",
+      "input_sha256": "70682db25d414d72e37c1fee9b9c24d120958aed71a0a84f763ff805dfeae21e",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/export-before-comparison-native-denial.png",
+        "sha256": "0c295382ff8e8d9506a43172b96cc768fe4f45653cedc9750f490465a0a19198"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "3385449ce03d5fcb9eb04cfad976e3d29f75568b69620053436a6aa226e70d80"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    }
+  ],
+  "intermediate_PNGs_viewed": [
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/residual-final-palette-close-icon-step-0.png",
+      "sha256": "9ad73a86fe3a6e64fa8d28d7a777e5ecf3ec67b344e2b3d7f36ea63267e611b2"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/residual-final-workflow-output-close-step-2.png",
+      "sha256": "e7f494ba3e078fa0545c87377e0dfe55640f91bff5fd4147253e9e8ef4a80220"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle35-original-residual-controls-exports12/screenshots/residual-final-results-cancel-resume-step-8.png",
+      "sha256": "d6b08f213884acbc8c9ef62b6cc18386d439678e65968f63121e4d514c756d77"
+    }
+  ],
+  "download_policy_audit": {
+    "path": "data/campaign8-verifier/export-before/ADAPTER_POLICY_REVIEW.json",
+    "sha256": "8a2f9ed218da306264f6f6041cf8a8a6d4533c54a1bf03152d2a7931f5e74965",
+    "raw_policy_overridden_false_is_incomplete": true,
+    "actual_adapter_implicit_override": true,
+    "actual_OS_file_delivery_observed": false,
+    "normal_native_export_outcome": null
+  },
+  "original_backend_closed": {
+    "path": "data/campaign8-ui/native-backend-cycle24-residual-exports/CLOSED.json",
+    "sha256": "9dd4aee3faa2027c8960fa03829a5279b64049b878ffa1501694e200cfc2f3ab",
+    "source_unchanged": true,
+    "owner_runtime_modified": false,
+    "original_evaluation_calls": 20,
+    "timing_dependency": "CONTROLLED_DELAY excluded from performance"
+  },
+  "native_cleanup": true,
+  "native_exit_code": 0,
+  "javascript_errors": [],
+  "private_final_attempted": 0
+}

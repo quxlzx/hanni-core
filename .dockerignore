@@ -1,0 +1,10 @@
+*
+!pyproject.toml
+!README.md
+!src/
+!src/**
+!deployment/
+!deployment/cluster-harnesses/
+!deployment/cluster-harnesses/worker.py
+**/__pycache__
+**/*.pyc

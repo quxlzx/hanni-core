@@ -1,0 +1,932 @@
+{
+  "scope": "Independent DEVELOPMENT original native controls on populated isolated original backend; every credit limited to the explicit observed scope",
+  "raw": {
+    "path": "data/campaign8-native/cycle13-safe-primary-40/RESULTS.json",
+    "sha256": "0099f6563cada999b322b3210bcb3f83594112a5bd849f96c5634db050d9f2dd"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "5b77e1673872fe543fa5cc7f69be2705b76b2bc80294bfbf6b8729ebabf53705",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "native_identity": {
+    "pid": 58788,
+    "create_time": 1791638461.153866,
+    "executable_sha256": "9bf90dc1438e1776369f668117d88c2a5f76a33fc6f796c4d9f41a8a7e586263",
+    "physical_windows_system_dpi": 120
+  },
+  "counts": {
+    "initial_cases": 40,
+    "PASS_observed_scope": 34,
+    "HARNESS_ERROR_preserved": 6,
+    "all40final_or_error_native_PNGs_independently_viewed": true
+  },
+  "case_grades": [
+    {
+      "id": "primary-mcp-editor-close",
+      "input_sha256": "d455c64d2b43d7f054ba5ef13cde494b09c05c1a9d067c0cbbb151dfa7244ed9",
+      "status": "PASS",
+      "observed_scope": "Original Add-server dialog draft closed; original server inventory remains empty.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-mcp-editor-close.png",
+        "sha256": "25649bd2513d69dd188e802b2a61366abf92a9c5a62f78b48f95bbae1d77d743"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "275ae978b74bed0c513d09bf2cf2b94ca29b42c4f0b939a0940c17e97ba518f6"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-mcp-stdio-save",
+      "input_sha256": "13e7a1ab4d3d4a611a414c66116a704f5d915f376e30997534c3db2375e91f36",
+      "status": "PASS",
+      "observed_scope": "Entered name/command/args/env/timeout saved in original isolated hub SQLite. One disabled stdio server, timeout2, auto_connect false, zero discovered/enabled tools; no process launch or connection credited.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-mcp-stdio-save.png",
+        "sha256": "957130fbf52ec1c51e73161f1f08525a144caa7b31688be5e30856aecad3c1e0"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "947546cf6cb8aef763299fe046eef55f064f61bfeebf3ef3da938b443c32d1c8"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-mcp-search-no-match",
+      "input_sha256": "7e09731de1f39d273ec7626b2f0c580c6bfc7571c90af1cc6cd13a4c896b1cd5",
+      "status": "PASS",
+      "observed_scope": "Local query produces visible No servers match; original persisted disabled server remains unchanged.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-mcp-search-no-match.png",
+        "sha256": "4f8535f746263bcd1010489304c5ad0d4403509d601bcd6ae0e0b5cd469421cf"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "947546cf6cb8aef763299fe046eef55f064f61bfeebf3ef3da938b443c32d1c8"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-mcp-search-reset",
+      "input_sha256": "d1a53c12145a793fe612a8bffc722fd3c12ac488200cfd3c1d93a11b2c4b3b2a",
+      "status": "PASS",
+      "observed_scope": "Cleared query restores the original one disabled server row.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-mcp-search-reset.png",
+        "sha256": "4f82f26dbfd4b8098dc7c46a677de6444f46d3f68cf010a27552e2f0c17e3822"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "947546cf6cb8aef763299fe046eef55f064f61bfeebf3ef3da938b443c32d1c8"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-mcp-detail-settings",
+      "input_sha256": "0152ad9a51ae9fa163e454fe8daec6b3b38a9c2df8d027ce6d2315b88b6d32a6",
+      "status": "PASS",
+      "observed_scope": "Selected original server and expanded Connection settings; displayed no-launch command, empty args, no auth/environment refs, timeout2 correspond to saved config.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-mcp-detail-settings.png",
+        "sha256": "65f390a627beccdc0fc161c78340b2985aa19b481195f2bed73ad170d0295129"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "947546cf6cb8aef763299fe046eef55f064f61bfeebf3ef3da938b443c32d1c8"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-mcp-edit-save",
+      "input_sha256": "202430bb1bb26e55be9983b4c171b588e3b2ea7bda3391b12c2deb70874f5b6c",
+      "status": "PASS",
+      "observed_scope": "Original same server config name updated to Controlled revised integration; disabled state/tool counts remain zero.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-mcp-edit-save.png",
+        "sha256": "ebd60fdb04cb8ecc4b74f282e66d90e9b3362bea7f680f65e205485b217b9830"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "592734ed424e402e19d4264c87c417a210c38f49ca0a8d683de7fa03c4b843f6"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-mcp-remove-cancel",
+      "input_sha256": "b59bd9afd225d1cfba2c312b33f30890eb88095cf28d250ebef1cca1370ae90b",
+      "status": "PASS",
+      "observed_scope": "Original Remove confirmation cancelled; one revised disabled server remains persisted.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-mcp-remove-cancel.png",
+        "sha256": "88473f4efc96f01d6f072640e0110674dfa7b6d71844855749a4dd0ca9237be6"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "592734ed424e402e19d4264c87c417a210c38f49ca0a8d683de7fa03c4b843f6"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-mcp-remove-confirm",
+      "input_sha256": "6ffe773ae36ff02e8dda47f1b6b867f840ed60412e3d59fd6e87aea3fd95306f",
+      "status": "PASS",
+      "observed_scope": "Actual original local removal acknowledged; original server array and visible counts return to zero.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-mcp-remove-confirm.png",
+        "sha256": "44eb6bbd5075d4a5a9221e919ff6354a9c70d87a5c20374f5cf48f6946d413fe"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "cd955bea1203f3c5d7c27842a05ac3a4c08c587ae252b1e4abe92dc4c01dd5ca"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-mcp-http-draft-cancel",
+      "input_sha256": "63938323d81d283e9ffdc9da999204bd561a66d7669cb58fdc1fec6de0b71443",
+      "status": "PASS",
+      "observed_scope": "Streamable HTTP transport and bearer-env reference entered only in local draft; Cancel closes it and stores zero servers. No auth resolution, HTTP connection or command launch credited.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-mcp-http-draft-cancel.png",
+        "sha256": "25649bd2513d69dd188e802b2a61366abf92a9c5a62f78b48f95bbae1d77d743"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "cd955bea1203f3c5d7c27842a05ac3a4c08c587ae252b1e4abe92dc4c01dd5ca"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-mcp-import-invalid",
+      "input_sha256": "f5f08e9ecb7aeca1706f571d106d5dc80d80ada9dc2a46c0613594a578302b7b",
+      "status": "PASS",
+      "observed_scope": "Import preview rejects malformed JSON visibly; Import selected disabled, original hub remains empty.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-mcp-import-invalid.png",
+        "sha256": "b98ae5af4d2669224e854f0915b51b287f4e9dde473ff375442489c55c7f2158"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "cd955bea1203f3c5d7c27842a05ac3a4c08c587ae252b1e4abe92dc4c01dd5ca"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-mcp-import-preview",
+      "input_sha256": "d10cb922e155f66d1ad82331d9fad759ed1b2c3b1d106eb8fcb4723a9e774f7a",
+      "status": "PASS",
+      "observed_scope": "One parsed stdio preview shown ready for review; no Import selected click, zero actual saved servers or process launches.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-mcp-import-preview.png",
+        "sha256": "0a62db4c1c7f9c6ab87e32cbfaaf690dbeb1455bd9fbcc6f4c9681b4d86246bc"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "cd955bea1203f3c5d7c27842a05ac3a4c08c587ae252b1e4abe92dc4c01dd5ca"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-mcp-status-filter",
+      "input_sha256": "ebbc1bc1b4ae2150762c0ed1e8370febbb20f3e0f162e1d1f94454822b7c6f9b",
+      "status": "PASS",
+      "observed_scope": "Disabled/all filter selections and Refresh status execute on an empty hub; truthful empty result. Nonempty filtering discrimination is not established.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-mcp-status-filter.png",
+        "sha256": "0006ed97f3f34bdb28ae5d4ac1059c592b6c8362ba09399306d804792fff09dc"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "cd955bea1203f3c5d7c27842a05ac3a4c08c587ae252b1e4abe92dc4c01dd5ca"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-routing-fast-save",
+      "input_sha256": "6aefa73af94127c060881da9ee4f89a43b9142c0ee10b621065b508e06e9efa3",
+      "status": "PASS",
+      "observed_scope": "Fast policy saved by original isolated policy API; visible Fast policy and saved acknowledgement match. Controller remains unattached; no inference selection credited.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-routing-fast-save.png",
+        "sha256": "bb697689e97b31bf25aba1b3f38579fd73f411849f83ae6244748f70c7118e6a"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-routing",
+          "status": 200,
+          "data_sha256": "bf8683559240d83ce3db21bdd254f8c809e3f7a09a4c7d9b56e917bacd9b8f21"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-routing-quality-save",
+      "input_sha256": "6c8b02c076630ede0524c35549773136539e1fe3353bb826ca37196f630fda02",
+      "status": "PASS",
+      "observed_scope": "Quality policy saved by original isolated policy API; visible Quality policy matches. No endpoint ranking or response-quality proof.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-routing-quality-save.png",
+        "sha256": "1c1e70a5fcff0139f569d895201850da95e54f6359f617aaa28bfc02a81956b4"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-routing",
+          "status": 200,
+          "data_sha256": "7be05b386c05c93f6dfe365f0bbc08c7fb04b8faa9bce728dc01ea3daa5f7418"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-routing-manual-draft",
+      "input_sha256": "b06604b475980e64bf06fb4c6512c42924f6c58b0087f9b1c03c7016b807c6ce",
+      "status": "PASS",
+      "observed_scope": "Manual override and unselected preferred-endpoint draft displayed, Apply disabled. Persisted policy remains quality; no manual override applied.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-routing-manual-draft.png",
+        "sha256": "134f002ec7f736da0b3d6ed141ce54e8935000ecf8212669279ad831ab3de81b"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-routing",
+          "status": 200,
+          "data_sha256": "22650f0a99da972e5bd4a047265de000d74a8ea5145a0c9f014257eb8ff07a33"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-routing-balanced-restore",
+      "input_sha256": "ee6d0fe1196cdcb622d34a0e61173756a6bb16cafc62cac11f1e600515eb4cd4",
+      "status": "PASS",
+      "observed_scope": "Balanced policy restored in original store and visible heading; original controller remains unattached.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-routing-balanced-restore.png",
+        "sha256": "b30f49c750a7dbb2aab65965777f43d6b3081022365849be08206a36b09843c4"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-routing",
+          "status": 200,
+          "data_sha256": "43d5a69a44df3de89b83105425b73218b451616fb42bacf2b55232ca54b46367"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-routing-capability-details",
+      "input_sha256": "c562792a58a6d944f51fea06e3336531704d13108ca9bdfdcac38d0af39f931d",
+      "status": "PASS",
+      "observed_scope": "Expanded endpoint disclosure shows original configured16384 vs unverified context, none verified capabilities, allowed categories, unknown resources and configured budgets. No measured-serving proof.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-routing-capability-details.png",
+        "sha256": "648a269ee9253e8c7b03e7e4fd265f0fa7fcb2d64da6a546016b71907a6a51db"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-routing",
+          "status": 200,
+          "data_sha256": "c3aafa44e0448e327e143e50e924fbcb6810dc00343d0ad995b3c25b2421291a"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-model-sort-name",
+      "input_sha256": "bddefad8a84550869f8ec733f464a4a4555fb92b9fafa2f5cb4b25039117728f",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "Exact accessible-name locator omitted current sort-arrow suffix; no button action reached.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-model-sort-name-error.png",
+        "sha256": "ec7b9211a909e9ee98480121a25f6eef53ef8103d32f1c1ad5a3e04fc7cdaa04"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "a9ad35802746e8d90eaebbd231d1bdf2eed6b48ee5d998529b48ab02845f5cfa"
+        }
+      ],
+      "scope_complete_only_as_described": false,
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Model / endpoint\", exact=True).first\n"
+      }
+    },
+    {
+      "id": "primary-model-sort-availability",
+      "input_sha256": "cc57693e06e83e37446ec89054341677e5d602ee2017f14935ff4f2edf4f6433",
+      "status": "PASS",
+      "observed_scope": "Actual Available heading button clicked and original single endpoint remains displayed; no multi-row ordering correctness inferred.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-model-sort-availability.png",
+        "sha256": "79ef1794001009e2fbda4aa26262ffcb359cd316b2d170ad6eceedaaffae3225"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "a9ad35802746e8d90eaebbd231d1bdf2eed6b48ee5d998529b48ab02845f5cfa"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-model-sort-context",
+      "input_sha256": "ee17334214b90a2d30c8de8d0c8ca74fe7e5ab8fdeb6e00355f3dfea86069663",
+      "status": "PASS",
+      "observed_scope": "Actual Verified context heading clicked on one configured endpoint; configured16384 remains distinct from unknown verified context. No multi-row sort discrimination.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-model-sort-context.png",
+        "sha256": "ef3e9801e775631729974cf951a799f7ce15a16d7d5f7bd8c62bb0419c5c909d"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "a9ad35802746e8d90eaebbd231d1bdf2eed6b48ee5d998529b48ab02845f5cfa"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-model-endpoint-select",
+      "input_sha256": "39f2f40cb93e8a0101b2de3e0a6d96c2a42c373b4da9f010d4db9cf2bac16dd6",
+      "status": "PASS",
+      "observed_scope": "Original single endpoint selection displays its matching unavailable-fixture-model details; no model load/run.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-model-endpoint-select.png",
+        "sha256": "97be16080fe3cec27e9e705d0b1af64ef4cceb6594b4d2e8edb8ff2eec2e4302"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "a9ad35802746e8d90eaebbd231d1bdf2eed6b48ee5d998529b48ab02845f5cfa"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-model-results-filter",
+      "input_sha256": "749b65bb2cc58f1d34ba59b4f86aa4a1065862d619647c0aec7da4c0b3944a61",
+      "status": "PASS",
+      "observed_scope": "Entered benchmark query visible with zero matching/recorded runs and disabled pagination. Nonempty filtering is untested here.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-model-results-filter.png",
+        "sha256": "123bd98c7118606dab8a8760ef2675d904d20dc70f65c9be278e23d1128b2e15"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "348f8c7cd301ade8f7b136152dab7e622470e9f10212959bbd87a238a9bdb009"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-model-compare-empty",
+      "input_sha256": "69a9c66dece92bce58978ba74d76c38d4a7badc470a06f9f4edfe7284466dc5b",
+      "status": "PASS",
+      "observed_scope": "Compare pane opens with no recorded runs and disabled Compare selected runs; no model comparison credited.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-model-compare-empty.png",
+        "sha256": "35eddb3e82b4bedc9940c8daef9cdf7ffdb4134ef6746ca39638a94715c107b9"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "348f8c7cd301ade8f7b136152dab7e622470e9f10212959bbd87a238a9bdb009"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-memory-refresh",
+      "input_sha256": "fe6096da677cade21d0cb136d54b0ab4dde2998ebd1c82b75fd14be7d92adde3",
+      "status": "PASS",
+      "observed_scope": "Original local explorer refresh returns same one stored record/project and native display; no semantic retrieval/model invocation. Extra helper /api/memory/projects404 is an invalid diagnostic path; explorer itself includes original projects.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-memory-refresh.png",
+        "sha256": "3ae4a6fd5342ebd66e326b815ea3e9686bbc18058084daecf0549f1a88229158"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "6944daabad2d8dfd9eeb1f49522f68324ce2622b53ac7203e67f662af2cc76c6"
+        },
+        {
+          "path": "/api/memory/projects",
+          "status": 404,
+          "data_sha256": "075fe6af86a4cebf8ecec313c85a51088c2513aa16d3e1ed9fba161e5d3e3e00"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-memory-mode-details",
+      "input_sha256": "6f7ec0befd837db11c333595808654d90b69a04eebc2f3f58ca6cf2e7a76d3f9",
+      "status": "PASS",
+      "observed_scope": "Original Mode details disclosure opens and displays LAYA disabled/local keyword search. Extra helper /api/memory/projects404 is not a UI capability failure.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-memory-mode-details.png",
+        "sha256": "d91a1edfc8bd1467826c622e18036d6b3a566d756fdbf9236e4e769469d4543c"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "6944daabad2d8dfd9eeb1f49522f68324ce2622b53ac7203e67f662af2cc76c6"
+        },
+        {
+          "path": "/api/memory/projects",
+          "status": 404,
+          "data_sha256": "075fe6af86a4cebf8ecec313c85a51088c2513aa16d3e1ed9fba161e5d3e3e00"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-memory-consolidate-cancel",
+      "input_sha256": "417ee1073ccf6417c98d259d5a3a2aab8b7f79505ff90946d369920595b227c5",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "Earlier Mode details disclosure intentionally remained open and covered toolbar. Independent fresh close/toggle reproduced original safe opening; no dialog or production defect established.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-memory-consolidate-cancel-error.png",
+        "sha256": "468c23e6c5c10c7438cf56cd9817973913f30f5f974b5195d96a38d2f01c2dc6"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "6944daabad2d8dfd9eeb1f49522f68324ce2622b53ac7203e67f662af2cc76c6"
+        },
+        {
+          "path": "/api/memory/projects",
+          "status": 404,
+          "data_sha256": "075fe6af86a4cebf8ecec313c85a51088c2513aa16d3e1ed9fba161e5d3e3e00"
+        }
+      ],
+      "scope_complete_only_as_described": false,
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Find related records\", exact=True).first\n    - locator resolved to <button>Find related records</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <p>…</p> from <div class=\"memory-status-line\">…</div> subtree intercepts pointer events\n    - r"
+      }
+    },
+    {
+      "id": "primary-memory-analyze-cancel",
+      "input_sha256": "aaa8c31f11b1dd1c85d4c16bb873f0f79b35242c815908befe3f327eb8a9a8cb",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "Same retained open Mode details setup intercepted pointer; original closed-details opening independently works.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-memory-analyze-cancel-error.png",
+        "sha256": "a1feeab767f1ac2f76b49cdd236cb5ea542a0a674b1a4e4bec5f7e8adb6f15c9"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "6944daabad2d8dfd9eeb1f49522f68324ce2622b53ac7203e67f662af2cc76c6"
+        },
+        {
+          "path": "/api/memory/projects",
+          "status": 404,
+          "data_sha256": "075fe6af86a4cebf8ecec313c85a51088c2513aa16d3e1ed9fba161e5d3e3e00"
+        }
+      ],
+      "scope_complete_only_as_described": false,
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Suggest from a statement\", exact=True).first\n    - locator resolved to <button>Suggest from a statement</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <p>…</p> from <div class=\"memory-status-line\">…</div> subtree intercepts pointer events"
+      }
+    },
+    {
+      "id": "primary-settings-refresh",
+      "input_sha256": "e999c42ca3ab61a8490a5c99b78a3e4cec3d106c35c92f882ed0de6bbb0d24f1",
+      "status": "PASS",
+      "observed_scope": "Original workspace settings refresh and source policy projection visible; device/GPU dependencies report unavailable. No actual device activation or GPU routing.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-settings-refresh.png",
+        "sha256": "1c504d63a627ede08d7bc981f925487b56721ea8aec54f6cd5c4e22ed708d6f3"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "f210ac42254f95c2c7c11f854ea89b82816be2928e5cd42ddc9ff556e87768f6"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-settings-motion-toggle",
+      "input_sha256": "18d83e28a474d05d42c88fdb4a34affd00bf754fb86a6f0c6eb3d53d96ced56f",
+      "status": "PASS",
+      "observed_scope": "Local voice-visual animation control changed to Resume visual. This is local display pause state, not OS reduced-motion, physical audio or a permission change.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-settings-motion-toggle.png",
+        "sha256": "45af333658a1919772569636778881ffcd9ab7f9382c5e052318e8c03c442568"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "f210ac42254f95c2c7c11f854ea89b82816be2928e5cd42ddc9ff556e87768f6"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-settings-motion-restore",
+      "input_sha256": "5cb67fd42c0bbe918cfd7e848608d9977171fcf1e4e076f922dcf2eda4ef9cb9",
+      "status": "PASS",
+      "observed_scope": "Second local visual toggle restores Pause visual label; no persistence across app restart asserted by this case.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-settings-motion-restore.png",
+        "sha256": "73fd5ccba7eb0ec3b91370f1ec05a703808b26a98872eb9a7c36d0584b41ad19"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "f210ac42254f95c2c7c11f854ea89b82816be2928e5cd42ddc9ff556e87768f6"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-settings-section-audio",
+      "input_sha256": "e5e68ac0bcde4e1984c360d2fc21b06a55e4d2d3f5abb569e1f3ec6901bd7aff",
+      "status": "PASS",
+      "observed_scope": "Original Audio anchor scrolls Microphone & speaker section into native viewport; unavailable output enumeration shown. No audio capture/playback.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-settings-section-audio.png",
+        "sha256": "79ef67fe72ae2e597f554347cd986fa0c8f8e20a4da37e6bac4e111fe85b38a0"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "f210ac42254f95c2c7c11f854ea89b82816be2928e5cd42ddc9ff556e87768f6"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-settings-section-model-routing",
+      "input_sha256": "88566148be01f38996ac14fabdb3c137dee98be8020773a2141b3b87d88ee837",
+      "status": "PASS",
+      "observed_scope": "Original Model routing anchor scrolls routing/GPU unavailable section into view.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-settings-section-model-routing.png",
+        "sha256": "feefffbe26cd0c825ada2202fcc9d685a27a5188f6b26d3e56781c50bf6f1815"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "f210ac42254f95c2c7c11f854ea89b82816be2928e5cd42ddc9ff556e87768f6"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-settings-section-permissions",
+      "input_sha256": "e85862465c28daa0be62687705c87ed52bd82ee8e733af85d296554a9df73958",
+      "status": "PASS",
+      "observed_scope": "Original Permissions anchor exposes actual owner auto-approval throughlevel2/read-only policy values from workspace; no policy mutation.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-settings-section-permissions.png",
+        "sha256": "6f74816fd084f3443d9b63676e1a953298d3efc362dbcd2b7be264f2957da549"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "f210ac42254f95c2c7c11f854ea89b82816be2928e5cd42ddc9ff556e87768f6"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-notification-preference-disable",
+      "input_sha256": "5fe61e61874ad8f1da157dcae06094ff1beadac414d045b7c9cb4dc31ae3be2c",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "Synchronous set_checked postclick assertion raced original async controlled checkbox; API preferences.approvals false is already persisted. Error retained, no immediate DOM completion credit.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-notification-preference-disable-error.png",
+        "sha256": "3ead0174f6c03fd89a07481a807cb2ca7cfe4ebc924a0aef1140c5afdc553a84"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "3af15519b8d1ab45602daed600f9f101ea78a4b2fde972a93765e67bb966111b"
+        }
+      ],
+      "scope_complete_only_as_described": false,
+      "original_error_retained": {
+        "type": "Error",
+        "message": "Locator.set_checked: Clicking the checkbox did not change its state\nCall log:\n  - waiting for locator(\".notification-preferences input\").first\n    - locator resolved to <input checked type=\"checkbox\"/>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - performing click action\n    - click action done\n    - waiting for scheduled navigations to finish\n    "
+      }
+    },
+    {
+      "id": "primary-notification-preference-restore",
+      "input_sha256": "f9ab19bb7e804afb0e8680b6da8b61b8b8644495a78b88169d2113506393e4b9",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "Same immediate DOM expectation raced async state; original API preferences.approvals true restored. Error retained.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-notification-preference-restore-error.png",
+        "sha256": "3ead0174f6c03fd89a07481a807cb2ca7cfe4ebc924a0aef1140c5afdc553a84"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "80556243011e5dc059abb3c69ffc4bbfcbc23f000130aef9b57abf49beeb58d5"
+        }
+      ],
+      "scope_complete_only_as_described": false,
+      "original_error_retained": {
+        "type": "Error",
+        "message": "Locator.set_checked: Clicking the checkbox did not change its state\nCall log:\n  - waiting for locator(\".notification-preferences input\").first\n    - locator resolved to <input checked type=\"checkbox\"/>\n  - attempting click action\n    - waiting for element to be visible, enabled and stable\n    - element is visible, enabled and stable\n    - scrolling into view if needed\n    - done scrolling\n    - performing click action\n    - click action done\n    - waiting for scheduled navigations to finish\n    "
+      }
+    },
+    {
+      "id": "primary-calendar-range-daily",
+      "input_sha256": "072bfd434cbe8683815a0e6efebcdc635d45e4b3c7a207e2fb9a5e8d14f81186",
+      "status": "PASS",
+      "observed_scope": "Daily schedule selection and current date visible; original local task deadline shown separately from disconnected Google. Helper readback uses fixed days7, so it does not prove a days1 provider query.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-calendar-range-daily.png",
+        "sha256": "f7a3936921dfc82873d226e2b31bbe53cc0048462f81f4295a72cd902fc65984"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/calendar?start_date=2026-10-10&days=7",
+          "status": 200,
+          "data_sha256": "61730280ec9b52b5fdc7ddd8412b95a33c412e945950ffb5daad6222957c5ffb"
+        },
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "e9a9e5e8bd107ca60961e1e8b605263425e05f1f4d1ee7c9c34fe97f654037e1"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-calendar-range-weekly",
+      "input_sha256": "23cfd6077cb9199220bf9c9da333dfbdbb8c9ecee4d7ebe0259124fe56995731",
+      "status": "PASS",
+      "observed_scope": "Weekly schedule and date2026-10-10 visible; original local task remains in range and Google explicitly disconnected.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-calendar-range-weekly.png",
+        "sha256": "fe7f7ad20efcc71c31a797c873b6ccb0025c8d477ed95374f714c4008b5be1d5"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/calendar?start_date=2026-10-10&days=7",
+          "status": 200,
+          "data_sha256": "61730280ec9b52b5fdc7ddd8412b95a33c412e945950ffb5daad6222957c5ffb"
+        },
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "e9a9e5e8bd107ca60961e1e8b605263425e05f1f4d1ee7c9c34fe97f654037e1"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-calendar-refresh-empty-vault",
+      "input_sha256": "287845a8d349f633a7d655bb6844fe936d5adb51cc4d05063d5e569fa90d6c44",
+      "status": "PASS",
+      "observed_scope": "Refresh preserves truthful No connected Google Calendar account and local task; no real account/provider integration.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-calendar-refresh-empty-vault.png",
+        "sha256": "645945a4bb405a8d7b39e9e6cb58eb9ff0990db5e06d8d4b8bf17ea572fe7ce4"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/calendar?start_date=2026-10-10&days=7",
+          "status": 200,
+          "data_sha256": "61730280ec9b52b5fdc7ddd8412b95a33c412e945950ffb5daad6222957c5ffb"
+        },
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "e9a9e5e8bd107ca60961e1e8b605263425e05f1f4d1ee7c9c34fe97f654037e1"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-workspace-inspector-open",
+      "input_sha256": "9b32bf9cbc231e85c1f026fa5776cb9a23c15a400fa96dd6378752904e194eed",
+      "status": "PASS",
+      "observed_scope": "Actual context-inspector pane opens with original unreachable assistant/configured fields; no controller execution.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-workspace-inspector-open.png",
+        "sha256": "9815eb24a5a301f615e7899a727191b8ffe5bfeb8b4681d5e8ab359d282c93e2"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "f210ac42254f95c2c7c11f854ea89b82816be2928e5cd42ddc9ff556e87768f6"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "primary-workspace-inspector-close",
+      "input_sha256": "3f5a32f5e3e30ed9cc35682fef6234f5af687a163c401945ea6c69e5f902d352",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "Initial setup toggled context pane off before exact Hide-inspector search; the subsequent missing selector is a state/setup error. Fresh show-then-close retake separate.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle13-safe-primary-40/screenshots/primary-workspace-inspector-close-error.png",
+        "sha256": "81745b76bfadbf89134bd2643e48da464b2bbec0f5e30f0e884960b8e7403626"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "f210ac42254f95c2c7c11f854ea89b82816be2928e5cd42ddc9ff556e87768f6"
+        }
+      ],
+      "scope_complete_only_as_described": false,
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Hide inspector\", exact=True).first\n"
+      }
+    }
+  ],
+  "cleanup": {
+    "native": true,
+    "exit": 0,
+    "javascript_errors": []
+  },
+  "limitations": [
+    "No pass derived from executed flag alone.",
+    "MCP config CRUD and drafts do not prove connection/transport/provider use.",
+    "Original routing-policy writes do not prove actual model ranking.",
+    "Single-row sorts and empty result filters lack discriminating data here.",
+    "Memory generation, approval/consolidation and actual calendar integration were not executed by these cases.",
+    "Physical microphone and speakers BLOCKED by user unavailability.",
+    "Six original failures are unchanged; corrected exposure retakes separately reviewed."
+  ]
+}

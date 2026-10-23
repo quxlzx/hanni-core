@@ -1,0 +1,152 @@
+{
+  "scope": "Three prospective original native Model Lab deterministic lifecycle controls with finite timing delay only. No real inference, actual tool execution, workflow quality or performance claim.",
+  "raw": {
+    "path": "data/campaign8-native/cycle29-original-lab-lifecycle3/RESULTS.json",
+    "sha256": "d4f9332cc5b3575ecd3759cafa3f7867ba96b100b509ebe6f69b55acf213f371"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "c03f94985c8501c58da5c4cf9be122830a65edd4646116fa44952c711b1dcfc0",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "counts": {
+    "cases": 3,
+    "PASS_scoped": 3,
+    "final_PNGs_viewed": 3,
+    "additional_intermediate_PNGs_viewed": 3,
+    "completed_original_cases": 101,
+    "cancelled_original_finished_cases": 3,
+    "generation_requests": 0,
+    "actual_tool_execution": 0
+  },
+  "case_grades": [
+    {
+      "id": "lab-controls-pause-resume-101",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Actual original Pause request and later Resume checkpoint act on the same run through successful original control POSTs. It finishes with completed=total=101, endpoint_id=null, original corpus/scorer identity, and unique ordinals 0..100. The controlled evaluator ledger contains the corresponding 101 IDs once in order, so resume does not re-evaluate completed cases. The immediate Pause screenshot remains pausing/in-flight; a settled paused-state PNG was not captured. Eligibility of the subsequent original Resume control and source state guards supplement the persisted completion evidence.",
+      "input_sha256": "7fda45a471b3bdfa0e8236967ab78aaa796dff34993e4affc0f90c8496ad950c",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle29-original-lab-lifecycle3/screenshots/lab-controls-pause-resume-101.png",
+        "sha256": "09b8bf80a52ddabfe3825031b8ce4c430b0b6d4bd9a8351faf5a076f87f57921"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "8c62e46771ffddee5d6cabe87d400f148136c8760261d8f1fc13e21bc53becca"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "lab-controls-case-pagination",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Inspect results/Next cases displays Page2 and DIAGNOSTICS-101; selecting the actual row shows matching case detail, Real inference No/Actual tool execution No. Previous restores Page1. Original authenticated persisted detail GET pages have offsets0/100 with exactly100+1 cases, the same run/configuration/corpus hashes and unchanged original case payloads.",
+      "input_sha256": "6083cd7c2d9fdefee56dd4d1fc919f12dbb8c72d28fdcfc8601721d44c47e241",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle29-original-lab-lifecycle3/screenshots/lab-controls-case-pagination.png",
+        "sha256": "4674bd14d3b77215708bea2805d349a8e6d7e3a1df4b37dd2a2b1f45032f2d76"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "8c62e46771ffddee5d6cabe87d400f148136c8760261d8f1fc13e21bc53becca"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "lab-controls-cancel-after-case",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Cancel request is accepted during the separate run and finishes its in-flight case before persisted status cancelled at3/101, ordinals0..2. The immediate final HWND frame still displays2 saved with case3 in flight; the later authenticated API provides the settled cancelled state. No completion claim is inferred from the earlier frame, and no model/tool dispatch or physical interruption is tested.",
+      "input_sha256": "39ef4c15cab7af193ab45d9ad16cc54840cc1c9111f81e175155ff7e946a3a7f",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle29-original-lab-lifecycle3/screenshots/lab-controls-cancel-after-case.png",
+        "sha256": "b777af986e9fa103bb0c4d822179af409fec51bde5193c16ed69c4a3973b6232"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "636047e3abf34e189c473753770c8dbf58fbfa76c26c961d0ad231fe617cc383"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    }
+  ],
+  "persisted_pages": {
+    "path": "data/campaign8-native/cycle29-original-lab-lifecycle3/persisted-original-lab-pages.json",
+    "sha256": "9b7a7816977fa15850cd3de1b0ce02d54de844f61f0242506b50caf065de045c",
+    "completed_pages": [
+      {
+        "offset": 0,
+        "count": 100,
+        "case_payloads_sha256": "b97a87d656677180089ad543ab78c7318dc97f13a7d215cb539a14ce8a729352"
+      },
+      {
+        "offset": 100,
+        "count": 1,
+        "case_payloads_sha256": "bcf8b7f61e465e3f6ef17e539327f9f2430d17e29a20dd1406fe1203e7ab5cfb"
+      }
+    ],
+    "cancelled": {
+      "completed": 3,
+      "total": 101,
+      "ordinals": [
+        0,
+        1,
+        2
+      ]
+    },
+    "tokens_persisted": false
+  },
+  "controlled_delay": {
+    "source": "scripts/campaign8_ui/lab_controls.py",
+    "sha256": "5743ff3044574b895d894de7d3bed429a3074f1b4c8a089de0ae78915571936e",
+    "seconds_per_original_call": 0.15,
+    "maximum_calls": 204,
+    "observed_original_calls": 104,
+    "performance_eligible": false,
+    "result_override": false,
+    "original_evaluator_preserved": true
+  },
+  "original_resume_source": {
+    "path": "src/hanni/evals/model_lab.py",
+    "sha256": "ce461d270a4395682e9d104be43758e997bd4ab96bc41b76e29e598432c22e2f",
+    "note": "Original resume rejects active run, unsupported state, completed checkpoint and changed corpus/scorer/configuration/protocol."
+  },
+  "intermediate_pixels": [
+    {
+      "path": "data/campaign8-native/cycle29-original-lab-lifecycle3/screenshots/lab-controls-pause-resume-101-step-8.png",
+      "sha256": "dfe4e31269ae6c8600532e80f63ae0d706e61efefa6910d38c4a7c5678bcc4a0"
+    },
+    {
+      "path": "data/campaign8-native/cycle29-original-lab-lifecycle3/screenshots/lab-controls-case-pagination-step-1.png",
+      "sha256": "0fa0a8ead7a0cca14d8984b258c66622e0f5fee27db91bc175ac17794c802a5a"
+    },
+    {
+      "path": "data/campaign8-native/cycle29-original-lab-lifecycle3/screenshots/lab-controls-case-pagination-step-2.png",
+      "sha256": "7705d457d1efde1e1f2a650b8d18b4b16a6a6ef8027e093e2e4adb12fd8b0ad3"
+    }
+  ],
+  "cleanup": {
+    "native_exit_code": 0,
+    "owned_native_cleanup": true,
+    "backend_closed": {
+      "path": "data/campaign8-ui/native-backend-cycle18-lab-controls/CLOSED.json",
+      "sha256": "23b3a5c268ed69003f1330be5e572410eafb8b429f82e87ff8cc7e8b2bbd9ae5"
+    },
+    "source_uniform": true,
+    "owner_runtime_modified": false
+  },
+  "no_private_final_access": true
+}

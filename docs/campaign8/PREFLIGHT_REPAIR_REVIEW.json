@@ -1,0 +1,97 @@
+{
+  "scope": "Independent fresh original DashboardServer authenticated HTTP; disposable stores/unavailable unsafe leaves; no native/model/owner mutation",
+  "raw": {
+    "path": "data/campaign8-verifier/preflight-after-01/RESULTS.json",
+    "sha256": "788f97fe02d5a738b69ce909c981f79abe667d055d31c2a03b3efe0cff2493ca"
+  },
+  "checks": {
+    "blank-required-endpoint": true,
+    "missing-endpoint": true,
+    "unknown-extra": true,
+    "invalid-case-count": true,
+    "named-endpoint": true,
+    "model-required-blank": true,
+    "repeat-first-valid": true,
+    "repeat-first-invalid": true,
+    "other-route-blank": true,
+    "unauthorized-blank": true,
+    "foreign-origin": true,
+    "blank_matches_direct": true,
+    "model_required_not_eligible": true
+  },
+  "counts": {
+    "HTTP_requests": 11,
+    "assertions": 13,
+    "pass": 13,
+    "generation": 0,
+    "native": 0
+  },
+  "outcomes": [
+    {
+      "id": "blank-required-endpoint",
+      "status": 200,
+      "eligible": true
+    },
+    {
+      "id": "missing-endpoint",
+      "status": 400,
+      "eligible": null
+    },
+    {
+      "id": "unknown-extra",
+      "status": 400,
+      "eligible": null
+    },
+    {
+      "id": "invalid-case-count",
+      "status": 400,
+      "eligible": null
+    },
+    {
+      "id": "named-endpoint",
+      "status": 200,
+      "eligible": false
+    },
+    {
+      "id": "model-required-blank",
+      "status": 200,
+      "eligible": false
+    },
+    {
+      "id": "repeat-first-valid",
+      "status": 200,
+      "eligible": true
+    },
+    {
+      "id": "repeat-first-invalid",
+      "status": 400,
+      "eligible": null
+    },
+    {
+      "id": "other-route-blank",
+      "status": 200,
+      "eligible": null
+    },
+    {
+      "id": "unauthorized-blank",
+      "status": 403,
+      "eligible": null
+    },
+    {
+      "id": "foreign-origin",
+      "status": 403,
+      "eligible": null
+    }
+  ],
+  "source_unchanged": true,
+  "cleanup": {
+    "http_closed": true,
+    "chat_closed": true
+  },
+  "limitations": [
+    "Only exact preflight query preserves blank values; existing first-value handling retained.",
+    "Model-required empty/unavailable endpoint remains ineligible.",
+    "Fresh isolated original backend only; resident owner imported code was not restarted/reloaded.",
+    "Actual deterministic native Start/results lifecycle requires separate evidence; this is original API eligibility proof."
+  ]
+}

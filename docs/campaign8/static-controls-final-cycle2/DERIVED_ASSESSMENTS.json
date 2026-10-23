@@ -1,0 +1,624 @@
+[
+  {
+    "source_slot_ids": [
+      "model_lab.tsx:1494:11"
+    ],
+    "outcome": "PASS",
+    "reason": "Actual Select JSON focuses/selects this readonly textarea; complete value independently equals authenticated original serialized bytes and selection covers its full UTF-16 length. Ten-case single-page native scope, no clipboard/file delivery or large-export runtime claim.",
+    "scope": "Exact independently accepted native branch only; unobserved repeated/conditional variants remain separate.",
+    "action_evidence": [
+      {
+        "file": "data/campaign8-native/cycle37-original-export-json-preview-afterproof/RESULTS.json",
+        "case_id": "native-json-preview-results",
+        "step": 1,
+        "input": {
+          "action": "click",
+          "role": "button",
+          "name": "Select JSON"
+        },
+        "raw_collection": "development_cases",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED",
+        "scope": "Actual Select JSON focuses/selects this readonly textarea; complete value independently equals authenticated original serialized bytes and selection covers its full UTF-16 length. Ten-case single-page native scope, no clipboard/file delivery or large-export runtime claim."
+      }
+    ],
+    "readback_evidence": [
+      {
+        "file": "docs/campaign8/JSON_PREVIEW_REPAIR_REVIEW.json",
+        "case_id": "native-json-preview-results",
+        "observed_scope": "Original Results View JSON displays the complete exact original serialized ten-case run in a readonly textarea. Select JSON focuses/selects all UTF16 units. Bottom Close, top Close dialog and Escape each dismiss the modal. Native Download is absent, and no clipboard/download delivery is claimed. This is a new native-safe viewer scope; the original canceled export grades remain unchanged.",
+        "original_readbacks": [
+          {
+            "path": "/api/model-lab",
+            "status": 200,
+            "data_sha256": "e3a5a456e694bc248bb471d656ba6211809a796b6da46f11ecaa402ac2729962"
+          }
+        ],
+        "review_sha256": "2116b0ce7aded1777ebb85073be95f67b114d74265d59ada91929f7126154ad8"
+      }
+    ],
+    "evidence_references": [
+      {
+        "file": "data/campaign8-native/cycle37-original-export-json-preview-afterproof/RESULTS.json",
+        "case_id": "native-json-preview-results",
+        "step": 1,
+        "input": {
+          "action": "click",
+          "role": "button",
+          "name": "Select JSON"
+        },
+        "raw_collection": "development_cases",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED",
+        "scope": "Actual Select JSON focuses/selects this readonly textarea; complete value independently equals authenticated original serialized bytes and selection covers its full UTF-16 length. Ten-case single-page native scope, no clipboard/file delivery or large-export runtime claim."
+      },
+      {
+        "file": "docs/campaign8/JSON_PREVIEW_REPAIR_REVIEW.json",
+        "case_id": "native-json-preview-results",
+        "observed_scope": "Original Results View JSON displays the complete exact original serialized ten-case run in a readonly textarea. Select JSON focuses/selects all UTF16 units. Bottom Close, top Close dialog and Escape each dismiss the modal. Native Download is absent, and no clipboard/download delivery is claimed. This is a new native-safe viewer scope; the original canceled export grades remain unchanged.",
+        "original_readbacks": [
+          {
+            "path": "/api/model-lab",
+            "status": 200,
+            "data_sha256": "e3a5a456e694bc248bb471d656ba6211809a796b6da46f11ecaa402ac2729962"
+          }
+        ],
+        "review_sha256": "2116b0ce7aded1777ebb85073be95f67b114d74265d59ada91929f7126154ad8"
+      }
+    ],
+    "semantic_readback": [
+      "Original Results View JSON displays the complete exact original serialized ten-case run in a readonly textarea. Select JSON focuses/selects all UTF16 units. Bottom Close, top Close dialog and Escape each dismiss the modal. Native Download is absent, and no clipboard/download delivery is claimed. This is a new native-safe viewer scope; the original canceled export grades remain unchanged."
+    ],
+    "coverage_scope": "Actual Select JSON focuses/selects this readonly textarea; complete value independently equals authenticated original serialized bytes and selection covers its full UTF-16 length. Ten-case single-page native scope, no clipboard/file delivery or large-export runtime claim."
+  },
+  {
+    "source_slot_ids": [
+      "model_lab.tsx:1494:11"
+    ],
+    "outcome": "PASS",
+    "reason": "Actual Select JSON focuses/selects this readonly textarea; complete value independently equals authenticated original serialized bytes and selection covers its full UTF-16 length. Ten-case single-page native scope, no clipboard/file delivery or large-export runtime claim.",
+    "scope": "Exact independently accepted native branch only; unobserved repeated/conditional variants remain separate.",
+    "action_evidence": [
+      {
+        "file": "data/campaign8-native/cycle37-original-export-json-preview-afterproof/RESULTS.json",
+        "case_id": "native-json-preview-comparison",
+        "step": 7,
+        "input": {
+          "action": "click",
+          "role": "button",
+          "name": "Select JSON"
+        },
+        "raw_collection": "development_cases",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED",
+        "scope": "Actual Select JSON focuses/selects this readonly textarea; complete value independently equals authenticated original serialized bytes and selection covers its full UTF-16 length. Ten-case single-page native scope, no clipboard/file delivery or large-export runtime claim."
+      }
+    ],
+    "readback_evidence": [
+      {
+        "file": "docs/campaign8/JSON_PREVIEW_REPAIR_REVIEW.json",
+        "case_id": "native-json-preview-comparison",
+        "observed_scope": "Original Compare View JSON displays the complete exact original serialized ten-case run in a readonly textarea. Select JSON focuses/selects all UTF16 units. Close dismisses the modal. Native Download is absent, and no clipboard/download delivery is claimed. This is a new native-safe viewer scope; the original canceled export grades remain unchanged.",
+        "original_readbacks": [
+          {
+            "path": "/api/model-lab",
+            "status": 200,
+            "data_sha256": "c2758cda71029c62405722bcbe2bf85358a93bd11ab3dd66c02b58a3871a8a44"
+          }
+        ],
+        "review_sha256": "2116b0ce7aded1777ebb85073be95f67b114d74265d59ada91929f7126154ad8"
+      }
+    ],
+    "evidence_references": [
+      {
+        "file": "data/campaign8-native/cycle37-original-export-json-preview-afterproof/RESULTS.json",
+        "case_id": "native-json-preview-comparison",
+        "step": 7,
+        "input": {
+          "action": "click",
+          "role": "button",
+          "name": "Select JSON"
+        },
+        "raw_collection": "development_cases",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED",
+        "scope": "Actual Select JSON focuses/selects this readonly textarea; complete value independently equals authenticated original serialized bytes and selection covers its full UTF-16 length. Ten-case single-page native scope, no clipboard/file delivery or large-export runtime claim."
+      },
+      {
+        "file": "docs/campaign8/JSON_PREVIEW_REPAIR_REVIEW.json",
+        "case_id": "native-json-preview-comparison",
+        "observed_scope": "Original Compare View JSON displays the complete exact original serialized ten-case run in a readonly textarea. Select JSON focuses/selects all UTF16 units. Close dismisses the modal. Native Download is absent, and no clipboard/download delivery is claimed. This is a new native-safe viewer scope; the original canceled export grades remain unchanged.",
+        "original_readbacks": [
+          {
+            "path": "/api/model-lab",
+            "status": 200,
+            "data_sha256": "c2758cda71029c62405722bcbe2bf85358a93bd11ab3dd66c02b58a3871a8a44"
+          }
+        ],
+        "review_sha256": "2116b0ce7aded1777ebb85073be95f67b114d74265d59ada91929f7126154ad8"
+      }
+    ],
+    "semantic_readback": [
+      "Original Compare View JSON displays the complete exact original serialized ten-case run in a readonly textarea. Select JSON focuses/selects all UTF16 units. Close dismisses the modal. Native Download is absent, and no clipboard/download delivery is claimed. This is a new native-safe viewer scope; the original canceled export grades remain unchanged."
+    ],
+    "coverage_scope": "Actual Select JSON focuses/selects this readonly textarea; complete value independently equals authenticated original serialized bytes and selection covers its full UTF-16 length. Ten-case single-page native scope, no clipboard/file delivery or large-export runtime claim."
+  },
+  {
+    "source_slot_ids": [
+      "mini.tsx:394:9"
+    ],
+    "outcome": "PASS",
+    "reason": "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability.",
+    "scope": "Exact independently accepted native branch only; unobserved repeated/conditional variants remain separate.",
+    "action_evidence": [
+      {
+        "file": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/RESULTS.json",
+        "case_id": "mini-extension-one-genuine-send",
+        "step": 0,
+        "input": {
+          "action": "fill",
+          "selector": "textarea[aria-label=\"Message HANNI\"]",
+          "value": "Explain in two short sentences how a bicycle gear changes pedaling effort."
+        },
+        "raw_collection": "mini_genuine_request",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED_WITH_LIVE_LOCAL_INFERENCE",
+        "scope": "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability."
+      }
+    ],
+    "readback_evidence": [
+      {
+        "file": "docs/campaign8/MINI_STREAM_CLEAR_REVIEW.json",
+        "case_id": "mini-extension-one-genuine-send",
+        "observed_scope": "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability.",
+        "original_readbacks": [
+          {
+            "path": "/api/chat",
+            "status": 200,
+            "data_sha256": "f1b6dbd7e1d642ab7d9326bcfc914eb410227cc12f02c47664fa020522ab0e74"
+          }
+        ],
+        "review_sha256": "343a6a786c4454455587bf7cb0313d4edc841dd001333ea0011940752b527e9b"
+      }
+    ],
+    "evidence_references": [
+      {
+        "file": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/RESULTS.json",
+        "case_id": "mini-extension-one-genuine-send",
+        "step": 0,
+        "input": {
+          "action": "fill",
+          "selector": "textarea[aria-label=\"Message HANNI\"]",
+          "value": "Explain in two short sentences how a bicycle gear changes pedaling effort."
+        },
+        "raw_collection": "mini_genuine_request",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED_WITH_LIVE_LOCAL_INFERENCE",
+        "scope": "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability."
+      },
+      {
+        "file": "docs/campaign8/MINI_STREAM_CLEAR_REVIEW.json",
+        "case_id": "mini-extension-one-genuine-send",
+        "observed_scope": "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability.",
+        "original_readbacks": [
+          {
+            "path": "/api/chat",
+            "status": 200,
+            "data_sha256": "f1b6dbd7e1d642ab7d9326bcfc914eb410227cc12f02c47664fa020522ab0e74"
+          }
+        ],
+        "review_sha256": "343a6a786c4454455587bf7cb0313d4edc841dd001333ea0011940752b527e9b"
+      }
+    ],
+    "semantic_readback": [
+      "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability."
+    ],
+    "coverage_scope": "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability."
+  },
+  {
+    "source_slot_ids": [
+      "mini.tsx:428:9"
+    ],
+    "outcome": "PASS",
+    "reason": "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability.",
+    "scope": "Exact independently accepted native branch only; unobserved repeated/conditional variants remain separate.",
+    "action_evidence": [
+      {
+        "file": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/RESULTS.json",
+        "case_id": "mini-extension-one-genuine-send",
+        "step": 1,
+        "input": {
+          "action": "click",
+          "role": "button",
+          "name": "Send",
+          "settle_ms": 0
+        },
+        "raw_collection": "mini_genuine_request",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED_WITH_LIVE_LOCAL_INFERENCE",
+        "scope": "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability."
+      }
+    ],
+    "readback_evidence": [
+      {
+        "file": "docs/campaign8/MINI_STREAM_CLEAR_REVIEW.json",
+        "case_id": "mini-extension-one-genuine-send",
+        "observed_scope": "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability.",
+        "original_readbacks": [
+          {
+            "path": "/api/chat",
+            "status": 200,
+            "data_sha256": "f1b6dbd7e1d642ab7d9326bcfc914eb410227cc12f02c47664fa020522ab0e74"
+          }
+        ],
+        "review_sha256": "343a6a786c4454455587bf7cb0313d4edc841dd001333ea0011940752b527e9b"
+      }
+    ],
+    "evidence_references": [
+      {
+        "file": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/RESULTS.json",
+        "case_id": "mini-extension-one-genuine-send",
+        "step": 1,
+        "input": {
+          "action": "click",
+          "role": "button",
+          "name": "Send",
+          "settle_ms": 0
+        },
+        "raw_collection": "mini_genuine_request",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED_WITH_LIVE_LOCAL_INFERENCE",
+        "scope": "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability."
+      },
+      {
+        "file": "docs/campaign8/MINI_STREAM_CLEAR_REVIEW.json",
+        "case_id": "mini-extension-one-genuine-send",
+        "observed_scope": "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability.",
+        "original_readbacks": [
+          {
+            "path": "/api/chat",
+            "status": 200,
+            "data_sha256": "f1b6dbd7e1d642ab7d9326bcfc914eb410227cc12f02c47664fa020522ab0e74"
+          }
+        ],
+        "review_sha256": "343a6a786c4454455587bf7cb0313d4edc841dd001333ea0011940752b527e9b"
+      }
+    ],
+    "semantic_readback": [
+      "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability."
+    ],
+    "coverage_scope": "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability."
+  },
+  {
+    "source_slot_ids": [
+      "screens.tsx:231:9"
+    ],
+    "outcome": "PASS",
+    "reason": "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback.",
+    "scope": "Exact independently accepted native branch only; unobserved repeated/conditional variants remain separate.",
+    "action_evidence": [
+      {
+        "file": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/RESULTS.json",
+        "case_id": "mini-extension-main-clear-cancel",
+        "step": 0,
+        "input": {
+          "action": "click",
+          "selector": "#chat-clear"
+        },
+        "raw_collection": "owned_history_controls",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED",
+        "scope": "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback."
+      }
+    ],
+    "readback_evidence": [
+      {
+        "file": "docs/campaign8/MINI_STREAM_CLEAR_REVIEW.json",
+        "case_id": "mini-extension-main-clear-cancel",
+        "observed_scope": "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback.",
+        "original_readbacks": [
+          {
+            "path": "/api/chat",
+            "status": 200,
+            "data_sha256": "f1b6dbd7e1d642ab7d9326bcfc914eb410227cc12f02c47664fa020522ab0e74"
+          }
+        ],
+        "review_sha256": "343a6a786c4454455587bf7cb0313d4edc841dd001333ea0011940752b527e9b"
+      }
+    ],
+    "evidence_references": [
+      {
+        "file": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/RESULTS.json",
+        "case_id": "mini-extension-main-clear-cancel",
+        "step": 0,
+        "input": {
+          "action": "click",
+          "selector": "#chat-clear"
+        },
+        "raw_collection": "owned_history_controls",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED",
+        "scope": "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback."
+      },
+      {
+        "file": "docs/campaign8/MINI_STREAM_CLEAR_REVIEW.json",
+        "case_id": "mini-extension-main-clear-cancel",
+        "observed_scope": "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback.",
+        "original_readbacks": [
+          {
+            "path": "/api/chat",
+            "status": 200,
+            "data_sha256": "f1b6dbd7e1d642ab7d9326bcfc914eb410227cc12f02c47664fa020522ab0e74"
+          }
+        ],
+        "review_sha256": "343a6a786c4454455587bf7cb0313d4edc841dd001333ea0011940752b527e9b"
+      }
+    ],
+    "semantic_readback": [
+      "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback."
+    ],
+    "coverage_scope": "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback."
+  },
+  {
+    "source_slot_ids": [
+      "workspace.tsx:1438:13"
+    ],
+    "outcome": "PASS",
+    "reason": "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback.",
+    "scope": "Exact independently accepted native branch only; unobserved repeated/conditional variants remain separate.",
+    "action_evidence": [
+      {
+        "file": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/RESULTS.json",
+        "case_id": "mini-extension-main-clear-cancel",
+        "step": 1,
+        "input": {
+          "action": "click",
+          "role": "button",
+          "name": "Cancel"
+        },
+        "raw_collection": "owned_history_controls",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED",
+        "scope": "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback."
+      }
+    ],
+    "readback_evidence": [
+      {
+        "file": "docs/campaign8/MINI_STREAM_CLEAR_REVIEW.json",
+        "case_id": "mini-extension-main-clear-cancel",
+        "observed_scope": "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback.",
+        "original_readbacks": [
+          {
+            "path": "/api/chat",
+            "status": 200,
+            "data_sha256": "f1b6dbd7e1d642ab7d9326bcfc914eb410227cc12f02c47664fa020522ab0e74"
+          }
+        ],
+        "review_sha256": "343a6a786c4454455587bf7cb0313d4edc841dd001333ea0011940752b527e9b"
+      }
+    ],
+    "evidence_references": [
+      {
+        "file": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/RESULTS.json",
+        "case_id": "mini-extension-main-clear-cancel",
+        "step": 1,
+        "input": {
+          "action": "click",
+          "role": "button",
+          "name": "Cancel"
+        },
+        "raw_collection": "owned_history_controls",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED",
+        "scope": "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback."
+      },
+      {
+        "file": "docs/campaign8/MINI_STREAM_CLEAR_REVIEW.json",
+        "case_id": "mini-extension-main-clear-cancel",
+        "observed_scope": "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback.",
+        "original_readbacks": [
+          {
+            "path": "/api/chat",
+            "status": 200,
+            "data_sha256": "f1b6dbd7e1d642ab7d9326bcfc914eb410227cc12f02c47664fa020522ab0e74"
+          }
+        ],
+        "review_sha256": "343a6a786c4454455587bf7cb0313d4edc841dd001333ea0011940752b527e9b"
+      }
+    ],
+    "semantic_readback": [
+      "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback."
+    ],
+    "coverage_scope": "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback."
+  },
+  {
+    "source_slot_ids": [
+      "screens.tsx:231:9"
+    ],
+    "outcome": "PASS",
+    "reason": "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history.",
+    "scope": "Exact independently accepted native branch only; unobserved repeated/conditional variants remain separate.",
+    "action_evidence": [
+      {
+        "file": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/RESULTS.json",
+        "case_id": "mini-extension-main-clear-confirm",
+        "step": 0,
+        "input": {
+          "action": "click",
+          "selector": "#chat-clear"
+        },
+        "raw_collection": "owned_history_controls",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED",
+        "scope": "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history."
+      }
+    ],
+    "readback_evidence": [
+      {
+        "file": "docs/campaign8/MINI_STREAM_CLEAR_REVIEW.json",
+        "case_id": "mini-extension-main-clear-confirm",
+        "observed_scope": "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history.",
+        "original_readbacks": [
+          {
+            "path": "/api/chat",
+            "status": 200,
+            "data_sha256": "2c8ea5b36be75a73ac681d3d66e6790fe179feddc3ee301cfe68680f25c5a253"
+          }
+        ],
+        "review_sha256": "343a6a786c4454455587bf7cb0313d4edc841dd001333ea0011940752b527e9b"
+      }
+    ],
+    "evidence_references": [
+      {
+        "file": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/RESULTS.json",
+        "case_id": "mini-extension-main-clear-confirm",
+        "step": 0,
+        "input": {
+          "action": "click",
+          "selector": "#chat-clear"
+        },
+        "raw_collection": "owned_history_controls",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED",
+        "scope": "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history."
+      },
+      {
+        "file": "docs/campaign8/MINI_STREAM_CLEAR_REVIEW.json",
+        "case_id": "mini-extension-main-clear-confirm",
+        "observed_scope": "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history.",
+        "original_readbacks": [
+          {
+            "path": "/api/chat",
+            "status": 200,
+            "data_sha256": "2c8ea5b36be75a73ac681d3d66e6790fe179feddc3ee301cfe68680f25c5a253"
+          }
+        ],
+        "review_sha256": "343a6a786c4454455587bf7cb0313d4edc841dd001333ea0011940752b527e9b"
+      }
+    ],
+    "semantic_readback": [
+      "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history."
+    ],
+    "coverage_scope": "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history."
+  },
+  {
+    "source_slot_ids": [
+      "workspace.tsx:1441:13"
+    ],
+    "outcome": "PASS",
+    "reason": "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history.",
+    "scope": "Exact independently accepted native branch only; unobserved repeated/conditional variants remain separate.",
+    "action_evidence": [
+      {
+        "file": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/RESULTS.json",
+        "case_id": "mini-extension-main-clear-confirm",
+        "step": 1,
+        "input": {
+          "action": "click",
+          "selector": "dialog button.danger-button",
+          "settle_ms": 1500
+        },
+        "raw_collection": "owned_history_controls",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED",
+        "scope": "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history."
+      }
+    ],
+    "readback_evidence": [
+      {
+        "file": "docs/campaign8/MINI_STREAM_CLEAR_REVIEW.json",
+        "case_id": "mini-extension-main-clear-confirm",
+        "observed_scope": "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history.",
+        "original_readbacks": [
+          {
+            "path": "/api/chat",
+            "status": 200,
+            "data_sha256": "2c8ea5b36be75a73ac681d3d66e6790fe179feddc3ee301cfe68680f25c5a253"
+          }
+        ],
+        "review_sha256": "343a6a786c4454455587bf7cb0313d4edc841dd001333ea0011940752b527e9b"
+      }
+    ],
+    "evidence_references": [
+      {
+        "file": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/RESULTS.json",
+        "case_id": "mini-extension-main-clear-confirm",
+        "step": 1,
+        "input": {
+          "action": "click",
+          "selector": "dialog button.danger-button",
+          "settle_ms": 1500
+        },
+        "raw_collection": "owned_history_controls",
+        "actual_assets": {
+          "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+          "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+        },
+        "evidence_class": "CONTROLLED",
+        "scope": "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history."
+      },
+      {
+        "file": "docs/campaign8/MINI_STREAM_CLEAR_REVIEW.json",
+        "case_id": "mini-extension-main-clear-confirm",
+        "observed_scope": "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history.",
+        "original_readbacks": [
+          {
+            "path": "/api/chat",
+            "status": 200,
+            "data_sha256": "2c8ea5b36be75a73ac681d3d66e6790fe179feddc3ee301cfe68680f25c5a253"
+          }
+        ],
+        "review_sha256": "343a6a786c4454455587bf7cb0313d4edc841dd001333ea0011940752b527e9b"
+      }
+    ],
+    "semantic_readback": [
+      "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history."
+    ],
+    "coverage_scope": "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history."
+  }
+]

@@ -1,0 +1,104 @@
+{
+  "scope": "Three prospectively declared exposed controls: two unsent/unapplied drafts and one source-correct workflow-to-Activity navigation. No generation/dispatch and no promotion of the two prior workflow setup failures.",
+  "raw": {
+    "path": "data/campaign8-native/cycle34-original-final-drafts-workflow3/RESULTS.json",
+    "sha256": "26919218a17cbb09744edd478b3423727474c6380391cfbb6b95d1a982b3b087"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "c03f94985c8501c58da5c4cf9be122830a65edd4646116fa44952c711b1dcfc0",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "counts": {
+    "cases": 3,
+    "PASS_scoped_CONTROLLED": 3,
+    "HARNESS_ERROR": 0,
+    "final_PNGs_viewed": 3,
+    "additional_intermediate_PNGs_viewed": 2,
+    "generation_requests": 0
+  },
+  "case_grades": [
+    {
+      "id": "draft-final-preferred-endpoint",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Actual Model Routing Selection policy changes the local draft to Manual override and Preferred endpoint to exact local:supervisor. Intermediate native pixels and DOM selection verify both. Returning to Balanced removes the preferred field; original API policy remains balanced, controller unattached, and there are zero POSTs. No Apply, owner policy write, selection or inference occurs.",
+      "input_sha256": "63e81a9fe7fb236fc773bcb990539df43322588c70b68ff08779d9e11688fab0",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle34-original-final-drafts-workflow3/screenshots/draft-final-preferred-endpoint.png",
+        "sha256": "e79d153a0751549a6fd15a7f9d234411b7a5dfdf40eb13530df34f8a6415c7bc"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-routing",
+          "status": 200,
+          "data_sha256": "3692b15d474f6ec181756b90b38eeb1e9407b7b35c59e7ce91549b5eaa4aad7c"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "draft-final-add-through-hanni",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Actual Memory Add through HANNI navigates to Conversation and prepares exact14-character Remember that-space draft. Native pixels show no messages, unready assistant and disabled send; original stored36/pending26 are unchanged. No memory extraction, save or prompt submission occurs.",
+      "input_sha256": "3232e1d13e8212aa8fd4c48038866ca898d27257d2f8190152987ea5ce3f9fd7",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle34-original-final-drafts-workflow3/screenshots/draft-final-add-through-hanni.png",
+        "sha256": "3cc4fc3ff40a8df1b58c033fb82a85481d42c5b39ee4ed1d0dcfd5033b57fae8"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "c4706a9ad08f8981889e48ec1c975606b8100b5c404f1d4e0ce229e1d34613bb"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-workflow-activity-navigation",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Fresh original workflow remount/status selection followed by opening Checkpoints and tool activity exposes the actual Open execution Activity control; its normal click reaches Activity. Native rows and original API show the six manually seeded outcomes with Verified file receipts and Unverified workspace receipts. This is navigation/read projection, not autonomous workflow execution or completion.",
+      "input_sha256": "26f8a58baac334827ac5b8aff8657612b5f1f0d93d63b1b21eae6253ee49965a",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle34-original-final-drafts-workflow3/screenshots/visible-final-workflow-activity-navigation.png",
+        "sha256": "27a23e70e28fde414097b2778e2aad8641397ea3da15757739c4d77048e3f957"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/agents",
+          "status": 200,
+          "data_sha256": "468d70ff87755f43b78bddd1bf8f4b86546ace15e969aa00aee51ed6881f2270"
+        },
+        {
+          "path": "/api/workflows",
+          "status": 200,
+          "data_sha256": "f158ce5e4e3f96d37d96e43aaad29615dc898fd35bd638bde77aaa1bf0689c6f"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    }
+  ],
+  "intermediate_PNGs_viewed": [
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle34-original-final-drafts-workflow3/screenshots/draft-final-preferred-endpoint-step-1.png",
+      "sha256": "eb56032675edafaa699ba16435e1f5b93f2ddbc02e49d16eb991014b484ce51d"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle34-original-final-drafts-workflow3/screenshots/visible-final-workflow-activity-navigation-step-5.png",
+      "sha256": "f5423e01e84fec3467e1838470583f0954dcb3218ba94435f7cda673e84009d2"
+    }
+  ],
+  "native_cleanup": true,
+  "native_exit_code": 0,
+  "javascript_errors": [],
+  "network_nonGET": [],
+  "unchanged_private_holdout": "Sealed60 remain unclaimed and unexecuted; these are exposed development controls."
+}

@@ -1,0 +1,77 @@
+{
+  "scope": "Independent actual model/wire/controller/native DEVELOPMENT review; one synthetic explanatory request. This is function/data-fidelity proof, not semantic model-quality benchmark or physical audio success.",
+  "native_receipt": {
+    "path": "data/campaign8-native/cycle17-authentic-original-streaming/RESULTS.json",
+    "sha256": "969f677da58f07cc974ec3d6f3c4c2edff1a5420b9bcb1353a458956f023acb2"
+  },
+  "controller_receipt": {
+    "path": "data/campaign8-ui/authentic-stream-cycle2/STREAM_CLOSED.json",
+    "sha256": "4b417dd3b95d97cb43675909e34e8b02f996cb22078940db7aa36eadf9b08538"
+  },
+  "sqlite_clear_receipt": {
+    "path": "data/campaign8-ui/authentic-stream-cycle2/NATIVE_COMPLETION_AND_CLEAR.json",
+    "sha256": "22b7a1344719480b60472edd5b506a6cf66fe607f911825c6afa07d7f5dfa8e5"
+  },
+  "all5_native_pngs_independently_viewed": true,
+  "observed_generation": {
+    "actual_POST_count": 1,
+    "HTTP_status": 200,
+    "response_model": [
+      "supervisor"
+    ],
+    "raw_response_truncated": false,
+    "answer_chars": 256,
+    "answer_sha256": "5c2b09c07603ec95317c10dd16cb1a260d4c5fdaa65f7008995e9a30422a43b2",
+    "raw_SSE_equals_completed_API": true,
+    "raw_SSE_equals_captured_original_SQLite": true,
+    "usage": {
+      "completion_tokens": 50,
+      "prompt_tokens": 540,
+      "total_tokens": 590,
+      "prompt_tokens_details": {
+        "cached_tokens": 513
+      }
+    },
+    "effective_max_tokens": 64,
+    "temperature": 0,
+    "top_p": 1,
+    "thinking": false
+  },
+  "original_path_review": {
+    "config_original_owner_permissions": true,
+    "no_new_model": true,
+    "ModelManager_external_process_and_Adaptive_original_resource_guard": true,
+    "McpToolSession_MemoryAwareSession_TextSession_ChatSession_and_ChatHub": true,
+    "request_time_actual_model_identity_and_3GiB_plus_critical90_additional_campaign_guard": true,
+    "actual_available_RAM_at_request_bytes": 5641031680,
+    "actual_used_percent": 83.4,
+    "owner_model_PID": 38832,
+    "owner_create_time": 1791595415.4806464,
+    "owner_command_sha256": "eca1546bb86f6d07e2583465948461738a5bd60f171262bfc863470a19916dbd"
+  },
+  "native_render_scope": {
+    "working_state_visible": true,
+    "growing_partial_response_visible": true,
+    "full_completed_answer_visually_confirmed": false,
+    "classification": "Capture synchronization limitation: first API-partial capture still shows skeleton; files named complete/final visibly contain earlier prefix ending stroke push and HANNI is responding/Processing, while direct API already completed. Do not label these PNGs completed native rendering or infer a persistent UI defect.",
+    "completion_latency_semantics": "Reported API completion elapsed about1.61s includes native test polling/capture schedule; it is not full native-render completion or model-only latency."
+  },
+  "controlled_history_authority": {
+    "original_SQLite_before_clear_rows": 2,
+    "actual_clear_status": 200,
+    "messages_after_clear": 0,
+    "token_rotated": true,
+    "old_token_private_read_status": 403,
+    "new_token_private_read_status": 200,
+    "owned_shutdown_status": 202
+  },
+  "preservation": {
+    "source_same": true,
+    "controller_closed": true,
+    "native_owned_cleanup": true,
+    "owner_model_stopped": false,
+    "owner_history_modified": false,
+    "errors": []
+  },
+  "private_final_attempts": 0
+}

@@ -1,0 +1,3293 @@
+{
+  "scope": "Read-only human-authored linguistic audit of development text and already-frozen oracles; no inference, routing, handler or test execution. Tags overlap.",
+  "corpus": "evals/campaign1/development.jsonl",
+  "corpus_sha256": "5ec39bed6713be86a1be4d846df92f6e104bdce6cec8021562ca06c72c5e8a52",
+  "cases": 370,
+  "owner_turns": 380,
+  "category_counts": {
+    "direct": 362,
+    "paraphrase": 141,
+    "slang": 5,
+    "typo": 3,
+    "ambiguous": 11,
+    "quoted_data": 22,
+    "multi_tool": 12,
+    "no_tool": 22,
+    "mixed_domain": 3,
+    "follow_up": 10
+  },
+  "case_difficulty_counts": {
+    "medium": 318,
+    "hard": 52
+  },
+  "turn_difficulty_counts_inherited": {
+    "medium": 318,
+    "hard": 62
+  },
+  "difficulty_definition": "Author policy in build_development.py: hard for retained-history cases, more than one semicolon-separated required-operation group, or quoted_data_and_mixed_intent / ambiguous_requests / denied_actions families; other cases are medium, including all50 supplemental contract probes. standard/challenging author labels were mapped to medium/hard before freeze. No easy bucket was authored. This is not empirical difficulty.",
+  "methods": {
+    "direct": "The turn states an identifiable operation or question and its target without requiring a previous owner turn; conversational framing and explicit constraints are allowed. Missing-target clarify cases and seven context-dependent follow-ups are excluded. This overlaps paraphrase because a plainly specified task can use alternate vocabulary.",
+    "paraphrase": "Human-reviewed conversational, indirect, synonym-based or figurative expression of an operation, rather than merely copying a capability label. Explicit per-turn membership is recorded; these are authored-form judgments, not measured model difficulty or routing outcomes.",
+    "slang": "Conservative clearly colloquial/idiomatic surface language: quick snapshot/Got, chewing through CPU, hogging memory, sitting on GPU, bogged down. Technical abbreviations and ordinary contractions alone do not count. No claim of broad dialect or slang coverage.",
+    "typo": "The three intentionally misspelled owner turns: memroy, proceses, and usng plus memroy. Multiple errors in one turn count once; filenames and legitimate abbreviations are not errors.",
+    "ambiguous": "The eleven predeclared clarify turns lack an identified object, scope, referent or objective. The label records original author intent, not an observed controller question.",
+    "mixed_domain": "Two separately requested operations cross conservative task domains: compute telemetry plus battery/power, GPU memory plus filesystem storage, or clock plus personal calendar. Mentioning another domain as background or denying its action does not count.",
+    "multi_tool": "At least two separate required operation groups in the frozen per-turn oracle. Equivalent IDs inside one group do not count as multiple tools. This includes the two status-before-playback requests and ten compound evidence requests.",
+    "no_tool": "The frozen per-turn oracle explicitly requests explanation, conversation, writing or quotation analysis without any tool. This does not infer actual model behavior.",
+    "follow_up": "The second owner turn in each of ten genuine sequential cases. The first turn and seeded assistant history do not count.",
+    "quoted_data": "An owner-supplied quoted literal, or an explicit request to treat source instructions/content as data. A literal can be a legitimate action argument; the label does not by itself imply prompt injection."
+  },
+  "turns": [
+    {
+      "case_id": "c1-dev-telemetry_snapshot-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-telemetry_snapshot-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-telemetry_snapshot-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "slang"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-telemetry_snapshot-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "typo"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-telemetry_snapshot-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-telemetry_snapshot-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-telemetry_snapshot-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-telemetry_snapshot-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-telemetry_snapshot-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-telemetry_snapshot-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_cpu-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_cpu-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_cpu-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "slang"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_cpu-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "typo"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_cpu-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_cpu-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_cpu-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_cpu-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_cpu-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_cpu-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_memory-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_memory-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_memory-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "slang"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_memory-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "typo"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_memory-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_memory-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_memory-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_memory-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_memory-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-process_memory-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-gpu_observation-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-gpu_observation-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-gpu_observation-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-gpu_observation-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "slang"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-gpu_observation-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-gpu_observation-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-gpu_observation-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-gpu_observation-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-gpu_observation-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-gpu_observation-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-battery_power_reads-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-battery_power_reads-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-battery_power_reads-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-battery_power_reads-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-battery_power_reads-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-battery_power_reads-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-battery_power_reads-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-battery_power_reads-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-battery_power_reads-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-battery_power_reads-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-storage_read-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-storage_read-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-storage_read-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-storage_read-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-storage_read-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-storage_read-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-storage_read-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-storage_read-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-storage_read-09",
+      "owner_turn": 1,
+      "tags": [
+        "paraphrase",
+        "ambiguous"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-storage_read-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-listing_and_search-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-listing_and_search-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-listing_and_search-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-listing_and_search-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-listing_and_search-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-listing_and_search-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-listing_and_search-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-listing_and_search-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-listing_and_search-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-listing_and_search-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_content-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_content-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_content-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_content-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_content-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_content-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_content-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_content-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_content-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_content-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_analysis-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_analysis-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_analysis-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_analysis-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_analysis-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_analysis-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_analysis-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_analysis-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_analysis-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-file_analysis-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-system_runtime-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-system_runtime-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-system_runtime-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-system_runtime-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "slang"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-system_runtime-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-system_runtime-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-system_runtime-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-system_runtime-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-system_runtime-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-system_runtime-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-network_observation-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-network_observation-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-network_observation-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-network_observation-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-network_observation-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-network_observation-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-network_observation-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-network_observation-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-network_observation-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-network_observation-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-devices_and_display-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-devices_and_display-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-devices_and_display-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-devices_and_display-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-devices_and_display-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-devices_and_display-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-devices_and_display-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-devices_and_display-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-devices_and_display-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-devices_and_display-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-security_observation-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-security_observation-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-security_observation-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-security_observation-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-security_observation-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-security_observation-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-security_observation-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-security_observation-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-security_observation-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-security_observation-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-applications_and_windows-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-applications_and_windows-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-applications_and_windows-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-applications_and_windows-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-applications_and_windows-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-applications_and_windows-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-applications_and_windows-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-applications_and_windows-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-applications_and_windows-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-applications_and_windows-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-git_observation-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-git_observation-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-git_observation-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-git_observation-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-git_observation-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-git_observation-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-git_observation-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-git_observation-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-git_observation-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-git_observation-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-developer_environment-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-developer_environment-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-developer_environment-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-developer_environment-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-developer_environment-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-developer_environment-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-developer_environment-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-developer_environment-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-developer_environment-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-developer_environment-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-hanni_introspection-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-hanni_introspection-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-hanni_introspection-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-hanni_introspection-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-hanni_introspection-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-hanni_introspection-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-hanni_introspection-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-hanni_introspection-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-hanni_introspection-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-hanni_introspection-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-clock_and_dates-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-clock_and_dates-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-clock_and_dates-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-clock_and_dates-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-clock_and_dates-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-clock_and_dates-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-clock_and_dates-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-clock_and_dates-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-clock_and_dates-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-clock_and_dates-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calculator_units_and_text-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calculator_units_and_text-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calculator_units_and_text-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calculator_units_and_text-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calculator_units_and_text-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calculator_units_and_text-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calculator_units_and_text-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calculator_units_and_text-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calculator_units_and_text-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calculator_units_and_text-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-local_productivity_reads-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-local_productivity_reads-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-local_productivity_reads-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-local_productivity_reads-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-local_productivity_reads-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-local_productivity_reads-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-local_productivity_reads-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-local_productivity_reads-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-local_productivity_reads-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-local_productivity_reads-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calendar_reads-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calendar_reads-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calendar_reads-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calendar_reads-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calendar_reads-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calendar_reads-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calendar_reads-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calendar_reads-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calendar_reads-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-calendar_reads-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-email_reads-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-email_reads-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-email_reads-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-email_reads-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-email_reads-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-email_reads-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-email_reads-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-email_reads-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-email_reads-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-email_reads-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-google_document_reads-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-google_document_reads-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-google_document_reads-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-google_document_reads-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-google_document_reads-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-google_document_reads-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-google_document_reads-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-google_document_reads-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-google_document_reads-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-google_document_reads-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-media_status_and_allowed_actions-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-media_status_and_allowed_actions-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-media_status_and_allowed_actions-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-media_status_and_allowed_actions-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-media_status_and_allowed_actions-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-media_status_and_allowed_actions-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "multi_tool"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-media_status_and_allowed_actions-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "multi_tool"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-media_status_and_allowed_actions-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-media_status_and_allowed_actions-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-media_status_and_allowed_actions-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-allowed_local_action_proposals-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-allowed_local_action_proposals-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-allowed_local_action_proposals-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-allowed_local_action_proposals-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-allowed_local_action_proposals-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-allowed_local_action_proposals-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-allowed_local_action_proposals-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-allowed_local_action_proposals-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-allowed_local_action_proposals-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-allowed_local_action_proposals-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-denied_actions-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-denied_actions-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-denied_actions-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-denied_actions-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-denied_actions-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-denied_actions-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-denied_actions-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-denied_actions-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-denied_actions-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-denied_actions-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-ambiguous_requests-01",
+      "owner_turn": 1,
+      "tags": [
+        "ambiguous"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-ambiguous_requests-02",
+      "owner_turn": 1,
+      "tags": [
+        "ambiguous"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-ambiguous_requests-03",
+      "owner_turn": 1,
+      "tags": [
+        "ambiguous"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-ambiguous_requests-04",
+      "owner_turn": 1,
+      "tags": [
+        "ambiguous"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-ambiguous_requests-05",
+      "owner_turn": 1,
+      "tags": [
+        "ambiguous"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-ambiguous_requests-06",
+      "owner_turn": 1,
+      "tags": [
+        "ambiguous"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-ambiguous_requests-07",
+      "owner_turn": 1,
+      "tags": [
+        "ambiguous"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-ambiguous_requests-08",
+      "owner_turn": 1,
+      "tags": [
+        "ambiguous"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-ambiguous_requests-09",
+      "owner_turn": 1,
+      "tags": [
+        "ambiguous"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-ambiguous_requests-10",
+      "owner_turn": 1,
+      "tags": [
+        "ambiguous"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-educational_no_tool-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-educational_no_tool-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-educational_no_tool-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-educational_no_tool-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-educational_no_tool-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-educational_no_tool-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-educational_no_tool-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-educational_no_tool-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-educational_no_tool-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-educational_no_tool-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-social_and_hypothetical_no_tool-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-social_and_hypothetical_no_tool-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-social_and_hypothetical_no_tool-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-social_and_hypothetical_no_tool-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-social_and_hypothetical_no_tool-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-social_and_hypothetical_no_tool-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-social_and_hypothetical_no_tool-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-social_and_hypothetical_no_tool-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-social_and_hypothetical_no_tool-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-social_and_hypothetical_no_tool-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "no_tool"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-quoted_data_and_mixed_intent-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-quoted_data_and_mixed_intent-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-quoted_data_and_mixed_intent-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-quoted_data_and_mixed_intent-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-quoted_data_and_mixed_intent-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-quoted_data_and_mixed_intent-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-quoted_data_and_mixed_intent-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-quoted_data_and_mixed_intent-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "no_tool",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-quoted_data_and_mixed_intent-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-quoted_data_and_mixed_intent-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-compound_evidence_requests-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "mixed_domain",
+        "multi_tool"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-compound_evidence_requests-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "mixed_domain",
+        "multi_tool"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-compound_evidence_requests-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "multi_tool"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-compound_evidence_requests-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "multi_tool"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-compound_evidence_requests-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "multi_tool"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-compound_evidence_requests-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "multi_tool"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-compound_evidence_requests-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "multi_tool"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-compound_evidence_requests-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "mixed_domain",
+        "multi_tool"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-compound_evidence_requests-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "multi_tool"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-compound_evidence_requests-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "multi_tool"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-01",
+      "owner_turn": 2,
+      "tags": [
+        "paraphrase",
+        "follow_up"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-02",
+      "owner_turn": 2,
+      "tags": [
+        "paraphrase",
+        "follow_up"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-03",
+      "owner_turn": 2,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "follow_up"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-04",
+      "owner_turn": 2,
+      "tags": [
+        "paraphrase",
+        "follow_up"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-05",
+      "owner_turn": 2,
+      "tags": [
+        "paraphrase",
+        "follow_up"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-06",
+      "owner_turn": 2,
+      "tags": [
+        "direct",
+        "follow_up"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-07",
+      "owner_turn": 2,
+      "tags": [
+        "paraphrase",
+        "follow_up"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-08",
+      "owner_turn": 2,
+      "tags": [
+        "paraphrase",
+        "follow_up"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-09",
+      "owner_turn": 2,
+      "tags": [
+        "paraphrase",
+        "follow_up"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-retained_history-10",
+      "owner_turn": 2,
+      "tags": [
+        "direct",
+        "paraphrase",
+        "follow_up"
+      ],
+      "difficulty_inherited_from_case": "hard"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-01",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-02",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-03",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-04",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-05",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-06",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-07",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-08",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-09",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-10",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-11",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-12",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-13",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-14",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-15",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-16",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-17",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-18",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-19",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-20",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-21",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-22",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-23",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-24",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-25",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-26",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-27",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-28",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-29",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-30",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-31",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-32",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-33",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-34",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-35",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-36",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-37",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-38",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-39",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-40",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-41",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-42",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-43",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "quoted_data"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-44",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-45",
+      "owner_turn": 1,
+      "tags": [
+        "direct",
+        "paraphrase"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-46",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-47",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-48",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-49",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    },
+    {
+      "case_id": "c1-dev-supplemental-contract-50",
+      "owner_turn": 1,
+      "tags": [
+        "direct"
+      ],
+      "difficulty_inherited_from_case": "medium"
+    }
+  ]
+}

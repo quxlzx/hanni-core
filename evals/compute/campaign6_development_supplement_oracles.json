@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "oracles": [
+    {
+      "id": "C6SUP-01",
+      "expected": {
+        "all_released": true,
+        "completed_results": 2,
+        "maximum_overlap": 2
+      }
+    },
+    {
+      "id": "C6SUP-02",
+      "expected": {
+        "all_released": true,
+        "dispatches": {
+          "w0": 4
+        },
+        "request_order": [
+          "background",
+          "queued0",
+          "queued1",
+          "main"
+        ]
+      }
+    },
+    {
+      "id": "C6SUP-03",
+      "expected": {
+        "all_released": true,
+        "dispatches": {
+          "w0": 3
+        },
+        "request_order": [
+          "background",
+          "main",
+          "queued0"
+        ]
+      }
+    },
+    {
+      "id": "C6SUP-04",
+      "expected": {
+        "all_released": true,
+        "worker_id": "w1",
+        "dispatches": {
+          "w0": 1,
+          "w1": 1
+        },
+        "main_state": "COMPLETED",
+        "main_attempt": 2,
+        "job_count": 1
+      }
+    },
+    {
+      "id": "C6SUP-05",
+      "expected": {
+        "all_released": true,
+        "worker_id": "w1",
+        "dispatches": {
+          "w0": 1,
+          "w1": 1
+        },
+        "main_state": "COMPLETED",
+        "main_attempt": 2,
+        "job_count": 1
+      }
+    },
+    {
+      "id": "C6SUP-06",
+      "expected": {
+        "all_released": true,
+        "worker_id": "w1",
+        "dispatches": {
+          "w0": 1,
+          "w1": 1
+        },
+        "main_state": "COMPLETED",
+        "main_attempt": 2,
+        "job_count": 1
+      }
+    },
+    {
+      "id": "C6SUP-07",
+      "expected": {
+        "all_released": true,
+        "worker_id": "w1",
+        "dispatches": {
+          "w0": 1,
+          "w1": 1
+        },
+        "main_state": "COMPLETED",
+        "main_attempt": 2,
+        "job_count": 1
+      }
+    },
+    {
+      "id": "C6SUP-08",
+      "expected": {
+        "all_released": true,
+        "workflow_status": "partially_completed",
+        "writes": 0,
+        "main_state": "FAILED"
+      }
+    },
+    {
+      "id": "C6SUP-09",
+      "expected": {
+        "all_released": true,
+        "workflow_status": "partially_completed",
+        "writes": 0,
+        "main_state": "FAILED"
+      }
+    },
+    {
+      "id": "C6SUP-10",
+      "expected": {
+        "all_released": true,
+        "workflow_status": "partially_completed",
+        "writes": 0,
+        "main_state": "FAILED"
+      }
+    }
+  ]
+}

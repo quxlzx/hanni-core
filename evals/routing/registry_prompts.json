@@ -1,0 +1,602 @@
+{
+  "app.list_installed": [
+    "Which software is installed on this laptop?",
+    "Do I have Firefox installed already?"
+  ],
+  "app.open": [
+    "Can you open Discord?",
+    "Launch Notepad for me"
+  ],
+  "archive.list": [
+    "Show the entries in backup.zip without extracting",
+    "What files are inside this zip archive?"
+  ],
+  "archive.unzip": [
+    "Extract backup.zip into Downloads",
+    "Unpack the archive into a new folder"
+  ],
+  "archive.zip": [
+    "Compress my project folder into a zip",
+    "Bundle these documents in an archive"
+  ],
+  "audio.mute": [
+    "Silence the computer audio",
+    "Unmute my speakers"
+  ],
+  "audio.set_volume": [
+    "Turn the system volume down a little",
+    "Set speaker volume to twenty percent"
+  ],
+  "audio.status": [
+    "How loud is the system audio currently?",
+    "Are my speakers muted?"
+  ],
+  "browser.open_url": [
+    "Open https://example.com in my browser",
+    "Visit this website in the default browser"
+  ],
+  "calc.evaluate": [
+    "Calculate the total when 19 is multiplied by 7",
+    "Work out 72 divided by 8"
+  ],
+  "clipboard.read": [
+    "What text did I copy to the clipboard?",
+    "Read my paste buffer"
+  ],
+  "clipboard.write": [
+    "Put hello on my clipboard",
+    "Copy this sentence to the paste buffer"
+  ],
+  "device.audio": [
+    "Which audio endpoints are available?",
+    "List the connected microphones and speakers"
+  ],
+  "device.bluetooth": [
+    "Are the Bluetooth headphones connected?",
+    "Show paired wireless Bluetooth devices"
+  ],
+  "device.disk_health": [
+    "Does my SSD report SMART health problems?",
+    "Check the SMART status of my physical drives"
+  ],
+  "device.printers": [
+    "Which printer is the default?",
+    "List printers installed on this machine"
+  ],
+  "device.usb": [
+    "Are any USB devices reporting problems?",
+    "List what's plugged into USB"
+  ],
+  "disk.cleanup_temp": [
+    "Delete old temporary files",
+    "Clean up the temp directories"
+  ],
+  "disk.folder_size": [
+    "How big is my Downloads folder altogether?",
+    "Measure the size of this directory tree"
+  ],
+  "disk.free_space": [
+    "Is there enough free space for a 20 GB copy?",
+    "Check remaining capacity on drive D before copying"
+  ],
+  "disk.largest_files": [
+    "Find the largest files under Documents",
+    "Which individual files are wasting the most disk space?"
+  ],
+  "disk.largest_folders": [
+    "Rank subfolders by total size",
+    "Which folders take up the most storage?"
+  ],
+  "disk.recycle_bin_size": [
+    "How much space is in the trash?",
+    "Measure my Recycle Bin without emptying it"
+  ],
+  "disk.usage": [
+    "Show used and free space for all drives",
+    "How full are my disks?"
+  ],
+  "display.brightness": [
+    "Dim the laptop panel",
+    "Set screen brightness to fifty percent"
+  ],
+  "display.info": [
+    "What refresh rate are my monitors using?",
+    "Show display resolution and adapters"
+  ],
+  "env.get": [
+    "What is the value of the TEMP environment variable?",
+    "Read just the USERPROFILE variable"
+  ],
+  "env.list": [
+    "List my environment variables",
+    "Show the environment with secret values hidden"
+  ],
+  "env.path": [
+    "Does my PATH contain nonexistent directories?",
+    "Check PATH for duplicate entries"
+  ],
+  "env.user_folders": [
+    "Where does my Downloads directory actually live?",
+    "Resolve my standard user folder locations"
+  ],
+  "env.which": [
+    "Where is the git executable on PATH?",
+    "Can this machine find the node command?"
+  ],
+  "file.compare": [
+    "Compare the contents of these two text files",
+    "Are old.txt and new.txt identical?"
+  ],
+  "file.composition": [
+    "Break Downloads down by file type",
+    "How many PDFs and images are in this folder?"
+  ],
+  "file.copy": [
+    "Copy report.txt into Documents",
+    "Duplicate this file into another folder"
+  ],
+  "file.delete": [
+    "Permanently delete this document",
+    "Erase the entire scratch folder"
+  ],
+  "file.duplicates": [
+    "Find byte-identical copies under Downloads",
+    "Which files are duplicates by content?"
+  ],
+  "file.empty_folders": [
+    "Locate empty directories without removing them",
+    "Which folders have nothing inside?"
+  ],
+  "file.grep": [
+    "Search inside my text files for invoice",
+    "Which document mentions the project deadline?"
+  ],
+  "file.head": [
+    "Preview the first ten lines of server.log",
+    "Show the beginning of this text file"
+  ],
+  "file.list_dir": [
+    "List the contents of my Desktop folder",
+    "What files are directly inside Documents?"
+  ],
+  "file.locate": [
+    "Locate the exact file budget.xlsx",
+    "Where did I put receipt.pdf?"
+  ],
+  "file.mkdir": [
+    "Make a new directory called invoices",
+    "Create a folder for this project"
+  ],
+  "file.move": [
+    "Rename draft.txt to final.txt",
+    "Move my report into Documents"
+  ],
+  "file.open": [
+    "Open this PDF with its default application",
+    "Show report.txt in its associated app"
+  ],
+  "file.read": [
+    "Read the contents of settings.txt",
+    "Tell me what this text file says"
+  ],
+  "file.recent": [
+    "Which files changed most recently?",
+    "Show documents I worked on yesterday"
+  ],
+  "file.search": [
+    "Find filenames matching invoice under Documents",
+    "Search Downloads recursively for PDFs"
+  ],
+  "file.stat": [
+    "Does C:\\Temp\\report.txt exist?",
+    "Check metadata for this path"
+  ],
+  "file.tail": [
+    "Show the final twenty lines of error.log",
+    "Read the end of the application log"
+  ],
+  "file.write": [
+    "Save this text to a new file",
+    "Replace the contents of draft.txt"
+  ],
+  "folder.open": [
+    "Open my Documents directory in Explorer",
+    "Show the Downloads folder in File Explorer"
+  ],
+  "git.branches": [
+    "Which git branch am I on?",
+    "List local and remote repository branches"
+  ],
+  "git.diff": [
+    "Show my staged git diff",
+    "Review the unstaged patch in this repository"
+  ],
+  "git.log": [
+    "Who made the recent commits?",
+    "Show the repository commit history"
+  ],
+  "git.status": [
+    "Is this git repository dirty?",
+    "Which changes are uncommitted?"
+  ],
+  "gmail.read": [
+    "Read the email with ID abc from my school account",
+    "Show the full body of that Gmail message"
+  ],
+  "gmail.search": [
+    "Find emails about my tuition",
+    "Search my inbox for messages from Alex"
+  ],
+  "google.accounts": [
+    "Are both my Google account slots connected?",
+    "Check my school Google login status"
+  ],
+  "google_calendar.agenda": [
+    "Anything on the calendar this weekend?",
+    "How busy am I next week?"
+  ],
+  "google_calendar.create": [
+    "Schedule piano practice tomorrow at 5pm",
+    "Add a dentist appointment Friday at noon"
+  ],
+  "google_calendar.list": [
+    "Which Google calendars can you access?",
+    "List calendar IDs for my personal account"
+  ],
+  "google_calendar.next": [
+    "When is my next appointment?",
+    "What's coming up next on my calendar?"
+  ],
+  "gpu.memory": [
+    "How much video memory is free?",
+    "Show VRAM headroom on each GPU"
+  ],
+  "gpu.top_processes": [
+    "Which apps are hammering the graphics card?",
+    "Rank processes by GPU memory consumption"
+  ],
+  "hanni.audit_tail": [
+    "What actions did you recently perform?",
+    "Show your failed tool calls from the audit log"
+  ],
+  "hanni.capabilities": [
+    "What kinds of things can you help me do?",
+    "List your available capabilities"
+  ],
+  "hanni.permissions": [
+    "Which actions require my approval?",
+    "Explain your current permission boundaries"
+  ],
+  "hanni.stop_state": [
+    "Is your emergency stop active?",
+    "Are you currently halted?"
+  ],
+  "id.generate": [
+    "Give me a new UUID",
+    "Generate a random URL-safe identifier"
+  ],
+  "media.next_track": [
+    "Skip the current video in the media player",
+    "Send the next-track media key"
+  ],
+  "media.play_pause": [
+    "Pause the video player",
+    "Resume playback in the current media app"
+  ],
+  "media.previous_track": [
+    "Go back to the previous video in the media player",
+    "Send the previous-track media key"
+  ],
+  "media.stop": [
+    "Stop playback in the media player",
+    "Send the media stop key"
+  ],
+  "model.status": [
+    "Is the local model endpoint reachable?",
+    "Check whether Qwen is loaded"
+  ],
+  "net.dns_lookup": [
+    "Resolve example.com to its IP addresses",
+    "Check DNS resolution for this hostname"
+  ],
+  "net.info": [
+    "What is my private IP address?",
+    "Are the network adapters connected?"
+  ],
+  "net.ping": [
+    "Measure packet loss to my router",
+    "Ping example.com and show latency"
+  ],
+  "net.ports": [
+    "Which process owns port 8080?",
+    "List listening TCP and UDP sockets"
+  ],
+  "net.throughput": [
+    "How many bytes per second are going over the network?",
+    "Measure current upload and download throughput"
+  ],
+  "net.wifi": [
+    "Which wireless SSID am I connected to?",
+    "How strong is my Wi-Fi signal?"
+  ],
+  "note.append": [
+    "Jot down that I need printer paper",
+    "Append a note about the meeting"
+  ],
+  "note.days": [
+    "Which days have saved notes?",
+    "Show the dates in my note history"
+  ],
+  "note.list": [
+    "Read my notes from today",
+    "Show the notes I recorded yesterday"
+  ],
+  "note.search": [
+    "Search my notes for flight details",
+    "Find the note mentioning the dentist"
+  ],
+  "notify.toast": [
+    "Show a desktop notification saying done",
+    "Pop up an alert on my computer"
+  ],
+  "power.battery_detail": [
+    "How long will the battery last unplugged?",
+    "Estimate battery time remaining"
+  ],
+  "power.battery_report": [
+    "Generate a battery health report on disk",
+    "Save the Windows battery wear report"
+  ],
+  "power.idle_settings": [
+    "How long until the screen sleeps?",
+    "Read my AC power idle timeouts"
+  ],
+  "power.plans": [
+    "Which Windows power plan is active?",
+    "List the available power profiles"
+  ],
+  "power.set_idle": [
+    "Keep my laptop awake indefinitely",
+    "Change the screen-off timeout to ten minutes"
+  ],
+  "power.set_plan": [
+    "Switch to the balanced power plan",
+    "Enable the high performance power profile"
+  ],
+  "powershell.run": [
+    "Execute Get-Process in PowerShell",
+    "Run a terminal command for me"
+  ],
+  "process.find": [
+    "Is Firefox currently running?",
+    "Find the process called Code.exe"
+  ],
+  "process.inspect": [
+    "Does PID 4321 still exist?",
+    "Check whether process number 8765 is alive"
+  ],
+  "process.list": [
+    "List all running programs on this computer",
+    "Show me the process inventory"
+  ],
+  "process.stop": [
+    "Terminate the frozen Chrome process",
+    "Kill the application with PID 4321"
+  ],
+  "process.top_cpu": [
+    "Which app is hogging processor time?",
+    "Rank the biggest CPU consumers"
+  ],
+  "process.top_disk_io": [
+    "Which process is doing the most disk writes?",
+    "Find the applications hammering disk I/O"
+  ],
+  "process.top_memory": [
+    "whats eating my ram rn",
+    "Which app consumes the most system memory?"
+  ],
+  "process.uptime": [
+    "How long has Firefox been running?",
+    "When did process 4321 start?"
+  ],
+  "project.format": [
+    "Reformat this Python project with black",
+    "Apply consistent formatting to my source files"
+  ],
+  "project.lint": [
+    "Run ruff on my project",
+    "Lint this code and report style errors"
+  ],
+  "project.test": [
+    "Run the project's automated tests",
+    "Check whether the pytest suite passes"
+  ],
+  "python.env_info": [
+    "Which Python interpreter am I using?",
+    "Show packages in my active virtual environment"
+  ],
+  "random.number": [
+    "Roll a twenty-sided die",
+    "Pick a random integer between ten and fifty"
+  ],
+  "random.pick": [
+    "Flip a coin to decide",
+    "Choose randomly between tea and coffee"
+  ],
+  "schedule.list_tasks": [
+    "Which Windows tasks run automatically?",
+    "List scheduled jobs and their state"
+  ],
+  "security.bitlocker": [
+    "Is my drive encrypted with BitLocker?",
+    "Check volume encryption status"
+  ],
+  "security.defender": [
+    "Is antivirus protection turned on?",
+    "Are my Defender signatures current?"
+  ],
+  "security.firewall": [
+    "Are all firewall profiles enabled?",
+    "Check default inbound firewall rules"
+  ],
+  "security.pending_reboot": [
+    "Is Windows waiting for a restart?",
+    "Do updates require me to reboot?"
+  ],
+  "security.updates": [
+    "Which hotfixes were installed recently?",
+    "Which security hotfixes did Windows install last?"
+  ],
+  "service.control": [
+    "Restart the print spooler service",
+    "Stop the SSH service"
+  ],
+  "service.list": [
+    "Which Windows services are stopped?",
+    "Show background services and their start types"
+  ],
+  "spotify.focus": [
+    "Bring Spotify to the foreground",
+    "Switch to the Spotify window"
+  ],
+  "spotify.launch": [
+    "Launch the Spotify desktop app",
+    "Open Spotify for me please"
+  ],
+  "spotify.next": [
+    "Skip this Spotify song",
+    "Go to the next track on Spotify"
+  ],
+  "spotify.open_uri": [
+    "Open spotify:track:abc123",
+    "Play this Spotify URI in the client"
+  ],
+  "spotify.play_pause": [
+    "Can you play Spotify?",
+    "Pause my Spotify music"
+  ],
+  "spotify.previous": [
+    "Replay the previous Spotify track",
+    "Go back one song in Spotify"
+  ],
+  "spotify.search": [
+    "Find jazz playlists on Spotify",
+    "Search Spotify for Nina Simone"
+  ],
+  "spotify.status": [
+    "What song is Spotify playing?",
+    "Who's the artist on the current Spotify track?"
+  ],
+  "spotify.volume": [
+    "Lower Spotify's own volume",
+    "Set Spotify volume to thirty percent"
+  ],
+  "startup.list": [
+    "Which programs launch at login?",
+    "Show the Windows startup entries"
+  ],
+  "system.battery": [
+    "What percentage of battery is left?",
+    "Is my laptop charging right now?"
+  ],
+  "system.event_errors": [
+    "Show recent critical Windows event errors",
+    "Why did my PC blue screen?"
+  ],
+  "system.os_info": [
+    "Which Windows edition and build am I on?",
+    "What is this computer's hostname?"
+  ],
+  "system.performance": [
+    "y my pc so slow",
+    "Check my computer for performance bottlenecks"
+  ],
+  "system.stats": [
+    "Show overall CPU and RAM utilization",
+    "How much system memory am I using?"
+  ],
+  "system.uptime": [
+    "How long since this laptop booted?",
+    "When was my computer last restarted?"
+  ],
+  "text.hash": [
+    "Compute a SHA256 checksum of this text",
+    "Give me an MD5 digest for hello"
+  ],
+  "text.normalize": [
+    "Turn this title into a slug",
+    "Convert this sentence to uppercase"
+  ],
+  "text.stats": [
+    "Count the words in this paragraph",
+    "Estimate the reading time of this text"
+  ],
+  "time.convert": [
+    "Convert noon Chicago time to UTC",
+    "What is 9am in London in New York time?"
+  ],
+  "time.elapsed": [
+    "How long ago was 2026-09-20T12:00:00?",
+    "Measure elapsed time since this timestamp"
+  ],
+  "time.now": [
+    "Tell me the current local time",
+    "What date will tomorrow be?"
+  ],
+  "timer.set": [
+    "Remind me in fifteen minutes",
+    "Start a ten-minute countdown timer"
+  ],
+  "todo.add": [
+    "Save a homework task due Friday",
+    "Add an assignment for my biology course"
+  ],
+  "todo.complete": [
+    "Mark task 42 as completed",
+    "Finish the saved assignment with ID 17"
+  ],
+  "todo.due": [
+    "Which assignments are overdue?",
+    "What tasks are due in the next three days?"
+  ],
+  "todo.get": [
+    "Show the saved details for task ID 42",
+    "Read back assignment number 17"
+  ],
+  "todo.list": [
+    "List my open homework tasks",
+    "Show all assignments for biology"
+  ],
+  "ui.active_window": [
+    "Which window has keyboard focus?",
+    "Read the title of the foreground window"
+  ],
+  "ui.close_window": [
+    "Close the Notepad window",
+    "Quit the window titled Untitled"
+  ],
+  "ui.focus_window": [
+    "Focus the Discord window",
+    "Bring Notepad to the foreground"
+  ],
+  "ui.list_windows": [
+    "List visible top-level window titles",
+    "Which windows are visible on the desktop?"
+  ],
+  "ui.minimize_all": [
+    "Minimize every window",
+    "Show my desktop by hiding the windows"
+  ],
+  "ui.window_state": [
+    "Maximize the Notepad window",
+    "Restore the minimized browser window"
+  ],
+  "ui.windows_detailed": [
+    "List windows with their owning processes",
+    "Which windows are minimized and what are their PIDs?"
+  ],
+  "unit.convert": [
+    "Convert five miles to kilometers",
+    "How many Celsius is 72 Fahrenheit?"
+  ]
+}

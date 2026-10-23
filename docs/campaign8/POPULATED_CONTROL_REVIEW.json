@@ -1,0 +1,1367 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-10T13:30:20.532350+00:00",
+  "scope": "Independent DEVELOPMENT semantic review of actual owned native PNGs and original disposable backend receipts, not private final evaluation. Each PASS is limited to its stated observed operation. No whole-product, external-provider, model-generation or physical-audio success implied.",
+  "raw_receipt": {
+    "path": "data/campaign8-native/cycle8-populated-57/RESULTS.json",
+    "sha256": "769d3cb362f0a4cfb807b38bf1ccdeda9a59f2470c3d06ceb04df90fe65eb3bf"
+  },
+  "summary": {
+    "cases": 57,
+    "executed": 53,
+    "pass_observed_scope": 50,
+    "partial_evidence": 3,
+    "harness_errors": 4,
+    "all57_final_state_pngs_independently_viewed": true,
+    "all151_step_pngs_viewed": false,
+    "owned_native_cleanup": true,
+    "javascript_errors": 0,
+    "private_final_cases_attempted": 0
+  },
+  "cases": [
+    {
+      "id": "task-create-local",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Created exact titled high-priority open task through original form; new opaque ID and existing seed task retained.",
+      "native_steps": 5,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/task-create-local.png",
+        "sha256": "7308b5b2aeae8693825c3909b2cbc23d801c1fbe9eb6de37752d5a307ba347ab"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "b42e797e17043320aa1e83a68f843fbc95f6c9a9d80648fc09b113e376f69dbc"
+        }
+      ],
+      "case_receipt_sha256": "5e88ca5c1cf5aef5403dfb24b512233e8a9a0592fce55ebe31d4f5d8a481e561"
+    },
+    {
+      "id": "task-complete-local",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Completed the same new task; original status became completed and open view removed it.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/task-complete-local.png",
+        "sha256": "6d154db3ef90c022afe406c74cdc43ccd0c53cb4bd33f64b21e19a76182545b2"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "889bdcf271a34fe989c6392e9e5817afb3edcaab494d6d9935ebebee34ae3c67"
+        }
+      ],
+      "case_receipt_sha256": "a334e12ebb79475bf42670f6e1f540165bed9241d4143abf3eee44e79cb15da8"
+    },
+    {
+      "id": "task-reopen-local",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Reopened that same task; original status became open and row returned.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/task-reopen-local.png",
+        "sha256": "ec13278e6fd1a775f340173ac5aea31ec1ef888a7908f1f55bcbfd1eda166c0f"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "b42e797e17043320aa1e83a68f843fbc95f6c9a9d80648fc09b113e376f69dbc"
+        }
+      ],
+      "case_receipt_sha256": "082a1b12527d3851495c68694ae0dbc2d455775a042e10c4f9fd4f2ff3d1edd7"
+    },
+    {
+      "id": "task-edit-local",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Edited same task title and priority to revised/low; original persisted fields and UI agree.",
+      "native_steps": 6,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/task-edit-local.png",
+        "sha256": "5badd565cad26a75e73ce5b55a2863ad0f034a4b926fb73d039c6409e56f688e"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ec0d499ff0c815fdc8cc7d4951d14c5db76ecd303856a5bf02a88b2f4acbf997"
+        }
+      ],
+      "case_receipt_sha256": "d7318ecf320681f1cb707f411cf77f2431bfbadbd8e01683f5cc68f276eaea05"
+    },
+    {
+      "id": "task-cancel-deletion",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Cancelled delete; revised task ID/content retained.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/task-cancel-deletion.png",
+        "sha256": "bd107eab9ccac0bd7a325ae4757612bc724f565c1fd9a7716a4488cd87e94809"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ec0d499ff0c815fdc8cc7d4951d14c5db76ecd303856a5bf02a88b2f4acbf997"
+        }
+      ],
+      "case_receipt_sha256": "31ee2f7e700a469a72e72b728d25aa59df710e5087193c3028913aee3cf187ba"
+    },
+    {
+      "id": "task-delete-local",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Deleted only that new task; original seed task retained.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/task-delete-local.png",
+        "sha256": "7eecb1ab3ef5340cab19d3cd34db2b4cb3c63786f3e26ec620bf0fe2d2fb9037"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ca1fbb92dbccde245824790172ffe34ee93646e61ece7479df5879b55a013ad4"
+        }
+      ],
+      "case_receipt_sha256": "7c49ea0e9f87b62ea2248a4502b26f670f239b7e1bbc6903d62ece1004123f0b"
+    },
+    {
+      "id": "task-draft-cancel",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Cancelled new-task draft; no draft task added.",
+      "native_steps": 3,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/task-draft-cancel.png",
+        "sha256": "7eecb1ab3ef5340cab19d3cd34db2b4cb3c63786f3e26ec620bf0fe2d2fb9037"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ca1fbb92dbccde245824790172ffe34ee93646e61ece7479df5879b55a013ad4"
+        }
+      ],
+      "case_receipt_sha256": "3da70e29f863b0a4b85e477c3e2d6dff4e4e8d4e87e43cb3be33826c4dc43da2"
+    },
+    {
+      "id": "task-no-match-filter",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "No-match task query renders empty matching view while original store remains unchanged.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/task-no-match-filter.png",
+        "sha256": "05ab1dd0858ca8c1974b0c06cfd8cc84008cab5521e027fc28b7c77c2e33a15a"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ca1fbb92dbccde245824790172ffe34ee93646e61ece7479df5879b55a013ad4"
+        }
+      ],
+      "case_receipt_sha256": "e28d58975503380772a7475bf710639c0e653813d261270014a30c5e94ed143d"
+    },
+    {
+      "id": "task-filter-clear",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Cleared task query; original seed row returns.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/task-filter-clear.png",
+        "sha256": "4a33852513396f8daf5022c1cd1b14c9118230f6eecacbef1e2bf24380e69399"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ca1fbb92dbccde245824790172ffe34ee93646e61ece7479df5879b55a013ad4"
+        }
+      ],
+      "case_receipt_sha256": "90557aeb29b5b0aab6c77cc669b02cf82031a7693dfbb5fcdc8cbb835e492208"
+    },
+    {
+      "id": "task-completed-filter",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Completed filter renders no completed tasks; remaining original task is open.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/task-completed-filter.png",
+        "sha256": "659f1cc8cf6f1bb6fe2f7cc2e15ee6004c08c5b0da28a1a217d9a6ce8c5d169c"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ca1fbb92dbccde245824790172ffe34ee93646e61ece7479df5879b55a013ad4"
+        }
+      ],
+      "case_receipt_sha256": "c4e2cce01193f3221f378116791641092f8a6586b32db1794511b81ad5d5a474"
+    },
+    {
+      "id": "task-all-filter",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "All-task filter restores remaining seed row.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/task-all-filter.png",
+        "sha256": "99673e9b34471a09f39564f1769a253075c0b6b951d6b1dfb875ec5eebe525fd"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ca1fbb92dbccde245824790172ffe34ee93646e61ece7479df5879b55a013ad4"
+        }
+      ],
+      "case_receipt_sha256": "9540a74e923a19a6e0d305a7b3cdc57ff177636cafecdc8a8fe0a073f6dd5bb6"
+    },
+    {
+      "id": "project-create-local",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Created additional original project with exact description; old project retained.",
+      "native_steps": 4,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/project-create-local.png",
+        "sha256": "4a2a34b46e484c3a8fc6436f06d7b8269f591a6424bb75916d1a9939dc5f10a1"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "895a6b6ce5d6003497ff9ddbb3f90030d5b97994dad5b410c95bcb3a27cdeb43"
+        }
+      ],
+      "case_receipt_sha256": "eb69a24c22a11dfd0dd6e2d75b060daaad316d44ae7919cd6d606df4b4bd86e2"
+    },
+    {
+      "id": "project-select-original",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Selected original project; original linked task/note/link details shown.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/project-select-original.png",
+        "sha256": "7ec2210c649ceea1d4d428f445b2f85890c6df09ac67bc976addd663ec617e48"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "895a6b6ce5d6003497ff9ddbb3f90030d5b97994dad5b410c95bcb3a27cdeb43"
+        }
+      ],
+      "case_receipt_sha256": "565177d4e8f404d8ccedd5e0cb9265e9f9022a2d038a22338ea7d8c6a3ab9c8f"
+    },
+    {
+      "id": "project-note-create",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Created original note with exact declared title/body and opaque ID.",
+      "native_steps": 4,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/project-note-create.png",
+        "sha256": "e7ecbc5820c9d57a96ef7fc62856de6449bad6694006e45061f5f4f0d40dd187"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "7c819ada30121bf8a69a9538178e0a1bc2f1342d1a540de1be7960bdbf788600"
+        }
+      ],
+      "case_receipt_sha256": "a6831af3009c5ac1cc070121fec06e3a7cfb66a74c7f9811e30ebb6e5918fa4e"
+    },
+    {
+      "id": "project-note-open",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Opened that note; actual saved body and Edit/Delete controls visible.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/project-note-open.png",
+        "sha256": "a9325b435e93cd41d92029f5cb7bbccc7d057e316a2896a73cf605c6f4802680"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "7c819ada30121bf8a69a9538178e0a1bc2f1342d1a540de1be7960bdbf788600"
+        }
+      ],
+      "case_receipt_sha256": "7db736ab93b74c79cecb6d14051dd951d0985c431ad1c067ea8c7220e05d9cd1"
+    },
+    {
+      "id": "project-note-edit",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Edited same note body; original SQLite receipt and displayed correction agree.",
+      "native_steps": 3,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/project-note-edit.png",
+        "sha256": "b9789fdd97a207f0b876342695f305b674290bf0f9cbcb905166ab865aadbb1b"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "73f22ee9f2e21dc1de9c308e45ee4b72703480cd9f557dd765f2dcdd2775f3d7"
+        }
+      ],
+      "case_receipt_sha256": "519add7a451fe9329d4f709abfb6c648599a3879ec692bf441328236c254052c"
+    },
+    {
+      "id": "project-note-delete-cancel",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Cancelled note deletion; saved note retained.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/project-note-delete-cancel.png",
+        "sha256": "b9789fdd97a207f0b876342695f305b674290bf0f9cbcb905166ab865aadbb1b"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "73f22ee9f2e21dc1de9c308e45ee4b72703480cd9f557dd765f2dcdd2775f3d7"
+        }
+      ],
+      "case_receipt_sha256": "67a71101361d8f2e3a6833e4b4846325379bed43c4bfbc9fd3719607518aaf22"
+    },
+    {
+      "id": "project-link-draft-cancel",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Cancelled new-link draft; no additional link persisted.",
+      "native_steps": 3,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/project-link-draft-cancel.png",
+        "sha256": "070c4bec2a73a370af83ec499af5c145ef3c34a3f4046cf5f7f2a8c3c75bacd4"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "73f22ee9f2e21dc1de9c308e45ee4b72703480cd9f557dd765f2dcdd2775f3d7"
+        }
+      ],
+      "case_receipt_sha256": "81ab24b3903a62cffb49c88baf81044246c86dcce0fe5d1359631abd436e7b02"
+    },
+    {
+      "id": "project-link-remove-cancel",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Cancelled original-link removal; original link retained.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/project-link-remove-cancel.png",
+        "sha256": "a932b57cf4d6ca5b46fa0b2bcb08b81f5e5098c1916954a8d9a9af44b82c48af"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "73f22ee9f2e21dc1de9c308e45ee4b72703480cd9f557dd765f2dcdd2775f3d7"
+        }
+      ],
+      "case_receipt_sha256": "d042411cdfbff4b6f95cb10f4b5b8dae988664a752d5d71446380d2fb8e9f7c8"
+    },
+    {
+      "id": "project-link-remove-local",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Removed original link; original links array empty and row absent.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/project-link-remove-local.png",
+        "sha256": "7332fc6fb48696af603cf8424906800fa493ab6884112f3bdeaadaec60c12dc3"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "966de76e6b68f30c200851a0992c075402fa6a9c0d5e72c4372857c2a1fc10fe"
+        }
+      ],
+      "case_receipt_sha256": "af38105f74c49c5c980b419dc0ef4d8d93b63db1539e9d99de08959a2e733065"
+    },
+    {
+      "id": "project-new-select",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Selected new project; empty task/note/link collections shown.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/project-new-select.png",
+        "sha256": "f9aad038afc3dd1026b0250ea816774bb15720757b6b54de5c40034b8ab655db"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "966de76e6b68f30c200851a0992c075402fa6a9c0d5e72c4372857c2a1fc10fe"
+        }
+      ],
+      "case_receipt_sha256": "531252cee0222cbc9071bf9c335f2d3d855ea678eeefe4d16f9717913aa630e7"
+    },
+    {
+      "id": "project-edit-local",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Updated same new project description; original persisted field and UI agree.",
+      "native_steps": 3,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/project-edit-local.png",
+        "sha256": "22e8d203303c0081d6f7491adfe7450a37798133ec982d91e46f054b95977b54"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "18a15f727fcf36c55c5f5864a70980aa0f2e1177f832e8ac5074c0766a316f75"
+        }
+      ],
+      "case_receipt_sha256": "c88ddbf0e7ae66ad5bc275a60589f8f93b5c3f31b1b18de4f978d91c9f1b8ae6"
+    },
+    {
+      "id": "project-delete-cancel",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Cancelled project deletion; new project retained.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/project-delete-cancel.png",
+        "sha256": "22e8d203303c0081d6f7491adfe7450a37798133ec982d91e46f054b95977b54"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "18a15f727fcf36c55c5f5864a70980aa0f2e1177f832e8ac5074c0766a316f75"
+        }
+      ],
+      "case_receipt_sha256": "7d81bb3e1fdecd63696d4271c457ed13a1824514b05c77872e81776c024c7fc5"
+    },
+    {
+      "id": "project-delete-local",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Deleted new project only; original project retained.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/project-delete-local.png",
+        "sha256": "b61266fbb4ee72ff6c6fb3ed40a43c9914b2b0ca0f06f111a4df8c0d208aa909"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "ae1169666d18e08f8ba35735dfa82703499e319fab293573b19010578926aa41"
+        }
+      ],
+      "case_receipt_sha256": "09e178b570ac45157522ea86517a44b6ab61d7c7e3a6fb684cf9ae60ad2a26b1"
+    },
+    {
+      "id": "memory-no-match-search",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "No-match Memory search empties the matching-record list; previous selected detail remains separately displayed, so clearing selection is not claimed.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/memory-no-match-search.png",
+        "sha256": "c1cbd008de83fb79e6b45aef3d542cd67aaf48f11e6fb4a29c6dbd11dc65a984"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "347f3c3d1742790d8d1fbf4a58d25cf3ca723701d2deef2eaa46a648389e8548"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "26044075526d32066299e1c2529e8c2c7076b3b9c7a54e9d8e17f8a38179f4ff"
+        }
+      ],
+      "case_receipt_sha256": "2925dd475929983fa92d11da6be2d7d8dd606fdd70adc424178278c81a8fd78f"
+    },
+    {
+      "id": "memory-search-clear",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Cleared Memory query; original matching record returns.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/memory-search-clear.png",
+        "sha256": "8d48415efb6f403b842c2f68702365191986740ae6e9c59a2eb19d9461f5bfe4"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "347f3c3d1742790d8d1fbf4a58d25cf3ca723701d2deef2eaa46a648389e8548"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "26044075526d32066299e1c2529e8c2c7076b3b9c7a54e9d8e17f8a38179f4ff"
+        }
+      ],
+      "case_receipt_sha256": "9fe94623926828aaffd2e0b46820bed3916d07cd65ec5137d6340231c665785c"
+    },
+    {
+      "id": "memory-correction-cancel",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Cancelled correction; original memory content retained.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/memory-correction-cancel.png",
+        "sha256": "3bfe63fcdbe3530b32ad0e5b74be55e133e90eac39d6914bd844247fa3810717"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "347f3c3d1742790d8d1fbf4a58d25cf3ca723701d2deef2eaa46a648389e8548"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "26044075526d32066299e1c2529e8c2c7076b3b9c7a54e9d8e17f8a38179f4ff"
+        }
+      ],
+      "case_receipt_sha256": "7f74aa45afe7c57ea36ed8feb227077da776e214a9bba2bddd641bf39b1de409"
+    },
+    {
+      "id": "memory-correction-save",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Corrected same memory ID to exact declared local text; original store and visible result agree.",
+      "native_steps": 3,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/memory-correction-save.png",
+        "sha256": "566c6897081676c60566d475ae204fdfe110a5b703dc51929df42d0f33197a00"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "e51ac22ecca34452684bdbf625ec3a8e1d25fa243180776e19bad9b36fa4a7b0"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "26044075526d32066299e1c2529e8c2c7076b3b9c7a54e9d8e17f8a38179f4ff"
+        }
+      ],
+      "case_receipt_sha256": "d0bc4bd6bcb1f5cedbf73d87f4098b7270df2f4abc7b7929106a06353af751b4"
+    },
+    {
+      "id": "memory-delete-cancel",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Cancelled memory deletion; corrected record retained.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/memory-delete-cancel.png",
+        "sha256": "566c6897081676c60566d475ae204fdfe110a5b703dc51929df42d0f33197a00"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "e51ac22ecca34452684bdbf625ec3a8e1d25fa243180776e19bad9b36fa4a7b0"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "26044075526d32066299e1c2529e8c2c7076b3b9c7a54e9d8e17f8a38179f4ff"
+        }
+      ],
+      "case_receipt_sha256": "86578e4c5f01c78d46f0a6cd8d29983febb600854b11393b262fe568fef57816"
+    },
+    {
+      "id": "memory-review-queue",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Review queue displays original pending plan with source/reference/uncertainty and explicit no-auto-save notice.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/memory-review-queue.png",
+        "sha256": "c85c4d71d0ee8cb69ee862e2282c18bec433423a7b374b72f76ff7fad82df7f4"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "e51ac22ecca34452684bdbf625ec3a8e1d25fa243180776e19bad9b36fa4a7b0"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "26044075526d32066299e1c2529e8c2c7076b3b9c7a54e9d8e17f8a38179f4ff"
+        }
+      ],
+      "case_receipt_sha256": "cb30da5903223afeb0f40b8826bba9c1b3c75a8b93bf7adcda32bb583e2fd4d6"
+    },
+    {
+      "id": "memory-review-reject-cancel",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Cancelled suggestion rejection; pending suggestion and stored memory retained.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/memory-review-reject-cancel.png",
+        "sha256": "fd90800c432627f383317c8754288d2405d70bcf6bcff7605013ae444d9f9c69"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "e51ac22ecca34452684bdbf625ec3a8e1d25fa243180776e19bad9b36fa4a7b0"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "26044075526d32066299e1c2529e8c2c7076b3b9c7a54e9d8e17f8a38179f4ff"
+        }
+      ],
+      "case_receipt_sha256": "3fe9c4baff8392d54bcf8d983a69e0184cec47fcc9cd7bfc2de145ecf3678e27"
+    },
+    {
+      "id": "memory-review-reject-local",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Rejected pending suggestion; pending total becomes zero and stored memory remains unchanged.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/memory-review-reject-local.png",
+        "sha256": "cd81243f246703c9c577d68f2a188fe79d7b20b21a1a6e552306f9274f7deeb9"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "73a288d6a29cbcdaeaad25168f7c562d49a20629d84a4e01eb6128e005456985"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "7d07b98be6841a647f59c3061de8f36851196c71ecbbeeb009ab9cdc49bbd501"
+        }
+      ],
+      "case_receipt_sha256": "ea252583b659902b5f8f3f4df141ed9af2a47ecdcea63d8c8855f57107c2883a"
+    },
+    {
+      "id": "memory-project-tab",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Project-context tab shows original project context with no linked verified workflow; no current-state verification is inferred.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/memory-project-tab.png",
+        "sha256": "fd31292782501622304be63dee53ed486aec4129806be72f5468351573e756ca"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "73a288d6a29cbcdaeaad25168f7c562d49a20629d84a4e01eb6128e005456985"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "7d07b98be6841a647f59c3061de8f36851196c71ecbbeeb009ab9cdc49bbd501"
+        }
+      ],
+      "case_receipt_sha256": "d9976cdb4dfd8f117c8d20dd3b450671af404f52da79aa3e31b4dbdf8387f4f2"
+    },
+    {
+      "id": "memory-stored-tab",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Stored-memory tab restores the corrected record.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/memory-stored-tab.png",
+        "sha256": "e13e3675b9f19f7d64ca72d73ce1c29accc85d46befeaa085c0052f115820fe4"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "73a288d6a29cbcdaeaad25168f7c562d49a20629d84a4e01eb6128e005456985"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "7d07b98be6841a647f59c3061de8f36851196c71ecbbeeb009ab9cdc49bbd501"
+        }
+      ],
+      "case_receipt_sha256": "2598540ba7cc01df0ff35752963e66d1119430eacf485d76542fbd20167ef49d"
+    },
+    {
+      "id": "notification-mark-read",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Marked same original notification read; original read flag true and unread view removes it.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/notification-mark-read.png",
+        "sha256": "7c2149276aabaf61229242a3f2777ebc380cf9d30eee9554004416f7b3f23a23"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "dbc1b8b95b1c9f97ded92246d8ad1277898ac241b689845c37ffbccd634c9acb"
+        }
+      ],
+      "case_receipt_sha256": "e3687fa9bd2810edf7c7ddab7b07e3f3625adfc8d059e7a67507d84ca5798511"
+    },
+    {
+      "id": "notification-all-filter",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "All-current filter includes original read record; flags remain unchanged.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/notification-all-filter.png",
+        "sha256": "fafc812b8d3afd64ac088870bb5812c8e3b50788774f9faa982387b96b088c22"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "dbc1b8b95b1c9f97ded92246d8ad1277898ac241b689845c37ffbccd634c9acb"
+        }
+      ],
+      "case_receipt_sha256": "4a45b696d06ea1c75a8896be476720fe1ef74148375e181f81472642e89c4d65"
+    },
+    {
+      "id": "notification-dismiss-local",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Dismissed same notification; original dismissed/read true and current view removes it.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/notification-dismiss-local.png",
+        "sha256": "6b0f86e3ede79c631955cb725b655fd8046025c3620b090084b27cd81af5b324"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "592baff33484074c29791cff2322ebac20b96a969494908bce7ea22e7867b59c"
+        }
+      ],
+      "case_receipt_sha256": "df933505bdc3c516b882e360fe84c58a0b2cd2daf2abf572f26691ea66beca28"
+    },
+    {
+      "id": "notification-history-filter",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "History filter includes dismissed record with persisted flags.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/notification-history-filter.png",
+        "sha256": "122aa0da1fd160f08fd79b8700ff2c8c4486ba2ccbedc18e94dbddca0be4444b"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "592baff33484074c29791cff2322ebac20b96a969494908bce7ea22e7867b59c"
+        }
+      ],
+      "case_receipt_sha256": "dc9cd379729d35be25db2219ef8586c25348f48b65c9d2b9e1701a5c71c3edab"
+    },
+    {
+      "id": "notification-preferences-open",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Expanded original notification-preference disclosure; opening alone is not a preference write.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/notification-preferences-open.png",
+        "sha256": "3b0c935ae26ff2c8303bc8410190e058405625048da7f34d1d10515afd1fa456"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "592baff33484074c29791cff2322ebac20b96a969494908bce7ea22e7867b59c"
+        }
+      ],
+      "case_receipt_sha256": "9c10baa693fbb6b48de1fe92a7bb943ea090215adeb7a169428a43983abe7e3e"
+    },
+    {
+      "id": "workflow-completed-filter",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Completed workflow filter selects original manually seeded completed/verified 1/1 workflow; controller unavailable disables actions.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/workflow-completed-filter.png",
+        "sha256": "3e6d896730ca90d0c22fb792d463a1224d3ea2c70155b81f0bbd801d8214014e"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/workflows",
+          "status": 200,
+          "data_sha256": "a3ed889d29eca1bdb10e2ef950b1b52f3fda23924416a2575e2d76559f231f9e"
+        }
+      ],
+      "case_receipt_sha256": "02e90fc5bf668160f22c330a6db787223c66e9d8e1fe3f637af130d6f1346031"
+    },
+    {
+      "id": "workflow-output-open",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Output dialog shows exact original 58-byte artifact text; independently verified original artifact hash is retained.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/workflow-output-open.png",
+        "sha256": "6b1e5d8cb7d2bf8c032254b909d82abaab74550a0d05e3a3fb915ac5b390f363"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/workflows",
+          "status": 200,
+          "data_sha256": "8a3fab89d7126eee0645ab515483e30d0e1cf394e920108161f69464ca889c9e"
+        }
+      ],
+      "case_receipt_sha256": "749de72b8b5bcc8c1af17b7b212f333437424f261e1d15fa11e0506f056da48d"
+    },
+    {
+      "id": "workflow-output-close",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Output dialog closes with original Escape path; workflow detail remains.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/workflow-output-close.png",
+        "sha256": "4b02d2828fe01538ff42763250c7157534bdc8b1168d54b8df1a30d0ba9fc3ee"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/workflows",
+          "status": 200,
+          "data_sha256": "56970ce83805c0f0e3ad18f7f696b33ae24016662d731df581bd28a7ab539f30"
+        }
+      ],
+      "case_receipt_sha256": "a1f682423aae7d7a1c6b15003a89299fdac4dd66bf6cd99271af370c9c0487d6"
+    },
+    {
+      "id": "workflow-checkpoint-history",
+      "status": "PARTIAL",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Checkpoint/history disclosure is visibly expanded. Actual rows fall below the screenshot; precise row contents/ordering remain unverified by this case.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/workflow-checkpoint-history.png",
+        "sha256": "aa52c472e7333315262e9217ded8d741cf1f980884f877b4e14bf76692c0465a"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/workflows",
+          "status": 200,
+          "data_sha256": "91b3dc035d451978285b19f11c7a15622512a1ef91a8b7ee5b60e4caa56f7009"
+        }
+      ],
+      "case_receipt_sha256": "1eaaab383f09565517ddacd172a6c1165353aba1ac44208e54524d1edb12bd4a"
+    },
+    {
+      "id": "workflow-no-match-search",
+      "status": "HARNESS_ERROR",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Initial workflow-search selector absent while workflow detail is selected; no search step executed.",
+      "native_steps": 0,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/workflow-no-match-search-error.png",
+        "sha256": "b6bc00be158b31b93e9020149132000fba3364b61c5c60cca3f9472bc64cd99e"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/workflows",
+          "status": 200,
+          "data_sha256": "e7f9f16753f1f5ac57339a08d6f9e9625b5a463fdd47eb9d246f0fbeab7b8b4f"
+        }
+      ],
+      "case_receipt_sha256": "e99254c1f5dbf9d548ad65f39c5b44005faae0d27b3f842b8bb571794fe95afa"
+    },
+    {
+      "id": "workflow-filter-reset",
+      "status": "HARNESS_ERROR",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Initial reset selector absent while workflow detail is selected; no reset step executed.",
+      "native_steps": 0,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/workflow-filter-reset-error.png",
+        "sha256": "b6bc00be158b31b93e9020149132000fba3364b61c5c60cca3f9472bc64cd99e"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/workflows",
+          "status": 200,
+          "data_sha256": "cff00d0efe2153adc1226b5cf36e7d0bcc24c6086ae4161d9bd9b2e2016e7111"
+        }
+      ],
+      "case_receipt_sha256": "160738df2eca8067ac3a70d4607a9f33013fe98c0b58fa835aa021e3b98ffc02"
+    },
+    {
+      "id": "activity-audit-search",
+      "status": "PARTIAL",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Activity search field accepts workspace.task. Filtered execution-history section is below independently filtered Task outcomes; output correspondence is not visible in this capture.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/activity-audit-search.png",
+        "sha256": "56dd136bae7a7aee7ad4d2d3a2fee8d638b2e96e02216a57324a1a10ccf051ee"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/agents",
+          "status": 200,
+          "data_sha256": "973b282ec89b27fbef1f7516113c2eeac9eddae7c46385df95085a76d3a21ab3"
+        }
+      ],
+      "case_receipt_sha256": "38080af2a3fb8d9564b676b7c0111463f72a0bcd7ab2c5a56eabca8043408107"
+    },
+    {
+      "id": "activity-failed-filter",
+      "status": "PARTIAL",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Execution status control selects Failed. Independent Task outcomes remain visible; filtered execution-history output is below capture and not established.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/activity-failed-filter.png",
+        "sha256": "dda2ddf9d139a8d7ab7986182e0cbf5f672ac2833133aaf9f6444d2c2633c645"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/agents",
+          "status": 200,
+          "data_sha256": "4c0b68477419304264de3a466fd52efaf7480f2e3275b77bc1e9b6d3cf0ccddd"
+        }
+      ],
+      "case_receipt_sha256": "92072206a9a00ef5668cbebe6598bb45681f519cfd97dde88f2ed2d5e0e0e156"
+    },
+    {
+      "id": "cluster-maintenance-filter",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Under-repair Cluster filter shows only actual original Yunjin repair row; unknown resources remain unavailable.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/cluster-maintenance-filter.png",
+        "sha256": "cc8e6e17e06519d8ee1832d714b9bd4f12b787827085bfc6bb63548b316cdba6"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/cluster",
+          "status": 200,
+          "data_sha256": "8f29c329da2b46daaa023530178bfa69b9df5f95840ef68e323203090f602ebf"
+        }
+      ],
+      "case_receipt_sha256": "09c5c0909f803bb5d74e741dfd18e1e65facacd2c965b677fa8cbfb1c6a653cb"
+    },
+    {
+      "id": "cluster-name-sort",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Name sort returns ascending original node order; source roster retained and readings unavailable.",
+      "native_steps": 2,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/cluster-name-sort.png",
+        "sha256": "a3e8d2deba1a194152a37ce250c38217ab8478e608ec7ae4ebfc88c40b2f8377"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/cluster",
+          "status": 200,
+          "data_sha256": "0cab0986881ab5cc8aa3c7b65c7322fbb94afbac99d8222f41f3fd859cd0a133"
+        }
+      ],
+      "case_receipt_sha256": "984ce98b7503267a661c58706fc6efe728156ea81c1bd77d60c3db3066903af5"
+    },
+    {
+      "id": "model-lab-benchmark-runner",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Benchmark-runner tab opens original form with no eligible endpoint; no benchmark execution or model proof claimed.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/model-lab-benchmark-runner.png",
+        "sha256": "a92e85e222ee1778fff3b27d5dda47898f61b3586fa2b71616baefb91487e0d3"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "d2d5a8079f8af00f75a74fca9cdff7e9d4cef226044126ec8780d198efa3e907"
+        }
+      ],
+      "case_receipt_sha256": "9caa5b1fa07ec1f38793275bb01191ed78dd8cfecaf2794580355f60859ab830"
+    },
+    {
+      "id": "model-lab-results",
+      "status": "HARNESS_ERROR",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Initial Results exact accessible-name selector misses count-suffixed label; no tab change.",
+      "native_steps": 0,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/model-lab-results-error.png",
+        "sha256": "07e4a41d35f4833a261d5e6b5212f4009474244d6c3523ffece626ef08210ed2"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "d2d5a8079f8af00f75a74fca9cdff7e9d4cef226044126ec8780d198efa3e907"
+        }
+      ],
+      "case_receipt_sha256": "32496585e60a9aa8a17b141a5c1469008948ce433952fc671cfb0eac7e64d4e8"
+    },
+    {
+      "id": "model-lab-compare",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Compare tab opens empty saved-run table and disabled comparison; no fabricated scores.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/model-lab-compare.png",
+        "sha256": "1c431140d60819eb86b16782faa4cc7cb677e1ea711d6f7192a116f07a891b99"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "d2d5a8079f8af00f75a74fca9cdff7e9d4cef226044126ec8780d198efa3e907"
+        }
+      ],
+      "case_receipt_sha256": "3ecb735b72d56b3c37b6d8c1269d71f3a805a4b6348e7565621e6b504d6c8655"
+    },
+    {
+      "id": "model-lab-routing-insights",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Routing insights shows original controller-unattached state and unavailable policy mutation; no routing inference claimed.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/model-lab-routing-insights.png",
+        "sha256": "c20df10216aae45ed27d6cb0520f3d55635a3eec6110c7c679e24a6c0e4fdae2"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "6d7c1ada43da3724564e19cf1e232cac0d13bc88f52e810c3fe8c34caa45c380"
+        }
+      ],
+      "case_receipt_sha256": "1994f553d2e5a2b0ba30109663f5d35dc860e736716c283e62f13a0dd7a38b37"
+    },
+    {
+      "id": "model-lab-overview",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Overview shows configured 1/loaded unknown/available 0/runs 0 agreeing with original model-lab projection.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/model-lab-overview.png",
+        "sha256": "9bed64d821cbe322d86d12a4cd78074740a7fafe38524303803e2e88e85501e2"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "6d7c1ada43da3724564e19cf1e232cac0d13bc88f52e810c3fe8c34caa45c380"
+        }
+      ],
+      "case_receipt_sha256": "cf99f74e06b44a1fe2360df0ad04557a527605bceda44f902e9dc1f3555ffee4"
+    },
+    {
+      "id": "settings-integration-nav",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Integrations settings link moves main viewport to original Integrations section; unrelated host providers are not tested.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/settings-integration-nav.png",
+        "sha256": "5f119ec3df18a7878bdef23d908eef59d4e0d467989321972d0c4929a3c61108"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "605862d6e8ddddcd05ee0855296ef0831b923d87ac4972c369085784b5a842a8"
+        }
+      ],
+      "case_receipt_sha256": "e733a2fd4209a062d3c20ce0fc680e851e9e6beef0bcc33006dc6dddf610e244"
+    },
+    {
+      "id": "settings-session-nav",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Session settings link moves main viewport to original Session controls; Stop HANNI is not executed.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/settings-session-nav.png",
+        "sha256": "e6d4450816386016b591a404c3a986f4e6288298ce11f6b7ca1478f4d803f9ce"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "605862d6e8ddddcd05ee0855296ef0831b923d87ac4972c369085784b5a842a8"
+        }
+      ],
+      "case_receipt_sha256": "fa610143d08db45257ee986406b16bb289463419bc0572a854e387e6297c3523"
+    },
+    {
+      "id": "workspace-search-button",
+      "status": "HARNESS_ERROR",
+      "evidence_class": "CONTROLLED_ORIGINAL_NATIVE",
+      "observed_scope": "Search workspace opens real focused dialog; later nonexistent input-name selector prevents query entry.",
+      "native_steps": 1,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle8-populated-57/screenshots/workspace-search-button-error.png",
+        "sha256": "c1cee455bd949e9ab7f7b86e5ec03f98ca70146134ffc7a441c5b1ba186303c6"
+      },
+      "original_readbacks": [
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "605862d6e8ddddcd05ee0855296ef0831b923d87ac4972c369085784b5a842a8"
+        }
+      ],
+      "case_receipt_sha256": "6c297fb1ab7399a8bbf8a5b5a869c45840c3db9f1c648e24d3ae34c648630a26"
+    }
+  ],
+  "corrected_exposed_v3": {
+    "raw_receipt": "data/campaign8-native/cycle10-exposed-selector-v3/RESULTS.json",
+    "sha256": "9861cd6159f1f412313fd82d5b0c038edf8e9406e22b6491158e89ae8fdc5bce",
+    "cases": [
+      {
+        "id": "workflow-completed-filter",
+        "status": "PASS",
+        "observed_scope": "Original completed/verified manually seeded 1/1 workflow selected; controller actions remain disabled.",
+        "screenshot": {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle10-exposed-selector-v3/screenshots/workflow-completed-filter.png",
+          "sha256": "a254f5d63db7e066a1fac3a762de09aefe9c001345c1ec5fa4ac6ad0c92b275a",
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "capture_scope": "Verified owned HWND client and native chrome only",
+          "hwnd": 13829368,
+          "pid": 42980,
+          "create_time": 1791638273.1127784,
+          "window_class": "WindowsForms10.Window.8.app.0.3ce0bb8_r17_ad1",
+          "window_title": "HANNI OS Campaign 8 af7df0eb329e",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            800
+          ],
+          "image_size": [
+            1280,
+            800
+          ],
+          "dpi": 120,
+          "client_region_verified": [
+            9,
+            70,
+            1271,
+            791
+          ],
+          "desktop_pixel_capture": false,
+          "evidence_class": "CONTROLLED"
+        },
+        "readback_statuses": [
+          200
+        ]
+      },
+      {
+        "id": "workflow-no-match-search",
+        "status": "PASS",
+        "observed_scope": "After original Back to workflows, no-match search gives 0 loaded/no matching view; source workflow records remain.",
+        "screenshot": {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle10-exposed-selector-v3/screenshots/workflow-no-match-search.png",
+          "sha256": "6aa2044d19f60bcb74a26442577f38bbb9a31608aebd0d3c86c2616dadc33953",
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "capture_scope": "Verified owned HWND client and native chrome only",
+          "hwnd": 13829368,
+          "pid": 42980,
+          "create_time": 1791638273.1127784,
+          "window_class": "WindowsForms10.Window.8.app.0.3ce0bb8_r17_ad1",
+          "window_title": "HANNI OS Campaign 8 af7df0eb329e",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            800
+          ],
+          "image_size": [
+            1280,
+            800
+          ],
+          "dpi": 120,
+          "client_region_verified": [
+            9,
+            70,
+            1271,
+            791
+          ],
+          "desktop_pixel_capture": false,
+          "evidence_class": "CONTROLLED"
+        },
+        "readback_statuses": [
+          200
+        ]
+      },
+      {
+        "id": "workflow-filter-reset",
+        "status": "PASS",
+        "observed_scope": "Query reset plus All workflows restores two original records: awaiting approval0/1 and completed1/1.",
+        "screenshot": {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle10-exposed-selector-v3/screenshots/workflow-filter-reset.png",
+          "sha256": "dd70de857c7ca192dc345ccbc24046816a3dccf309b00a1b84a0965a658aeeaa",
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "capture_scope": "Verified owned HWND client and native chrome only",
+          "hwnd": 13829368,
+          "pid": 42980,
+          "create_time": 1791638273.1127784,
+          "window_class": "WindowsForms10.Window.8.app.0.3ce0bb8_r17_ad1",
+          "window_title": "HANNI OS Campaign 8 af7df0eb329e",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            800
+          ],
+          "image_size": [
+            1280,
+            800
+          ],
+          "dpi": 120,
+          "client_region_verified": [
+            9,
+            70,
+            1271,
+            791
+          ],
+          "desktop_pixel_capture": false,
+          "evidence_class": "CONTROLLED"
+        },
+        "readback_statuses": [
+          200
+        ]
+      },
+      {
+        "id": "model-lab-results",
+        "status": "PASS",
+        "observed_scope": "Actual Results tab opens empty table; zero matches/runs agree with original model-lab data.",
+        "screenshot": {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle10-exposed-selector-v3/screenshots/model-lab-results.png",
+          "sha256": "b62678247c37ad372530b554432b5e48517dea620226cc6090fc24ab826f4029",
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "capture_scope": "Verified owned HWND client and native chrome only",
+          "hwnd": 13829368,
+          "pid": 42980,
+          "create_time": 1791638273.1127784,
+          "window_class": "WindowsForms10.Window.8.app.0.3ce0bb8_r17_ad1",
+          "window_title": "HANNI OS Campaign 8 af7df0eb329e",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            800
+          ],
+          "image_size": [
+            1280,
+            800
+          ],
+          "dpi": 120,
+          "client_region_verified": [
+            9,
+            70,
+            1271,
+            791
+          ],
+          "desktop_pixel_capture": false,
+          "evidence_class": "CONTROLLED"
+        },
+        "readback_statuses": [
+          200
+        ]
+      },
+      {
+        "id": "workspace-search-button",
+        "status": "PASS",
+        "observed_scope": "Actual Search workspace query gives No matches; original registered screen menu is not treated as execution.",
+        "screenshot": {
+          "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle10-exposed-selector-v3/screenshots/workspace-search-button.png",
+          "sha256": "767db6c62bd8ef698b94123b1dfa5b71136873b10d05ebae4176846bf5598231",
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "capture_scope": "Verified owned HWND client and native chrome only",
+          "hwnd": 13829368,
+          "pid": 42980,
+          "create_time": 1791638273.1127784,
+          "window_class": "WindowsForms10.Window.8.app.0.3ce0bb8_r17_ad1",
+          "window_title": "HANNI OS Campaign 8 af7df0eb329e",
+          "window_rect": [
+            0,
+            0,
+            1280,
+            800
+          ],
+          "image_size": [
+            1280,
+            800
+          ],
+          "dpi": 120,
+          "client_region_verified": [
+            9,
+            70,
+            1271,
+            791
+          ],
+          "desktop_pixel_capture": false,
+          "evidence_class": "CONTROLLED"
+        },
+        "readback_statuses": [
+          200
+        ]
+      }
+    ],
+    "all5_final_pngs_independently_viewed": true,
+    "initial_errors_preserved": true,
+    "source_was_not_changed_to_fix_selectors": true
+  },
+  "workflow_source": {
+    "seed_manifest_sha256": "b4570224f86cf03a8fdf9ef090bc9da89d047fbe8bb08de0af44a38b76942062",
+    "artifact_sha256": "38703ce53446a80133798c0c6f66abdb8680c766e461a408fef132609d60190e",
+    "size_bytes": 58,
+    "origin": "Manually seeded original fenced workflow store + actual original registered file.write/read-after-write/step verification; no autonomous planning or scheduler/model success"
+  },
+  "limitations": [
+    "Three PARTIAL rows need explicit below-fold evidence; no grades are promoted based only on source intent.",
+    "Native application-menu Open Mini remains unverified; prior real tray/shortcut and owned-HWND Mini evidence is separately scoped.",
+    "No personal data or owner-store mutation; all reported local CRUD effects occur in disposable original stores.",
+    "Physical microphone/speakers unavailable per user; these cases do not validate audio."
+  ]
+}

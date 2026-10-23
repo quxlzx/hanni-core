@@ -1,0 +1,19 @@
+{
+  "name": "routing-new-phrase-probe-v2",
+  "status": "LOCKED BEFORE EVALUATION",
+  "locked_at_utc": "2026-09-24T06:00:03.205573+00:00",
+  "scenario_count": 30,
+  "family_counts": {
+    "blocked_writes": 5,
+    "calendar_create": 1,
+    "calendar_read": 3,
+    "diagnostics": 8,
+    "hanni_model": 1,
+    "hardening": 1,
+    "mixed_domain": 7,
+    "registry_app": 1,
+    "registry_spotify": 3
+  },
+  "sha256_file": "2bb24475cf51c3ea42a0bbef14955a956eb746a7f9c49efe89b3b7f4401000db",
+  "description": "New owner-style phrasing, independently authored; existing development case oracles supply expected routing semantics. Not the locked LLM holdout."
+}

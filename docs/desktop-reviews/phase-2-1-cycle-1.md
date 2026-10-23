@@ -1,0 +1,7 @@
+# Milestone 2.1 independent review, cycle 1
+
+**PARTIAL overall; observed-controller interactions PASS; visual gate FAIL.** Exact user-rubric reassessment is authoritative in [rubric-correction.md](rubric-correction.md): Agents **8.5 FAIL**, Activity **8.7**, AI-template **1.2**. Earlier equal-weight Agents8.6/PASS is superseded. Candidate hashes, fixture disclosure and native evidence remain in [phase-2-cycle-1.md](phase-2-cycle-1.md).
+
+Real registered capabilities and eight seeded original-registry executions render in the actual executable. Native notification Inspect opens the exact execution, with confirmation/source/result metadata and private arguments/results redacted. Search/status controls and honest empty controller work are present. No hidden chain of thought is displayed. The page explicitly states that independent autonomous agents and live approval queues are unavailable. Those absences, and unsupported cancel/retry runtime controls, prevent full requested agent-control acceptance; a attractive read-only audit screen is not a new agent runtime.
+
+Evidence: `data/hanni-desktop-review/phase2-primary-cycle1-isolated/{agents,activity}-*-native.png`; `phase2-workspace-cycle1-verified/notification-inspect-audit-native.png` and `results.json`. The 42-check native workspace run passes real audit privacy and execution targeting. Live model/controller inference remains a separate coordinated proof, not established by synthetic telemetry readiness.

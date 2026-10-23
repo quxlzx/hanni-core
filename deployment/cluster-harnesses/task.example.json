@@ -1,0 +1,9 @@
+{
+  "task_id": "example-run",
+  "project_id": "replace-with-owner-project",
+  "goal": "Make the supplied sample program print 7, then run the supplied independent check. Return sandbox artifacts for owner review.",
+  "roles": ["manager", "coder", "editor"],
+  "files": {"main.py": "print(3 + 3)\n", "test_main.py": "import subprocess, sys\ndef test_answer():\n    assert subprocess.check_output([sys.executable, 'main.py'], text=True).strip() == '7'\n"},
+  "checks": [["pytest", "-q", "test_main.py"]],
+  "check_files": ["test_main.py"]
+}

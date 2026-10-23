@@ -1,0 +1,88 @@
+{
+  "scope": "Independent genuine existing-model generation and original native rendering/storage fidelity; not a semantic benchmark or physical audio test",
+  "prior_review_preserved": {
+    "path": "docs/campaign8/STREAMING_REVIEW_CYCLE1.json",
+    "sha256": "38ff5fbb4160e9b1e69b8dc47e5617987c6659b39fdabecb7c2da1d4373cc618"
+  },
+  "evidence": [
+    {
+      "path": "data/campaign8-native/cycle20-second-last-stream-native-settled/RESULTS.json",
+      "sha256": "9a7e6f9633e2adcde40726a5678b745a4948e015c415868c88f925220675437a"
+    },
+    {
+      "path": "data/campaign8-ui/authentic-stream-cycle3/STREAM_CLOSED.json",
+      "sha256": "c9b174f169d283d6683e2af53b52a560286983498e5e95af77da3b98f5ada6ec"
+    },
+    {
+      "path": "data/campaign8-ui/authentic-stream-cycle3/NATIVE_COMPLETION_AND_CLEAR.json",
+      "sha256": "c91340f00d9a8cb731b7e36ce7de463aaa8d28ebab7f806cf06107dbcd7428cb"
+    }
+  ],
+  "actual_native_capture": {
+    "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle20-second-last-stream-native-settled/screenshots/final-exact-native-response.png",
+    "sha256": "75d50a221a9bb4018ff57e13ab3263c722d6f9be716a761bd700176c8ae9ea9c"
+  },
+  "native_capture_independently_viewed": true,
+  "actual_POST_count_this_run": 1,
+  "total_genuine_generation_POSTs_two_runs": 2,
+  "further_generation_authorized": false,
+  "raw_response": {
+    "HTTP_status": 200,
+    "truncated": false,
+    "SSE_model_ids": [
+      "supervisor"
+    ],
+    "DONE_observed": true,
+    "reconstructed_character_count": 256,
+    "reconstructed_sha256": "5c2b09c07603ec95317c10dd16cb1a260d4c5fdaa65f7008995e9a30422a43b2",
+    "usage": {
+      "completion_tokens": 50,
+      "prompt_tokens": 540,
+      "total_tokens": 590,
+      "prompt_tokens_details": {
+        "cached_tokens": 536
+      }
+    }
+  },
+  "assertions": {
+    "raw_SSE_equals_original_API": true,
+    "raw_SSE_equals_persisted_SQLite_assistant": true,
+    "full_native_render_equals_API_in_two_samples": true,
+    "native_article_aria_busy": "false",
+    "native_chat_state": "Ready when you are",
+    "native_voice_state": "Standby",
+    "exact_full_paragraph_and_idle_states_visible_in_native_PNG": true,
+    "clear_status": 200,
+    "messages_after_clear": 0,
+    "token_rotated": true,
+    "old_token_status": 403,
+    "new_token_status": 200,
+    "original_signed_shutdown_status": 202,
+    "source_unchanged": true,
+    "original_model_PID_unchanged": true,
+    "original_model_command_unchanged": true,
+    "owner_model_stopped": false,
+    "owner_history_modified": false,
+    "new_model_process": false,
+    "native_cleanup": true,
+    "native_exit_code": 0
+  },
+  "generation_profile": {
+    "max_tokens": 64,
+    "temperature": 0,
+    "top_p": 1,
+    "thinking": false,
+    "original_transport_timeout_seconds": 30,
+    "resource_guard": "Original adaptive admission plus prospective 3GiB / below90% fixture guard, no bypass",
+    "admission_available_RAM_bytes": 5571596288,
+    "admission_used_percent": 83.6,
+    "model": "Existing Qwen3.5-4B Q4_K_M alias supervisor on exact original PID 38832"
+  },
+  "timing_scope": {
+    "transport_request_seconds": 0.9390781000256538,
+    "first_recorded_response_byte_seconds": 0.3415839000372216,
+    "native_completion_wait_seconds": 1.437000000034459,
+    "scope": "Descriptive single request / UI wait boundaries; no benchmark P50/P95 or physical first-audible claim"
+  },
+  "verdict": "PASS for actual response transport, original consumer/storage and fully settled native rendering on this single bounded request; earlier partially rendered PNGs remain limited evidence"
+}

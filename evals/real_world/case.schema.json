@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Reviewed HANNI real-world failure",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "observed_at", "user", "expected_domains", "observed_failure", "failure_stage", "fixed", "reviewed", "sanitized"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^REAL-[0-9]{4}$"},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "user": {"type": "string", "minLength": 1, "maxLength": 1000},
+    "expected_domains": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "observed_failure": {"type": "string", "minLength": 1, "maxLength": 2000},
+    "failure_stage": {"enum": ["ROUTING_FAILURE", "MODEL_TOOL_SELECTION_FAILURE", "MODEL_ARGUMENT_FAILURE", "MODEL_REASONING_FAILURE", "MODEL_STOPPING_FAILURE", "MODEL_HALLUCINATION", "SAFETY_FAILURE", "EXECUTION_FAILURE", "EVALUATOR_ERROR"]},
+    "fixed": {"type": "boolean"},
+    "reviewed": {"const": true},
+    "sanitized": {"const": true}
+  }
+}

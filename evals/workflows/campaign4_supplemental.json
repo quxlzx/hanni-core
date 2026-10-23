@@ -1,0 +1,335 @@
+[
+  {
+    "category": "Bounded retries",
+    "controls": [],
+    "difficulty": "adversarial",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": true,
+      "invocations": 2,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "partial_eligible": false,
+      "recovery_eligible": false,
+      "retry_checkpoints": 1,
+      "status": "completed"
+    },
+    "faults": [
+      {
+        "kind": "timeout_before",
+        "method": "hash",
+        "path": "{root}/input.txt",
+        "times": 1
+      }
+    ],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      }
+    ],
+    "goal": "Check file properties and SHA-256 hash of {root}/input.txt.",
+    "id": "WFSUP-STAT-1",
+    "limits": {},
+    "mode": "assisted",
+    "scenario": "Actual original retry-safe file.stat hash: retry_once",
+    "steps": [
+      {
+        "arguments": {
+          "hash": true,
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.stat",
+        "criteria": [
+          {
+            "expected": "26f733c4b6ee913c63b10d89495d6ba8249c4a7106c328365c857f9198bb38af",
+            "operator": "equals",
+            "path": "/data/sha256"
+          }
+        ],
+        "dependencies": [],
+        "description": "Check file properties and SHA-256 hash of {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "inspect"
+      }
+    ]
+  },
+  {
+    "category": "Bounded retries",
+    "controls": [],
+    "difficulty": "adversarial",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": false,
+      "invocations": 2,
+      "max_step_attempts": 2,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "partial_eligible": false,
+      "recovery_eligible": false,
+      "status": "blocked"
+    },
+    "faults": [
+      {
+        "kind": "timeout_before",
+        "method": "hash",
+        "path": "{root}/input.txt",
+        "times": 9
+      }
+    ],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      }
+    ],
+    "goal": "Check file properties and SHA-256 hash of {root}/input.txt.",
+    "id": "WFSUP-STAT-2",
+    "limits": {},
+    "mode": "assisted",
+    "scenario": "Actual original retry-safe file.stat hash: retry_exhausted",
+    "steps": [
+      {
+        "arguments": {
+          "hash": true,
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.stat",
+        "criteria": [
+          {
+            "expected": "26f733c4b6ee913c63b10d89495d6ba8249c4a7106c328365c857f9198bb38af",
+            "operator": "equals",
+            "path": "/data/sha256"
+          }
+        ],
+        "dependencies": [],
+        "description": "Check file properties and SHA-256 hash of {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "inspect"
+      }
+    ]
+  },
+  {
+    "category": "Recovery after restart",
+    "controls": [
+      {
+        "at": "active",
+        "operation": "restart"
+      }
+    ],
+    "difficulty": "adversarial",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": false,
+      "invocation_states": [
+        "abandoned"
+      ],
+      "invocations": 1,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "partial_eligible": false,
+      "recovery_eligible": true,
+      "status": "paused"
+    },
+    "faults": [
+      {
+        "kind": "barrier",
+        "method": "hash",
+        "path": "{root}/input.txt",
+        "times": 1
+      }
+    ],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      }
+    ],
+    "goal": "Check file properties and SHA-256 hash of {root}/input.txt.",
+    "id": "WFSUP-STAT-3",
+    "limits": {},
+    "mode": "assisted",
+    "scenario": "Actual original retry-safe file.stat hash: recover_paused",
+    "steps": [
+      {
+        "arguments": {
+          "hash": true,
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.stat",
+        "criteria": [
+          {
+            "expected": "26f733c4b6ee913c63b10d89495d6ba8249c4a7106c328365c857f9198bb38af",
+            "operator": "equals",
+            "path": "/data/sha256"
+          }
+        ],
+        "dependencies": [],
+        "description": "Check file properties and SHA-256 hash of {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "inspect"
+      }
+    ]
+  },
+  {
+    "category": "Recovery after restart",
+    "controls": [
+      {
+        "at": "active",
+        "operation": "restart"
+      },
+      {
+        "at": "stopped",
+        "operation": "resume"
+      }
+    ],
+    "difficulty": "adversarial",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": true,
+      "invocations": 2,
+      "max_step_attempts": 2,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "partial_eligible": false,
+      "recovery_eligible": true,
+      "status": "completed"
+    },
+    "faults": [
+      {
+        "kind": "barrier",
+        "method": "hash",
+        "path": "{root}/input.txt",
+        "times": 1
+      }
+    ],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      }
+    ],
+    "goal": "Check file properties and SHA-256 hash of {root}/input.txt.",
+    "id": "WFSUP-STAT-4",
+    "limits": {},
+    "mode": "assisted",
+    "scenario": "Actual original retry-safe file.stat hash: recover_resume",
+    "steps": [
+      {
+        "arguments": {
+          "hash": true,
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.stat",
+        "criteria": [
+          {
+            "expected": "26f733c4b6ee913c63b10d89495d6ba8249c4a7106c328365c857f9198bb38af",
+            "operator": "equals",
+            "path": "/data/sha256"
+          }
+        ],
+        "dependencies": [],
+        "description": "Check file properties and SHA-256 hash of {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "inspect"
+      }
+    ]
+  },
+  {
+    "category": "Safe parallel execution",
+    "controls": [
+      {
+        "at": "active",
+        "count": 2,
+        "operation": "wait_entered"
+      }
+    ],
+    "difficulty": "adversarial",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": true,
+      "max_active_lower": 2,
+      "max_active_upper": 2,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "partial_eligible": false,
+      "recovery_eligible": false,
+      "status": "completed",
+      "verified_steps": 2
+    },
+    "faults": [
+      {
+        "kind": "barrier",
+        "method": "read",
+        "path": "{root}/input.txt"
+      },
+      {
+        "kind": "barrier",
+        "method": "read",
+        "path": "{root}/second.txt"
+      }
+    ],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      },
+      {
+        "path": "{root}/second.txt",
+        "text": "second evidence"
+      }
+    ],
+    "goal": "Read local files {root}/input.txt and {root}/second.txt independently.",
+    "id": "WFSUP-PARALLEL-1",
+    "limits": {},
+    "mode": "assisted",
+    "scenario": "Two original read handlers demonstrably overlap before release.",
+    "steps": [
+      {
+        "arguments": {
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "isolated evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "read"
+      },
+      {
+        "arguments": {
+          "path": "{root}/second.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "second evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/second.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "second"
+      }
+    ]
+  }
+]

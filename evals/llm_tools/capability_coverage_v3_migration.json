@@ -1,0 +1,38 @@
+{
+  "version": 3,
+  "source": "evals/llm_tools/capability_coverage_v2.jsonl",
+  "target": "evals/llm_tools/capability_coverage_v3.jsonl",
+  "source_sha256": "c31a84a3090995320509cc24680918a4b6a434a2f87e60325bb263b83f271308",
+  "target_sha256": "689b12064b499b318cff9277da3288c667497adbe20f1388a65af4d1015071c9",
+  "changed_cases": [
+    "COV-FILE-READ-01",
+    "COV-FILE-READ-02"
+  ],
+  "authorized_fields": [
+    "results.file.read.data.sha256",
+    "results.<retrieved-capability> schema-only envelope"
+  ],
+  "reason": "New raw-byte digest output contract; synthetic metadata only. No behavioral oracle, frozen input, historical report or acceptance score changed. Current bounded discovery menus require supplemental schema-only observations; required tools and behavioral expectations remain unchanged.",
+  "supplemental_schema_events": [
+    {
+      "case_id": "COV-FILE-COMPOSITION-02",
+      "capability_id": "file.list_dir"
+    },
+    {
+      "case_id": "COV-GIT-BRANCHES-02",
+      "capability_id": "file.list_dir"
+    },
+    {
+      "case_id": "COV-GIT-BRANCHES-02",
+      "capability_id": "google.tasks.list"
+    },
+    {
+      "case_id": "COV-GIT-BRANCHES-02",
+      "capability_id": "net.ports"
+    },
+    {
+      "case_id": "COV-GIT-BRANCHES-02",
+      "capability_id": "process.list"
+    }
+  ]
+}

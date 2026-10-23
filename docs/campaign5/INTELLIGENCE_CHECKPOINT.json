@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "checkpoint": "Campaign 5 native intelligence implementation source ready",
+  "scope": "Controlled original implementation and owned HTTP/SSE transport; not language-model quality",
+  "created_at": "2026-10-10T10:08:55.809979+00:00",
+  "source_ready": true,
+  "production_sha256": {
+    "src/hanni/models/adaptive.py": "f28a235c022af0f9dec49c7a37441b99b9617aacc8453f94adb1d5e478a75f73",
+    "src/hanni/models/collaboration.py": "ce513da474b809c5789e8b21a8369b9c5204933bb6ca895ba658307cae801cd0",
+    "src/hanni/models/client.py": "28e1cc8c0a4a79e9796b041fb874bb443db87160b1568eadaf3f2724bcea3a07",
+    "src/hanni/compute/scheduler.py": "80a7047477d07f2f028bbdc21897e5a59c7fbea3b7311d56635e26200a3b3152"
+  },
+  "evidence_sha256": "663f83314174814f9ddbf7e3f95aaebc10015721daff0c965c998b17052244e4",
+  "baseline": {
+    "passed": 285,
+    "seconds": 80.098,
+    "subset_of_broad": true
+  },
+  "broad": {
+    "passed": 356,
+    "seconds": 111.133,
+    "receipt": "data/campaign5-intelligence/cycle2-relevant-b.xml",
+    "before_final_narrow_identity_attribution_change": true
+  },
+  "final_focused": {
+    "passed": 235,
+    "seconds": 35.616,
+    "receipt": "data/campaign5-intelligence/cycle2-final-focused.xml",
+    "shared_node_ids_with_broad": 76
+  },
+  "independent": {
+    "passed": 53,
+    "seconds": 9.709,
+    "scope": "Exposed development boundaries; included in final focused suite",
+    "receipt": "data/campaign5-verifier/implementation-source-ready/SUMMARY.json"
+  },
+  "actual_model_responses": 0,
+  "owner_config_database_process_default_model_changes": false,
+  "private_final_material_accessed": false,
+  "remaining": "Manager-coordinated live development and verifier-owned final evaluation; manager cannot inspect private inputs/oracles. Actual discovery was resource/health blocked. No quality gain or main-model replacement is claimed.",
+  "measurement_helper_scope": "Implementation receipts certify their recorded execution versions, not later finalized task-measurement helper hashes."
+}

@@ -1,0 +1,132 @@
+{
+  "timestamp": "2026-10-10T13:01:23.697079+00:00",
+  "evidence_class": "LIVE_READ_ONLY",
+  "real_inference": "NOT_RUN: this bounded probe reads metadata only",
+  "resource_observation": {
+    "available_ram_bytes": 3998007296,
+    "used_percent": 88.2,
+    "original_reserve_mib": 3072,
+    "above_reserve_at_sample": true,
+    "not_an_admission_decision": true
+  },
+  "/health": {
+    "status": "ok"
+  },
+  "/v1/models": {
+    "models": [
+      {
+        "name": "supervisor",
+        "model": "supervisor",
+        "modified_at": "",
+        "size": "",
+        "digest": "",
+        "type": "model",
+        "description": "",
+        "tags": [
+          ""
+        ],
+        "capabilities": [
+          "completion",
+          "multimodal"
+        ],
+        "parameters": "",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "",
+          "families": [
+            ""
+          ],
+          "parameter_size": "",
+          "quantization_level": ""
+        }
+      }
+    ],
+    "object": "list",
+    "data": [
+      {
+        "id": "supervisor",
+        "aliases": [
+          "supervisor"
+        ],
+        "tags": [],
+        "object": "model",
+        "created": 1791637283,
+        "owned_by": "llamacpp",
+        "meta": {
+          "vocab_type": true,
+          "n_vocab": 248320,
+          "n_ctx": 16384,
+          "n_ctx_train": 262144,
+          "n_embd": 2560,
+          "n_params": 4205751296,
+          "size": 2696546304,
+          "ftype": "Q4_K - Medium"
+        }
+      }
+    ]
+  },
+  "/props": {
+    "model_path": "C:\\Users\\user\\.cache\\huggingface\\hub\\models--lmstudio-community--Qwen3.5-4B-GGUF\\snapshots\\f9f88ac3e234be915e23811a6d28ea287bdb927e\\Qwen3.5-4B-Q4_K_M.gguf",
+    "model_alias": "supervisor",
+    "total_slots": 1,
+    "modalities": {
+      "vision": true,
+      "video": true,
+      "audio": false
+    },
+    "context": 16384,
+    "context_is_metadata_only": true
+  },
+  "dashboard_state": {
+    "sampled_at": 1791637281.614894,
+    "model_status": "ready",
+    "error": null,
+    "safe_mode": false,
+    "model": {
+      "file": "Qwen3.5-4B-Q4_K_M.gguf",
+      "quantization": "Q4_K_M",
+      "context": 16384
+    },
+    "roles": {
+      "assistant": "supervisor"
+    },
+    "model_residency": {
+      "supervisor": {
+        "model": "Qwen3.5-4B-Q4_K_M.gguf",
+        "role": "supervisor",
+        "endpoint": "http://127.0.0.1:8080/v1",
+        "state": "READY",
+        "resident": true,
+        "pinned": true,
+        "owned": true,
+        "pid": 38832,
+        "device": "Vulkan1",
+        "active_inferences": 0,
+        "last_used": 944346.25,
+        "startup_seconds": 13.671999999904074,
+        "context": 16384,
+        "parallel": 1,
+        "ram_budget_mb": 2048,
+        "vram_budget_mb": 4600,
+        "process_ram_mb": 7450.74609375,
+        "idle_timeout": 600,
+        "error": null
+      }
+    }
+  },
+  "voice": {
+    "available": true,
+    "status": null,
+    "phase": null,
+    "muted": false,
+    "reason": null
+  },
+  "awareness": {
+    "available": false,
+    "enabled": false,
+    "reason": "This repository has no registered screen-capture or vision pipeline. No screen is being captured.",
+    "capture_enabled": null,
+    "status": null
+  }
+}

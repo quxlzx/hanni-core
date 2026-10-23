@@ -1,0 +1,14 @@
+[
+  {
+    "id": "dev-a",
+    "kind": "simple",
+    "prompt": "What is 7 plus 5? Return a JSON number.",
+    "expected": 12
+  },
+  {
+    "id": "dev-b",
+    "kind": "memory",
+    "prompt": "Explicit owner fact: my pet is named Nova. What is the pet name?",
+    "expected": "Nova"
+  }
+]

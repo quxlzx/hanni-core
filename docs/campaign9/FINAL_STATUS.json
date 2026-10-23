@@ -1,0 +1,23 @@
+{
+  "campaign": 9,
+  "status": "BLOCKED_UNRUN; not a final pass",
+  "private_final_cases_sealed": 60,
+  "private_final_cases_executed": 0,
+  "final_go_issued": false,
+  "private_case_inputs_or_oracles_read_by_root_or_engineers": false,
+  "blocker": {
+    "action": "Independent final adapter completion and independent closeout",
+    "observed": "Three independent verifier agent turns ended with the platform message: This content was flagged for possible cybersecurity risk.",
+    "benign_fallback_completed": "Six independent audit privacy aftercontrols and retained positive metadata checks completed without new network, payload or inference activity.",
+    "remaining": "Original workflow, MCP, compute and controller final primitives were not fully integrated/contract-tested; adapter explicitly not final ready.",
+    "user_action_requested": false
+  },
+  "completed_independent_repaired_control_groups": {
+    "tools_mcp": 19,
+    "memory_client": 8,
+    "http_logging": 9,
+    "audit_privacy": 6
+  },
+  "acceptance": "Post-repair controlled development evidence is available. Untouched-final acceptance is unestablished. No scores or outcomes are assigned to unrun cases.",
+  "retention": "Original product violations, fixture errors, rejected agent turns and source/evidence receipts remain preserved. No final-guided tuning or final rerun."
+}

@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "scope": "Synthetic answer and planning-proposal accuracy, not task completion or usable long-context proof",
+  "positive_rule": "Exact value and status for simple/memory/analysis; complete ordered registered steps with necessary arguments for planning, or blocked unsupported operation with no steps.",
+  "model_roles": "No role promoted automatically; existing minimum samples, identity/context/capability, privacy/resource gates remain binding.",
+  "latency": "Duration includes SSH relay overhead; remote TTFT and server queue not measured.",
+  "outage": "Preserve failed attempted cases; unattempted cases after transport failure/resources refusal are NOT TESTED, not success.",
+  "safety": "No tool actions, private memory or service lifecycle commands are permitted."
+}

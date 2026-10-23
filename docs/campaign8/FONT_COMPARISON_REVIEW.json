@@ -1,0 +1,887 @@
+{
+  "timestamp": "2026-10-10T12:40:39.405608+00:00",
+  "scope": "Independent actual native development font review; temporary CSS-family comparison, not permanent source change or final acceptance",
+  "receipt": {
+    "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/RESULTS.json",
+    "sha256": "857cdca1d22c0d937a972610000f63194adb0c5e2f8d064ace05c24e64477dc5",
+    "assets": {
+      "src\\hanni\\dashboard\\static\\app.js": "7a972cf36710d96d8659cc3f5f923f06bef7b3d5790c1191d1093c54ab79cca1",
+      "src\\hanni\\dashboard\\static\\style.css": "cfe2dfbb3fa5c8c20f4b5b544a6a60f75a833c0fdbc896b9f4ac4b1a255bf505"
+    },
+    "owned_native_cleanup": true
+  },
+  "captures_reviewed": 21,
+  "base": "Geist Sans",
+  "verified_distinct_alternatives": [
+    "Segoe UI",
+    "Arial",
+    "Calibri",
+    "Tahoma",
+    "Verdana"
+  ],
+  "excluded_fallback_candidate": "Segoe UI Variable",
+  "exact_text_all_candidates_surface": "memory",
+  "dynamic_text_limit": "Original live CPU/RAM/cluster refresh-time changes retained in Home/Cluster; no physical values fabricated or frozen",
+  "recommended_family": "Segoe UI",
+  "recommendation_scope": "Modest font-only readability preference; metadata size and hierarchy repairs still required; every typography comparison below8.6",
+  "permanent_source_change_before_comparison": false,
+  "font_downloads": 0,
+  "os_dpi_changed": false,
+  "private_final_attempts": 0,
+  "views": [
+    {
+      "route": "home",
+      "requested_family": "Geist Sans",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Geist",
+            "postScriptName": "Geist-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 13
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Geist",
+            "postScriptName": "Geist-Bold",
+            "isCustomFont": true,
+            "glyphCount": 2
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": true,
+      "text_difference_scope": null,
+      "typography_score": 8.1,
+      "font_identity_verified": true,
+      "findings": "Clear headings; small metadata remains compressed.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/home-1366x860-geist-sans.png",
+        "sha256": "0fc82871b946595eff36e2e6e391370bb8e411040e125000b204790448595fcc",
+        "physical_size": [
+          1366,
+          860
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "home",
+      "requested_family": "Segoe UI",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Segoe UI Semibold",
+            "postScriptName": "SegoeUI-Semibold",
+            "isCustomFont": false,
+            "glyphCount": 13
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Segoe UI",
+            "postScriptName": "SegoeUI-Bold",
+            "isCustomFont": false,
+            "glyphCount": 2
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": true,
+      "text_difference_scope": null,
+      "typography_score": 8.3,
+      "font_identity_verified": true,
+      "findings": "Most comfortable native text/navigation; slightly clearer small labels, with limited benefit at current size.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/home-1366x860-segoe-ui.png",
+        "sha256": "882f81d88b51b35a4e5be94e7e3f8c363454ee1c73e4a12fb8381f9ea513f10e",
+        "physical_size": [
+          1366,
+          860
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "home",
+      "requested_family": "Segoe UI Variable",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Arial",
+            "postScriptName": "Arial-BoldMT",
+            "isCustomFont": false,
+            "glyphCount": 13
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Arial",
+            "postScriptName": "Arial-BoldMT",
+            "isCustomFont": false,
+            "glyphCount": 2
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": true,
+      "text_difference_scope": null,
+      "typography_score": 8.0,
+      "font_identity_verified": false,
+      "findings": "Renderer identifies Arial fallback; not counted as a verified Segoe UI Variable comparison.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/home-1366x860-segoe-ui-variable.png",
+        "sha256": "4b7a5d5765bb058b052b748f66c8b2924257a71dbc38d4d35ae9c89484f3cf04",
+        "physical_size": [
+          1366,
+          860
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "home",
+      "requested_family": "Arial",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Arial",
+            "postScriptName": "Arial-BoldMT",
+            "isCustomFont": false,
+            "glyphCount": 13
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Arial",
+            "postScriptName": "Arial-BoldMT",
+            "isCustomFont": false,
+            "glyphCount": 2
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": true,
+      "text_difference_scope": null,
+      "typography_score": 8.0,
+      "font_identity_verified": true,
+      "findings": "Legible neutral text but heavier headings and less differentiated native hierarchy.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/home-1366x860-arial.png",
+        "sha256": "4b7a5d5765bb058b052b748f66c8b2924257a71dbc38d4d35ae9c89484f3cf04",
+        "physical_size": [
+          1366,
+          860
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "home",
+      "requested_family": "Calibri",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Calibri",
+            "postScriptName": "Calibri-Bold",
+            "isCustomFont": false,
+            "glyphCount": 13
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Calibri",
+            "postScriptName": "Calibri-Bold",
+            "isCustomFont": false,
+            "glyphCount": 2
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": false,
+      "text_difference_scope": "Original live host telemetry changes were retained; no measurements frozen",
+      "typography_score": 7.8,
+      "font_identity_verified": true,
+      "findings": "Narrower/lighter visual size makes small labels harder to read.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/home-1366x860-calibri.png",
+        "sha256": "71fa0502548f2e5a218612a64fc952e5b987aeb7797a1f28e183a6dfd1c1de07",
+        "physical_size": [
+          1366,
+          860
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "home",
+      "requested_family": "Tahoma",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Tahoma",
+            "postScriptName": "Tahoma-Bold",
+            "isCustomFont": false,
+            "glyphCount": 13
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Tahoma",
+            "postScriptName": "Tahoma-Bold",
+            "isCustomFont": false,
+            "glyphCount": 2
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": false,
+      "text_difference_scope": "Original live host telemetry changes were retained; no measurements frozen",
+      "typography_score": 8.0,
+      "font_identity_verified": true,
+      "findings": "Readable compact labels but heavy/wide headings at current weights.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/home-1366x860-tahoma.png",
+        "sha256": "102da8cbafbab3060724c9d22715b1b86a378f9e95f5c6bc57875345266dbbc1",
+        "physical_size": [
+          1366,
+          860
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "home",
+      "requested_family": "Verdana",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Verdana",
+            "postScriptName": "Verdana-Bold",
+            "isCustomFont": false,
+            "glyphCount": 13
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Verdana",
+            "postScriptName": "Verdana-Bold",
+            "isCustomFont": false,
+            "glyphCount": 2
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": false,
+      "text_difference_scope": "Original live host telemetry changes were retained; no measurements frozen",
+      "typography_score": 8.0,
+      "font_identity_verified": true,
+      "findings": "Larger glyphs help small text but widen/worsen density and heading emphasis.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/home-1366x860-verdana.png",
+        "sha256": "885d89aa829a1d19417eb4b6b1f79f89ceab21c8d3c56bb34f9bde20e2f0b5fe",
+        "physical_size": [
+          1366,
+          860
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "cluster",
+      "requested_family": "Geist Sans",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Geist",
+            "postScriptName": "Geist-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 7
+          }
+        ],
+        "button": [],
+        "input": [
+          {
+            "familyName": "Geist",
+            "postScriptName": "Geist",
+            "isCustomFont": true,
+            "glyphCount": 22
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": true,
+      "text_difference_scope": null,
+      "typography_score": 8.2,
+      "font_identity_verified": true,
+      "findings": "Clear headings; small metadata remains compressed.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/cluster-900x650-geist-sans.png",
+        "sha256": "a9898f8fedd78fbbdcd673274ac3b15e5271a7f4c51f82b0ddd2db6bcb999fc4",
+        "physical_size": [
+          900,
+          650
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "cluster",
+      "requested_family": "Segoe UI",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Segoe UI Semibold",
+            "postScriptName": "SegoeUI-Semibold",
+            "isCustomFont": false,
+            "glyphCount": 7
+          }
+        ],
+        "button": [],
+        "input": [
+          {
+            "familyName": "Segoe UI",
+            "postScriptName": "SegoeUI",
+            "isCustomFont": false,
+            "glyphCount": 22
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": false,
+      "text_difference_scope": "Original live host telemetry changes were retained; no measurements frozen",
+      "typography_score": 8.3,
+      "font_identity_verified": true,
+      "findings": "Most comfortable native text/navigation; slightly clearer small labels, with limited benefit at current size.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/cluster-900x650-segoe-ui.png",
+        "sha256": "364909370c76335a9bc2920da033061f78fcce80a3210eea1433d70ef92bf99a",
+        "physical_size": [
+          900,
+          650
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "cluster",
+      "requested_family": "Segoe UI Variable",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Arial",
+            "postScriptName": "Arial-BoldMT",
+            "isCustomFont": false,
+            "glyphCount": 7
+          }
+        ],
+        "button": [],
+        "input": [
+          {
+            "familyName": "Arial",
+            "postScriptName": "ArialMT",
+            "isCustomFont": false,
+            "glyphCount": 22
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": false,
+      "text_difference_scope": "Original live host telemetry changes were retained; no measurements frozen",
+      "typography_score": 8.0,
+      "font_identity_verified": false,
+      "findings": "Renderer identifies Arial fallback; not counted as a verified Segoe UI Variable comparison.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/cluster-900x650-segoe-ui-variable.png",
+        "sha256": "424d51a6ac055de94033924f68261a2ea11edee0c21c62776406b541bc503015",
+        "physical_size": [
+          900,
+          650
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "cluster",
+      "requested_family": "Arial",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Arial",
+            "postScriptName": "Arial-BoldMT",
+            "isCustomFont": false,
+            "glyphCount": 7
+          }
+        ],
+        "button": [],
+        "input": [
+          {
+            "familyName": "Arial",
+            "postScriptName": "ArialMT",
+            "isCustomFont": false,
+            "glyphCount": 22
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": false,
+      "text_difference_scope": "Original live host telemetry changes were retained; no measurements frozen",
+      "typography_score": 8.0,
+      "font_identity_verified": true,
+      "findings": "Legible neutral text but heavier headings and less differentiated native hierarchy.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/cluster-900x650-arial.png",
+        "sha256": "424d51a6ac055de94033924f68261a2ea11edee0c21c62776406b541bc503015",
+        "physical_size": [
+          900,
+          650
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "cluster",
+      "requested_family": "Calibri",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Calibri",
+            "postScriptName": "Calibri-Bold",
+            "isCustomFont": false,
+            "glyphCount": 7
+          }
+        ],
+        "button": [],
+        "input": [
+          {
+            "familyName": "Calibri",
+            "postScriptName": "Calibri",
+            "isCustomFont": false,
+            "glyphCount": 22
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": false,
+      "text_difference_scope": "Original live host telemetry changes were retained; no measurements frozen",
+      "typography_score": 7.9,
+      "font_identity_verified": true,
+      "findings": "Narrower/lighter visual size makes small labels harder to read.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/cluster-900x650-calibri.png",
+        "sha256": "7a3e22ea131b18d0d5140d03ef80416c5baa8d63d933560517f0ce279ce319bc",
+        "physical_size": [
+          900,
+          650
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "cluster",
+      "requested_family": "Tahoma",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Tahoma",
+            "postScriptName": "Tahoma-Bold",
+            "isCustomFont": false,
+            "glyphCount": 7
+          }
+        ],
+        "button": [],
+        "input": [
+          {
+            "familyName": "Tahoma",
+            "postScriptName": "Tahoma",
+            "isCustomFont": false,
+            "glyphCount": 22
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": false,
+      "text_difference_scope": "Original live host telemetry changes were retained; no measurements frozen",
+      "typography_score": 8.1,
+      "font_identity_verified": true,
+      "findings": "Readable compact labels but heavy/wide headings at current weights.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/cluster-900x650-tahoma.png",
+        "sha256": "bf99f16e6f0d8d9f3c36b92d6348d12868add598d92bf217cdedaadd9021c501",
+        "physical_size": [
+          900,
+          650
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "cluster",
+      "requested_family": "Verdana",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Verdana",
+            "postScriptName": "Verdana-Bold",
+            "isCustomFont": false,
+            "glyphCount": 7
+          }
+        ],
+        "button": [],
+        "input": [
+          {
+            "familyName": "Verdana",
+            "postScriptName": "Verdana",
+            "isCustomFont": false,
+            "glyphCount": 22
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": false,
+      "text_difference_scope": "Original live host telemetry changes were retained; no measurements frozen",
+      "typography_score": 8.1,
+      "font_identity_verified": true,
+      "findings": "Larger glyphs help small text but widen/worsen density and heading emphasis.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/cluster-900x650-verdana.png",
+        "sha256": "77f7495186add08be64ef0f54a2e810f2f961a7ba0fe54e4edc67beda0aae450",
+        "physical_size": [
+          900,
+          650
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "memory",
+      "requested_family": "Geist Sans",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Geist",
+            "postScriptName": "Geist-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 6
+          }
+        ],
+        "button": [],
+        "input": [
+          {
+            "familyName": "Geist",
+            "postScriptName": "Geist",
+            "isCustomFont": true,
+            "glyphCount": 34
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": true,
+      "text_difference_scope": null,
+      "typography_score": 8.0,
+      "font_identity_verified": true,
+      "findings": "Clear headings; small metadata remains compressed.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/memory-900x650-geist-sans.png",
+        "sha256": "ca92d9219e7eea9846873c7748e81e9e6da88f3997f58603b8a4776231913dd1",
+        "physical_size": [
+          900,
+          650
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "memory",
+      "requested_family": "Segoe UI",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Segoe UI Semibold",
+            "postScriptName": "SegoeUI-Semibold",
+            "isCustomFont": false,
+            "glyphCount": 6
+          }
+        ],
+        "button": [],
+        "input": [
+          {
+            "familyName": "Segoe UI",
+            "postScriptName": "SegoeUI",
+            "isCustomFont": false,
+            "glyphCount": 34
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": true,
+      "text_difference_scope": null,
+      "typography_score": 8.2,
+      "font_identity_verified": true,
+      "findings": "Most comfortable native text/navigation; slightly clearer small labels, with limited benefit at current size.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/memory-900x650-segoe-ui.png",
+        "sha256": "3f07a91fca38e6465203378d4d6f6db088999740b199cb2325e7dfa4ed233b1e",
+        "physical_size": [
+          900,
+          650
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "memory",
+      "requested_family": "Segoe UI Variable",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Arial",
+            "postScriptName": "Arial-BoldMT",
+            "isCustomFont": false,
+            "glyphCount": 6
+          }
+        ],
+        "button": [],
+        "input": [
+          {
+            "familyName": "Arial",
+            "postScriptName": "ArialMT",
+            "isCustomFont": false,
+            "glyphCount": 34
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": true,
+      "text_difference_scope": null,
+      "typography_score": 8.0,
+      "font_identity_verified": false,
+      "findings": "Renderer identifies Arial fallback; not counted as a verified Segoe UI Variable comparison.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/memory-900x650-segoe-ui-variable.png",
+        "sha256": "aad78ab7ec3c357d2bc7e0ab1fcb73009c045336c0adcbeeee015daa43f5a840",
+        "physical_size": [
+          900,
+          650
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "memory",
+      "requested_family": "Arial",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Arial",
+            "postScriptName": "Arial-BoldMT",
+            "isCustomFont": false,
+            "glyphCount": 6
+          }
+        ],
+        "button": [],
+        "input": [
+          {
+            "familyName": "Arial",
+            "postScriptName": "ArialMT",
+            "isCustomFont": false,
+            "glyphCount": 34
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": true,
+      "text_difference_scope": null,
+      "typography_score": 8.0,
+      "font_identity_verified": true,
+      "findings": "Legible neutral text but heavier headings and less differentiated native hierarchy.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/memory-900x650-arial.png",
+        "sha256": "aad78ab7ec3c357d2bc7e0ab1fcb73009c045336c0adcbeeee015daa43f5a840",
+        "physical_size": [
+          900,
+          650
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "memory",
+      "requested_family": "Calibri",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Calibri",
+            "postScriptName": "Calibri-Bold",
+            "isCustomFont": false,
+            "glyphCount": 6
+          }
+        ],
+        "button": [],
+        "input": [
+          {
+            "familyName": "Calibri",
+            "postScriptName": "Calibri",
+            "isCustomFont": false,
+            "glyphCount": 34
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": true,
+      "text_difference_scope": null,
+      "typography_score": 7.8,
+      "font_identity_verified": true,
+      "findings": "Narrower/lighter visual size makes small labels harder to read.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/memory-900x650-calibri.png",
+        "sha256": "2f4d45871a229609f3adb1693fc90b63a7789e024930ff8af3757db8ac90e645",
+        "physical_size": [
+          900,
+          650
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "memory",
+      "requested_family": "Tahoma",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Tahoma",
+            "postScriptName": "Tahoma-Bold",
+            "isCustomFont": false,
+            "glyphCount": 6
+          }
+        ],
+        "button": [],
+        "input": [
+          {
+            "familyName": "Tahoma",
+            "postScriptName": "Tahoma",
+            "isCustomFont": false,
+            "glyphCount": 34
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": true,
+      "text_difference_scope": null,
+      "typography_score": 8.0,
+      "font_identity_verified": true,
+      "findings": "Readable compact labels but heavy/wide headings at current weights.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/memory-900x650-tahoma.png",
+        "sha256": "11ef625f9aab0aca98950f9c4801c5d8a6b3cb6438fc6ea275f7c3d5e07da9b8",
+        "physical_size": [
+          900,
+          650
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    },
+    {
+      "route": "memory",
+      "requested_family": "Verdana",
+      "actual_platform_fonts": {
+        "body": [],
+        "h1": [
+          {
+            "familyName": "Verdana",
+            "postScriptName": "Verdana-Bold",
+            "isCustomFont": false,
+            "glyphCount": 6
+          }
+        ],
+        "button": [],
+        "input": [
+          {
+            "familyName": "Verdana",
+            "postScriptName": "Verdana",
+            "isCustomFont": false,
+            "glyphCount": 34
+          }
+        ]
+      },
+      "same_style_metrics": true,
+      "same_exact_text": true,
+      "text_difference_scope": null,
+      "typography_score": 8.0,
+      "font_identity_verified": true,
+      "findings": "Larger glyphs help small text but widen/worsen density and heading emphasis.",
+      "capture": {
+        "path": "data/campaign8-native/cycle3b-font-comparison-verified-alternatives/screenshots/memory-900x650-verdana.png",
+        "sha256": "ed1b0ddd20a703f025b8451b1fef37c52269dfec693893eba5a64609e0f7b797",
+        "physical_size": [
+          900,
+          650
+        ],
+        "actual_windows_dpi": 120,
+        "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+        "viewed_by_independent_verifier": true
+      }
+    }
+  ]
+}

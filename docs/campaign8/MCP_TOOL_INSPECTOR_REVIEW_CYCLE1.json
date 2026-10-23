@@ -1,0 +1,143 @@
+{
+  "scope": "Original manager/registry and native MCP ToolInspector over fixed synthetic metadata from an explicitly mocked list dependency. Four prospectively declared cases; no external SDK/provider/model execution.",
+  "raw": {
+    "path": "data/campaign8-native/cycle30-original-mcp-tool-inspector4/RESULTS.json",
+    "sha256": "42d72afcc5f1b956829d3ba30d0e5eb34a647e23d019fdd22d661de1c4783bbf"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "c03f94985c8501c58da5c4cf9be122830a65edd4646116fa44952c711b1dcfc0",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "counts": {
+    "cases": 4,
+    "executed": 1,
+    "PASS_scoped_CONTROLLED_MOCK": 1,
+    "HARNESS_ERROR": 3,
+    "final_or_error_PNGs_viewed": 4,
+    "additional_intermediate_PNGs_viewed": 4,
+    "generation_requests": 0,
+    "actual_tool_execution": 0
+  },
+  "case_grades": [
+    {
+      "id": "mcp-tool-controls-inspect-schemas",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_MOCK",
+      "observed_scope": "Original inspector exposes the controlled required label:string input/output schema, annotations readOnlyHint and metadata disclosure, current capability/definition hash and unapproved identity. Classification changes to read-only as a local draft; Approve & enable opens exact hash/classification confirmation, then Cancel leaves original API enabled=false/available=false/classification=unknown/approval=null. Schema code is reviewed across intermediate HWND crops; no actual tool invocation or schema execution/SDK connection is credited.",
+      "input_sha256": "bea9192d0e4bd6c52484e1496164b1001d719a2c25b711eb1c174fde7ef1101b",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle30-original-mcp-tool-inspector4/screenshots/mcp-tool-controls-inspect-schemas.png",
+        "sha256": "31f2b91287ce6abe79b60b88e181f9f002b9883791aa1317fb704d3575017891"
+      },
+      "independent_final_or_error_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "175f4a65930b07662f064e422aa5a20a16e735a3f772588e16a805af2e6f0723"
+        }
+      ],
+      "original_error_retained": null,
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "mcp-tool-controls-approve-disable",
+      "status": "HARNESS_ERROR",
+      "evidence_class": "CONTROLLED_MOCK",
+      "observed_scope": "The preceding case retained the selected server/detail/inspector within the same MCP route. This case waits for a nonexistent server-list row and times out before its intended action. The error HWND shows the prior unapproved inspector. Its intended approval, bulk control or inspector-close result remains unmeasured; this is a source-state/setup error, not a product pass or confirmed product defect.",
+      "input_sha256": "a045e69bb1ff5d59aa311ef1335b58562fb8a7c30f99fa13dc2a8e9ac5bd54e4",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle30-original-mcp-tool-inspector4/screenshots/mcp-tool-controls-approve-disable-error.png",
+        "sha256": "31f2b91287ce6abe79b60b88e181f9f002b9883791aa1317fb704d3575017891"
+      },
+      "independent_final_or_error_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "175f4a65930b07662f064e422aa5a20a16e735a3f772588e16a805af2e6f0723"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\".mcp-server-row\").first\n"
+      },
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "mcp-tool-controls-bulk-approval-disable",
+      "status": "HARNESS_ERROR",
+      "evidence_class": "CONTROLLED_MOCK",
+      "observed_scope": "The preceding case retained the selected server/detail/inspector within the same MCP route. This case waits for a nonexistent server-list row and times out before its intended action. The error HWND shows the prior unapproved inspector. Its intended approval, bulk control or inspector-close result remains unmeasured; this is a source-state/setup error, not a product pass or confirmed product defect.",
+      "input_sha256": "02fd957231b5b09df0ae7ea07df81d490f9d116bcdd3a500bdc35983d4162ace",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle30-original-mcp-tool-inspector4/screenshots/mcp-tool-controls-bulk-approval-disable-error.png",
+        "sha256": "31f2b91287ce6abe79b60b88e181f9f002b9883791aa1317fb704d3575017891"
+      },
+      "independent_final_or_error_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "175f4a65930b07662f064e422aa5a20a16e735a3f772588e16a805af2e6f0723"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\".mcp-server-row\").first\n"
+      },
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "mcp-tool-controls-close-inspector",
+      "status": "HARNESS_ERROR",
+      "evidence_class": "CONTROLLED_MOCK",
+      "observed_scope": "The preceding case retained the selected server/detail/inspector within the same MCP route. This case waits for a nonexistent server-list row and times out before its intended action. The error HWND shows the prior unapproved inspector. Its intended approval, bulk control or inspector-close result remains unmeasured; this is a source-state/setup error, not a product pass or confirmed product defect.",
+      "input_sha256": "dc1a07597ad7ade7c1d3b585b6d4e7e62bd87af4c7477c7c49c954299774a41f",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle30-original-mcp-tool-inspector4/screenshots/mcp-tool-controls-close-inspector-error.png",
+        "sha256": "31f2b91287ce6abe79b60b88e181f9f002b9883791aa1317fb704d3575017891"
+      },
+      "independent_final_or_error_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "175f4a65930b07662f064e422aa5a20a16e735a3f772588e16a805af2e6f0723"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\".mcp-server-row\").first\n"
+      },
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    }
+  ],
+  "intermediate_pixels": [
+    {
+      "path": "data/campaign8-native/cycle30-original-mcp-tool-inspector4/screenshots/mcp-tool-controls-inspect-schemas-step-2.png",
+      "sha256": "a056d399838d87efaaf541e18a45225a43dd486a3465f838230b9cbf03763353"
+    },
+    {
+      "path": "data/campaign8-native/cycle30-original-mcp-tool-inspector4/screenshots/mcp-tool-controls-inspect-schemas-step-3.png",
+      "sha256": "e64a0102076aa544cd242fb8ee61b2d8893bd48aa2137df4940b4ca99286ab96"
+    },
+    {
+      "path": "data/campaign8-native/cycle30-original-mcp-tool-inspector4/screenshots/mcp-tool-controls-inspect-schemas-step-4.png",
+      "sha256": "1cf641d6496fb5088825d84630241b14201ffc11257c3318e6a32f904bead6f4"
+    },
+    {
+      "path": "data/campaign8-native/cycle30-original-mcp-tool-inspector4/screenshots/mcp-tool-controls-inspect-schemas-step-7.png",
+      "sha256": "0cd941211d54d4f9000b2696603b80f5736d5b669ffb67663a46de15522c2bd4"
+    }
+  ],
+  "cleanup": {
+    "native_exit_code": 0,
+    "owned_native_cleanup": true
+  },
+  "no_private_final_access": true
+}

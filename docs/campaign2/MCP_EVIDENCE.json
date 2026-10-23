@@ -1,0 +1,2208 @@
+{
+  "schema_version": 1,
+  "campaign": 2,
+  "run": "verified-03",
+  "raw_results_sha256": "fa34237835e2157c3c400144d35c3fc070618eb496556195d19cbf3720341965",
+  "raw_inventory_sha256": "04b4976fcb67034bd8bc3f67469c5fc62554b6a84abf9235115a26c9629cfbd5",
+  "junit_sha256": "02d94406c7e5a0c11443932fde01db9b4ef689b43a1d621bbc3f44bd8703e149",
+  "source_hashes_before": {
+    "src\\hanni\\mcp\\adapter.py": "789e14181ebe199ec4ca227453897beb8d36bacb12861ee65809bda22eae8f95",
+    "src\\hanni\\mcp\\host.py": "e878178ea997ddf80c380c8cd56a91c1aee6bcdf5db6436d48f1519888bd6667",
+    "src\\hanni\\mcp\\manager.py": "6321de5035a7227b79852f8c90abe5ed7d9ea7eb1db907d3adbef54d0059e3c1",
+    "src\\hanni\\mcp\\security.py": "76416fad6f5bda37b643ca7d3ca306dcf5db5899c3be5dfd95ef4ed98a4e0bcb",
+    "src\\hanni\\mcp\\transport.py": "264c10cc4930a90d8cfb8c0e900cb629f793ef77cc6f21d294f3e71c9db8a932"
+  },
+  "source_hashes_after": {
+    "src\\hanni\\mcp\\adapter.py": "789e14181ebe199ec4ca227453897beb8d36bacb12861ee65809bda22eae8f95",
+    "src\\hanni\\mcp\\host.py": "e878178ea997ddf80c380c8cd56a91c1aee6bcdf5db6436d48f1519888bd6667",
+    "src\\hanni\\mcp\\manager.py": "6321de5035a7227b79852f8c90abe5ed7d9ea7eb1db907d3adbef54d0059e3c1",
+    "src\\hanni\\mcp\\security.py": "76416fad6f5bda37b643ca7d3ca306dcf5db5899c3be5dfd95ef4ed98a4e0bcb",
+    "src\\hanni\\mcp\\transport.py": "264c10cc4930a90d8cfb8c0e900cb629f793ef77cc6f21d294f3e71c9db8a932"
+  },
+  "test_receipts": [
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_all_discovery_contracts_and_exact_classifications[stdio]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.510194000089541
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.04488430009223521
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.051364899962209165
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.027936099912039936
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.05035250005312264
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.027750800014473498
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.0375056000193581
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.023346000001765788
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.02631760004442185
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006221600109711289
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006080599967390299
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006365800043568015
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.005630600033327937
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.00581260013859719
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006816499982960522
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006413700059056282
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.005785900051705539
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.005958799971267581
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006190499989315867
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.005956999957561493
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.00581819994840771
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006037999875843525
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.0065478000324219465
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006060700048692524
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.005959599977359176
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.007608100073412061
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.007944400073029101
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006573399994522333
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.007185599999502301
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.014839199953712523
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.018108499934896827
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.008996599935926497
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.007971900049597025
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.9262143999803811
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.9084062000038102
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.9504291999619454
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.968127099913545
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.9313880000263453
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.8881184998899698
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.9324356000870466
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.952846199972555
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.02859029988758266
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.029327799915336072
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.030291300150565803
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.031208900036290288
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.033846399979665875
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.046504200086928904
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.029314499930478632
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.028349499916657805
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.04123940016143024
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.0028329999186098576
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.008360999985598028
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.011631299974396825
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.004141399869695306
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.0047061999794095755
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.011427300050854683
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.019781699869781733
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.03388759994413704
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.023475300054997206
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.022066999808885157
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.020771700073964894
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.0017845999682322145
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.00160030007828027
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.019481799914501607
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.020063399919308722
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_all_discovery_contracts_and_exact_classifications[streamable_http]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.4202824000967667
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.029245499870739877
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.02411630004644394
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.025648800074122846
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.028078799950890243
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.02769450005143881
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.040897600003518164
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.026764600072056055
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.02736830001231283
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006611200049519539
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.005688700010068715
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.005853000096976757
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.005454399972222745
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.005980900023132563
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.00580479996278882
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.005729300086386502
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.005482000065967441
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.005757000180892646
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.0055065000196918845
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006496300105936825
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.005704700015485287
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.007952499901875854
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006132200011052191
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.007266000029630959
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.007778499973937869
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.008496899856254458
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006795700057409704
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006726100109517574
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006174399983137846
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.01431100012268871
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.014547300059348345
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.0065104999812319875
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.006879399996250868
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.05528459989000112
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.06758540007285774
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.06541709997691214
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.07058500009588897
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.05922280007507652
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.05998310004360974
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.059162799967452884
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.061927400063723326
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.02824540005531162
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.028195400023832917
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.02912520000245422
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.04221830004826188
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.030254300101660192
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.041380800073966384
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.028686600038781762
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.03017119993455708
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.024822500068694353
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.002534499973990023
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.0076000000117346644
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.010851499973796308
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.003632499952800572
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.0032995999790728092
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.010837300098501146
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.021845899987965822
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-prism.read_alignment]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.026610499946400523
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-prism.echo_label]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.020366600016131997
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-prism.sum_samples]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.024818399804644287
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-prism.decode_profile]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.02234529994893819
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-prism.create_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.001720299944281578
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-prism.erase_record]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.0014968999894335866
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-prism.defer_read]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.020195099990814924
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-quartz.inspect_flux_band]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.03632890002336353
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_unapproved_connection_never_initializes_or_discovers",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.042438600095920265
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_discovery_never_grants_authority_from_tool_hints",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.0417845998890698
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_tool_disable_removal_clear_cached_index_menu_and_handler[stdio]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.9792084000073373
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_tool_disable_removal_clear_cached_index_menu_and_handler[streamable_http]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.301974100060761
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_server_disable_enable_and_persistence_do_not_auto_start[stdio]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.9931616999674588
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_server_disable_enable_and_persistence_do_not_auto_start[streamable_http]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.3674369999207556
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_definition_refresh_revokes_old_approval_and_stale_menu[stdio]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.0228789998218417
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_definition_refresh_revokes_old_approval_and_stale_menu[streamable_http]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.315000499947928
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_actual_sdk_list_changed_notification_removes_missing_tool[stdio]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.9790367999812588
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_actual_sdk_list_changed_notification_removes_missing_tool[streamable_http]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.3150315000675619
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_duplicate_original_names_inside_server_fail_closed[stdio]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.0027857999084517
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_duplicate_original_names_inside_server_fail_closed[streamable_http]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.2658042999682948
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_duplicate_names_across_servers_use_separate_runtime_identities[stdio]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.7908893000567332
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_duplicate_names_across_servers_use_separate_runtime_identities[streamable_http]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 2.1452518000733107
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_connection_failure_returns_no_tools_then_recovers_after_owned_review",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.9712588998954743
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_timeout_and_error_results_are_not_success_and_session_recovers[stdio]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 3.967120600049384
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_timeout_and_error_results_are_not_success_and_session_recovers[streamable_http]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 4.461397400009446
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_removal_during_active_call_cancels_and_never_admits_result[stdio]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.9823071999708191
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_removal_during_active_call_cancels_and_never_admits_result[streamable_http]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.3008840000256896
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_malicious_descriptions_are_inert_and_cannot_grant_mutation_authority[stdio]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.0141264999983832
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_malicious_descriptions_are_inert_and_cannot_grant_mutation_authority[streamable_http]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.3136612999951467
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_invalid_remote_schema_never_becomes_executable[stdio]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.9643726999638602
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_invalid_remote_schema_never_becomes_executable[streamable_http]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.310722399968654
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_background_and_emergency_stop_preserve_original_authority[stdio]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.9587696999078616
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_background_and_emergency_stop_preserve_original_authority[streamable_http]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.2942652000347152
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_owned_stdio_process_is_cleaned_but_external_http_process_is_not_adopted[stdio]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 0.9951496999710798
+    },
+    {
+      "nodeid": "tests/integration/test_campaign2_mcp_lifecycle.py::test_owned_stdio_process_is_cleaned_but_external_http_process_is_not_adopted[streamable_http]",
+      "phases": {
+        "setup": "passed",
+        "call": "passed",
+        "teardown": "passed"
+      },
+      "duration_seconds": 1.3076858000131324
+    }
+  ],
+  "transport_receipts": [
+    {
+      "name": "all-eight-matrix-stdio-3b35f6a0.json",
+      "sha256": "14a99cdba90ff37ce9ac2b02a5812128de940a7c2a92d4dc147d073b3987b759",
+      "label": "all-eight-matrix",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 32
+    },
+    {
+      "name": "all-eight-matrix-streamable_http-ca9b44a8.json",
+      "sha256": "776339a397caa40681db3fc934c4f5632e3d375e5c165865877a9238ad8e528d",
+      "label": "all-eight-matrix",
+      "transport": "streamable_http",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 32
+    },
+    {
+      "name": "hints-not-owner-authority-stdio-18d5e323.json",
+      "sha256": "8b833e2ab7f4480b2a5ab7825c750b8afb8f29eaea39017bd6da48d80b8506a5",
+      "label": "hints-not-owner-authority",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 0
+    },
+    {
+      "name": "real-connection-failure-recovery-stdio-7bc050ee.json",
+      "sha256": "b954755b643d05756158c2352348d0d11f4878421f44b692e42b84d85035cb25",
+      "label": "real-connection-failure-recovery",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 1
+    },
+    {
+      "name": "test_actual_sdk_list_changed_notification_removes_missing_tool-stdio-8ff17471.json",
+      "sha256": "6a146dfc43acb9c102307c611ba360a29d9d6b38fa9fc542c19a66aaaa6999a3",
+      "label": "test_actual_sdk_list_changed_notification_removes_missing_tool",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 0
+    },
+    {
+      "name": "test_actual_sdk_list_changed_notification_removes_missing_tool-streamable_http-7f09adaa.json",
+      "sha256": "24b186681a422deaa0590271d746e7786a4f915e5af3cefd7fa4d2167ac55891",
+      "label": "test_actual_sdk_list_changed_notification_removes_missing_tool",
+      "transport": "streamable_http",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 0
+    },
+    {
+      "name": "test_background_and_emergency_stop_preserve_original_authority-stdio-19f744f8.json",
+      "sha256": "407e64de1f755f335f4bbc9a236c5e635afd55f03c5ea0fbe058c9a6a7eb2f25",
+      "label": "test_background_and_emergency_stop_preserve_original_authority",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 0
+    },
+    {
+      "name": "test_background_and_emergency_stop_preserve_original_authority-streamable_http-0d7d8038.json",
+      "sha256": "7a6bd6b01303e3c05add4b9a0925047815c8d733520694d15313031c4b2fae59",
+      "label": "test_background_and_emergency_stop_preserve_original_authority",
+      "transport": "streamable_http",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 0
+    },
+    {
+      "name": "test_definition_refresh_revokes_old_approval_and_stale_menu-stdio-5618e6ef.json",
+      "sha256": "eafa12355e17db2efaf8b1c527dbd191ce16091a155d98f9fddeb2e3daf6668f",
+      "label": "test_definition_refresh_revokes_old_approval_and_stale_menu",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 1
+    },
+    {
+      "name": "test_definition_refresh_revokes_old_approval_and_stale_menu-streamable_http-709390ef.json",
+      "sha256": "9309d9c32790f4a78dc5cc24efcc7ff3bb308de7dc0f2d89b1bfe236e901eb08",
+      "label": "test_definition_refresh_revokes_old_approval_and_stale_menu",
+      "transport": "streamable_http",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 1
+    },
+    {
+      "name": "test_duplicate_names_across_servers_use_separate_runtime_identities-stdio-0540ac9b.json",
+      "sha256": "82b591f5b405efa053951725d6e9ec8758e8a7fdc6b1fb521ad0c1f8195030df",
+      "label": "test_duplicate_names_across_servers_use_separate_runtime_identities",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 1
+    },
+    {
+      "name": "test_duplicate_names_across_servers_use_separate_runtime_identities-streamable_http-c82b91c5.json",
+      "sha256": "8f0ce6aed566feb1f77b3bbbc59b0a1ac5821498049fff87b0b8f6a5b3df9fe2",
+      "label": "test_duplicate_names_across_servers_use_separate_runtime_identities",
+      "transport": "streamable_http",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 1
+    },
+    {
+      "name": "test_duplicate_original_names_inside_server_fail_closed-stdio-426417ef.json",
+      "sha256": "841f2fbfdeb1d93e0ef8c349d344586bc097c27ee8385bf4a7b72436b635b1e9",
+      "label": "test_duplicate_original_names_inside_server_fail_closed",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 0
+    },
+    {
+      "name": "test_duplicate_original_names_inside_server_fail_closed-streamable_http-8021c2e0.json",
+      "sha256": "3c1c6648e3dd01678509000af546fa54aaa52f4b81e8a726b69f98aa48b9584b",
+      "label": "test_duplicate_original_names_inside_server_fail_closed",
+      "transport": "streamable_http",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 0
+    },
+    {
+      "name": "test_invalid_remote_schema_never_becomes_executable-stdio-dc3e30ca.json",
+      "sha256": "d2e6c3c5b03d222eeec97b0aa67929cb32a85b1cacc7d54dbcfa859323513319",
+      "label": "test_invalid_remote_schema_never_becomes_executable",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 0
+    },
+    {
+      "name": "test_invalid_remote_schema_never_becomes_executable-streamable_http-f73c91ce.json",
+      "sha256": "b16a64dafc01d9673bd174b62b6ec6e90ba56ed51f85350372dfc602309e92be",
+      "label": "test_invalid_remote_schema_never_becomes_executable",
+      "transport": "streamable_http",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 0
+    },
+    {
+      "name": "test_malicious_descriptions_are_inert_and_cannot_grant_mutation_authority-stdio-6d81a238.json",
+      "sha256": "fe574ab986861d69706128817af397ba2a90b1de2b95c93905b70a10c07ef59c",
+      "label": "test_malicious_descriptions_are_inert_and_cannot_grant_mutation_authority",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 1
+    },
+    {
+      "name": "test_malicious_descriptions_are_inert_and_cannot_grant_mutation_authority-streamable_http-f3dc8da1.json",
+      "sha256": "15117ff6ea87d8e14c7eb185722931142605de64b09ce5b5406b19f3260b187b",
+      "label": "test_malicious_descriptions_are_inert_and_cannot_grant_mutation_authority",
+      "transport": "streamable_http",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 1
+    },
+    {
+      "name": "test_owned_stdio_process_is_cleaned_but_external_http_process_is_not_adopted-stdio-af72372a.json",
+      "sha256": "ce1c233256819266c107d611e02441821ae1fc004d60af61c1112727ee1ea69f",
+      "label": "test_owned_stdio_process_is_cleaned_but_external_http_process_is_not_adopted",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 0
+    },
+    {
+      "name": "test_owned_stdio_process_is_cleaned_but_external_http_process_is_not_adopted-streamable_http-79ef1020.json",
+      "sha256": "4980e8dc15894fd7fe42c8cf90269608677ed07d145003f4f302effbf6609f71",
+      "label": "test_owned_stdio_process_is_cleaned_but_external_http_process_is_not_adopted",
+      "transport": "streamable_http",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 0
+    },
+    {
+      "name": "test_removal_during_active_call_cancels_and_never_admits_result-stdio-2b6270d5.json",
+      "sha256": "389b51b825a9de9e3fb5a7d75bf1d29a233612306978cbc860e27de4649a7fe7",
+      "label": "test_removal_during_active_call_cancels_and_never_admits_result",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 1
+    },
+    {
+      "name": "test_removal_during_active_call_cancels_and_never_admits_result-streamable_http-5c5f0909.json",
+      "sha256": "33bdcdfdfe9b6e77f312c775993711610c7e4d77ecfbd8b05fcc08eb68b59c7e",
+      "label": "test_removal_during_active_call_cancels_and_never_admits_result",
+      "transport": "streamable_http",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 1
+    },
+    {
+      "name": "test_server_disable_enable_and_persistence_do_not_auto_start-stdio-947a8bc9.json",
+      "sha256": "0e045fb0f5dc5d3ddf8d91d4efc2d6e9331c13fa1a0986eeaaa1128c039e366a",
+      "label": "test_server_disable_enable_and_persistence_do_not_auto_start",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 1
+    },
+    {
+      "name": "test_server_disable_enable_and_persistence_do_not_auto_start-streamable_http-31ff127c.json",
+      "sha256": "9c61cb67f80d38ff0a55e730c83feeeec25d475d511b0599bb6b57832f1e476a",
+      "label": "test_server_disable_enable_and_persistence_do_not_auto_start",
+      "transport": "streamable_http",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 1
+    },
+    {
+      "name": "test_timeout_and_error_results_are_not_success_and_session_recovers-stdio-0d741b52.json",
+      "sha256": "82c6b92f2e4d4cd39f1aaeed9ece4623dfd65abe6c5279562d74ce2448043c34",
+      "label": "test_timeout_and_error_results_are_not_success_and_session_recovers",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 4
+    },
+    {
+      "name": "test_timeout_and_error_results_are_not_success_and_session_recovers-streamable_http-463967f7.json",
+      "sha256": "3d576ba6bc4a8c6dfac1561f4a613bc40cc9ec04c6e4c27ec7cd08ebc324616a",
+      "label": "test_timeout_and_error_results_are_not_success_and_session_recovers",
+      "transport": "streamable_http",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 4
+    },
+    {
+      "name": "test_tool_disable_removal_clear_cached_index_menu_and_handler-stdio-2086e6f9.json",
+      "sha256": "2e766bbcce269049a3e2d49a3b0523003d92c3da2d037b82b88897cd6c20283d",
+      "label": "test_tool_disable_removal_clear_cached_index_menu_and_handler",
+      "transport": "stdio",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 0
+    },
+    {
+      "name": "test_tool_disable_removal_clear_cached_index_menu_and_handler-streamable_http-6a72547d.json",
+      "sha256": "e2e9e7aff4a2fdb8011d52825eb66016f0b73d8956615b96a09347769c8f005c",
+      "label": "test_tool_disable_removal_clear_cached_index_menu_and_handler",
+      "transport": "streamable_http",
+      "initialization": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {
+          "experimental": {},
+          "tools": {
+            "listChanged": true
+          }
+        },
+        "serverInfo": {
+          "name": "Campaign 2 owned SDK fixture",
+          "version": "2.0"
+        }
+      },
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 0
+    },
+    {
+      "name": "unapproved-never-starts-stdio-2f594d85.json",
+      "sha256": "6a250ffbfd95a0ec2965af793efeea169f0875eb0db3d432ed7043bc9f214ca0",
+      "label": "unapproved-never-starts",
+      "transport": "stdio",
+      "initialization": null,
+      "observed_registry_base_count": 172,
+      "actual_sdk_calls": 0
+    }
+  ],
+  "cleanup": {
+    "source_sha256": "98e4d0aadd1a71454f52360a4202d389b9cb32b1aaeac431bf118db8b5de4fc3",
+    "scope": "Actual owned SDK process provenance; owner services/configuration not accessed or mutated",
+    "all_cleanup_checks_passed": true,
+    "rows": [
+      {
+        "transport": "stdio",
+        "proof_before_removal": {
+          "pid": 25416,
+          "create_time": 1791614346.284342,
+          "parent_pids": [
+            42880,
+            39164,
+            7964,
+            66796,
+            42088,
+            17728,
+            65444,
+            14964
+          ],
+          "command": [
+            "C:\\Program Files\\Python312\\python.exe",
+            "C:\\Projects\\HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING\\scripts\\campaign2\\mcp_fixture.py",
+            "--control",
+            "data\\campaign2-mcp\\cleanup-04\\stdio\\control.json",
+            "--ledger",
+            "data\\campaign2-mcp\\cleanup-04\\stdio\\ledger.jsonl"
+          ],
+          "launching_audit_pid": 39164
+        },
+        "actual_initialization": {
+          "protocolVersion": "2025-11-25",
+          "capabilities": {
+            "experimental": {},
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "serverInfo": {
+            "name": "Campaign 2 owned SDK fixture",
+            "version": "2.0"
+          }
+        },
+        "discovered_tools": 8,
+        "registry_base_count": 172,
+        "sdk_tool_calls": 0,
+        "alive_after_manager_removal": false,
+        "ownership_rule": "SDK-owned stdio; harness-owned external HTTP process",
+        "manager_remaining_connections": 0,
+        "manager_remaining_adapters": 0,
+        "alive_after_harness_cleanup": false
+      },
+      {
+        "transport": "streamable_http",
+        "proof_before_removal": {
+          "pid": 46160,
+          "create_time": 1791614347.365178,
+          "parent_pids": [
+            56504,
+            39164,
+            7964,
+            66796,
+            42088,
+            17728,
+            65444,
+            14964
+          ],
+          "command": [
+            "C:\\Program Files\\Python312\\python.exe",
+            "C:\\Projects\\HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING\\scripts\\campaign2\\mcp_fixture.py",
+            "--control",
+            "data\\campaign2-mcp\\cleanup-04\\streamable_http\\control.json",
+            "--ledger",
+            "data\\campaign2-mcp\\cleanup-04\\streamable_http\\ledger.jsonl",
+            "--transport",
+            "http",
+            "--port",
+            "50855"
+          ],
+          "launching_audit_pid": 39164,
+          "launcher_pid": 56504
+        },
+        "actual_initialization": {
+          "protocolVersion": "2025-11-25",
+          "capabilities": {
+            "experimental": {},
+            "tools": {
+              "listChanged": true
+            }
+          },
+          "serverInfo": {
+            "name": "Campaign 2 owned SDK fixture",
+            "version": "2.0"
+          }
+        },
+        "discovered_tools": 8,
+        "registry_base_count": 172,
+        "sdk_tool_calls": 0,
+        "alive_after_manager_removal": true,
+        "ownership_rule": "SDK-owned stdio; harness-owned external HTTP process",
+        "manager_remaining_connections": 0,
+        "manager_remaining_adapters": 0,
+        "alive_after_harness_cleanup": false
+      }
+    ]
+  },
+  "unknown_tool_demo": {
+    "source_sha256": "03c689a82e3e68151e590f6a6b9340704240814c38baa303d122722ed0dd6bbd",
+    "query": "On Quartz Bench, inspect the flux band for calibration AX-17 and report the returned band and intensity.",
+    "original_name": "quartz.inspect_flux_band",
+    "discovered_by_actual_sdk": true,
+    "model_retraining_performed": false,
+    "model_selection_status": "blocked",
+    "actual_model_http_requests": 0,
+    "resource_before": {
+      "available_ram_bytes": 1770528768,
+      "ram_percent": 94.8
+    },
+    "separate_declared_argument_call": {
+      "scope": "Declared fixture arguments, not model inference completion",
+      "result": {
+        "name": "mcp.ab4bb1b2d9fc4f8fac36fd9440640d1a.d55b8048473b7618",
+        "ok": true,
+        "message": "{\"calibration\": \"AX-17\", \"band\": \"narrow\", \"intensity\": 0.42}",
+        "data": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"calibration\": \"AX-17\", \"band\": \"narrow\", \"intensity\": 0.42}"
+            }
+          ],
+          "structured_content": {
+            "calibration": "AX-17",
+            "band": "narrow",
+            "intensity": 0.42
+          },
+          "metadata": null,
+          "is_error": false,
+          "correlation": {
+            "server_id": "ab4bb1b2d9fc4f8fac36fd9440640d1a",
+            "original_name": "quartz.inspect_flux_band",
+            "definition_hash": "328550a0f92cdb217f988a5d94e5ede15b8a08ba3b9061a50dcf3985d41ed21f",
+            "capability_id": "mcp.ab4bb1b2d9fc4f8fac36fd9440640d1a.d55b8048473b7618",
+            "correlation_id": "campaign2-f8cd5b977558466e8ec188bbe37e78ad"
+          }
+        },
+        "duration_ms": 6.720799952745438,
+        "verification": {
+          "status": "UNVERIFIED",
+          "method": "tool_response",
+          "scope": "external_tool_response",
+          "independent": false,
+          "checks": {}
+        }
+      },
+      "calls": [
+        {
+          "event": "call",
+          "name": "quartz.inspect_flux_band",
+          "arguments": {
+            "calibration": "AX-17"
+          }
+        }
+      ]
+    }
+  },
+  "boundaries": {
+    "physical_external_provider": "not_tested",
+    "model_selection": "blocked",
+    "tool_response_independent_environment_verification": false,
+    "owner_services_mutated": "not attempted; only proven test-owned process handles are controlled"
+  }
+}

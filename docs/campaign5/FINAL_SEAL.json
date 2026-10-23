@@ -1,0 +1,32 @@
+{
+  "case_count": 100,
+  "category_counts": {
+    "analytical_reasoning": 10,
+    "coding": 10,
+    "complex_multi_step_analysis": 10,
+    "long_context_retrieval": 10,
+    "memory_assisted_questions": 10,
+    "planning": 10,
+    "simple_commands": 10,
+    "structured_output": 10,
+    "tool_selection": 10,
+    "workflow_reasoning": 10
+  },
+  "difficulty_counts": {
+    "easy": 10,
+    "hard": 30,
+    "medium": 60
+  },
+  "hashes": {
+    "author.py": "09bfa2cada01c761256e1fd43b7ee95286b727203e42676c554565d2595ee96a",
+    "inputs.jsonl": "5ee4b787856e27a1031a8cdd3e5f753e525579413d1cf25ae65ca6e7b6fb6b34",
+    "oracles.jsonl": "0cfc00fbf6d1c3eba979ebbd2aae443d617b216ffcd34bd394720d5534a521cc",
+    "protocol.json": "d8dbe6a9a4eeba8e61c7416126f3548c17eaecec9a99191398cf18844ff3325b",
+    "query-hashes.json": "cad11ba6e8f3952cee096a4668903dd8e8a3ece20424d4f0dab55ca14e9a46c5"
+  },
+  "production_tuning_before_seal": false,
+  "publication": "Hashes and aggregates only. No private prompts, targets, file facts, expected output oracles are exposed.",
+  "query_hashes_unique": true,
+  "sealed_at": "2026-10-10T09:49:15.610481+00:00",
+  "seal_sha256": "68ebb86a18b09e3188cfab1c154c8dc445ba78dcec08af9ab84fcd9d51b0a665"
+}

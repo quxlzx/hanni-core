@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-10T12:27:11.932921+00:00",
+  "before_process_awareness": {
+    "system_dpi": 96,
+    "width": 1536,
+    "height": 960
+  },
+  "after_process_awareness": {
+    "system_dpi": 120,
+    "width": 1920,
+    "height": 1200,
+    "monitor_count": 1
+  },
+  "process_awareness_set_success": true,
+  "global_display_settings_changed": false,
+  "authoritative_native_dpi": 120,
+  "scope": "Original DPI-unaware preflight values were virtualized; native HWND DPI and aware metrics are authoritative."
+}

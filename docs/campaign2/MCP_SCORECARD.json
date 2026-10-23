@@ -1,0 +1,1464 @@
+{
+  "schema_version": 1,
+  "campaign": 2,
+  "generated_at": "2026-10-10T06:39:12.757102+00:00",
+  "scope": "Actual isolated local SDK stdio/Streamable HTTP with controlled data; external-provider and model proof kept separate",
+  "sdk_version": "2.2.0",
+  "observed_original_registry_counts": [
+    172
+  ],
+  "imported_fixture_tool_count": 8,
+  "tests": {
+    "total": 157,
+    "passed": 157,
+    "failed": 0,
+    "duration_seconds": 52.23399999993853,
+    "matrix_cases": 130,
+    "lifecycle_cases": 27
+  },
+  "owner_mcp_inventory": {
+    "server_count": 0,
+    "enabled_tool_count": 0,
+    "scope": "Read-only persisted discovery; availability is not proof of live registration.",
+    "source_sha256": "2e2f934233a5366eed878a6e7eaa14c671cf7bddca41b2a7176aa0eadf334102"
+  },
+  "per_tool": [
+    {
+      "original_name": "prism.read_alignment",
+      "owner_classification": "read_only",
+      "source_contract": {
+        "name": "prism.read_alignment",
+        "description": "Read the fixture prism alignment state for a selected axis.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "axis": {
+              "type": "string",
+              "enum": [
+                "x",
+                "y"
+              ]
+            }
+          },
+          "required": [
+            "axis"
+          ],
+          "additionalProperties": false
+        },
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "axis": {
+              "type": "string"
+            },
+            "alignment": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "axis",
+            "alignment"
+          ],
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true
+        },
+        "_meta": {
+          "campaign": 2,
+          "source": "owned_local_sdk_fixture"
+        }
+      },
+      "actual_discovered_definition_hashes": [
+        "006cb07e8c4003991bd869de10ed8949a6f66984cf268964064e4d2a32c603bc"
+      ],
+      "dimensions": {
+        "valid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-prism.read_alignment]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-prism.read_alignment]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "invalid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-prism.read_alignment]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-prism.read_alignment]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "missing_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-prism.read_alignment]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-prism.read_alignment]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "permission_denial": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-prism.read_alignment]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-prism.read_alignment]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "dependency_absent": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-prism.read_alignment]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-prism.read_alignment]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "output_contract": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-prism.read_alignment]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-prism.read_alignment]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "nl_retrieval_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-prism.read_alignment]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-prism.read_alignment]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "original_host_e2e_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-prism.read_alignment]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-prism.read_alignment]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        }
+      },
+      "actual_model_selection": {
+        "status": "not_tested",
+        "reason": "The transport audit performs no resident-model inference."
+      }
+    },
+    {
+      "original_name": "prism.echo_label",
+      "owner_classification": "read_only",
+      "source_contract": {
+        "name": "prism.echo_label",
+        "description": "Echo a supplied prism label without changing its contents.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "label"
+          ],
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true
+        },
+        "_meta": {
+          "campaign": 2,
+          "source": "owned_local_sdk_fixture"
+        }
+      },
+      "actual_discovered_definition_hashes": [
+        "7c2d7bf57b4f0c1fe4ea90d1aec069e9c4ec4a6fc7a8e1c97bb2ec667d8c82f2"
+      ],
+      "dimensions": {
+        "valid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-prism.echo_label]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-prism.echo_label]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "invalid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-prism.echo_label]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-prism.echo_label]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "missing_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-prism.echo_label]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-prism.echo_label]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "permission_denial": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-prism.echo_label]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-prism.echo_label]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "dependency_absent": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-prism.echo_label]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-prism.echo_label]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "output_contract": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-prism.echo_label]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-prism.echo_label]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "nl_retrieval_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-prism.echo_label]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-prism.echo_label]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "original_host_e2e_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-prism.echo_label]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-prism.echo_label]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        }
+      },
+      "actual_model_selection": {
+        "status": "not_tested",
+        "reason": "The transport audit performs no resident-model inference."
+      }
+    },
+    {
+      "original_name": "prism.sum_samples",
+      "owner_classification": "read_only",
+      "source_contract": {
+        "name": "prism.sum_samples",
+        "description": "Sum a bounded list of numeric prism sample readings.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "samples": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 1,
+              "maxItems": 8
+            }
+          },
+          "required": [
+            "samples"
+          ],
+          "additionalProperties": false
+        },
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "total": {
+              "type": "number"
+            },
+            "count": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "total",
+            "count"
+          ],
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true
+        },
+        "_meta": {
+          "campaign": 2,
+          "source": "owned_local_sdk_fixture"
+        }
+      },
+      "actual_discovered_definition_hashes": [
+        "77b23adc2b9c346d1c001756e0fff969b9b1d6ac00c5db09fecc238be03dfb06"
+      ],
+      "dimensions": {
+        "valid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-prism.sum_samples]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-prism.sum_samples]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "invalid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-prism.sum_samples]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-prism.sum_samples]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "missing_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-prism.sum_samples]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-prism.sum_samples]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "permission_denial": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-prism.sum_samples]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-prism.sum_samples]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "dependency_absent": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-prism.sum_samples]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-prism.sum_samples]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "output_contract": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-prism.sum_samples]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-prism.sum_samples]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "nl_retrieval_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-prism.sum_samples]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-prism.sum_samples]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "original_host_e2e_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-prism.sum_samples]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-prism.sum_samples]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        }
+      },
+      "actual_model_selection": {
+        "status": "not_tested",
+        "reason": "The transport audit performs no resident-model inference."
+      }
+    },
+    {
+      "original_name": "prism.decode_profile",
+      "owner_classification": "read_only",
+      "source_contract": {
+        "name": "prism.decode_profile",
+        "description": "Read back a nested prism profile with channel choices and an optional label.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "profile": {
+              "type": "object",
+              "properties": {
+                "enabled": {
+                  "type": "boolean"
+                },
+                "channels": {
+                  "type": "array",
+                  "items": {
+                    "enum": [
+                      "red",
+                      "green"
+                    ]
+                  },
+                  "minItems": 1
+                },
+                "label": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "enabled",
+                "channels"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "profile"
+          ],
+          "additionalProperties": false
+        },
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "profile": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "profile"
+          ],
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true
+        },
+        "_meta": {
+          "campaign": 2,
+          "source": "owned_local_sdk_fixture"
+        }
+      },
+      "actual_discovered_definition_hashes": [
+        "519da6051661d66a6defb12d927d5deaaf6c5b800a962a1a5d8a36f9aa18f24d"
+      ],
+      "dimensions": {
+        "valid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-prism.decode_profile]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-prism.decode_profile]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "invalid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-prism.decode_profile]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-prism.decode_profile]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "missing_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-prism.decode_profile]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-prism.decode_profile]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "permission_denial": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-prism.decode_profile]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-prism.decode_profile]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "dependency_absent": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-prism.decode_profile]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-prism.decode_profile]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "output_contract": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-prism.decode_profile]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-prism.decode_profile]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "nl_retrieval_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-prism.decode_profile]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-prism.decode_profile]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "original_host_e2e_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-prism.decode_profile]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-prism.decode_profile]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        }
+      },
+      "actual_model_selection": {
+        "status": "not_tested",
+        "reason": "The transport audit performs no resident-model inference."
+      }
+    },
+    {
+      "original_name": "prism.create_record",
+      "owner_classification": "write",
+      "source_contract": {
+        "name": "prism.create_record",
+        "description": "Create a record in the isolated fixture's memory store.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "record_id",
+            "title"
+          ],
+          "additionalProperties": false
+        },
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string"
+            },
+            "created": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "record_id",
+            "created"
+          ],
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false
+        },
+        "_meta": {
+          "campaign": 2,
+          "source": "owned_local_sdk_fixture"
+        }
+      },
+      "actual_discovered_definition_hashes": [
+        "1e9430386f1eafee9618c7848036cbc9a0d87345d8998d8ddd6762f1479c81a2"
+      ],
+      "dimensions": {
+        "valid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-prism.create_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-prism.create_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "invalid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-prism.create_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-prism.create_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "missing_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-prism.create_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-prism.create_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "permission_denial": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-prism.create_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-prism.create_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "dependency_absent": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-prism.create_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-prism.create_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "output_contract": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-prism.create_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-prism.create_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "nl_retrieval_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-prism.create_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-prism.create_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "original_host_e2e_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-prism.create_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-prism.create_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        }
+      },
+      "actual_model_selection": {
+        "status": "not_tested",
+        "reason": "The transport audit performs no resident-model inference."
+      }
+    },
+    {
+      "original_name": "prism.erase_record",
+      "owner_classification": "destructive",
+      "source_contract": {
+        "name": "prism.erase_record",
+        "description": "Delete a record from the isolated fixture memory store. Owner classification is required.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "record_id"
+          ],
+          "additionalProperties": false
+        },
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "record_id": {
+              "type": "string"
+            },
+            "deleted": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "record_id",
+            "deleted"
+          ],
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false
+        },
+        "_meta": {
+          "campaign": 2,
+          "source": "owned_local_sdk_fixture"
+        }
+      },
+      "actual_discovered_definition_hashes": [
+        "4c6ea004d8967945e18e54b3438ed7f2f6d2f1e3a6e6d0434f3a06d2b1d1765e"
+      ],
+      "dimensions": {
+        "valid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-prism.erase_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-prism.erase_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "invalid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-prism.erase_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-prism.erase_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "missing_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-prism.erase_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-prism.erase_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "permission_denial": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-prism.erase_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-prism.erase_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "dependency_absent": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-prism.erase_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-prism.erase_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "output_contract": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-prism.erase_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-prism.erase_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "nl_retrieval_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-prism.erase_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-prism.erase_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "original_host_e2e_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-prism.erase_record]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-prism.erase_record]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        }
+      },
+      "actual_model_selection": {
+        "status": "not_tested",
+        "reason": "The transport audit performs no resident-model inference."
+      }
+    },
+    {
+      "original_name": "prism.defer_read",
+      "owner_classification": "read_only",
+      "source_contract": {
+        "name": "prism.defer_read",
+        "description": "Read the completion state of the isolated deferred prism observation.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "channel": {
+              "type": "string",
+              "enum": [
+                "primary"
+              ]
+            }
+          },
+          "required": [
+            "channel"
+          ],
+          "additionalProperties": false
+        },
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "channel": {
+              "type": "string"
+            },
+            "complete": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "channel",
+            "complete"
+          ],
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true
+        },
+        "_meta": {
+          "campaign": 2,
+          "source": "owned_local_sdk_fixture"
+        }
+      },
+      "actual_discovered_definition_hashes": [
+        "99ded2291ecc68c12bcf2ba06955cf8dec33fa4c7c0beb3985847aab827a78ff"
+      ],
+      "dimensions": {
+        "valid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-prism.defer_read]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-prism.defer_read]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "invalid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-prism.defer_read]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-prism.defer_read]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "missing_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-prism.defer_read]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-prism.defer_read]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "permission_denial": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-prism.defer_read]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-prism.defer_read]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "dependency_absent": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-prism.defer_read]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-prism.defer_read]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "output_contract": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-prism.defer_read]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-prism.defer_read]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "nl_retrieval_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-prism.defer_read]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-prism.defer_read]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "original_host_e2e_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-prism.defer_read]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-prism.defer_read]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        }
+      },
+      "actual_model_selection": {
+        "status": "not_tested",
+        "reason": "The transport audit performs no resident-model inference."
+      }
+    },
+    {
+      "original_name": "quartz.inspect_flux_band",
+      "owner_classification": "read_only",
+      "source_contract": {
+        "name": "quartz.inspect_flux_band",
+        "description": "Inspect the quartz flux band for a named calibration on the local bench instrument.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "calibration": {
+              "type": "string",
+              "enum": [
+                "AX-17",
+                "BQ-04"
+              ]
+            }
+          },
+          "required": [
+            "calibration"
+          ],
+          "additionalProperties": false
+        },
+        "outputSchema": {
+          "type": "object",
+          "properties": {
+            "calibration": {
+              "type": "string"
+            },
+            "band": {
+              "type": "string"
+            },
+            "intensity": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "calibration",
+            "band",
+            "intensity"
+          ],
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true
+        },
+        "_meta": {
+          "campaign": 2,
+          "source": "owned_local_sdk_fixture"
+        }
+      },
+      "actual_discovered_definition_hashes": [
+        "328550a0f92cdb217f988a5d94e5ede15b8a08ba3b9061a50dcf3985d41ed21f",
+        "77d44a6eaaff2a37d99c0e1bd0af2958d19cedf4bf3d42d959a1437b0880d4cb",
+        "be01334525b19c2fccd6e004aebf8baf09ddca13e405ea9759385e5065951f1b",
+        "c352b57659be8d545128c5c908da4ebd73a68114fbaa017e76b5843e2cd7687c"
+      ],
+      "dimensions": {
+        "valid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[stdio-quartz.inspect_flux_band]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_valid_original_registry_call_and_structured_output[streamable_http-quartz.inspect_flux_band]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "invalid_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[stdio-quartz.inspect_flux_band]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_arguments_never_reach_sdk[streamable_http-quartz.inspect_flux_band]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "missing_arguments": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[stdio-quartz.inspect_flux_band]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_required_arguments_never_reach_sdk[streamable_http-quartz.inspect_flux_band]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "permission_denial": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[stdio-quartz.inspect_flux_band]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_permission_profile_and_confirmation[streamable_http-quartz.inspect_flux_band]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "dependency_absent": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[stdio-quartz.inspect_flux_band]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_missing_connection_withdraws_live_and_cached_execution[streamable_http-quartz.inspect_flux_band]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "output_contract": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[stdio-quartz.inspect_flux_band]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_invalid_advertised_output_never_reports_success[streamable_http-quartz.inspect_flux_band]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "nl_retrieval_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[stdio-quartz.inspect_flux_band]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_natural_language_original_menu_preserves_policy[streamable_http-quartz.inspect_flux_band]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        },
+        "original_host_e2e_policy": {
+          "checks": [
+            {
+              "transport": "stdio",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[stdio-quartz.inspect_flux_band]",
+              "status": "pass"
+            },
+            {
+              "transport": "streamable_http",
+              "nodeid": "tests/integration/test_campaign2_mcp_matrix.py::test_original_host_end_to_end_allowed_reads_and_denied_mutations[streamable_http-quartz.inspect_flux_band]",
+              "status": "pass"
+            }
+          ],
+          "status": "pass"
+        }
+      },
+      "actual_model_selection": {
+        "status": "blocked",
+        "actual_model_http_requests": 0,
+        "reason": "Original model inference admission or dependency refused the request.",
+        "error": {
+          "type": "ModelSelectionError",
+          "message": "No available model satisfies the measured context, capability, resource and privacy requirements."
+        },
+        "scope": "Original guarded model-selection attempt; separate registry call is not model selection."
+      }
+    }
+  ],
+  "source_unchanged": true,
+  "model_result_caution": "Metadata retrieval passes are not model reasoning. Guarded unknown-tool model selection was blocked; no model-selection pass is inferred.",
+  "live_external_provider_result": "not_tested"
+}

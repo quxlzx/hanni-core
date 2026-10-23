@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "state": "PRIMARY_THRESHOLDS_MET_MINI_INTERACTION_NOT_MEASURED",
+  "primary_review_sha256": "5d697fc4b56f7b97fd8d4b0ec402e79163aa2cad809af0cc84f2db18a14fb070",
+  "mini_review_sha256": "bde6dc8dc31e18cc57fdfb634aa4102aa412e1f4d8f89c294661c3e8f042ba11",
+  "primary_routes": 19,
+  "mean_primary_weighted_score": 8.7497,
+  "minimum_primary_weighted_score": 8.6925,
+  "mini_measured_presentation_score": 8.7222,
+  "mini_weighted_complete_score": null,
+  "minimum_typography": 8.65,
+  "template_max": 1.2,
+  "complete_visual_acceptance": null,
+  "final_frozen_native_acceptance": false,
+  "historical_scores_reused": false,
+  "mini_review": "NATIVE_VISUAL_MINI_REVIEW_CYCLE5.json",
+  "mini_restore_measured": true,
+  "mini_keyboard_focus_control_verified": false,
+  "native_foreground_verified": false
+}

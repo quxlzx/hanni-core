@@ -1,0 +1,76 @@
+{
+  "at": "2026-10-10T13:09:47.985471+00:00",
+  "cycle": "held-candidate-before-ModelLab-presentation-review",
+  "route": "models",
+  "evidence_class": "CONTROLLED",
+  "source_receipt": {
+    "path": "data/campaign8-native/cycle6-final-surface-pairs/RESULTS.json",
+    "sha256": "18b6400c4bb1d1aac622eca0cd4218d0ab2eef866b2283720106e7e6621607be",
+    "assets": {
+      "src\\hanni\\dashboard\\static\\app.js": "34aab787b10ae01898df2813a3a24f52417d801d36ac8e0daaf5a7a13d0b90f0",
+      "src\\hanni\\dashboard\\static\\style.css": "e372ca41adaf41586863ea391446e892704c46725b71cb3cab539eed9a245e81"
+    }
+  },
+  "captures": [
+    {
+      "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/models-1366x860.png",
+      "sha256": "dc29667b07d48af9274c3a44c2caaadfe99b823887b1611f28f22a8b17e66a50",
+      "independently_viewed": true,
+      "physical_window_size": [
+        1366,
+        860
+      ],
+      "windows_dpi": 120
+    },
+    {
+      "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/models-900x650.png",
+      "sha256": "5fce15034a75ac387fb470b1c3b56af32523991bcf35d0a4a59edabf1d4cea88",
+      "independently_viewed": true,
+      "physical_window_size": [
+        900,
+        650
+      ],
+      "windows_dpi": 120
+    }
+  ],
+  "dimensions": {
+    "typography": 8.6,
+    "hierarchy": 8.4,
+    "spacing": 8.5,
+    "density": 8.3,
+    "truthful_states": 9.0,
+    "windows_interaction": 8.8,
+    "finishing": 8.5
+  },
+  "result": {
+    "score": 8.575,
+    "template_score": 1.8,
+    "typography_score": 8.6,
+    "eligible": true,
+    "critical_defects": [],
+    "accepted": false,
+    "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+  },
+  "functional_acceptance": false,
+  "functional_scope": "Original unavailable endpoint inventory/metadata and native navigation; no live model generation or benchmark execution pass",
+  "findings": {
+    "typography": "Segoe UI and larger metadata improve table/field reading to8.6. Two-line filename/configured-context wrapping is readable rather than clipped.",
+    "alignment": "The inner ModelLab left inset differs from neighboring native screens and adds another visible alignment line.",
+    "spacing": "The overview has larger inner padding and a long gap/stack between tabs, summary, table and detail.",
+    "information_density": "Four summary counts, one selectable overview row and the same endpoint title in a boxed detail pane compete for initial viewport space; compact view reaches only the overview before scrolling.",
+    "visual_hierarchy": "Overview selection and selected endpoint inspection are both strongly boxed and titled; the transition needs clearer secondary emphasis rather than removing provenance.",
+    "tables": "Six-column original inventory remains legible at both physical sizes, including Installed/Loaded/Available/Verified context distinctions.",
+    "graphs": "No benchmark graph is populated in this fixture; no data/chart outcome is inferred.",
+    "navigation": "Original visible navigation reaches models; five local tabs are visible. Actual benchmark execution remains blocked by unavailable endpoint.",
+    "empty_states": "Zero recorded runs and no available endpoints are shown without invented model quality.",
+    "error_states": "Unknown loaded identity and unverified context stay distinct from configured context.",
+    "dialogs": "No ModelLab dialog screenshot is in these two pairs; dialog quality is not claimed from absent frames.",
+    "text_clipping": "No unintended root horizontal overflow observed; wrapped text is reachable by the original content scroll.",
+    "keyboard_focus": "Shared native focus/navigation evidence is available; complete ModelLab tab keyboard semantics are not inferred from styling.",
+    "accessibility": "Readable controls and distinct status wording; full all-control AX coverage remains separately measured.",
+    "consistent_design_language": "Dark rows/borders are restrained, but additional inner indentation and the repeated endpoint panel weaken consistency with other route layouts."
+  },
+  "development_recommendation": "Use the common content inset and a clearly secondary flat selected-endpoint section or disclosure. Keep every current field, table selection and configured-versus-observed context/identity distinction; do not replace errors with friendly fabricated states.",
+  "private_final_attempts": 0,
+  "grading_inflation": false
+}

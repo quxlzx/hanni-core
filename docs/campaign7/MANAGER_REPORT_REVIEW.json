@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-10-10T12:08:33.255940+00:00",
+  "accepted": true,
+  "scope": "Independent document and existing evidence readback; no workflow, device, model, test or holdout re-execution",
+  "held_report": {
+    "path": "docs/campaign7/REPORT.md",
+    "sha256": "70b58a80803b012e041e7d1246dac0d6ab2e3e1f664b17a5365864929834dad5"
+  },
+  "held_metrics": {
+    "path": "docs/campaign7/METRICS.json",
+    "sha256": "fe68addd7ebc53faddd2cf0b73237f2d5a7c9fb0372a62beadc1e342ba28b3c7"
+  },
+  "manager_evidence": {
+    "path": "docs/campaign7/MANAGER_EVIDENCE.json",
+    "sha256": "133e3d6d638f12265da9a44363fefee60f73abe72db8477d03dbd9e047a708ea"
+  },
+  "original_final_junit": {
+    "path": "data/campaign7-manager/final-integration-cycle2.xml",
+    "sha256": "dfc4da2e613af4ef4b0a86d9dfb034956e1bccb9f4931a79003b760edb7398e5"
+  },
+  "independent_final_publication": {
+    "path": "docs/campaign7/FINAL_VERIFICATION.json",
+    "sha256": "8f7e2e98be94bb1606743ef28e23d89a3eeeccb60cfafcc84f9da462f67a6cb7"
+  },
+  "verified_report_links": 7,
+  "material_report_corrections_required": [],
+  "junit_accounting": {
+    "accounted_checks": 362,
+    "passed": 361,
+    "strict_failures": 1,
+    "listed_nodes": 341,
+    "distinct_listed_ids": 341,
+    "listed_passed": 340,
+    "duplicate_listed_ids": 0,
+    "additional_passed_accounting_entries_without_nodes": 21
+  },
+  "independent_document_correction": "Withdrawn earlier duplicate-ID interpretation after original XML parsing; grades and outcome counts unchanged",
+  "acceptance": "partial; software repairs and controlled contracts supported, real acoustic and HANNI vision measurements blocked or unavailable",
+  "retained_final": {
+    "cases": 60,
+    "passed": 53,
+    "strict_failures": 7,
+    "harness_errors": 0,
+    "retries": 0,
+    "grade_promotions": 0
+  },
+  "actual_perception_metrics": "Unmeasured/null; synthetic WAV integrity, controlled decoder replies and shipped UI rendering are not physical or model accuracy",
+  "source_or_oracle_edits": false,
+  "private_answer_publication": false
+}

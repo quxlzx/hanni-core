@@ -1,0 +1,3271 @@
+{
+  "development_corpus_sha256": "fa167f0a69b059c3ff6320a6d813f6eb8d6f6754447cd7648a5ef54862285db5",
+  "supplement_corpus_sha256": "b4373d853007345908bc3786588ea3b1e60a6eaaf537c3856bcab5660ef298ff",
+  "transition_fault_corpus_sha256": "987c1315b59c2d60f1817b836557cbb5494bd6d019f54fd3ad2b582c7de5fe48",
+  "explicit_goal_corpus_sha256": "206b3a15c9c4c02449c4919bb9687dbdc9f0a541d8150a0d08e5ccda8cf284ab",
+  "explicit_goal_development_supplement": {
+    "cases": 12,
+    "passed": 12,
+    "harness_errors": 0,
+    "scopes": {
+      "native_original_scheduler": 12
+    },
+    "status_counts": {
+      "completed": 6,
+      "blocked": 3,
+      "partially_completed": 3
+    },
+    "semantic_goal_plan_quality": "NOT_MEASURED_CONTROLLED_CLIENT_CONTRACT_TESTS",
+    "completion": {
+      "eligible": 6,
+      "whole_case_pass": 6,
+      "status_pass": 6,
+      "workflow_observed_duration_ms": {
+        "n": 6,
+        "p50": 242.00000002747402,
+        "p95": 280.9999999590218
+      }
+    },
+    "recovery": {
+      "eligible": 0,
+      "whole_case_pass": 0,
+      "status_pass": 0,
+      "workflow_observed_duration_ms": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      }
+    },
+    "cancel": {
+      "eligible": 0,
+      "whole_case_pass": 0,
+      "status_pass": 0,
+      "workflow_observed_duration_ms": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      }
+    },
+    "partial": {
+      "eligible": 3,
+      "whole_case_pass": 3,
+      "status_pass": 3,
+      "workflow_observed_duration_ms": {
+        "n": 3,
+        "p50": 187.00000003445894,
+        "p95": 204.00000002700835
+      }
+    },
+    "duration_ms": {
+      "n": 12,
+      "p50": 258.00000003073364,
+      "p95": 359.99999998603016,
+      "scope": "whole isolated case including setup/cleanup and controlled faults"
+    },
+    "workflow_observed_duration_ms": {
+      "n": 12,
+      "p50": 203.50000000325963,
+      "p95": 280.9999999590218,
+      "scope": "original scheduler submit through observed stopping outcome; excludes setup and cleanup",
+      "nonzero_clock_offsets": 0
+    },
+    "write_effects": {
+      "entries": 1,
+      "actual_effects": 1,
+      "unauthorized_entries": 0,
+      "unauthorized_effects": 0
+    },
+    "native_transition_coverage": [
+      {
+        "source": "awaiting_plan_approval",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_plan_approval",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_plan_approval",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_plan_approval",
+        "target": "planning",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_plan_approval",
+        "target": "ready",
+        "cases": [
+          "WFEX-04-01",
+          "WFEX-05-03",
+          "WFEX-05-05",
+          "WFEX-06-01",
+          "WFEX-06-02",
+          "WFEX-06-03",
+          "WFEX-06-04",
+          "WFEX-06-05",
+          "WFEX-06-06",
+          "WFEX-11-02",
+          "WFEX-11-03",
+          "WFEX-20-05"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "ready",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "running",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "awaiting_plan_approval",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "planning",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "ready",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "awaiting_plan_approval",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "planning",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "ready",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "running",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "awaiting_plan_approval",
+        "cases": [
+          "WFEX-04-01",
+          "WFEX-05-03",
+          "WFEX-05-05",
+          "WFEX-06-01",
+          "WFEX-06-02",
+          "WFEX-06-03",
+          "WFEX-06-04",
+          "WFEX-06-05",
+          "WFEX-06-06",
+          "WFEX-11-02",
+          "WFEX-11-03",
+          "WFEX-20-05"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "awaiting_step_approval",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "running",
+        "cases": [
+          "WFEX-04-01",
+          "WFEX-05-03",
+          "WFEX-05-05",
+          "WFEX-06-01",
+          "WFEX-06-02",
+          "WFEX-06-03",
+          "WFEX-06-04",
+          "WFEX-06-05",
+          "WFEX-06-06",
+          "WFEX-11-02",
+          "WFEX-11-03",
+          "WFEX-20-05"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "recovering",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "recovering",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "recovering",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "recovering",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "running",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "awaiting_step_approval",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "blocked",
+        "cases": [
+          "WFEX-05-05",
+          "WFEX-06-06",
+          "WFEX-11-03"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "completed",
+        "cases": [
+          "WFEX-04-01",
+          "WFEX-05-03",
+          "WFEX-06-01",
+          "WFEX-06-02",
+          "WFEX-06-03",
+          "WFEX-06-04"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "partially_completed",
+        "cases": [
+          "WFEX-06-05",
+          "WFEX-11-02",
+          "WFEX-20-05"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "recovering",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "retrying",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "verifying",
+        "cases": [
+          "WFEX-04-01",
+          "WFEX-05-03",
+          "WFEX-05-05",
+          "WFEX-06-01",
+          "WFEX-06-02",
+          "WFEX-06-03",
+          "WFEX-06-04",
+          "WFEX-06-05",
+          "WFEX-06-06",
+          "WFEX-11-02",
+          "WFEX-11-03",
+          "WFEX-20-05"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "awaiting_plan_approval",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "planning",
+        "cases": [
+          "WFEX-04-01",
+          "WFEX-05-03",
+          "WFEX-05-05",
+          "WFEX-06-01",
+          "WFEX-06-02",
+          "WFEX-06-03",
+          "WFEX-06-04",
+          "WFEX-06-05",
+          "WFEX-06-06",
+          "WFEX-11-02",
+          "WFEX-11-03",
+          "WFEX-20-05"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "completed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "partially_completed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "retrying",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "running",
+        "cases": [
+          "WFEX-04-01",
+          "WFEX-05-03",
+          "WFEX-05-05",
+          "WFEX-06-01",
+          "WFEX-06-02",
+          "WFEX-06-03",
+          "WFEX-06-04",
+          "WFEX-06-05",
+          "WFEX-06-06",
+          "WFEX-11-02",
+          "WFEX-11-03",
+          "WFEX-20-05"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      }
+    ],
+    "checkpoint_sequence_correctness": {
+      "eligible_original_scheduler_cases": 12,
+      "strict_sequence_pass": 12,
+      "scope": "persisted sequence monotonicity, not full restart proof"
+    },
+    "by_category": {
+      "Dependency ordering": {
+        "cases": 1,
+        "passed": 1
+      },
+      "Partial completion": {
+        "cases": 2,
+        "passed": 2
+      },
+      "Safe parallel execution": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Sequential execution": {
+        "cases": 2,
+        "passed": 2
+      },
+      "Workflow completion reporting": {
+        "cases": 1,
+        "passed": 1
+      }
+    }
+  },
+  "original_commit": "0aede83",
+  "baseline": {
+    "cases": 120,
+    "passed": 114,
+    "harness_errors": 0,
+    "scopes": {
+      "native_original_scheduler": 102,
+      "direct_original_store": 18
+    },
+    "status_counts": {
+      "completed": 33,
+      "blocked": 43,
+      "partially_completed": 15,
+      "awaiting_step_approval": 7,
+      "paused": 8,
+      "cancelled": 7,
+      "ready": 6,
+      "running": 1
+    },
+    "semantic_goal_plan_quality": "NOT_MEASURED_CONTROLLED_CLIENT_CONTRACT_TESTS",
+    "completion": {
+      "eligible": 34,
+      "whole_case_pass": 32,
+      "status_pass": 32,
+      "workflow_observed_duration_ms": {
+        "n": 34,
+        "p50": 132.50000000698492,
+        "p95": 218.99999992456287
+      }
+    },
+    "recovery": {
+      "eligible": 10,
+      "whole_case_pass": 7,
+      "status_pass": 7,
+      "workflow_observed_duration_ms": {
+        "n": 6,
+        "p50": 125.0,
+        "p95": 140.99999994505197
+      }
+    },
+    "cancel": {
+      "eligible": 7,
+      "whole_case_pass": 7,
+      "status_pass": 7,
+      "workflow_observed_duration_ms": {
+        "n": 7,
+        "p50": 109.00000005494803,
+        "p95": 125.0
+      }
+    },
+    "partial": {
+      "eligible": 15,
+      "whole_case_pass": 15,
+      "status_pass": 15,
+      "workflow_observed_duration_ms": {
+        "n": 15,
+        "p50": 140.99999994505197,
+        "p95": 187.99999996554106
+      }
+    },
+    "duration_ms": {
+      "n": 120,
+      "p50": 156.00000007543713,
+      "p95": 233.9999999385327,
+      "scope": "whole isolated case including setup/cleanup and controlled faults"
+    },
+    "workflow_observed_duration_ms": {
+      "n": 102,
+      "p50": 125.0,
+      "p95": 187.99999996554106,
+      "scope": "original scheduler submit through observed stopping outcome; excludes setup and cleanup",
+      "nonzero_clock_offsets": 0
+    },
+    "write_effects": {
+      "entries": 19,
+      "actual_effects": 16,
+      "unauthorized_entries": 0,
+      "unauthorized_effects": 0
+    },
+    "native_transition_coverage": [
+      {
+        "source": "awaiting_plan_approval",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_plan_approval",
+        "target": "cancelled",
+        "cases": [
+          "WFDEV-13-04"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_plan_approval",
+        "target": "paused",
+        "cases": [
+          "WFDEV-14-04"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_plan_approval",
+        "target": "planning",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_plan_approval",
+        "target": "ready",
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-03",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-01",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-03",
+          "WFDEV-05-04",
+          "WFDEV-05-05",
+          "WFDEV-05-06",
+          "WFDEV-06-01",
+          "WFDEV-06-02",
+          "WFDEV-06-03",
+          "WFDEV-06-04",
+          "WFDEV-06-05",
+          "WFDEV-06-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-05",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-02",
+          "WFDEV-11-03",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-01",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-05",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-01",
+          "WFDEV-16-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-18-04",
+          "WFDEV-18-05",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-05",
+          "WFDEV-20-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "blocked",
+        "cases": [
+          "WFDEV-09-01"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "cancelled",
+        "cases": [
+          "WFDEV-09-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "ready",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "running",
+        "cases": [
+          "WFDEV-08-02"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "awaiting_plan_approval",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "planning",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "ready",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "awaiting_plan_approval",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "planning",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "ready",
+        "cases": [
+          "WFDEV-14-01"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "running",
+        "cases": [
+          "WFDEV-14-02"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "awaiting_plan_approval",
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-03",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-01",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-03",
+          "WFDEV-05-04",
+          "WFDEV-05-05",
+          "WFDEV-05-06",
+          "WFDEV-06-01",
+          "WFDEV-06-02",
+          "WFDEV-06-03",
+          "WFDEV-06-04",
+          "WFDEV-06-05",
+          "WFDEV-06-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-05",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-02",
+          "WFDEV-11-03",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-01",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-04",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-04",
+          "WFDEV-14-05",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-01",
+          "WFDEV-16-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-18-04",
+          "WFDEV-18-05",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-05",
+          "WFDEV-20-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "blocked",
+        "cases": [
+          "WFDEV-01-04",
+          "WFDEV-01-06",
+          "WFDEV-02-02",
+          "WFDEV-02-03",
+          "WFDEV-02-04",
+          "WFDEV-02-05",
+          "WFDEV-02-06",
+          "WFDEV-03-03",
+          "WFDEV-03-04",
+          "WFDEV-03-05",
+          "WFDEV-03-06",
+          "WFDEV-04-02",
+          "WFDEV-04-03",
+          "WFDEV-04-04",
+          "WFDEV-04-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "awaiting_step_approval",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "cancelled",
+        "cases": [
+          "WFDEV-13-01"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "paused",
+        "cases": [
+          "WFDEV-09-05",
+          "WFDEV-14-01",
+          "WFDEV-14-05"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "running",
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-03",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-01",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-03",
+          "WFDEV-05-04",
+          "WFDEV-05-05",
+          "WFDEV-05-06",
+          "WFDEV-06-01",
+          "WFDEV-06-02",
+          "WFDEV-06-03",
+          "WFDEV-06-04",
+          "WFDEV-06-05",
+          "WFDEV-06-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-02",
+          "WFDEV-11-03",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-18-04",
+          "WFDEV-18-05",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-05",
+          "WFDEV-20-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "recovering",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "recovering",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "recovering",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "recovering",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "running",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "awaiting_step_approval",
+        "cases": [
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "blocked",
+        "cases": [
+          "WFDEV-03-02",
+          "WFDEV-04-05",
+          "WFDEV-05-05",
+          "WFDEV-06-06",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-11-03",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-19-04",
+          "WFDEV-20-03"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "completed",
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-03",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-04-01",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-03",
+          "WFDEV-05-06",
+          "WFDEV-06-01",
+          "WFDEV-06-02",
+          "WFDEV-06-03",
+          "WFDEV-06-04",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-02",
+          "WFDEV-08-06",
+          "WFDEV-10-01",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-20-01"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "partially_completed",
+        "cases": [
+          "WFDEV-05-04",
+          "WFDEV-06-05",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-02",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-19-05",
+          "WFDEV-20-02",
+          "WFDEV-20-05",
+          "WFDEV-20-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "recovering",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "retrying",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "verifying",
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-03",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-01",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-03",
+          "WFDEV-05-04",
+          "WFDEV-05-05",
+          "WFDEV-05-06",
+          "WFDEV-06-01",
+          "WFDEV-06-02",
+          "WFDEV-06-03",
+          "WFDEV-06-04",
+          "WFDEV-06-05",
+          "WFDEV-06-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-02",
+          "WFDEV-11-03",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-05",
+          "WFDEV-20-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "awaiting_plan_approval",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "planning",
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-03",
+          "WFDEV-01-04",
+          "WFDEV-01-05",
+          "WFDEV-01-06",
+          "WFDEV-02-01",
+          "WFDEV-02-02",
+          "WFDEV-02-03",
+          "WFDEV-02-04",
+          "WFDEV-02-05",
+          "WFDEV-02-06",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-03-03",
+          "WFDEV-03-04",
+          "WFDEV-03-05",
+          "WFDEV-03-06",
+          "WFDEV-04-01",
+          "WFDEV-04-02",
+          "WFDEV-04-03",
+          "WFDEV-04-04",
+          "WFDEV-04-05",
+          "WFDEV-04-06",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-03",
+          "WFDEV-05-04",
+          "WFDEV-05-05",
+          "WFDEV-05-06",
+          "WFDEV-06-01",
+          "WFDEV-06-02",
+          "WFDEV-06-03",
+          "WFDEV-06-04",
+          "WFDEV-06-05",
+          "WFDEV-06-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-05",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-02",
+          "WFDEV-11-03",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-01",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-04",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-04",
+          "WFDEV-14-05",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-01",
+          "WFDEV-16-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-18-04",
+          "WFDEV-18-05",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-05",
+          "WFDEV-20-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "cancelled",
+        "cases": [
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-16-05",
+          "WFDEV-20-04"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "completed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "partially_completed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "paused",
+        "cases": [
+          "WFDEV-14-02",
+          "WFDEV-14-03"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "retrying",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "running",
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-03",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-01",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-03",
+          "WFDEV-05-04",
+          "WFDEV-05-05",
+          "WFDEV-05-06",
+          "WFDEV-06-01",
+          "WFDEV-06-02",
+          "WFDEV-06-03",
+          "WFDEV-06-04",
+          "WFDEV-06-05",
+          "WFDEV-06-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-02",
+          "WFDEV-11-03",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-05",
+          "WFDEV-20-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      }
+    ],
+    "checkpoint_sequence_correctness": {
+      "eligible_original_scheduler_cases": 102,
+      "strict_sequence_pass": 102,
+      "scope": "persisted sequence monotonicity, not full restart proof"
+    },
+    "by_category": {
+      "Ambiguous prior write outcomes": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Approval rejection": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Backend interruption": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Bounded retries": {
+        "cases": 6,
+        "passed": 4
+      },
+      "Capability availability": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Checkpoint persistence": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Dependency ordering": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Goal understanding": {
+        "cases": 6,
+        "passed": 5
+      },
+      "Multi-step tool usage": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Partial completion": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Pause and resume": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Permission requests": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Plan generation": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Recovery after restart": {
+        "cases": 6,
+        "passed": 4
+      },
+      "Safe parallel execution": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Sequential execution": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Step verification": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Task cancellation": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Worker disconnection": {
+        "cases": 6,
+        "passed": 5
+      },
+      "Workflow completion reporting": {
+        "cases": 6,
+        "passed": 6
+      }
+    }
+  },
+  "candidate": {
+    "cases": 120,
+    "passed": 103,
+    "harness_errors": 0,
+    "scopes": {
+      "native_original_scheduler": 102,
+      "direct_original_store": 18
+    },
+    "status_counts": {
+      "completed": 26,
+      "blocked": 53,
+      "partially_completed": 12,
+      "awaiting_step_approval": 7,
+      "paused": 8,
+      "cancelled": 7,
+      "ready": 6,
+      "running": 1
+    },
+    "semantic_goal_plan_quality": "NOT_MEASURED_CONTROLLED_CLIENT_CONTRACT_TESTS",
+    "completion": {
+      "eligible": 34,
+      "whole_case_pass": 26,
+      "status_pass": 26,
+      "workflow_observed_duration_ms": {
+        "n": 34,
+        "p50": 155.9999999590218,
+        "p95": 297.0000000204891
+      }
+    },
+    "recovery": {
+      "eligible": 10,
+      "whole_case_pass": 7,
+      "status_pass": 7,
+      "workflow_observed_duration_ms": {
+        "n": 6,
+        "p50": 140.50000003771856,
+        "p95": 156.00000007543713
+      }
+    },
+    "cancel": {
+      "eligible": 7,
+      "whole_case_pass": 7,
+      "status_pass": 7,
+      "workflow_observed_duration_ms": {
+        "n": 7,
+        "p50": 125.0,
+        "p95": 155.9999999590218
+      }
+    },
+    "partial": {
+      "eligible": 15,
+      "whole_case_pass": 12,
+      "status_pass": 12,
+      "workflow_observed_duration_ms": {
+        "n": 15,
+        "p50": 141.0000000614673,
+        "p95": 250.0
+      }
+    },
+    "duration_ms": {
+      "n": 120,
+      "p50": 172.0000000204891,
+      "p95": 297.0000000204891,
+      "scope": "whole isolated case including setup/cleanup and controlled faults"
+    },
+    "workflow_observed_duration_ms": {
+      "n": 102,
+      "p50": 140.00000001396984,
+      "p95": 234.00000005494803,
+      "scope": "original scheduler submit through observed stopping outcome; excludes setup and cleanup",
+      "nonzero_clock_offsets": 0
+    },
+    "write_effects": {
+      "entries": 18,
+      "actual_effects": 15,
+      "unauthorized_entries": 0,
+      "unauthorized_effects": 0
+    },
+    "native_transition_coverage": [
+      {
+        "source": "awaiting_plan_approval",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_plan_approval",
+        "target": "cancelled",
+        "cases": [
+          "WFDEV-13-04"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_plan_approval",
+        "target": "paused",
+        "cases": [
+          "WFDEV-14-04"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_plan_approval",
+        "target": "planning",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_plan_approval",
+        "target": "ready",
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-04",
+          "WFDEV-05-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-05",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-01",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-05",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-01",
+          "WFDEV-16-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-18-04",
+          "WFDEV-18-05",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "blocked",
+        "cases": [
+          "WFDEV-09-01"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "cancelled",
+        "cases": [
+          "WFDEV-09-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "ready",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "awaiting_step_approval",
+        "target": "running",
+        "cases": [
+          "WFDEV-08-02"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "awaiting_plan_approval",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "planning",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "blocked",
+        "target": "ready",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "awaiting_plan_approval",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "planning",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "ready",
+        "cases": [
+          "WFDEV-14-01"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "paused",
+        "target": "running",
+        "cases": [
+          "WFDEV-14-02"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "awaiting_plan_approval",
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-04",
+          "WFDEV-05-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-05",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-01",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-04",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-04",
+          "WFDEV-14-05",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-01",
+          "WFDEV-16-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-18-04",
+          "WFDEV-18-05",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "blocked",
+        "cases": [
+          "WFDEV-01-03",
+          "WFDEV-01-04",
+          "WFDEV-01-06",
+          "WFDEV-02-02",
+          "WFDEV-02-03",
+          "WFDEV-02-04",
+          "WFDEV-02-05",
+          "WFDEV-02-06",
+          "WFDEV-03-03",
+          "WFDEV-03-04",
+          "WFDEV-03-05",
+          "WFDEV-03-06",
+          "WFDEV-04-01",
+          "WFDEV-04-02",
+          "WFDEV-04-03",
+          "WFDEV-04-04",
+          "WFDEV-04-06",
+          "WFDEV-05-03",
+          "WFDEV-05-05",
+          "WFDEV-06-01",
+          "WFDEV-06-02",
+          "WFDEV-06-03",
+          "WFDEV-06-04",
+          "WFDEV-06-05",
+          "WFDEV-06-06",
+          "WFDEV-11-02",
+          "WFDEV-11-03",
+          "WFDEV-20-05"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "planning",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "awaiting_step_approval",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "cancelled",
+        "cases": [
+          "WFDEV-13-01"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "paused",
+        "cases": [
+          "WFDEV-09-05",
+          "WFDEV-14-01",
+          "WFDEV-14-05"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "ready",
+        "target": "running",
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-04",
+          "WFDEV-05-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-18-04",
+          "WFDEV-18-05",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "recovering",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "recovering",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "recovering",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "recovering",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "retrying",
+        "target": "running",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "awaiting_step_approval",
+        "cases": [
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "blocked",
+        "cases": [
+          "WFDEV-03-02",
+          "WFDEV-04-05",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-19-04",
+          "WFDEV-20-03"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "completed",
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-02",
+          "WFDEV-08-06",
+          "WFDEV-10-01",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-20-01"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "partially_completed",
+        "cases": [
+          "WFDEV-05-04",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-19-05",
+          "WFDEV-20-02",
+          "WFDEV-20-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "recovering",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "retrying",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "running",
+        "target": "verifying",
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-04",
+          "WFDEV-05-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "awaiting_plan_approval",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "cancelled",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "paused",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "submitted",
+        "target": "planning",
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-03",
+          "WFDEV-01-04",
+          "WFDEV-01-05",
+          "WFDEV-01-06",
+          "WFDEV-02-01",
+          "WFDEV-02-02",
+          "WFDEV-02-03",
+          "WFDEV-02-04",
+          "WFDEV-02-05",
+          "WFDEV-02-06",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-03-03",
+          "WFDEV-03-04",
+          "WFDEV-03-05",
+          "WFDEV-03-06",
+          "WFDEV-04-01",
+          "WFDEV-04-02",
+          "WFDEV-04-03",
+          "WFDEV-04-04",
+          "WFDEV-04-05",
+          "WFDEV-04-06",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-03",
+          "WFDEV-05-04",
+          "WFDEV-05-05",
+          "WFDEV-05-06",
+          "WFDEV-06-01",
+          "WFDEV-06-02",
+          "WFDEV-06-03",
+          "WFDEV-06-04",
+          "WFDEV-06-05",
+          "WFDEV-06-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-05",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-02",
+          "WFDEV-11-03",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-01",
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-13-04",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-03",
+          "WFDEV-14-04",
+          "WFDEV-14-05",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-01",
+          "WFDEV-16-02",
+          "WFDEV-16-05",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-18-04",
+          "WFDEV-18-05",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-04",
+          "WFDEV-20-05",
+          "WFDEV-20-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "blocked",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "cancelled",
+        "cases": [
+          "WFDEV-13-02",
+          "WFDEV-13-03",
+          "WFDEV-16-05",
+          "WFDEV-20-04"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "completed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "failed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "partially_completed",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "paused",
+        "cases": [
+          "WFDEV-14-02",
+          "WFDEV-14-03"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "retrying",
+        "cases": [],
+        "scope": "UNREACHED_NATIVE",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      },
+      {
+        "source": "verifying",
+        "target": "running",
+        "cases": [
+          "WFDEV-01-01",
+          "WFDEV-01-02",
+          "WFDEV-01-05",
+          "WFDEV-02-01",
+          "WFDEV-03-01",
+          "WFDEV-03-02",
+          "WFDEV-04-05",
+          "WFDEV-05-01",
+          "WFDEV-05-02",
+          "WFDEV-05-04",
+          "WFDEV-05-06",
+          "WFDEV-07-01",
+          "WFDEV-07-02",
+          "WFDEV-07-03",
+          "WFDEV-07-04",
+          "WFDEV-07-05",
+          "WFDEV-07-06",
+          "WFDEV-08-01",
+          "WFDEV-08-02",
+          "WFDEV-08-03",
+          "WFDEV-08-04",
+          "WFDEV-08-05",
+          "WFDEV-08-06",
+          "WFDEV-09-01",
+          "WFDEV-09-02",
+          "WFDEV-09-03",
+          "WFDEV-09-04",
+          "WFDEV-09-06",
+          "WFDEV-10-01",
+          "WFDEV-10-02",
+          "WFDEV-10-03",
+          "WFDEV-10-04",
+          "WFDEV-10-05",
+          "WFDEV-10-06",
+          "WFDEV-11-01",
+          "WFDEV-11-04",
+          "WFDEV-11-05",
+          "WFDEV-11-06",
+          "WFDEV-12-01",
+          "WFDEV-12-02",
+          "WFDEV-12-03",
+          "WFDEV-12-04",
+          "WFDEV-12-05",
+          "WFDEV-12-06",
+          "WFDEV-13-05",
+          "WFDEV-13-06",
+          "WFDEV-14-01",
+          "WFDEV-14-02",
+          "WFDEV-14-06",
+          "WFDEV-15-01",
+          "WFDEV-15-02",
+          "WFDEV-16-06",
+          "WFDEV-17-04",
+          "WFDEV-18-03",
+          "WFDEV-19-04",
+          "WFDEV-19-05",
+          "WFDEV-20-01",
+          "WFDEV-20-02",
+          "WFDEV-20-03",
+          "WFDEV-20-06"
+        ],
+        "scope": "observed_original_scheduler_checkpoint_edge",
+        "fault_boundary_coverage": "NOT_INFERRED_FROM_REACHABILITY"
+      }
+    ],
+    "checkpoint_sequence_correctness": {
+      "eligible_original_scheduler_cases": 102,
+      "strict_sequence_pass": 102,
+      "scope": "persisted sequence monotonicity, not full restart proof"
+    },
+    "by_category": {
+      "Ambiguous prior write outcomes": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Approval rejection": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Backend interruption": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Bounded retries": {
+        "cases": 6,
+        "passed": 4
+      },
+      "Capability availability": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Checkpoint persistence": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Dependency ordering": {
+        "cases": 6,
+        "passed": 5
+      },
+      "Goal understanding": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Multi-step tool usage": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Partial completion": {
+        "cases": 6,
+        "passed": 4
+      },
+      "Pause and resume": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Permission requests": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Plan generation": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Recovery after restart": {
+        "cases": 6,
+        "passed": 4
+      },
+      "Safe parallel execution": {
+        "cases": 6,
+        "passed": 0
+      },
+      "Sequential execution": {
+        "cases": 6,
+        "passed": 4
+      },
+      "Step verification": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Task cancellation": {
+        "cases": 6,
+        "passed": 6
+      },
+      "Worker disconnection": {
+        "cases": 6,
+        "passed": 5
+      },
+      "Workflow completion reporting": {
+        "cases": 6,
+        "passed": 5
+      }
+    }
+  },
+  "owned_sources": {
+    "src/hanni/workflows/store.py": "fe1f6cab1655c81e6039cb8cfbb94ae05f6e1e1abac1f2dce4a767735980c27d",
+    "src/hanni/workflows/verification.py": "02baa196250b26619e22aeac0d30ec5221beeaaa09f3d773eb8b4230bbeaae5f",
+    "src/hanni/workflows/references.py": "b487fe26d62455e41aa8986b205d278ea30f635cc44ef255d0be469da51cc262",
+    "src/hanni/workflows/transport_schema.py": "3f622279727b2efef2c477a37281388842271c06971876f4d6fa9735f7f7083d"
+  },
+  "private_holdout_access": false,
+  "semantic_model_quality": "Not measured by controlled clients; manager runs original guarded local-model probes.",
+  "candidate_original_oracle_nonpasses": [
+    {
+      "id": "WFDEV-04-01",
+      "status": "blocked",
+      "reason": "A literal read source differs from the original explicit owner source.",
+      "assertions": [
+        "final stopping state",
+        "verified_steps",
+        "dispatch order"
+      ]
+    },
+    {
+      "id": "WFDEV-05-03",
+      "status": "blocked",
+      "reason": "A literal read source differs from the original explicit owner source.",
+      "assertions": [
+        "final stopping state",
+        "verified_steps",
+        "dispatch order"
+      ]
+    },
+    {
+      "id": "WFDEV-05-05",
+      "status": "blocked",
+      "reason": "A literal read source differs from the original explicit owner source.",
+      "assertions": [
+        "invocations"
+      ]
+    },
+    {
+      "id": "WFDEV-06-01",
+      "status": "blocked",
+      "reason": "A literal read source differs from the original explicit owner source.",
+      "assertions": [
+        "final stopping state",
+        "verified_steps"
+      ]
+    },
+    {
+      "id": "WFDEV-06-02",
+      "status": "blocked",
+      "reason": "A literal read source differs from the original explicit owner source.",
+      "assertions": [
+        "final stopping state",
+        "verified_steps"
+      ]
+    },
+    {
+      "id": "WFDEV-06-03",
+      "status": "blocked",
+      "reason": "A literal read source differs from the original explicit owner source.",
+      "assertions": [
+        "final stopping state",
+        "dispatch order"
+      ]
+    },
+    {
+      "id": "WFDEV-06-04",
+      "status": "blocked",
+      "reason": "A literal read source differs from the original explicit owner source.",
+      "assertions": [
+        "final stopping state",
+        "verified_steps",
+        "actual artifact content"
+      ]
+    },
+    {
+      "id": "WFDEV-06-05",
+      "status": "blocked",
+      "reason": "A literal read source differs from the original explicit owner source.",
+      "assertions": [
+        "final stopping state",
+        "verified_steps",
+        "failed_steps"
+      ]
+    },
+    {
+      "id": "WFDEV-06-06",
+      "status": "blocked",
+      "reason": "A literal read source differs from the original explicit owner source.",
+      "assertions": [
+        "verified_steps",
+        "failed_steps"
+      ]
+    },
+    {
+      "id": "WFDEV-11-02",
+      "status": "blocked",
+      "reason": "A literal read source differs from the original explicit owner source.",
+      "assertions": [
+        "final stopping state",
+        "verified_steps",
+        "failed_steps"
+      ]
+    },
+    {
+      "id": "WFDEV-11-03",
+      "status": "blocked",
+      "reason": "A literal read source differs from the original explicit owner source.",
+      "assertions": [
+        "verified_steps",
+        "failed_steps"
+      ]
+    },
+    {
+      "id": "WFDEV-12-01",
+      "status": "blocked",
+      "reason": "A required step failed or is blocked; completion has not been verified.",
+      "assertions": [
+        "final stopping state",
+        "invocations",
+        "retry_checkpoints"
+      ]
+    },
+    {
+      "id": "WFDEV-12-02",
+      "status": "blocked",
+      "reason": "A required step failed or is blocked; completion has not been verified.",
+      "assertions": [
+        "invocations"
+      ]
+    },
+    {
+      "id": "WFDEV-16-02",
+      "status": "blocked",
+      "reason": "Runner stopped before recording a result.",
+      "assertions": [
+        "final stopping state"
+      ]
+    },
+    {
+      "id": "WFDEV-18-04",
+      "status": "blocked",
+      "reason": "Runner stopped before recording a result.",
+      "assertions": [
+        "final stopping state"
+      ]
+    },
+    {
+      "id": "WFDEV-18-05",
+      "status": "blocked",
+      "reason": "Runner stopped before recording a result.",
+      "assertions": [
+        "final stopping state",
+        "invocations"
+      ]
+    },
+    {
+      "id": "WFDEV-20-05",
+      "status": "blocked",
+      "reason": "A literal read source differs from the original explicit owner source.",
+      "assertions": [
+        "final stopping state",
+        "verified_steps"
+      ]
+    }
+  ]
+}

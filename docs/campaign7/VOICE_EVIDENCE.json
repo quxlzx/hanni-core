@@ -1,0 +1,2582 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-10T12:05:20.551782+00:00",
+  "scope": "Voice implementation and actual owned SAPI file synthesis. Controlled dependency leaves do not establish actual model/device correctness.",
+  "production_sources": {
+    "src/hanni/speech/microphone.py": "96d7359f9e6c92843e6ed34e7202ed6b69ffd7c8f5e4006c7f7a5d4e613e4cd2",
+    "src/hanni/speech/stt.py": "b8e107a5f5b92a0141e993d2bd0245d3cdd925eea35c672824445f8509bbc41c",
+    "src/hanni/speech/pipeline.py": "93fe0401c20257fe48a90556ddb341d8acee55751d8b3b8b638b788ca198e5dd",
+    "src/hanni/speech/live.py": "9290302f0d97a50de79ae3f3c571b416992193dee77e5b2cfd5b59bb1d03424a",
+    "src/hanni/dashboard/voice.py": "9fd233e68b612bd4e942ed92bf8263c18502fd21d235395f07e10668d9ebd563"
+  },
+  "engineering_sources": {
+    "scripts/campaign7_voice/__init__.py": "ddd4f8f245537fa59eaae3f05be698f02d327bfaf74d6975189221498020922a",
+    "scripts/campaign7_voice/corpus.py": "f0e5c0c7851ca39a5f9338269ab7b0c017fbd8b6d95278e46967a80f22c7cbac",
+    "scripts/campaign7_voice/controls.py": "fd0bfe359e174da1f35d0a598f9ccf402dd55460b22a7e37f665ed9cd4109534",
+    "scripts/campaign7_voice/evaluate.py": "2981673325265b9a5df72dc49c08b8ea5180c7d5172085e62ea1fe33e03acf25",
+    "tests/integration/test_campaign7_voice_boundaries.py": "6957ed98c2d6ec04119ad18a62d9692cdd9a15636c5ecce38cbd09bf2da8a7c4",
+    "tests/integration/test_campaign7_voice_scenarios.py": "7122e8e49ef03c911aa60f6ee61ee68d4409e2403ef40c8b7617799af804f7dd",
+    "tests/integration/test_campaign7_voice_retention.py": "329b559c2f3213b505688f0c835525ef73ddc83e2e2e6d69619e90d357f72820",
+    "tests/integration/test_campaign7_verification.py": "d402824ba7f9265d8debad60e708b361a70bac7f41f92e13724120cb19e4248b"
+  },
+  "original_source_archive": {
+    "manifest": "data/campaign7-voice/original-source/manifest.json",
+    "manifest_sha256": "aebe50c62854688410b9b19831b60f3910a489bafabc5db6fe4f3c3b75ebc432",
+    "zip": "data/campaign7-voice/original-source/source.zip",
+    "zip_sha256": "721a95719d2040bea2d3229cdb92380b7f1c31264d855ac3f334abeb24c41b41",
+    "original_scoped_files": 40
+  },
+  "corpus": {
+    "scope": "Actual Windows System.Speech synthesis to owned files, no acoustic playback or capture",
+    "samples": 100,
+    "reference_path": "evals/voice/campaign7-development/references.json",
+    "reference_sha256": "fda67a89bb2bae99eeb4738e0e086370f6f8d81e67de2aef33b96fb448244ecc",
+    "manifest_path": "evals/voice/campaign7-development/manifest.json",
+    "manifest_sha256": "136a7ff454fb8ed8e4e068e031341b71f8a3dfe9e47197a6b61a3a283d02446e",
+    "wav_bytes": 11716200,
+    "duration_seconds": 365.99375,
+    "min_seconds": 1.995,
+    "max_seconds": 6.025,
+    "category_counts": {
+      "direct_wake": 10,
+      "wake_position": 10,
+      "idle_background": 10,
+      "near_wake": 10,
+      "engaged_follow_up": 10,
+      "filler": 10,
+      "disengage": 10,
+      "passive_acknowledgement": 10,
+      "playback_interrupt": 10,
+      "playback_echo": 10
+    },
+    "condition_counts": {
+      "clean": 20,
+      "noise_24db": 20,
+      "noise_12db": 20,
+      "low_amplitude": 20,
+      "internal_pause": 20
+    },
+    "voice_counts": {
+      "Microsoft David Desktop": 50,
+      "Microsoft Zira Desktop": 50
+    },
+    "sample_rate": 16000,
+    "channels": 1,
+    "sample_width": 2,
+    "waveforms": [
+      {
+        "id": "c7-dev-direct_wake-01",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-direct_wake-01.wav",
+        "sha256": "dee705574c6dc8fc4f1ee4fdc6906773df0cfed3d6c725252a856ae4415ea8c4",
+        "bytes": 120364,
+        "condition": "clean",
+        "voice": "Microsoft David Desktop",
+        "seconds": 3.76,
+        "seed": 71000
+      },
+      {
+        "id": "c7-dev-direct_wake-02",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-direct_wake-02.wav",
+        "sha256": "9257cfab2aefc0340ba3340f1e3ce4635f32863c6dce0455df2df86287b9a1d1",
+        "bytes": 143564,
+        "condition": "noise_24db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 4.485,
+        "seed": 71001
+      },
+      {
+        "id": "c7-dev-direct_wake-03",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-direct_wake-03.wav",
+        "sha256": "b97913cde39151434bf8dca7a3364742b769a07e7e13c0db5e93d9acda32593e",
+        "bytes": 128744,
+        "condition": "noise_12db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.021875,
+        "seed": 71002
+      },
+      {
+        "id": "c7-dev-direct_wake-04",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-direct_wake-04.wav",
+        "sha256": "2bbf44df162527a019ceabd32a0929c740972ee15ef1ef508fa0bbf8074cc9a3",
+        "bytes": 113804,
+        "condition": "low_amplitude",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.555,
+        "seed": 71003
+      },
+      {
+        "id": "c7-dev-direct_wake-05",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-direct_wake-05.wav",
+        "sha256": "3a8656193666fd8f92b1ef7c7f6b3102f5e71ad7b8dfc907f729f7585e86f1dc",
+        "bytes": 181964,
+        "condition": "internal_pause",
+        "voice": "Microsoft David Desktop",
+        "seconds": 5.685,
+        "seed": 71004
+      },
+      {
+        "id": "c7-dev-direct_wake-06",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-direct_wake-06.wav",
+        "sha256": "c8a6b6acf003063ced1575dd41f17a2ca75bd5c7a8d3976f6faa581d755cb459",
+        "bytes": 141804,
+        "condition": "clean",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 4.43,
+        "seed": 71005
+      },
+      {
+        "id": "c7-dev-direct_wake-07",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-direct_wake-07.wav",
+        "sha256": "8e248cadbea775749422fd502a0bf02d022230a861e9eec1d40b2f8d458f018d",
+        "bytes": 136364,
+        "condition": "noise_24db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.26,
+        "seed": 71006
+      },
+      {
+        "id": "c7-dev-direct_wake-08",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-direct_wake-08.wav",
+        "sha256": "35f6835630e513f0a23910684d5f3f4c75e389c56522a4eeb2729ac9f29590a1",
+        "bytes": 122604,
+        "condition": "noise_12db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.83,
+        "seed": 71007
+      },
+      {
+        "id": "c7-dev-direct_wake-09",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-direct_wake-09.wav",
+        "sha256": "96fb5a487dfdbac08810c0a5d428606a78882d85724f1d1dd938b69aab696843",
+        "bytes": 150444,
+        "condition": "low_amplitude",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.7,
+        "seed": 71008
+      },
+      {
+        "id": "c7-dev-direct_wake-10",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-direct_wake-10.wav",
+        "sha256": "ff8ae2d987c1578b1ab2a463945f8cc1821383f8269fd7b976a7dd426121f5d1",
+        "bytes": 163084,
+        "condition": "internal_pause",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 5.095,
+        "seed": 71009
+      },
+      {
+        "id": "c7-dev-wake_position-01",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-wake_position-01.wav",
+        "sha256": "7798ef540593852ee29eb202d53dbef59975adcc34fb51ff9e539311364c0f85",
+        "bytes": 146124,
+        "condition": "clean",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.565,
+        "seed": 71010
+      },
+      {
+        "id": "c7-dev-wake_position-02",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-wake_position-02.wav",
+        "sha256": "5db21b6ac5cbc8b80ca7e6d2efde3405d02a1aa363b834dff896ef098890f3e9",
+        "bytes": 168044,
+        "condition": "noise_24db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 5.25,
+        "seed": 71011
+      },
+      {
+        "id": "c7-dev-wake_position-03",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-wake_position-03.wav",
+        "sha256": "3f6244beaffc2dd90bedccad87df30b6f01fa40c00b284bb836263019b0968a0",
+        "bytes": 141804,
+        "condition": "noise_12db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.43,
+        "seed": 71012
+      },
+      {
+        "id": "c7-dev-wake_position-04",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-wake_position-04.wav",
+        "sha256": "60a90cd7c0a3619099ce46fbce7868d7c4dea2fc087fdd0bcdb9e5eda72ba86a",
+        "bytes": 139404,
+        "condition": "low_amplitude",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 4.355,
+        "seed": 71013
+      },
+      {
+        "id": "c7-dev-wake_position-05",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-wake_position-05.wav",
+        "sha256": "cc2e10efa4c9c21fc511805cbd69b7a7d751bfcd42407459136c512c63f84a4d",
+        "bytes": 189484,
+        "condition": "internal_pause",
+        "voice": "Microsoft David Desktop",
+        "seconds": 5.92,
+        "seed": 71014
+      },
+      {
+        "id": "c7-dev-wake_position-06",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-wake_position-06.wav",
+        "sha256": "7ec1a95e10f678c0468eaaa993eb49edbe0e154d79d985361b63ac2a8274ae80",
+        "bytes": 158124,
+        "condition": "clean",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 4.94,
+        "seed": 71015
+      },
+      {
+        "id": "c7-dev-wake_position-07",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-wake_position-07.wav",
+        "sha256": "392fdfbce8dee8d01d50613bbfbefe7eb4f325107492d9f4db09aca0fca513a4",
+        "bytes": 109804,
+        "condition": "noise_24db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 3.43,
+        "seed": 71016
+      },
+      {
+        "id": "c7-dev-wake_position-08",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-wake_position-08.wav",
+        "sha256": "e23d66cbff10c8ff3f5e14c6688a4ac1858bcba886c6ab09a2fbba912b4f8bc6",
+        "bytes": 140844,
+        "condition": "noise_12db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 4.4,
+        "seed": 71017
+      },
+      {
+        "id": "c7-dev-wake_position-09",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-wake_position-09.wav",
+        "sha256": "bab19295454e3f385b26b2fbb2619d2fc2b15a87c4497f2143447c9362a41435",
+        "bytes": 189004,
+        "condition": "low_amplitude",
+        "voice": "Microsoft David Desktop",
+        "seconds": 5.905,
+        "seed": 71018
+      },
+      {
+        "id": "c7-dev-wake_position-10",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-wake_position-10.wav",
+        "sha256": "9052e80ab831fa8d6b73bd5fe72f91ebf3c9fb95d1f96e0b59e7e210ed8104d2",
+        "bytes": 190604,
+        "condition": "internal_pause",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 5.955,
+        "seed": 71019
+      },
+      {
+        "id": "c7-dev-idle_background-01",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-idle_background-01.wav",
+        "sha256": "d8a84fb498c92ee0b518802c38b606f4429899c356d88b0445540c7a846c6a2f",
+        "bytes": 149964,
+        "condition": "clean",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.685,
+        "seed": 71020
+      },
+      {
+        "id": "c7-dev-idle_background-02",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-idle_background-02.wav",
+        "sha256": "bb16c0cf9da42ab6edf4bf2d8f39ea745716df944313c5f57356e0cb9f1b0e82",
+        "bytes": 123724,
+        "condition": "noise_24db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.865,
+        "seed": 71021
+      },
+      {
+        "id": "c7-dev-idle_background-03",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-idle_background-03.wav",
+        "sha256": "35582594986e750362767ff61c758dd58222957da7745a4742520b9cb0373ab5",
+        "bytes": 134284,
+        "condition": "noise_12db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.195,
+        "seed": 71022
+      },
+      {
+        "id": "c7-dev-idle_background-04",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-idle_background-04.wav",
+        "sha256": "0a1ef1ca20d7b5e41c7a523a2fc813144f1aeccf3725b74bc4a0cf9cc864019a",
+        "bytes": 115884,
+        "condition": "low_amplitude",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.62,
+        "seed": 71023
+      },
+      {
+        "id": "c7-dev-idle_background-05",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-idle_background-05.wav",
+        "sha256": "739ef6eb8089d3d323b3cffd6aecee5e7aceba8d0003cd6a455326ba41bdf362",
+        "bytes": 173004,
+        "condition": "internal_pause",
+        "voice": "Microsoft David Desktop",
+        "seconds": 5.405,
+        "seed": 71024
+      },
+      {
+        "id": "c7-dev-idle_background-06",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-idle_background-06.wav",
+        "sha256": "07dda5d92f92ae8f3786e9e43ebaa14fb6e2617fc43d690b43eed8a1c090a824",
+        "bytes": 132524,
+        "condition": "clean",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 4.14,
+        "seed": 71025
+      },
+      {
+        "id": "c7-dev-idle_background-07",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-idle_background-07.wav",
+        "sha256": "a25a35c75552cf18ae70fa0a700926ce8241e0663448164f797c86335169654a",
+        "bytes": 117964,
+        "condition": "noise_24db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 3.685,
+        "seed": 71026
+      },
+      {
+        "id": "c7-dev-idle_background-08",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-idle_background-08.wav",
+        "sha256": "ebd737d86f745da9f9ce9d3f8dcf4d4fc40f276f7b6834882323d0fafa02d91a",
+        "bytes": 108844,
+        "condition": "noise_12db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.4,
+        "seed": 71027
+      },
+      {
+        "id": "c7-dev-idle_background-09",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-idle_background-09.wav",
+        "sha256": "41babcceef97856dc14c5b397638f59e3bea2d3085aeac7418d85a745638d93d",
+        "bytes": 141484,
+        "condition": "low_amplitude",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.42,
+        "seed": 71028
+      },
+      {
+        "id": "c7-dev-idle_background-10",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-idle_background-10.wav",
+        "sha256": "ca158ca6fc97e887070850181b2e1f640f0644562c1cc870322338d3b297713b",
+        "bytes": 154924,
+        "condition": "internal_pause",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 4.84,
+        "seed": 71029
+      },
+      {
+        "id": "c7-dev-near_wake-01",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-near_wake-01.wav",
+        "sha256": "581ce0bce4412065f0e7b00fc789908b4d953c4de5e79a7f9a9042a9e3f2d7fb",
+        "bytes": 131084,
+        "condition": "clean",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.095,
+        "seed": 71030
+      },
+      {
+        "id": "c7-dev-near_wake-02",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-near_wake-02.wav",
+        "sha256": "9c41b8268014b7ef26d9216c570f94e371f458ee85569cab672348b0b8521925",
+        "bytes": 146444,
+        "condition": "noise_24db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 4.575,
+        "seed": 71031
+      },
+      {
+        "id": "c7-dev-near_wake-03",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-near_wake-03.wav",
+        "sha256": "f355789875d63eb421591619e5f5e673f75b35adc5af49222840dbc88e7456f2",
+        "bytes": 119404,
+        "condition": "noise_12db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 3.73,
+        "seed": 71032
+      },
+      {
+        "id": "c7-dev-near_wake-04",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-near_wake-04.wav",
+        "sha256": "2b49ff7d383b0c69b6ff9979f8f044756a8e405f77dbfd7d0243f0dcc81d8ee0",
+        "bytes": 115404,
+        "condition": "low_amplitude",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.605,
+        "seed": 71033
+      },
+      {
+        "id": "c7-dev-near_wake-05",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-near_wake-05.wav",
+        "sha256": "ea013d07eec006cb511fa86e76e23b36c716bf4442c59ce85b51a284c67e8cc9",
+        "bytes": 161004,
+        "condition": "internal_pause",
+        "voice": "Microsoft David Desktop",
+        "seconds": 5.03,
+        "seed": 71034
+      },
+      {
+        "id": "c7-dev-near_wake-06",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-near_wake-06.wav",
+        "sha256": "42d081db1fd1db08dc9c2131d06690077ab03a00ada54e04e403e3f442f22727",
+        "bytes": 130124,
+        "condition": "clean",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 4.065,
+        "seed": 71035
+      },
+      {
+        "id": "c7-dev-near_wake-07",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-near_wake-07.wav",
+        "sha256": "d67d9d4bc5a0bac2a24051b3a54f6bee9378e9867f4739deec0128852e246fe4",
+        "bytes": 124684,
+        "condition": "noise_24db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 3.895,
+        "seed": 71036
+      },
+      {
+        "id": "c7-dev-near_wake-08",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-near_wake-08.wav",
+        "sha256": "9194bdf6ece3156f74fd8eddb5ab1d3ab5e390881b6d79377a2f7afe7477d908",
+        "bytes": 101004,
+        "condition": "noise_12db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.155,
+        "seed": 71037
+      },
+      {
+        "id": "c7-dev-near_wake-09",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-near_wake-09.wav",
+        "sha256": "4b09ce9d6d462e8a2ad5f592942a01e48f4e8e8ae3dd6dd41a5b75a47818c0e9",
+        "bytes": 139884,
+        "condition": "low_amplitude",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.37,
+        "seed": 71038
+      },
+      {
+        "id": "c7-dev-near_wake-10",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-near_wake-10.wav",
+        "sha256": "8db3324cad5e4ee0dcf2dd09c1f63d659249f073e46321aef1c79f1d9974c7af",
+        "bytes": 164844,
+        "condition": "internal_pause",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 5.15,
+        "seed": 71039
+      },
+      {
+        "id": "c7-dev-engaged_follow_up-01",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-engaged_follow_up-01.wav",
+        "sha256": "04f4f2378c8838ba6b6f5e87e31955b218548be407d8e73b8661efad9b424b96",
+        "bytes": 133164,
+        "condition": "clean",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.16,
+        "seed": 71040
+      },
+      {
+        "id": "c7-dev-engaged_follow_up-02",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-engaged_follow_up-02.wav",
+        "sha256": "cdd317eff5ef88032d49df354b394431eaefe348e79d2fbcdc020e49f34109b0",
+        "bytes": 121164,
+        "condition": "noise_24db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.785,
+        "seed": 71041
+      },
+      {
+        "id": "c7-dev-engaged_follow_up-03",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-engaged_follow_up-03.wav",
+        "sha256": "981b32d58ff81c84541a389df833f87b8303d2da456f24a3e87651e538ae9672",
+        "bytes": 115724,
+        "condition": "noise_12db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 3.615,
+        "seed": 71042
+      },
+      {
+        "id": "c7-dev-engaged_follow_up-04",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-engaged_follow_up-04.wav",
+        "sha256": "4d6c8aa283ba017dd26e4638433df10b8fef408eb1b1491503802e7c90842185",
+        "bytes": 114764,
+        "condition": "low_amplitude",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.585,
+        "seed": 71043
+      },
+      {
+        "id": "c7-dev-engaged_follow_up-05",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-engaged_follow_up-05.wav",
+        "sha256": "4007909f21c04b759554e21d08c7756c92de88807ed0523f2569d9de2a022767",
+        "bytes": 155724,
+        "condition": "internal_pause",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.865,
+        "seed": 71044
+      },
+      {
+        "id": "c7-dev-engaged_follow_up-06",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-engaged_follow_up-06.wav",
+        "sha256": "7014cc9cf10a53abbdfba32f8db154bca6134b7a33ff05c00a3c79d47260764b",
+        "bytes": 127244,
+        "condition": "clean",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.975,
+        "seed": 71045
+      },
+      {
+        "id": "c7-dev-engaged_follow_up-07",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-engaged_follow_up-07.wav",
+        "sha256": "9e24b0ab564bd2ff148fd09c283ac53f05a9b4f894e83c30420aa061482e67ee",
+        "bytes": 112744,
+        "condition": "noise_24db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 3.521875,
+        "seed": 71046
+      },
+      {
+        "id": "c7-dev-engaged_follow_up-08",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-engaged_follow_up-08.wav",
+        "sha256": "462778fd02a921224b2e40d46d7666a7644e7d6a22ad473cacb14f13e3837654",
+        "bytes": 92204,
+        "condition": "noise_12db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.88,
+        "seed": 71047
+      },
+      {
+        "id": "c7-dev-engaged_follow_up-09",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-engaged_follow_up-09.wav",
+        "sha256": "4fe27b86240c9a589e051f164a5d66fed38a9ef88e2fc2207884351f9b6f7b51",
+        "bytes": 143404,
+        "condition": "low_amplitude",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.48,
+        "seed": 71048
+      },
+      {
+        "id": "c7-dev-engaged_follow_up-10",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-engaged_follow_up-10.wav",
+        "sha256": "064d1e8f3cd765c5b04c5ad9e5ea2e2834bca0e7f1daacf91bf321cf192af5c6",
+        "bytes": 158924,
+        "condition": "internal_pause",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 4.965,
+        "seed": 71049
+      },
+      {
+        "id": "c7-dev-filler-01",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-filler-01.wav",
+        "sha256": "fd4012b7e0c992e7b6b3dfe731bbd598e3b521cbb44e48ef55e068d043033669",
+        "bytes": 74284,
+        "condition": "clean",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.32,
+        "seed": 71050
+      },
+      {
+        "id": "c7-dev-filler-02",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-filler-02.wav",
+        "sha256": "4bdca98fccc0955a61eab25fd4c73eb0b3572dde040affaef80a5371e9cf4b83",
+        "bytes": 65644,
+        "condition": "noise_24db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.05,
+        "seed": 71051
+      },
+      {
+        "id": "c7-dev-filler-03",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-filler-03.wav",
+        "sha256": "0f14b882720d42b81926d9a05c3f6b9a33dacc584ae7c62339d96a26826282dc",
+        "bytes": 63884,
+        "condition": "noise_12db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 1.995,
+        "seed": 71052
+      },
+      {
+        "id": "c7-dev-filler-04",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-filler-04.wav",
+        "sha256": "e9501afdae2871bc02f9f5b8365b7eb947c3384ac6d71dfc20ded21ecab595be",
+        "bytes": 71244,
+        "condition": "low_amplitude",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.225,
+        "seed": 71053
+      },
+      {
+        "id": "c7-dev-filler-05",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-filler-05.wav",
+        "sha256": "0e36c776eccdca03b8a01cd92aedbe1dfd9bf6bf66d4f30d61ac387996cd6a14",
+        "bytes": 92524,
+        "condition": "internal_pause",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.89,
+        "seed": 71054
+      },
+      {
+        "id": "c7-dev-filler-06",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-filler-06.wav",
+        "sha256": "df6340c7dc903d9ab27fcb1b2c1c24268c484ed777839bc0214dbed273aab88e",
+        "bytes": 87404,
+        "condition": "clean",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.73,
+        "seed": 71055
+      },
+      {
+        "id": "c7-dev-filler-07",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-filler-07.wav",
+        "sha256": "541549f6af2e80f0d09f05f73870539e47a250ccdb079da17d6b29412d503d8c",
+        "bytes": 89164,
+        "condition": "noise_24db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.785,
+        "seed": 71056
+      },
+      {
+        "id": "c7-dev-filler-08",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-filler-08.wav",
+        "sha256": "4107e96242db2724e132fa7339d602359b9e4a610fcfcb8c6cf7619f534620d4",
+        "bytes": 83084,
+        "condition": "noise_12db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.595,
+        "seed": 71057
+      },
+      {
+        "id": "c7-dev-filler-09",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-filler-09.wav",
+        "sha256": "633fdde11f14f85da149d57274aa87456a33f8ae30e3e010df65cb3ed128f3e8",
+        "bytes": 90604,
+        "condition": "low_amplitude",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.83,
+        "seed": 71058
+      },
+      {
+        "id": "c7-dev-filler-10",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-filler-10.wav",
+        "sha256": "4fa0720a70be4a5e79182fb195272ebda027358fe58e1e4d2c9f6d5ac6700288",
+        "bytes": 140684,
+        "condition": "internal_pause",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 4.395,
+        "seed": 71059
+      },
+      {
+        "id": "c7-dev-disengage-01",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-disengage-01.wav",
+        "sha256": "4db8302af05fa9bfdc3180d864bb81c7cb4ede7ab809538a54908e13c89aa544",
+        "bytes": 87884,
+        "condition": "clean",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.745,
+        "seed": 71060
+      },
+      {
+        "id": "c7-dev-disengage-02",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-disengage-02.wav",
+        "sha256": "37fc4b6f29f7ac59ea1364fae0b275602fe5353fa29f3c0033b118c140fd40a4",
+        "bytes": 81324,
+        "condition": "noise_24db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.54,
+        "seed": 71061
+      },
+      {
+        "id": "c7-dev-disengage-03",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-disengage-03.wav",
+        "sha256": "1bfecb04c5dea1010ab991a0d9fa9cadf334051d99e57728f842f090498e3565",
+        "bytes": 74764,
+        "condition": "noise_12db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.335,
+        "seed": 71062
+      },
+      {
+        "id": "c7-dev-disengage-04",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-disengage-04.wav",
+        "sha256": "58a6bf235684cb35e97be4d0669dd4d02ee1fc148b32836e012c2aa688b8cb04",
+        "bytes": 81484,
+        "condition": "low_amplitude",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.545,
+        "seed": 71063
+      },
+      {
+        "id": "c7-dev-disengage-05",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-disengage-05.wav",
+        "sha256": "984fa3fa9184fb7228076b57db12b0efac4abe20c7038fa4e452592ae7a684e4",
+        "bytes": 115244,
+        "condition": "internal_pause",
+        "voice": "Microsoft David Desktop",
+        "seconds": 3.6,
+        "seed": 71064
+      },
+      {
+        "id": "c7-dev-disengage-06",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-disengage-06.wav",
+        "sha256": "322fdfd032b04683f9746abb46493c1c87c0cb0bece8e74bee2cef5201c5d9a9",
+        "bytes": 82924,
+        "condition": "clean",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.59,
+        "seed": 71065
+      },
+      {
+        "id": "c7-dev-disengage-07",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-disengage-07.wav",
+        "sha256": "d7dfe0d2c77ff316717bd0e10799c877275f0ae61dab8342c2099de762da51e2",
+        "bytes": 80044,
+        "condition": "noise_24db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.5,
+        "seed": 71066
+      },
+      {
+        "id": "c7-dev-disengage-08",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-disengage-08.wav",
+        "sha256": "108444aaf962ba4e5249b420e05b22e71ca20e8fce8e7efec90e558462630597",
+        "bytes": 77964,
+        "condition": "noise_12db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.435,
+        "seed": 71067
+      },
+      {
+        "id": "c7-dev-disengage-09",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-disengage-09.wav",
+        "sha256": "57d24d61f019fe5069c32df60b4e7b5a89fab217969353b5267fd748641900ea",
+        "bytes": 126444,
+        "condition": "low_amplitude",
+        "voice": "Microsoft David Desktop",
+        "seconds": 3.95,
+        "seed": 71068
+      },
+      {
+        "id": "c7-dev-disengage-10",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-disengage-10.wav",
+        "sha256": "c7f40f121616ef8d542a0daf1b8cb1b36fab514e30cf7dcf57c0b947b98bc9c1",
+        "bytes": 117324,
+        "condition": "internal_pause",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.665,
+        "seed": 71069
+      },
+      {
+        "id": "c7-dev-passive_acknowledgement-01",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-passive_acknowledgement-01.wav",
+        "sha256": "c73f52cb7027448c5d31462c95c25bac8749c525b6b3ce7f97b0c16abdb45850",
+        "bytes": 84044,
+        "condition": "clean",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.625,
+        "seed": 71070
+      },
+      {
+        "id": "c7-dev-passive_acknowledgement-02",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-passive_acknowledgement-02.wav",
+        "sha256": "5623d87b5bf2e09c5dc3ed5597df9f44678633dd82acec2dcc9c7f8aa3283b13",
+        "bytes": 77484,
+        "condition": "noise_24db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.42,
+        "seed": 71071
+      },
+      {
+        "id": "c7-dev-passive_acknowledgement-03",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-passive_acknowledgement-03.wav",
+        "sha256": "9491274fce34aec0111dec024269541725663b41282cefec682edc500f2f039e",
+        "bytes": 66284,
+        "condition": "noise_12db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.07,
+        "seed": 71072
+      },
+      {
+        "id": "c7-dev-passive_acknowledgement-04",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-passive_acknowledgement-04.wav",
+        "sha256": "b9eacae3cb4f37a730c5ae3def058cbdb0b78f90363cb1ceb78534027a4529ad",
+        "bytes": 64524,
+        "condition": "low_amplitude",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.015,
+        "seed": 71073
+      },
+      {
+        "id": "c7-dev-passive_acknowledgement-05",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-passive_acknowledgement-05.wav",
+        "sha256": "6a47b9129d077c16aa0241e26d29cbeccdf6705bb158eaa9e5ade1c00f7b228c",
+        "bytes": 100524,
+        "condition": "internal_pause",
+        "voice": "Microsoft David Desktop",
+        "seconds": 3.14,
+        "seed": 71074
+      },
+      {
+        "id": "c7-dev-passive_acknowledgement-06",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-passive_acknowledgement-06.wav",
+        "sha256": "6e20439f63c72906dcc6be16766f53728905079666dc46b4e8cbf4560f40dd79",
+        "bytes": 71724,
+        "condition": "clean",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.24,
+        "seed": 71075
+      },
+      {
+        "id": "c7-dev-passive_acknowledgement-07",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-passive_acknowledgement-07.wav",
+        "sha256": "d4974454c7f2a9d3e275a5d39e75dca5f283114cccd7e274e9689ca8af343445",
+        "bytes": 70924,
+        "condition": "noise_24db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.215,
+        "seed": 71076
+      },
+      {
+        "id": "c7-dev-passive_acknowledgement-08",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-passive_acknowledgement-08.wav",
+        "sha256": "b82140e8b66e9002f00c80fcedd77d546902172a7f7c2a9ef3457a1e812b4e74",
+        "bytes": 64204,
+        "condition": "noise_12db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.005,
+        "seed": 71077
+      },
+      {
+        "id": "c7-dev-passive_acknowledgement-09",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-passive_acknowledgement-09.wav",
+        "sha256": "b60e5a773e7dba4c324b3522c10737004514d1793e06006706c229e03e693b7c",
+        "bytes": 76364,
+        "condition": "low_amplitude",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.385,
+        "seed": 71078
+      },
+      {
+        "id": "c7-dev-passive_acknowledgement-10",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-passive_acknowledgement-10.wav",
+        "sha256": "5365102736692b7487b7f867f0ec7d2cbcc31bfd49998c24b534d9e9dba5e6db",
+        "bytes": 104044,
+        "condition": "internal_pause",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.25,
+        "seed": 71079
+      },
+      {
+        "id": "c7-dev-playback_interrupt-01",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_interrupt-01.wav",
+        "sha256": "d36032fe9aa63fd6c04a10353990c60b89d2a42deb4069a8d74645a62c2dcce3",
+        "bytes": 81484,
+        "condition": "clean",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.545,
+        "seed": 71080
+      },
+      {
+        "id": "c7-dev-playback_interrupt-02",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_interrupt-02.wav",
+        "sha256": "a5403662eecdf7530d6940ab6a9325993441311e756cf25ad15f5f82a1c38d9f",
+        "bytes": 72364,
+        "condition": "noise_24db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.26,
+        "seed": 71081
+      },
+      {
+        "id": "c7-dev-playback_interrupt-03",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_interrupt-03.wav",
+        "sha256": "0580fea001564998c6d0c18fc043fa8ba7829cd18e28abddec78c28a69db26dd",
+        "bytes": 74444,
+        "condition": "noise_12db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.325,
+        "seed": 71082
+      },
+      {
+        "id": "c7-dev-playback_interrupt-04",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_interrupt-04.wav",
+        "sha256": "e062f40b523edef96af5a375f2980e2c19e0bbd1aabed6c2cc258987c6b99a43",
+        "bytes": 67404,
+        "condition": "low_amplitude",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.105,
+        "seed": 71083
+      },
+      {
+        "id": "c7-dev-playback_interrupt-05",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_interrupt-05.wav",
+        "sha256": "f0a6fcec19f69ebf0fbc72f47d0142feff5184dcc9c51224f7fc3d4114fc9b75",
+        "bytes": 105164,
+        "condition": "internal_pause",
+        "voice": "Microsoft David Desktop",
+        "seconds": 3.285,
+        "seed": 71084
+      },
+      {
+        "id": "c7-dev-playback_interrupt-06",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_interrupt-06.wav",
+        "sha256": "2c6c8b9a151257841cb02df5a4b9783b95bdd570bc7851d9ebc0ca578f4bab6a",
+        "bytes": 68364,
+        "condition": "clean",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.135,
+        "seed": 71085
+      },
+      {
+        "id": "c7-dev-playback_interrupt-07",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_interrupt-07.wav",
+        "sha256": "75ce72cef82576ae6e91ac54dd1bdd62ab59aac9ff59480d25ef87e2ea8b9b30",
+        "bytes": 72044,
+        "condition": "noise_24db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.25,
+        "seed": 71086
+      },
+      {
+        "id": "c7-dev-playback_interrupt-08",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_interrupt-08.wav",
+        "sha256": "35ff800fb6b3a40a7fb708170bd1ebdc438240d2bff52ecc19e6da48724a50f8",
+        "bytes": 73324,
+        "condition": "noise_12db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 2.29,
+        "seed": 71087
+      },
+      {
+        "id": "c7-dev-playback_interrupt-09",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_interrupt-09.wav",
+        "sha256": "93d25a7733bef6b20067a0fb0515b8f5c3eb89b520d8e538d89511b608c9678a",
+        "bytes": 89964,
+        "condition": "low_amplitude",
+        "voice": "Microsoft David Desktop",
+        "seconds": 2.81,
+        "seed": 71088
+      },
+      {
+        "id": "c7-dev-playback_interrupt-10",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_interrupt-10.wav",
+        "sha256": "84b94579b12187b61eaca8971edf613c01a828efcc23b46005ea8370963f4f16",
+        "bytes": 106924,
+        "condition": "internal_pause",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.34,
+        "seed": 71089
+      },
+      {
+        "id": "c7-dev-playback_echo-01",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_echo-01.wav",
+        "sha256": "493b9b087f39bda0a851dbd1babb66366a151a334cb9e153a7fa1d6da9cc0dd3",
+        "bytes": 152204,
+        "condition": "clean",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.755,
+        "seed": 71090
+      },
+      {
+        "id": "c7-dev-playback_echo-02",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_echo-02.wav",
+        "sha256": "41920a3400c0a0aaebc7161aa21f0cab667aec77971197da6a63cce28b5f2728",
+        "bytes": 141164,
+        "condition": "noise_24db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 4.41,
+        "seed": 71091
+      },
+      {
+        "id": "c7-dev-playback_echo-03",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_echo-03.wav",
+        "sha256": "e5e79ff7726e129be184aed96d1195524ef5d8029d916fdf784311e5721e59b3",
+        "bytes": 125964,
+        "condition": "noise_12db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 3.935,
+        "seed": 71092
+      },
+      {
+        "id": "c7-dev-playback_echo-04",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_echo-04.wav",
+        "sha256": "0f1bd23b2f041130e58445bad12a2565929b307315048a37ac433997228091fc",
+        "bytes": 116524,
+        "condition": "low_amplitude",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.64,
+        "seed": 71093
+      },
+      {
+        "id": "c7-dev-playback_echo-05",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_echo-05.wav",
+        "sha256": "e7c550a76a304b9551adc18c15703e0f4f99d36d8e2c53d164a9c2e17109961f",
+        "bytes": 192844,
+        "condition": "internal_pause",
+        "voice": "Microsoft David Desktop",
+        "seconds": 6.025,
+        "seed": 71094
+      },
+      {
+        "id": "c7-dev-playback_echo-06",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_echo-06.wav",
+        "sha256": "70fe287543dda8968f19da1c3a0c9cc3b10dd5818e3feb5281137bfe1a290517",
+        "bytes": 125644,
+        "condition": "clean",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.925,
+        "seed": 71095
+      },
+      {
+        "id": "c7-dev-playback_echo-07",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_echo-07.wav",
+        "sha256": "536926575b7928adc0bb4ff78dede780a8b3bbbfe8cbdd7b5107b01410b37c55",
+        "bytes": 124844,
+        "condition": "noise_24db",
+        "voice": "Microsoft David Desktop",
+        "seconds": 3.9,
+        "seed": 71096
+      },
+      {
+        "id": "c7-dev-playback_echo-08",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_echo-08.wav",
+        "sha256": "8e3738620a17338bbd7c0eb6cd69615720ca2cd63759cc9e58a7bceef45dcb10",
+        "bytes": 111564,
+        "condition": "noise_12db",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 3.485,
+        "seed": 71097
+      },
+      {
+        "id": "c7-dev-playback_echo-09",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_echo-09.wav",
+        "sha256": "228f2d5448b617136e0bd5010466feb1be761dcd08014f6d4256b7cf2c94fa01",
+        "bytes": 150124,
+        "condition": "low_amplitude",
+        "voice": "Microsoft David Desktop",
+        "seconds": 4.69,
+        "seed": 71098
+      },
+      {
+        "id": "c7-dev-playback_echo-10",
+        "path": "evals/voice/campaign7-development/wav/c7-dev-playback_echo-10.wav",
+        "sha256": "37ceab9a05aa7ff59720647b49292cfd8a71ac007dce29c4b0cae383a4da29db",
+        "bytes": 162284,
+        "condition": "internal_pause",
+        "voice": "Microsoft Zira Desktop",
+        "seconds": 5.07,
+        "seed": 71099
+      }
+    ],
+    "all_hashes_current_match_frozen_manifest": true,
+    "distinct_normalized_requests_claimed": false,
+    "independent_audit_path": "data/campaign7-verifier/audio-independent-audit-corrected/RESULTS.json",
+    "actual_stt_vad_runs": 0
+  },
+  "reference_text_classification": {
+    "scope": "TEXT_ONLY original default SpeechConfig(), distinct from owner six-alias profile",
+    "count": 100,
+    "passed": 99,
+    "wake_relevance_eligible": 80,
+    "wake_confusion_matrix": {
+      "tp": 22,
+      "fp": 0,
+      "fn": 0,
+      "tn": 58
+    },
+    "barge_cases": 20,
+    "barge_passed": 19,
+    "known_intent_annotation_policy_conflict": "c7-dev-playback_echo-07: configured explicit no interrupt phrase precedes echo suppression",
+    "references_or_policy_changed_to_erase_failure": false
+  },
+  "verification": {
+    "retained_runs": [
+      {
+        "artifact": "data/campaign7-voice/original-state-regressions.xml",
+        "sha256": "6b0cb0fdeb1168b95327f59b16a095a74914513a4af4811243deffef2b0437b3",
+        "suite_accounted_checks": 46,
+        "suite_passed": 46,
+        "suite_failed": 0,
+        "suite_errors": 0,
+        "suite_skipped_including_xfail": 0,
+        "seconds": 1.443,
+        "listed_testcase_nodes": 44,
+        "listed_node_outcomes": {
+          "pass": 44
+        },
+        "unlisted_passing_subtest_accounting": 2,
+        "failures": [],
+        "expected_process_exit": 0
+      },
+      {
+        "artifact": "data/campaign7-voice/development-boundaries-before.xml",
+        "sha256": "7de81084bfb62e20539f02cf1402e42733c5790b694411aa6623333a4b142780",
+        "suite_accounted_checks": 23,
+        "suite_passed": 14,
+        "suite_failed": 9,
+        "suite_errors": 0,
+        "suite_skipped_including_xfail": 0,
+        "seconds": 0.373,
+        "listed_testcase_nodes": 23,
+        "listed_node_outcomes": {
+          "fail": 9,
+          "pass": 14
+        },
+        "unlisted_passing_subtest_accounting": 0,
+        "failures": [
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_original_capture_stop_before_open_and_healthy_control[True]",
+            "outcome": "fail"
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_stt_original_pcm16_sample_rate_contract[8000]",
+            "outcome": "fail"
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_stt_original_pcm16_sample_rate_contract[22050]",
+            "outcome": "fail"
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_stt_original_pcm16_sample_rate_contract[44100]",
+            "outcome": "fail"
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_maximum_segment_cutoff_preserves_following_continuous_speech",
+            "outcome": "fail"
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_completed_pump_reconnect_does_not_forward_the_previous_terminal",
+            "outcome": "fail"
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_stopped_pump_start_does_not_enter_a_pipeline_with_cancelled_token",
+            "outcome": "fail"
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_failed_managed_reconnect_remains_muted[start]",
+            "outcome": "fail"
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_closed_managed_pump_discards_an_inflight_transcript",
+            "outcome": "fail"
+          }
+        ],
+        "expected_process_exit": 1
+      },
+      {
+        "artifact": "data/campaign7-voice/repair-focused.xml",
+        "sha256": "fd6a05bf3cfbc22c9eee6bec0c8fc520e0385d238089c4950049a38b143d50d8",
+        "suite_accounted_checks": 132,
+        "suite_passed": 132,
+        "suite_failed": 0,
+        "suite_errors": 0,
+        "suite_skipped_including_xfail": 0,
+        "seconds": 1.877,
+        "listed_testcase_nodes": 130,
+        "listed_node_outcomes": {
+          "pass": 130
+        },
+        "unlisted_passing_subtest_accounting": 2,
+        "failures": [],
+        "expected_process_exit": 0
+      },
+      {
+        "artifact": "data/campaign7-voice/supplemental-scenarios.xml",
+        "sha256": "6a611f7339871ec8b71927c936da38f1a22fe01bfc743016040372af793f7058",
+        "suite_accounted_checks": 10,
+        "suite_passed": 10,
+        "suite_failed": 0,
+        "suite_errors": 0,
+        "suite_skipped_including_xfail": 0,
+        "seconds": 1.264,
+        "listed_testcase_nodes": 10,
+        "listed_node_outcomes": {
+          "pass": 10
+        },
+        "unlisted_passing_subtest_accounting": 0,
+        "failures": [],
+        "expected_process_exit": 0
+      },
+      {
+        "artifact": "data/campaign7-voice/repair-cycle2-focused.xml",
+        "sha256": "7aad17bd3c21be649dbdddc7514821f924bbc2a4f39a05b3fa8a9f4d73378868",
+        "suite_accounted_checks": 147,
+        "suite_passed": 146,
+        "suite_failed": 0,
+        "suite_errors": 0,
+        "suite_skipped_including_xfail": 1,
+        "seconds": 2.893,
+        "listed_testcase_nodes": 145,
+        "listed_node_outcomes": {
+          "pass": 144,
+          "xfail": 1
+        },
+        "unlisted_passing_subtest_accounting": 2,
+        "failures": [
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_preparing_synthesis_is_not_observed_speech_playback",
+            "outcome": "xfail"
+          }
+        ],
+        "expected_process_exit": 0
+      },
+      {
+        "artifact": "data/campaign7-voice/repair-cycle3-strict-focused.xml",
+        "sha256": "2cf711cf6a885c037ec0d29079614866c7b17bbf9661112076fdfc7fd9aabdda",
+        "suite_accounted_checks": 147,
+        "suite_passed": 146,
+        "suite_failed": 1,
+        "suite_errors": 0,
+        "suite_skipped_including_xfail": 0,
+        "seconds": 2.992,
+        "listed_testcase_nodes": 145,
+        "listed_node_outcomes": {
+          "pass": 144,
+          "fail": 1
+        },
+        "unlisted_passing_subtest_accounting": 2,
+        "failures": [
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_preparing_synthesis_is_not_observed_speech_playback",
+            "outcome": "fail"
+          }
+        ],
+        "expected_process_exit": 1
+      },
+      {
+        "artifact": "data/campaign7-voice/retention-controls-before.xml",
+        "sha256": "6a91b478d4e1d32f440d7b30ee7bf3968960cb0f75bdd9741f42a9a6f38f223c",
+        "suite_accounted_checks": 7,
+        "suite_passed": 1,
+        "suite_failed": 6,
+        "suite_errors": 0,
+        "suite_skipped_including_xfail": 0,
+        "seconds": 0.177,
+        "listed_testcase_nodes": 7,
+        "listed_node_outcomes": {
+          "fail": 6,
+          "pass": 1
+        },
+        "unlisted_passing_subtest_accounting": 0,
+        "failures": [
+          {
+            "node_id": "tests/integration/test_campaign7_voice_retention.py::test_owned_pipeline_end_releases_its_ephemeral_perception[complete]",
+            "outcome": "fail"
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_retention.py::test_owned_pipeline_end_releases_its_ephemeral_perception[once]",
+            "outcome": "fail"
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_retention.py::test_owned_pipeline_end_releases_its_ephemeral_perception[error]",
+            "outcome": "fail"
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_retention.py::test_owned_pipeline_end_releases_its_ephemeral_perception[stop]",
+            "outcome": "fail"
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_retention.py::test_owned_pipeline_end_releases_its_ephemeral_perception[pre_stopped]",
+            "outcome": "fail"
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_retention.py::test_older_injected_vad_without_reset_still_releases_owned_buffers",
+            "outcome": "fail"
+          }
+        ],
+        "expected_process_exit": 1
+      },
+      {
+        "artifact": "data/campaign7-voice/repair-cycle4-final-focused.xml",
+        "sha256": "65cb536ee3ac0ac3ec8abc78826418f5358565bfb6c900f891fe438ffbf725a6",
+        "suite_accounted_checks": 169,
+        "suite_passed": 168,
+        "suite_failed": 1,
+        "suite_errors": 0,
+        "suite_skipped_including_xfail": 0,
+        "seconds": 2.906,
+        "listed_testcase_nodes": 167,
+        "listed_node_outcomes": {
+          "pass": 166,
+          "fail": 1
+        },
+        "unlisted_passing_subtest_accounting": 2,
+        "failures": [
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_preparing_synthesis_is_not_observed_speech_playback",
+            "outcome": "fail"
+          }
+        ],
+        "expected_process_exit": 1,
+        "listed_nodes": [
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_original_capture_stop_before_open_and_healthy_control[True]",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_original_capture_stop_before_open_and_healthy_control[False]",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_stop_during_open_closes_controlled_capture_without_forwarding",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_missing_capture_dependency_propagates_as_honest_device_failure",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_stt_original_pcm16_sample_rate_contract[8000]",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_stt_original_pcm16_sample_rate_contract[22050]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_stt_original_pcm16_sample_rate_contract[44100]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_stt_original_pcm16_sample_rate_contract[16000]",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_digital_silence_has_no_decoder_call[]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_digital_silence_has_no_decoder_call[\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00]",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_decoder_failure_never_creates_successful_transcript",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_pipeline_after_decoder_failure_can_process_a_new_complete_utterance",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_maximum_segment_cutoff_preserves_following_continuous_speech",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_completed_pump_reconnect_does_not_forward_the_previous_terminal",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_stopped_pump_start_does_not_enter_a_pipeline_with_cancelled_token",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_failed_managed_reconnect_remains_muted[factory]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_failed_managed_reconnect_remains_muted[start]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_closed_managed_pump_discards_an_inflight_transcript",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_managed_fresh_reconnect_drops_previous_state",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_failed_pipeline_is_reported_as_failure_before_terminal",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_voice_controller_unbound_never_claims_listening_or_audible",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_voice_controller_current_source_metrics_are_not_acoustic_latency",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_boundaries.py::test_failed_playback_reports_failure_not_audible_success",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_scenarios.py::test_pre_stopped_desktop_source_never_imports_or_captures_loopback",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_scenarios.py::test_original_attentive_bridge_routes_multiple_turns_and_disengages",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_scenarios.py::test_actual_configured_thirty_second_cutoff_retains_next_segment",
+            "outcome": "pass",
+            "seconds": 0.004
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_scenarios.py::test_controlled_model_timeout_is_a_typed_failure_not_transcription",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_scenarios.py::test_muting_waits_for_inflight_decoder_and_refuses_overlapping_reconnect",
+            "outcome": "pass",
+            "seconds": 1.013
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_scenarios.py::test_managed_start_failure_cleans_up_the_new_owned_candidate",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_scenarios.py::test_failure_marker_has_no_transcript_or_backend_error_content",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_scenarios.py::test_original_barge_decision_controls_only_an_owned_playback_leaf[Stop.-Stop.-True]",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_scenarios.py::test_original_barge_decision_controls_only_an_owned_playback_leaf[The result contains three observations.-The result contains three observations.-False]",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_scenarios.py::test_original_barge_decision_controls_only_an_owned_playback_leaf[Wait, Hanni, make it shorter.-The result contains three observations.-True]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_retention.py::test_owned_pipeline_end_releases_its_ephemeral_perception[complete]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_retention.py::test_owned_pipeline_end_releases_its_ephemeral_perception[once]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_retention.py::test_owned_pipeline_end_releases_its_ephemeral_perception[error]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_retention.py::test_owned_pipeline_end_releases_its_ephemeral_perception[stop]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_retention.py::test_owned_pipeline_end_releases_its_ephemeral_perception[pre_stopped]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_retention.py::test_diagnostic_process_chunk_retains_its_existing_buffer_contract",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_voice_retention.py::test_older_injected_vad_without_reset_still_releases_owned_buffers",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_cancelled_before_capture_never_opens_device[256]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_cancelled_before_capture_never_opens_device[1024]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_decoder_rejects_unsupported_rate_before_interpreting_samples[11025]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_decoder_rejects_unsupported_rate_before_interpreting_samples[44100]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_decoder_silence_bypasses_model",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_decoder_mono_supported_positive",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_decoder_rejects_nonmono",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_failed_capture_pump_has_unavailable_controls",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_continuous_speech_after_maximum_segment_is_not_lost",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_finished_pump_restart_has_a_fresh_consumer_queue",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_stopped_pump_cannot_reenter_a_pipeline",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_failed_unmute_start_preserves_muted_state",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_shutdown_with_pending_record_discards_that_record",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_preparing_synthesis_is_not_observed_speech_playback",
+            "outcome": "fail",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_failed_voice_disallows_activity_increasing_commands[listen]",
+            "outcome": "pass",
+            "seconds": 0.002
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_failed_voice_disallows_activity_increasing_commands[unmute]",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_failed_voice_preserves_activity_reducing_commands[mute]",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_failed_voice_preserves_activity_reducing_commands[interrupt]",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_ended_pipeline_does_not_retain_ephemeral_audio_or_transcripts[complete]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_ended_pipeline_does_not_retain_ephemeral_audio_or_transcripts[cancel]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_ended_pipeline_does_not_retain_ephemeral_audio_or_transcripts[error]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_final_executor_never_accepts_answer_material[expected]",
+            "outcome": "pass",
+            "seconds": 0.006
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_final_executor_never_accepts_answer_material[oracle]",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_missing_null_observation_is_not_scored_as_measured_null",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_fixture_error_cannot_pass_matching_predicates",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_maps_original_wake_fields_without_audio",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_empty_transcript_preserves_actual_engagement",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_barge_receipt_retains_original_echo_decision",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_decoder_failure_is_a_typed_protocol_result",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_restart_uses_the_input_records",
+            "outcome": "pass",
+            "seconds": 0.002
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_closed_voice_has_no_held_thread",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_missing_capability_uses_original_registry",
+            "outcome": "pass",
+            "seconds": 0.02
+          },
+          {
+            "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_awareness_keeps_absent_expiry_distinct",
+            "outcome": "pass",
+            "seconds": 0.012
+          },
+          {
+            "node_id": "tests/unit/test_microphone.py::MicrophoneTests::test_capture_yields_pcm_chunks",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_microphone.py::MicrophoneTests::test_resolve_device",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_speech_buffer.py::SpeechBufferTests::test_audio_buffer_expires_old_chunks",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_speech_buffer.py::SpeechBufferTests::test_audio_chunk_duration",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_speech_buffer.py::SpeechBufferTests::test_retention_is_hard_capped_at_two_minutes",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_speech_buffer.py::SpeechBufferTests::test_transcript_buffer_expires_old_records",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_speech_pipeline.py::SpeechPipelineTests::test_empty_stt_result_is_not_buffered",
+            "outcome": "pass",
+            "seconds": 0.027
+          },
+          {
+            "node_id": "tests/unit/test_speech_pipeline.py::SpeechPipelineTests::test_process_chunk_yields_transcript_after_vad_end",
+            "outcome": "pass",
+            "seconds": 0.024
+          },
+          {
+            "node_id": "tests/unit/test_stt.py::SttTests::test_rejects_non_mono_audio",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_stt.py::SttTests::test_transcribes_pcm16_and_joins_segments",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_tts.py::TtsChunkingTests::test_empty_text_produces_no_chunks",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_tts.py::TtsChunkingTests::test_long_sentence_is_bounded",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_tts.py::TtsChunkingTests::test_prefers_sentence_boundaries",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_tts.py::TtsChunkingTests::test_rejects_tiny_chunk_limit",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_tts.py::WindowsSapiTests::test_configuration_validation",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_tts.py::WindowsSapiTests::test_non_windows_backend_fails_cleanly",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_tts.py::WindowsSapiTests::test_speak_sends_text_via_stdin_json_not_command_interpolation",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_tts.py::WindowsSapiCancellablePlaybackTests::test_start_returns_cancellable_playback_and_uses_stdin_json",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_barge_in.py::BargeInClassifierTests::test_explicit_stop_interrupts_without_supervisor_turn",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_barge_in.py::BargeInClassifierTests::test_filler_does_not_interrupt",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_barge_in.py::BargeInClassifierTests::test_interrupt_phrase_is_detected_inside_sentence",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_barge_in.py::BargeInClassifierTests::test_interrupt_prefix_can_carry_correction",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_barge_in.py::BargeInClassifierTests::test_invalid_overlap_ratio_rejected",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_barge_in.py::BargeInClassifierTests::test_multiword_speaker_echo_is_ignored",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_barge_in.py::BargeInClassifierTests::test_pause_is_not_an_explicit_interrupt_phrase",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_barge_in.py::BargeInClassifierTests::test_short_two_word_echo_is_ignored",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_barge_in.py::BargeInClassifierTests::test_substantive_non_echo_speech_interrupts_and_routes",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_audio_devices.py::test_desktop_loopback_selection_reaches_speech_factory",
+            "outcome": "pass",
+            "seconds": 0.013
+          },
+          {
+            "node_id": "tests/unit/test_audio_devices.py::test_selection_survives_restart_and_mic_index_change",
+            "outcome": "pass",
+            "seconds": 0.003
+          },
+          {
+            "node_id": "tests/unit/test_audio_devices.py::test_selection_rejects_stale_devices_without_replacing_saved_choice",
+            "outcome": "pass",
+            "seconds": 0.004
+          },
+          {
+            "node_id": "tests/unit/test_audio_devices.py::test_saved_choices_reach_microphone_and_sapi_factory",
+            "outcome": "pass",
+            "seconds": 0.015
+          },
+          {
+            "node_id": "tests/unit/test_audio_devices.py::test_dashboard_audio_selection_requires_token_and_persists",
+            "outcome": "pass",
+            "seconds": 0.673
+          },
+          {
+            "node_id": "tests/unit/test_desktop_voice.py::test_mute_closes_owned_capture_and_resume_uses_a_fresh_pipeline",
+            "outcome": "pass",
+            "seconds": 0.011
+          },
+          {
+            "node_id": "tests/unit/test_desktop_voice.py::test_resume_cannot_overlap_a_transcription_still_stopping",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_desktop_voice.py::test_muted_consumer_retains_queue_wait_instead_of_busy_spinning",
+            "outcome": "pass",
+            "seconds": 0.044
+          },
+          {
+            "node_id": "tests/unit/test_desktop_voice.py::test_inflight_old_pump_result_is_discarded_after_mute_resume",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_desktop_voice.py::test_dashboard_voice_controls_do_not_start_a_missing_session",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_desktop_voice.py::test_manual_listen_uses_original_classifier_and_safe_mode_gate",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_desktop_voice.py::test_muting_is_not_reported_as_muted_before_capture_has_stopped",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_desktop_voice.py::test_interrupt_stops_existing_playback_without_creating_speech",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_desktop_voice.py::test_observed_timings_require_audio_timestamps_and_do_not_invent_audibility",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_desktop_audio_capture.py::test_desktop_loopback_downmixes_stereo_to_mono_pcm16",
+            "outcome": "pass",
+            "seconds": 0.01
+          },
+          {
+            "node_id": "tests/safety/test_speech_privacy.py::SpeechPrivacyTests::test_speech_buffers_cannot_exceed_privacy_ceiling",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/safety/test_speech_privacy.py::SpeechPrivacyTests::test_transcript_event_can_reference_id_without_raw_window",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_attention.py::AttentionRouterTests::test_background_speech_never_calls_supervisor",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_attention.py::AttentionRouterTests::test_filler_during_engagement_never_calls_supervisor",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_attention.py::AttentionRouterTests::test_follow_up_uses_same_engagement_state",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_attention.py::AttentionRouterTests::test_owner_command_event_references_transcript_without_copying_text",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_attention.py::AttentionRouterTests::test_wake_command_is_forwarded_without_wake_prefix",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_alias_is_token_bounded_not_substring",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_background_speech_is_ignored_when_idle",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_bye_disengages",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_configured_wake_alias_is_detected_anywhere",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_disengage_phrase_clears_engagement_but_listener_can_wake_again",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_empty_text_is_ignored",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_explicit_wake_name_is_relevant_and_engages",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_filler_only_is_ignored_while_engaged_without_disengaging",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_filler_only_is_ignored_while_idle",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_follow_up_remains_relevant_until_explicit_disengage",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_honey_at_start_is_accepted_as_stt_wake_alias",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_honey_can_wake_from_middle_of_utterance",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_invalid_configuration_is_rejected",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_leading_filler_does_not_block_wake",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_leading_fillers_are_stripped_from_meaningful_followup",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_multiple_explicit_disengage_phrases",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_old_recent_turn_compatibility_remains",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_optional_positive_timeout_mode_still_supported",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_passive_acknowledgements_are_ignored_but_keep_engagement",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_real_whisper_ani_variant_is_a_wake_alias",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_wake_name_at_end_of_sentence_activates",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_wake_only_utterance_is_still_relevant",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_relevance.py::RelevanceClassifierTests::test_wake_plus_disengage_does_not_reengage",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_live_pump.py::TranscriptPumpTests::test_pipeline_runs_in_background_and_finishes",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_neural_tts.py::test_factory_keeps_legacy_backend_and_resolves_neural_data_directory",
+            "outcome": "pass",
+            "seconds": 0.005
+          },
+          {
+            "node_id": "tests/unit/test_neural_tts.py::test_missing_assets_use_sapi_once_warned_and_can_fail_closed",
+            "outcome": "pass",
+            "seconds": 0.005
+          },
+          {
+            "node_id": "tests/unit/test_neural_tts.py::test_neural_text_is_stdin_data_and_start_is_cancellable",
+            "outcome": "pass",
+            "seconds": 0.004
+          },
+          {
+            "node_id": "tests/unit/test_neural_tts.py::test_deadline_kills_worker_without_polling_and_reports_timeout",
+            "outcome": "pass",
+            "seconds": 0.16
+          },
+          {
+            "node_id": "tests/unit/test_neural_tts.py::test_cancellation_is_not_an_error_and_clears_orb",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_neural_tts.py::test_worker_volume_is_bounded_and_invalid_audio_rejected",
+            "outcome": "pass",
+            "seconds": 0.037
+          },
+          {
+            "node_id": "tests/unit/test_neural_tts.py::test_audio_output_failure_stops_device",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_neural_tts.py::test_selected_virtual_cable_uses_host_api_that_supports_voice_rate",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_neural_tts.py::test_worker_does_not_log_private_exception_text",
+            "outcome": "pass",
+            "seconds": 0.001
+          },
+          {
+            "node_id": "tests/unit/test_neural_tts.py::test_invalid_neural_settings_rejected[speed-0]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_neural_tts.py::test_invalid_neural_settings_rejected[cpu_threads-0]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_neural_tts.py::test_invalid_neural_settings_rejected[language-xx-xx]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_neural_tts.py::test_invalid_neural_settings_rejected[pitch_semitones-5]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_neural_tts.py::test_invalid_neural_settings_rejected[sapi_fallback-true]",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_australian_tts.py::test_pitch_shift_changes_frequency_and_compensates_generation_speed",
+            "outcome": "pass",
+            "seconds": 0.006
+          },
+          {
+            "node_id": "tests/unit/test_australian_tts.py::test_missing_australian_pack_preserves_working_voice_then_detects_install",
+            "outcome": "pass",
+            "seconds": 0.004
+          },
+          {
+            "node_id": "tests/unit/test_australian_tts.py::test_missing_pack_strict_mode_reports_install_step",
+            "outcome": "pass",
+            "seconds": 0.003
+          },
+          {
+            "node_id": "tests/unit/test_australian_tts.py::test_australian_speech_keeps_text_out_of_script_and_escapes_markup",
+            "outcome": "pass",
+            "seconds": 0.004
+          },
+          {
+            "node_id": "tests/unit/test_vad_segmenter.py::UtteranceSegmenterTests::test_flush_returns_active_audio",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_vad_segmenter.py::UtteranceSegmenterTests::test_max_duration_forces_finish",
+            "outcome": "pass",
+            "seconds": 0.0
+          },
+          {
+            "node_id": "tests/unit/test_vad_segmenter.py::UtteranceSegmenterTests::test_start_end_builds_utterance_with_preroll",
+            "outcome": "pass",
+            "seconds": 0.0
+          }
+        ],
+        "observed_process_exit": 1
+      }
+    ],
+    "independent_current": {
+      "artifact": "data/campaign7-verifier/independent-final-source.xml",
+      "sha256": "aeab54faec4de0cbdec1af880327fcff5f18c15efbb9071a82cbefa82f44ab90",
+      "suite_accounted_checks": 33,
+      "suite_passed": 32,
+      "suite_failed": 1,
+      "suite_errors": 0,
+      "suite_skipped_including_xfail": 0,
+      "seconds": 0.38,
+      "listed_testcase_nodes": 33,
+      "listed_node_outcomes": {
+        "pass": 32,
+        "fail": 1
+      },
+      "unlisted_passing_subtest_accounting": 0,
+      "failures": [
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_preparing_synthesis_is_not_observed_speech_playback",
+          "outcome": "fail"
+        }
+      ],
+      "expected_process_exit": 1,
+      "listed_nodes": [
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_cancelled_before_capture_never_opens_device[256]",
+          "outcome": "pass",
+          "seconds": 0.001
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_cancelled_before_capture_never_opens_device[1024]",
+          "outcome": "pass",
+          "seconds": 0.0
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_decoder_rejects_unsupported_rate_before_interpreting_samples[11025]",
+          "outcome": "pass",
+          "seconds": 0.001
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_decoder_rejects_unsupported_rate_before_interpreting_samples[44100]",
+          "outcome": "pass",
+          "seconds": 0.0
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_decoder_silence_bypasses_model",
+          "outcome": "pass",
+          "seconds": 0.064
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_decoder_mono_supported_positive",
+          "outcome": "pass",
+          "seconds": 0.0
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_decoder_rejects_nonmono",
+          "outcome": "pass",
+          "seconds": 0.0
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_failed_capture_pump_has_unavailable_controls",
+          "outcome": "pass",
+          "seconds": 0.001
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_continuous_speech_after_maximum_segment_is_not_lost",
+          "outcome": "pass",
+          "seconds": 0.0
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_finished_pump_restart_has_a_fresh_consumer_queue",
+          "outcome": "pass",
+          "seconds": 0.001
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_stopped_pump_cannot_reenter_a_pipeline",
+          "outcome": "pass",
+          "seconds": 0.0
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_failed_unmute_start_preserves_muted_state",
+          "outcome": "pass",
+          "seconds": 0.0
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_shutdown_with_pending_record_discards_that_record",
+          "outcome": "pass",
+          "seconds": 0.0
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_preparing_synthesis_is_not_observed_speech_playback",
+          "outcome": "fail",
+          "seconds": 0.001
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_failed_voice_disallows_activity_increasing_commands[listen]",
+          "outcome": "pass",
+          "seconds": 0.002
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_failed_voice_disallows_activity_increasing_commands[unmute]",
+          "outcome": "pass",
+          "seconds": 0.001
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_failed_voice_preserves_activity_reducing_commands[mute]",
+          "outcome": "pass",
+          "seconds": 0.001
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_failed_voice_preserves_activity_reducing_commands[interrupt]",
+          "outcome": "pass",
+          "seconds": 0.001
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_ended_pipeline_does_not_retain_ephemeral_audio_or_transcripts[complete]",
+          "outcome": "pass",
+          "seconds": 0.0
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_ended_pipeline_does_not_retain_ephemeral_audio_or_transcripts[cancel]",
+          "outcome": "pass",
+          "seconds": 0.0
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_ended_pipeline_does_not_retain_ephemeral_audio_or_transcripts[error]",
+          "outcome": "pass",
+          "seconds": 0.0
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_final_executor_never_accepts_answer_material[expected]",
+          "outcome": "pass",
+          "seconds": 0.007
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_final_executor_never_accepts_answer_material[oracle]",
+          "outcome": "pass",
+          "seconds": 0.002
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_missing_null_observation_is_not_scored_as_measured_null",
+          "outcome": "pass",
+          "seconds": 0.001
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_fixture_error_cannot_pass_matching_predicates",
+          "outcome": "pass",
+          "seconds": 0.0
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_maps_original_wake_fields_without_audio",
+          "outcome": "pass",
+          "seconds": 0.002
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_empty_transcript_preserves_actual_engagement",
+          "outcome": "pass",
+          "seconds": 0.001
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_barge_receipt_retains_original_echo_decision",
+          "outcome": "pass",
+          "seconds": 0.002
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_decoder_failure_is_a_typed_protocol_result",
+          "outcome": "pass",
+          "seconds": 0.001
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_restart_uses_the_input_records",
+          "outcome": "pass",
+          "seconds": 0.001
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_closed_voice_has_no_held_thread",
+          "outcome": "pass",
+          "seconds": 0.001
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_missing_capability_uses_original_registry",
+          "outcome": "pass",
+          "seconds": 0.021
+        },
+        {
+          "node_id": "tests/integration/test_campaign7_verification.py::test_private_wrapper_awareness_keeps_absent_expiry_distinct",
+          "outcome": "pass",
+          "seconds": 0.012
+        }
+      ]
+    },
+    "current_collection_scope": {
+      "own_new_controls": 40,
+      "independent_public_controls": 33,
+      "original_listed_nodes": 94,
+      "original_additional_passing_subtests": 2,
+      "original_accounted_checks": 96,
+      "listed_unique_node_ids": 167
+    },
+    "known_strict_failure": "test_preparing_synthesis_is_not_observed_speech_playback",
+    "current_original_96_selection": [
+      "tests/unit/test_microphone.py",
+      "tests/unit/test_speech_buffer.py",
+      "tests/unit/test_speech_pipeline.py",
+      "tests/unit/test_stt.py",
+      "tests/unit/test_tts.py",
+      "tests/unit/test_barge_in.py",
+      "tests/unit/test_audio_devices.py",
+      "tests/unit/test_desktop_voice.py",
+      "tests/unit/test_desktop_audio_capture.py",
+      "tests/safety/test_speech_privacy.py",
+      "tests/unit/test_attention.py",
+      "tests/unit/test_relevance.py",
+      "tests/unit/test_live_pump.py",
+      "tests/unit/test_neural_tts.py",
+      "tests/unit/test_australian_tts.py",
+      "tests/unit/test_vad_segmenter.py::UtteranceSegmenterTests"
+    ],
+    "full_command": ".venv/Scripts/python.exe -X utf8 -m pytest -q tests/integration/test_campaign7_voice_boundaries.py tests/integration/test_campaign7_voice_scenarios.py tests/integration/test_campaign7_voice_retention.py tests/integration/test_campaign7_verification.py tests/unit/test_microphone.py tests/unit/test_speech_buffer.py tests/unit/test_speech_pipeline.py tests/unit/test_stt.py tests/unit/test_tts.py tests/unit/test_barge_in.py tests/unit/test_audio_devices.py tests/unit/test_desktop_voice.py tests/unit/test_desktop_audio_capture.py tests/safety/test_speech_privacy.py tests/unit/test_attention.py tests/unit/test_relevance.py tests/unit/test_live_pump.py tests/unit/test_neural_tts.py tests/unit/test_australian_tts.py tests/unit/test_vad_segmenter.py::UtteranceSegmenterTests --junitxml=data/campaign7-voice/repair-cycle4-final-focused.xml",
+    "omitted_model_importing_class": "tests/unit/test_vad_segmenter.py::SileroAdapterTests",
+    "overlap_warning": "Runs and independent collections overlap; do not sum as disjoint observations",
+    "independent_public_count_is_not_acoustic_count": true
+  },
+  "scenario_coverage": [
+    {
+      "scenario": "Microphone enumeration",
+      "outcome_and_evidence": "Manager's original read-only device inventory sees 15 input aliases/one output; original enumeration unit contracts pass.",
+      "live_eligibility_and_limit": "Actual enumeration, no microphone stream or recording. Aliases are not asserted to be 15 distinct physical microphones."
+    },
+    {
+      "scenario": "Microphone selection",
+      "outcome_and_evidence": "Original input selection/persistence tests use disposable state and controlled devices; saved owner selection is observed read-only.",
+      "live_eligibility_and_limit": "Selected hardware was not opened; physical routing and sample quality are unverified."
+    },
+    {
+      "scenario": "Wake-word detection",
+      "outcome_and_evidence": "80 eligible reference-text cases have TP22/FP0/FN0/TN58; original classifier and attention tests pass.",
+      "live_eligibility_and_limit": "TEXT_ONLY; no WAV recognition or microphone wake precision/recall."
+    },
+    {
+      "scenario": "Non-wake-word rejection",
+      "outcome_and_evidence": "Reference background/near-wake/filler/acknowledgement controls and native attention routing reject irrelevant text.",
+      "live_eligibility_and_limit": "TEXT_ONLY; acoustic background rejection unmeasured."
+    },
+    {
+      "scenario": "Speech-to-text accuracy",
+      "outcome_and_evidence": "Original adapter format, silence, decoder-error and known-return contracts pass with controlled decoder leaves.",
+      "live_eligibility_and_limit": "Actual `small.en` decoding of the 100 WAVs is resource-blocked; WER/transcription accuracy null."
+    },
+    {
+      "scenario": "Silence and noise handling",
+      "outcome_and_evidence": "Actual WAV silence/noise/amplitude variants exist; digital zero PCM avoids decoder calls in original adapter guards.",
+      "live_eligibility_and_limit": "No real VAD or noisy-ASR measurement; nonzero noise does not have an acoustic correctness score."
+    },
+    {
+      "scenario": "Short commands",
+      "outcome_and_evidence": "Prospectively annotated short utterance files and original reference routing are covered.",
+      "live_eligibility_and_limit": "Actual short-command recognition not run."
+    },
+    {
+      "scenario": "Long commands",
+      "outcome_and_evidence": "Original 30-second segmentation is tested with 1,876 controlled PCM blocks and two bounded output segments.",
+      "live_eligibility_and_limit": "Development WAVs last at most 6.025 seconds; no recognized 30-second command or long-ASR accuracy claim."
+    },
+    {
+      "scenario": "Multi-turn conversations",
+      "outcome_and_evidence": "Original attentive bridge exercises six controlled transcript turns; exactly two model-session leaves are called and disengagement/background behavior is preserved.",
+      "live_eligibility_and_limit": "Original text/state integration with controlled session outputs, not live spoken dialogue or real model quality."
+    },
+    {
+      "scenario": "Assistant text-to-speech",
+      "outcome_and_evidence": "Actual System.Speech synthesis creates 100 owned David/Zira WAVs. Manager's original configured Catherine to-file path fails explicitly before process start.",
+      "live_eligibility_and_limit": "Actual file synthesis; configured Catherine unavailable. Fallback and audible playback are untested."
+    },
+    {
+      "scenario": "Speaking state",
+      "outcome_and_evidence": "Controlled playback/failure metadata contracts pass. One strict prospective test fails because original synthesis preparation is labelled speaking before playback.",
+      "live_eligibility_and_limit": "Partial: logical TTS task activity is not observed audibility. Core speaking policy is unchanged."
+    },
+    {
+      "scenario": "Voice interruption",
+      "outcome_and_evidence": "Original controlled playback handle receives termination for interrupt cases, including safety commands.",
+      "live_eligibility_and_limit": "Owned fake subprocess leaf; no audible interruption latency or physical speaker stop proof."
+    },
+    {
+      "scenario": "Barge-in",
+      "outcome_and_evidence": "19/20 prospective playback-reference classifications pass; controlled original classifier-to-playback stop path and echo priority controls run.",
+      "live_eligibility_and_limit": "TEXT_ONLY/state-level; acoustic echo rejection and real speech-over-playback detection unmeasured."
+    },
+    {
+      "scenario": "Stop command behavior",
+      "outcome_and_evidence": "Pre-set stop prevents capture/desktop/pipeline entry; in-flight closed transcript is discarded; text stop priority preserved.",
+      "live_eligibility_and_limit": "Controlled lifecycle proof. Synchronous decoder cancellation waits for return and is disclosed."
+    },
+    {
+      "scenario": "Device disconnection",
+      "outcome_and_evidence": "Controlled capture failure propagates, marks the pump failed/unavailable and denies activity-increasing actions.",
+      "live_eligibility_and_limit": "No physical device was unplugged; automatic device recovery is unsupported here."
+    },
+    {
+      "scenario": "Model timeout",
+      "outcome_and_evidence": "Controlled decoder `TimeoutError` becomes typed `SttError` and never a successful transcript; subsequent independent utterance processing is covered.",
+      "live_eligibility_and_limit": "Dependency fault contract only; no actual model timeout deadline/latency measurement."
+    },
+    {
+      "scenario": "Backend reconnect",
+      "outcome_and_evidence": "Explicit finished-pump restart and fresh managed resume work; failure retains muted state and closes the new owned candidate.",
+      "live_eligibility_and_limit": "Controlled explicit lifecycle. Automatic reconnect and live backend recovery are not claimed."
+    },
+    {
+      "scenario": "Voice-state accuracy in HANNI OS",
+      "outcome_and_evidence": "Native controller snapshots cover unbound, muted, failed, active and closed states; safe failure reason and action gates are checked.",
+      "live_eligibility_and_limit": "Software/API state, not physical microphone/audibility. Speaking-preparation limitation remains; frontend rendering belongs to worker 2."
+    }
+  ],
+  "metrics": [
+    {
+      "metric": "Wake-word precision/recall",
+      "acoustic_or_actual_model_value": null,
+      "reason": "`null`: no actual decoded or microphone signal.",
+      "separate_eligible_evidence": "Reference-text TP22/FP0/FN0/TN58 only; precision/recall 1.0 for that text subset."
+    },
+    {
+      "metric": "Speech transcription accuracy",
+      "acoustic_or_actual_model_value": null,
+      "reason": "`null`: STT model run is resource-blocked.",
+      "separate_eligible_evidence": "Format/error/silence adapter controls are implementation contracts, not accuracy."
+    },
+    {
+      "metric": "End-of-speech latency",
+      "acoustic_or_actual_model_value": null,
+      "reason": "`null`: no real VAD endpoint signal.",
+      "separate_eligible_evidence": "Controlled segment timestamps/30-second cutoff do not establish neural endpoint latency."
+    },
+    {
+      "metric": "Time to first audible response",
+      "acoustic_or_actual_model_value": null,
+      "reason": "`null`: speaker playback never observed.",
+      "separate_eligible_evidence": "Original controller's `first_audible_ms` remains null; synthesis-file duration is not an audible response measurement."
+    },
+    {
+      "metric": "Interruption latency",
+      "acoustic_or_actual_model_value": null,
+      "reason": "`null`: no physical barge/stop signal or acoustic playback.",
+      "separate_eligible_evidence": "Controlled owned playback termination proves a state action only."
+    },
+    {
+      "metric": "Vision task accuracy",
+      "acoustic_or_actual_model_value": null,
+      "reason": "`null` in this voice review; screen evidence is worker 2/root-owned.",
+      "separate_eligible_evidence": "No voice-to-vision substitution."
+    },
+    {
+      "metric": "Capture-to-response latency",
+      "acoustic_or_actual_model_value": null,
+      "reason": "`null`: no supervised capture/model response.",
+      "separate_eligible_evidence": "Original `wake_to_listening_ms` test uses controlled transcript timestamps and is not acoustic wake latency."
+    },
+    {
+      "metric": "Privacy violations",
+      "acoustic_or_actual_model_value": null,
+      "reason": "No campaign physical capture, speaker playback or owner private audio/record access was performed; global violation rate is `null`.",
+      "separate_eligible_evidence": "Original pre-stopped capture-entry and inactive-retention boundary failures were exposed and repaired. Current controlled disposal checks pass; yielded consumer copies and owner activity are outside that proof."
+    }
+  ],
+  "campaign_action_scope": {
+    "microphone_captures": 0,
+    "speaker_playbacks": 0,
+    "desktop_captures": 0,
+    "neural_model_loads": 0,
+    "actual_stt_decoder_calls": 0,
+    "owner_audio_or_private_record_payload_read": false,
+    "owner_configuration_written": false,
+    "owner_processes_started_stopped": false,
+    "global_privacy_proved": false
+  },
+  "root_budget_initial": {
+    "available_ram_bytes": 1131859968,
+    "total_ram_bytes": 33943097344,
+    "used_percent": 96.7,
+    "configured_ram_reserve_mb": 3072,
+    "configured_critical_ram_percent": 90.0,
+    "additional_speech_model_budget_bytes": 1073741824,
+    "additional_model_load_allowed": false
+  },
+  "root_budget_later": {
+    "observed_at": 1791632874.3214908,
+    "available_ram_bytes": 1406386176,
+    "total_ram_bytes": 33943097344,
+    "used_percent": 95.9,
+    "reserve_mb": 3072,
+    "critical_percent": 90.0,
+    "additional_model_budget_bytes": 1073741824,
+    "additional_model_load_allowed": false
+  },
+  "root_configured_tts_file_probe": {
+    "backend": "windows_australian",
+    "configured_voice": "Catherine",
+    "installed_australian_token": false,
+    "scope": "configured WindowsAustralianTts native file mode only",
+    "speaker_playbacks": 0,
+    "neural_model_loads": 0,
+    "physical_speaker_verified": false,
+    "neural_or_SAPI_fallback_playback_tested": false,
+    "outcome": "NATIVE_AU_VOICE_UNAVAILABLE",
+    "error_class": "TtsError",
+    "reason": "Install English (Australia) under Windows Settings > Time & language > Speech > Add voices",
+    "elapsed_seconds": 0.0
+  },
+  "private_final": {
+    "owner": "independent verifier",
+    "private_inputs_oracles_read_by_engineer": false,
+    "private_final_outcomes_included": false,
+    "seal_metadata": "docs/campaign7/FINAL_SEAL.json",
+    "separate_manager_published_result_not_engineering_tuning": true
+  },
+  "artifact_hashes": {
+    "data/campaign7-voice/original-source/manifest.json": "aebe50c62854688410b9b19831b60f3910a489bafabc5db6fe4f3c3b75ebc432",
+    "data/campaign7-voice/original-source/source.zip": "721a95719d2040bea2d3229cdb92380b7f1c31264d855ac3f334abeb24c41b41",
+    "data/campaign7-voice/failed-action-before/manifest.json": "f69db86fc4584c8efe96d38f29718e14fe0550a066a35df8d4452a8a3e37547d",
+    "data/campaign7-voice/failed-action-before/voice.py": "c3c1d42307bdb04b2b28e9729be51c69f030fa75140791c05305f675b61b76ce",
+    "data/campaign7-voice/CORPUS_FREEZE.json": "167056f979632b7622453118d972befff24d261036f3516b9359092bcfe80d32",
+    "data/campaign7-voice/reference-classifiers-before.json": "44d08388f28bd59e877655b7b1a91a7405f3dadac648a81fadb25424b57a3757",
+    "data/campaign7-voice/retention-inactive-before.json": "052daf17157e657ceb723385b4b9fc167f8cdb67a95dc1885511797aa5d00539",
+    "data/campaign7-verifier/SOURCE_READY.json": "51f089b26a7c4143868fa6b7ad313ce36289c88f8124751822806930cb5d0a0e",
+    "data/campaign7-verifier/lifecycle-actions-after.json": "4ba4458bad5c1fe6f9732e011ed9ee6ba72441976801560f1715de9917f46621",
+    "data/campaign7-verifier/audio-independent-audit-corrected/RESULTS.json": "6105666f74bac629f2e34499cbf95aecfb0f78dbf78152dbae87355b6985229d",
+    "data/campaign7-manager/preflight/SUMMARY.json": "b60dae68c09c1087cdc3351c42c3861b0ecea80105e198946c96ab360737f65f",
+    "data/campaign7-manager/preflight/RESOURCE_BUDGET.json": "a7501336a93aa9ab18fdf9b443c6f520cecdd7d21de855c44c6ebbca30762ad9",
+    "data/campaign7-manager/RESOURCE_RECHECK.json": "399496de1903a5154895a1628781e4e463ff95439ba731a171ddb1575ec437bc",
+    "data/campaign7-manager/configured-tts-file/RESULTS.json": "afead4690d6a0c7aea501c6c2fc5b6cc37b717e18b05ebceb613762fe0131dc0",
+    "docs/campaign7/FINAL_SEAL.json": "fb1d76b3209166bd677eb255708680927007d221cd9b2ae962278b37f2daae27"
+  },
+  "review_path": "docs/campaign7/VOICE_REVIEW.md",
+  "review_sha256": "0e0c6ca9dc2e1323dd57a2467c6370f2511516ea5104d1766f3db8ddc4e98c79"
+}

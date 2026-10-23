@@ -1,0 +1,119 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hanni"
+dynamic = ["version"]
+description = "H.A.N.N.I. - Highly Adaptive Neural Network Intelligence: a local-first, always-on Windows assistant with MCP-based computer awareness"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+keywords = ["assistant", "voice", "windows", "local-ai", "python"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: System :: Speech",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    # YAML is the mandated non-secret configuration format (Master Spec §38-39).
+    "PyYAML>=6.0",
+    # Loads a local .env file on Windows without shell setup. Real environment variables always win.
+    "python-dotenv>=1.0",
+    # Lightweight local CPU/RAM telemetry for Milestone 1 resource monitoring.
+    "psutil>=5.9",
+    # Resolve existing GGUF/projector cache files for the configured vision model.
+    "huggingface-hub>=0.23,<2",
+    # Official Model Context Protocol SDK (current stable v2 line).
+    "mcp>=2.2,<3",
+    # Guarded MCP HTTP transport pins verified DNS addresses while preserving TLS.
+    "httpx2>=2.5,<3",
+    "httpcore2>=2.5,<3",
+    # Imported MCP definitions retain and validate their original JSON Schema.
+    "jsonschema>=4.20,<5",
+    # Google account setup is a normal HANNI feature, not a developer extra.
+    "google-auth>=2.29,<3",
+    "google-auth-oauthlib>=1.2,<2",
+    "requests>=2.31,<3",
+    "keyring>=25,<26",
+    "tzdata>=2024.1",
+]
+
+[project.urls]
+# Add the real repository URL after choosing a GitHub owner; no placeholder links.
+
+[project.optional-dependencies]
+harness-manager = ["langgraph>=1,<2"]
+dev = [
+    "pytest>=9.0,<10",
+    "pytest-subtests>=0.14",
+    # Native-CDP contract tests use the installed API without downloading browsers.
+    "playwright>=1.63,<2",
+    "numpy>=1.26",
+    "Pillow>=10.4",
+    # Isolated voice/backend tests patch these streams; no microphone is opened.
+    "sounddevice>=0.5.0",
+    "google-auth>=2.29,<3",
+    "requests>=2.31,<3",
+    "tzdata>=2024.1",
+]
+test-speech = ["torch>=2.2"]
+ui-test = ["playwright>=1.63,<2"]
+# Retained as a compatible install target for existing setup instructions.
+google = []
+voice = ["kokoro-onnx==0.6.1", "sounddevice>=0.5.0"]
+speech = [
+    # Local microphone capture. Wheels bundle PortAudio support on Windows.
+    "sounddevice>=0.5.0",
+    # WASAPI loopback lets HANNI listen to the current Windows speaker output.
+    "soundcard>=0.4.6,<1",
+    # Local Whisper inference. Defaults to CPU int8 in config to preserve GPU VRAM.
+    "faster-whisper>=1.1.0",
+    # Silero streaming VAD; ONNX mode is selected by H.A.N.N.I. at runtime.
+    "silero-vad>=6.0",
+    "onnxruntime>=1.19",
+    "numpy>=1.26",
+]
+
+[project.scripts]
+hanni = "hanni.cli:main"
+hanni-dashboard = "hanni.dashboard.launcher:main"
+
+[tool.setuptools]
+# One package, the V1 plan §19 layout (docs/DECISIONS.md D-0009).
+package-dir = { "hanni" = "src/hanni" }
+packages = [
+    "hanni",
+    "hanni.config",
+    "hanni.core",
+    "hanni.compute",
+    "hanni.dashboard",
+    "hanni.evals",
+    "hanni.hermes",
+    "hanni.logs",
+    "hanni.laya",
+    "hanni.memory",
+    "hanni.mcp",
+    "hanni.models",
+    "hanni.reliability",
+    "hanni.speech",
+    "hanni.tools",
+    "hanni.workflows",
+]
+
+[tool.setuptools.dynamic]
+version = { attr = "hanni.__version__" }
+
+[tool.setuptools.package-data]
+"hanni.dashboard" = ["static/*.html", "static/*.css", "static/*.js", "static/*.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["src"]

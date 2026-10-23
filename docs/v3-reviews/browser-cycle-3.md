@@ -1,0 +1,9 @@
+# Workflows browser cycle 3: premature asynchronous test wait
+
+Cycle 3 retains 24 passing checks and the same failed 25th completion assertion in `data/hanni-v3-review/browser-cycle-3/browser-review.json`. Added diagnostics show the workflow was still `running`, with one dispatched original `file.stat` invocation, no verification evidence yet and unchanged expected LF source bytes. No production change or weakened expected value was introduced.
+
+Inspection of installed Playwright's `lib/coreBundle.js`, `waitForFunctionExpression`, explains the premature wait: its poller calls the predicate synchronously and tests the returned value for truthiness. An asynchronous predicate returns a truthy Promise immediately; the wait resolves from that first Promise even if its eventual value is false. The three authored completion waits used asynchronous private HTTP fetch predicates, so they did not actually poll until completion.
+
+The proposed verification-only correction is a bounded polling helper whose individual `page.evaluate` fetch awaits the real private response. It will require the unchanged `completed` state before the original status/count/evidence/file assertions. This is a harness synchronization correction, not an application completion pass. All later artifact/action/response-reconciliation/cold-history/responsive checks remain unexecuted in this failed cycle.
+
+Compiled app and style hashes remain those recorded in [cycle 2](browser-cycle-2.md). Exact diagnostic harness hash and production-module manifest are retained in the cycle-3 JSON. The manifest now excludes `src/hanni/evals` to match its runtime-only scope. The same scripted-model, synthetic-telemetry, isolated-provider/file/action-allowlist fixture limits apply. No JavaScript errors or nonlocal requests were recorded. No native visual score or planning intelligence score is inferred.

@@ -1,0 +1,9 @@
+# Milestone 2.5 independent review, cycle 1
+
+**FAIL for notification completeness; normal-size native center controls PASS.** Authoritative [user-rubric reassessment](rubric-correction.md) gives Notifications **8.6**, AI-template **1.2**, meeting this screen's visual minimum; other Phase2 screens fail. The original equal-weight table is superseded. [phase-2-cycle-1.md](phase-2-cycle-1.md) records unchanged packaged hashes and true isolation.
+
+Actual native center renders genuine redacted audit and due-task events grouped by category. Inspect selects the exact saved task or opens the exact execution. Mark read, Dismiss, category preference, Clear Cancel, confirmed Clear, persistent retained history and no mutation-feedback notification all pass. A fresh real store read preserves preferences/history; notification actions do not approve or execute arbitrary tools. Native Windows balloon visibility was not independently observed and remains unverified, regardless of helper unit tests.
+
+The coordinator independently reproduced **101 due tasks yielding only 100 reminders**, because observational entries were sliced to the first 100 on each poll. Exact repeated polls could never reach the 101st reminder. This omission is a real functional defect and blocks acceptance even though ordinary UI scenarios pass. Coordinator checkpoint `ddbfa2a` saved the failed cycle before repairing bounded ingestion batches. Affected real API and native notification checks must be rerun on the repaired backend; frontend/executable hashes may remain unchanged because the attached actual server imports repo backend source.
+
+Evidence: `phase2-primary-cycle1-isolated/notifications-*-native.png`; `phase2-workspace-cycle1-verified/notifications-{clear-confirmation,empty-after-clear}-native.png`, notification Inspect frames, and 42/42 normal-size native checks. The 101-reminder regression is coordinator-run evidence, explicitly not a verifier-executed test in this cycle.

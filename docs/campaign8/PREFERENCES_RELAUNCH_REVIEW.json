@@ -1,0 +1,71 @@
+{
+  "scope": "Independent DEVELOPMENT actual packaged native app relaunch using same disposable original preference directory, not OS restart or owner preferences",
+  "evidence": [
+    {
+      "path": "data/campaign8-native/cycle14-preferences-original-restart/RESULTS.json",
+      "sha256": "dc5d4dec447b787878f181795f803e91165b0fe5ff07a25f3dd9d700938bab74"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle14-preferences-original-restart/first/RESULTS.json",
+      "sha256": "379dcd851089d5ee28d4c0979573a65a2754944191cbe1250aa281bc8a060fc6"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle14-preferences-original-restart/second/RESULTS.json",
+      "sha256": "bffb76067761830fec560d3acf951120f43df30f284f04782b37d7226bcbeb4f"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle14-preferences-original-restart/first/native-state/window.json",
+      "sha256": "6216e3ecb1a5cddb08da4b262709f9a3280ba0295f329c2395fd052d98dd9246"
+    }
+  ],
+  "captures_independently_viewed": [
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle14-preferences-original-restart/first/screenshots/saved-original-geometry.png",
+      "sha256": "149abb2f409adf05068c5fd0cb9212ccc5310308c2ac3d2eb3181eedc52dae08"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle14-preferences-original-restart/second/screenshots/restored-original-geometry.png",
+      "sha256": "7d834fcd5200748a8b5813211d0e0b33d74256ba173bd5dba4e8c7026cc31efe"
+    }
+  ],
+  "original_actions": "Actual original tray toggles close-to-tray/minimize-to-tray; original tray opens Mini and native Pin control; original tray Exit desktop for each owned client",
+  "assertions": {
+    "original_saved_then_loaded_values_exact": true,
+    "same_disposable_state_directory": true,
+    "distinct_native_processes": true,
+    "physical_original_rect_preserved": true,
+    "logical_saved_dimensions": [
+      880,
+      560
+    ],
+    "actual_physical_dimensions": [
+      1100,
+      700
+    ],
+    "actual_DPI": 120,
+    "close_to_tray_saved_loaded_and_tray_checked": true,
+    "minimize_to_tray_saved_loaded_and_tray_checked": true,
+    "notifications_false_saved_loaded_and_tray_unchecked": true,
+    "Mini_pin_saved_loaded_and_actual_topmost": true,
+    "Mini_visible_on_restart": false,
+    "both_original_tray_exit_codes": [
+      0,
+      0
+    ],
+    "both_native_cleanups": [
+      true,
+      true
+    ],
+    "original_backend_preserved": true
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "5b77e1673872fe543fa5cc7f69be2705b76b2bc80294bfbf6b8729ebabf53705",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "verdict": "PASS for these saved values, physical main geometry, topmost pin restoration and exact owned relaunch cleanup",
+  "limitations": [
+    "No Mini visibility or Mini position restoration claim; reopened Mini is initially hidden.",
+    "No physical toast/audio success, OS restart, owner-state write, or startup assistant launch.",
+    "Actual current Windows125% only."
+  ]
+}

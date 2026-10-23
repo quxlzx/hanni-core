@@ -1,0 +1,164 @@
+{
+  "captured_at": "2026-10-10T08:13:46.173440+00:00",
+  "model": {
+    "attempts": 40,
+    "actual_model_http_requests": 0,
+    "blocked": 40,
+    "deterministic_no_model_responses": 0,
+    "all_stores_unchanged": true,
+    "A": "Configured legacy retrieval, no LAYA",
+    "D": "Optional deterministic context retrieval, no LAYA",
+    "B": {
+      "status": "unavailable",
+      "actual_laya_model_calls": 0,
+      "reason": "LAYA advisory/retrieval is disabled and independent production gate is closed."
+    },
+    "response_accuracy": null,
+    "incorrect_memory_claims": null,
+    "scope": "Admission diagnostics; unscored actual answers require independent verification."
+  },
+  "model_status_counts": {
+    "blocked": 40
+  },
+  "error_type_counts": {
+    "ModelSelectionError": 40
+  },
+  "separate_post_refusal_inspection_reasons": {
+    "insufficient_ram_reserve": 40
+  },
+  "available_ram_at_attempt_bytes": {
+    "minimum": 1815719936,
+    "maximum": 1951064064
+  },
+  "model_categories": [
+    "ambiguous personal references",
+    "explicit user preferences",
+    "important project decisions",
+    "resistance to malicious instructions embedded in stored content",
+    "temporary preferences",
+    "tentative plans versus confirmed actions",
+    "workflow checkpoint retrieval"
+  ],
+  "model_source_unchanged": true,
+  "model_file": "Qwen3.5-4B-Q4_K_M.gguf",
+  "model_sha256": "25082a7dd3776cc3c741c6347d3bd04523f05796607b3fbc32fa3a25dfa1418c",
+  "model_identity_unchanged": true,
+  "launcher_identity_unchanged": true,
+  "observed_laya_config": {
+    "advisory_enabled": false,
+    "retrieval_enabled": false,
+    "allow_stored_memories": false
+  },
+  "observed_memory_config": {
+    "context_enabled": false,
+    "retrieval_enabled": true
+  },
+  "observed_laya_environment": {
+    "HANNI_LAYA_SHADOW_ENABLED": null,
+    "HANNI_LAYA_TRANSPORT": null,
+    "HANNI_LAYA_ALLOW_REMOTE_TEXT": null
+  },
+  "original_model_health": {
+    "ok": true,
+    "detail": "llama.cpp model is ready"
+  },
+  "admission_attempt_latency_ms": {
+    "samples": 40,
+    "p50": 13.86030000867322,
+    "p95": 15.408494981238618,
+    "scope": "Native request time, including blocked attempts; separate admission inspection excluded. Not generated-answer latency."
+  },
+  "exact_retrieval_tokens": {
+    "baseline": {
+      "captured_at": "2026-10-10T07:46:56.311333+00:00",
+      "scope": "Actual installed tokenizer applied to synthetic retrieval outputs, including explicit warm queries. Not injected model context, model usage or generated answers.",
+      "actual_model_inference_requests": 0,
+      "tokenizer_requests": 708,
+      "raw_receipts": "data\\campaign3-manager\\baseline-tokens\\TOKEN_RECEIPTS.json",
+      "raw_receipts_sha256": "d546d1af77cafb082f6b26a247ef1bf5a903b0c38a85363c8f3bb298fd05c096",
+      "arms": {
+        "context": {
+          "contexts": 354,
+          "measured": 354,
+          "unavailable": 0,
+          "empty_contexts": 163,
+          "mean_context_tokens": 128.09604519774012,
+          "median_context_tokens": 218.0,
+          "max_context_tokens": 472
+        },
+        "legacy": {
+          "contexts": 354,
+          "measured": 354,
+          "unavailable": 0,
+          "empty_contexts": 176,
+          "mean_context_tokens": 119.24011299435028,
+          "median_context_tokens": 196.5,
+          "max_context_tokens": 465
+        }
+      }
+    },
+    "final": {
+      "captured_at": "2026-10-10T08:13:35.401507+00:00",
+      "scope": "Actual installed tokenizer applied to synthetic retrieval outputs, including explicit warm queries. Not injected model context, model usage or generated answers.",
+      "actual_model_inference_requests": 0,
+      "tokenizer_requests": 708,
+      "raw_receipts": "data\\campaign3-manager\\final-tokens\\TOKEN_RECEIPTS.json",
+      "raw_receipts_sha256": "c796e19e5b3fb02d76893d66096a11e60f4c093d7f6ca0068b1ad099e7a05f80",
+      "arms": {
+        "context": {
+          "contexts": 354,
+          "measured": 354,
+          "unavailable": 0,
+          "empty_contexts": 170,
+          "mean_context_tokens": 127.38983050847457,
+          "median_context_tokens": 223.0,
+          "max_context_tokens": 483
+        },
+        "legacy": {
+          "contexts": 354,
+          "measured": 354,
+          "unavailable": 0,
+          "empty_contexts": 191,
+          "mean_context_tokens": 143.19209039548022,
+          "median_context_tokens": 0.0,
+          "max_context_tokens": 567
+        }
+      }
+    }
+  },
+  "regressions": {
+    "tests": 463,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "regression_duration_seconds": 48.979,
+  "references": {
+    "model_summary": {
+      "path": "data\\campaign3-manager\\final-model\\SUMMARY.json",
+      "sha256": "62c9e39387f4b213d3539135e11a1ac75513253dc980e3e87b185804b9fb714d"
+    },
+    "model_source": {
+      "path": "data\\campaign3-manager\\final-model\\RUN_METADATA.json",
+      "sha256": "9f58981e8e626a0cb6fa00c5bfe980e92094a9a9e078502d71ba51eff33c7095"
+    },
+    "model_selection": {
+      "path": "data\\campaign3-manager\\final-model\\SELECTED_DEVELOPMENT.json",
+      "sha256": "e19ab610b159ceea04ceb41cf95fd3633cf1a6a1a109fa7fb13ef8dd65892674"
+    },
+    "token_summary": {
+      "path": "data\\campaign3-manager\\final-tokens\\SUMMARY.json",
+      "sha256": "1f44b3ebec9d03f80a07559e24315b3076dddff045aa2566c1cd8aba9efd4ab2"
+    },
+    "regressions": {
+      "path": "data\\campaign3-manager\\final-regressions-02.xml",
+      "sha256": "2a53e67112eccb7083407c187c882934b89fe9631f9a95120afef6a202c803ab"
+    },
+    "source_freeze": {
+      "path": "data\\campaign3-manager\\final-freeze\\proof.json",
+      "sha256": "9b0e5be5aea9042680b79fb211584e5e3fdc639233928d7968aa3601224a1a28"
+    }
+  },
+  "source_freeze_file_count": 223,
+  "scope": "No owner memory database was opened. Actual model responses require generation HTTP evidence. Controlled fixtures and tokenizer calls are separate."
+}

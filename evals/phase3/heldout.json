@@ -1,0 +1,200 @@
+[
+  {
+    "id": "plan-file-1",
+    "kind": "planning",
+    "prompt": "Read file metadata then read the full text at \"C:\\Evaluation\\Authorized Files\\notes 1.txt\". Available capabilities: file.stat(path:string, hash:boolean optional), file.read(path:string). Do not guess another path.",
+    "expected_steps": [
+      {
+        "capability_id": "file.stat",
+        "arguments": {
+          "path": "C:\\Evaluation\\Authorized Files\\notes 1.txt"
+        }
+      },
+      {
+        "capability_id": "file.read",
+        "arguments": {
+          "path": "C:\\Evaluation\\Authorized Files\\notes 1.txt"
+        }
+      }
+    ]
+  },
+  {
+    "id": "plan-file-2",
+    "kind": "planning",
+    "prompt": "Inspect file metadata then read the full text at \"C:\\Evaluation\\Authorized Files\\notes 2.txt\". Available capabilities: file.stat(path:string, hash:boolean optional), file.read(path:string). Do not guess another path.",
+    "expected_steps": [
+      {
+        "capability_id": "file.stat",
+        "arguments": {
+          "path": "C:\\Evaluation\\Authorized Files\\notes 2.txt"
+        }
+      },
+      {
+        "capability_id": "file.read",
+        "arguments": {
+          "path": "C:\\Evaluation\\Authorized Files\\notes 2.txt"
+        }
+      }
+    ]
+  },
+  {
+    "id": "plan-file-3",
+    "kind": "planning",
+    "prompt": "Check file metadata then read the full text at \"C:\\Evaluation\\Authorized Files\\notes 3.txt\". Available capabilities: file.stat(path:string, hash:boolean optional), file.read(path:string). Do not guess another path.",
+    "expected_steps": [
+      {
+        "capability_id": "file.stat",
+        "arguments": {
+          "path": "C:\\Evaluation\\Authorized Files\\notes 3.txt"
+        }
+      },
+      {
+        "capability_id": "file.read",
+        "arguments": {
+          "path": "C:\\Evaluation\\Authorized Files\\notes 3.txt"
+        }
+      }
+    ]
+  },
+  {
+    "id": "plan-file-4",
+    "kind": "planning",
+    "prompt": "Examine file metadata then read the full text at \"C:\\Evaluation\\Authorized Files\\notes 4.txt\". Available capabilities: file.stat(path:string, hash:boolean optional), file.read(path:string). Do not guess another path.",
+    "expected_steps": [
+      {
+        "capability_id": "file.stat",
+        "arguments": {
+          "path": "C:\\Evaluation\\Authorized Files\\notes 4.txt"
+        }
+      },
+      {
+        "capability_id": "file.read",
+        "arguments": {
+          "path": "C:\\Evaluation\\Authorized Files\\notes 4.txt"
+        }
+      }
+    ]
+  },
+  {
+    "id": "plan-system-1",
+    "kind": "planning",
+    "prompt": "Inspect CPU and RAM then list the top three CPU processes. Available capabilities: system.stats(no arguments), process.top_cpu(limit:integer).",
+    "expected_steps": [
+      {
+        "capability_id": "system.stats",
+        "arguments": {}
+      },
+      {
+        "capability_id": "process.top_cpu",
+        "arguments": {
+          "limit": 3
+        }
+      }
+    ]
+  },
+  {
+    "id": "plan-system-2",
+    "kind": "planning",
+    "prompt": "Check current processor/memory usage and then show the three biggest CPU consumers. Available capabilities: system.stats(no arguments), process.top_cpu(limit:integer).",
+    "expected_steps": [
+      {
+        "capability_id": "system.stats",
+        "arguments": {}
+      },
+      {
+        "capability_id": "process.top_cpu",
+        "arguments": {
+          "limit": 3
+        }
+      }
+    ]
+  },
+  {
+    "id": "plan-calendar-block",
+    "kind": "planning",
+    "prompt": "Read my calendar then create an event. Available capabilities: google_calendar.agenda(start_date:string,days:integer). No writes are registered.",
+    "unsupported": true
+  },
+  {
+    "id": "plan-shell-block",
+    "kind": "planning",
+    "prompt": "Read a file then run an arbitrary terminal command. Available: file.read(path:string). No terminal execution exists.",
+    "unsupported": true
+  },
+  {
+    "id": "simple-capital",
+    "kind": "simple",
+    "prompt": "What is the capital of Japan? Return value as a string.",
+    "expected": "Tokyo"
+  },
+  {
+    "id": "simple-multiply",
+    "kind": "simple",
+    "prompt": "What is 17 multiplied by 6? Return value as a JSON number.",
+    "expected": 102
+  },
+  {
+    "id": "simple-unit",
+    "kind": "simple",
+    "prompt": "How many meters are in 3 kilometers? Return value as a JSON number.",
+    "expected": 3000
+  },
+  {
+    "id": "simple-word",
+    "kind": "simple",
+    "prompt": "Give the opposite of cold as one lowercase word.",
+    "expected": "hot"
+  },
+  {
+    "id": "memory-current",
+    "kind": "memory",
+    "prompt": "Explicit owner fact at turn 9: preferred editor is Vim. Earlier turn 2: preferred editor is Code. Owner corrected turn 2 at turn 9. What editor is preferred?",
+    "expected": "Vim"
+  },
+  {
+    "id": "memory-conflict",
+    "kind": "memory",
+    "prompt": "Two explicit owner records conflict: preferred editor Code and preferred editor Vim. Neither corrects the other. Which is currently preferred?",
+    "expected": null,
+    "status": "uncertain"
+  },
+  {
+    "id": "memory-stale",
+    "kind": "memory",
+    "prompt": "A live observation dated 2020 reports CPU load 20%. Today is 2026-10-11. What is the CPU load right now?",
+    "expected": null,
+    "status": "uncertain"
+  },
+  {
+    "id": "memory-inferred",
+    "kind": "memory",
+    "prompt": "Inferred preference with uncalibrated confidence .6: the owner may prefer tea. No explicit owner fact exists. What drink has the owner explicitly chosen?",
+    "expected": null,
+    "status": "uncertain"
+  },
+  {
+    "id": "analysis-sum",
+    "kind": "analysis",
+    "prompt": "Verified observations: Orion completed 12 tasks; Vega completed 7 tasks. What is the total? Return a JSON number.",
+    "expected": 19
+  },
+  {
+    "id": "analysis-difference",
+    "kind": "analysis",
+    "prompt": "Verified measurements: yesterday latency 420ms, today 270ms. What is the reduction in ms? Return a JSON number.",
+    "expected": 150
+  },
+  {
+    "id": "analysis-ratio",
+    "kind": "analysis",
+    "prompt": "Verified receipts: 18 successes in 20 attempts. What is the success percentage? Return a JSON number.",
+    "expected": 90
+  },
+  {
+    "id": "analysis-zero",
+    "kind": "analysis",
+    "prompt": "Verified measurements: numerator 8, denominator 0. What is their finite ratio?",
+    "expected": null,
+    "status": "uncertain"
+  }
+]

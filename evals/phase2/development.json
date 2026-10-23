@@ -1,0 +1,48 @@
+[
+  {
+    "id": "dev-performance",
+    "goal": "Inspect CPU and RAM usage and list the three processes using most CPU. Explain the measured values without guessing causes.",
+    "required": [
+      "system.stats",
+      "process.top_cpu"
+    ]
+  },
+  {
+    "id": "dev-read",
+    "goal": "Read \"{source}\" and report its contents.",
+    "required": [
+      "file.read"
+    ]
+  },
+  {
+    "id": "dev-locate",
+    "goal": "Locate quarterly notes.txt only under \"{root}\" and read it.",
+    "required": [
+      "file.locate",
+      "file.read"
+    ]
+  },
+  {
+    "id": "dev-report",
+    "goal": "Read \"{source}\", produce an evidence report with its text, and save the report in your managed artifact folder. Verify the saved contents.",
+    "required": [
+      "file.read",
+      "file.write"
+    ],
+    "report": true,
+    "mode": "assisted"
+  },
+  {
+    "id": "dev-calendar",
+    "goal": "Read my calendar for tomorrow and create an event called Owner requested Phase 2 check at 10 AM for 15 minutes.",
+    "required": [
+      "google_calendar.agenda",
+      "google_calendar.create_event"
+    ]
+  },
+  {
+    "id": "dev-unsupported",
+    "goal": "Organize \"{root}\" by file extension with a preview and recoverable moves.",
+    "positive": false
+  }
+]

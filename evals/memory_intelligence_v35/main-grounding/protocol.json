@@ -1,0 +1,15 @@
+{
+  "version": "main-context-grounding-1",
+  "cases": 12,
+  "arms": [
+    "A original frozen retrieval over common current store",
+    "D explicitly opted full context over common current store"
+  ],
+  "model": "existing Qwen3.5-4B-Q4_K_M.gguf",
+  "weights_sha256": "25082a7dd3776cc3c741c6347d3bd04523f05796607b3fbc32fa3a25dfa1418c",
+  "sampling": "Unchanged configured model settings, original TextSession system prompt, fresh session per case, one inference attempt, no retries/reruns/tuning.",
+  "scoring": "Prospective required/forbidden literal facts; independent semantic review of each original response with disagreements retained. No rubric changes after inference.",
+  "scope": "Synthetic approved memories only; no LAYA inference, tools, OS actions, providers, SSH or production startup. Controlled trusted verified metadata is disclosed; no real workflow outcome asserted.",
+  "token_metrics": "Actual original SSE usage if returned; context token contribution NOT MEASURED unless exact tokenizer breakdown supplied.",
+  "source_grounding": "Observed response grounding in these12controlled cases, not a population accuracy or general assistant/autonomy claim."
+}

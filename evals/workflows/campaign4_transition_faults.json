@@ -1,0 +1,392 @@
+[
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "awaiting_plan_approval",
+    "target": "blocked"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "awaiting_plan_approval",
+    "target": "cancelled"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "awaiting_plan_approval",
+    "target": "paused"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "awaiting_plan_approval",
+    "target": "planning"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "awaiting_plan_approval",
+    "target": "ready"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "awaiting_step_approval",
+    "target": "blocked"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "awaiting_step_approval",
+    "target": "cancelled"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "awaiting_step_approval",
+    "target": "failed"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "awaiting_step_approval",
+    "target": "paused"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "awaiting_step_approval",
+    "target": "ready"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "awaiting_step_approval",
+    "target": "running"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "blocked",
+    "target": "awaiting_plan_approval"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "blocked",
+    "target": "cancelled"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "blocked",
+    "target": "failed"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "blocked",
+    "target": "paused"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "blocked",
+    "target": "planning"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "blocked",
+    "target": "ready"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "paused",
+    "target": "awaiting_plan_approval"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "paused",
+    "target": "blocked"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "paused",
+    "target": "cancelled"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "paused",
+    "target": "planning"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "paused",
+    "target": "ready"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "paused",
+    "target": "running"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "planning",
+    "target": "awaiting_plan_approval"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "planning",
+    "target": "blocked"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "planning",
+    "target": "cancelled"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "planning",
+    "target": "failed"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "planning",
+    "target": "paused"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "ready",
+    "target": "awaiting_step_approval"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "ready",
+    "target": "blocked"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "ready",
+    "target": "cancelled"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "ready",
+    "target": "paused"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "ready",
+    "target": "running"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "recovering",
+    "target": "blocked"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "recovering",
+    "target": "cancelled"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "recovering",
+    "target": "failed"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "recovering",
+    "target": "paused"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "retrying",
+    "target": "blocked"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "retrying",
+    "target": "cancelled"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "retrying",
+    "target": "failed"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "retrying",
+    "target": "paused"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "retrying",
+    "target": "running"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "running",
+    "target": "awaiting_step_approval"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "running",
+    "target": "blocked"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "running",
+    "target": "cancelled"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "running",
+    "target": "completed"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "running",
+    "target": "failed"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "running",
+    "target": "partially_completed"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "running",
+    "target": "paused"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "running",
+    "target": "recovering"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "running",
+    "target": "retrying"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "running",
+    "target": "verifying"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "submitted",
+    "target": "awaiting_plan_approval"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "submitted",
+    "target": "blocked"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "submitted",
+    "target": "cancelled"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "submitted",
+    "target": "paused"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "submitted",
+    "target": "planning"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "verifying",
+    "target": "blocked"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "verifying",
+    "target": "cancelled"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "verifying",
+    "target": "completed"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "verifying",
+    "target": "failed"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "verifying",
+    "target": "partially_completed"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "verifying",
+    "target": "paused"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "verifying",
+    "target": "retrying"
+  },
+  {
+    "boundary": "after_projection_before_checkpoint",
+    "expected": "sqlite_abort_with_no_record_or_checkpoint_change",
+    "source": "verifying",
+    "target": "running"
+  }
+]

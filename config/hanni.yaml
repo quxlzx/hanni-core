@@ -1,0 +1,190 @@
+# H.A.N.N.I. runtime configuration (non-secret). Secrets come only from the
+# environment / .env - see .env.example. Loading is strict: unknown keys fail.
+
+hanni:
+  name: "H.A.N.N.I."
+
+# Owner-local Calendar times. Change this IANA name if you move timezones.
+user:
+  timezone: America/New_York
+
+personality:
+  enabled: true
+  style: hanni
+  intensity: 0.65
+
+# Model Context Protocol boundary used by the resident assistant. Natural-language
+# routing exposes read tools plus only the explicitly allowlisted owner actions.
+mcp:
+  enabled: true
+  read_only: true
+  allowed_actions:
+    - google_calendar.create
+    - app.open
+    - spotify.launch
+    - spotify.focus
+    - spotify.play_pause
+    - spotify.next
+    - spotify.previous
+    - spotify.search
+    - spotify.open_uri
+    - media.play_pause
+    - media.next_track
+    - media.previous_track
+    - media.stop
+  max_tools_per_turn: 8
+  max_tool_rounds: 3
+  tool_result_chars: 12000
+
+logging:
+  level: INFO             # DEBUG | INFO | WARNING | ERROR | CRITICAL (env HANNI_LOG_LEVEL overrides)
+  console_format: text    # text | json
+  file_enabled: true      # writes JSON lines to <data_dir>/logs/hanni.jsonl (git-ignored)
+  file_format: json
+  max_bytes: 10485760     # rotate file logs at 10 MiB
+  backup_count: 5
+
+recovery:
+  # Unified retry budget: total attempts for one operation, including the first
+  # (docs/DECISIONS.md D-0003). Used by the model client (M1) and the tool loop (M8).
+  max_attempts: 3
+
+# Milestone 2 local microphone + VAD + STT. The STT default deliberately runs
+# on CPU int8 so the GPU remains available for the resident assistant model.
+speech:
+  sample_rate: 16000
+  channels: 1
+  block_samples: 512       # Silero streaming window at 16 kHz (~32 ms)
+  input_device: default    # "default", a device index, or device name
+  vad:
+    threshold: 0.5
+    min_silence_ms: 500
+    speech_pad_ms: 100
+    pre_roll_ms: 250
+    max_utterance_seconds: 30
+  stt:
+    model: small.en
+    device: cpu
+    compute_type: int8
+    language: en
+    beam_size: 1
+  # HANNI's original local neural voice profile. Keep it consistent across starts.
+  tts:
+    enabled: true
+    backend: kokoro
+    voice: hanni             # original af_heart / bf_emma / af_bella blend
+    rate: 1                  # slightly faster; Windows range: -10 (slow) .. 10 (fast)
+    volume: 100              # 0 .. 100
+    chunk_chars: 260         # natural bounded chunks within one synthesis call
+    timeout_seconds: 120
+    model_dir: voice         # relative to HANNI_DATA_DIR (normally data/)
+    speed: 1.06              # neural voice speed; range: 0.5 .. 2.0
+    language: en-gb
+    cpu_threads: 4          # CPU only; leaves both GPUs for HANNI's language models
+    sapi_fallback: false     # report missing voice assets rather than silently changing voices
+    pitch_semitones: 2.0     # neural semitones / approximate Windows pitch steps; -4 .. 4
+
+  # Milestone 5: microphone stays active while H.A.N.N.I. speaks.
+  # Non-echo owner speech interrupts TTS; short explicit phrases are handled
+  # deterministically without asking the LLM whether playback should stop.
+  barge_in:
+    enabled: true
+    interrupt_phrases: [stop, wait, "hold on", quiet, cancel, "no", "no wait", "hanni stop", "honey stop", "ani stop"]
+    echo_suppression: true
+    echo_min_words: 3
+    echo_overlap_ratio: 0.72
+    poll_ms: 50
+
+  relevance:
+    # M3.1: microphone/STT stay active continuously, but the Supervisor only
+    # receives speech after an explicit Hanni wake. 0 = stay engaged until an
+    # explicit disengage phrase; there is no automatic conversation timeout.
+    # "ani" and "honey" are STT fallbacks. M6 owner preference allows every
+    # configured wake alias to activate from any token-bounded position in the utterance.
+    wake_names: [hanni, ani, hani, hanny, hannie, honey]
+    engagement_seconds: 0
+    disengage_phrases:
+      - "that's all"
+      - "that is all"
+      - "that'll be all"
+      - "that will be all"
+      - "we're done"
+      - "we are done"
+      - "go quiet"
+      - "you can go quiet"
+      - "stop responding"
+      - "stand by"
+      - "standby"
+      - "never mind"
+      - "nevermind"
+      - "never mind hanni"
+      - "thanks hanni that's all"
+      - "thank you hanni that's all"
+      - "bye"
+      - "goodbye"
+      - "see you"
+      - "talk to you later"
+    # Filler-only utterances are ignored even while H.A.N.N.I. is engaged.
+    filler_words: [um, umm, ummm, uh, uhh, uhhh, hm, hmm, hmmm, mm, mmm, erm, er, err, ah]
+    # Passive acknowledgements do not create a new Supervisor response, but
+    # H.A.N.N.I. remains engaged for the next real follow-up.
+    acknowledgement_words: [thanks, "thank you", yeah, yep, okay, ok, alright, "got it", cool]
+
+
+# M9 local durable memory: explicit commands, conservative owner-fact extraction,
+# and bounded relevant recall. Memories never grant tool authority.
+memory:
+  enabled: true
+  database_file: memory.sqlite3   # stored under <data_dir>; never inside source/config
+  max_item_chars: 1200            # concise durable facts/preferences only
+  search_limit: 8
+  extraction_enabled: true       # concise stable owner statements only, announced when saved
+  retrieval_enabled: true        # relevant historical facts; no raw transcript storage
+  max_context_chars: 4000
+  min_relevance_score: 25
+  context_enabled: false         # opt-in V3.5 deterministic project/personal context
+  max_context_tokens: 4000        # conservative UTF-8 byte upper bound, also limited by chars
+
+# Requested flags never prove inference is healthy or independently verified.
+# Legacy opt-in shadow observation stays configured through HANNI_LAYA_* env.
+laya:
+  advisory_enabled: false
+  retrieval_enabled: false       # blocked until independent actual-model gates pass
+  transport: local
+  url: http://127.0.0.1:8766/v1/advisory/evaluate
+  allow_stored_memories: false    # separate permission from shadow owner-turn observation
+  allow_remote_text: false
+  allow_remote_memories: false    # separate explicit consent for pairwise stored text
+  timeout_seconds: 1.5
+  max_queue: 8
+  cache_seconds: 30
+
+# V3 goals are private workflow context, separate from permanent memory.
+# Background actions still require original capability/profile permission and scope.
+workflows:
+  enabled: true
+  default_mode: assisted
+  max_steps: 16
+  max_parallel_reads: 2
+  max_active_workflows: 2
+  max_retries: 1
+  step_timeout_seconds: 30
+  max_duration_seconds: 600
+  planning_timeout_seconds: 120
+  max_plan_attempts: 2
+  approval_ttl_seconds: 300
+  max_invocations: 32
+  max_result_bytes: 65536
+  max_artifact_bytes: 5242880
+  max_workflows: 500
+  retention_days: 30
+
+# V4 measured model placement. Policy changes made in Mission Control persist;
+# changing this configured default deliberately resets that saved preference.
+# Capability, context and privacy gates apply before every policy/override.
+model_routing:
+  policy: balanced
+  max_fallbacks: 2
+  max_queue_seconds: 5
+  minimum_samples: 20
+  minimum_accuracy_lower_bound: 0.7

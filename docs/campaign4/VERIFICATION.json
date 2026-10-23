@@ -1,0 +1,417 @@
+{
+  "scope": "Independent controlled original-workflow reliability verification; final prompts/oracles/raw file facts excluded.",
+  "baseline": "0aede83",
+  "source_freeze": {
+    "file_count": 288,
+    "own_proof_sha256": "7d9b33399136e6cf49fb2b3f4caf6ed4047beb1ba3bac30c40a91a6786604974",
+    "own_archive_sha256": "c879ebba8e9d601cda9be107a4f241986106a015930350a4f74140d85edd76e9",
+    "manager_manifest_sha256": "f7f3ef6ca9a9772223b0a3dd2a0947826e4f7b942f43a5bce53e2c36eda42e49",
+    "manager_archive_sha256": "09de198ca6101c7cc1699464f1d1242d1fb0ed31ead88aa5c5524951cb17bf08",
+    "current_bytes_unchanged": true
+  },
+  "holdout": {
+    "cases": 40,
+    "categories": {
+      "ambiguous_prior_write_outcomes": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "approval_rejection": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "backend_interruption": {
+        "attempted": 2,
+        "passed": 1
+      },
+      "bounded_retries": {
+        "attempted": 2,
+        "passed": 0
+      },
+      "capability_availability": {
+        "attempted": 2,
+        "passed": 1
+      },
+      "checkpoint_persistence": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "dependency_ordering": {
+        "attempted": 2,
+        "passed": 1
+      },
+      "goal_understanding": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "multi_step_tool_usage": {
+        "attempted": 2,
+        "passed": 1
+      },
+      "partial_completion": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "pause_and_resume": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "permission_requests": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "plan_generation": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "recovery_after_restart": {
+        "attempted": 2,
+        "passed": 1
+      },
+      "safe_parallel_execution": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "sequential_execution": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "step_verification": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "task_cancellation": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "worker_disconnection": {
+        "attempted": 2,
+        "passed": 1
+      },
+      "workflow_completion_reporting": {
+        "attempted": 2,
+        "passed": 2
+      }
+    },
+    "per_category": 2,
+    "attempted": 40,
+    "passed": 32,
+    "failed": 8,
+    "fixture_errors": 0,
+    "once_only": true,
+    "untouched_before_freeze": true,
+    "sealed_inputs_unchanged": true,
+    "automatic_classifications_unchanged": {
+      "workflow_contract_failure": 5,
+      "authored_contract_mismatch": 3
+    },
+    "manual_scope_annotations": {
+      "safe_withdrawal_state_projection": 1,
+      "typed_generated_readback_retrieval_limitation": 1,
+      "conservative_generated_source_boundary": 1,
+      "authored_nonretryable_descriptor_expectation": 4,
+      "postdetach_state_projection_gap": 1
+    },
+    "grade_promotion": false,
+    "manual_review_cases": 40,
+    "all_raw_hashes_match": true,
+    "review_scope": "Post-run interpretation only, no changes to frozen grades, inputs, oracles or production."
+  },
+  "evidence_crosschecks": {
+    "actual_effect_hash_readbacks": 16,
+    "actual_sensitive_dispatches": 16,
+    "successful_cancellation_cases": 2,
+    "original_handler_entries_after_successful_cancel": 0,
+    "unchanged_original_effect_hash_readbacks": 15,
+    "declared_controlled_tampers_correctly_unverified": 1
+  },
+  "manual_measurement_corrections": [
+    {
+      "initial_receipt": "data/campaign4-verifier/final-holdout/MANUAL_REVIEW_INITIAL.json",
+      "initial_sha256": "e0ae0efb890c7c7adbeec88909520e0198d81b934ccc007bb7d83ad761dbb8b8",
+      "description": "Initial auxiliary hash check assumed original effect bytes remain unchanged after all later fixture faults. One prospectively declared before-verification artifact tamper changes bytes; the original result correctly becomes UNVERIFIED. All frozen grades and raw workflow receipts remain unchanged."
+    }
+  ],
+  "final_observed_states": {
+    "blocked": 16,
+    "completed": 11,
+    "ready": 2,
+    "awaiting_step_approval": 1,
+    "paused": 3,
+    "partially_completed": 4,
+    "cancelled": 2,
+    "running": 1
+  },
+  "native_model_diagnostics": {
+    "attempts": 18,
+    "distinct_public_goals": 6,
+    "cycles": 3,
+    "actual_generation_http": 0,
+    "blocked": 18,
+    "actual_plans": 0,
+    "tool_executions": 0,
+    "goal_understanding_accuracy": null,
+    "plan_generation_accuracy": null,
+    "separate_original_admission_exclusion": "insufficient_ram_reserve",
+    "frozen_available_ram_bytes_range": [
+      1721548800,
+      1833721856
+    ],
+    "original_reserve_bytes": 2147483648,
+    "scope": "Original guard retained; controlled fixture protocol scores are not model semantic scores.",
+    "individual_receipts_independently_crosschecked": 18
+  },
+  "owner_preservation": {
+    "model_process_unchanged": true,
+    "parent_process_unchanged": true,
+    "memory_config_unchanged": true,
+    "laya_config_unchanged": true,
+    "model_generation_defaults_unchanged": true,
+    "parent_laya_flags_unchanged": true,
+    "endpoint_health_baseline": {
+      "ok": true,
+      "detail": "llama.cpp model is ready"
+    },
+    "endpoint_health_frozen": {
+      "ok": true,
+      "detail": "llama.cpp model is ready"
+    },
+    "model_process_exact_identity_alive": true,
+    "parent_process_exact_identity_alive": true,
+    "scope": "Fixed model/launcher identity and owner configuration subkeys only; excludes timestamps and changing RAM."
+  },
+  "owned_cleanup": {
+    "final_cases": 6,
+    "final_exact_child_identities": 12,
+    "separate_challenge_exact_child_identities": 2,
+    "all_exact_identities_closed": true,
+    "all_receipt_launcher_pids_absent": true,
+    "no_owner_or_os_restart": true
+  },
+  "public_frozen_phases": {
+    "development": {
+      "cases": 120,
+      "passed": 103,
+      "source_uniform": true,
+      "harness_errors": 0,
+      "scope": {
+        "native_original_scheduler": 102,
+        "direct_original_store": 18
+      }
+    },
+    "eligible_supplement": {
+      "cases": 5,
+      "passed": 5,
+      "source_uniform": true,
+      "harness_errors": 0,
+      "scope": {
+        "native_original_scheduler": 5
+      }
+    },
+    "explicit_goals_supplement": {
+      "cases": 12,
+      "passed": 12,
+      "source_uniform": true,
+      "harness_errors": 0,
+      "scope": {
+        "native_original_scheduler": 12
+      }
+    },
+    "reference_protocol": {
+      "cases": 10,
+      "passed": 10,
+      "source_uniform": true,
+      "harness_errors": null,
+      "scope": "direct_original_reference_and_transport_schema; no scheduler/model claim"
+    },
+    "projection_faults": {
+      "cases": 65,
+      "passed": 65,
+      "source_uniform": true,
+      "harness_errors": null,
+      "scope": "all dynamically declared edges, direct store after SQL projection/before checkpoint fault; native coverage separate"
+    },
+    "analysis": {
+      "cases": 10,
+      "failures": 0,
+      "errors": 0,
+      "returncode": 0,
+      "scope": "original LOCAL analysis controlled protocol; not model semantics"
+    }
+  },
+  "actual_separate_restart_challenge": {
+    "checks": 14,
+    "passed": 14,
+    "write_invocations": 1,
+    "original_write_audit_rows": 1,
+    "actual_model_calls": 0,
+    "no_completed_step_replay": true,
+    "artifact_serialization": "Original Windows text serialization and logical source equality; binary-preserving copy not asserted."
+  },
+  "acceptance": {
+    "all_controlled_contract_cases_pass": false,
+    "zero_unauthorized_original_effects_in_exercised_fixtures": true,
+    "zero_unauthorized_sensitive_dispatches_in_exercised_fixtures": true,
+    "zero_duplicate_consequential_writes_in_exercised_fixtures": true,
+    "actual_model_goal_understanding": "UNMEASURED",
+    "actual_model_plan_quality": "UNMEASURED",
+    "physical_worker_or_provider_integration": "UNMEASURED",
+    "owner_application_restarted": false
+  },
+  "acceptance_limits": [
+    "Eight frozen contracts remain failed.",
+    "Four manual retry/recovery expectations conflict with the original nonretryable read descriptor; failed grades are retained.",
+    "Remaining state/menu/generated-source limitations are observed controlled boundaries, not demonstrated critical safety breaches.",
+    "Zero unauthorized or duplicate counts are bounded by exercised profiles and controlled fixtures.",
+    "Sixteen workflow effects exclude setup and declared adversarial artifact tampering.",
+    "Direct-store fault coverage does not imply all transitions reached through the scheduler.",
+    "Source checkout acceptance does not establish deployed owner application behavior.",
+    "Actual model semantic quality and physical worker/provider integration remain unmeasured."
+  ],
+  "evidence": [
+    {
+      "path": "data/campaign4-verifier/final-freeze/proof.json",
+      "sha256": "7d9b33399136e6cf49fb2b3f4caf6ed4047beb1ba3bac30c40a91a6786604974",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-verifier/final-freeze/source.zip",
+      "sha256": "c879ebba8e9d601cda9be107a4f241986106a015930350a4f74140d85edd76e9",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-verifier/holdout/seal.json",
+      "sha256": "9651ddabd873f91712707628074b47e0c77d20e04d1b79e3d4e7adf9645dfd97",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-verifier/final-holdout/COMPLETE.json",
+      "sha256": "b1d80910142d1f69aaba16b93b649aa3d93b6ad357f2c3f272ee4ac2481e5c48",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-verifier/final-holdout/GRADES.json",
+      "sha256": "24130215122f3902efb840a63aa62bef7d76fb0a95855f8d25e79776d568dfc5",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-verifier/final-holdout/SUMMARY.json",
+      "sha256": "3ae8a7f2374b19884b2b29e9d1f00ae2e3befb38fc0597b3bc23dc7ce942abd3",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-verifier/final-holdout/MANUAL_REVIEW.json",
+      "sha256": "bcc267daa8a61af3837f18e0274071fc950344e20f05d69a16658f9081c63a2a",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-verifier/final-holdout/MANUAL_REVIEW_INITIAL.json",
+      "sha256": "e0ae0efb890c7c7adbeec88909520e0198d81b934ccc007bb7d83ad761dbb8b8",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-verifier/final-integrity.json",
+      "sha256": "589f29067fdd182af639496c6849fd57a9bbbabd4cada392b102b03fea4554f0",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-verifier/CLOSEOUT_INTEGRITY.json",
+      "sha256": "722c28775e4be2134f64541496de81a7abdc2d4d6dfb6e85b47ef8baf2ec7457",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-verifier/model-preservation-review.json",
+      "sha256": "f69b35684b3b53fa5dc3f5d3c9c52620126df4e6c68f1f76329e354744d80dba",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-verifier/final-public/SUMMARY.json",
+      "sha256": "9db033e18ed79409a784474726f786e233659b2dc8716018d6025a3dcc3d9b4b",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-verifier/restart-challenge-final/independent-audit.json",
+      "sha256": "fa0ec96c210c8974ad48a6ede2d5a32eed5570aee898b0fe4f7d2dcb58cec76a",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-manager/final-freeze/FREEZE.json",
+      "sha256": "b891dca9cd3706a4a02f7adae8a1c687f92e9ba7403a787fb736b3d3d6834ce7",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-manager/native-planning-baseline/SUMMARY.json",
+      "sha256": "c983753e85865a00c6eeba690c94ab6b6ecaf1f7b2baa02d2a0ac0e358aa8709",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-manager/native-planning-final/SUMMARY.json",
+      "sha256": "84345cc55524e38bc3966389a353e5db56fb8c0b932971c056e95e42f3fe88a1",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-manager/native-planning-frozen/SUMMARY.json",
+      "sha256": "cf9bc0225dba689afdae5c9189088a69d1c0b4b7e58bd57de3b3eebc55dad3e8",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-manager/regressions-final/results.xml",
+      "sha256": "0de61d7db72b3eb8300c4d6c5087ba80d1eba85ae4b9934b1b6d56f1a1d582ad",
+      "private": false
+    },
+    {
+      "path": "docs/campaign4/FINAL_HOLDOUT.json",
+      "sha256": "889fb4e1dc3b0cec631db0276ae9fbb28fe0023315776b6966a0c74d5a5ab683",
+      "private": false
+    },
+    {
+      "path": "docs/campaign4/INDEPENDENT_REVIEW.md",
+      "sha256": "d8194761df01b55beca346d5cfb34d5c0a1572fadb6d5feac6482470599035b8",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-verifier/native-planning-receipt-review.json",
+      "sha256": "7eb7cbcd67e9c86cbf8b2e5b1dfce02c8fca336b20d02364eeab386599871433",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-boundaries/all-campaign4-frozen/junit.xml",
+      "sha256": "7513e97c66b4543ad50cd763d16b13582272aec73f1cdce50f4112988472ccf3",
+      "private": false
+    },
+    {
+      "path": "data/campaign4-boundaries/all-campaign4-frozen/results.json",
+      "sha256": "414d7d7c5df9a13f23dbe7c19bb78bc54c5758a02795a1681980f4e2b3f5cac6",
+      "private": false
+    }
+  ],
+  "regression_xml_crosscheck": [
+    {
+      "path": "data/campaign4-manager/regressions-final/results.xml",
+      "sha256": "0de61d7db72b3eb8300c4d6c5087ba80d1eba85ae4b9934b1b6d56f1a1d582ad",
+      "tests": 346,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_reported_seconds": 60.605
+    },
+    {
+      "path": "data/campaign4-boundaries/all-campaign4-frozen/junit.xml",
+      "sha256": "7513e97c66b4543ad50cd763d16b13582272aec73f1cdce50f4112988472ccf3",
+      "tests": 104,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_reported_seconds": 39.576
+    }
+  ],
+  "manager_report_review": {
+    "path": "docs/campaign4/REPORT.md",
+    "sha256": "afa943d3144cdf14a54b967b363b372fa002c956b1dee6c10a63a2be0fa4d7ff",
+    "holdout_and_manual_classifications_agree": true,
+    "native_model_attempt_and_unmeasured_scope_agree": true,
+    "public_development_and_supplement_denominators_agree": true,
+    "no_final_answer_exposure": true,
+    "note": "Controlled registered-effect counts exclude setup, direct store fixtures and declared artifact tampering; no physical-provider success is established."
+  }
+}

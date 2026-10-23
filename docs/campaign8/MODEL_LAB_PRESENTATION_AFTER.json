@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-10T13:20:13.753150+00:00",
+  "scope": "Exposed DEVELOPMENT native presentation after approved localized frontend repair; no private holdout access",
+  "source_receipt": {
+    "path": "data/campaign8-native/cycle9-final-populated-surface-pairs/RESULTS.json",
+    "sha256": "2939ec2afb6601abfc09a56bd9c02e40883c881e6404e7246ce847e41cea99f0",
+    "assets": {
+      "src\\hanni\\dashboard\\static\\app.js": "5b77e1673872fe543fa5cc7f69be2705b76b2bc80294bfbf6b8729ebabf53705",
+      "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+    }
+  },
+  "route": "models",
+  "dimensions": {
+    "typography": 8.6,
+    "hierarchy": 8.7,
+    "spacing": 8.8,
+    "density": 8.6,
+    "truthful_states": 9,
+    "windows_interaction": 8.8,
+    "finishing": 8.7
+  },
+  "result": {
+    "score": 8.735,
+    "template_score": 1.4,
+    "typography_score": 8.6,
+    "eligible": true,
+    "critical_defects": [],
+    "accepted": true,
+    "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+  },
+  "observation": "Common content inset and flat secondary Endpoint details section remove the competing nested title. Wide view includes the first detail rows; compact six-column overview wraps readably and lower fields remain reached by original scroll. No configured/observed identity or context field is promoted into current proof.",
+  "findings": {
+    "alignment": "ModelLab title/tabs/table now align with common native content inset, removing the former extra left baseline.",
+    "spacing": "One consistent main inset; secondary details use a divider instead of nested padded box. Wide first viewport now reaches actual alias/reported/architecture fields.",
+    "information_density": "Compact overview still consumes its first viewport, but the table wraps legibly and details are secondary rather than competing. Original scroll retains full fields.",
+    "visual_hierarchy": "Selected table row remains explicit; Endpoint details is secondary and basename avoids a repeated full heading.",
+    "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+    "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+    "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+    "error_states": "Installed No, Loaded Unknown, Available unknown and Verified-context dash stay distinct; no healthy model or successful benchmark is invented.",
+    "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+    "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+    "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+    "consistent_design_language": "Shared content inset, flat divider and restrained selected-row treatment now match adjacent native screens.",
+    "typography": "Native Segoe UI and metadata are readable at both widths; score8.6. No family-name-only grade.",
+    "tables": "Six columns remain: model/endpoint, host/backend, installed, loaded, available and verified context. Configured16384 remains secondary to unknown verified context.",
+    "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+  },
+  "captures": [
+    {
+      "path": "data/campaign8-native/cycle9-final-populated-surface-pairs/screenshots/models-1366x860.png",
+      "sha256": "23d5d5a60ec9961decb266e6d5691871be78ea7ca7d561ea0cb86b349a89903e",
+      "physical_size": [
+        1366,
+        860
+      ],
+      "dpi": 120,
+      "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+      "independently_viewed": true
+    },
+    {
+      "path": "data/campaign8-native/cycle9-final-populated-surface-pairs/screenshots/models-900x650.png",
+      "sha256": "acbf61000d92c9ccba9a64a4ce8ddfba600183015a8a9e6cbe4e42777733f7d0",
+      "physical_size": [
+        900,
+        650
+      ],
+      "dpi": 120,
+      "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+      "independently_viewed": true
+    }
+  ],
+  "complete_functional_acceptance": false
+}

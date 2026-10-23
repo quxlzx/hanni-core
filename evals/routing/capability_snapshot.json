@@ -1,0 +1,1355 @@
+{
+  "count": 150,
+  "capabilities": [
+    {
+      "name": "app.list_installed",
+      "category": "app",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "app.open",
+      "category": "app",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "archive.list",
+      "category": "archive",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "archive.unzip",
+      "category": "archive",
+      "risk": "write",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "reversible_write",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "archive.zip",
+      "category": "archive",
+      "risk": "write",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "reversible_write",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "audio.mute",
+      "category": "audio",
+      "risk": "external_side_effect",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "audio.set_volume",
+      "category": "audio",
+      "risk": "external_side_effect",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "audio.status",
+      "category": "audio",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "browser.open_url",
+      "category": "browser",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "calc.evaluate",
+      "category": "calc",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "clipboard.read",
+      "category": "clipboard",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "clipboard.write",
+      "category": "clipboard",
+      "risk": "external_side_effect",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "device.audio",
+      "category": "device",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "device.bluetooth",
+      "category": "device",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "device.disk_health",
+      "category": "device",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "device.printers",
+      "category": "device",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "device.usb",
+      "category": "device",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "disk.cleanup_temp",
+      "category": "disk",
+      "risk": "destructive",
+      "permission_level": 3,
+      "risk_level": 3,
+      "side_effect": "destructive",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "disk.folder_size",
+      "category": "disk",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "disk.free_space",
+      "category": "disk",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "disk.largest_files",
+      "category": "disk",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "disk.largest_folders",
+      "category": "disk",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "disk.recycle_bin_size",
+      "category": "disk",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "disk.usage",
+      "category": "disk",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "display.brightness",
+      "category": "display",
+      "risk": "external_side_effect",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "display.info",
+      "category": "display",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "env.get",
+      "category": "env",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "env.list",
+      "category": "env",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "env.path",
+      "category": "env",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "env.user_folders",
+      "category": "env",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "env.which",
+      "category": "env",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "file.compare",
+      "category": "file",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "file.composition",
+      "category": "file",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "file.copy",
+      "category": "file",
+      "risk": "write",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "file.delete",
+      "category": "file",
+      "risk": "destructive",
+      "permission_level": 3,
+      "risk_level": 3,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "file.duplicates",
+      "category": "file",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "file.empty_folders",
+      "category": "file",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "file.grep",
+      "category": "file",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "file.head",
+      "category": "file",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "file.list_dir",
+      "category": "file",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "file.locate",
+      "category": "file",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "file.mkdir",
+      "category": "file",
+      "risk": "write",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "file.move",
+      "category": "file",
+      "risk": "write",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "file.open",
+      "category": "file",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "file.read",
+      "category": "file",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "file.recent",
+      "category": "file",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "file.search",
+      "category": "file",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "file.stat",
+      "category": "file",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "file.tail",
+      "category": "file",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "file.write",
+      "category": "file",
+      "risk": "write",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "folder.open",
+      "category": "folder",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "git.branches",
+      "category": "git",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "git.diff",
+      "category": "git",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "git.log",
+      "category": "git",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "git.status",
+      "category": "git",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "gmail.read",
+      "category": "gmail",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "gmail.search",
+      "category": "gmail",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "google.accounts",
+      "category": "google",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "google_calendar.agenda",
+      "category": "google_calendar",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "google_calendar.create",
+      "category": "google_calendar",
+      "risk": "external_side_effect",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "google_calendar.list",
+      "category": "google_calendar",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "google_calendar.next",
+      "category": "google_calendar",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "gpu.memory",
+      "category": "gpu",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "gpu.top_processes",
+      "category": "gpu",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "hanni.audit_tail",
+      "category": "hanni",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "hanni.capabilities",
+      "category": "hanni",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "hanni.permissions",
+      "category": "hanni",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "hanni.stop_state",
+      "category": "hanni",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "id.generate",
+      "category": "id",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "media.next_track",
+      "category": "media",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "media.play_pause",
+      "category": "media",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "media.previous_track",
+      "category": "media",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "media.stop",
+      "category": "media",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "model.status",
+      "category": "model",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "net.dns_lookup",
+      "category": "net",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "net.info",
+      "category": "net",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "net.ping",
+      "category": "net",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "net.ports",
+      "category": "net",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "net.throughput",
+      "category": "net",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "net.wifi",
+      "category": "net",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "note.append",
+      "category": "note",
+      "risk": "write",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "reversible_write",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "note.days",
+      "category": "note",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "note.list",
+      "category": "note",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "note.search",
+      "category": "note",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "notify.toast",
+      "category": "notify",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "power.battery_detail",
+      "category": "power",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "power.battery_report",
+      "category": "power",
+      "risk": "write",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "reversible_write",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "power.idle_settings",
+      "category": "power",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "power.plans",
+      "category": "power",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "power.set_idle",
+      "category": "power",
+      "risk": "external_side_effect",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "power.set_plan",
+      "category": "power",
+      "risk": "external_side_effect",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "powershell.run",
+      "category": "powershell",
+      "risk": "external_side_effect",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "process.find",
+      "category": "process",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "process.inspect",
+      "category": "process",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "process.list",
+      "category": "process",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "process.stop",
+      "category": "process",
+      "risk": "external_side_effect",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "process.top_cpu",
+      "category": "process",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "process.top_disk_io",
+      "category": "process",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "process.top_memory",
+      "category": "process",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "process.uptime",
+      "category": "process",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "project.format",
+      "category": "project",
+      "risk": "write",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "reversible_write",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "project.lint",
+      "category": "project",
+      "risk": "external_side_effect",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "project.test",
+      "category": "project",
+      "risk": "external_side_effect",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "python.env_info",
+      "category": "python",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "random.number",
+      "category": "random",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "random.pick",
+      "category": "random",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "schedule.list_tasks",
+      "category": "schedule",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "security.bitlocker",
+      "category": "security",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "security.defender",
+      "category": "security",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "security.firewall",
+      "category": "security",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "security.pending_reboot",
+      "category": "security",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "security.updates",
+      "category": "security",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "service.control",
+      "category": "service",
+      "risk": "destructive",
+      "permission_level": 3,
+      "risk_level": 3,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "service.list",
+      "category": "service",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "spotify.focus",
+      "category": "spotify",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "spotify.launch",
+      "category": "spotify",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "spotify.next",
+      "category": "spotify",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "spotify.open_uri",
+      "category": "spotify",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "spotify.play_pause",
+      "category": "spotify",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "spotify.previous",
+      "category": "spotify",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "spotify.search",
+      "category": "spotify",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "spotify.status",
+      "category": "spotify",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "spotify.volume",
+      "category": "spotify",
+      "risk": "external_side_effect",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "startup.list",
+      "category": "startup",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "system.battery",
+      "category": "system",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "system.event_errors",
+      "category": "system",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "system.os_info",
+      "category": "system",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "system.performance",
+      "category": "system",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "system.stats",
+      "category": "system",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "system.uptime",
+      "category": "system",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "text.hash",
+      "category": "text",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "text.normalize",
+      "category": "text",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "text.stats",
+      "category": "text",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "time.convert",
+      "category": "time",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "time.elapsed",
+      "category": "time",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "time.now",
+      "category": "time",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "timer.set",
+      "category": "timer",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "todo.add",
+      "category": "todo",
+      "risk": "write",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "reversible_write",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "todo.complete",
+      "category": "todo",
+      "risk": "write",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "reversible_write",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "todo.due",
+      "category": "todo",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "todo.get",
+      "category": "todo",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "todo.list",
+      "category": "todo",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "ui.active_window",
+      "category": "ui",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "ui.close_window",
+      "category": "ui",
+      "risk": "external_side_effect",
+      "permission_level": 2,
+      "risk_level": 2,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "ui.focus_window",
+      "category": "ui",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "ui.list_windows",
+      "category": "ui",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": null,
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "ui.minimize_all",
+      "category": "ui",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "ui.window_state",
+      "category": "ui",
+      "risk": "external_side_effect",
+      "permission_level": 1,
+      "risk_level": 1,
+      "side_effect": "external_action",
+      "assistant_exposed_if_relevant": false
+    },
+    {
+      "name": "ui.windows_detailed",
+      "category": "ui",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    },
+    {
+      "name": "unit.convert",
+      "category": "unit",
+      "risk": "read_only",
+      "permission_level": 0,
+      "risk_level": 0,
+      "side_effect": "read",
+      "assistant_exposed_if_relevant": true
+    }
+  ]
+}

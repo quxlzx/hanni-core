@@ -1,0 +1,18 @@
+{
+  "name": "personal-language-holdout-v1",
+  "status": "LOCKED BEFORE LIVE MODEL INFERENCE",
+  "locked_at_utc": "2026-09-24T05:24:34.681182+00:00",
+  "scenario_count": 50,
+  "family_counts": {
+    "applications_spotify": 5,
+    "calendar": 5,
+    "conversation": 5,
+    "diagnostics": 15,
+    "direct_system": 3,
+    "hanni_model": 2,
+    "mixed_domain": 10,
+    "safety": 5
+  },
+  "corpus_sha256": "af1c7b737ec42202c40640ce94dd54758fdb58c82dc13bcb9b4ea4d8451c37d6",
+  "notes": "New requests; synthetic fixture archetypes reused from the development catalog. Do not tune on these outcomes."
+}

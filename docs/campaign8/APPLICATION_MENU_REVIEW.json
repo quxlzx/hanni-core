@@ -1,0 +1,43 @@
+{
+  "scope": "Independent DEVELOPMENT actual Windows Application menu proof, no private final cases or generation",
+  "receipt": {
+    "path": "data/campaign8-verifier/application-menu-safe-row-01/RESULTS.json",
+    "sha256": "2861180ee20aa2c59b3d7e6d92e1d95795a960179b0cdd5d78d8d652261a24da"
+  },
+  "prior_diagnosis": {
+    "path": "data/campaign8-verifier/application-menu-diagnosis-01/RESULTS.json",
+    "sha256": "6a2539770b7103b20155be9ce5a42fea61a04157193ef96291426b294c7097c7"
+  },
+  "assertions": {
+    "original_visible_popup_pixels_independently_viewed": true,
+    "fresh_popup_exact_reference_sha": "132d40c8505b51b104a4d8937fb52434eec755998b3448f7f44b1bb20510db07",
+    "owned_process_create_time_and_HWND_verified": true,
+    "safe_first_original_row_actual_cursor_clicked": true,
+    "Mini_hidden_to_visible": true,
+    "opened_Mini_pixels_independently_viewed": true,
+    "callback_substitution": false,
+    "Start_or_Exit_selected": false,
+    "model_generation_requests": 0,
+    "native_HTTP_mutations": 0,
+    "native_cleanup": true,
+    "backend_signed_closed": true,
+    "source_unchanged": true
+  },
+  "menu_phase_seconds": 1.0,
+  "captures": [
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/independent-application-menu-safe-row-01/screenshots/safe-menu-main.png",
+      "sha256": "1702c79c18542b78d0786c1ddd5fee7cd3d01e57e1a5e9bdea88eb12432a87dd"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/independent-application-menu-safe-row-01/screenshots/safe-menu-opened-mini.png",
+      "sha256": "0f2e2aca87a3674ed7ecb61adc27b491af7ee49f56b6a093f7a959a86c6ee34b"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/independent-application-menu-safe-row-01/screenshots/safe-menu-popup-14029692.png",
+      "sha256": "132d40c8505b51b104a4d8937fb52434eec755998b3448f7f44b1bb20510db07"
+    }
+  ],
+  "verdict": "PASS for this original safe menu occurrence; earlier failed UIA/adapter attempts remain retained and are not product failures",
+  "limitations": "125% current Windows DPI only, same viewed original row pixels/ordering; no Start affirmative, arbitrary row navigation or shutdown-path proof"
+}

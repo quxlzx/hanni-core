@@ -1,0 +1,215 @@
+[
+  {
+    "id": "d01",
+    "query": "What is my current CPU usage?",
+    "required_groups": [
+      [
+        "system.stats"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "d02",
+    "query": "How much RAM am I using?",
+    "required_groups": [
+      [
+        "system.stats"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "d03",
+    "query": "Which process is using the most memory?",
+    "required_groups": [
+      [
+        "process.top_memory"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "d04",
+    "query": "How many processors does this computer have?",
+    "required_groups": [
+      [
+        "system.info"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "d05",
+    "query": "How much free disk space is there?",
+    "required_groups": [
+      [
+        "disk.usage",
+        "disk.free_space"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "d06",
+    "query": "What is the date today?",
+    "required_groups": [
+      [
+        "time.now"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "d07",
+    "query": "What time is it?",
+    "required_groups": [
+      [
+        "time.now"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "d08",
+    "query": "Explain how RAM differs from storage.",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "d09",
+    "query": "Why is the sky blue?",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "d10",
+    "query": "What is 7 times 8?",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "d11",
+    "query": "What is a compiler?",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "d12",
+    "query": "Which process is hogging CPU?",
+    "required_groups": [
+      [
+        "process.top_cpu"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "d13",
+    "query": "Is the procesor busy right now?",
+    "required_groups": [
+      [
+        "system.stats",
+        "system.performance"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "d14",
+    "query": "Show CPU usage and disk free space.",
+    "required_groups": [
+      [
+        "system.stats"
+      ],
+      [
+        "disk.usage",
+        "disk.free_space"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "d15",
+    "query": "How about the memory?",
+    "required_groups": [
+      [
+        "system.stats",
+        "process.top_memory"
+      ]
+    ],
+    "history": [
+      {
+        "role": "user",
+        "content": "Show me the CPU usage."
+      }
+    ],
+    "live": false
+  },
+  {
+    "id": "d16",
+    "query": "Please open Notepad.",
+    "required_groups": [
+      [
+        "app.open"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "d17",
+    "query": "Pause Spotify.",
+    "required_groups": [
+      [
+        "spotify.play_pause"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "d18",
+    "query": "Is my laptop running on its battery?",
+    "required_groups": [
+      [
+        "battery.status",
+        "power.status"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "d19",
+    "query": "Read the file C:\\Temp\\missing-phase1-file.txt.",
+    "required_groups": [
+      [
+        "file.read"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "d20",
+    "query": "Define a GPU in one short sentence.",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  }
+]

@@ -1,0 +1,505 @@
+[
+  {
+    "id": "h-cpu-1",
+    "query": "What percentage of the processor is occupied at the moment?",
+    "required_groups": [
+      [
+        "system.stats"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-cpu-2",
+    "query": "Could you measure the CPU load on this machine?",
+    "required_groups": [
+      [
+        "system.stats"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-cpu-3",
+    "query": "Tell me the currnet CPU utilization.",
+    "required_groups": [
+      [
+        "system.stats"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-memory-1",
+    "query": "How full is the physical memory right now?",
+    "required_groups": [
+      [
+        "system.stats"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-memory-2",
+    "query": "Measure the RAM consumption on this computer.",
+    "required_groups": [
+      [
+        "system.stats"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-memory-3",
+    "query": "What is the current memroy usage percentage?",
+    "required_groups": [
+      [
+        "system.stats"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-top-memory-1",
+    "query": "Which running program has the largest memory footprint?",
+    "required_groups": [
+      [
+        "process.top_memory"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-top-memory-2",
+    "query": "Identify the process consuming the most RAM.",
+    "required_groups": [
+      [
+        "process.top_memory"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-top-memory-3",
+    "query": "Who is the biggest memory consumer among my processes?",
+    "required_groups": [
+      [
+        "process.top_memory"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-top-cpu-1",
+    "query": "Which process is consuming the most processor time?",
+    "required_groups": [
+      [
+        "process.top_cpu"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-top-cpu-2",
+    "query": "Name the busiest CPU process on my computer.",
+    "required_groups": [
+      [
+        "process.top_cpu"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-top-cpu-3",
+    "query": "Which application currently uses the most CPU?",
+    "required_groups": [
+      [
+        "process.top_cpu"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-disk-1",
+    "query": "How much storage is available on this computer?",
+    "required_groups": [
+      [
+        "disk.usage",
+        "disk.free_space"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-disk-2",
+    "query": "Report the free capacity of my local disks.",
+    "required_groups": [
+      [
+        "disk.usage",
+        "disk.free_space"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-disk-3",
+    "query": "How much room is left on my drives?",
+    "required_groups": [
+      [
+        "disk.usage",
+        "disk.free_space"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-time-1",
+    "query": "Please give me the current local time.",
+    "required_groups": [
+      [
+        "time.now"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-time-2",
+    "query": "Tell me today's calendar date.",
+    "required_groups": [
+      [
+        "time.now"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-time-3",
+    "query": "What day of the week is it today?",
+    "required_groups": [
+      [
+        "time.now"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-system-1",
+    "query": "Which operating system is this machine running?",
+    "required_groups": [
+      [
+        "system.info"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-system-2",
+    "query": "How much RAM is installed in this computer?",
+    "required_groups": [
+      [
+        "system.info"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-system-3",
+    "query": "How many logical processors does my PC have?",
+    "required_groups": [
+      [
+        "system.info"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-battery-1",
+    "query": "Is the computer plugged into external power?",
+    "required_groups": [
+      [
+        "battery.status",
+        "power.status"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-battery-2",
+    "query": "Report the battery charge remaining.",
+    "required_groups": [
+      [
+        "battery.status",
+        "power.status"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-battery-3",
+    "query": "How charged is my laptop battery currently?",
+    "required_groups": [
+      [
+        "battery.status",
+        "power.status"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-multi-1",
+    "query": "Check current RAM use and tell me how much disk space is free.",
+    "required_groups": [
+      [
+        "system.stats"
+      ],
+      [
+        "disk.usage",
+        "disk.free_space"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-multi-2",
+    "query": "Tell me the time and which process uses the most memory.",
+    "required_groups": [
+      [
+        "time.now"
+      ],
+      [
+        "process.top_memory"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-multi-3",
+    "query": "Show the busiest CPU process plus the largest memory process.",
+    "required_groups": [
+      [
+        "process.top_cpu"
+      ],
+      [
+        "process.top_memory"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-typo-1",
+    "query": "What is my CPu utilziation percentage?",
+    "required_groups": [
+      [
+        "system.stats"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-typo-2",
+    "query": "Which proccess uses the most memroy?",
+    "required_groups": [
+      [
+        "process.top_memory"
+      ]
+    ],
+    "history": [],
+    "live": true
+  },
+  {
+    "id": "h-follow-1",
+    "query": "And the processor?",
+    "required_groups": [
+      [
+        "system.stats",
+        "process.top_cpu"
+      ]
+    ],
+    "history": [
+      {
+        "role": "user",
+        "content": "What is my current RAM usage?"
+      }
+    ],
+    "live": true
+  },
+  {
+    "id": "h-action-1",
+    "query": "Launch Calculator.",
+    "required_groups": [
+      [
+        "app.open"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-action-2",
+    "query": "Start Notepad for me.",
+    "required_groups": [
+      [
+        "app.open"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-action-3",
+    "query": "Could you open Chrome?",
+    "required_groups": [
+      [
+        "app.open"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-action-4",
+    "query": "Resume Spotify playback.",
+    "required_groups": [
+      [
+        "spotify.play_pause",
+        "spotify.status"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-action-5",
+    "query": "Please pause the music in Spotify.",
+    "required_groups": [
+      [
+        "spotify.play_pause"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-action-6",
+    "query": "Skip to the next track in Spotify.",
+    "required_groups": [
+      [
+        "spotify.next"
+      ]
+    ],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-knowledge-1",
+    "query": "Explain what an operating system does.",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-knowledge-2",
+    "query": "What is a prime number?",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-knowledge-3",
+    "query": "Why does ice float?",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-knowledge-4",
+    "query": "Give me a brief definition of latency.",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-knowledge-5",
+    "query": "How does a compiler work in general?",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-knowledge-6",
+    "query": "What is the difference between a CPU and a GPU?",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-knowledge-7",
+    "query": "Translate hello into Spanish.",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-knowledge-8",
+    "query": "What is 12 multiplied by 9?",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-knowledge-9",
+    "query": "Name the largest planet in our solar system.",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-knowledge-10",
+    "query": "Summarize photosynthesis in one sentence.",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-knowledge-11",
+    "query": "What are two benefits of exercise?",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  },
+  {
+    "id": "h-knowledge-12",
+    "query": "Explain evaporation briefly.",
+    "required_groups": [],
+    "history": [],
+    "live": false
+  }
+]

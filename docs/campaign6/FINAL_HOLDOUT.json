@@ -1,0 +1,80 @@
+{
+  "actual_hardware_measurements": 0,
+  "actual_model_inference": 0,
+  "all_owned_reservations_released": true,
+  "cases": 22,
+  "categories_passed": {
+    "context_too_large": 2,
+    "correct_worker_selection": 1,
+    "insufficient_vram": 2,
+    "multiple_eligible_workers": 2,
+    "network_interruption": 2,
+    "parallel_tasks": 1,
+    "queue_saturation": 2,
+    "result_verification": 2,
+    "safe_reassignment": 1,
+    "worker_busy": 2,
+    "worker_unavailable": 2
+  },
+  "category_counts": {
+    "context_too_large": 2,
+    "correct_worker_selection": 2,
+    "insufficient_vram": 2,
+    "multiple_eligible_workers": 2,
+    "network_interruption": 2,
+    "parallel_tasks": 2,
+    "queue_saturation": 2,
+    "result_verification": 2,
+    "safe_reassignment": 2,
+    "worker_busy": 2,
+    "worker_unavailable": 2
+  },
+  "closed_sha256": "859454ec031bf874c1a0620e3f7f969f199c0a6a747cead06ef4ffdf377fe317",
+  "controlled_http_requests": 10,
+  "failures": [
+    {
+      "category": "correct_worker_selection",
+      "failed_checks": [
+        "ordered_choices"
+      ],
+      "harness_error": false,
+      "id": "C6F-02"
+    },
+    {
+      "category": "parallel_tasks",
+      "failed_checks": [
+        "completed_receipts",
+        "request_calls",
+        "successful_requests"
+      ],
+      "harness_error": false,
+      "id": "C6F-14"
+    },
+    {
+      "category": "safe_reassignment",
+      "failed_checks": [
+        "attempt",
+        "request_calls",
+        "selected_worker",
+        "successful_requests"
+      ],
+      "harness_error": false,
+      "id": "C6F-17"
+    }
+  ],
+  "freeze": {
+    "archive_sha256": "41fbbdcdadca66ada33569431eb85f1b2d25395cf17b16dcfcd8aeb1a0e37579",
+    "files": 489,
+    "manifest_sha256": "bf6b2d88f3cf4c3454291090870f009916c90e0bd3307ec4f1b0013da6041316",
+    "source_matches": true
+  },
+  "grades_sha256": "d9c6e6044d2ba37d7af7900239b1ff822f159a3e0fe149e0f9c2d2b0de2a6acf",
+  "harness_errors": 0,
+  "owned_cleanup_complete": true,
+  "passed": 19,
+  "private_evidence": "data/campaign6-verifier/final-once",
+  "quality_speed_tokens_peak_vram": null,
+  "raw_sha256": "a001a80e90069465e51c28947a2873df91900499f23c04e77a7186ef52c6a4bb",
+  "scope": "Original guarded scheduling with controlled loopback providers; no live-model/hardware claims.",
+  "seal_sha256": "08e8991550b3b0d21a95b365350ec7b8a3ce840b9836303e6a454a44ed9dc200"
+}

@@ -1,0 +1,338 @@
+{
+  "scope": "Independent development review of faithful original native policy; not private final execution",
+  "reviewed_utc": "2026-10-10T15:37:47.839515+00:00",
+  "raw": {
+    "path": "data/campaign8-native/cycle36-original-native-policy-retakes/RESULTS.json",
+    "sha256": "b1eae897acd99e5add9797dac2983e19694bc2a525302637f7377b912c015246"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "c03f94985c8501c58da5c4cf9be122830a65edd4646116fa44952c711b1dcfc0",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "native_source_sha256": "ac3a1e65b4e4670f1ddb78c147c86d104868fc89f17230ac98f28164438a1acc",
+  "native_cdp_attachment": {
+    "no_defaults": true,
+    "scope": "Preserve original native browser context/download defaults; no policy override."
+  },
+  "connector_acceptance": {
+    "path": "data/campaign8-verifier/export-before/CONNECTOR_ACCEPTANCE.json",
+    "sha256": "f7ccec7628fba4a3d92601928bb29bfa6c2faf7d83940ebb450b515e90962cc8"
+  },
+  "original_policy_source_review": {
+    "path": "data/campaign8-verifier/export-before/SOURCE_REVIEW.json",
+    "sha256": "e0fbdcd4d27f6c621c42bf0658250fa29a59789d947c5c97ad3e0c119ec77f8d"
+  },
+  "adapter_policy_erratum": {
+    "path": "data/campaign8-verifier/export-before/ADAPTER_POLICY_REVIEW.json",
+    "sha256": "8a2f9ed218da306264f6f6041cf8a8a6d4533c54a1bf03152d2a7931f5e74965"
+  },
+  "counts": {
+    "setup_cases": 1,
+    "target_cases": 4,
+    "setup_PASS_scoped": 1,
+    "target_PASS_scoped": 2,
+    "target_FAIL_native_export": 2,
+    "HARNESS_ERROR": 0,
+    "final_PNGs_viewed": 5,
+    "additional_unique_intermediate_PNGs_viewed": 3,
+    "model_generation_requests": 0
+  },
+  "case_grades": [
+    {
+      "id": "policy-retake-original-lab-setup",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "The original model-free routing-development suite completes ten cases in the disposable store; native case list and authenticated API agree. The finite 0.15-second evaluation delay is controlled, so these durations are not benchmark or model performance.",
+      "input_sha256": "e2e653a4566aec2cc05721293e0ea741c31730ae675c7478323f4b9aff413547",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle36-original-native-policy-retakes/screenshots/policy-retake-original-lab-setup.png",
+        "sha256": "4a522ff8424a334e8bff3a501a6f6555200f37aa17610cd1823036703a60d252"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "404b9da2db235ea4e7c51ea79e6c736af6cfffa736cc124236d742cb1ab1f9d7"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "export-before-detail-native-denial",
+      "status": "FAIL",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original run-detail Export JSON initiates a Blob download that the unchanged native download policy cancels. No JSON view or alternative usable export appears. This is a confirmed native export usability defect, without asserting global file absence or reading owner Downloads.",
+      "input_sha256": "4a67039f072c17dfaa982a78e68cf2930710d4d230908ea11468521056e4f13b",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle36-original-native-policy-retakes/screenshots/export-before-detail-native-denial.png",
+        "sha256": "2652046fa0fbc30d50c19d86178e045ae19531dc92b394835238077077cd636e"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "404b9da2db235ea4e7c51ea79e6c736af6cfffa736cc124236d742cb1ab1f9d7"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false,
+      "failure_class": "native_download_policy_frontend_fallback_missing"
+    },
+    {
+      "id": "export-before-comparison-native-denial",
+      "status": "FAIL",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original comparison Export initiates the second Blob download; preserved native defaults cancel it. The unchanged frontend supplies no JSON view or alternative usable export. Existing comparison data and run records remain intact.",
+      "input_sha256": "70682db25d414d72e37c1fee9b9c24d120958aed71a0a84f763ff805dfeae21e",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle36-original-native-policy-retakes/screenshots/export-before-comparison-native-denial.png",
+        "sha256": "76f03c2c518e5df07ea1e65e1d96c0890287db7829e9fa1f9faf1612d7bc1a3a"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "d2c21dfbe49707078b0366f8bf5d0c2227ef0f41ced2a54466aab2d1adf286c2"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false,
+      "failure_class": "native_download_policy_frontend_fallback_missing"
+    },
+    {
+      "id": "residual-final-inspector-review-settings",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original inspector Review settings reaches the native Settings route; read-only original productivity API remains available. This scoped navigation does not apply settings or establish audio/GPU availability.",
+      "input_sha256": "24159823560dbca44d3f694fab95fdf39ffb6e1a8118ea65b11854bd251a5067",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle36-original-native-policy-retakes/screenshots/residual-final-inspector-review-settings.png",
+        "sha256": "a690a7c491c856ecc985e0c96950586693f876db92ab7cfb476b05128d9ba0f9"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "19eec77bbbb020bd811971833f1ec0ea9643b906dbae7e8cc1654ce340fc9637"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "memory-native-policy-four-keys",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "With original browser defaults preserved, ArrowRight selects and focuses Review queue, ArrowLeft and Home select/focus Stored memories, and End selects/focuses Project context. Every step retains exactly one tabindex=0, matching aria-selected and focus, with the tab row at y=154.8 CSS pixels. No memory mutation or physical OS accessibility coverage is inferred.",
+      "input_sha256": "b1388f4eab5051cfe6ecc3c88d4f81b2b777b7ad30def88d354789b011e5333c",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle36-original-native-policy-retakes/screenshots/memory-native-policy-four-keys.png",
+        "sha256": "adc7863575731d2a5b75e7f338303d07ae4601edffe09f2367bafdc97bc623e6"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "6dbd6ce2e7f5fc52fef4353a50429096eecaecc731d8ed1d2ec7e872783401da"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false,
+      "keyboard_observations": [
+        {
+          "key": "initial_click",
+          "focused": {
+            "tag": "BUTTON",
+            "role": "tab",
+            "name": "Stored memories"
+          },
+          "tabs": [
+            {
+              "name": "Stored memories",
+              "ariaSelected": "true",
+              "tabIndex": 0,
+              "y": 154.8000030517578
+            },
+            {
+              "name": "Review queue1",
+              "ariaSelected": "false",
+              "tabIndex": -1,
+              "y": 154.8000030517578
+            },
+            {
+              "name": "Project context",
+              "ariaSelected": "false",
+              "tabIndex": -1,
+              "y": 154.8000030517578
+            }
+          ],
+          "screenshot_sha256": "66858fef78587c9560557c97f1ea7a77517b9fa72f0315255263a3491d9d6492"
+        },
+        {
+          "key": "ArrowRight",
+          "focused": {
+            "tag": "BUTTON",
+            "role": "tab",
+            "name": "Review queue1"
+          },
+          "tabs": [
+            {
+              "name": "Stored memories",
+              "ariaSelected": "false",
+              "tabIndex": -1,
+              "y": 154.8000030517578
+            },
+            {
+              "name": "Review queue1",
+              "ariaSelected": "true",
+              "tabIndex": 0,
+              "y": 154.8000030517578
+            },
+            {
+              "name": "Project context",
+              "ariaSelected": "false",
+              "tabIndex": -1,
+              "y": 154.8000030517578
+            }
+          ],
+          "screenshot_sha256": "fe689685a90c8ceaa7d55ee28dd4c82a76719887e5f9f24545b8b88bd5b044a8"
+        },
+        {
+          "key": "ArrowLeft",
+          "focused": {
+            "tag": "BUTTON",
+            "role": "tab",
+            "name": "Stored memories"
+          },
+          "tabs": [
+            {
+              "name": "Stored memories",
+              "ariaSelected": "true",
+              "tabIndex": 0,
+              "y": 154.8000030517578
+            },
+            {
+              "name": "Review queue1",
+              "ariaSelected": "false",
+              "tabIndex": -1,
+              "y": 154.8000030517578
+            },
+            {
+              "name": "Project context",
+              "ariaSelected": "false",
+              "tabIndex": -1,
+              "y": 154.8000030517578
+            }
+          ],
+          "screenshot_sha256": "3e06689f4ae7984008b5e095122318c3619b365b7fef7ee58716d6bba40df2d5"
+        },
+        {
+          "key": "Home",
+          "focused": {
+            "tag": "BUTTON",
+            "role": "tab",
+            "name": "Stored memories"
+          },
+          "tabs": [
+            {
+              "name": "Stored memories",
+              "ariaSelected": "true",
+              "tabIndex": 0,
+              "y": 154.8000030517578
+            },
+            {
+              "name": "Review queue1",
+              "ariaSelected": "false",
+              "tabIndex": -1,
+              "y": 154.8000030517578
+            },
+            {
+              "name": "Project context",
+              "ariaSelected": "false",
+              "tabIndex": -1,
+              "y": 154.8000030517578
+            }
+          ],
+          "screenshot_sha256": "3e06689f4ae7984008b5e095122318c3619b365b7fef7ee58716d6bba40df2d5"
+        },
+        {
+          "key": "End",
+          "focused": {
+            "tag": "BUTTON",
+            "role": "tab",
+            "name": "Project context"
+          },
+          "tabs": [
+            {
+              "name": "Stored memories",
+              "ariaSelected": "false",
+              "tabIndex": -1,
+              "y": 154.8000030517578
+            },
+            {
+              "name": "Review queue1",
+              "ariaSelected": "false",
+              "tabIndex": -1,
+              "y": 154.8000030517578
+            },
+            {
+              "name": "Project context",
+              "ariaSelected": "true",
+              "tabIndex": 0,
+              "y": 154.8000030517578
+            }
+          ],
+          "screenshot_sha256": "adc7863575731d2a5b75e7f338303d07ae4601edffe09f2367bafdc97bc623e6"
+        }
+      ]
+    }
+  ],
+  "intermediate_PNGs_viewed": [
+    {
+      "path": "data/campaign8-native/cycle36-original-native-policy-retakes/screenshots/memory-native-policy-four-keys-step-0.png",
+      "sha256": "66858fef78587c9560557c97f1ea7a77517b9fa72f0315255263a3491d9d6492"
+    },
+    {
+      "path": "data/campaign8-native/cycle36-original-native-policy-retakes/screenshots/memory-native-policy-four-keys-step-1.png",
+      "sha256": "fe689685a90c8ceaa7d55ee28dd4c82a76719887e5f9f24545b8b88bd5b044a8"
+    },
+    {
+      "path": "data/campaign8-native/cycle36-original-native-policy-retakes/screenshots/memory-native-policy-four-keys-step-2.png",
+      "sha256": "3e06689f4ae7984008b5e095122318c3619b365b7fef7ee58716d6bba40df2d5"
+    }
+  ],
+  "identical_intermediate_bytes": {
+    "Home_matches_ArrowLeft": true,
+    "End_matches_final": true
+  },
+  "native_download_observations": {
+    "canceled": 2,
+    "completed": 0,
+    "bytes_totals": [
+      19998,
+      19997
+    ],
+    "observer_detached": true,
+    "owner_Downloads_read": false,
+    "normal_native_file_delivery_claimed": false,
+    "global_no_file_claimed": false
+  },
+  "original_backend_closed": {
+    "path": "data/campaign8-ui/native-backend-cycle25-native-policy-retakes/CLOSED.json",
+    "sha256": "b9d0bb9bc1f8bedf41a429dde3682c5fa87df9eac672bc00b33b5a9959b3e858",
+    "source_unchanged": true,
+    "owner_runtime_modified": false
+  },
+  "native_cleanup": true,
+  "native_exit_code": 0,
+  "javascript_errors": 0,
+  "prior_cycle35_grades_unchanged": true,
+  "recommended_scope": "Provide native-safe serialized JSON preview with selectable text instead of relying solely on a canceled download. Preserve native download restrictions and original authenticated full-run serialization. Product repair requires parent authorization.",
+  "private_final_attempted": 0
+}

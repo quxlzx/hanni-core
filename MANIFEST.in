@@ -1,0 +1,30 @@
+include README.md LICENSE CONTRIBUTING.md SECURITY.md START_HANNI.cmd SETUP_HANNI.cmd EXPORT_HANNI_SOURCE.cmd
+include START_HANNI_OS.cmd
+include .env.example .gitignore .gitattributes
+include SETUP_HANNI_VOICE.cmd
+recursive-include config *.yaml
+recursive-include scripts *.py *.ps1 *.cjs *.mjs
+recursive-include docs *.md
+recursive-include frontend *.json *.html *.ts *.tsx *.css *.md
+recursive-include desktop *.py *.txt *.spec *.manifest *.ico
+prune frontend/node_modules
+recursive-include tests *.py
+recursive-include evals *.json *.jsonl *.md
+recursive-exclude evals/real_world *.jsonl
+prune evals/checkpoints
+prune evals/llm_tools/results
+prune evals/personality/results
+prune evals/routing/results
+recursive-include .github *.yml *.md
+recursive-include src/hanni/dashboard/static *.html *.css *.js
+global-exclude *.pyc
+recursive-include deployment/hermes *.py *.sh
+recursive-include scripts *.sh
+recursive-include frontend/src/fonts *.woff2 *.txt *.md
+prune data
+prune .venv
+prune dist
+prune build
+prune eval/results
+prune .pytest-work
+prune .pytest-overnight

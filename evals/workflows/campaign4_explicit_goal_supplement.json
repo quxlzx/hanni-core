@@ -1,0 +1,957 @@
+[
+  {
+    "category": "Dependency ordering",
+    "controls": [],
+    "difficulty": "moderate",
+    "evaluation_class": "exposed_development_authoring_correction_new_inputs",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": true,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "order": [
+        "read",
+        "second"
+      ],
+      "partial_eligible": false,
+      "recovery_eligible": false,
+      "status": "completed",
+      "verified_steps": 2
+    },
+    "faults": [],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      },
+      {
+        "path": "{root}/second.txt",
+        "text": "second evidence"
+      }
+    ],
+    "goal": "Read the local text file {root}/input.txt, then read the local text file {root}/second.txt.",
+    "id": "WFEX-04-01",
+    "limits": {},
+    "mode": "assisted",
+    "original_graph_id": "WFDEV-04-01",
+    "scenario": "Explicit owner objective for exposed original graph: Linear prerequisites execute before dependent read.",
+    "steps": [
+      {
+        "arguments": {
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "isolated evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "read"
+      },
+      {
+        "arguments": {
+          "path": "{root}/second.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "second evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [
+          "read"
+        ],
+        "description": "Read the local text file {root}/second.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "second"
+      }
+    ]
+  },
+  {
+    "category": "Sequential execution",
+    "controls": [],
+    "difficulty": "moderate",
+    "evaluation_class": "exposed_development_authoring_correction_new_inputs",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": true,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "order": [
+        "read",
+        "second",
+        "third"
+      ],
+      "partial_eligible": false,
+      "recovery_eligible": false,
+      "status": "completed",
+      "verified_steps": 3
+    },
+    "faults": [],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      },
+      {
+        "path": "{root}/second.txt",
+        "text": "second evidence"
+      }
+    ],
+    "goal": "Read the local text file {root}/input.txt, then read the local text file {root}/second.txt.",
+    "id": "WFEX-05-03",
+    "limits": {},
+    "mode": "assisted",
+    "original_graph_id": "WFDEV-05-03",
+    "scenario": "Explicit owner objective for exposed original graph: Three chained reads retain every verified checkpoint.",
+    "steps": [
+      {
+        "arguments": {
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "isolated evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "read"
+      },
+      {
+        "arguments": {
+          "path": "{root}/second.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "second evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [
+          "read"
+        ],
+        "description": "Read the local text file {root}/second.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "second"
+      },
+      {
+        "arguments": {
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "isolated evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [
+          "second"
+        ],
+        "description": "Read the local text file {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "third"
+      }
+    ]
+  },
+  {
+    "category": "Sequential execution",
+    "controls": [],
+    "difficulty": "adversarial",
+    "evaluation_class": "exposed_development_authoring_correction_new_inputs",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": false,
+      "invocations": 1,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "partial_eligible": false,
+      "recovery_eligible": false,
+      "status": "blocked"
+    },
+    "faults": [
+      {
+        "kind": "permission_before",
+        "method": "read",
+        "path": "{root}/input.txt",
+        "times": 1
+      }
+    ],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      },
+      {
+        "path": "{root}/second.txt",
+        "text": "second evidence"
+      }
+    ],
+    "goal": "Read the local text file {root}/input.txt, then read the local text file {root}/second.txt.",
+    "id": "WFEX-05-05",
+    "limits": {},
+    "mode": "assisted",
+    "original_graph_id": "WFDEV-05-05",
+    "scenario": "Explicit owner objective for exposed original graph: A denied first filesystem operation blocks subsequent operations.",
+    "steps": [
+      {
+        "arguments": {
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "isolated evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "read"
+      },
+      {
+        "arguments": {
+          "path": "{root}/second.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "second evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [
+          "read"
+        ],
+        "description": "Read the local text file {root}/second.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "second"
+      }
+    ]
+  },
+  {
+    "category": "Safe parallel execution",
+    "controls": [],
+    "difficulty": "adversarial",
+    "evaluation_class": "exposed_development_authoring_correction_new_inputs",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": true,
+      "max_active_upper": 2,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "partial_eligible": false,
+      "recovery_eligible": false,
+      "status": "completed",
+      "verified_steps": 2
+    },
+    "faults": [
+      {
+        "kind": "barrier",
+        "method": "read",
+        "path": "{root}/input.txt",
+        "times": 1
+      }
+    ],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      },
+      {
+        "path": "{root}/second.txt",
+        "text": "second evidence"
+      }
+    ],
+    "goal": "Read the local text file {root}/input.txt and independently read the local text file {root}/second.txt.",
+    "id": "WFEX-06-01",
+    "limits": {},
+    "mode": "assisted",
+    "original_graph_id": "WFDEV-06-01",
+    "scenario": "Explicit owner objective for exposed original graph: Independent original reads may occupy two safe slots.",
+    "steps": [
+      {
+        "arguments": {
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "isolated evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "read"
+      },
+      {
+        "arguments": {
+          "path": "{root}/second.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "second evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/second.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "second"
+      }
+    ]
+  },
+  {
+    "category": "Safe parallel execution",
+    "controls": [],
+    "difficulty": "adversarial",
+    "evaluation_class": "exposed_development_authoring_correction_new_inputs",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": true,
+      "max_active_upper": 1,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "partial_eligible": false,
+      "recovery_eligible": false,
+      "status": "completed",
+      "verified_steps": 2
+    },
+    "faults": [
+      {
+        "kind": "barrier",
+        "method": "read",
+        "path": "{root}/input.txt",
+        "times": 1
+      }
+    ],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      },
+      {
+        "path": "{root}/second.txt",
+        "text": "second evidence"
+      }
+    ],
+    "goal": "Read the local text file {root}/input.txt and independently read the local text file {root}/second.txt.",
+    "id": "WFEX-06-02",
+    "limits": {
+      "max_parallel_reads": 1
+    },
+    "mode": "assisted",
+    "original_graph_id": "WFDEV-06-02",
+    "scenario": "Explicit owner objective for exposed original graph: Configured single read slot respects its concurrency bound.",
+    "steps": [
+      {
+        "arguments": {
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "isolated evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "read"
+      },
+      {
+        "arguments": {
+          "path": "{root}/second.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "second evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/second.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "second"
+      }
+    ]
+  },
+  {
+    "category": "Safe parallel execution",
+    "controls": [],
+    "difficulty": "adversarial",
+    "evaluation_class": "exposed_development_authoring_correction_new_inputs",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": true,
+      "max_active_upper": 1,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "order": [
+        "read",
+        "second"
+      ],
+      "partial_eligible": false,
+      "recovery_eligible": false,
+      "status": "completed"
+    },
+    "faults": [
+      {
+        "kind": "barrier",
+        "method": "read",
+        "path": "{root}/input.txt",
+        "times": 1
+      }
+    ],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      },
+      {
+        "path": "{root}/second.txt",
+        "text": "second evidence"
+      }
+    ],
+    "goal": "Read the local text file {root}/input.txt, then read the local text file {root}/second.txt.",
+    "id": "WFEX-06-03",
+    "limits": {},
+    "mode": "assisted",
+    "original_graph_id": "WFDEV-06-03",
+    "scenario": "Explicit owner objective for exposed original graph: Dependent reads never become parallel prerequisites.",
+    "steps": [
+      {
+        "arguments": {
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "isolated evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "read"
+      },
+      {
+        "arguments": {
+          "path": "{root}/second.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "second evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [
+          "read"
+        ],
+        "description": "Read the local text file {root}/second.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "second"
+      }
+    ]
+  },
+  {
+    "category": "Safe parallel execution",
+    "controls": [],
+    "difficulty": "moderate",
+    "evaluation_class": "exposed_development_authoring_correction_new_inputs",
+    "expected": {
+      "artifact_text": "isolated evidence",
+      "cancel_eligible": false,
+      "completion_eligible": true,
+      "dependencies_verified": true,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "partial_eligible": false,
+      "recovery_eligible": false,
+      "status": "completed",
+      "verified_steps": 3
+    },
+    "faults": [],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      },
+      {
+        "path": "{root}/second.txt",
+        "text": "second evidence"
+      }
+    ],
+    "goal": "Read the local text file {root}/input.txt and independently read the local text file {root}/second.txt. Save the requested report after all its prerequisites are verified.",
+    "id": "WFEX-06-04",
+    "limits": {},
+    "mode": "assisted",
+    "original_graph_id": "WFDEV-06-04",
+    "scenario": "Explicit owner objective for exposed original graph: An artifact waits for both independent read results.",
+    "steps": [
+      {
+        "arguments": {
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "isolated evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "read"
+      },
+      {
+        "arguments": {
+          "path": "{root}/second.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "second evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/second.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "second"
+      },
+      {
+        "arguments": {
+          "path": "{artifact_root}/report.txt",
+          "text": {
+            "$ref": {
+              "path": "/data/text",
+              "step_id": "read",
+              "type": "string"
+            }
+          }
+        },
+        "capability_id": "file.write",
+        "criteria": [
+          {
+            "expected": null,
+            "operator": "present",
+            "path": "/data/path"
+          }
+        ],
+        "dependencies": [
+          "read",
+          "second"
+        ],
+        "description": "Save the requested report to {artifact_root}/report.txt",
+        "kind": "artifact",
+        "required": true,
+        "step_id": "save"
+      }
+    ]
+  },
+  {
+    "category": "Safe parallel execution",
+    "controls": [],
+    "difficulty": "moderate",
+    "evaluation_class": "exposed_development_authoring_correction_new_inputs",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": false,
+      "failed_steps": 1,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "partial_eligible": true,
+      "recovery_eligible": false,
+      "status": "partially_completed",
+      "verified_steps": 1
+    },
+    "faults": [],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      }
+    ],
+    "goal": "Read the local text file {root}/input.txt and independently read the local text file {root}/missing.txt. The missing additional source is optional; retain verified work if it is unavailable.",
+    "id": "WFEX-06-05",
+    "limits": {},
+    "mode": "assisted",
+    "original_graph_id": "WFDEV-06-05",
+    "scenario": "Explicit owner objective for exposed original graph: Independent optional failure does not hide the verified required read.",
+    "steps": [
+      {
+        "arguments": {
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "isolated evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "read"
+      },
+      {
+        "arguments": {
+          "path": "{root}/missing.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "absent",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/missing.txt",
+        "kind": "tool",
+        "required": false,
+        "step_id": "missing"
+      }
+    ]
+  },
+  {
+    "category": "Safe parallel execution",
+    "controls": [],
+    "difficulty": "moderate",
+    "evaluation_class": "exposed_development_authoring_correction_new_inputs",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": false,
+      "failed_steps": 1,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "partial_eligible": false,
+      "recovery_eligible": false,
+      "status": "blocked",
+      "verified_steps": 1
+    },
+    "faults": [],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      }
+    ],
+    "goal": "Read the local text file {root}/input.txt and independently read the local text file {root}/missing.txt.",
+    "id": "WFEX-06-06",
+    "limits": {},
+    "mode": "assisted",
+    "original_graph_id": "WFDEV-06-06",
+    "scenario": "Explicit owner objective for exposed original graph: Independent required failure forbids a completed report.",
+    "steps": [
+      {
+        "arguments": {
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "isolated evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "read"
+      },
+      {
+        "arguments": {
+          "path": "{root}/missing.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "absent",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/missing.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "missing"
+      }
+    ]
+  },
+  {
+    "category": "Partial completion",
+    "controls": [],
+    "difficulty": "moderate",
+    "evaluation_class": "exposed_development_authoring_correction_new_inputs",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": false,
+      "failed_steps": 1,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "partial_eligible": true,
+      "recovery_eligible": false,
+      "status": "partially_completed",
+      "verified_steps": 1
+    },
+    "faults": [],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      }
+    ],
+    "goal": "Read the local text file {root}/input.txt, then read the local text file {root}/absent.txt. The missing additional source is optional; retain verified work if it is unavailable.",
+    "id": "WFEX-11-02",
+    "limits": {},
+    "mode": "assisted",
+    "original_graph_id": "WFDEV-11-02",
+    "scenario": "Explicit owner objective for exposed original graph: Optional missing read retains verified required work.",
+    "steps": [
+      {
+        "arguments": {
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "isolated evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "read"
+      },
+      {
+        "arguments": {
+          "path": "{root}/absent.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "absent",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [
+          "read"
+        ],
+        "description": "Read the local text file {root}/absent.txt",
+        "kind": "tool",
+        "required": false,
+        "step_id": "optional"
+      }
+    ]
+  },
+  {
+    "category": "Partial completion",
+    "controls": [],
+    "difficulty": "moderate",
+    "evaluation_class": "exposed_development_authoring_correction_new_inputs",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": false,
+      "failed_steps": 1,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "partial_eligible": false,
+      "recovery_eligible": false,
+      "status": "blocked",
+      "verified_steps": 1
+    },
+    "faults": [],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      }
+    ],
+    "goal": "Read the local text file {root}/input.txt, then read the local text file {root}/absent.txt.",
+    "id": "WFEX-11-03",
+    "limits": {},
+    "mode": "assisted",
+    "original_graph_id": "WFDEV-11-03",
+    "scenario": "Explicit owner objective for exposed original graph: Required failure is blocked despite earlier verified work.",
+    "steps": [
+      {
+        "arguments": {
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "isolated evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "read"
+      },
+      {
+        "arguments": {
+          "path": "{root}/absent.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "absent",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [
+          "read"
+        ],
+        "description": "Read the local text file {root}/absent.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "required"
+      }
+    ]
+  },
+  {
+    "category": "Workflow completion reporting",
+    "controls": [],
+    "difficulty": "moderate",
+    "evaluation_class": "exposed_development_authoring_correction_new_inputs",
+    "expected": {
+      "cancel_eligible": false,
+      "completion_eligible": false,
+      "no_duplicate_dispatch": true,
+      "no_harness_error": true,
+      "no_unapproved_write": true,
+      "partial_eligible": true,
+      "recovery_eligible": false,
+      "status": "partially_completed",
+      "verified_steps": 1
+    },
+    "faults": [],
+    "files": [
+      {
+        "path": "{root}/input.txt",
+        "text": "isolated evidence"
+      }
+    ],
+    "goal": "Read the local text file {root}/input.txt, then read the local text file {root}/absent.txt. The missing additional source is optional; retain verified work if it is unavailable.",
+    "id": "WFEX-20-05",
+    "limits": {},
+    "mode": "assisted",
+    "original_graph_id": "WFDEV-20-05",
+    "scenario": "Explicit owner objective for exposed original graph: Optional failure retains honest partial completion summary.",
+    "steps": [
+      {
+        "arguments": {
+          "path": "{root}/input.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "isolated evidence",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/input.txt",
+        "kind": "tool",
+        "required": true,
+        "step_id": "read"
+      },
+      {
+        "arguments": {
+          "path": "{root}/absent.txt"
+        },
+        "capability_id": "file.read",
+        "criteria": [
+          {
+            "expected": "absent",
+            "operator": "equals",
+            "path": "/data/text"
+          }
+        ],
+        "dependencies": [],
+        "description": "Read the local text file {root}/absent.txt",
+        "kind": "tool",
+        "required": false,
+        "step_id": "optional"
+      }
+    ]
+  }
+]

@@ -1,0 +1,157 @@
+{
+  "campaign": 9,
+  "status": "INCOMPLETE_STATUS_ONLY_CLOSEOUT",
+  "scope": "Existing independent controlled development receipts only; no new execution for closeout",
+  "private_final": {
+    "sealed_cases": 60,
+    "security_areas": 20,
+    "cases_per_area": 3,
+    "fault_categories": 13,
+    "public_seal": "docs/campaign9/FINAL_SEAL.json",
+    "public_seal_sha256": "d1faf69d1d82d2616765ffa4f85031dfee81b60379627850623e033e691b3945",
+    "attempted": 0,
+    "collected": 0,
+    "graded": 0,
+    "final_claim_created": false,
+    "strict_success_rate": null,
+    "final_score": null,
+    "inputs_and_oracles_exposed": false
+  },
+  "repaired_development": {
+    "unique_causal_controls": 42,
+    "passing_causal_controls": 42,
+    "permission_and_tools": 19,
+    "memory_and_client": 8,
+    "http_and_logging": 9,
+    "audit_and_activity_projection": 6,
+    "repeated_receipts_additive": false,
+    "measurement": "Standalone original-implementation causal probe rows; not an entire verifier pytest-suite claim",
+    "general_security_acceptance_established": false
+  },
+  "receipts": [
+    {
+      "path": "data/campaign9-verifier/development-before-01/RESULTS.json",
+      "sha256": "ee87983de5a5df5e13b29ffcd056205ba6c078e8de6a43450b593f52a17e6938",
+      "phase": "original",
+      "rows": 12,
+      "pass_rows": 3,
+      "nonpass_rows": 9,
+      "harness_error_rows": 4,
+      "source_unchanged": true
+    },
+    {
+      "path": "data/campaign9-verifier/development-before-02/RESULTS.json",
+      "sha256": "ed3595242f397024a3d42bdbd67fc0457f9db7eba199ecf129abf49784d21306",
+      "phase": "original",
+      "rows": 25,
+      "pass_rows": 9,
+      "nonpass_rows": 16,
+      "harness_error_rows": 0,
+      "source_unchanged": true,
+      "limitation": "An incorrect direct-denial measurement is preserved; later supplemental measurement checks the returned ok:false contract"
+    },
+    {
+      "path": "data/campaign9-verifier/development-supplement-before-01/RESULTS.json",
+      "sha256": "e67234e4df0342c8d6ff087fe8d0106d54830e32d995038da32c6743ec76c08d",
+      "phase": "original_supplement",
+      "rows": 9,
+      "pass_rows": 3,
+      "nonpass_rows": 6,
+      "harness_error_rows": 0,
+      "source_unchanged": true
+    },
+    {
+      "path": "data/campaign9-verifier/client-before-01/RESULTS.json",
+      "sha256": "9ab4f3d21469b9cf95ed4b4a56463752c048087a16aea63a8c555a3ef2e0d4b0",
+      "phase": "original_client",
+      "rows": 5,
+      "pass_rows": 0,
+      "nonpass_rows": 5,
+      "harness_error_rows": 0,
+      "source_unchanged": true
+    },
+    {
+      "path": "data/campaign9-verifier/client-memory-after-01/RESULTS.json",
+      "sha256": "640054f777d1ee81b19bfc9f71d4a21482c20b0e1817db19efacd267be300266",
+      "phase": "repaired_client_memory",
+      "rows": 8,
+      "pass_rows": 8,
+      "nonpass_rows": 0,
+      "harness_error_rows": 0,
+      "source_unchanged": true
+    },
+    {
+      "path": "data/campaign9-verifier/tools-after-01/RESULTS.json",
+      "sha256": "511ccff760d22e672b061adb0ae20352704d5863cd72c3d9e4c4d8463db20bb2",
+      "phase": "repaired_tools_permissions",
+      "rows": 19,
+      "pass_rows": 19,
+      "nonpass_rows": 0,
+      "harness_error_rows": 0,
+      "source_unchanged": true
+    },
+    {
+      "path": "data/campaign9-verifier/log-http-after-audit-before-01/RESULTS.json",
+      "sha256": "9bae33dac11d9ca024aae06c7d981b315cb3375dcfcff3d35e6c2c9ab1779b69",
+      "phase": "repaired_http_logging_and_original_audit",
+      "rows": 15,
+      "pass_rows": 9,
+      "nonpass_rows": 6,
+      "harness_error_rows": 0,
+      "source_unchanged": true,
+      "limitation": "Nine repaired HTTP/logging passes; six original audit failures, subsequently measured separately"
+    },
+    {
+      "path": "data/campaign9-verifier/audit-after-01/RESULTS.json",
+      "sha256": "367572d17e7cd505055733e49469548e8cdf14c3bde191f70f113881e3cb301b",
+      "phase": "repaired_audit",
+      "rows": 6,
+      "pass_rows": 6,
+      "nonpass_rows": 0,
+      "harness_error_rows": 0,
+      "source_unchanged": true,
+      "additive_to_later_audit_receipt": false
+    },
+    {
+      "path": "data/campaign9-verifier/audit-after-02-positive-metadata/RESULTS.json",
+      "sha256": "02fb5a6fcd6e1a6925561de2e287a876853c437ecd7690a3d5596a4dd1a3ef45",
+      "phase": "repaired_audit_positive_metadata",
+      "rows": 6,
+      "pass_rows": 6,
+      "nonpass_rows": 0,
+      "harness_error_rows": 0,
+      "source_unchanged": true,
+      "scope": "Masking plus truthful status/timing metadata; seeded legacy-format synthetic rows are projection fixtures, not historical executions"
+    }
+  ],
+  "adapter": {
+    "status": "PARTIAL_NOT_FINAL_READY",
+    "document": "docs/campaign9/FINAL_ADAPTER.md",
+    "integrated_final_executor_contract_tested": false,
+    "closed_observation_final_scorer_completed": false,
+    "once_only_claim_protocol_completed": false,
+    "whole_source_final_authorization_used": false,
+    "unsupported_primitives_promoted_to_pass": false,
+    "further_implementation_stopped": true
+  },
+  "final_completion_blocker": {
+    "kind": "PLATFORM_REVIEW_MANAGER_REPORTED",
+    "failed_agent_turns": 2,
+    "reported_by": "manager",
+    "underlying_review_records_independently_inspected": false,
+    "description": "Manager reported two failed agent turns flagged by platform review and instructed status-only closeout with no further implementation or private-final execution",
+    "verifier_tool_rejection_claimed": false,
+    "user_action_requested": false
+  },
+  "limits": {
+    "original_violations_retained": true,
+    "universal_zero_violations_claimed": false,
+    "verifier_genuine_model_calls": 0,
+    "actual_external_mcp_security_certified": false,
+    "actual_cluster_security_certified": false,
+    "all_area_and_fault_acceptance_measured": false,
+    "owner_data_or_processes_modified_by_verifier": false,
+    "old_private_holdouts_consumed_for_campaign9": false,
+    "closeout_performs_new_tests_payloads_or_external_activity": false
+  }
+}

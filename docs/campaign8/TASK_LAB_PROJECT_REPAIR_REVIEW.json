@@ -1,0 +1,383 @@
+{
+  "scope": "Separate exposed-development AFTER16; original native controls and authenticated original disposable store/service readbacks. Not private final and not regrading original failures.",
+  "raw": {
+    "path": "data/campaign8-native/cycle24-original-task-lab-project-afterproof16/RESULTS.json",
+    "sha256": "4e2c3a9a217987b6052f73838469fafbb4627b64eab965ea4af344c8c5ee00c4"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "c03f94985c8501c58da5c4cf9be122830a65edd4646116fa44952c711b1dcfc0",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "counts": {
+    "cases": 16,
+    "PASS_scoped": 16,
+    "final_PNGs_viewed": 16,
+    "native_errors": 0,
+    "actual_model_generation": 0
+  },
+  "case_grades": [
+    {
+      "id": "task-fidelity-all-day-title-status",
+      "status": "PASS",
+      "observed_scope": "Actual native title+status edit on same opaque task preserves exact 2026-11-03T00:00:00/all_day=true, status completed, original course. Final filtered list empty because title changed; original authenticated record is decisive field readback.",
+      "input_sha256": "425e99e9f34b2ea66333da9afa56cd7e5e778b58e2c959c91f5b3ecc932b8616",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/task-fidelity-all-day-title-status.png",
+        "sha256": "e118d07f321122c10c757682267bccdea25fbca67f13e69689b3aed951065993"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "3e1afbd170d7fb974637a1201432a826e44ec24d345d9511037c788204473d29"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "task-fidelity-all-day-reopen-complete",
+      "status": "PASS",
+      "observed_scope": "Actual original Reopen then Complete buttons preserve same opaque all-day task and due; final status completed/all_day=true, native completed checkbox/date agree. No owner records.",
+      "input_sha256": "dcb6a3a84c3d782db029d875cf39e738a349588733d792db0a3db173592a2a05",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/task-fidelity-all-day-reopen-complete.png",
+        "sha256": "7efa2730952272d11938ffc88de6f15efcf460853a8d156735703768f0a15847"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "3e1afbd170d7fb974637a1201432a826e44ec24d345d9511037c788204473d29"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "task-fidelity-timed-edit-complete-reopen",
+      "status": "PASS",
+      "observed_scope": "Actual course edit followed by Complete/Reopen preserves exact timed 2026-11-03T14:25:00-05:00/all_day=false and same task, final open. No timezone/time truncation.",
+      "input_sha256": "374813652cef86dedfc27ac8bb6c41397d768c12135ba5c5d29be29b6f84c75b",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/task-fidelity-timed-edit-complete-reopen.png",
+        "sha256": "d0e1376785f0e2a1cfdfe162259c9590ff25d670ed2834de6f5504ab91d1c979"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "020fb92ac644b58453e84452c0d57c9184e7af7c92df94b4e52dec14f91a15f3"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "task-fidelity-date-changed",
+      "status": "PASS",
+      "observed_scope": "Actual due edit persists exact 2026-11-07T00:00:00/all_day=true on same record; native Nov7 agrees. Other timed/all-day tasks unchanged.",
+      "input_sha256": "2896a6072eefccc5b1a3eebfeca1ce5f8fdb808c22e8228ed388b7db9244c5a7",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/task-fidelity-date-changed.png",
+        "sha256": "e9ce67c7285855d05ce6a0578208bb8971e616317fc63bd1357a576a00385c2c"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "e497aca057458c795d3f04f0eab52be938b8ad080d83ee320a905b5033b02510"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "task-fidelity-date-cleared",
+      "status": "PASS",
+      "observed_scope": "Actual due cleared persists empty due on same record with original all_day=true; native No due date agrees. Does not invent a new deadline.",
+      "input_sha256": "e8fe22d86306371ce558491c85b327eb1677455e64c1e035bf622664a72e9070",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/task-fidelity-date-cleared.png",
+        "sha256": "27d48c7aa4f44fbded97ce97f0865dee1fa31e818c8cc2566834e9bef315ff21"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "0d35a84e784385f875c6f558fd5574af06f91136fd65fb5908877f9c0fe84ac9"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "lifecycle-retrieval-start-first",
+      "status": "PASS",
+      "observed_scope": "Original visible Start benchmark now creates completed original routing-development run,2/2cases durable, deterministic retrieval/no model or tool execution. Native progress agrees with authenticated run record.",
+      "input_sha256": "28d6df884dd5ebe6eb94e5fef556bce865cd6c593d50118103e7249226aea41e",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/lifecycle-retrieval-start-first.png",
+        "sha256": "db90d82eb6c6e62ab90d9b63307408566b4d01efe2ed8e8d45903285bf7f6535"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "7694872dedf391316e6e60acc43157dfaeb11961533839196aa850eba492cccd"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "lifecycle-retrieval-inspect-first",
+      "status": "PASS",
+      "observed_scope": "Actual Inspect results selects first case and opens original tool-receipt disclosure. Native actual response shows retrieved IDs; empty tool receipts correctly disclose no dispatch. Original detail contains2cases/evidence hashes.",
+      "input_sha256": "93e4ae3d8562777a9a9d16c163ced446c4172f7afa4dae3926c7261ea17735f0",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/lifecycle-retrieval-inspect-first.png",
+        "sha256": "281fd24826f0c92f8c9beca9aeb4c7bd953e28109736121c28d7db7021013cfa"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "6eaf2e2e9daa55ad578d230d3ac3470bab0ac13d28ec6f7cd84a8bfad2a37c6b"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "lifecycle-retrieval-transcript",
+      "status": "PASS",
+      "observed_scope": "Actual full stored transcript disclosure opens; empty array is truthful because no model turns occurred. No conversation-model transcript credit.",
+      "input_sha256": "546f2df8f7f15ac8fa87e7f6d7393996fbb95315f57908e6e442c68ff08ec0ff",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/lifecycle-retrieval-transcript.png",
+        "sha256": "7dee478bfcc67eb0856711d53879051254cf123c1ab29a7cbf0cf8af120dc6d8"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "6eaf2e2e9daa55ad578d230d3ac3470bab0ac13d28ec6f7cd84a8bfad2a37c6b"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "lifecycle-retrieval-protocol",
+      "status": "PASS",
+      "observed_scope": "Actual reproducibility disclosure opens with stored settings/dataset/scorer/protocol identities. Generic generation/admission metadata is not treated as actual inference in this deterministic suite.",
+      "input_sha256": "e72f5d0e6410e74155bf496bd3055047a1170f0c7910acd204d22b3df12f51d4",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/lifecycle-retrieval-protocol.png",
+        "sha256": "71b9c6b8a74545b41b30b969a0ef54d58fecd2d7dc9fce5d9662dd6fa2f3aae2"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "6eaf2e2e9daa55ad578d230d3ac3470bab0ac13d28ec6f7cd84a8bfad2a37c6b"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "lifecycle-retrieval-outcome-filter",
+      "status": "PASS",
+      "observed_scope": "Actual DOM passed selection shows2passed rows, failed shows0, reset shows2. Original detail all2passed agrees; no genuine failed-result row is present.",
+      "input_sha256": "618b5a719bcb44ece6e26585e88401cdbd088f15ca8076a19b291a6c834bb230",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/lifecycle-retrieval-outcome-filter.png",
+        "sha256": "155b563c3ae3fb71ebc733c3d05715c31edf4fa16ff9b701c803c8818536dd5c"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "6eaf2e2e9daa55ad578d230d3ac3470bab0ac13d28ec6f7cd84a8bfad2a37c6b"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "lifecycle-retrieval-start-second",
+      "status": "PASS",
+      "observed_scope": "Second original visible Start persists another completed2case deterministic run with same protocol/dataset/selection. No generation or statistical model-performance conclusion.",
+      "input_sha256": "8f9cec0b3142ad1817410bd7e11e82c6ea8018d1b26a401721fff76a2aa45a9d",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/lifecycle-retrieval-start-second.png",
+        "sha256": "4334800f3de47584ba220baab8343e26c162ddba5f1ac198d036133c08ed7e2a"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "b8042c95563ed07444736764d7c91787a6d0339d3ac85a346bebbc2725dc24cd"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "lifecycle-retrieval-history-search",
+      "status": "PASS",
+      "observed_scope": "Actual query/status/suite filters now show both original completed retrieval runs, each2/2 and100percent. Model fields remain Retrieval engine, not an unavailable model success.",
+      "input_sha256": "5568faf84b1559aae6476c7775de7be860e25a3199e81e98ae9644e87b3fd699",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/lifecycle-retrieval-history-search.png",
+        "sha256": "e3587d3aa412736fbdac56bd3a812f2dbf3d82908a5e18d242f4129a88297b36"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "b8042c95563ed07444736764d7c91787a6d0339d3ac85a346bebbc2725dc24cd"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "lifecycle-retrieval-compare",
+      "status": "PASS",
+      "observed_scope": "Actual original two checkboxes/select-comparison request records comparable=true/mismatchesempty/automatic_ranking=false for the two matching completed runs. Comparison result body is originalAPI200; full comparison columns are below final PNG. No unequal-condition native rejection proof or model-superiority claim.",
+      "input_sha256": "75d131ec6384e5a1804153d530e0de357ed76b25900c92cd14b43fddc7e1486c",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/lifecycle-retrieval-compare.png",
+        "sha256": "1e0a03ca99cdf77cb57c1697cbe6f45aef0e7d8a6fc82b231e3820bdf88dbcd6"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "b8042c95563ed07444736764d7c91787a6d0339d3ac85a346bebbc2725dc24cd"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "supported-project-file-link-save",
+      "status": "PASS",
+      "observed_scope": "Required project selected; original Add link saves exact supported file-kind target C:\\campaign8-not-opened\\controlled-file.txt under new opaque ID. Native string and authenticated record agree; file not opened/existence not asserted; URL support not added.",
+      "input_sha256": "ac55855de9ad19c07d5eb97a133162f27b4690ad350e4a36fa43287ca5bdcd8b",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/supported-project-file-link-save.png",
+        "sha256": "2bd0f6ca53f58bc0be10d3c40d71ced285fe453387557cdf60deb650ee517114"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "fd1d3e160d75f406f3aa25b410b26108efa92bafd4028ab266f88cde157129b0"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "supported-project-file-link-delete",
+      "status": "PASS",
+      "observed_scope": "Original explicit confirmation removes only newly created file-link opaque ID; pre-existing verified artifact link remains. Original persisted readback and native rows agree.",
+      "input_sha256": "5246d3e1cef6a13ea2352e3bcb5d006a11d3fad3602157076fa635e5b03ed171",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/supported-project-file-link-delete.png",
+        "sha256": "7180d2639c51ec361ec0aabc4b86011571fb550b1da16e0ce7d2d412cf5bd1b4"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "0d35a84e784385f875c6f558fd5574af06f91136fd65fb5908877f9c0fe84ac9"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    },
+    {
+      "id": "supported-project-note-delete",
+      "status": "PASS",
+      "observed_scope": "Required original project/note selected; explicit delete confirmation removes seeded note opaque ID, native No project notes yet agrees. Projects, tasks and original artifact link retained.",
+      "input_sha256": "b838c52e25ed65439e1019560617e4f65f73c894fa94ddcf5a12cf24b480de32",
+      "independent_final_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle24-original-task-lab-project-afterproof16/screenshots/supported-project-note-delete.png",
+        "sha256": "67da3f6796d8465b967c52c6f8e0744594d18fb01eeb199efed435a9d2cb557b"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "e0c296ccd66693e4fc53e05158bda54b7019200fb9ba0aefe01c651a13736902"
+        }
+      ],
+      "scope_complete_only_as_described": true
+    }
+  ],
+  "read_only_Lab_supplement": {
+    "path": "data/campaign8-native/cycle24-original-task-lab-project-afterproof16/original-lab-detail-export-compare-readbacks.json",
+    "sha256": "25fef7582e050c2b6f431345be5ee0c34f4c291a6b141c20125d49941408fa46",
+    "five_GET_statuses": [
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "exports": [
+      {
+        "run_id": "8f928e5a-a5ed-4a2a-9629-2381969d562a",
+        "status": 200,
+        "run_exactly_equals_detail": true,
+        "case_rows_exactly_equal_detail": true,
+        "case_count": 2,
+        "export_complete": true,
+        "next_offset": null
+      },
+      {
+        "run_id": "05f10348-b154-4063-8a7b-94b5d53d81b6",
+        "status": 200,
+        "run_exactly_equals_detail": true,
+        "case_rows_exactly_equal_detail": true,
+        "case_count": 2,
+        "export_complete": true,
+        "next_offset": null
+      }
+    ],
+    "compare": {
+      "comparable": true,
+      "mismatches": [],
+      "automatic_ranking": false
+    }
+  },
+  "independent_helper_roundtrip": {
+    "path": "data/campaign8-verifier/task-due-helper-after-01/RESULTS.json",
+    "sha256": "91fe2b6bf484d05210016c9fb43f5b2f76c98e6b5547133b715bdea33163967b",
+    "helper_pass": 5,
+    "original_store_roundtrip_pass": 5
+  },
+  "cleanup": {
+    "owned_native_cleanup": true,
+    "native_exit_code": 0,
+    "javascript_errors": []
+  },
+  "retained_originals": [
+    "DENSE_CONTROL_REVIEW.json task all_day FAIL and3Project setup/unsupportedURL errors remain.",
+    "MINI_LAB_SHELL_REVIEW_CYCLE1.json same-root-cause2Start FAIL plus5dependent BLOCKED remain.",
+    "Original nominal final streaming PNG partial and all other earlier helper errors remain."
+  ],
+  "limitations": [
+    "Pass is stated observed action/readback only, not proof of every field/conditional control.",
+    "Serialized export equality uses read-only original API; no browser download/file save proof.",
+    "Comparison accepted equal conditions; negative comparability gates covered by separate root implementation regressions, not this native batch.",
+    "Generic no-model protocol descriptions do not prove any generation/adaptive routing/tool dispatch.",
+    "Full below-fold comparison columns not independently captured in final PNG."
+  ]
+}

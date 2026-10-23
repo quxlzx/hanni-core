@@ -1,0 +1,54 @@
+{
+  "scope": "Independent DEVELOPMENT actual owned native client attachment through signed shutdown/replacement of disposable original backend; fresh replacement stores",
+  "evidence": {
+    "path": "data/campaign8-native/cycle16-native-backend-reconnect-corrected/RESULTS.json",
+    "sha256": "baf0479cd87a2e5272d42c0f9e3ca476903b61dcb229672dec51a21108a538e6"
+  },
+  "captures_independently_viewed": [
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle16-native-backend-reconnect-corrected/screenshots/before-backend-loss.png",
+      "sha256": "cb0fac1b451a8d7373b51354d683beccf3b58c867ff2cb68157d6c2f2eaef181"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle16-native-backend-reconnect-corrected/screenshots/actual-backend-loss.png",
+      "sha256": "da6ceda78ed2dd1d38f979837479b7d5a0c4a159abb3c74b01a8fce5e5b69347"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle16-native-backend-reconnect-corrected/screenshots/actual-reconnected-dashboard.png",
+      "sha256": "e01e275d4b464db1cce0acbf20aa8c58026bc6393e67c70361478a107fad985a"
+    }
+  ],
+  "assertions": {
+    "original_connected_projection_before": true,
+    "actual_loaded_UI_Disconnected_on_loss": true,
+    "last_reported_telemetry_explicitly_labelled_in_PNG": true,
+    "voice_Offline_and_unavailable_on_loss": true,
+    "same_owned_native_client_connected_again_without_reload": true,
+    "fresh_telemetry_and_standby_render_on_recovery": true,
+    "original_epoch_and_ephemeral_token_rotated": true,
+    "old_private_token403_new200": true,
+    "tokens_persisted": false,
+    "initial_original_signed_shutdown202": true,
+    "replacement_original_signed_shutdown202": true,
+    "initial_and_replacement_owned_CLOSED_receipts": true,
+    "replacement_exit_code": 0,
+    "native_cleanup": true,
+    "native_exit_code": 0,
+    "javascript_errors": [],
+    "actual_original_chat_ready_after_recovery": false
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "5b77e1673872fe543fa5cc7f69be2705b76b2bc80294bfbf6b8729ebabf53705",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "earlier_helper_attempt_preserved": {
+    "path": "data/campaign8-native/cycle15-native-backend-reconnect/RESULTS.json",
+    "sha256": "13cc10115fdf7ea1940cbe3d422361989d90415200f159ae356406c963db48ee"
+  },
+  "verdict": "PASS for truthful original UI connection loss, restored same-client attachment, token isolation, fresh status and exact owned shutdown",
+  "limitations": [
+    "Model/assistant remains unavailable in this replacement fixture; connection restoration is not inference readiness.",
+    "Home projection tested; no authored draft-content preservation or cross-store history continuity demonstrated by this case.",
+    "No owner service/process or real remote endpoint interrupted."
+  ]
+}

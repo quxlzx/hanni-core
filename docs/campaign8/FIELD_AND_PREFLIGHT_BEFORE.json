@@ -1,0 +1,23 @@
+{
+  "scope": "Independent before-repair exposed original persistence/API proof, zero generation/native/owner mutations",
+  "raw": {
+    "path": "data/campaign8-verifier/field-and-preflight-before-01/RESULTS.json",
+    "sha256": "8a15ebf941d033b47d81294c3be18a0a666cefe0b00e4a226567bcc857b3a616"
+  },
+  "task_controls": {
+    "cases": 4,
+    "positive": 2,
+    "failed_all_day_preservation": 2,
+    "root_cause": "Normalized all-day midnight ISO is resubmitted by UI and parsed as timed during update."
+  },
+  "lab_preflight": {
+    "direct_eligible": true,
+    "blank_required_endpoint_HTTP": 400,
+    "named_HTTP": 200,
+    "missing_extra_invalid_HTTP": 400,
+    "unauthorized_HTTP": 403,
+    "root_cause": "Original common parse_qs drops blank endpoint_id while exact preflight route requires that key."
+  },
+  "source_unchanged": true,
+  "backend_closed": true
+}

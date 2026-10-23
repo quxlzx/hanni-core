@@ -1,0 +1,110 @@
+{
+  "at": "2026-10-10T16:07:04.964533+00:00",
+  "scope": "Final verifier readiness: public executable/rubric/adapter/seal pins unchanged; private sealed bytes verified by hashes only, zero attempts. Whole-source freeze and explicit GO still required. No native/test/model launch in this check.",
+  "source_held": true,
+  "public_pins": {
+    "scripts/campaign8_verification/development_repro.py": "90b4c60c3f32808abd399d7f7c9e2b76a3bf66595458a9768555c97f9d3c8262",
+    "scripts/campaign8_verification/development_smoke.py": "cf72957b38bbfb935ee5ddd5efb4e7395c5258ec128a7b91f145b9ea21d1d018",
+    "scripts/campaign8_verification/final_runner.py": "bc4ccae5889e184bc828f5d184f6faabdf09b552a3082085d4e34454c2bbdb25",
+    "scripts/campaign8_verification/keyboard_repro.py": "cb5b21a8eeb1bcc48031a4ea717dd2282aa86d595d86215b21b082c78bfa2403",
+    "scripts/campaign8_verification/live_truth.py": "5de8ff1c78af68c6f1281a3d4910c7a813af2b62a34d93530f765a4df208bfb1",
+    "scripts/campaign8_verification/scoring.py": "2138a2005094b81768ec022e903d355126ec7ec6d6a521862636e0bc8423892d",
+    "scripts/campaign8_verification/validation.py": "3a9e1425354323cc98e54529addd032e693524dcd6040a5c279e46b08c02ef2f",
+    "tests/integration/test_campaign8_verification.py": "7ee8d925f71c3e9eab68b3376b8a93b249ea3b6538a9d3f5c694b86d6f703547",
+    "docs/campaign8/FINAL_ADAPTER.md": "1d1ee4271d44489b94e42a7d5825322aae8b5e769729d21cf427a236330dc47f",
+    "docs/campaign8/VISUAL_RUBRIC.md": "72b8199b7dc93ef46c7f5989d8d86c16f70c15f04155191890ebcbe65cba7338",
+    "docs/campaign8/FINAL_SEAL.json": "0e5b72b6c1f2dae3de0c187c2a7ba29ff3605737afdb8a587f9220269a1fc8a0",
+    "scripts/campaign8_verification/application_menu_repro.py": "14d9da6034e8b3c10beb56232019c4870b63e0f47853725b18d9bf16eaa3d9dd"
+  },
+  "public_pin_changes": [],
+  "prior_contracts": {
+    "tests": 36,
+    "passed": 36,
+    "xml": "data/campaign8-verifier/menu-contract-tests-fixed.xml",
+    "sha256": "91b635c0e06f51f0a5326a79bf43cbf5187797fc6976fb85a7592a71dbb447a0",
+    "first_insertion_error_preserved": {
+      "path": "data/campaign8-verifier/menu-contract-tests.xml",
+      "sha256": "1c6520fcb35e21f199beb6182d12fd498f977e612dd5db638f3eb1e136b3707c"
+    }
+  },
+  "private_hash_checks": {
+    "inputs.json": true,
+    "oracles.json": true,
+    "protocol.json": true
+  },
+  "claim_exists": false,
+  "final_attempted": 0,
+  "current_assets": {
+    "src/hanni/dashboard/static/app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+    "src/hanni/dashboard/static/style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb",
+    "src/hanni/dashboard/server.py": "1e5cb48ea1ba20e96978ca920fd22ba63d0d8ead749cd0657782d49f6e0da181"
+  },
+  "accepted_development_reviews": {
+    "docs/campaign8/TASK_LAB_PROJECT_REPAIR_REVIEW.json": "7a9ba7f529f85cdbe02b2051092962b26e0cc6fa0eb50bd0b331e1ba96450e28",
+    "docs/campaign8/MEMORY_MCP_CONTROL_REVIEW_CYCLE1.json": "e0ed1e60128c7c5b628f2827615fa7425b24504b217e18ab0d880e3486d0fe1a",
+    "docs/campaign8/MEMORY_MCP_CONTROL_RETAKE_REVIEW.json": "d096e7712e018b4058d5a8e5391188cb931a784930c5e90c2f91cd544357c108",
+    "docs/campaign8/SAFE_GAP_CONTROL_REVIEW.json": "892b9c87ab98e9908ddfcf4bd193f01b0632d80dcf347de50ffbba53ee57ce8c",
+    "docs/campaign8/SETTINGS_SCREEN_CONTROL_REVIEW.json": "b62800350663c38c99ea7dcdd10cb5770817161e96d676728664210a166ff099",
+    "docs/campaign8/LAB_LIFECYCLE_CONTROL_REVIEW.json": "1e846435e2f09a2bbcaa9f616375c85c593695cb2cd5902f50a3cd1665af4bf0",
+    "docs/campaign8/MCP_TOOL_INSPECTOR_REVIEW_CYCLE1.json": "f9dff80f323c61f6a730f1bd811117f43d03096319f4eb5fa7ec53f2d72136f2",
+    "docs/campaign8/MCP_TOOL_INSPECTOR_RETAKE_REVIEW.json": "92a39e42ee8716bbd66a6f42f2288fd06207f50f8d577fc4ee68cdf62dbe9be5",
+    "docs/campaign8/VISIBLE_SAFE_CONTROL_REVIEW.json": "f672facc5101c290308274756ee32814b22ec3850b1826068c17101d7af33fb9",
+    "docs/campaign8/VISIBLE_SAFE_RETAKE_REVIEW.json": "5602dea5909a2bc9e85c2f7d47e49ae49c6235329ec3f0609dfa74de8b3219a8",
+    "docs/campaign8/FINAL_DRAFTS_WORKFLOW_REVIEW.json": "a6254d0194738bef80c8624b23d21a9bacacef8f25526019ba6a4a5a11027dd2",
+    "docs/campaign8/NATIVE_POLICY_CONTROL_REVIEW.json": "7739b5ab684c7eb3eb200994a05c93b918d04a7a65783c539659be965108ebd0",
+    "docs/campaign8/NATIVE_ADAPTER_DEFAULTS_REVIEW.json": "306774e6d6942515850880ef1d391a3e20ff0bdb11b5ea36abb03b0b81a29e26",
+    "docs/campaign8/JSON_PREVIEW_REPAIR_REVIEW.json": "2116b0ce7aded1777ebb85073be95f67b114d74265d59ada91929f7126154ad8",
+    "docs/campaign8/MINI_STREAM_CLEAR_REVIEW.json": "343a6a786c4454455587bf7cb0313d4edc841dd001333ea0011940752b527e9b",
+    "docs/campaign8/RESIDUAL_CONTROL_REVIEW_CYCLE1.json": "a2e4ddc30193d1dfba104cd80af049a917501d1d5b823fdf8c170c7a2d38b42e"
+  },
+  "final_visual_plan": "Fresh once-only layout captures independently scored across all20 surfaces at their two authored physical sizes using the final frozen bundle and no_defaults=True. Earlier5b77/c03f populated development scores are retained and not promoted.",
+  "final_ledger_audit": {
+    "path": "docs/campaign8/STATIC_LEDGER_REVIEW_FINAL.json",
+    "sha256": "2df6ecb41f729e228eb61afbde4424bc5188a69e0579a9a13a283837ef81a63b",
+    "ledger_sha256": "ec44334596f102d3cc5f29e973264993410e078aa06783800009b9e253cb4945",
+    "counts": {
+      "PASS": 282,
+      "NOT_IMPLEMENTED": 1,
+      "BLOCKED": 24,
+      "NOT_RUN": 43
+    },
+    "errors": []
+  },
+  "native_default_preservation_review": {
+    "path": "data/campaign8-verifier/export-before/CONNECTOR_ACCEPTANCE.json",
+    "sha256": "f7ccec7628fba4a3d92601928bb29bfa6c2faf7d83940ebb450b515e90962cc8",
+    "session_sha256": "27d0e1c1a891efe9c4c6ded30639e16bd8009988cb1ea19aba1efc102863b0f9",
+    "controlled_checks_passed": 11,
+    "scope": "Independent helper review; actual target outcomes separately published."
+  },
+  "current_native_attachment_dependency": {
+    "path": "scripts/campaign8_native/session.py",
+    "sha256": "c2b0de7fa52c87a6f3d679ec65688a62a6b72d8112c9c9783d5005667347c19a",
+    "no_defaults": true,
+    "readOnly_metadata_added": true,
+    "prior_accepted_connector_sha256": "27d0e1c1a891efe9c4c6ded30639e16bd8009988cb1ea19aba1efc102863b0f9",
+    "scope": "Current helper preserves the accepted connector and adds readonly DOM field metadata; actual preview and Mini target measurements are independently reviewed."
+  },
+  "parent_current_regression": {
+    "path": "data/campaign8-manager/held-current-contracts-cycle7.xml",
+    "sha256": "b619cdd647985e97682bf786fc2db90baa55416f33196f3799aac0db0fabaecb",
+    "checks": 220,
+    "passed": 220,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "scope": "Parent-run current C8 contracts, not an additional independent native execution."
+  },
+  "peer_source_ready": {
+    "docs/campaign8/UI_SOURCE_READY.json": "59c37d812e4a7fb9cb16113304d13a308d49353952af67857cef1fc73d88a311",
+    "data/campaign8-native/SOURCE_READY_FINAL.json": "6a661caea6a379695169e073ec9aa6735d2f773292fe0c8a155821e04c8836aa"
+  },
+  "accepted_development_reviews_held": true,
+  "final_execution_authorized": false,
+  "private_seal_hashes": {
+    "input_sha256": "d7bcf56dc1465fadaa115840c27b4861ce3391a6c9c0f07d2a866eb8fe505b1d",
+    "oracle_sha256": "0ceb8edab0c4e6c6f3f8c615a9735d316f9ab56bf3b234c2b019a20572c191b4",
+    "protocol_sha256": "0a49591c8872651b9816731142387d7baca595e6ca4dd9e9be477021dfc0297a",
+    "author_sha256": "57e46b4668b6075bdf0dc33ba7ca8c8d53e6d3db47a02eabb713c0ae4c8021b6"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "prior_catalog_count": 97,
+  "prior_catalog_changes": {
+    ".gitattributes": {
+      "before": "2b91b809e76ddb4f6a261bf1bf8c9ffd9631b765eb2555b6a1f6586c148d73f1",
+      "current": "57864f800e471bb8a70fbfb6d2f187ed1dce003f34167352722c95995e9dbba0"
+    },
+    "scripts/campaign5_intelligence/controlled.py": {
+      "before": "6ea01fadde1cb9c0a3d8696a05ed7368cda9d9efd56749865f437231a855c391",
+      "current": "189945a0ced22489eb0dda0eb97461fb98c588d3a061b8ff144c4da99b80c7f1"
+    },
+    "tests/integration/test_campaign5_verification.py": {
+      "before": "5ff0db6e35a6c9cb356f884712f8b66d250b2a226ec81c32b1f95309076b2883",
+      "current": "23a09881790ea0aa28a510188f65a68ee6bd00f16c6e49939770b2e4f9794c1a"
+    }
+  },
+  "approved_prior_catalog_exceptions": [
+    ".gitattributes",
+    "scripts/campaign5_intelligence/controlled.py",
+    "tests/integration/test_campaign5_verification.py"
+  ],
+  "unexpected_prior_changes": [],
+  "attributes_prefix_preserved": true,
+  "production_changes_since_campaign6_initial": [
+    "src/hanni/compute/registry.py",
+    "src/hanni/compute/scheduler.py",
+    "src/hanni/compute/transport.py",
+    "src/hanni/dashboard/cluster.py"
+  ],
+  "production_changes_match_scope": true,
+  "protected_owner_configuration_matches": {
+    "deployment.json": true,
+    "context-measurements.json": true
+  },
+  "ssh_identity_files_match": {
+    "config": true,
+    "known_hosts": true,
+    "known_hosts.old": true
+  },
+  "discovery_source_rounds_stable": {
+    "discovery-initial": true,
+    "discovery-final": true
+  },
+  "head": "0aede831853b6876bc8904838a41f7b2ce8f3967",
+  "head_preserved": true,
+  "staged_files": [],
+  "fixture_exception_scope": "Archived-before timestamp metadata only; existing logical clocks, inputs and assertions preserved. Earlier Campaign 5 final seals and reports remain historical.",
+  "passed": true
+}

@@ -1,0 +1,137 @@
+.execution-traces {
+  margin: 0 0 24px;
+  min-width: 0;
+}
+.trace-record {
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+.trace-record > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+.trace-record > summary strong {
+  font: 12px/1.6 var(--mono);
+  margin-right: auto;
+  overflow-wrap: anywhere;
+}
+.trace-record > summary > span:not(:first-child),
+.trace-record time {
+  font-size: 12px;
+  color: var(--muted);
+}
+.trace-body {
+  padding: 4px 0 16px;
+  font-size: 12px;
+}
+.trace-body > p {
+  margin: 6px 0 12px;
+}
+.trace-facts {
+  display: flex;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+  margin: 0 0 10px;
+}
+.trace-facts > div {
+  min-width: 100px;
+}
+.trace-facts dt {
+  color: var(--muted);
+  font-size: 12px;
+}
+.trace-facts dd {
+  margin: 3px 0;
+  overflow-wrap: anywhere;
+  font: 12px/1.6 var(--mono);
+}
+.trace-step {
+  border-top: 1px solid var(--line);
+  padding: 10px 0;
+}
+.trace-step-heading {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.trace-step-heading strong {
+  margin-right: auto;
+  font-family: var(--mono);
+  overflow-wrap: anywhere;
+}
+.trace-step-heading span {
+  color: var(--muted);
+}
+.trace-timeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 14px;
+  list-style: none;
+  padding: 0;
+  margin: 9px 0;
+}
+.trace-timeline li {
+  display: flex;
+  gap: 5px;
+  align-items: baseline;
+  font-size: 12px;
+}
+.trace-evidence {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  font-size: 12px;
+}
+.trace-evidence > span {
+  color: var(--muted);
+}
+.trace-evidence ul {
+  display: flex;
+  gap: 4px 14px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 4px 0;
+}
+.trace-technical {
+  margin-top: 12px;
+}
+.trace-technical > summary {
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--muted);
+}
+.trace-technical pre {
+  font: 12px/1.6 var(--mono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--surface);
+  padding: 10px;
+}
+@media (max-height: 650px) {
+  .execution-traces {
+    margin-bottom: 16px;
+  }
+  .trace-record > summary {
+    padding: 6px 0;
+  }
+}
+@media (max-width: 760px) {
+  .trace-facts {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .trace-record > summary {
+    gap: 5px 8px;
+  }
+  .trace-timeline {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

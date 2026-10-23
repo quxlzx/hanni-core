@@ -1,0 +1,20 @@
+# Fleet profile TEMPLATE — copy to config/models.fleet.yaml (gitignored) and
+# fill in your brain's endpoint. The API key comes from the environment
+# (HANNI_MODEL_API_KEY), never from this file.
+
+idle_unload_seconds: 0
+ram_reserve_mb: 0
+vram_reserve_mb: 0
+critical_ram_percent: 95
+
+models:
+  - id: wonyoung-strata
+    role: supervisor
+    backend: strata
+    api_model: "REPLACE-WITH-MODEL-NAME"
+    endpoint: "http://127.0.0.1:8080/v1"
+    keep_loaded: true
+    context_length: 524288
+    native_max_tokens: 1200
+    native_temperature: 0.6
+    native_reasoning_budget: 512

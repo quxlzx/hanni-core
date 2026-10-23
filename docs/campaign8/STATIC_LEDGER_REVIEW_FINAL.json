@@ -1,0 +1,140 @@
+{
+  "at": "2026-10-10T16:07:04.955787+00:00",
+  "scope": "Independent read-only final source-slot and public evidence audit. No native workflow, test, model or private final execution. Counts describe source declarations with narrow observed branches, not exhaustive concrete controls.",
+  "ledger": {
+    "path": "docs/campaign8/static-controls-final-cycle3/STATIC_SCORECARD.json",
+    "sha256": "ec44334596f102d3cc5f29e973264993410e078aa06783800009b9e253cb4945"
+  },
+  "inventory": {
+    "path": "data/campaign8-ui/inventory-preview-cycle1/inventory.json",
+    "sha256": "be0012e87a34603f17b0dd23a6cde98b639a5c06f08b12fa813007ebc7d87f1f"
+  },
+  "source_files_checked": 44,
+  "unique_slots": 350,
+  "inventory_IDs_and_declared_fields_match": true,
+  "outcomes": {
+    "PASS": 282,
+    "NOT_IMPLEMENTED": 1,
+    "BLOCKED": 24,
+    "NOT_RUN": 43
+  },
+  "actual_native_action_references_checked": 634,
+  "independent_review_references_checked": 634,
+  "referenced_file_sha256": {
+    "data/campaign8-native/cycle21-safe-remaining32-dense/RESULTS.json": "93daf53474a30c207b1616d5514c690f4a7caddee163fd5c6e557cccbbd6b644",
+    "docs/campaign8/DENSE_CONTROL_REVIEW.json": "8b77340e9203292ba2c83ca5b318939b2ff09ee42f603c7cff885a32022e22cb",
+    "data/campaign8-native/cycle27-original-safe-gap18/RESULTS.json": "079d17391258027dc870e7cdf4614734fe7709138ccaac4bbfec915a91e214fe",
+    "docs/campaign8/SAFE_GAP_CONTROL_REVIEW.json": "892b9c87ab98e9908ddfcf4bd193f01b0632d80dcf347de50ffbba53ee57ce8c",
+    "data/campaign8-native/cycle28-original-settings-screen3/RESULTS.json": "db68ba68192b9ee83cd1921b00473c8db3582c549da8c6a91c7d175f768c23d1",
+    "docs/campaign8/SETTINGS_SCREEN_CONTROL_REVIEW.json": "b62800350663c38c99ea7dcdd10cb5770817161e96d676728664210a166ff099",
+    "frontend/src/awareness.tsx": "e8b0bbcf63ab29a7af45c70c6a353112bbf734a0e450d819ff1c8603d8824fa3",
+    "data/campaign8-ui/inventory-preview-cycle1/inventory.json": "be0012e87a34603f17b0dd23a6cde98b639a5c06f08b12fa813007ebc7d87f1f",
+    "data/campaign8-native/cycle8-populated-57/RESULTS.json": "769d3cb362f0a4cfb807b38bf1ccdeda9a59f2470c3d06ceb04df90fe65eb3bf",
+    "docs/campaign8/POPULATED_CONTROL_REVIEW.json": "5b5cf5fd26f4d181da44338fcec755e4e7258d5f6521ad65f06773c79045e5f5",
+    "data/campaign8-native/cycle18-source-correct-primary-retakes/RESULTS.json": "6ccc37e0f6a51356425f1327791e8e05713c4c1fc706735a411f48ce934d90a9",
+    "docs/campaign8/PRIMARY_CONTROL_RETAKE_REVIEW.json": "370b87c36bafbae1566d7250b13b56475cbbde789234aa67d51efd87b15a13c2",
+    "frontend/src/cluster.tsx": "e3ec5ea1b4afbcbad8afbec3ed4067abe9bf61f8abe470bce721586ab7035533",
+    "docs/campaign8/PRIMARY_CONTROL_REVIEW.json": "e48cf630411c878edd93c358b9a0a26615ef0cbd625a99e6ebde976a2a369fd4",
+    "docs/campaign8/MINI_LAB_SHELL_REVIEW_CYCLE1.json": "720caa38aa7662514c0330dc0f09335486e77ef32a61d56604dcd708405c7298",
+    "docs/campaign8/TASK_LAB_PROJECT_REPAIR_REVIEW.json": "7a9ba7f529f85cdbe02b2051092962b26e0cc6fa0eb50bd0b331e1ba96450e28",
+    "docs/campaign8/MEMORY_MCP_CONTROL_REVIEW_CYCLE1.json": "e0ed1e60128c7c5b628f2827615fa7425b24504b217e18ab0d880e3486d0fe1a",
+    "docs/campaign8/MEMORY_MCP_CONTROL_RETAKE_REVIEW.json": "d096e7712e018b4058d5a8e5391188cb931a784930c5e90c2f91cd544357c108",
+    "docs/campaign8/LAB_LIFECYCLE_CONTROL_REVIEW.json": "1e846435e2f09a2bbcaa9f616375c85c593695cb2cd5902f50a3cd1665af4bf0",
+    "docs/campaign8/MCP_TOOL_INSPECTOR_REVIEW_CYCLE1.json": "f9dff80f323c61f6a730f1bd811117f43d03096319f4eb5fa7ec53f2d72136f2",
+    "docs/campaign8/MCP_TOOL_INSPECTOR_RETAKE_REVIEW.json": "92a39e42ee8716bbd66a6f42f2288fd06207f50f8d577fc4ee68cdf62dbe9be5",
+    "docs/campaign8/VISIBLE_SAFE_CONTROL_REVIEW.json": "f672facc5101c290308274756ee32814b22ec3850b1826068c17101d7af33fb9",
+    "docs/campaign8/VISIBLE_SAFE_RETAKE_REVIEW.json": "5602dea5909a2bc9e85c2f7d47e49ae49c6235329ec3f0609dfa74de8b3219a8",
+    "docs/campaign8/FINAL_DRAFTS_WORKFLOW_REVIEW.json": "a6254d0194738bef80c8624b23d21a9bacacef8f25526019ba6a4a5a11027dd2",
+    "docs/campaign8/RESIDUAL_CONTROL_REVIEW_CYCLE1.json": "a2e4ddc30193d1dfba104cd80af049a917501d1d5b823fdf8c170c7a2d38b42e",
+    "docs/campaign8/NATIVE_POLICY_CONTROL_REVIEW.json": "7739b5ab684c7eb3eb200994a05c93b918d04a7a65783c539659be965108ebd0",
+    "docs/campaign8/JSON_PREVIEW_REPAIR_REVIEW.json": "2116b0ce7aded1777ebb85073be95f67b114d74265d59ada91929f7126154ad8",
+    "docs/campaign8/MINI_STREAM_CLEAR_REVIEW.json": "343a6a786c4454455587bf7cb0313d4edc841dd001333ea0011940752b527e9b",
+    "frontend/src/compute.tsx": "27c5dedf85b341d1d87596e54e77f977018140622acdfd1d322cc405e18c9fb2",
+    "frontend/src/execution_trace.tsx": "2f3f5cf351a86454a7e5c180fc2fd80fe29ecc925f48abf4ba4cee9e3b07b8b2",
+    "data/campaign8-native/cycle37-original-export-json-preview-afterproof/RESULTS.json": "3ef86a2b24ef970d51b93439990c26ed564c3e2ee29494b425ace9e4b4cbc3d3",
+    "data/campaign8-native/cycle13-safe-primary-40/RESULTS.json": "0099f6563cada999b322b3210bcb3f83594112a5bd849f96c5634db050d9f2dd",
+    "data/campaign8-native/cycle31-state-correct-mcp-tool-retakes3/RESULTS.json": "faa81f8bed8309472dd4ee286ab26478bd7f4dcdc18ec99a144af9afca86cfe6",
+    "data/campaign8-native/cycle25-original-memory-mcp-final12/RESULTS.json": "2cf9370d27074600291602cd2519212633ea054f462fd78dbdb6f8cf5727f024",
+    "data/campaign8-native/cycle26-self-contained-memory-mcp-retake8/RESULTS.json": "dab3b01b4441612965ee884aa0a0e77583e3320fe030b0d544baa4446a6077ab",
+    "data/campaign8-native/cycle30-original-mcp-tool-inspector4/RESULTS.json": "42d72afcc5f1b956829d3ba30d0e5eb34a647e23d019fdd22d661de1c4783bbf",
+    "frontend/src/mcp_hub.tsx": "ae6c2952b50491bcdcedf997872ea1c74e9d5b60408410dbc9761506637c36b1",
+    "data/campaign8-native/cycle34-original-final-drafts-workflow3/RESULTS.json": "26919218a17cbb09744edd478b3423727474c6380391cfbb6b95d1a982b3b087",
+    "data/campaign8-native/cycle32-original-visible-safe17/RESULTS.json": "50c0efda8ba065e6313e314cb5f7464f5d49f59e7bbd291ee4f2320c8d082810",
+    "data/campaign8-native/cycle36-original-native-policy-retakes/RESULTS.json": "b1eae897acd99e5add9797dac2983e19694bc2a525302637f7377b912c015246",
+    "frontend/src/memory.tsx": "7b14681c06f73d4e20cf1281b2634db75c35a0d64ab700f19fedf8feea2b9e42",
+    "data/campaign8-native/cycle23-original-mini-lab-shell21/RESULTS.json": "5aad6e7c12daa6a4799d987e1ea0ca0e2a19821abb9726b836daa9a088b90a04",
+    "frontend/src/mini.tsx": "521504da55e75326b0124942b8023c4ccc0155efa72b27a25aaadac791676fe9",
+    "data/campaign8-native/cycle38-genuine-mini-send-main-clear/RESULTS.json": "f30f2aa6bdafe083d7e4fc09e93c86989ef0e0f0df26fddaf3d71442af5a2ee5",
+    "data/campaign8-native/cycle10-exposed-selector-v3/RESULTS.json": "9861cd6159f1f412313fd82d5b0c038edf8e9406e22b6491158e89ae8fdc5bce",
+    "data/campaign8-native/cycle24-original-task-lab-project-afterproof16/RESULTS.json": "4e2c3a9a217987b6052f73838469fafbb4627b64eab965ea4af344c8c5ee00c4",
+    "data/campaign8-native/cycle29-original-lab-lifecycle3/RESULTS.json": "d4f9332cc5b3575ecd3759cafa3f7867ba96b100b509ebe6f69b55acf213f371",
+    "data/campaign8-native/cycle35-original-residual-controls-exports12/RESULTS.json": "2bf4375105fe67c1421e4f6252ba81ffc41f2f504ac4ded41e3cd9c77b862389",
+    "frontend/src/model_lab.tsx": "442c3221fb2e94218da088922f1e2112fbbafd17adbe55149fc287db8b7d5ba9",
+    "frontend/src/model_routing.tsx": "4c036342fb128d2acbde6ca2ae8ab600fd8b90f3d6eb2be1d8d3790049b1e4ac",
+    "frontend/src/productivity.tsx": "526a656498969d2f67d9ee59dfaa242ee52e2e1743a57cc7304d938b30bd70e6",
+    "frontend/src/screens.tsx": "0246d498f9490afd5006c61925f85af5b7d5343ff6833e3fa87b0e3f14749cfe",
+    "data/campaign8-native/cycle33-state-correct-visible-retakes2/RESULTS.json": "0c676e83a9003db3484000e23369db4d26070ef6423ee1a8175363e58b0bdc0d",
+    "frontend/src/workflows.tsx": "8992d5a2a511219a1db94c9e46a2df06328baa58e2f9c91b060bd969adec04b0",
+    "frontend/src/workflow_collaboration.tsx": "1dcebb3a99303e247e0c9d61bc459d1436d399a53d78edb5ab8e9fbbaebc390b",
+    "frontend/src/workspace.tsx": "8acd76ef77e2d7d694d2411df9fe7c9bad4bdc10a969e8c693a9491e0ae34c5d",
+    "data/campaign8-native/cycle20-second-last-stream-native-settled/RESULTS.json": "9a7e6f9633e2adcde40726a5678b745a4948e015c415868c88f925220675437a",
+    "docs/campaign8/STREAMING_REVIEW_CYCLE2.json": "bcad14b4e31dca892f27df4cfe1481f7e9220631085fc60d84e10844899c18b1"
+  },
+  "cycle2_reference_audit": {
+    "path": "data/campaign8-verifier/STATIC_LEDGER_REFERENCE_AUDIT_CYCLE2.json",
+    "sha256": "a3de364ee5d3a486813832ff76db277f02c1fe0390959e33cb57703e314cd52e",
+    "all_action_and_review_references_unchanged": true
+  },
+  "cycle3_row_changes": [
+    {
+      "id": "mcp_hub.tsx:933:13",
+      "fields": [
+        "outcome",
+        "actual_render_predicates",
+        "residual_classification",
+        "reason"
+      ]
+    },
+    {
+      "id": "model_lab.tsx:1104:13",
+      "fields": [
+        "reason"
+      ]
+    },
+    {
+      "id": "model_lab.tsx:1111:13",
+      "fields": [
+        "reason"
+      ]
+    }
+  ],
+  "modal_Project_source_credit": "memory.tsx:1025:19 binds solely to actual safe-gap-modal-memory-project step3; original mis-target excluded. memory.tsx:972:17 has separately reviewed dialog-select branches.",
+  "unmatched_count": 2,
+  "unmatched_scope": "Original broad Project selector changed background rather than intended modal field; top Close dialog remains conservatively ambiguous between source declarations in the automatic matcher despite independently accepted actual closure. Neither action is silently promoted.",
+  "authority_limitations": [
+    "Original inert MCP authority/metadata branches are CONTROLLED_MOCK, with no actual SDK/provider success inferred.",
+    "Actual Mini/main send and Clear scopes retain their original guarded live wire and isolated SQLite receipts; no answer-quality or physical-audio credit.",
+    "Clipboard Copy JSON remains NOT_RUN; no technical block or user prohibition was measured.",
+    "History pagination needs101 actual runs for the second100-row page; case pagination100+1 is a different tested scope.",
+    "Readonly JSON selection proves value/focus/selection, not clipboard or file delivery.",
+    "Historical actions retain exact actual assets; declaration correspondence does not create new current-code execution."
+  ],
+  "eligible_functional_fraction": null,
+  "universal_functional_acceptance": false,
+  "errors": [],
+  "private_final_attempted": 0,
+  "case_and_step_action_references_checked": 632,
+  "case_and_step_review_references_checked": 632,
+  "specialized_direct_action_scopes_checked": [
+    {
+      "source_slot": "workspace.tsx:803:7",
+      "actual_action_verified": true,
+      "independent_genuine_stream_readback_assertions_match": true
+    },
+    {
+      "source_slot": "workspace.tsx:841:9",
+      "actual_action_verified": true,
+      "independent_genuine_stream_readback_assertions_match": true
+    }
+  ]
+}

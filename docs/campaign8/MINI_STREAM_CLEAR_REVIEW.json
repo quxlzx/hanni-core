@@ -1,0 +1,209 @@
+{
+  "scope": "Independent exposed native Mini and owned Main history controls; genuine original local model response, isolated stores",
+  "reviewed_utc": "2026-10-10T15:52:23.182493+00:00",
+  "raw": {
+    "path": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/RESULTS.json",
+    "sha256": "f30f2aa6bdafe083d7e4fc09e93c86989ef0e0f0df26fddaf3d71442af5a2ee5"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+    "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+  },
+  "native_cdp_attachment": {
+    "no_defaults": true,
+    "scope": "Preserve original native browser context/download defaults; no policy override."
+  },
+  "counts": {
+    "cases": 3,
+    "PASS_scoped": 3,
+    "FAIL": 0,
+    "HARNESS_ERROR": 0,
+    "final_PNGs_viewed": 3,
+    "additional_intermediate_PNGs_viewed": 5,
+    "actual_generation_POST": 1,
+    "semantic_quality_scored": 0
+  },
+  "case_grades": [
+    {
+      "id": "mini-extension-one-genuine-send",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_WITH_LIVE_LOCAL_INFERENCE",
+      "observed_scope": "Original Mini typed Send makes exactly one guarded request to the existing local model. Settled native Mini displays all 256 characters from the original SSE/API/persisted row and Ready state. Backend-complete intermediate pixels still show a partial reply/Working; only the separately settled final image establishes full rendering. This demonstrates pipeline/display fidelity, not model answer quality, audio or repeatability.",
+      "input_sha256": "0de08e3751b96b87a8344380625a34293d7f675aee0c5cdc2fa264109cfefe74",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle38-genuine-mini-send-main-clear/screenshots/mini-final-native-complete.png",
+        "sha256": "08b733a7829a9455664baa61d5f48ba3348fda0a28cc01ec6f1d55f585f7a7be"
+      },
+      "independent_final_pixels_viewed": true,
+      "raw_collection": "mini_genuine_request",
+      "reply_sha256": "5c2b09c07603ec95317c10dd16cb1a260d4c5fdaa65f7008995e9a30422a43b2",
+      "characters": 256,
+      "SSE_API_SQL_receipt_settled_DOM_equal": true,
+      "native_settled_ready": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/chat",
+          "status": 200,
+          "data_sha256": "f1b6dbd7e1d642ab7d9326bcfc914eb410227cc12f02c47664fa020522ab0e74"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "mini-extension-main-clear-cancel",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Main Clear history confirmation opens and Cancel closes it; the same two complete disposable conversation rows remain unchanged in API and original SQL readback.",
+      "input_sha256": "5326b35935b723e4b6831b0c793337f890faabef5ac005bb0da0e3b928552828",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle38-genuine-mini-send-main-clear/screenshots/mini-extension-main-clear-cancel.png",
+        "sha256": "5caae20581b6797f3906ec13c26caa83bdd1962abbe883c7ae1bfe63c01fe8d3"
+      },
+      "independent_final_pixels_viewed": true,
+      "raw_collection": "owned_history_controls",
+      "before_messages": 2,
+      "after_messages": 2,
+      "persisted_SQL_receipt_rows": 2,
+      "source_API_evidence": [
+        {
+          "path": "/api/chat",
+          "status": 200,
+          "data_sha256": "f1b6dbd7e1d642ab7d9326bcfc914eb410227cc12f02c47664fa020522ab0e74"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "mini-extension-main-clear-confirm",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Main Clear history confirmation removes both disposable conversation rows. Authenticated API, original SQL readback and independent read-only closed SQLite all show zero rows; the old ephemeral token returns403 and the new one200. This does not erase memories, undo tools, reset model context or clear owner history.",
+      "input_sha256": "b2126eadc09dcc803465a1cc4e63bb261ac16aca16baa787a6f07c26604e5d73",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle38-genuine-mini-send-main-clear/screenshots/mini-extension-main-clear-confirm.png",
+        "sha256": "460ff7ee0c8c69fe97875328cdfece689f5e816a22f9443743f3655aafe8047c"
+      },
+      "independent_final_pixels_viewed": true,
+      "raw_collection": "owned_history_controls",
+      "before_messages": 2,
+      "after_messages": 0,
+      "persisted_SQL_receipt_rows": 0,
+      "source_API_evidence": [
+        {
+          "path": "/api/chat",
+          "status": 200,
+          "data_sha256": "2c8ea5b36be75a73ac681d3d66e6790fe179feddc3ee301cfe68680f25c5a253"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false,
+      "token_rotation": {
+        "changed": true,
+        "old_status": 403,
+        "new_status": 200,
+        "tokens_persisted": false
+      },
+      "independent_readonly_closed_SQLite_rows": 0
+    }
+  ],
+  "intermediate_PNGs_viewed": [
+    {
+      "path": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/screenshots/mini-backend-working.png",
+      "sha256": "5afb7ae5f34ae2cd85a59994e04c1e969a89775c8962fddf5bf4546d9d44fa7d"
+    },
+    {
+      "path": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/screenshots/mini-backend-partial.png",
+      "sha256": "5afb7ae5f34ae2cd85a59994e04c1e969a89775c8962fddf5bf4546d9d44fa7d"
+    },
+    {
+      "path": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/screenshots/mini-backend-complete.png",
+      "sha256": "8f22eb238ac2c1e9d4f7fdd5ebc1cb2d55291925fbd515c2f57cfbda957722f6"
+    },
+    {
+      "path": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/screenshots/mini-extension-main-clear-cancel-step-0.png",
+      "sha256": "f2f69e62b48c04df9790e0765b6fa873d9831545196918db72d23e90403988b9"
+    },
+    {
+      "path": "data/campaign8-native/cycle38-genuine-mini-send-main-clear/screenshots/mini-extension-main-clear-confirm-step-0.png",
+      "sha256": "f2f69e62b48c04df9790e0765b6fa873d9831545196918db72d23e90403988b9"
+    }
+  ],
+  "real_wire": {
+    "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-ui/authentic-mini-stream-cycle1/STREAM_CLOSED.json",
+    "sha256": "39b5ce88e4a3fde96b4bc72e854065860e181ef3687ac23834028cf8b3a29c44",
+    "requests": 1,
+    "status": 200,
+    "model": "supervisor",
+    "temperature": 0,
+    "top_p": 1,
+    "max_tokens": 64,
+    "thinking": false,
+    "usage": {
+      "completion_tokens": 50,
+      "prompt_tokens": 540,
+      "total_tokens": 590,
+      "prompt_tokens_details": {
+        "cached_tokens": 536
+      }
+    },
+    "response_not_truncated": true,
+    "finish_reason": "stop",
+    "DONE_observed": true,
+    "request_timeout_seconds": 30,
+    "wire_wall_ms": 988.3589999517426,
+    "first_response_byte_ms": 330.2144999615848,
+    "latency_scope": "Single original transport observation; not native first-audible, stable model performance or P50/P95."
+  },
+  "request_admission": {
+    "available_ram_bytes": 5268361216,
+    "used_percent": 84.5,
+    "health": {
+      "status": "ok"
+    },
+    "idle_slots": true,
+    "owner_model_PID": 38832,
+    "owner_model_create_time": 1791595415.4806464,
+    "owner_model_command_sha256": "eca1546bb86f6d07e2583465948461738a5bd60f171262bfc863470a19916dbd",
+    "identity_source": "fresh_exact_file_props_on_pid_owned_socket",
+    "same_after_model_identity": true,
+    "bypass": false
+  },
+  "producer": {
+    "controller_closed": true,
+    "errors": [],
+    "source_unchanged": true,
+    "owner_model_stopped": false,
+    "owner_history_modified": false,
+    "no_new_model_process": true
+  },
+  "owned_cleanup": {
+    "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-ui/authentic-mini-stream-cycle1/OWNED_CLOSE_CONFIRMED.json",
+    "sha256": "bcef40f2b60966be6c85fa821d29b73e5eeba9e5e591392c2447a1933f1112ab",
+    "owned_identity_absent": true,
+    "owned_pid": 55268,
+    "owned_create_time": 1791647246.699623,
+    "original_producer_exit_code": 0,
+    "signed_shutdown_status": 202,
+    "stream_closed_receipt_exists": true,
+    "controller_closed": true,
+    "generation_requests": 1,
+    "scope": "Final process/command completion after exact original signed shutdown; STREAM_CLOSED.json is this unchanged producer's own close receipt. It does not emit backend-main CLOSED.json."
+  },
+  "original_SQL_cleanup_receipt": {
+    "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-ui/authentic-mini-stream-cycle1/MINI_NATIVE_CLEANUP.json",
+    "sha256": "55722c002977311d9345c9667e3bc5125221abf8832edf5247fe507969aa8efe"
+  },
+  "independent_SQL_read": {
+    "owned_db": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-ui/authentic-mini-stream-cycle1/campaign-chat.sqlite3",
+    "mode": "ro&immutable=1",
+    "message_rows": 0
+  },
+  "native_cleanup": true,
+  "native_exit_code": 0,
+  "javascript_errors": 0,
+  "physical_audio_tests": "BLOCKED: user microphone/speakers unavailable; no activation",
+  "earlier_stream_and_partial_grades_unchanged": true,
+  "private_final_attempted": 0
+}

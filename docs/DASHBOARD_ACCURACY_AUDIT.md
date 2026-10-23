@@ -1,0 +1,7 @@
+# Dashboard telemetry and parity audit
+
+The dashboard's CPU/RAM/GPU sample comes from `snapshot_resources`; disk, battery, network counters and uptime come from local `psutil` reads. The model tile uses the configured model identity plus loopback health state, while owned-process residency is read from the model manager. A successful health endpoint is evidence of reachability, not proof that a test inference would succeed or that an externally started server has verified GPU placement.
+
+The UI labels an old or failed sample **STALE**, shows missing numeric readings as an em dash, and states when GPU telemetry is unavailable or only estimated. The telemetry worker catches provider failures and retains the last sample with an error flag, so one failed widget does not crash the dashboard. Existing dashboard tests cover loopback binding, cross-origin rejection, occupied-port fallback, GPU route changes and the local chat queue.
+
+Browser chat is queued into the existing CLI assistant loop; text and voice use the same MCP routing/session boundary after their input adapters. This is a static/path-level parity check, not a full browser/CLI/voice behavior matrix with a real microphone. The UI currently shows selected GPU routing in its GPU selector and manager state but does not independently prove model-layer offload for an external server. A dedicated inference probe and disconnected-startup matrix remain future validation work.

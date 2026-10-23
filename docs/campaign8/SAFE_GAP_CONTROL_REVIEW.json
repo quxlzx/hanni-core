@@ -1,0 +1,457 @@
+{
+  "scope": "Separate prospective exposed-development safe-gap batch; actual packaged native WebView2 and original disposable backend. Narrow observed grades do not replace immutable earlier cases or private final oracles.",
+  "raw": {
+    "path": "data/campaign8-native/cycle27-original-safe-gap18/RESULTS.json",
+    "sha256": "079d17391258027dc870e7cdf4614734fe7709138ccaac4bbfec915a91e214fe"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "c03f94985c8501c58da5c4cf9be122830a65edd4646116fa44952c711b1dcfc0",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "counts": {
+    "cases": 18,
+    "executed": 18,
+    "PASS_scoped_CONTROLLED": 16,
+    "PASS_scoped_CONTROLLED_MOCK": 2,
+    "final_PNGs_viewed": 18,
+    "additional_intermediate_PNGs_viewed": 5,
+    "actual_generation": 0
+  },
+  "case_grades": [
+    {
+      "id": "safe-gap-activity-filter",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original capability/execution search and status selects show an honest empty match, then restore the loaded seven completed audit records. The failed filter is an empty-state check; no positive failed-record retrieval or tool dispatch is credited.",
+      "input_sha256": "4b9b7953923d3f50e64f85e040d21b9c8a8c5779ec90d70f1e133c713eb0101f",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-activity-filter.png",
+        "sha256": "8b737ab67f371ac1220d475fa4c1362014a8c071f5be60c88abc43bdf4bff73a"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/agents",
+          "status": 200,
+          "data_sha256": "0ff1cf1a9b41eee79f8e9855861625ebe942a640c9478dbcc93587d27a336d21"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-capability-pagination",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Next/Previous exposes 7-12 then 1-6 of the 172 registered capability metadata rows; intermediate and final native pixels agree with the original registry inventory. Listing grants no authority and executes no capability.",
+      "input_sha256": "239db2e32b466e18699e9aae23bbc24a4e73cbdf6ae250f40faa6af40424ef21",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-capability-pagination.png",
+        "sha256": "26b9c8818f7a5d4aba06abf8ad95967ac0c45ed6d6dca298de107921b056ac48"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/agents",
+          "status": 200,
+          "data_sha256": "c667cc7da1048b5f4d0bde84a8cd6bc7c4f263090c6cfe5d2f317a2bf11384bb"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-activity-details",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "A completed original workspace.link.create audit record and technical details expand visibly. Result/payload are privacy-redacted; the UI explicitly lacks request-correlation and intermediate approval timestamps. This does not establish a complete workflow approval trace.",
+      "input_sha256": "5a50683a39549ded7f1fe55dd1ae2b5ff39a2a741cc3324878465f0333796a53",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-activity-details.png",
+        "sha256": "a2203d9a9bc32ca9e8d4056762989908f36bb33077eda579e928e1bebf73828f"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/agents",
+          "status": 200,
+          "data_sha256": "ee99363179a069931a0a999cd49909b5e6cb9c227b2d7070e4fd70e68cf43aa1"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-trace-filter-refresh",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Search and task-status filters show an empty task-trace state, then clear/All/Refresh restore six seeded task outcomes. Actual executions GET returns 200. Verified file.stat/file.write and unverified workspace outcomes remain distinct; manually seeded traces are not autonomous planning evidence.",
+      "input_sha256": "cf15aa1c09af221e0c84a6e7625c667128bbc638240f25f366d650bdaba65672",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-trace-filter-refresh.png",
+        "sha256": "f970d32a226772814c48d52d61c52fa13c16cf0b00bd73a105bce50a9d3b8250"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/agents",
+          "status": 200,
+          "data_sha256": "993fcd6f6fd38511252a780a858ffc355658b279273d2ae53112758496d53f5f"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-cluster-filter",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "An absent-node query displays No matching nodes; Clear filters restores nine configured entries, eight unavailable and one under repair. This is local display filtering, not fresh SSH/hardware or inference availability.",
+      "input_sha256": "1faf33b1c89f0a20bae679403ae714a1d0a936e508251187c962b1b637a61215",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-cluster-filter.png",
+        "sha256": "86dbaa964af50b404fe51cb6caf80aed6d9545761469a947fe342b9571bf153d"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/cluster",
+          "status": 200,
+          "data_sha256": "9c945d51f90399acbcaba8ad51e4ecafe4078cbf859b5156b6a45cd674d7cac5"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-cluster-details",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Selection, Refresh workers, Connection summary and back use original local cluster projection. Unavailable readings remain unknown and the detail explains connection evidence. No power, terminal, SSH-authentication or model-serving success is credited.",
+      "input_sha256": "56c899547e08a1e8c9fdc555845918819cb8507e2761af5ee7f85f22569f8ffa",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-cluster-details.png",
+        "sha256": "b5d16f55ac20c858218fc75602ce54adb04be75cd8779927565a987ad84c1c79"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/cluster",
+          "status": 200,
+          "data_sha256": "8e0ca1d79a0b153b7248604d4f5d5efc07f51f3b90d80fa0db513e655baba2f5"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-modal-memory-project",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "The exact correction-dialog selects visibly change Project to Unassigned and Statement type to historical, then Cancel closes the dialog. Stored 36/pending 26 and the original record ID/project/status/content remain unchanged. This proves these draft fields and cancellation, not Save.",
+      "input_sha256": "a3b240d7a4133530212d98db7c08421a29952e0d5aa71b236459d11b4c5d674d",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-modal-memory-project.png",
+        "sha256": "dc7330baac3b6694acb8793b8a8cca4f1b985a5baa481a5bd21a91e6121db99d"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "4d0b0c03746480c0ca80cfcbdd5d013947ee212fb0d0e3b5d419bf1e04811926"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "63198f0a80261c706d506f41b9166b03966aab8039c02c38ca3b942d895ffa3b"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-positive-local-proposal",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original local-rule Create suggestion produces one pending add for I prefer concise spoken responses., with owner_requested:local_rules provenance, uncalibrated confidence and explicit approval requirement. Pending increases 26 to 27; stored remains 36. The new proposal is visible in the list, while the prior selection remains in the detail. No approval, fact save, LAYA or model extraction is credited.",
+      "input_sha256": "93e098fcd4c4b20dfdc4b34e894536a8ced905ce7dbf572418a0be1c5fd5abf1",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-positive-local-proposal.png",
+        "sha256": "0ad648ea0fc08f42597ce5ff4e7f658eaee78491918b1d9dfec92ebf9b2e8d02"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "74827c4ae6ef19ee5af30111e381e9afb3b47aed04f39685d248f3a14c819995"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "2c23f890ed67994566a73ab21018a6c2bd025a901acbd4d5b6304d3a86189571"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-approved-inert-enable",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_MOCK",
+      "observed_scope": "Actual original MCP manager Enable/Confirm uses previously seeded explicit configuration-hash-bound approval; the same opaque server ID becomes enabled/connected with definition revision 2 and zero discovered tools. Initialization/list are CONTROLLED_MOCK inert leaves, not an actual MCP SDK, process, provider, credential or network connection.",
+      "input_sha256": "b87e84ec7aed0ec4ee9137c71b5d1dd5ba5254ea08ee32f91784c40a8579d73d",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-approved-inert-enable.png",
+        "sha256": "48772adf7ab6f3a07fb7d93d76653e406b47375040f780ac8281d98b09901333"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "fa21ea590bd06e63e4e395b836469f6fcf08e261153684332e51b540d9a47574"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-approved-inert-disable",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED_MOCK",
+      "observed_scope": "Original manager Disable makes that same previously enabled inert server disabled with enabled=false, preserving its configuration/hash and zero-tool inventory. Its connection dependency is CONTROLLED_MOCK; no live external disconnect or tool execution is credited.",
+      "input_sha256": "0d49ee15f2443d4ee1d58084e1b11ccba3f4d598175557f675f11dfb1ff62764",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-approved-inert-disable.png",
+        "sha256": "4ca840b281b343fc2bb0783cc81ed1ffa33eee6883e635d8cc42127fe17900c2"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "d9cf19eae41bcd149f1832e7b57c1f1b0e887fe3d0f612f3bd6b4c88a2ada834"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-mcp-empty-tool-filters",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Tool search/review filter/clear and connection details/back operate on an honestly empty zero-tool server. This proves empty-state filtering/navigation only, not discrimination or approval of imported tools.",
+      "input_sha256": "66a9bc6f56f1ac57d39673bdbb357d4ca11313a57b23414a9836395db8228081",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-mcp-empty-tool-filters.png",
+        "sha256": "52be9fd0edb6e1c1fe9ebdffabf50db8ba40e7fbc791da8a4219b7a30e00196f"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "d9cf19eae41bcd149f1832e7b57c1f1b0e887fe3d0f612f3bd6b4c88a2ada834"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-home-cluster-navigation",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Home Inspect cluster changes the native route to Cluster and shows the original configured/unavailable fixture nodes. Navigation alone does not demonstrate worker eligibility.",
+      "input_sha256": "8ed5d0c26d80291defc0bb01377f3f0bf4cc1b6acb53b5ec04d57ed7f7500704",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-home-cluster-navigation.png",
+        "sha256": "f3ae8914b1ccd64c05614bf48a2bbdd2e12a298d4509febd81488ef6efaf2b98"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/cluster",
+          "status": 200,
+          "data_sha256": "788abca96395a585db9935e342ac88a2eaf8233a0e64657327ab54a34c101418"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-home-conversation-navigation",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Home Open conversation reaches Chat with Assistant not ready and disabled composer because the isolated fixture has no controller. No message, inference or owner history is sent.",
+      "input_sha256": "fae5e92fef2ca6d06e8cc2534143587a9817484331b8869b8b19f3e73a98fb2f",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-home-conversation-navigation.png",
+        "sha256": "491d55f9f06596904e0403e073ce1d0347fd8dd333843c15a0fc13e744c1c4f6"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "d762ec827c3702806ed3b9680497052e93112e19110b96155d5f6ea41743f7e9"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-home-mission-navigation",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Home Inspect reaches Mission Control with current host telemetry and unavailable/configured-only model state. Native route/pixels are verified; the productivity readback is not a contemporaneous telemetry-number oracle.",
+      "input_sha256": "fd8672f02b9eadf50b1ce26f84419f0a9244b64b3e4f30b868cf0fce6f5fd865",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-home-mission-navigation.png",
+        "sha256": "84cade963057edcd5a76a32b2d73cff7683f76d9f8772ae407373d9d1e237220"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "d762ec827c3702806ed3b9680497052e93112e19110b96155d5f6ea41743f7e9"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-mission-cluster-navigation",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original View cluster reaches the native Cluster route with unavailable controlled fixture state. No SSH, inference or model operation is performed.",
+      "input_sha256": "aba3a9dfe41642205359624ec0308b9cb8d8eac219a45fb5fb93fb3c6b467c10",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-mission-cluster-navigation.png",
+        "sha256": "8562b06e98bf01786a2be0afcd4c0fa190e8be8900b37c7092490a07f818eb28"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/cluster",
+          "status": 200,
+          "data_sha256": "6369cf9de38723f201739c4dd81e37d26d949b9fbe1c573047b9f4becfefb7fc"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-notification-inspect",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Inspect on the exact synthetic project notification routes to Projects and marks that notification read=true/dismissed=false. The final page still asks to select a project; no selected project-detail, approval or project mutation is credited.",
+      "input_sha256": "02fb989bd2a7eeec3be5686c91fc9ec868b813c4ce91f03c419b2e1c0b3ecfa6",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-notification-inspect.png",
+        "sha256": "480ad78b44388f7631a9f1d0e88149b1f98e8c81b0982e17a769edb54f193f25"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "f5cee81aef7654514d63fc0a11d0e7ae3c5d20bd47b83b60e9d9731a63b5d38b"
+        },
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "d762ec827c3702806ed3b9680497052e93112e19110b96155d5f6ea41743f7e9"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-notification-clear",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Clear all plus confirmation removes notifications from the active list. All nine original records remain in the API with read=true and dismissed=true, rather than being deleted; history is retained and no permission is granted.",
+      "input_sha256": "debdb472083561c2e902370f9224032041037883447800de8ab7132a8db88bc8",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-notification-clear.png",
+        "sha256": "51ebba0b54b555665457763904e4df299bf97f8c5c2f702438cfba3ad6196439"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "d2b1319303037d816f4a7b594d7c482471a5bb7ff0416e0d487985a27a60260a"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "safe-gap-settings-read-only-details",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Allowed actions details and device/GPU refresh use original read-only projections. Output enumeration/GPU routing remain unavailable. No device Apply, audio activation, model launch or permission mutation occurs; below-fold allowed-action rows are DOM evidence rather than a complete pixel review.",
+      "input_sha256": "735ccf1cd372101dcdd99a2b35576b72fa8078ae3464940cceef7cf59d5e01b1",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-settings-read-only-details.png",
+        "sha256": "19465333c11ea515c273249e692deb52f184b2dc6705731cdfaa215a68a18665"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/voice",
+          "status": 200,
+          "data_sha256": "a1f29de8410d6dc79a64abe5e160b7808f38535668a98e63b2e1df0173ee75ca"
+        },
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "555ff1d9e745f19b9970061be929e7436c225f0eff1715680b2a47bf47e95746"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    }
+  ],
+  "intermediate_pixels": [
+    {
+      "path": "data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-modal-memory-project-step-3.png",
+      "sha256": "95280100b8794f569c15c628b94d79ef4d88a0d5e0aed60bb069cee919cfe07e"
+    },
+    {
+      "path": "data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-modal-memory-project-step-4.png",
+      "sha256": "f8dbeaa651834948f3be07fa16656853bf4c289b8894f1bad7b58d2ab2171c9c"
+    },
+    {
+      "path": "data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-capability-pagination-step-0.png",
+      "sha256": "add8d0763f1be68c015670a4db31ddad44572af742c3535a875d34627e3520fa"
+    },
+    {
+      "path": "data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-trace-filter-refresh-step-1.png",
+      "sha256": "83f28dc9394c3a286a4f198af1c9f3b38c08e82f6299d747e206d28fbccbcc44"
+    },
+    {
+      "path": "data/campaign8-native/cycle27-original-safe-gap18/screenshots/safe-gap-cluster-filter-step-0.png",
+      "sha256": "a9c98ebe9c34de158cec6f1294ef4696b5491ea256d048ac23be81b76b3097fb"
+    }
+  ],
+  "controlled_MCP_source": {
+    "path": "scripts/campaign8_ui/inert_mcp.py",
+    "sha256": "b01f7bb9032b0e0dafd076b7008e2097d1b0a83b438b9b01171321f6c535c66b",
+    "classification": "Original manager API and configuration-hash approval; connection/runtime initialization and list leaves explicitly inert CONTROLLED_MOCK. No SDK/process/network/model."
+  },
+  "cleanup": {
+    "native_exit_code": 0,
+    "owned_native_cleanup": true,
+    "backend_close": {
+      "path": "data/campaign8-ui/native-backend-cycle16-safe-gaps/CLOSED.json",
+      "sha256": "90ec5b1fc6fefd3691a76091b95a970b311b8a88f3fc655f21fe91ebf3dc341f"
+    }
+  },
+  "no_private_final_access": true,
+  "hardware_audio": "User microphone and speakers unavailable; no activation or physical test."
+}

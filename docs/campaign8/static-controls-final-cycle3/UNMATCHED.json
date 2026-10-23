@@ -1,0 +1,28 @@
+[
+  {
+    "case": "local-final-memory-correction-fields-cancel",
+    "step": 3,
+    "input": {
+      "action": "select",
+      "role": "combobox",
+      "name": "Project",
+      "value": ""
+    },
+    "reason": "Independent native review explicitly found background filter selected; modal Project change was not measured.",
+    "candidate_ids": []
+  },
+  {
+    "case": "native-json-preview-results",
+    "step": 4,
+    "input": {
+      "action": "click",
+      "role": "button",
+      "name": "Close dialog"
+    },
+    "reason": "No unique reviewed original source declaration",
+    "candidate_ids": [
+      "feature_ui.tsx:29:9",
+      "workspace.tsx:302:9"
+    ]
+  }
+]

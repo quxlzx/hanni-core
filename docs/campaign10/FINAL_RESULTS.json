@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "state": "FINAL_SCORED_ONCE",
+  "task_count": 45,
+  "task_success_count": 0,
+  "task_success_rate": 0.0,
+  "implementation_checks_passed_count": 0,
+  "essential_gap_count": 3,
+  "unsafe_or_fabricated_count": 1,
+  "safety_not_measured_count": 0,
+  "dimension_counts": {
+    "intent": {
+      "FAIL": 9,
+      "PASS": 21,
+      "NOT_MEASURED": 12,
+      "BLOCKED": 3
+    },
+    "retrieved_context": {
+      "FAIL": 25,
+      "BLOCKED": 18,
+      "PASS": 2
+    },
+    "tools": {
+      "FAIL": 23,
+      "PASS": 7,
+      "NOT_MEASURED": 12,
+      "BLOCKED": 3
+    },
+    "arguments": {
+      "FAIL": 13,
+      "NOT_MEASURED": 25,
+      "PASS": 4,
+      "BLOCKED": 3
+    },
+    "authorization": {
+      "BLOCKED": 12,
+      "PASS": 20,
+      "NOT_MEASURED": 13
+    },
+    "execution": {
+      "BLOCKED": 38,
+      "FAIL": 7
+    },
+    "outcome_verification": {
+      "BLOCKED": 38,
+      "FAIL": 7
+    },
+    "final_response": {
+      "BLOCKED": 6,
+      "FAIL": 15,
+      "PASS": 12,
+      "NOT_MEASURED": 12
+    },
+    "latency": {
+      "PASS": 45
+    },
+    "recovery": {
+      "FAIL": 3,
+      "NOT_APPLICABLE": 26,
+      "BLOCKED": 16
+    }
+  },
+  "evidence_counts": {
+    "LIVE_MODEL_ISOLATED_SERVICES": 30,
+    "ISOLATED_IMPLEMENTATION": 12,
+    "BLOCKED": 3
+  },
+  "model_tool_selection": {
+    "eligible_actual_attempts": 23,
+    "correct": 7,
+    "rate": 0.30434782608695654
+  },
+  "actual_model_calls": 70,
+  "latency_ms": {
+    "measured_tasks": 45,
+    "p50": 4806.617299999971,
+    "p95": 7079.399680000005
+  },
+  "tokens": {
+    "measured_tasks": 30,
+    "total": 102948
+  },
+  "source_sha256": "669452622a4a9a4a4d68a5022dc97a00d084be2b50fdf59e3bbd7556f94f87d7",
+  "input_sha256": "0740db2fc2c905b4cd5c01f7ee65a897c86f80e9025baba7b1a15e952f906654",
+  "oracle_sha256": "cae6acf95c5e031406768d464ee91c0b81a466d9505e923740eb6f33befac676",
+  "receipt_manifest_sha256": "f3862ad116fdc75952b0ffddbbebc39609085c5480cba993d9756406c92e621b",
+  "review_sha256": "1bc968872b1e6e2ea1f9e7ea1d7ad4fa4fde6638bce85a94b9f6ac9f99b2ac8a",
+  "private_score_sha256": "c4790dc3324e97818de32e60c03cefa60c9d48d5f059b0147fe470dff8bdda1e",
+  "private_case_detail_published": false,
+  "no_final_guided_tuning": true
+}

@@ -1,0 +1,444 @@
+{
+  "before": {
+    "total": 750,
+    "pass_rate": 49.33,
+    "families": {
+      "ambiguous": {
+        "cases": 40,
+        "pass_rate": 5.0
+      },
+      "blocked_writes": {
+        "cases": 40,
+        "pass_rate": 90.0
+      },
+      "calendar_create": {
+        "cases": 70,
+        "pass_rate": 80.0
+      },
+      "calendar_read": {
+        "cases": 90,
+        "pass_rate": 67.78
+      },
+      "date_time": {
+        "cases": 40,
+        "pass_rate": 57.5
+      },
+      "diagnostics": {
+        "cases": 250,
+        "pass_rate": 49.6
+      },
+      "files": {
+        "cases": 60,
+        "pass_rate": 46.67
+      },
+      "hanni_model": {
+        "cases": 40,
+        "pass_rate": 47.5
+      },
+      "mixed_domain": {
+        "cases": 35,
+        "pass_rate": 0.0
+      },
+      "process_system": {
+        "cases": 55,
+        "pass_rate": 7.27
+      },
+      "slang_typos": {
+        "cases": 30,
+        "pass_rate": 56.67
+      }
+    },
+    "method": "Captured pre-change results; only inconsistent GPU-process domain annotations corrected.",
+    "corrected_case_ids": [
+      "DIAGNOSTICS-031",
+      "DIAGNOSTICS-032",
+      "DIAGNOSTICS-033",
+      "DIAGNOSTICS-034",
+      "DIAGNOSTICS-035",
+      "DIAGNOSTICS-036",
+      "DIAGNOSTICS-037",
+      "DIAGNOSTICS-038",
+      "DIAGNOSTICS-039",
+      "DIAGNOSTICS-040",
+      "SLANG-TYPOS-011",
+      "SLANG-TYPOS-012",
+      "SLANG-TYPOS-013",
+      "SLANG-TYPOS-014",
+      "SLANG-TYPOS-015"
+    ]
+  },
+  "after_original_750": {
+    "total": 750,
+    "pass_rate": 98.27,
+    "families": {
+      "ambiguous": {
+        "cases": 40,
+        "pass_rate": 100.0
+      },
+      "blocked_writes": {
+        "cases": 40,
+        "pass_rate": 100.0
+      },
+      "calendar_create": {
+        "cases": 70,
+        "pass_rate": 100.0
+      },
+      "calendar_read": {
+        "cases": 90,
+        "pass_rate": 100.0
+      },
+      "date_time": {
+        "cases": 40,
+        "pass_rate": 100.0
+      },
+      "diagnostics": {
+        "cases": 250,
+        "pass_rate": 96.8
+      },
+      "files": {
+        "cases": 60,
+        "pass_rate": 100.0
+      },
+      "hanni_model": {
+        "cases": 40,
+        "pass_rate": 92.5
+      },
+      "mixed_domain": {
+        "cases": 35,
+        "pass_rate": 100.0
+      },
+      "process_system": {
+        "cases": 55,
+        "pass_rate": 100.0
+      },
+      "slang_typos": {
+        "cases": 30,
+        "pass_rate": 93.33
+      }
+    }
+  },
+  "after_expanded": {
+    "total": 1087,
+    "average_score": 99.33,
+    "pass_rate": 98.8,
+    "families": {
+      "ambiguous": {
+        "cases": 40,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "blocked_writes": {
+        "cases": 40,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "calendar_create": {
+        "cases": 70,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "calendar_read": {
+        "cases": 90,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "date_time": {
+        "cases": 40,
+        "average_score": 99.75,
+        "pass_rate": 100.0
+      },
+      "diagnostics": {
+        "cases": 250,
+        "average_score": 98.43,
+        "pass_rate": 96.8
+      },
+      "files": {
+        "cases": 60,
+        "average_score": 99.67,
+        "pass_rate": 100.0
+      },
+      "hanni_model": {
+        "cases": 40,
+        "average_score": 98.69,
+        "pass_rate": 92.5
+      },
+      "hardening": {
+        "cases": 37,
+        "average_score": 99.82,
+        "pass_rate": 100.0
+      },
+      "mixed_domain": {
+        "cases": 35,
+        "average_score": 99.18,
+        "pass_rate": 100.0
+      },
+      "process_system": {
+        "cases": 55,
+        "average_score": 99.82,
+        "pass_rate": 100.0
+      },
+      "registry_app": {
+        "cases": 4,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_archive": {
+        "cases": 6,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_audio": {
+        "cases": 6,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_browser": {
+        "cases": 2,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_calc": {
+        "cases": 2,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_clipboard": {
+        "cases": 4,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_device": {
+        "cases": 10,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_disk": {
+        "cases": 14,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_display": {
+        "cases": 4,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_env": {
+        "cases": 10,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_file": {
+        "cases": 38,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_folder": {
+        "cases": 2,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_git": {
+        "cases": 8,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_gmail": {
+        "cases": 4,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_google": {
+        "cases": 2,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_google_calendar": {
+        "cases": 8,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_gpu": {
+        "cases": 4,
+        "average_score": 95.0,
+        "pass_rate": 100.0
+      },
+      "registry_hanni": {
+        "cases": 8,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_id": {
+        "cases": 2,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_media": {
+        "cases": 8,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_model": {
+        "cases": 2,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_net": {
+        "cases": 12,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_note": {
+        "cases": 8,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_notify": {
+        "cases": 2,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_power": {
+        "cases": 12,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_powershell": {
+        "cases": 2,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_process": {
+        "cases": 16,
+        "average_score": 96.25,
+        "pass_rate": 100.0
+      },
+      "registry_project": {
+        "cases": 6,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_python": {
+        "cases": 2,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_random": {
+        "cases": 4,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_schedule": {
+        "cases": 2,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_security": {
+        "cases": 10,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_service": {
+        "cases": 4,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_spotify": {
+        "cases": 18,
+        "average_score": 98.89,
+        "pass_rate": 100.0
+      },
+      "registry_startup": {
+        "cases": 2,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_system": {
+        "cases": 12,
+        "average_score": 99.17,
+        "pass_rate": 100.0
+      },
+      "registry_text": {
+        "cases": 6,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_time": {
+        "cases": 6,
+        "average_score": 98.33,
+        "pass_rate": 100.0
+      },
+      "registry_timer": {
+        "cases": 2,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_todo": {
+        "cases": 10,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_ui": {
+        "cases": 14,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "registry_unit": {
+        "cases": 2,
+        "average_score": 100.0,
+        "pass_rate": 100.0
+      },
+      "slang_typos": {
+        "cases": 30,
+        "average_score": 96.92,
+        "pass_rate": 93.33
+      }
+    },
+    "metrics": {
+      "family": {
+        "checks": 313,
+        "pass_rate": 100.0
+      },
+      "subintent": {
+        "checks": 25,
+        "pass_rate": 100.0
+      },
+      "required_retrieval": {
+        "checks": 922,
+        "pass_rate": 99.46
+      },
+      "primary_ranking": {
+        "checks": 863,
+        "pass_rate": 98.96
+      },
+      "date_resolution": {
+        "checks": 183,
+        "pass_rate": 100.0
+      },
+      "multi_domain": {
+        "checks": 7,
+        "pass_rate": 100.0
+      },
+      "classification": {
+        "checks": 300,
+        "pass_rate": 100.0
+      },
+      "ambiguity": {
+        "checks": 51,
+        "pass_rate": 100.0
+      },
+      "blocked": {
+        "checks": 114,
+        "pass_rate": 100.0
+      },
+      "forbidden": {
+        "checks": 1087,
+        "pass_rate": 100.0
+      },
+      "precision": {
+        "checks": 1087,
+        "pass_rate": 95.49
+      }
+    }
+  },
+  "raw_before_pass_rate": 47.6
+}

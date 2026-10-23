@@ -1,0 +1,35 @@
+{
+  "scope": "Manager independently counted actual HTTP model evidence; native controller and diagnostic-only cases remain separate; authored repeats/preflights excluded",
+  "phases": {
+    "development": {
+      "cases": 370,
+      "owner_turns": 380,
+      "native_model_evaluated_cases": 315,
+      "diagnostic_only_model_evaluated_cases": 50,
+      "any_model_evaluated_cases": 365,
+      "no_actual_model_evaluated_cases": 5,
+      "native_model_evaluated_owner_turns": 324,
+      "diagnostic_only_owner_turns": 51
+    },
+    "final": {
+      "cases": 256,
+      "owner_turns": 273,
+      "native_model_evaluated_cases": 166,
+      "diagnostic_only_model_evaluated_cases": 26,
+      "any_model_evaluated_cases": 192,
+      "no_actual_model_evaluated_cases": 64,
+      "native_model_evaluated_owner_turns": 172,
+      "diagnostic_only_owner_turns": 26
+    }
+  },
+  "combined": {
+    "cases": 626,
+    "owner_turns": 653,
+    "native_model_evaluated_cases": 481,
+    "diagnostic_only_model_evaluated_cases": 76,
+    "any_model_evaluated_cases": 557,
+    "no_actual_model_evaluated_cases": 69,
+    "native_model_evaluated_owner_turns": 496,
+    "diagnostic_only_owner_turns": 77
+  }
+}

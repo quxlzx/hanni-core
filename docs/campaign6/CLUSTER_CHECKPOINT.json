@@ -1,0 +1,101 @@
+{
+  "schema_version": 2,
+  "scope": "Final cluster source-ready implementation checkpoint after credential/source and authority-transition repair; no live hardware/model success; independent private final remains manager-coordinated, verifier-owned and pending.",
+  "sources": [
+    {
+      "path": "src/hanni/compute/transport.py",
+      "sha256": "d6f30ea100282e94eadd806ba1753e95ae7751cc58bd1aa57732140a0c0a3ff0",
+      "lf_only": true
+    },
+    {
+      "path": "src/hanni/compute/registry.py",
+      "sha256": "d970cbdc32e0870ed69901ef1aec51b01d2a2820b6ebab6ea0ce81f83749b1c5",
+      "lf_only": true
+    },
+    {
+      "path": "src/hanni/dashboard/cluster.py",
+      "sha256": "5e935fc4849d50e3b532eb2327d488f4f48ffc13539eb61db4ce7b6bdec38ef9",
+      "lf_only": true
+    },
+    {
+      "path": "src/hanni/compute/scheduler.py",
+      "sha256": "50a2efaf60087d68434e67a2f328ecdfef817b53d09c37d16451d9993c63daf6",
+      "lf_only": true
+    },
+    {
+      "path": "scripts/campaign6_cluster/__init__.py",
+      "sha256": "6917c68cc25b4e4bd7fb94a1067a6be9940ac7960b019916296c1360af3859c5",
+      "lf_only": true
+    },
+    {
+      "path": "scripts/campaign6_cluster/controlled.py",
+      "sha256": "4da6edd4e09e3c7cab226a17254d9990ab041927cd8ba3d3c28e4d20ba3c550e",
+      "lf_only": true
+    },
+    {
+      "path": "scripts/campaign6_cluster/publish.py",
+      "sha256": "712f1beed23f48ae111646f3a07601c535b46178a4c8ce1526dcd7b1ce2eb318",
+      "lf_only": true
+    },
+    {
+      "path": "tests/integration/test_campaign6_cluster_boundaries.py",
+      "sha256": "d5d4d8e718a6b7859212262499a25a7567bdbbc052e756aac7c0e775dc2aeb3c",
+      "lf_only": true
+    },
+    {
+      "path": "tests/unit/test_adaptive_model_routing.py",
+      "sha256": "0fa41a70abb122b12c72dc46d1b6dc6ffaaedee9238c36e8ea2cb27f0684ebca",
+      "lf_only": true
+    },
+    {
+      "path": "tests/unit/test_v44_controlled_regressions.py",
+      "sha256": "3bef22294b2a75f954ff10f4f1f639a630151d4e775307f7f90cf932004c8ad6",
+      "lf_only": true
+    },
+    {
+      "path": "scripts/campaign5_intelligence/controlled.py",
+      "sha256": "189945a0ced22489eb0dda0eb97461fb98c588d3a061b8ff144c4da99b80c7f1",
+      "lf_only": true
+    }
+  ],
+  "evidence_sha256": "97d6c652c12961b26e8c3d93b149b9fa561d7c669aba3089adfa22b091837999",
+  "final_relevant": {
+    "xml": "data/campaign6-cluster/credential-final-relevant.xml",
+    "sha256": "b3a17eb788b2207b398975636dc9023351eeea27b25c070a51eb405decddea2b",
+    "tests": 522,
+    "passed": 522,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "seconds": 71.737
+  },
+  "independent_exposed": {
+    "xml": "data/campaign6-verifier/independent-final-development-cycle3.xml",
+    "sha256": "07a742c5775c608c4ee2f77cfcbd57c6b572e9651c7ff9e556dff4e36cacf285",
+    "tests": 46,
+    "passed": 46,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "seconds": 6.944
+  },
+  "timestamp_only_migration_assertions_and_other_ast_preserved": true,
+  "focused": {
+    "xml": "data/campaign6-cluster/authority-transition-repair.xml",
+    "sha256": "20172dcae8c5a604a34622995065c3af56010c89d2b08159c357d9215906ec67",
+    "tests": 143,
+    "passed": 143,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "seconds": 7.014
+  },
+  "independent_source_ready_sha256": "b39062b678d57b850a6230bc74e7b291c82719d66dedb75bfc8c06f8f4fa69fa",
+  "historical_related_506": {
+    "xml": "data/campaign6-cluster/final-relevant-clean.xml",
+    "tests": 506,
+    "passed": 506,
+    "seconds": 71.731,
+    "transport_sha256": "1b435529e2553831da89cd19469bc15c633024704104be48792df296ae0d93dc"
+  }
+}

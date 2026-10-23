@@ -1,0 +1,149 @@
+{
+  "status": "READY_FOR_EXPERIMENTAL_ALPHA_SOURCE_PUBLICATION",
+  "stable_release_ready": false,
+  "scope": "Sanitized, history-free source copy only. Original working repository/history must remain private.",
+  "date": "2026-10-13",
+  "software_validation": {
+    "status": "SOFTWARE_GATES_PASSED_ALPHA_ONLY",
+    "scope": "Clean software regression and packaging; not live model or speech acceptance.",
+    "python": "3.12.10",
+    "platform": "Windows",
+    "gates": [
+      {
+        "gate": "frontend-build",
+        "exit_code": 0,
+        "seconds": 5.031
+      },
+      {
+        "gate": "frontend-tests",
+        "exit_code": 0,
+        "seconds": 0.172
+      },
+      {
+        "gate": "python-tests",
+        "exit_code": 0,
+        "seconds": 776.719
+      },
+      {
+        "gate": "health",
+        "exit_code": 0,
+        "seconds": 0.375
+      },
+      {
+        "gate": "package-build",
+        "exit_code": 0,
+        "seconds": 40.156
+      },
+      {
+        "gate": "distribution-privacy",
+        "exit_code": 0,
+        "seconds": 1.406
+      },
+      {
+        "gate": "source-privacy",
+        "exit_code": 0,
+        "seconds": 7.234
+      },
+      {
+        "gate": "unchanged-source-during-validation",
+        "exit_code": 0
+      }
+    ],
+    "tests": {
+      "tests": 4650,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 6,
+      "passed": 4644
+    },
+    "source_sha256_before": "229a5cbce113b08077ed09f8e7996bea4c6ec2e4b16b24300edbb3e1773ca252",
+    "source_sha256_after": "229a5cbce113b08077ed09f8e7996bea4c6ec2e4b16b24300edbb3e1773ca252",
+    "not_tested": [
+      "Physical microphone/TTS responsiveness",
+      "Live model held-out task quality",
+      "External provider accounts",
+      "Private remote deployment",
+      "Separate Control Center deployment"
+    ]
+  },
+  "full_suite": {
+    "tests": 4650,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 6,
+    "passed": 4644
+  },
+  "frontend_tests": {
+    "passed": 45,
+    "failed": 0
+  },
+  "source_privacy_findings": 0,
+  "distribution_privacy": "PASS",
+  "clean_python_and_npm_install": "PASS",
+  "clean_install_evidence": "Separate fresh Windows virtual environment and npm ci. Final rerun reused those installed dependencies; no app or model defaults changed.",
+  "wheel_smoke": {
+    "status": "PASS",
+    "isolated_core_install": "PASS",
+    "installed_site_package_imports": "PASS",
+    "cli_health_with_explicit_checkout_configuration": "PASS",
+    "matching_python_modules": 216,
+    "scope": "Core wheel in a clean environment; no model, speech or remote-provider test"
+  },
+  "console_entry_recheck": {
+    "status": "PASS",
+    "tests": 2,
+    "reason": "Activated only the child process PATH; both source and installed-wheel console wrappers also returned version successfully."
+  },
+  "skips": [
+    {
+      "test": ".tests.unit.test_cluster_harness_graph",
+      "reason": "collection skipped"
+    },
+    {
+      "test": "tests.evals.test_failure_ledger.test_all_saved_development_failures_have_a_review_and_evidence",
+      "reason": "historical local inference report is not included in this checkout"
+    },
+    {
+      "test": "tests.integration.test_entry_points.EntryPointTests.test_console_script_if_installed",
+      "reason": "hanni not on PATH (run `pip install -e .`)"
+    },
+    {
+      "test": "tests.unit.test_cluster_worker_checks.test_checker_symlink_cannot_modify_an_outside_file",
+      "reason": "Symlink creation unavailable"
+    },
+    {
+      "test": "tests.unit.test_phase3_contract_context.test_shared_contract_source_is_identical",
+      "reason": "Separate Control Center source is unavailable; cross-project byte identity NOT TESTED."
+    },
+    {
+      "test": "tests.unit.test_vad_segmenter.SileroAdapterTests.test_injected_iterator_maps_silero_event",
+      "reason": "Optional torch adapter NOT TESTED without the test-speech extra."
+    }
+  ],
+  "npm_advisories": 0,
+  "history_included": false,
+  "pushed_or_published": false,
+  "baseline": {
+    "unit_passed": 1789,
+    "unit_failed": 21,
+    "unit_skipped": 2,
+    "scope": "Initial public-copy baseline; retained privately, superseded by complete final software run."
+  },
+  "remaining_gates": [
+    "Physical microphone/TTS responsiveness",
+    "Live model held-out task quality",
+    "External provider accounts",
+    "Private remote deployment",
+    "Separate Control Center deployment",
+    "Optional LangGraph execution adapter",
+    "Optional Torch/Silero adapter",
+    "Windows symlink test where privilege was unavailable"
+  ],
+  "limitations": [
+    "Software tests are controlled evidence, not independently measured live model task completion.",
+    "End-to-end text/planning P50/P95 and first audible useful-answer latency NOT TESTED for this release.",
+    "Unattended intent execution remains disabled until task-family acceptance passes.",
+    "Historical model correctness failures and residency limitations are not resolved by release packaging.",
+    "Pattern scans cannot prove absence of every possible personal detail or unknown secret format."
+  ]
+}

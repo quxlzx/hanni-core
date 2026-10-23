@@ -1,0 +1,169 @@
+{
+  "scope": "Separate public DEVELOPMENT child-row visibility supplementation, not regrade of earlier parent-only screenshots",
+  "raw": {
+    "path": "data/campaign8-native/cycle22-original-visible-child-rows/RESULTS.json",
+    "sha256": "f81d099446b04c68f69d7df38e3126fb8c61d1d736d9ffd6e7261eeda5cfeb90"
+  },
+  "earlier_partial_preserved": {
+    "path": "docs/campaign8/LOWER_SECTION_REVIEW_CYCLE1.json",
+    "sha256": "371319bc116c5916f59c6e5f1aef67bc182242a8c85eecccf58901f065e52afe"
+  },
+  "counts": {
+    "scoped_cases": 3,
+    "PASS": 3,
+    "actual_native_PNGs_independently_viewed": 3
+  },
+  "cases": [
+    {
+      "id": "visible-original-checkpoint-child",
+      "status": "PASS",
+      "scope": "Actual first original checkpoint child Submitted fully visible; PNG additionally shows all seven persisted checkpoint rows. Controlled seeded manual write/readback history, not autonomous execution.",
+      "independent_native_PNG_viewed": true,
+      "capture": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle22-original-visible-child-rows/screenshots/visible-original-checkpoint-child.png",
+        "sha256": "faee1cf403758cd7cb542db0a22551a94529a79888b9e7af5e8ebb1bc1a4c633"
+      },
+      "actual_child_viewport_proof": {
+        "visible": true,
+        "unobstructed": true,
+        "rect": {
+          "x": 194,
+          "y": 276.3999938964844,
+          "width": 784,
+          "height": 34.79999923706055
+        },
+        "clips": [
+          {
+            "tag": "MAIN",
+            "class": "main-content screen-workflows",
+            "contained": true,
+            "rect": {
+              "x": 172,
+              "y": 44,
+              "width": 838.4000244140625,
+              "height": 500
+            }
+          },
+          {
+            "tag": "DIV",
+            "class": "app-shell  ",
+            "contained": true,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1010.4000244140625,
+              "height": 580
+            }
+          }
+        ],
+        "text": "10/10/2026, 9:50:50 AM\nSubmitted\nSubmitted",
+        "selectorEvidence": "LI"
+      },
+      "original_API_path": "/api/workflows",
+      "original_API_status": 200
+    },
+    {
+      "id": "visible-original-search-history-child",
+      "status": "PASS",
+      "scope": "Actual searched history child workspace.task.update fully visible; PNG shows three workspace.task completed history rows. Independent Task outcomes above intentionally remain unfiltered.",
+      "independent_native_PNG_viewed": true,
+      "capture": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle22-original-visible-child-rows/screenshots/visible-original-search-history-child.png",
+        "sha256": "c8dfcca0a9292fadfe1a2262aac6fcf17021c17daf466762ecfae68ae3921c4a"
+      },
+      "actual_child_viewport_proof": {
+        "visible": true,
+        "unobstructed": true,
+        "rect": {
+          "x": 194,
+          "y": 431.8000183105469,
+          "width": 784,
+          "height": 31.200000762939453
+        },
+        "clips": [
+          {
+            "tag": "MAIN",
+            "class": "main-content screen-activity",
+            "contained": true,
+            "rect": {
+              "x": 172,
+              "y": 44,
+              "width": 838.4000244140625,
+              "height": 500
+            }
+          },
+          {
+            "tag": "DIV",
+            "class": "app-shell  ",
+            "contained": true,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1010.4000244140625,
+              "height": 580
+            }
+          }
+        ],
+        "text": "completed\nworkspace.task.update\nOct 10, 09:51 AM\n6 ms",
+        "selectorEvidence": "SUMMARY"
+      },
+      "original_API_path": "/api/agents",
+      "original_API_status": 200
+    },
+    {
+      "id": "visible-original-status-history-child",
+      "status": "PASS",
+      "scope": "Actual original no-match history empty-state child fully visible under Failed filter. No failure row exists in this fixture, so matching failed-row retrieval is not demonstrated.",
+      "independent_native_PNG_viewed": true,
+      "capture": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle22-original-visible-child-rows/screenshots/visible-original-status-history-child.png",
+        "sha256": "8834c28887daede9cbdf0e3d5907439fbe7a3271166b87cf2d3e4e1459e11334"
+      },
+      "actual_child_viewport_proof": {
+        "visible": true,
+        "unobstructed": true,
+        "rect": {
+          "x": 194,
+          "y": 470.20001220703125,
+          "width": 784,
+          "height": 58
+        },
+        "clips": [
+          {
+            "tag": "MAIN",
+            "class": "main-content screen-activity",
+            "contained": true,
+            "rect": {
+              "x": 172,
+              "y": 44,
+              "width": 838.4000244140625,
+              "height": 500
+            }
+          },
+          {
+            "tag": "DIV",
+            "class": "app-shell  ",
+            "contained": true,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1010.4000244140625,
+              "height": 580
+            }
+          }
+        ],
+        "text": "No executions match this filter.",
+        "selectorEvidence": "feature-empty"
+      },
+      "original_API_path": "/api/agents",
+      "original_API_status": 200
+    }
+  ],
+  "native_cleanup": true,
+  "exit": 0,
+  "javascript_errors": [],
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "5b77e1673872fe543fa5cc7f69be2705b76b2bc80294bfbf6b8729ebabf53705",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "scope": "Independent exposed-development native-safe JSON preview acceptance; not private final execution",
+  "reviewed_utc": "2026-10-10T15:48:47.996575+00:00",
+  "raw": {
+    "path": "data/campaign8-native/cycle37-original-export-json-preview-afterproof/RESULTS.json",
+    "sha256": "3ef86a2b24ef970d51b93439990c26ed564c3e2ee29494b425ace9e4b4cbc3d3"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+    "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+  },
+  "native_source_sha256": "ac3a1e65b4e4670f1ddb78c147c86d104868fc89f17230ac98f28164438a1acc",
+  "native_cdp_attachment": {
+    "no_defaults": true,
+    "scope": "Preserve original native browser context/download defaults; no policy override."
+  },
+  "before_review": {
+    "path": "docs/campaign8/NATIVE_POLICY_CONTROL_REVIEW.json",
+    "sha256": "7739b5ab684c7eb3eb200994a05c93b918d04a7a65783c539659be965108ebd0"
+  },
+  "counts": {
+    "setup_cases": 1,
+    "setup_PASS_scoped": 1,
+    "target_cases": 2,
+    "target_PASS_scoped": 2,
+    "FAIL": 0,
+    "HARNESS_ERROR": 0,
+    "final_PNGs_viewed": 3,
+    "additional_intermediate_PNGs_viewed": 6,
+    "independent_complete_preview_source_checks": 6,
+    "model_generation_requests": 0
+  },
+  "case_grades": [
+    {
+      "id": "policy-retake-original-lab-setup",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "The original model-free routing suite completes ten persisted cases in the disposable store, using a finite controlled evaluation delay; no model or tool performance claim.",
+      "input_sha256": "e2e653a4566aec2cc05721293e0ea741c31730ae675c7478323f4b9aff413547",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle37-original-export-json-preview-afterproof/screenshots/policy-retake-original-lab-setup.png",
+        "sha256": "c7a6abacc0a3cd1955153adf05110955f1975be283821cbddb59d80321499829"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "102ba582fa004229a408b46b4584e8e20aea931c8ef5bd876029b3b9626292b6"
+        }
+      ],
+      "full_source_checks": [],
+      "dismissal_observations": [],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "native-json-preview-results",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Results View JSON displays the complete exact original serialized ten-case run in a readonly textarea. Select JSON focuses/selects all UTF16 units. Bottom Close, top Close dialog and Escape each dismiss the modal. Native Download is absent, and no clipboard/download delivery is claimed. This is a new native-safe viewer scope; the original canceled export grades remain unchanged.",
+      "input_sha256": "a11ff3333920b25624b68ffb73fd1085a3ddadcc709f0f385a2ad91fb6dadb59",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle37-original-export-json-preview-afterproof/screenshots/native-json-preview-results.png",
+        "sha256": "d9a25eab28c8e8c2db6af1f084aae9d9be0c310ce031a6dcc34c38db0cb69fbd"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "e3a5a456e694bc248bb471d656ba6211809a796b6da46f11ecaa402ac2729962"
+        }
+      ],
+      "full_source_checks": [
+        {
+          "step_id": "native-json-preview-results-step-0",
+          "independent_entire_text_matches_source": true,
+          "source_path": "/api/model-lab/export/ef16a2e7-8f12-449f-9e17-8ba15ba6c17b?representation=serialized",
+          "source_status": 200,
+          "source_data_sha256": "7f0dc1cb873b479daf39391bd323c449f460686b58d43b2ab51beab12cbb96cd",
+          "text_sha256": "58c15821c4049ad7802e3836e84dcb3da4f47894073c59265b8e7eed8ce648d6",
+          "utf8_bytes": 19997,
+          "utf16_length": 19994,
+          "selection": [
+            0,
+            0
+          ],
+          "readonly": true,
+          "native_Download_button_visible": false
+        },
+        {
+          "step_id": "native-json-preview-results-step-1",
+          "independent_entire_text_matches_source": true,
+          "source_path": "/api/model-lab/export/ef16a2e7-8f12-449f-9e17-8ba15ba6c17b?representation=serialized",
+          "source_status": 200,
+          "source_data_sha256": "7f0dc1cb873b479daf39391bd323c449f460686b58d43b2ab51beab12cbb96cd",
+          "text_sha256": "58c15821c4049ad7802e3836e84dcb3da4f47894073c59265b8e7eed8ce648d6",
+          "utf8_bytes": 19997,
+          "utf16_length": 19994,
+          "selection": [
+            0,
+            19994
+          ],
+          "readonly": true,
+          "native_Download_button_visible": false
+        },
+        {
+          "step_id": "native-json-preview-results-step-3",
+          "independent_entire_text_matches_source": true,
+          "source_path": "/api/model-lab/export/ef16a2e7-8f12-449f-9e17-8ba15ba6c17b?representation=serialized",
+          "source_status": 200,
+          "source_data_sha256": "7f0dc1cb873b479daf39391bd323c449f460686b58d43b2ab51beab12cbb96cd",
+          "text_sha256": "58c15821c4049ad7802e3836e84dcb3da4f47894073c59265b8e7eed8ce648d6",
+          "utf8_bytes": 19997,
+          "utf16_length": 19994,
+          "selection": [
+            0,
+            0
+          ],
+          "readonly": true,
+          "native_Download_button_visible": false
+        },
+        {
+          "step_id": "native-json-preview-results-step-5",
+          "independent_entire_text_matches_source": true,
+          "source_path": "/api/model-lab/export/ef16a2e7-8f12-449f-9e17-8ba15ba6c17b?representation=serialized",
+          "source_status": 200,
+          "source_data_sha256": "7f0dc1cb873b479daf39391bd323c449f460686b58d43b2ab51beab12cbb96cd",
+          "text_sha256": "58c15821c4049ad7802e3836e84dcb3da4f47894073c59265b8e7eed8ce648d6",
+          "utf8_bytes": 19997,
+          "utf16_length": 19994,
+          "selection": [
+            0,
+            0
+          ],
+          "readonly": true,
+          "native_Download_button_visible": false
+        }
+      ],
+      "dismissal_observations": [
+        {
+          "action": "Close",
+          "open_dialogs": 0
+        },
+        {
+          "action": "Close dialog",
+          "open_dialogs": 0
+        },
+        {
+          "action": "Escape",
+          "open_dialogs": 0
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "native-json-preview-comparison",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Compare View JSON displays the complete exact original serialized ten-case run in a readonly textarea. Select JSON focuses/selects all UTF16 units. Close dismisses the modal. Native Download is absent, and no clipboard/download delivery is claimed. This is a new native-safe viewer scope; the original canceled export grades remain unchanged.",
+      "input_sha256": "cfcbafb938ffcf5ee54578c414595d9f1400c1a04b342875d4d38e683958bd7b",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle37-original-export-json-preview-afterproof/screenshots/native-json-preview-comparison.png",
+        "sha256": "fc726998fa1f9d0e98433bed2a7a79bc420441fc19bdd9ed273d602b91079421"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "c2758cda71029c62405722bcbe2bf85358a93bd11ab3dd66c02b58a3871a8a44"
+        }
+      ],
+      "full_source_checks": [
+        {
+          "step_id": "native-json-preview-comparison-step-6",
+          "independent_entire_text_matches_source": true,
+          "source_path": "/api/model-lab/export/a76f7db0-7b1d-447b-bdfe-ef283169b7a5?representation=serialized",
+          "source_status": 200,
+          "source_data_sha256": "d400b3d646ef65b391e3e4af81938c182a44061c3815ce3663d665421ea92ffc",
+          "text_sha256": "1311aca54ed4ac173985569c0367c6d5d505b30fff3444de692d083e4d903037",
+          "utf8_bytes": 19998,
+          "utf16_length": 19995,
+          "selection": [
+            0,
+            0
+          ],
+          "readonly": true,
+          "native_Download_button_visible": false
+        },
+        {
+          "step_id": "native-json-preview-comparison-step-7",
+          "independent_entire_text_matches_source": true,
+          "source_path": "/api/model-lab/export/a76f7db0-7b1d-447b-bdfe-ef283169b7a5?representation=serialized",
+          "source_status": 200,
+          "source_data_sha256": "d400b3d646ef65b391e3e4af81938c182a44061c3815ce3663d665421ea92ffc",
+          "text_sha256": "1311aca54ed4ac173985569c0367c6d5d505b30fff3444de692d083e4d903037",
+          "utf8_bytes": 19998,
+          "utf16_length": 19995,
+          "selection": [
+            0,
+            19995
+          ],
+          "readonly": true,
+          "native_Download_button_visible": false
+        }
+      ],
+      "dismissal_observations": [
+        {
+          "action": "Close",
+          "open_dialogs": 0
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    }
+  ],
+  "intermediate_PNGs_viewed": [
+    {
+      "path": "data/campaign8-native/cycle37-original-export-json-preview-afterproof/screenshots/native-json-preview-results-step-0.png",
+      "sha256": "0ddc7021d3ba4ba4813a479f7eb205ae5e894961b835e29465a2762a60bd8b40"
+    },
+    {
+      "path": "data/campaign8-native/cycle37-original-export-json-preview-afterproof/screenshots/native-json-preview-results-step-1.png",
+      "sha256": "776a963951ef192ba4640a99a412f81667011f3a70ac4382c69ce378f14fabe5"
+    },
+    {
+      "path": "data/campaign8-native/cycle37-original-export-json-preview-afterproof/screenshots/native-json-preview-results-step-2.png",
+      "sha256": "a6a87635f4cd4d97f85e11b116a91befe143bc52c19ca61433e75af74059343a"
+    },
+    {
+      "path": "data/campaign8-native/cycle37-original-export-json-preview-afterproof/screenshots/native-json-preview-results-step-4.png",
+      "sha256": "68ee79cd94b453c310ed0ee676e6e8b56534048ef52cb64d6b8278f6c109a00b"
+    },
+    {
+      "path": "data/campaign8-native/cycle37-original-export-json-preview-afterproof/screenshots/native-json-preview-comparison-step-6.png",
+      "sha256": "dd5dbeadede4f26636dbceafb65289be2b0451e4669968e74b100fefda4af94a"
+    },
+    {
+      "path": "data/campaign8-native/cycle37-original-export-json-preview-afterproof/screenshots/native-json-preview-comparison-step-7.png",
+      "sha256": "619a83bb1f0adadfeddcaf602a14ca222a0f4a86cc9bbd99de2c72851c3bfb3c"
+    }
+  ],
+  "passive_download_event_count": 0,
+  "clipboard_delivery_claimed": false,
+  "file_delivery_claimed": false,
+  "multipage_or_large_export_runtime_coverage": "This actual native fixture has ten cases per run and one source page. Larger continuations/8MiB rejection have controlled contract coverage only, not observed native large-export success.",
+  "original_backend_closed": {
+    "path": "data/campaign8-ui/native-backend-cycle26-export-preview/CLOSED.json",
+    "sha256": "d7f9c20668bdeb0b584c15f44636e66bc89a1230e5e813d7abde591595bea8b0",
+    "source_unchanged": true,
+    "owner_runtime_modified": false
+  },
+  "native_cleanup": true,
+  "native_exit_code": 0,
+  "javascript_errors": 0,
+  "previous_export_grades_unchanged": true,
+  "private_final_attempted": 0
+}

@@ -1,0 +1,25 @@
+{
+  "scope": "Prospective real local streaming/native ChatHub validation, no correctness target or teacher answer",
+  "prompt": "Explain in two short sentences how a bicycle gear changes pedaling effort.",
+  "prompt_sha256": "1a553c33c7bd9fab2acf92e6f5a3da0b4d08d3b9f43df295dbce72cbd99aaffa",
+  "max_tokens": 64,
+  "temperature": 0,
+  "top_p": 1,
+  "generation_budget": 2,
+  "HTTP_timeout_seconds": 30,
+  "owned_session_deadline_seconds": 240,
+  "existing_model_pid": 38832,
+  "initial_and_request_time_guards": [
+    "available_ram>=3072MiB",
+    "RAM percent<90",
+    "originalPID/create_time/file/listener binding",
+    "healthy props supervisor identity",
+    "all actualslots is_processing=false",
+    "originalAdaptiveModelEngine selection/predispatch",
+    "originalnormalTextSession/MCP/memory/controller"
+  ],
+  "owner_model_start_stop": false,
+  "physical_audio": false,
+  "external_provider": false,
+  "execution_attempted": false
+}

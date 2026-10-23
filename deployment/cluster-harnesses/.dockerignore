@@ -1,0 +1,13 @@
+# Use the repository root as build context with the explicitly named Dockerfile.
+# Also use the root .dockerignore below; do not send runtime state to a builder.
+**/.env*
+**/credentials*
+**/client_secret*
+data
+config
+.git
+.venv
+**/node_modules
+**/__pycache__
+**/*.gguf
+**/*.zip

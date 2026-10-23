@@ -1,0 +1,501 @@
+{
+  "rows": [
+    {
+      "screen": "home",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.8,
+        "spacing": 1.8,
+        "identity": 1.7,
+        "desktop_polish": 1.7
+      },
+      "score": 8.8,
+      "reason": "Useful system/workspace hierarchy and restrained status presentation remain clear at compact width; some unused space in an empty workspace.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/home-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/home-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/home-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/home-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "chat",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.8,
+        "spacing": 1.7,
+        "identity": 1.7,
+        "desktop_polish": 1.7
+      },
+      "score": 8.7,
+      "reason": "Conversation and composer have clear priority and keyboard access; initial review covers empty composer and navigation, with model streaming assessed separately.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/chat-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/chat-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/chat-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/chat-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "voice",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.7,
+        "spacing": 1.7,
+        "identity": 1.7,
+        "desktop_polish": 1.7
+      },
+      "score": 8.6,
+      "reason": "Legible device/state controls and honest unavailable actions; unavailable voice hardware limits interaction coverage.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/voice-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/voice-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/voice-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/voice-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "planner",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.8,
+        "spacing": 1.7,
+        "identity": 1.7,
+        "desktop_polish": 1.7
+      },
+      "score": 8.7,
+      "reason": "Schedule and task information use practical density and clear selection; empty schedule stays readable.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/planner-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/planner-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/planner-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/planner-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "tasks",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.8,
+        "spacing": 1.8,
+        "identity": 1.7,
+        "desktop_polish": 1.7
+      },
+      "score": 8.8,
+      "reason": "Populated task, completed state, filter, due date and create dialog work without cramped actions; cancellation preserves the record.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/tasks-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/tasks-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/tasks-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/tasks-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "calendar",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.7,
+        "spacing": 1.8,
+        "identity": 1.7,
+        "desktop_polish": 1.7
+      },
+      "score": 8.7,
+      "reason": "Calendar and local deadlines are readable with explicit disconnected-provider feedback; live Google access was intentionally excluded.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/calendar-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/calendar-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/calendar-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/calendar-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "projects",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.8,
+        "spacing": 1.7,
+        "identity": 1.7,
+        "desktop_polish": 1.7
+      },
+      "score": 8.7,
+      "reason": "Actual selected project and associated saved note establish information hierarchy; explicit project selection is required after creation.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/projects-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/projects-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/projects-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/projects-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "memory",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.7,
+        "spacing": 1.7,
+        "identity": 1.8,
+        "desktop_polish": 1.7
+      },
+      "score": 8.7,
+      "reason": "Current record, source history, proposals, correction and deletion are distinct and inspectable; compact header leaves fewer visible rows and history may need scrolling.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/memory-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/memory-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/memory-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/memory-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "mission",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.7,
+        "spacing": 1.7,
+        "identity": 1.7,
+        "desktop_polish": 1.7
+      },
+      "score": 8.6,
+      "reason": "Honest empty mission state and consistent navigation; large empty area makes this screen less useful until work exists.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/mission-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/mission-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/mission-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/mission-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "models",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.8,
+        "spacing": 1.7,
+        "identity": 1.7,
+        "desktop_polish": 1.7
+      },
+      "score": 8.7,
+      "reason": "Actual configured model/state details are readable and subordinate to status; runtime switching was not performed.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/models-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/models-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/models-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/models-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "agents",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.8,
+        "spacing": 1.7,
+        "identity": 1.7,
+        "desktop_polish": 1.8
+      },
+      "score": 8.8,
+      "reason": "Capability search and technical details support inspection without decorative filler; long lists scroll predictably.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/agents-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/agents-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/agents-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/agents-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "cluster",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.8,
+        "spacing": 1.8,
+        "identity": 1.8,
+        "desktop_polish": 1.7
+      },
+      "score": 8.9,
+      "reason": "Real CPU/RAM history, availability and uptime form readable node rows; Yunjin's jellyfish repair state is explicit. Power/terminal execution remained blocked.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/cluster-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/cluster-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/cluster-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/cluster-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "activity",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.8,
+        "spacing": 1.7,
+        "identity": 1.7,
+        "desktop_polish": 1.7
+      },
+      "score": 8.7,
+      "reason": "Time, event and status distinctions remain readable in dense content; no claim that every possible event type was generated.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/activity-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/activity-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/activity-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/activity-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "screen",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.7,
+        "spacing": 1.7,
+        "identity": 1.7,
+        "desktop_polish": 1.7
+      },
+      "score": 8.6,
+      "reason": "Privacy/state text is clear and unsupported analysis is disabled; this screen is a truthful unavailable state, not working screen capture.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/screen-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/screen-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/screen-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/screen-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "notifications",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.8,
+        "spacing": 1.7,
+        "identity": 1.7,
+        "desktop_polish": 1.7
+      },
+      "score": 8.7,
+      "reason": "Empty/list presentation and preference hierarchy are clear; notification delivery to real Windows was not invoked.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/notifications-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/notifications-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/notifications-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/notifications-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "settings",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.8,
+        "spacing": 1.7,
+        "identity": 1.7,
+        "desktop_polish": 1.7
+      },
+      "score": 8.7,
+      "reason": "Groups, control labels and scrolling preserve readability; live security, provider and audio-device changes were excluded.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/settings-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/settings-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/settings-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/settings-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "mcp",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.8,
+        "spacing": 1.7,
+        "identity": 1.8,
+        "desktop_polish": 1.7
+      },
+      "score": 8.8,
+      "reason": "Catalog/server distinction and add-server dialog are inspectable; cancel makes no server write. Actual local SDK lifecycle is verified separately.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/mcp-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/mcp-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/mcp-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/mcp-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "workflows",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.8,
+        "spacing": 1.7,
+        "identity": 1.8,
+        "desktop_polish": 1.7
+      },
+      "score": 8.8,
+      "reason": "Empty ledger and bounded goal dialog expose intended actions clearly; cancel produces no job. Actual planning/completion is assessed independently.",
+      "evidence": [
+        "data/v36-verification/native-cycle4/workflows-top-1366x768-native.png",
+        "data/v36-verification/native-cycle4/workflows-top-1440x900-native.png",
+        "data/v36-verification/native-cycle4/workflows-top-1920x1080-native.png",
+        "data/v36-verification/native-cycle4/workflows-top-900x650-native.png"
+      ],
+      "reviewer": "single independent Codex reviewer",
+      "classification": "PRIMARY"
+    },
+    {
+      "screen": "mini",
+      "components": {
+        "typography": 1.8,
+        "layout": 1.7,
+        "spacing": 1.6,
+        "identity": 1.7,
+        "desktop_polish": 1.6
+      },
+      "score": 8.4,
+      "reason": "Actual native shortcut/pin/search/Escape; external Grammarly overlay overlaps Send corner at small native-clamped sizes. No unrelated process changes or inference by this UI campaign.",
+      "evidence": [
+        {
+          "path": "data\\v36-verification\\mini-cycle2\\mini-640x460-native.png",
+          "window_rect": [
+            0,
+            0,
+            640,
+            460
+          ],
+          "window_size": [
+            640,
+            460
+          ],
+          "captured_visible_bounds": [
+            0,
+            0,
+            640,
+            460
+          ]
+        },
+        {
+          "path": "data\\v36-verification\\mini-cycle2\\mini-520x380-native.png",
+          "window_rect": [
+            0,
+            0,
+            525,
+            400
+          ],
+          "window_size": [
+            525,
+            400
+          ],
+          "captured_visible_bounds": [
+            0,
+            0,
+            525,
+            400
+          ]
+        },
+        {
+          "path": "data\\v36-verification\\mini-cycle2\\mini-420x320-native.png",
+          "window_rect": [
+            0,
+            0,
+            525,
+            400
+          ],
+          "window_size": [
+            525,
+            400
+          ],
+          "captured_visible_bounds": [
+            0,
+            0,
+            525,
+            400
+          ]
+        },
+        {
+          "path": "data\\v36-verification\\mini-cycle2\\mini-900x650-native.png",
+          "window_rect": [
+            0,
+            0,
+            900,
+            650
+          ],
+          "window_size": [
+            900,
+            650
+          ],
+          "captured_visible_bounds": [
+            0,
+            0,
+            900,
+            650
+          ]
+        },
+        {
+          "path": "data\\v36-verification\\mini-cycle2\\mini-shortcut-native.png",
+          "window_rect": [
+            0,
+            0,
+            900,
+            650
+          ],
+          "window_size": [
+            900,
+            650
+          ],
+          "captured_visible_bounds": [
+            0,
+            0,
+            900,
+            650
+          ]
+        },
+        {
+          "path": "data\\v36-verification\\mini-cycle2\\mini-capability-search-native.png",
+          "window_rect": [
+            0,
+            0,
+            900,
+            650
+          ],
+          "window_size": [
+            900,
+            650
+          ],
+          "captured_visible_bounds": [
+            0,
+            0,
+            900,
+            650
+          ]
+        }
+      ],
+      "classification": "SECONDARY_NATIVE_WINDOW"
+    }
+  ],
+  "primary_mean": 8.722222222222221,
+  "all_views_mean": 8.705263157894736,
+  "template_resemblance_subjective_score": 1.6,
+  "primary_target_passed": true,
+  "all_views_at_least8_6": false,
+  "dpi": 120,
+  "scaling_percent": 125,
+  "disclosure": "Subjective single-reviewer assessment of physical owned native screenshots; no full functionality/model-quality inference. Screen classification preserved from original18-screen runtime contract; Mini separately reviewed."
+}

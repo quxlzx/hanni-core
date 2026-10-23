@@ -1,0 +1,79 @@
+{
+  "scope": "Two separately sealed state-correct development retakes. One narrow inspector pass and one further workflow disclosure setup failure; the original17 remain unchanged.",
+  "raw": {
+    "path": "data/campaign8-native/cycle33-state-correct-visible-retakes2/RESULTS.json",
+    "sha256": "0c676e83a9003db3484000e23369db4d26070ef6423ee1a8175363e58b0bdc0d"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "c03f94985c8501c58da5c4cf9be122830a65edd4646116fa44952c711b1dcfc0",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "counts": {
+    "cases": 2,
+    "PASS_scoped_CONTROLLED": 1,
+    "HARNESS_ERROR": 1,
+    "final_PNGs_viewed": 2,
+    "additional_intermediate_PNGs_viewed": 1,
+    "generation_requests": 0
+  },
+  "case_grades": [
+    {
+      "id": "visible-final-workflow-activity-navigation",
+      "status": "HARNESS_ERROR",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Fresh original remount/status/selected-workflow actions succeed, but Open execution Activity is within a still-collapsed history disclosure and its locator times out. Preserve this second, distinct setup failure; no Activity-navigation success or product defect is established.",
+      "input_sha256": "cd07e80c4e65ff2b9e9b27a1d4425d860fe281fccc42da1811431cd3e581bc8c",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle33-state-correct-visible-retakes2/screenshots/visible-final-workflow-activity-navigation-error.png",
+        "sha256": "7dbf76fef97f1340a5d24ed021e08ffb82726d6fdcf859f18e01443f2e07765d"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/agents",
+          "status": 200,
+          "data_sha256": "ca47bc0a8466351e0eb22b7b5d63d69f228605fd25be0fa24181a0804844003b"
+        },
+        {
+          "path": "/api/workflows",
+          "status": 200,
+          "data_sha256": "e4803a747c9c796fe21bab67b5a57c3872f79cd56088a608f24a2e0cbd36c624"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "visible-final-settings-inspector",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Actual Settings Show inspector displays the original unavailable controlled model/context/gate projection. The inspector's own accessible Hide inspector control closes it; final native pixels show the Settings pane without overlay. This is local inspector open/dismiss only, with original productivity unchanged.",
+      "input_sha256": "1c8671ed7a18848cd744615f30139f926267296f8379ef412e5f3999c1d1b90a",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle33-state-correct-visible-retakes2/screenshots/visible-final-settings-inspector.png",
+        "sha256": "63bfd434bb7953b2127624c412ee2892ea6752030623ba853bb63632e644f167"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "d9492ab75c03c7831419ca1eb8891f396ad1c5b292fdfe0681b08b60da618d42"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    }
+  ],
+  "intermediate_PNGs_viewed": [
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle33-state-correct-visible-retakes2/screenshots/visible-final-settings-inspector-step-0.png",
+      "sha256": "498dc55a03ba1154dd67330094a1486c2f576ec59b885045539f335270ff0867"
+    }
+  ],
+  "native_cleanup": true,
+  "native_exit_code": 0,
+  "javascript_errors": [],
+  "network_nonGET": [],
+  "unchanged_private_holdout": "Sealed60 remain unclaimed and unexecuted; these are exposed development controls."
+}

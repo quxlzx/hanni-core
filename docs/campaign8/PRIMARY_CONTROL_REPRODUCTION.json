@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "scope": "Fresh independent actual native exposed DEVELOPMENT; original handlers/UI/assets; no production fix recommended",
+  "raw_receipt": {
+    "path": "data/campaign8-verifier/primary-controls-before-02/RESULTS.json",
+    "sha256": "eb0c9f6b67ab1e617093217ab6d5325a263f225cee01d04e30301b2b76366a6c"
+  },
+  "source_unchanged": true,
+  "native_cleanup": true,
+  "backend_exit_code": 0,
+  "backend_closed": true,
+  "memory": {
+    "closed_details_both_buttons_open_correct_dialog": true,
+    "open_details_both_pointer_clicks_intercepted": true,
+    "original_summary_close_restores_click": true,
+    "classification": "Prior-case Mode details popover left open; setup/state conflict. No dialog-toplayer or normally inaccessible primary-button defect established."
+  },
+  "notification": {
+    "before": true,
+    "immediate_after_click": true,
+    "after_1200ms": false,
+    "original_api_after": false,
+    "restored_dom_and_api": true,
+    "classification": "Original server-controlled React state is asynchronous; synchronous set_checked verification causes harness error despite eventual correct persisted state."
+  },
+  "native_pngs": [
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/independent-primary-controls-before-02/screenshots/memory-closed-find.png",
+      "sha256": "37f1bbef0382e0827f11bb5f31cf7da3298e91c21d446383d9f15e8dce2b84d8",
+      "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+      "capture_scope": "Verified owned HWND client and native chrome only",
+      "hwnd": 29952504,
+      "pid": 11072,
+      "create_time": 1791638809.6694908,
+      "window_class": "WindowsForms10.Window.8.app.0.3ce0bb8_r17_ad1",
+      "window_title": "HANNI OS Campaign 8 c5d939922ab9",
+      "window_rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "image_size": [
+        1280,
+        800
+      ],
+      "dpi": 120,
+      "client_region_verified": [
+        9,
+        70,
+        1271,
+        791
+      ],
+      "desktop_pixel_capture": false,
+      "evidence_class": "CONTROLLED"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/independent-primary-controls-before-02/screenshots/memory-closed-suggest.png",
+      "sha256": "c0ba742863ef902c8cb6caa940022346354bd6c3ca8d72d8145fd7f0140d0fef",
+      "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+      "capture_scope": "Verified owned HWND client and native chrome only",
+      "hwnd": 29952504,
+      "pid": 11072,
+      "create_time": 1791638809.6694908,
+      "window_class": "WindowsForms10.Window.8.app.0.3ce0bb8_r17_ad1",
+      "window_title": "HANNI OS Campaign 8 c5d939922ab9",
+      "window_rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "image_size": [
+        1280,
+        800
+      ],
+      "dpi": 120,
+      "client_region_verified": [
+        9,
+        70,
+        1271,
+        791
+      ],
+      "desktop_pixel_capture": false,
+      "evidence_class": "CONTROLLED"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/independent-primary-controls-before-02/screenshots/memory-open-find.png",
+      "sha256": "a74db824bb3b688d6a755a5fe857f1a55923e3b9e57cf59486b9039a5f49b8cf",
+      "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+      "capture_scope": "Verified owned HWND client and native chrome only",
+      "hwnd": 29952504,
+      "pid": 11072,
+      "create_time": 1791638809.6694908,
+      "window_class": "WindowsForms10.Window.8.app.0.3ce0bb8_r17_ad1",
+      "window_title": "HANNI OS Campaign 8 c5d939922ab9",
+      "window_rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "image_size": [
+        1280,
+        800
+      ],
+      "dpi": 120,
+      "client_region_verified": [
+        9,
+        70,
+        1271,
+        791
+      ],
+      "desktop_pixel_capture": false,
+      "evidence_class": "CONTROLLED"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/independent-primary-controls-before-02/screenshots/memory-open-suggest.png",
+      "sha256": "a74db824bb3b688d6a755a5fe857f1a55923e3b9e57cf59486b9039a5f49b8cf",
+      "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+      "capture_scope": "Verified owned HWND client and native chrome only",
+      "hwnd": 29952504,
+      "pid": 11072,
+      "create_time": 1791638809.6694908,
+      "window_class": "WindowsForms10.Window.8.app.0.3ce0bb8_r17_ad1",
+      "window_title": "HANNI OS Campaign 8 c5d939922ab9",
+      "window_rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "image_size": [
+        1280,
+        800
+      ],
+      "dpi": 120,
+      "client_region_verified": [
+        9,
+        70,
+        1271,
+        791
+      ],
+      "desktop_pixel_capture": false,
+      "evidence_class": "CONTROLLED"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/independent-primary-controls-before-02/screenshots/memory-closed-again-find.png",
+      "sha256": "37f1bbef0382e0827f11bb5f31cf7da3298e91c21d446383d9f15e8dce2b84d8",
+      "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+      "capture_scope": "Verified owned HWND client and native chrome only",
+      "hwnd": 29952504,
+      "pid": 11072,
+      "create_time": 1791638809.6694908,
+      "window_class": "WindowsForms10.Window.8.app.0.3ce0bb8_r17_ad1",
+      "window_title": "HANNI OS Campaign 8 c5d939922ab9",
+      "window_rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "image_size": [
+        1280,
+        800
+      ],
+      "dpi": 120,
+      "client_region_verified": [
+        9,
+        70,
+        1271,
+        791
+      ],
+      "desktop_pixel_capture": false,
+      "evidence_class": "CONTROLLED"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/independent-primary-controls-before-02/screenshots/notification-checkbox-after.png",
+      "sha256": "c8007c371c025ef2ebee6465af55a3755e5bd3ba21847a63444ee70e5d65ad30",
+      "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+      "capture_scope": "Verified owned HWND client and native chrome only",
+      "hwnd": 29952504,
+      "pid": 11072,
+      "create_time": 1791638809.6694908,
+      "window_class": "WindowsForms10.Window.8.app.0.3ce0bb8_r17_ad1",
+      "window_title": "HANNI OS Campaign 8 c5d939922ab9",
+      "window_rect": [
+        0,
+        0,
+        1280,
+        800
+      ],
+      "image_size": [
+        1280,
+        800
+      ],
+      "dpi": 120,
+      "client_region_verified": [
+        9,
+        70,
+        1271,
+        791
+      ],
+      "desktop_pixel_capture": false,
+      "evidence_class": "CONTROLLED"
+    }
+  ],
+  "earlier_setup_error": {
+    "path": "data/campaign8-verifier/primary-controls-before-01/RESULTS.json",
+    "sha256": "35c599f136455ecb89c41bbbbec4e20df4107019a1a2d9f36591b31204dde65e",
+    "cases_attempted": 0,
+    "reason": "Exact Review queue tab name omitted count; no private case or product failure"
+  },
+  "private_final_attempts": 0
+}

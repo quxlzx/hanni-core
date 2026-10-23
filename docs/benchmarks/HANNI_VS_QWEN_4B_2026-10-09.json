@@ -1,0 +1,203 @@
+{
+  "scope": "Two single live-model runs on the existing development suite, candidate uses a metadata-only corrected copy.",
+  "candidate": {
+    "passed": 113,
+    "total": 194,
+    "core150_passed": 95,
+    "extension44_passed": 18,
+    "duplicate_cases": 62,
+    "failed_classifications": {
+      "MODEL_STOPPING_FAILURE": 61,
+      "MODEL_REASONING_FAILURE": 30,
+      "MODEL_TOOL_SELECTION_FAILURE": 14
+    },
+    "summary": {
+      "total_scenarios": 194,
+      "task_success_rate": 58.25,
+      "policy_blocked_scenarios": 17,
+      "average_score": 86.55,
+      "tool_selection_accuracy": 92.78,
+      "argument_accuracy": 99.48,
+      "reasoning_accuracy": 85.57,
+      "hallucination_rate": 0.0,
+      "unsupported_claim_rate": 0.52,
+      "average_tool_calls": 1.8,
+      "average_latency_ms": 1580.57,
+      "measured_completion_tokens_per_second": 46.74,
+      "token_rate_cases": 86,
+      "families": {
+        "applications_spotify": {
+          "scenarios": 15,
+          "task_success_rate": 66.67,
+          "average_score": 79.33
+        },
+        "calendar": {
+          "scenarios": 20,
+          "task_success_rate": 75.0,
+          "average_score": 88.25
+        },
+        "conversation": {
+          "scenarios": 10,
+          "task_success_rate": 100.0,
+          "average_score": 100.0
+        },
+        "diagnostics": {
+          "scenarios": 45,
+          "task_success_rate": 40.0,
+          "average_score": 82.11
+        },
+        "direct_system": {
+          "scenarios": 20,
+          "task_success_rate": 70.0,
+          "average_score": 94.0
+        },
+        "email": {
+          "scenarios": 4,
+          "task_success_rate": 0.0,
+          "average_score": 95.0
+        },
+        "files_search": {
+          "scenarios": 10,
+          "task_success_rate": 90.0,
+          "average_score": 96.5
+        },
+        "google": {
+          "scenarios": 40,
+          "task_success_rate": 45.0,
+          "average_score": 89.75
+        },
+        "hanni_model": {
+          "scenarios": 10,
+          "task_success_rate": 80.0,
+          "average_score": 96.0
+        },
+        "mixed_domain": {
+          "scenarios": 10,
+          "task_success_rate": 10.0,
+          "average_score": 36.5
+        },
+        "safety": {
+          "scenarios": 10,
+          "task_success_rate": 100.0,
+          "average_score": 100.0
+        }
+      }
+    }
+  },
+  "main": {
+    "passed": 169,
+    "total": 194,
+    "core150_passed": 134,
+    "extension44_passed": 35,
+    "duplicate_cases": 11,
+    "failed_classifications": {
+      "MODEL_TOOL_SELECTION_FAILURE": 2,
+      "MODEL_REASONING_FAILURE": 15,
+      "MODEL_STOPPING_FAILURE": 9
+    },
+    "summary": {
+      "total_scenarios": 194,
+      "task_success_rate": 87.11,
+      "policy_blocked_scenarios": 17,
+      "average_score": 95.57,
+      "tool_selection_accuracy": 98.97,
+      "argument_accuracy": 98.45,
+      "reasoning_accuracy": 93.3,
+      "hallucination_rate": 0.0,
+      "unsupported_claim_rate": 4.64,
+      "average_tool_calls": 1.44,
+      "average_latency_ms": 1830.27,
+      "measured_completion_tokens_per_second": 56.25,
+      "token_rate_cases": 128,
+      "families": {
+        "applications_spotify": {
+          "scenarios": 15,
+          "task_success_rate": 93.33,
+          "average_score": 97.0
+        },
+        "calendar": {
+          "scenarios": 20,
+          "task_success_rate": 90.0,
+          "average_score": 97.75
+        },
+        "conversation": {
+          "scenarios": 10,
+          "task_success_rate": 100.0,
+          "average_score": 100.0
+        },
+        "diagnostics": {
+          "scenarios": 45,
+          "task_success_rate": 73.33,
+          "average_score": 88.11
+        },
+        "direct_system": {
+          "scenarios": 20,
+          "task_success_rate": 100.0,
+          "average_score": 100.0
+        },
+        "email": {
+          "scenarios": 4,
+          "task_success_rate": 100.0,
+          "average_score": 100.0
+        },
+        "files_search": {
+          "scenarios": 10,
+          "task_success_rate": 100.0,
+          "average_score": 98.5
+        },
+        "google": {
+          "scenarios": 40,
+          "task_success_rate": 77.5,
+          "average_score": 96.75
+        },
+        "hanni_model": {
+          "scenarios": 10,
+          "task_success_rate": 100.0,
+          "average_score": 100.0
+        },
+        "mixed_domain": {
+          "scenarios": 10,
+          "task_success_rate": 90.0,
+          "average_score": 91.0
+        },
+        "safety": {
+          "scenarios": 10,
+          "task_success_rate": 100.0,
+          "average_score": 100.0
+        }
+      }
+    }
+  },
+  "paired_outcomes": {
+    "qwen_only_passed": 63,
+    "both_passed": 106,
+    "hanni_only_passed": 7,
+    "both_failed": 18
+  },
+  "matching_protocol_fields": [
+    "corpus_sha256",
+    "routed_menus_sha256",
+    "prompt_sha256",
+    "evaluator_sha256",
+    "owner_timezone",
+    "max_tool_rounds",
+    "total_scenarios",
+    "context_length",
+    "max_tokens",
+    "max_tool_calls_per_case",
+    "tool_temperature",
+    "final_temperature",
+    "top_p"
+  ],
+  "same_source_projection": "9aa4f63399f457120a64be536bb8eea7c4a86686b2ff72c5e91c10a8f3afed45",
+  "source_file_count": 180,
+  "weights_sha256": {
+    "hanni_metadata_copy": "df56ee88d7e8e0b5c39363208e9e2dcc1c0388f9ff4ac3a3f076367a0c5eaa27",
+    "qwen_main": "25082a7dd3776cc3c741c6347d3bd04523f05796607b3fbc32fa3a25dfa1418c"
+  },
+  "result_sha256": {
+    "hanni": "a08ec2944741abc5cfa0e5af684e4cfa9a40aff6a7d8b2a5b7d2a58546bf3332",
+    "qwen": "728586eb32da5360efe565c44a49b81fe1053f865b8e0e0632664c41d9b4848a"
+  },
+  "owned_model_processes_closed": true
+}

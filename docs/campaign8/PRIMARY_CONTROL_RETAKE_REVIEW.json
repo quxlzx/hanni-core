@@ -1,0 +1,152 @@
+{
+  "scope": "Six separate public DEVELOPMENT corrected measurement/setup retakes, original app unchanged",
+  "raw": {
+    "path": "data/campaign8-native/cycle18-source-correct-primary-retakes/RESULTS.json",
+    "sha256": "6ccc37e0f6a51356425f1327791e8e05713c4c1fc706735a411f48ce934d90a9"
+  },
+  "initial_review": {
+    "path": "docs/campaign8/PRIMARY_CONTROL_REVIEW.json",
+    "sha256": "e48cf630411c878edd93c358b9a0a26615ef0cbd625a99e6ebde976a2a369fd4"
+  },
+  "counts": {
+    "cases": 6,
+    "PASS_observed_scope": 6,
+    "initial_preserved_errors": 6,
+    "final_native_PNGs_independently_viewed": 6,
+    "additional_open_memory_dialog_PNGs_viewed": 2
+  },
+  "case_grades": [
+    {
+      "id": "primary-model-sort-name",
+      "status": "PASS",
+      "observed_scope": "Original model-name heading clicked; downward sort indicator visible and one matching endpoint remains. Scope single-row button state, not multi-row sort ordering.",
+      "input_sha256": "7ab36debc39e8029999fb13d2d92000b6853f1c704cbd436eb2dfff234b000a4",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle18-source-correct-primary-retakes/screenshots/primary-model-sort-name.png",
+        "sha256": "402560245b0bc96ec6f66300f42617c4420f863f91eab3cac5821f3fff5eb982"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "7a82a59b79624fa30aedd36501516199cdfeb557219c4eb639627a0b51168e96"
+        }
+      ],
+      "original_failure_regraded": false
+    },
+    {
+      "id": "primary-memory-consolidate-cancel",
+      "status": "PASS",
+      "observed_scope": "Original Mode details explicitly closed, Find related records opens Review memory relationships dialog; Cancel closes it. One stored record and one pending suggestion unchanged; no Find suggestions or memory mutation.",
+      "input_sha256": "7625ab37b26b7f8e6e837faf90eb6688cc2503d7bc99b2c8e162e239df2de830",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle18-source-correct-primary-retakes/screenshots/primary-memory-consolidate-cancel.png",
+        "sha256": "4ee1ddb67caebbf81e23fd0501a23b18721f00bc3053d17b274c0f21ec979a2c"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "b748533e8a4c7e6b7760e458b77da4eae09562dab98dce1d0d8b58a888a0f1f5"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "4c3f69733b1b7d251df550fba61c3ec49bf7ca604ed71ad17a5f150f9201c70f"
+        }
+      ],
+      "original_failure_regraded": false
+    },
+    {
+      "id": "primary-memory-analyze-cancel",
+      "status": "PASS",
+      "observed_scope": "Original Suggest from a statement dialog opens, synthetic text entered, then Cancel closes. One stored record/one original pending suggestion unchanged; no Create suggestion or model call.",
+      "input_sha256": "4d527a0dd1065fdd6af84b04fa84fd00c8e85d5c3be505f3e37bf0f6453e2e5a",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle18-source-correct-primary-retakes/screenshots/primary-memory-analyze-cancel.png",
+        "sha256": "4ee1ddb67caebbf81e23fd0501a23b18721f00bc3053d17b274c0f21ec979a2c"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "b748533e8a4c7e6b7760e458b77da4eae09562dab98dce1d0d8b58a888a0f1f5"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "4c3f69733b1b7d251df550fba61c3ec49bf7ca604ed71ad17a5f150f9201c70f"
+        }
+      ],
+      "original_failure_regraded": false
+    },
+    {
+      "id": "primary-notification-preference-disable",
+      "status": "PASS",
+      "observed_scope": "Actual normal checkbox click with1500mssettle yields visible unchecked Approvals and original API preferences.categories.approvals=false.",
+      "input_sha256": "d5afd2a749425da27983fc36bcbade19f93e889b09010679d1986ef5fa6df41c",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle18-source-correct-primary-retakes/screenshots/primary-notification-preference-disable.png",
+        "sha256": "b2e974a23d4c6eb24354825aff9e05a0e8cc1fb3894e580007e36075217084c9"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "b98ca4194c9e8658fcad11f54343ab207095b7f54b181ee6112acbba4e2fe3c0"
+        }
+      ],
+      "original_failure_regraded": false
+    },
+    {
+      "id": "primary-notification-preference-restore",
+      "status": "PASS",
+      "observed_scope": "Second normal click with1500mssettle yields visible checked Approvals and original APItrue; same controlled preference restored.",
+      "input_sha256": "a73621a89bdb8abe149b4f35a4a14a928a891a120edfd4ec5c329de20ddfb97c",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle18-source-correct-primary-retakes/screenshots/primary-notification-preference-restore.png",
+        "sha256": "ad646a6ef8f4cb5356d67de976c7366b9eacf0d2c41bcba8e1d43de868d6f5dc"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "d989bbe4b4a338eac93d1576a04602ad663e4b3a6e690d83fe97da3a5802c47e"
+        }
+      ],
+      "original_failure_regraded": false
+    },
+    {
+      "id": "primary-workspace-inspector-close",
+      "status": "PASS",
+      "observed_scope": "Explicit Show inspector then pane-owned Hide inspector click removes pane and restores full workspace; original workspace readback200.",
+      "input_sha256": "3e53647116c1cccb01866fe452cc8ab62cd10256e5958f5803c8605c08db53bb",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle18-source-correct-primary-retakes/screenshots/primary-workspace-inspector-close.png",
+        "sha256": "52fb39c9661bd0343f1c6db90cb879205683d23e2a2ae7329fa8b89d1dd6105c"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "e634aa9e9c23a8de5091f3dbd3ac23053f437e07b82352d2eaa6110f5f8e0454"
+        }
+      ],
+      "original_failure_regraded": false
+    }
+  ],
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "5b77e1673872fe543fa5cc7f69be2705b76b2bc80294bfbf6b8729ebabf53705",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "native_cleanup": true,
+  "native_exit_code": 0,
+  "javascript_errors": [],
+  "limitations": "No initial grade promoted; safe dialog cancellation is not suggestion generation/consolidation approval. Single endpoint remains insufficient to prove sort ordering across rows."
+}

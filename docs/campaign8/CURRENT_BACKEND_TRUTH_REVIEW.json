@@ -1,0 +1,373 @@
+{
+  "scope": "Independent review of current-asset actual native route receipts and original authenticated isolated backend projections; controls, provider execution and owner LIVE truth separately scoped.",
+  "raw_receipt": "data/campaign8-native/cycle12-final-populated-api-and-scale/RESULTS.json",
+  "raw_sha256": "1bc2a00c0a68fdf2b330c91064ff51929294d4ce3df404270b7303903354eca9",
+  "assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "5b77e1673872fe543fa5cc7f69be2705b76b2bc80294bfbf6b8729ebabf53705",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "routes": [
+    {
+      "route": "home",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "Unreachable isolated endpoint and ready=false match disabled composer and model basename. Host CPU/RAM are actual local samples, not fixture cluster hardware.",
+      "native_dpi": 120,
+      "actual_url": "home",
+      "readbacks": [
+        {
+          "path": "/api/state",
+          "status": 200,
+          "data_sha256": "427f59f66fd1cbba2efdb45f1ebd2006adc64e5825b8386bc306791a561ce69a"
+        },
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "f210ac42254f95c2c7c11f854ea89b82816be2928e5cd42ddc9ff556e87768f6"
+        },
+        {
+          "path": "/api/chat",
+          "status": 200,
+          "data_sha256": "2eacc39cfb20fd49cc91a07bbc057058988091c3422c430255409140d4f1a588"
+        }
+      ]
+    },
+    {
+      "route": "chat",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "ready=false/empty saved history matches unavailable empty conversation; no generated response in this receipt.",
+      "native_dpi": 120,
+      "actual_url": "chat",
+      "readbacks": [
+        {
+          "path": "/api/chat",
+          "status": 200,
+          "data_sha256": "2eacc39cfb20fd49cc91a07bbc057058988091c3422c430255409140d4f1a588"
+        }
+      ]
+    },
+    {
+      "route": "voice",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "available=false/disabled/microphone inactive/no speaking agrees with unavailable controls; no physical audio proof.",
+      "native_dpi": 120,
+      "actual_url": "voice",
+      "readbacks": [
+        {
+          "path": "/api/voice",
+          "status": 200,
+          "data_sha256": "a1f29de8410d6dc79a64abe5e160b7808f38535668a98e63b2e1df0173ee75ca"
+        }
+      ]
+    },
+    {
+      "route": "planner",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "Original local productivity data available; seed task/project details, no autonomous plan execution.",
+      "native_dpi": 120,
+      "actual_url": "planner",
+      "readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "e9a9e5e8bd107ca60961e1e8b605263425e05f1f4d1ee7c9c34fe97f654037e1"
+        }
+      ]
+    },
+    {
+      "route": "tasks",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "Original seed task exists with local fields; actual CRUD proven separately.",
+      "native_dpi": 120,
+      "actual_url": "tasks",
+      "readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "e9a9e5e8bd107ca60961e1e8b605263425e05f1f4d1ee7c9c34fe97f654037e1"
+        }
+      ]
+    },
+    {
+      "route": "calendar",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "Disconnected Google vault/no account/events; local tasks shown separately, no provider success.",
+      "native_dpi": 120,
+      "actual_url": "calendar",
+      "readbacks": [
+        {
+          "path": "/api/calendar",
+          "status": 200,
+          "data_sha256": "61730280ec9b52b5fdc7ddd8412b95a33c412e945950ffb5daad6222957c5ffb"
+        }
+      ]
+    },
+    {
+      "route": "projects",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "Original local project/note/link collections, actual CRUD proven separately.",
+      "native_dpi": 120,
+      "actual_url": "projects",
+      "readbacks": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "e9a9e5e8bd107ca60961e1e8b605263425e05f1f4d1ee7c9c34fe97f654037e1"
+        }
+      ]
+    },
+    {
+      "route": "memory",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "One original stored record and one pending suggestion; authoritative-memory source, LAYA disabled/local keyword only.",
+      "native_dpi": 120,
+      "actual_url": "memory",
+      "readbacks": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "6944daabad2d8dfd9eeb1f49522f68324ce2622b53ac7203e67f662af2cc76c6"
+        }
+      ]
+    },
+    {
+      "route": "mission",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "Original local telemetry and unreachable model, no running assistant inferred.",
+      "native_dpi": 120,
+      "actual_url": "mission",
+      "readbacks": [
+        {
+          "path": "/api/state",
+          "status": 200,
+          "data_sha256": "bd9834efdf566e845a063539fee9c339cffac4ed3d6def69b3841bf7875fcded"
+        }
+      ]
+    },
+    {
+      "route": "models",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "One configured unavailable model, observed model/context absent, no runs/eligible model; configured16384 is not verified context.",
+      "native_dpi": 120,
+      "actual_url": "models",
+      "readbacks": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "f0a0d40436f0a3f036ca0eabfde5ccc2a17294f9a0f29fb3906b875c9304f358"
+        }
+      ]
+    },
+    {
+      "route": "agents",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "Original controller unavailable, no active work or live approval queue; actual tool audit independent of model.",
+      "native_dpi": 120,
+      "actual_url": "agents",
+      "readbacks": [
+        {
+          "path": "/api/agents",
+          "status": 200,
+          "data_sha256": "2d443b04b27a7b24be36d4bd5d936de3c3d7ec768f2cc5aa6b633bdacc5c7477"
+        }
+      ]
+    },
+    {
+      "route": "cluster",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "Nine controlled registered nodes, eight unavailable/one under repair, no Tailscale availability or fresh CPU/RAM/uptime; not owner topology telemetry.",
+      "native_dpi": 120,
+      "actual_url": "cluster",
+      "readbacks": [
+        {
+          "path": "/api/cluster",
+          "status": 200,
+          "data_sha256": "c743332af2cffdd7e74c60802308340c127a2f4cd1ff49ca050dda5ecb29848b"
+        }
+      ]
+    },
+    {
+      "route": "activity",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "Original activity events; success and verification remain separate and task traces are not inferred model execution.",
+      "native_dpi": 120,
+      "actual_url": "activity",
+      "readbacks": [
+        {
+          "path": "/api/activity",
+          "status": 200,
+          "data_sha256": "66f7a5fdc4ab7ff4f214c65df8a7e262ba4795bc85593ac5f548c69fd0c1835d"
+        }
+      ]
+    },
+    {
+      "route": "screen",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "No registered capture/vision pipeline; false capture/enabled/context, no expiry, no real capture.",
+      "native_dpi": 120,
+      "actual_url": "screen",
+      "readbacks": [
+        {
+          "path": "/api/awareness",
+          "status": 200,
+          "data_sha256": "6826f8d08e20de635bc80366f90e9e5c875dccaa64848c4614c8e10dcc8a6b64"
+        }
+      ]
+    },
+    {
+      "route": "notifications",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "Original local notification items/preferences and private-result redaction; no desktop-toast visibility claim.",
+      "native_dpi": 120,
+      "actual_url": "notifications",
+      "readbacks": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "b10fbe9cb03609296b434b5f6d355113750bf4218c086a88b286f80b47d2deea"
+        }
+      ]
+    },
+    {
+      "route": "settings",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "Original timezone and owner policy projection, original local interface settings; audio/provider/GPU actions not inferred from controls.",
+      "native_dpi": 120,
+      "actual_url": "settings",
+      "readbacks": [
+        {
+          "path": "/api/workspace",
+          "status": 200,
+          "data_sha256": "f210ac42254f95c2c7c11f854ea89b82816be2928e5cd42ddc9ff556e87768f6"
+        }
+      ]
+    },
+    {
+      "route": "mcp",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "Zero original server registrations, no attached controller/model tools; transport integration not tested here.",
+      "native_dpi": 120,
+      "actual_url": "mcp",
+      "readbacks": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "275ae978b74bed0c513d09bf2cf2b94ca29b42c4f0b939a0940c17e97ba518f6"
+        }
+      ]
+    },
+    {
+      "route": "workflows",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "Two original seeded records, no runner/controller attached; completed manual verified artifact and pending approval distinguished.",
+      "native_dpi": 120,
+      "actual_url": "workflows",
+      "readbacks": [
+        {
+          "path": "/api/workflows",
+          "status": 200,
+          "data_sha256": "3e15e49dd60b39421c4a5895dd4f2af6b55046a8e9e5988152798911428928eb"
+        }
+      ]
+    },
+    {
+      "route": "model-routing",
+      "status": "PASS_PROJECTION_SCOPE",
+      "observed": "Original balanced policy/unattached controller; no model selection or dispatch from projection.",
+      "native_dpi": 120,
+      "actual_url": "model-routing",
+      "readbacks": [
+        {
+          "path": "/api/model-routing",
+          "status": 200,
+          "data_sha256": "3436f9a0c465ee6628c8b3968ef3eff4af37a037373dbb650901ffd3de62847c"
+        }
+      ]
+    }
+  ],
+  "scale_review": {
+    "all8_owned_HWND_pngs_independently_viewed": true,
+    "actual_windows_dpi": 120,
+    "actual_physical_Home_sizes": [
+      [
+        1536,
+        960
+      ],
+      [
+        1100,
+        700
+      ]
+    ],
+    "cdp_emulations": [
+      "Home150",
+      "Home200",
+      "Memory150",
+      "Memory200",
+      "Cluster150",
+      "Cluster200"
+    ],
+    "other_physical_Windows_scaling_levels_tested": false,
+    "observed": "No root horizontal overflow at the recorded viewport sizes; compact navigation and content remain visible with main scrolling. CDP emulation leaves a smaller renderer area inside the unchanged physical HWND; this is not a screenshot of Windows150/200 scaling. No visual score increase or OS-scale acceptance is inferred.",
+    "captures": [
+      {
+        "id": "physical-home-1536x960",
+        "method": "Actual physical window resize",
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle12-final-populated-api-and-scale/screenshots/physical-home-1536x960.png",
+        "sha256": "f506f4d8497945950f9dde61680c2935fae07f12e1f0bcadd947465608d74032",
+        "horizontalOverflow": false
+      },
+      {
+        "id": "physical-home-1100x700",
+        "method": "Actual physical window resize",
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle12-final-populated-api-and-scale/screenshots/physical-home-1100x700.png",
+        "sha256": "ea4130734803668bbffb8fcd950aa6ff4a4de1ff5d25c2d6409daa4daab37d73",
+        "horizontalOverflow": false
+      },
+      {
+        "id": "home-cdp-emulated-150",
+        "method": "WebView2 CDP device metrics emulation; not physical Windows scaling",
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle12-final-populated-api-and-scale/screenshots/home-cdp-emulated-150.png",
+        "sha256": "09cf2603c1869fea72e5097932a0873d0494d53652a6974667167897b9535a6e",
+        "horizontalOverflow": false
+      },
+      {
+        "id": "home-cdp-emulated-200",
+        "method": "WebView2 CDP device metrics emulation; not physical Windows scaling",
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle12-final-populated-api-and-scale/screenshots/home-cdp-emulated-200.png",
+        "sha256": "61a897f78392e81ee1bd7646db9aa59444aa59990831532837ac96e2f12fa335",
+        "horizontalOverflow": false
+      },
+      {
+        "id": "memory-cdp-emulated-150",
+        "method": "WebView2 CDP device metrics emulation; not physical Windows scaling",
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle12-final-populated-api-and-scale/screenshots/memory-cdp-emulated-150.png",
+        "sha256": "2d4f83f827a1f6c27528b38dd811e7640275d773754e8f64ea0ca1714c7e721d",
+        "horizontalOverflow": false
+      },
+      {
+        "id": "memory-cdp-emulated-200",
+        "method": "WebView2 CDP device metrics emulation; not physical Windows scaling",
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle12-final-populated-api-and-scale/screenshots/memory-cdp-emulated-200.png",
+        "sha256": "5abd8cd6729811fbe91cc0811f55e384f3175ccf406881bda624747c56060720",
+        "horizontalOverflow": false
+      },
+      {
+        "id": "cluster-cdp-emulated-150",
+        "method": "WebView2 CDP device metrics emulation; not physical Windows scaling",
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle12-final-populated-api-and-scale/screenshots/cluster-cdp-emulated-150.png",
+        "sha256": "9bab43a33b0adb36b30ff09dbb85b6c2b9cca0ad197c76bff976ffe3ec4f6609",
+        "horizontalOverflow": false
+      },
+      {
+        "id": "cluster-cdp-emulated-200",
+        "method": "WebView2 CDP device metrics emulation; not physical Windows scaling",
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle12-final-populated-api-and-scale/screenshots/cluster-cdp-emulated-200.png",
+        "sha256": "c8c948a8aff559ad5cd1ed147688c4863d1a1725252f8de022990c24bcad0815",
+        "horizontalOverflow": false
+      }
+    ],
+    "emulation_cleared": true
+  },
+  "owned_cleanup": true,
+  "javascript_error_count": 0,
+  "private_final_attempts": 0
+}

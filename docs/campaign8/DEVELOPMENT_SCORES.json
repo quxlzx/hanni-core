@@ -1,0 +1,971 @@
+{
+  "timestamp": "2026-10-10T12:38:21.362445+00:00",
+  "cycle": "original-development",
+  "reviewer": "Independent Verifier",
+  "evidence_class": "CONTROLLED",
+  "scope": "Actual owned Windows app pixels on disposable original backend; not final acceptance or live inference/provider proof",
+  "source_receipt": {
+    "path": "data/campaign8-native/cycle2-all-surfaces/RESULTS.json",
+    "sha256": "5aebbba9c2864a5e626c35daea3e4a35663366d1a8e120988ce144c2dc02ade5",
+    "executable_sha256": "9bf90dc1438e1776369f668117d88c2a5f76a33fc6f796c4d9f41a8a7e586263",
+    "assets": {
+      "src\\hanni\\dashboard\\static\\app.js": "7a972cf36710d96d8659cc3f5f923f06bef7b3d5790c1191d1093c54ab79cca1",
+      "src\\hanni\\dashboard\\static\\style.css": "cfe2dfbb3fa5c8c20f4b5b544a6a60f75a833c0fdbc896b9f4ac4b1a255bf505"
+    },
+    "native_cleanup": true,
+    "javascript_errors": []
+  },
+  "screens_viewed": 20,
+  "captures_viewed": 40,
+  "typography_mean": 8.175,
+  "overall_visual_score": null,
+  "overall_visual_accepted": false,
+  "actual_windows_dpi": 120,
+  "scaling_percent": 125,
+  "other_physical_windows_dpi_levels_tested": [],
+  "unmeasured_dimensions_not_imputed": true,
+  "private_final_attempts": 0,
+  "font_comparison_required": {
+    "base": "Native rendered Geist",
+    "minimum_locally_verified_alternatives": 5,
+    "reason": "Typography below8.6 on every original surface",
+    "same_text_size_weight_and_geometry": true
+  },
+  "critical_development_findings": [
+    {
+      "id": "compact-search-accessible-name",
+      "scope": "Actual role/name resolution; local dialog still works",
+      "receipt": "data/campaign8-verifier/native-original-repro-01/RESULTS.json"
+    },
+    {
+      "id": "unavailable-readiness-progress-copy",
+      "scope": "Original ready=false/controller unattached vs ready soon/starting; not a generic connected badge failure"
+    },
+    {
+      "id": "full-path-summary-density",
+      "scope": "Readable identity disclosure needed; no model identity concealment"
+    }
+  ],
+  "screens": [
+    {
+      "route": "home",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/home-1366x860.png",
+          "sha256": "5e93e4eb4f09ab52de4c6c3b385a1f6229b57f7f20d836c101656ec6475b017f",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/home-900x650.png",
+          "sha256": "8b45b90dd4ef6a7f3870e38f4cda7808cad436405359098b9cff337a2ce15710",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.1,
+        "hierarchy": 8.0,
+        "spacing": 8.1,
+        "density": 7.9,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Full path dominates the small model value; unavailable controller receives ready-soon wording."
+      ]
+    },
+    {
+      "route": "chat",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/chat-1366x860.png",
+          "sha256": "22eec1ba0209e058717edccee8d55f5f018174510564bceeb0e43eb70d00bd1b",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/chat-900x650.png",
+          "sha256": "cfc3e634817d162521f87e7e59f57ff1efd19fede38a9c3e72e1de99028c56a7",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.3,
+        "hierarchy": 7.8,
+        "spacing": 8.3,
+        "density": 8.2,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Readable empty conversation and disabled composer; Assistant starting has no supporting original readiness evidence."
+      ]
+    },
+    {
+      "route": "voice",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/voice-1366x860.png",
+          "sha256": "d6dea66c9d6f0e264ada592067cd57b9712d2b9a1c0e208ce1687d673d5ad6f1",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/voice-900x650.png",
+          "sha256": "5dde3d3d703dced62aceadc0d6191b924a4ef80901352420a727115b08fe58e7",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.1,
+        "hierarchy": 8.2,
+        "spacing": 8.2,
+        "density": 7.8,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Small timing labels and crowded device columns; unavailable measurements remain honest and disabled."
+      ]
+    },
+    {
+      "route": "screen",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/screen-1366x860.png",
+          "sha256": "8969e58dc58a12dc571feb8d8078564fba5ab754fed57184f23854132883cf85",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/screen-900x650.png",
+          "sha256": "c64d4d6a9ad2c1742d41d7f997f40eb4f3b9ca425914264d4ad77207f3e77135",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.3,
+        "hierarchy": 8.4,
+        "spacing": 8.3,
+        "density": 8.3,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Clear missing capture state and saved-policy distinction; secondary text remains small."
+      ]
+    },
+    {
+      "route": "mission",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/mission-1366x860.png",
+          "sha256": "7b3ddf75d3f4240f4cc19c952973c284f7b0a8da8bff91f3c102debca0368432",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/mission-900x650.png",
+          "sha256": "de428f827d0198c94028ab243009203dc23d9954a403e93593df156068ce88e8",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 7.9,
+        "hierarchy": 8.1,
+        "spacing": 8.0,
+        "density": 7.8,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Full path competes with actual resource metrics; small chart and GPU-error labels."
+      ]
+    },
+    {
+      "route": "model-routing",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/model-routing-1366x860.png",
+          "sha256": "3c503991e3e486979d04cc1804ca52a49b760538a9ed4cd81a971ffe24320d62",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/model-routing-900x650.png",
+          "sha256": "080a4c3a1f3d1daaeb828fb802845c9dbd70db5bb62fb617441b482e5390c684",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.0,
+        "hierarchy": 8.1,
+        "spacing": 8.0,
+        "density": 7.9,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Dense repeated unmeasured fields and small explanatory copy; truthful controller/context boundaries."
+      ]
+    },
+    {
+      "route": "models",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/models-1366x860.png",
+          "sha256": "bf51385ad4b1ea5545074de7565a150c5edcc298184bb3e595772b777aa8ef00",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/models-900x650.png",
+          "sha256": "37f02625eb815290780e6c70e1c0c82f9dadf35d94fe9975dac24874e1b7e3c0",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.0,
+        "hierarchy": 8.2,
+        "spacing": 8.0,
+        "density": 7.8,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.8,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Compact six-column inventory wraps; extra heading system differs from other routes, with nested details below."
+      ]
+    },
+    {
+      "route": "agents",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/agents-1366x860.png",
+          "sha256": "5cc34ca0bef7dfff75ec9834d93a22dfbde9478f65b830712b01ee021879ff32",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/agents-900x650.png",
+          "sha256": "6f657e393fdf6e53c80856efb48febb28e39abae678a445e098a4aaf4a5555e9",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.0,
+        "hierarchy": 8.1,
+        "spacing": 8.2,
+        "density": 8.0,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Useful capability list; permission metadata and pagination are small, with redundant header counts."
+      ]
+    },
+    {
+      "route": "activity",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/activity-1366x860.png",
+          "sha256": "e66f83adbd2f75e523716952eb10c1a0f6a0d2a723cf8c56be34172e94596e66",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/activity-900x650.png",
+          "sha256": "99406c27cb8227e41a2a5f390b04174d5fb7ec374e30e78c5d981fd1b7ba71b8",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.2,
+        "hierarchy": 8.1,
+        "spacing": 8.1,
+        "density": 8.1,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Two distinct filter systems are understandable but visually similar; sparse truthful empty evidence."
+      ]
+    },
+    {
+      "route": "workflows",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/workflows-1366x860.png",
+          "sha256": "df54a5a2a99466bc2c0d420d82249c6b57aae06fd844ef6817eaabcbe2c990bc",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/workflows-900x650.png",
+          "sha256": "d4e08893a9098f433761b372961c7fbaef9d340035742818771d77bcadfff7b3",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.3,
+        "hierarchy": 8.4,
+        "spacing": 8.3,
+        "density": 8.2,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Unavailable execution is explicit and goal action disabled; filters and empty-state copy remain readable."
+      ]
+    },
+    {
+      "route": "planner",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/planner-1366x860.png",
+          "sha256": "06bac3a9d7a144780447d47d3332c528c663578dcee6ef36ba25f4c956b0e825",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/planner-900x650.png",
+          "sha256": "3d87164d0ce37e2496782778fa2a4631b6a74aeb8623f27cda2e64eb67573dc5",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.2,
+        "hierarchy": 8.3,
+        "spacing": 8.0,
+        "density": 8.1,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Unconnected calendar and empty tasks are distinct; large empty columns and small backup guidance."
+      ]
+    },
+    {
+      "route": "tasks",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/tasks-1366x860.png",
+          "sha256": "0810019e89bf7079736da0c34b7dceb7043d64cfbac61030c0199c1e9c127516",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/tasks-900x650.png",
+          "sha256": "c3a1fb5c04b41c528a3e9fded8635e2f8fa2575b9ea375d79e7b5d23fce7e676",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.3,
+        "hierarchy": 8.4,
+        "spacing": 8.3,
+        "density": 8.3,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Clean local empty state and primary creation control; minor metadata/readability limits."
+      ]
+    },
+    {
+      "route": "calendar",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/calendar-1366x860.png",
+          "sha256": "893b5c6d9fcfdf34a5d773a3b6c92750100a62b773e86e2e582bc8a322add3b4",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/calendar-900x650.png",
+          "sha256": "94bc4542a0d75e0be5638fa1a99b86ae1d1adc4b2650e42ee43ca14ca6e8d5ea",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.3,
+        "hierarchy": 8.3,
+        "spacing": 8.2,
+        "density": 8.2,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Unconnected provider is explicit; date/filter and local deadlines remain distinct."
+      ]
+    },
+    {
+      "route": "projects",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/projects-1366x860.png",
+          "sha256": "16be299f5460b42b21c82db2f50aaf02da73087f9f46805ab8e3f066beace69e",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/projects-900x650.png",
+          "sha256": "42237eb819777eb854ae3db995bec63a657c66a00b0c7f3f2b1cff23105e9946",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.4,
+        "hierarchy": 8.3,
+        "spacing": 8.0,
+        "density": 8.2,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Simple split view with clear primary action; simultaneous create/select instructions lack a unified empty state."
+      ]
+    },
+    {
+      "route": "memory",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/memory-1366x860.png",
+          "sha256": "81a82c9d08362adafd5f83ca2170dbdcc2085599838470c503f351762acf4748",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/memory-900x650.png",
+          "sha256": "09ebb9290fb885fdfe28d1fd042b7c9b0ebb47f95af98daebaccecc9a82e3d6a",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.0,
+        "hierarchy": 8.3,
+        "spacing": 8.1,
+        "density": 7.9,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Many small filter and source labels; two-row compact filters consume much of the viewport before results."
+      ]
+    },
+    {
+      "route": "mcp",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/mcp-1366x860.png",
+          "sha256": "be469c0e6ded3c2b7a763284b721bfe4222f602ed8eacf40ae22d508b84cd2e1",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/mcp-900x650.png",
+          "sha256": "bb95abf0373a6003830d51e96a44f021b8bcfccde6da8dfada9d63ee79cd9b61",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.2,
+        "hierarchy": 8.3,
+        "spacing": 8.2,
+        "density": 8.1,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Honest empty server state and disabled export; compact toolbar and dense count labels."
+      ]
+    },
+    {
+      "route": "notifications",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/notifications-1366x860.png",
+          "sha256": "11e70d4423117b2378835529faf8e532b4ea2d4ec06a2327be0b8844eca5a215",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/notifications-900x650.png",
+          "sha256": "20a7fc9b4fc98f1631bbe74199dc43c4bcffb8727dcf7f02dbb4207a32e83bb3",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.2,
+        "hierarchy": 8.3,
+        "spacing": 8.0,
+        "density": 8.3,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Original unreachable-model event is distinct; tiny timestamp/category and wide empty spacing."
+      ]
+    },
+    {
+      "route": "settings",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/settings-1366x860.png",
+          "sha256": "05ea6991782c6b8d80dba2169340ba936558b6b41dc8d5e84ec14ee59a7dffb7",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/settings-900x650.png",
+          "sha256": "f36aa19c03027d34b674170975d3b0a7b0873c5651aad5fe7408a63be95fc3be",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.1,
+        "hierarchy": 8.2,
+        "spacing": 8.2,
+        "density": 8.0,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Consistent settings groups; compact device forms and small explanatory/error text need stronger hierarchy."
+      ]
+    },
+    {
+      "route": "mini",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/mini-1366x860.png",
+          "sha256": "b358d24f230dc1f6bebff45715fd92f49e509707fa7db9757d9239a5a649a6a7",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/mini-900x650.png",
+          "sha256": "8f2383f8b96ec2c1fe6f6644feb2a551209a61a2186102e2ccabdff4e6a3f560",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.4,
+        "hierarchy": 8.4,
+        "spacing": 8.2,
+        "density": 8.2,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Readable focused composer and explicit offline state; wide resized Mini is not representative of its normal compact geometry."
+      ]
+    },
+    {
+      "route": "cluster",
+      "captures": [
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/cluster-1366x860.png",
+          "sha256": "a4bb07461db84ba6ec81c3ce98cb57ae62d35b66d70f900e63ce726d4879cf07",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        },
+        {
+          "file": "data/campaign8-native/cycle2-all-surfaces/screenshots/cluster-900x650.png",
+          "sha256": "2b05efe5694df0f3dba73a0c9b00fcd6170628e42aaaa623c2a102caaee3fbb7",
+          "physical_size": [
+            900,
+            650
+          ],
+          "actual_windows_dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "viewed_by_independent_verifier": true
+        }
+      ],
+      "dimensions": {
+        "typography": 8.2,
+        "hierarchy": 8.4,
+        "spacing": 8.2,
+        "density": 8.1,
+        "truthful_states": null,
+        "windows_interaction": null,
+        "finishing": 8.3
+      },
+      "template_score": 1.2,
+      "score": null,
+      "accepted": false,
+      "missing_acceptance_evidence": [
+        "Complete route-specific original authority/readback checks",
+        "Route-specific native keyboard/control interactions"
+      ],
+      "findings": [
+        "Useful rows and honest missing metrics; small headers and monospace unavailable values; compact search name failure."
+      ]
+    }
+  ]
+}

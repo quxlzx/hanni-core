@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "enabled": false,
+  "context": "hanni-k3s",
+  "namespace": "hanni-sandbox",
+  "runtime_class": "gvisor",
+  "image": "owner-built-hanni-harness@sha256:0000000000000000000000000000000000000000000000000000000000000000",
+  "node_selector": {
+    "hanni.ai/worker-class": "cpu",
+    "hanni.ai/sandbox-enabled": "true"
+  },
+  "gateway_url": "http://192.0.2.1:8765/api/sandbox/v1",
+  "storage_claim": "hanni-sandbox-projects",
+  "authorized_projects": [
+    "replace-with-owner-project"
+  ],
+  "models": {
+    "manager": "qwen3.8-flash-next-iq3_s",
+    "coder": "swift-1.5",
+    "editor": "mellum-2.1",
+    "researcher": "nex-n2-mini"
+  },
+  "deadline_seconds": 600
+}

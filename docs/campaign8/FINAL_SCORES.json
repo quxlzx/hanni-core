@@ -1,0 +1,1827 @@
+{
+  "at": "2026-10-10T16:26:42.741201+00:00",
+  "reviewer": "independent verifier",
+  "cycle": "Frozen once-only private final; fresh owned HWND pixels",
+  "evidence_class": "Actual packaged Windows desktop, original isolated default backend with controlled unavailable unsafe dependencies",
+  "source_manifest": {
+    "path": "data/campaign8-manager/final-freeze/MANIFEST.json",
+    "sha256": "e5523c4ad3780c6af2ba10c4efc0c82572c4a4f461c8e5fcb3193bcbe307d56e",
+    "members": 1299
+  },
+  "source_archive_sha256": "8e040f340fa60484bdd8167df84068f2be7dc77ca13edc61cf2b0c12702dbbec",
+  "source_receipt": {
+    "path": "C:\\Projects\\HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING\\data\\campaign8-native\\independent-final-once\\RESULTS.json",
+    "sha256": "e9df5da781e9e122b014e190456414e5ed3786a48cd01219933588d9d8f4e959"
+  },
+  "closed_receipt": {
+    "path": "data/campaign8-verifier/final-once/CLOSED.json",
+    "sha256": "39560561d9ec7452f8772b7bd58f4f3399dcbb9dd0e124cb0207485924fa593a"
+  },
+  "assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+    "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+  },
+  "executable_sha256": "9bf90dc1438e1776369f668117d88c2a5f76a33fc6f796c4d9f41a8a7e586263",
+  "fixed_rubric": {
+    "path": "docs/campaign8/VISUAL_RUBRIC.md",
+    "sha256": "72b8199b7dc93ef46c7f5989d8d86c16f70c15f04155191890ebcbe65cba7338",
+    "weights": {
+      "typography": 0.2,
+      "hierarchy": 0.2,
+      "spacing": 0.15,
+      "density": 0.15,
+      "truthful_states": 0.15,
+      "windows_interaction": 0.1,
+      "finishing": 0.05
+    },
+    "screen_min": 8.6,
+    "typography_min": 8.6,
+    "overall_strictly_above": 8.5,
+    "template_max": 2.0
+  },
+  "screen_count": 20,
+  "primary_layout_captures_viewed": 40,
+  "bottom_scroll_captures_viewed": 25,
+  "all_final_captures_viewed": 84,
+  "actual_windows_dpi": 120,
+  "actual_windows_scaling_percent": 125,
+  "other_actual_OS_DPI_levels": 0,
+  "final_CDP_scaling_emulations": 0,
+  "cdp_native_defaults_preserved": true,
+  "overall_visual_score": 8.7583,
+  "minimum_screen_score": 8.715,
+  "typography_min": 8.6,
+  "template_max": 1.4,
+  "weighted_screen_target_count": 20,
+  "overall_visual_acceptance": true,
+  "critical_layout_defects_observed": [],
+  "critical_accessibility_absence_exhaustively_verified": false,
+  "complete_functional_acceptance": false,
+  "historical_scores_reused": false,
+  "final_fixture": "Fresh default original backend: no populated/private-aware seeds, no inference controller",
+  "size_limitations": "Main request 780px clamped to actual 800px; Mini request 420px clamped to actual 525px. Scores use actual dimensions only. Other real Windows scaling levels were not tested.",
+  "scope_limits": [
+    "No physical microphone/speaker proof; user hardware unavailable.",
+    "No final model generation, provider, external SDK, clipboard or file-delivery proof.",
+    "Positive populated/working states and mutations have separate development receipts; final default empty states do not inherit them.",
+    "Seven complete scores are scoped presentation judgments; functional failures and unmeasured conditional gates remain in final strict grades.",
+    "Historical frames captured before no_defaults=True remain actual native pixels but have disclosed implicit CDP focus/media/download-policy confounds."
+  ],
+  "screens": [
+    {
+      "route": "home",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.9,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9.0,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.775,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Ask HANNI, recent conversation and measured computer state have distinct priorities. The narrow window stacks sections and retains reachable scroll. Disabled conversation explains unavailable inference; the local service Connected label is separate.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Ask HANNI, recent conversation and measured computer state have distinct priorities. The narrow window stacks sections and retains reachable scroll. Disabled conversation explains unavailable inference; the local service Connected label is separate.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-001.png",
+          "sha256": "18759d48b53cd2c8087ee2e2abbb29aa663747355d258d3f1b84d483806ccd22",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-001-bottom.png",
+          "sha256": "0267e3667e1c4731fc95fc990f205de1242fc7e767e8251aeadf37217855853e",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-002.png",
+          "sha256": "53977d76f97dd94dc6dfb45b4c8f1c3cacb3cbbd8993fb50de61f0cf245eed31",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-002-bottom.png",
+          "sha256": "a85fe3afa0a696a980f129777c97f35f915cbb1eb04f6c660533e0639ea17b2d",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-001.json",
+          "sha256": "a149f7f47da6d8ecb3f95a122443ddb1ae8dd080ddc6093662aef4cdce3351ad"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-002.json",
+          "sha256": "6ef0c2b75794e4558e4a2825b085698039140aa771a8ed3cc3041f0a8a40a2a1"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "chat",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9.0,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.755,
+        "template_score": 1.1,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "A calm empty conversation and anchored composer adapt without overflow. Repeated readiness copy is slightly redundant. The disabled main editor is honest but caused the retained authored draft precondition failure.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "A calm empty conversation and anchored composer adapt without overflow. Repeated readiness copy is slightly redundant. The disabled main editor is honest but caused the retained authored draft precondition failure.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-003.png",
+          "sha256": "d2ce5a400deef30827522861162823f1ac2864bfcabc76249d935add9e9d8d82",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-004.png",
+          "sha256": "4540776d3facc82514ee4ae0d88a94c9e6928532d51eced952e3cdf51ae1d1cd",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-003.json",
+          "sha256": "f3751e3d6232115032bddc9d7e942912478fcfc60965d4312b3ee14647ecd5fa"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-004.json",
+          "sha256": "cf971d66351f4de367983e2d6750fc6ed475edb35d8d22151d57fad93bec2b99"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "voice",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9.1,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.77,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Readable device selectors, disabled session controls and Not measured timing are clearly separated. Enumeration is not physical audio availability or successful playback. Compact selector text scrolls instead of claiming every device fits.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Readable device selectors, disabled session controls and Not measured timing are clearly separated. Enumeration is not physical audio availability or successful playback. Compact selector text scrolls instead of claiming every device fits.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-005.png",
+          "sha256": "c5e98c23ae758419f158e19d19a791eb42ec395f14297075c7b1cab1085b1360",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-005-bottom.png",
+          "sha256": "5a20559d0e14b07f800efd64681008b14fd416d29527420a19e5cdb47847bd51",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-006.png",
+          "sha256": "f5d13c9564b01cac942387e2447b7cf17eb78fd7eb778c774e10fd7c72848160",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-006-bottom.png",
+          "sha256": "7945e248eac5fe26fbaa6c537862da50088aeb560894aeab74f19c525a8e24b1",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-005.json",
+          "sha256": "da5ecb52ca9419e544bd2c3502df95724c2c1d00f40ed24c7291989843a84739"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-006.json",
+          "sha256": "dd3774dfc89f39ec76bad6fcf6164e8f42f8afc32c23ddc3dc86fefd7fccb70a"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "planner",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9.0,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.755,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Calendar connection warning precedes the local task alternatives. The empty schedule remains explicit; backup and navigation controls are grouped without pretending an external calendar is connected.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Calendar connection warning precedes the local task alternatives. The empty schedule remains explicit; backup and navigation controls are grouped without pretending an external calendar is connected.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-007.png",
+          "sha256": "e731e90043a9ebdd33a9877d139365abda9738a108cc1bab403ad30561c4e6e0",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-007-bottom.png",
+          "sha256": "047bd019673c9a843ac67b882066e027df0a7cad8a916e7c368b01913e1f133c",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-008.png",
+          "sha256": "1dd2e407f739d3240098d6362dd647e7abd5b14f6ea8f2069e07ee5180c5ab58",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-008-bottom.png",
+          "sha256": "cac82d92be22a46af4639dfc61bcb5d3302f3cc3855f605d5ecfb0a9487fd9cf",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-007.json",
+          "sha256": "46d46d13ba6e52b4bd332d53b2a5c1d149b0bc1a539bb95d5378a7ae4bf639cb"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-008.json",
+          "sha256": "9d5e69aed2ab2d11352fbd26e69b59955b4339ea9a89b2a50ff8c60bab517f91"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "workflows",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9.0,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.755,
+        "template_score": 1.1,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "The unavailable runner reason and disabled New goal precede an uncluttered empty history. Completion is not invented. This frame cannot verify uncertain-write resume/retry gates because no workflow exists.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "The unavailable runner reason and disabled New goal precede an uncluttered empty history. Completion is not invented. This frame cannot verify uncertain-write resume/retry gates because no workflow exists.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-009.png",
+          "sha256": "1e09efb734d2c537e42fccbd231da3920fad54f5008c0708d0842321605f58de",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-010.png",
+          "sha256": "aec2e09375d2e8d05a56f36749cf1d869dfff6ed3eb03e85265bfc475577b930",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-009.json",
+          "sha256": "ac92f66136fd1b6dac45b5d8671c2e4642e701a6b471f982b64f0daa345a2f74"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-010.json",
+          "sha256": "1b5c64623e09b6a92d077bda6ad0d52b062fb758ba583cf007abdc8895bec9af"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "tasks",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.8,
+        "truthful_states": 8.9,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.755,
+        "template_score": 1.1,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Task search, state filters and backup actions form a readable toolbar. Empty task space is intentional. No final task update or due-date persistence is inferred from this default empty overview.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Task search, state filters and backup actions form a readable toolbar. Empty task space is intentional. No final task update or due-date persistence is inferred from this default empty overview.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-011.png",
+          "sha256": "09a008257672eb7a1121ef1d12b2de167be7f0e3f7ad32c99dfd87f3cc50e623",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-012.png",
+          "sha256": "af833b68980ecda32b338cd28a730e7a835c94c44c8de35dbe99fd6063e48c6d",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-011.json",
+          "sha256": "d5d48940a817c20b1b30c80a95211b1b3889fb311c3288a80b809c15492501d9"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-012.json",
+          "sha256": "8445d698f4ea48c08306f62b9d48940f641ae50c316f726c0784797f9a917288"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "calendar",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.6,
+        "truthful_states": 9.1,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.755,
+        "template_score": 1.1,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Connection and local deadlines are distinct; Not connected agrees with the original provider API. The compact final navigation link approaches the scroll boundary; rectangle/scroll evidence establishes reachability, not perfect edge paint.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Connection and local deadlines are distinct; Not connected agrees with the original provider API. The compact final navigation link approaches the scroll boundary; rectangle/scroll evidence establishes reachability, not perfect edge paint.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-013.png",
+          "sha256": "332c34b120c7c3d3ed1fe930edc19d1012d6d1071f5193cb529a1f8b3b56e303",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-014.png",
+          "sha256": "ed206b1792f59ccb2246bd754c43a74a5c2ab54a150aa450d614a6703b459a8a",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-014-bottom.png",
+          "sha256": "6808d15c342896296d3a94f651213e7081ae86e67e22e728caad1fbcd9f25b2a",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-013.json",
+          "sha256": "7072202a102dffba959235bbba0a05126e98a571ec2434664f7becb6a7531fe3"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-014.json",
+          "sha256": "68352e98bbfcc6255599eb9e305b9c71bf1cd8ab5a585d5fd62b0c939ec41157"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "projects",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 8.9,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.74,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Master/detail regions stack coherently in the compact window. Empty-project instructions are restrained. Populated project CRUD and aliases remain separately reviewed development evidence.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Master/detail regions stack coherently in the compact window. Empty-project instructions are restrained. Populated project CRUD and aliases remain separately reviewed development evidence.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-015.png",
+          "sha256": "0c1cc49f4104f4d1ffe0e59bc5821a2e4ba74663e63b9bc1a3017333af37610e",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-016.png",
+          "sha256": "fe20cd161020104e8387ff1a73619fd7d7bf47c2d53f882717a540c297430703",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-015.json",
+          "sha256": "6a0b706df5a27de41688982424bd41e954272db3a604241e0a264c6f8c64b94a"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-016.json",
+          "sha256": "a74c78b4b2c64cf6a819e6f774df7986b0202900c290e51b41b911104af1df5e"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "memory",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.9,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9.0,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.775,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Stored memories, review queue and project context remain visibly distinct. Four labelled filters adapt to two columns. LAYA-disabled and empty-record states do not imply recall or ranking success.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Stored memories, review queue and project context remain visibly distinct. Four labelled filters adapt to two columns. LAYA-disabled and empty-record states do not imply recall or ranking success.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-017.png",
+          "sha256": "ed145e9036c2c2ae6daba5336fb7319738af46976765b3abbe92c1ee32f759ac",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-017-bottom.png",
+          "sha256": "52a97ab59241228a299f54d68779e32b86984a520cd8adf2beb41a9dfd2f5686",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-018.png",
+          "sha256": "4f7272df12d0e96fdaff05698de3a412ddd1aaac29af7ffed076336111cbf51f",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-018-bottom.png",
+          "sha256": "3c69974bf9a3a689a71bf5665aa02eb786c114d2a3af1bb648ae9ff3c6cb28a9",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-017.json",
+          "sha256": "0b04b9e5b93931a4a76684eeeddd651c4c22ac77f9a99d16be0f32627f0c4408"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-018.json",
+          "sha256": "f042fc927ce84ae32134b3295e86bbc2f87a18df5dbebf0949fdf87a962af5a0"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "mission",
+      "dimensions": {
+        "typography": 8.6,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9.0,
+        "windows_interaction": 8.4,
+        "finishing": 8.7
+      },
+      "result": {
+        "score": 8.73,
+        "template_score": 1.2,
+        "typography_score": 8.6,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Observed CPU/RAM plots, sampled time and configured model residency use coherent sections. Missing GPU readings stay unavailable. The raw exit-127 diagnostic is truthful but technical and visually denser than the other empty states.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.6. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Observed CPU/RAM plots, sampled time and configured model residency use coherent sections. Missing GPU readings stay unavailable. The raw exit-127 diagnostic is truthful but technical and visually denser than the other empty states.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "Observed Mission CPU/RAM plots carry sampled source/time; no absent benchmark/GPU/remote graph receives functional success credit.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-019.png",
+          "sha256": "9c6d5479910a4a718caf403f1bf8450d14e094a33a0c17e9ca9beaa4ba830d9f",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-019-bottom.png",
+          "sha256": "6dbec6614ffd6a44fddd891ec896297ffa289330b74c7c0690e38a33a9c559e7",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-020.png",
+          "sha256": "0eb25ece265ca999fedd0ee986b698799a49657548eb68570c56d8f666f71613",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-020-bottom.png",
+          "sha256": "5844146cdf84f1e23ec7dd39dda85df9da4ff1ebc3f3115a348b9919fbf54f05",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-019.json",
+          "sha256": "dacbb9d1de2c044bee46594dca971e2b5480a87cde15bb06b406e9315c1bbfe8"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-020.json",
+          "sha256": "62e1403a4a25c9600475b80dceda14631c67a4112418a765425056afe30f3d49"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "cluster",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9.1,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.77,
+        "template_score": 1.3,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Roster identity, unavailable readings and repair state remain separate at compact width. Numeric readings use monospace while Unavailable uses plain text. Requested member emojis are intentional labels; presence is not authenticated telemetry.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Roster identity, unavailable readings and repair state remain separate at compact width. Numeric readings use monospace while Unavailable uses plain text. Requested member emojis are intentional labels; presence is not authenticated telemetry.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "Unavailable remote histories are not fabricated; roster and missing readings are reviewed, without remote hardware success.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-021.png",
+          "sha256": "a9da37c9394bb120135d32b7611aad959b503404b150a0b6fc84137557de75d4",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-021-bottom.png",
+          "sha256": "2b9a5c859cc8f5086707f0e3e936422b7e6f5b9df3e77123d68a12a39ffa06fa",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-022.png",
+          "sha256": "9e251f3f1251233288fa933f1e3093191304e594fae41ec3cfd3f0b76df31674",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-022-bottom.png",
+          "sha256": "a2a89915d1b048ec4a8f794499708c06c072bff1aeb5f2db13252c9f9e689f8b",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-021.json",
+          "sha256": "3ff743bc5210b9945ef2574dd2abf385db26aaf4839954facd02d462661b2495"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-022.json",
+          "sha256": "b17280d2dcf41fa1f362053d105c1b014f4a1638b0be2b1227d3ee1f4641c082"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "models",
+      "dimensions": {
+        "typography": 8.6,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.6,
+        "truthful_states": 9.0,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.72,
+        "template_score": 1.4,
+        "typography_score": 8.6,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Flat endpoint details and one page inset preserve hierarchy. Compact model basenames wrap across several lines, while configured/installed/loaded/available fields remain distinct. This is readable but still the densest table.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.6. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Flat endpoint details and one page inset preserve hierarchy. Compact model basenames wrap across several lines, while configured/installed/loaded/available fields remain distinct. This is readable but still the densest table.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-023.png",
+          "sha256": "f0c41f5ba85e14617fbff239fa57e94623ea732d7c4c65edc034eba5a57b8452",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-023-bottom.png",
+          "sha256": "b045c164905b0da77d1fd79d169d67a81a673415bcb574da324bafbcea394b9e",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-024.png",
+          "sha256": "b080e2e105fdfcd6042f701f8d535e415e06dca972620e06e09fc45cd1820d0f",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-024-bottom.png",
+          "sha256": "3064a0da9f3fbd84904709f3d119de897bfc36db18174ee6cf5915ea072aaa8c",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-023.json",
+          "sha256": "8f0f0f7fe8a1efd71a455d6eb03a1ee56c8cba6bcda76c9eab4e997fd212800a"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-024.json",
+          "sha256": "5dd49d30758ba430f80915b6c0c210aebbb97cb326ee02a660a6d93dcbc26ff0"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "model-routing",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9.1,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.77,
+        "template_score": 1.3,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Policy controls, unhealthy endpoint and unverified context are distinct. No attached controller and absent latency samples remain explicit. Longer lower-page provenance copy is useful but adds reading density.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Policy controls, unhealthy endpoint and unverified context are distinct. No attached controller and absent latency samples remain explicit. Longer lower-page provenance copy is useful but adds reading density.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-025.png",
+          "sha256": "1951d8e1d6f35884bbe44c66a8eee2b4fd8bebad4be5eac1e0a55f005fa776c5",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-025-bottom.png",
+          "sha256": "e2fe830c805e1f0e4387dc493075688dd102b2d641acdb1860fe9db65d0152c7",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-026.png",
+          "sha256": "11545d811a0f94aefe6d03c4cc59ab3541bf41046da1ae972032de8da2209e9d",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-026-bottom.png",
+          "sha256": "105a5a04a1d56ef898a8c1f72d60eac24dd4a7b4aa7ed68023f61762cc07706a",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-025.json",
+          "sha256": "e4f559cd309ed6af1ecff772dae02158160aa97144b0ac732faec723b06305cb"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-026.json",
+          "sha256": "f8596a8e0fb941129b3d123c1c8c2b44c74c3b843bef8fe53f9f2b1b40f9369c"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "agents",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 8.9,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.74,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Capability inventory and agent activity have separate regions that stack at compact width. Permission/risk metadata remain readable. Registered definitions and zero activity are not successful agent execution.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Capability inventory and agent activity have separate regions that stack at compact width. Permission/risk metadata remain readable. Registered definitions and zero activity are not successful agent execution.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-027.png",
+          "sha256": "519c29847698da3eb5f62bc4b305971a26c2f1048b3488e2400906b8af9ce56d",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-027-bottom.png",
+          "sha256": "486a5b1584435a6eac225ddb679c471b1a4adef64350ca8a0944b0a33a0c03a1",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-028.png",
+          "sha256": "1b01ab137cb96bd72cf77c4cc1ee0465e36366f22e59e4725cd53f98413de802",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-028-bottom.png",
+          "sha256": "794c9cd0d929c54e66964d799f9529822567181a3dcc5c92a3eb56ca8b0cfa73",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-027.json",
+          "sha256": "04c4e61d3ae41048eca5af29d14917071820aa7997ae7b9e7535d8ff0ea41ad1"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-028.json",
+          "sha256": "d41f2074ab48bbbdecfa756f4146f8c052e7d6ce6cdcea084c2351afa0a47695"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "activity",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9.0,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.755,
+        "template_score": 1.1,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Task history and execution trace filters have distinct labels. The empty record state contains no invented successful actions. Default final evidence does not exercise expansion of populated trace records.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Task history and execution trace filters have distinct labels. The empty record state contains no invented successful actions. Default final evidence does not exercise expansion of populated trace records.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-029.png",
+          "sha256": "49f87e1cfe621a60455857d011c74824f45bc52452ac1710bae10d6bd5adac04",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-030.png",
+          "sha256": "d84bd7f78d0d0e4e055bbe716db2bf50eb286dc8ffffccef78b6c2523c31832e",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-030-bottom.png",
+          "sha256": "0df2df28c16ddccd67347caf59fc1c470eb9f5607f919ec43fd7f9d107da0c8d",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-029.json",
+          "sha256": "ec41963dad8f81bccbd8c1d781d0c3767d391f30a06c275b5c7e37996f9d26a2"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-030.json",
+          "sha256": "579237786f67bc58dc859fbc0e57432e536d7e282565b622254928e0d2c1b90b"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "screen",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.9,
+        "spacing": 8.8,
+        "density": 8.8,
+        "truthful_states": 9.3,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.835,
+        "template_score": 1.1,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Inactive capture, absent pipeline and disabled Analyze are prominent. Saved 120-second retention is described as configuration, not an active captured context. Policy content stacks rather than overlapping at compact width.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Inactive capture, absent pipeline and disabled Analyze are prominent. Saved 120-second retention is described as configuration, not an active captured context. Policy content stacks rather than overlapping at compact width.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-031.png",
+          "sha256": "bff481b8891b168bceb4741b85c89816aed4aebcc8c29e58a54cc1d6fe1cb806",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-032.png",
+          "sha256": "9a888b2047abd1a04822a7ae0f362b7d480289bdb0c438ea288a74315622e4b6",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-032-bottom.png",
+          "sha256": "07c6ec4ff064e7854a15c63319583755974337c64776fe54658b108f7c8a4982",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-031.json",
+          "sha256": "9f9ba875061f9f6040fa78391c267a97248d1a1d8b886cb94c1f9a0842aa8805"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-032.json",
+          "sha256": "5fa0be6af93e59c06bd51cc94ee3592cea32310e86d126cba80a8139910561f1"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "notifications",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9.0,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.755,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "An original temporary-backend model-unavailable event carries its timestamp and readable read/dismiss affordances. Notification review is not authority approval. No final read/dismiss mutation is credited.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "An original temporary-backend model-unavailable event carries its timestamp and readable read/dismiss affordances. Notification review is not authority approval. No final read/dismiss mutation is credited.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-033.png",
+          "sha256": "3fcd3e022fb7e338061ace3409f01a1b618455b455dfa8c8592449c044b31d06",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-034.png",
+          "sha256": "0cad818d46a095fce8996823fd893238cdd7577aeaa60764c618f8eeac62f9f7",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-034-bottom.png",
+          "sha256": "8981f8c4318f6a531ba602eaaccb9081f30c6e0008415d0da7ba95f522fc6755",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-033.json",
+          "sha256": "4a5ecbf4aaaac1b2eb559ca501c46d89a5d937f0695d4cc128e6fc8fe23a03cd"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-034.json",
+          "sha256": "f46a45e8f19c2063a05113bc14e405005a3d90315452c48260ab3a6525018ded"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "settings",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9.0,
+        "windows_interaction": 8.4,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.755,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Integration, audio, GPU, permission and session sections maintain readable anchors and labels. GPU failure is explicit. Stop confirmation distinguishes the owned assistant from externally managed services; final confirmation is cancelled.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Integration, audio, GPU, permission and session sections maintain readable anchors and labels. GPU failure is explicit. Stop confirmation distinguishes the owned assistant from externally managed services; final confirmation is cancelled.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-035.png",
+          "sha256": "1ddb3f52037c6deb5e94e9e441134a6bb793137c5fd7a0160196c68139ce4d70",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-035-bottom.png",
+          "sha256": "c7a0f9494fd45d367e47e801ec864da7ad3079a2b9156d5db519a3ad9b57a937",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-036.png",
+          "sha256": "db40e4c69b60040f3e2f941d45eb89a7be6b9418c6f861429efe3741e566c818",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-036-bottom.png",
+          "sha256": "2f52c3892d774c9142650115b670a54e031d90a1e97bb6a4eb5aa9d90342f1b4",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-035.json",
+          "sha256": "dad542560146e299f82c7bba9b47c94862ae0ba049f916481f6da99becd1d2a8"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-036.json",
+          "sha256": "605bf24a0ed475b39048368341ccb771c07f7ef9e95287a647d684c160d64532"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "mcp",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.7,
+        "spacing": 8.8,
+        "density": 8.6,
+        "truthful_states": 9.0,
+        "windows_interaction": 8.4,
+        "finishing": 8.7
+      },
+      "result": {
+        "score": 8.715,
+        "template_score": 1.4,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "Five zero counters and repeated Add server affordances slightly repeat the empty inventory. Approval-first copy is truthful and compact wrapping remains readable. No configured server, connected SDK or executable external tool is claimed.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [1260, 700] and [800, 600] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "Five zero counters and repeated Add server affordances slightly repeat the empty inventory. Approval-first copy is truthful and compact wrapping remains readable. No configured server, connected SDK or executable external tool is claimed.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Native focused controls/AX and common shell interactions reviewed. Search Escape returns to BODY in the final keyboard case and remains a strict nonpass; this lowers the shared Windows interaction component.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-037.png",
+          "sha256": "e6b9c5b6f0617aeb746f236f0c94d9a01c51d74ed2d70b411ee65cb82f4ee4e9",
+          "physical_size": [
+            1260,
+            700
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-038.png",
+          "sha256": "dcd589c53e446f999c3420e9da36315d59de263b0f9a6fb700fc977fbd8271c8",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-038-bottom.png",
+          "sha256": "9de3d516ea95992c872f96584fc6c7d28abac7d6ef71f2a3b0c6c70cf1c2d94b",
+          "physical_size": [
+            800,
+            600
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-037.json",
+          "sha256": "99bd33ada4d3bf27281be84a4996f8de735606d7297ba37f6d5137be730648ef"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-038.json",
+          "sha256": "5fbcf49a6400744ae3d1f33d1258e8f38743246b3260e1cda62c04008a292c9a"
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "mini",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9.0,
+        "windows_interaction": 8.7,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.785,
+        "template_score": 1.1,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent subjective native presentation judgment within disclosed final default-fixture states; not universal functional acceptance"
+      },
+      "observation": "The compact genuine Mini window retains a readable draft area, offline reason and disabled physical voice/Send controls. HWND show/dismiss is measured; global hotkey/tray invocation is separate development evidence.",
+      "findings": {
+        "typography": "Native Segoe UI/Semibold or intentional numeric monospace inspected from actual glyphs and recorded renderer fonts; score 8.7. Readable metadata is not inferred from the family name alone.",
+        "alignment": "Title, toolbar and content baselines inspected in both owned frames; main content stays between native header and status chrome.",
+        "spacing": "Shared insets and restrained separators are consistent; route-specific gaps and scrolling are judged in the observation.",
+        "information_density": "Two actual physical frames [620, 640] and [525, 560] at DPI 120 reviewed; app minimum-size clamping is retained, not relabelled as the requested smaller size.",
+        "visual_hierarchy": "The compact genuine Mini window retains a readable draft area, offline reason and disabled physical voice/Send controls. HWND show/dismiss is measured; global hotkey/tray invocation is separate development evidence.",
+        "tables": "Actual visible list/table columns and wrapping are inspected where present. Empty/absent tables do not prove sorting, selection or mutation.",
+        "graphs": "No additional graph capability is inferred from this screen; absent graphs receive no graph-function pass.",
+        "navigation": "Final route/active surface and original visible navigation are inspected. Route adaptation is not a new proof of every sidebar control; actual clicked navigation remains separate development evidence.",
+        "empty_states": "Current default original fixture empty/unavailable copy is compared with native DOM and original API evidence; no private-aware populated seed is used.",
+        "error_states": "Unavailable provider, controller, model or telemetry is explicit; availability cannot be promoted from local service connectivity.",
+        "dialogs": "This overview score does not credit unexecuted submissions. Search/Stop final cases and prior separately bound native dialog reviews carry their own scopes.",
+        "text_clipping": "Root overflow is zero; actual native primary and recorded bottom-scroll frames were reviewed. A partially painted scroll-edge affordance is not called fully pixel-visible, while original rectangle/scroll reachability is retained.",
+        "keyboard_focus": "Actual editable Mini focus and owned show/dismiss are recorded; final does not test global shortcut/tray activation.",
+        "accessibility": "Actual Accessibility.getFullAXTree and labelled controls support the observed scope. No blanket critical-a11y absence claim is made for unexercised controls.",
+        "consistent_design_language": "Segoe UI, restrained dark surfaces, purposeful separators and native chrome remain consistent. Member emojis are intentional; no decorative gradients, testimonials or invented metrics appear."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-039.png",
+          "sha256": "607d171c275943abf5eb8160274afef2c7515908f927db027941fdbb67d0d52f",
+          "physical_size": [
+            620,
+            640
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/independent-final-once/screenshots/C8F-040.png",
+          "sha256": "c1c82bb7babc45d64c1876fff8b709923002254692f5a631e1e07d07d2455d3b",
+          "physical_size": [
+            525,
+            560
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "receipt_refs": [
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-039.json",
+          "sha256": "81a2774172f59566f0ccb0718e9f8ae0bfe141c4852afcc0aa2b31ee09ea88f8"
+        },
+        {
+          "path": "data/campaign8-verifier/final-once/cases/C8F-040.json",
+          "sha256": "88c2dedd5ae2c0c49ef8dd99d37571ab7033651b00ad6c89681c177652617203"
+        }
+      ],
+      "complete_functional_acceptance": false
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "scope": "Original native read-only status and isolated audio-default configuration controls; not physical hardware tests.",
+  "raw": {
+    "path": "data/campaign8-native/cycle28-original-settings-screen3/RESULTS.json",
+    "sha256": "db68ba68192b9ee83cd1921b00473c8db3582c549da8c6a91c7d175f768c23d1"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "c03f94985c8501c58da5c4cf9be122830a65edd4646116fa44952c711b1dcfc0",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "counts": {
+    "cases": 3,
+    "executed": 3,
+    "PASS_scoped": 3,
+    "final_PNGs_viewed": 3,
+    "actual_generation": 0,
+    "physical_audio_tests": 0
+  },
+  "case_grades": [
+    {
+      "id": "settings-final-screen-status",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Refresh status GET /api/awareness returns 200 with available/capture_active/enabled/context_available all false, expires_at=null and retention_seconds=120. Original Capability details opens visibly and explains the absent pipeline. Status refresh is implemented; capture/analysis are not. No screenshot acquisition or sensitivity processing is credited.",
+      "input_sha256": "1c20aa639f58cf276a5db1a224479d236d199c2f06940beab053a629ccd8fce9",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle28-original-settings-screen3/screenshots/settings-final-screen-status.png",
+        "sha256": "9ee854adc1ae5a15ce8a5b2fdce53fcd65d89ed8d1dea2c59a4f10ea1045e8fd"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/awareness",
+          "status": 200,
+          "data_sha256": "6826f8d08e20de635bc80366f90e9e5c875dccaa64848c4614c8e10dcc8a6b64"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "settings-final-audio-default-save",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original microphone and output controls select default, then Apply POST /api/audio-devices returns 200. Actual disposable audio-routing.json stores input/output null (default), matching original readback IDs default/default and native Audio choices saved. Only isolated configuration is saved; no voice restart, microphone/speaker activation or physical availability is credited.",
+      "input_sha256": "720ebc32884c6e1bd745d4643b9dad95785c2fd13ab03ebbdc16da0d3deccfe4",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle28-original-settings-screen3/screenshots/settings-final-audio-default-save.png",
+        "sha256": "c772f7632aab8aae2ff9a187973577c9945a353d3a0175f6d59e544f4ec851bd"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/audio-devices",
+          "status": 200,
+          "data_sha256": "06a5311fcfcc3c3bd9596f6c29e18cfb42b001723241478c5a0132156c1a5271"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    },
+    {
+      "id": "settings-final-gpu-absence",
+      "status": "PASS",
+      "evidence_class": "CONTROLLED",
+      "observed_scope": "Original Refresh GPUs receives /api/gpu-routing 503 with actual discovery error; native GPU routing unavailable remains visible and no selectable devices or Apply action are offered. This is a truthful unavailable projection, not successful GPU routing or a blanket permission denial.",
+      "input_sha256": "291d7f7981f6e8a340bca8a73c98b29c2ea0f622d83d4ebdd83ec0fc23a1cd7d",
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle28-original-settings-screen3/screenshots/settings-final-gpu-absence.png",
+        "sha256": "f4a8952d8dfee077a1832c2188c66bcca07f7319dbf5d45adb4235fc3810dc4c"
+      },
+      "independent_final_pixels_viewed": true,
+      "source_API_evidence": [
+        {
+          "path": "/api/gpu-routing",
+          "status": 503,
+          "data_sha256": "8274dc683e2f05a5b53ace83ccd8aea0209c8fab1ffdf2c40ed78f57afe5027c"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_grade_promotion": false
+    }
+  ],
+  "audio_saved_readback": {
+    "path": "data/campaign8-ui/native-backend-cycle17-settings/audio-routing.json",
+    "sha256": "3496c01562c859baced4a659f95981dc1c024f8eed936b03a81bb854009c1c98",
+    "value": {
+      "input": null,
+      "output": null
+    }
+  },
+  "original_audio_save_handler": {
+    "path": "src/hanni/dashboard/server.py",
+    "sha256": "1e5cb48ea1ba20e96978ca920fd22ba63d0d8ead749cd0657782d49f6e0da181",
+    "boundary": "Save selection under server.telemetry.config.paths.data_dir; no activation."
+  },
+  "cleanup": {
+    "native_exit_code": 0,
+    "owned_native_cleanup": true,
+    "backend_close": {
+      "path": "data/campaign8-ui/native-backend-cycle17-settings/CLOSED.json",
+      "sha256": "013f6660cae3e4bc546627f31f3b68818d65fc4eb2e526587e9ef849ad0a5bfc"
+    }
+  },
+  "no_private_final_access": true,
+  "hardware_audio": "User microphone and speakers unavailable; device enumeration is not physical readiness."
+}

@@ -1,0 +1,31 @@
+{
+  "tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "61",
+    "time": "10.033",
+    "timestamp": "2026-10-10T06:15:34.902006-04:00",
+    "hostname": "Laynce"
+  },
+  "dependency_hashes": {
+    "scripts/campaign5_verification/holdout_runner.py": "0a9829779c925fd12288f30ea381f5da3d491e63090443398505ee6e56776219",
+    "scripts/campaign5_verification/publish.py": "82b1952f55985acb2f8d5c77aac49e4534708cc2dabd240cc45fc2b46c140987",
+    "scripts/campaign5_verification/scoring.py": "7d4a8abd01ca732f3fa2378c15251d4b919c25d09ca2b5e8dcc9db55d7b4f36b",
+    "tests/integration/test_campaign5_verification.py": "5ff0db6e35a6c9cb356f884712f8b66d250b2a226ec81c32b1f95309076b2883",
+    "scripts/campaign5_benchmark/runner.py": "20ca169d10d8764f10b9ac78ea0362b37836c234140e63405e4fd9cc3bb30a69",
+    "scripts/campaign5_benchmark/live.py": "aceef47d45a602854c7c5abc930f698076e4265c2efa66dceeb108440f099aeb",
+    "scripts/campaign5_benchmark/checkers.py": "390b2cf8f6dbb0decbd0ff214187de753130f2ed23df9ef649be38117401c0a6",
+    "scripts/campaign5_intelligence/controlled.py": "6ea01fadde1cb9c0a3d8696a05ed7368cda9d9efd56749865f437231a855c391",
+    "scripts/campaign5_intelligence/http_identity.py": "f41bc7fab714d72a80027023bea7801fb5f13800359af03b2685305577225099",
+    "scripts/campaign5_manager/freeze.py": "794d5f460c0a017d5d39b8a5b6e6f322a5af4136ec7b1abe1bdd0fcf98319c6d",
+    "docs/campaign5/PROTOCOL.md": "cbd544f75c07e7a0596b56e5bbb203ea6ac07bfc88c78162e76ae5ed5cf69c62",
+    "src/hanni/models/adaptive.py": "f28a235c022af0f9dec49c7a37441b99b9617aacc8453f94adb1d5e478a75f73",
+    "src/hanni/models/collaboration.py": "ce513da474b809c5789e8b21a8369b9c5204933bb6ca895ba658307cae801cd0",
+    "src/hanni/models/client.py": "28e1cc8c0a4a79e9796b041fb874bb443db87160b1568eadaf3f2724bcea3a07",
+    "src/hanni/compute/scheduler.py": "80a7047477d07f2f028bbdc21897e5a59c7fbea3b7311d56635e26200a3b3152"
+  },
+  "private_seal_sha256": "68ebb86a18b09e3188cfab1c154c8dc445ba78dcec08af9ab84fcd9d51b0a665",
+  "scope": "Prospective independent measurement dependencies; contents of private inputs/oracles/author never published; current-source controlled contracts only, not real model benchmark."
+}

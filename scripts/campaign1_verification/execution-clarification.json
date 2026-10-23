@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "accepted_before_any_campaign1_live_inference": true,
+  "accepted_at_utc": "2026-10-10T04:02:50.716485+00:00",
+  "authority": "Manager clarified execution before final; sealed cases and oracles remain unchanged",
+  "sealed_final_corpus_sha256": "b96221d8fe027ede7cfb1c75c059e50fa664b918cc4a4f092f08855a21174610",
+  "clarification": "A separate original-menu diagnostic selection runs only when the original full controller makes zero actual model calls. A native no-tool TextSession response is actual model inference, with no model tool-selection opportunity and no redundant diagnostic probe.",
+  "measurement": "Original controller tool-selection opportunities and diagnostic probes have distinct denominators. No-tool controller outcomes measure deterministic routing plus actual response; they are not described as the model choosing abstention when no tool menu was offered.",
+  "failures": "Inference admission failures remain end-to-end failures. Conditional selection metrics do not remove them from unconditional case outcomes."
+}

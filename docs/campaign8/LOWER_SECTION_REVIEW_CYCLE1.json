@@ -1,0 +1,73 @@
+{
+  "scope": "Three supplementary original DOM/API inspections with partial native-pixel coverage, no initial grade promotion",
+  "raw": {
+    "path": "data/campaign8-native/cycle19-original-below-fold-sections/RESULTS.json",
+    "sha256": "21366fd1e15aa7021954fa1a14727e831696b7c8a0867a1a1c83666ddd6a46d2"
+  },
+  "counts": {
+    "cases": 3,
+    "PARTIAL_pixel": 3,
+    "DOM_source_content_observed": 3
+  },
+  "cases": [
+    {
+      "id": "actual-workflow-checkpoint-rows",
+      "status": "PARTIAL",
+      "native_capture": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle19-original-below-fold-sections/screenshots/actual-workflow-checkpoint-rows.png",
+        "sha256": "a24ab0c790d351baa0bf8caf01b0ebd469e72f4f479ed62249bf17173dca8e82"
+      },
+      "independent_pixels_viewed": true,
+      "DOM_original_content_observed": "Checkpoints and tool activity\nCheckpoints\n10/10/2026, 9:33:50 AM\nSubmitted\nSubmitted\n10/10/2026, 9:33:50 AM\nPlan saved\nAwaiting plan approval\n10/10/2026, 9:33:50 AM\nControlled fixture ready\nReady\n10/10/2026, 9:33:50 AM\nControlled fixture binding\nReady\n10/10/2026, 9:33:50 AM\nInvocation committed\nRunning\n10/10/2026, 9:33:50 AM\nResult committed\nRunning\n10/10/2026, 9:33:50 AM\nControlled fixture history complete\nCompleted\nTool invocations\n10/10/2026, 9:33:50 AM\nfile.write\nFinished · Attempt 1 · Action · Finished 10/10/2026, 9:33:50 AM\nOpen execution Activity\nScope and limits\n{\n  \"max_steps\": 16,\n  \"max_parallel_reads\": 2,\n  \"max_active_workflows\": 2,\n  \"max_retries\": 1,\n  \"step_timeout_seconds\": 30,\n  \"max_duration_seconds\": 600,\n  \"planning_timeout_seconds\": 120,\n  \"max_plan_attempts\": 2,\n  \"approval_ttl_seconds\": 300,\n  \"max_goal_chars\": 4000,\n  \"max_payload_bytes\": 65536,\n  \"max_result_bytes\": 65536,\n  \"max_artifact_bytes\": 5242880,\n  \"max_invocations\": 32,\n  \"max_workflows\": 500,\n  \"retention_days\": 30,\n  \"lease_seconds\": 10\n}\n\nWorkflow wf_a8f4d28027a44a09b73826ac6ecef7df · Plan 3c8081743fbc173edce169b6ca53f10268360f67901e1f532cf58f136b852814 · Revision 7",
+      "DOM_content_scope": "Full container inner_text includes rows below viewport; not a visible-pixel assertion",
+      "source_API_evidence": [
+        {
+          "path": "/api/workflows",
+          "status": 200,
+          "data_sha256": "3822177c9c474a4bf33a9e58983c7b252a6e41467815f27bec6821ac87dd6a8e"
+        }
+      ],
+      "reason": "Native screenshot shows section header near bottom while requested row content remains below viewport. Actual DOM/source evidence accepted; visible child-row proof unmeasured."
+    },
+    {
+      "id": "actual-activity-search-results",
+      "status": "PARTIAL",
+      "native_capture": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle19-original-below-fold-sections/screenshots/actual-activity-search-results.png",
+        "sha256": "edeeacf37739c3371a0a40539aa66496b6ec5643861dceaa375629fa0b222953"
+      },
+      "independent_pixels_viewed": true,
+      "DOM_original_content_observed": "Task outcomes\nRefresh task traces\n\nExecution and evidence checks are recorded separately. Verification applies only to the stated scope.\n\nAll task outcomes\nExecution succeeded\nPartially completed\nWaiting for approval\nFailed\nRejected\nCancelled\nTimed out\n8 loaded\nSucceeded\nworkspace.notification.preferences\nUnverified\n09:34 AM\nSucceeded\nworkspace.notification.preferences\nUnverified\n09:34 AM\nSucceeded\nworkspace.link.create\nUnverified\n09:33 AM\nSucceeded\nfile.stat\nVerified\n09:33 AM\nSucceeded\nfile.write\nVerified\n09:33 AM\nSucceeded\nworkspace.note.create\nUnverified\n09:33 AM\nSucceeded\nworkspace.task.create\nUnverified\n09:33 AM\nSucceeded\nworkspace.project.create\nUnverified\n09:33 AM\nExecution history\nLoaded audit window\ncompleted\nworkspace.task.create\nOct 10, 09:33 AM\n6 ms",
+      "DOM_content_scope": "Full container inner_text includes rows below viewport; not a visible-pixel assertion",
+      "source_API_evidence": [
+        {
+          "path": "/api/agents",
+          "status": 200,
+          "data_sha256": "2dc087f3795ebefec267ea308218eab9ef3181b6fcf1898acb31620def74b04f"
+        }
+      ],
+      "reason": "Native screenshot shows section header near bottom while requested row content remains below viewport. Actual DOM/source evidence accepted; visible child-row proof unmeasured."
+    },
+    {
+      "id": "actual-activity-status-results",
+      "status": "PARTIAL",
+      "native_capture": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle19-original-below-fold-sections/screenshots/actual-activity-status-results.png",
+        "sha256": "f1eaf7c5f2858e36581a8e2b25c13b8c60a89b35b6fb9cb6f383fc3179341d97"
+      },
+      "independent_pixels_viewed": true,
+      "DOM_original_content_observed": "Task outcomes\nRefresh task traces\n\nExecution and evidence checks are recorded separately. Verification applies only to the stated scope.\n\nAll task outcomes\nExecution succeeded\nPartially completed\nWaiting for approval\nFailed\nRejected\nCancelled\nTimed out\n8 loaded\nSucceeded\nworkspace.notification.preferences\nUnverified\n09:34 AM\nSucceeded\nworkspace.notification.preferences\nUnverified\n09:34 AM\nSucceeded\nworkspace.link.create\nUnverified\n09:33 AM\nSucceeded\nfile.stat\nVerified\n09:33 AM\nSucceeded\nfile.write\nVerified\n09:33 AM\nSucceeded\nworkspace.note.create\nUnverified\n09:33 AM\nSucceeded\nworkspace.task.create\nUnverified\n09:33 AM\nSucceeded\nworkspace.project.create\nUnverified\n09:33 AM\nExecution history\nLoaded audit window\n\nNo executions match this filter.",
+      "DOM_content_scope": "Full container inner_text includes rows below viewport; not a visible-pixel assertion",
+      "source_API_evidence": [
+        {
+          "path": "/api/agents",
+          "status": 200,
+          "data_sha256": "081c53c620e9749ca9fc7d72872856596f833eddbe32cb2f0ea7a8a13931acca"
+        }
+      ],
+      "reason": "Native screenshot shows section header near bottom while requested row content remains below viewport. Actual DOM/source evidence accepted; visible child-row proof unmeasured."
+    }
+  ],
+  "native_cleanup": true,
+  "no_product_defect_asserted": true
+}

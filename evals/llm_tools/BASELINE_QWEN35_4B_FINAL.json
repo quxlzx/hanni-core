@@ -1,0 +1,118 @@
+{
+  "artifact_type": "sanitized_live_summary",
+  "model_id": "supervisor",
+  "model_file": "Qwen3.5-4B-Q4_K_M.gguf",
+  "api_model": "supervisor",
+  "endpoint": "http://127.0.0.1:8080/v1",
+  "quantization": "Q4_K_M",
+  "config_profile": "config\\models.yaml",
+  "owner_timezone": "America/Chicago",
+  "max_tool_rounds": 3,
+  "hanni_version": "0.10.1",
+  "hanni_commit": null,
+  "prompt_sha256": "0c6dd225265e82cbe183d692e44b9a5306e9ce8c014b0278670f8e3a6a26abb9",
+  "evaluator_sha256": "79b42ac02fa878238abbc76b4fbaa90bd94ee6ed993587fa3da0a46e079e820e",
+  "routed_menus_sha256": "4a9472a6a77c6764ef67fecb6578fcdd48e59813ac9c358f4787731f888d888c",
+  "vram_usage_mb": null,
+  "corpus_sha256": "8adc231515a1f40e19eb5647c2a5ae7452018d6c359790e7e9d3f46a8a4ef5d7",
+  "timestamp": "2026-09-24T04:23:23.533528+00:00",
+  "total_scenarios": 150,
+  "status": "completed",
+  "summary": {
+    "total_scenarios": 150,
+    "task_success_rate": 82.67,
+    "policy_blocked_scenarios": 9,
+    "average_score": 90.97,
+    "tool_selection_accuracy": 91.33,
+    "argument_accuracy": 97.33,
+    "reasoning_accuracy": 88.67,
+    "hallucination_rate": 0.0,
+    "unsupported_claim_rate": 0.0,
+    "average_tool_calls": 1.34,
+    "average_latency_ms": 2961.88,
+    "measured_completion_tokens_per_second": 33.06,
+    "token_rate_cases": 121,
+    "families": {
+      "applications_spotify": {
+        "scenarios": 15,
+        "task_success_rate": 86.67,
+        "average_score": 89.33
+      },
+      "calendar": {
+        "scenarios": 20,
+        "task_success_rate": 85.0,
+        "average_score": 95.75
+      },
+      "conversation": {
+        "scenarios": 10,
+        "task_success_rate": 100.0,
+        "average_score": 100.0
+      },
+      "diagnostics": {
+        "scenarios": 45,
+        "task_success_rate": 68.89,
+        "average_score": 83.89
+      },
+      "direct_system": {
+        "scenarios": 20,
+        "task_success_rate": 90.0,
+        "average_score": 95.75
+      },
+      "files_search": {
+        "scenarios": 10,
+        "task_success_rate": 100.0,
+        "average_score": 100.0
+      },
+      "hanni_model": {
+        "scenarios": 10,
+        "task_success_rate": 90.0,
+        "average_score": 92.5
+      },
+      "mixed_domain": {
+        "scenarios": 10,
+        "task_success_rate": 60.0,
+        "average_score": 77.5
+      },
+      "safety": {
+        "scenarios": 10,
+        "task_success_rate": 100.0,
+        "average_score": 100.0
+      }
+    }
+  },
+  "failure_classifications": {
+    "MODEL_TOOL_SELECTION_FAILURE": 13,
+    "MODEL_REASONING_FAILURE": 21,
+    "MODEL_STOPPING_FAILURE": 11,
+    "MODEL_ARGUMENT_FAILURE": 4
+  },
+  "failed_case_ids": [
+    "DIAG-016",
+    "DIAG-018",
+    "DIAG-019",
+    "DIAG-020",
+    "DIAG-026",
+    "DIAG-027",
+    "DIAG-028",
+    "DIAG-029",
+    "DIAG-030",
+    "DIAG-035",
+    "DIAG-041",
+    "DIAG-042",
+    "DIAG-043",
+    "DIAG-044",
+    "SYS-004",
+    "SYS-014",
+    "CAL-015",
+    "CAL-019",
+    "CAL-020",
+    "APP-007",
+    "APP-012",
+    "HANNI-003",
+    "MIX-001",
+    "MIX-002",
+    "MIX-004",
+    "MIX-005"
+  ],
+  "note": "Full synthetic transcripts and incremental checkpoint remain in ignored data/qwen-4b-tool-eval-final.json. This summary omits transcripts and cannot itself be used by hanni eval compare."
+}

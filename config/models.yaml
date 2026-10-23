@@ -1,0 +1,45 @@
+# H.A.N.N.I. keeps exactly one resident language model.
+# The model is replaceable through configuration, but the default is sized to
+# remain permanently loaded on an 8 GB-class discrete GPU.
+
+idle_unload_seconds: 0
+ram_reserve_mb: 3072
+vram_reserve_mb: 1024
+critical_ram_percent: 90
+
+models:
+  - id: supervisor
+    role: supervisor
+    backend: llama.cpp
+    model_file: "Qwen3.5-4B-Q4_K_M.gguf"
+    # The same resident model handles language and images with its cached projector.
+    vision_projector: "mmproj-Qwen3.5-4B-BF16.gguf"
+    hf_repo: "lmstudio-community/Qwen3.5-4B-GGUF"
+    quantization: "Q4_K_M"
+    api_model: "supervisor"
+    endpoint: "http://127.0.0.1:8080/v1"
+    keep_loaded: true
+
+    # Long-term state belongs in HANNI's memory/state/tool layers, not in a huge
+    # KV cache. 16K leaves ample headroom on an 8 GB card for an always-on model.
+    context_length: 16384
+    parallel: 1
+    kv_key_type: q8_0
+    kv_value_type: q8_0
+
+    # Conservative admission budgets for Q4_K_M + KV/runtime allocations.
+    ram_budget_mb: 2048
+    vram_budget_mb: 4600
+    gpu_layers: 99
+    gpu_selection: smallest_8gb
+    gpu_preference: 0
+
+    max_tokens: 768
+    temperature: 0.35
+    top_p: 0.9
+    thinking_enabled: false
+    jinja_enabled: true
+    mmap: true
+    no_host: false
+    request_timeout_seconds: 120
+    health_timeout_seconds: 3

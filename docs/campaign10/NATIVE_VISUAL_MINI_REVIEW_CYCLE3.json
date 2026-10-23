@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "state": "MINI_PRESENTATION_MEASURED_WINDOWS_INTERACTION_INCOMPLETE",
+  "reviewed_at": "2026-10-10T18:36:27.445839+00:00",
+  "reviewer": "independent Campaign10 verifier",
+  "source_receipt_sha256": "1c1cd6541dcb326cddebbcf3d76c1febbeb1361836d43c73ec96325911f134ce",
+  "assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "af48b18c4b6aa7a7ff0fe9e3aa6cbe58c30de6aa160802fc94ccc482ce698c4b",
+    "src\\hanni\\dashboard\\static\\style.css": "c8c206daf9ce2cf1b51e8f8f2a3182e040020d2dbfe894004c076892a1ebd8cb"
+  },
+  "executable_sha256": "9bf90dc1438e1776369f668117d88c2a5f76a33fc6f796c4d9f41a8a7e586263",
+  "rubric": {
+    "path": "docs/campaign8/VISUAL_RUBRIC.md",
+    "sha256": "72b8199b7dc93ef46c7f5989d8d86c16f70c15f04155191890ebcbe65cba7338",
+    "weights": {
+      "typography": 0.2,
+      "hierarchy": 0.2,
+      "spacing": 0.15,
+      "density": 0.15,
+      "truthful_states": 0.15,
+      "windows_interaction": 0.1,
+      "finishing": 0.05
+    }
+  },
+  "historical_scores_reused": false,
+  "dimensions": {
+    "typography": 8.7,
+    "hierarchy": 8.8,
+    "spacing": 8.7,
+    "density": 8.6,
+    "truthful_states": 8.8,
+    "windows_interaction": null,
+    "finishing": 8.7
+  },
+  "measured_presentation_score": 8.7222,
+  "weighted_complete_score": null,
+  "template_appearance": 1.0,
+  "actual_dpi": 120,
+  "actual_scaling_percent": 125,
+  "physical_window_sizes": [
+    [
+      620,
+      560
+    ],
+    [
+      525,
+      560
+    ]
+  ],
+  "requested_narrow_width": 480,
+  "enforced_minimum_physical_width": 525,
+  "viewed_screenshots": 2,
+  "viewed_captures": [
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-mini-cycle3/screenshots/mini-620.png",
+      "sha256": "5417751bcbb6f0eaa990862d7bf60b5569849cf568f5fc9b51966f84d83dde86"
+    },
+    {
+      "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign10-native/current-mini-cycle3/screenshots/mini-480.png",
+      "sha256": "110a43c9f5dc77238f7906eb7348d53bb61a4c5d9439a2a716b41cbf44533b35"
+    }
+  ],
+  "loaded_font_observation": {
+    "body": [],
+    "button": [
+      {
+        "familyName": "Segoe UI",
+        "postScriptName": "SegoeUI",
+        "isCustomFont": false,
+        "glyphCount": 3
+      }
+    ]
+  },
+  "original_backend_readback": {
+    "path": "/api/workspace",
+    "status": 200,
+    "scope": "Current workspace feature/configuration readback; no submitted chat generation or acoustic operation."
+  },
+  "observations": [
+    "Segoe UI controls and text are readable at both actual widths; heading, inactive voice row and composer have clear hierarchy.",
+    "No overlap or inaccessible horizontal clipping; the narrow requested width480 is constrained to actual525.",
+    "Inactive voice actions are disabled; empty composer keeps Send disabled.",
+    "Actual owned Mini HWND pin switches topmost true then false; original get_state and expand bridges succeed.",
+    "Expansion hides Mini and shows the main conversation; no chat generation or physical voice outcome was attempted."
+  ],
+  "limitations": [
+    "Mini was shown through owned HWND control for pixel evidence; the original main Open Mini menu path is not verified.",
+    "Mini keyboard traversal, keyboard activation and a real minimize/restore cycle are absent; Windows interaction remains unmeasured.",
+    "Two prior failed Mini capture attempts are retained and do not become presentation failures.",
+    "This is exposed visual development evidence before the whole-source final freeze."
+  ],
+  "complete_visual_acceptance": null,
+  "final_frozen_native_acceptance": false
+}

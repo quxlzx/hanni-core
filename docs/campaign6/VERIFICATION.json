@@ -1,0 +1,205 @@
+{
+  "acceptance": {
+    "hardware_and_serving": "BLOCKED: fresh Tailscale SSH check required",
+    "implementation_boundaries": "PASS on 46 independent exposed controls",
+    "progressive_context_growth": "UNRESOLVED original prompt/total-allocation preflight mismatch",
+    "quality_speed_tokens_peak_vram": null,
+    "scheduling": "PARTIAL: 19/22 strict once-only final"
+  },
+  "exposed_development": {
+    "errors": 0,
+    "failures": 0,
+    "passed": 46,
+    "seconds": 6.944,
+    "skipped": 0,
+    "tests": 46,
+    "xml": {
+      "path": "data/campaign6-verifier/independent-final-development-cycle3.xml",
+      "sha256": "07a742c5775c608c4ee2f77cfcbd57c6b572e9651c7ff9e556dff4e36cacf285"
+    }
+  },
+  "final": {
+    "actual_hardware_measurements": 0,
+    "actual_model_inference": 0,
+    "all_owned_reservations_released": true,
+    "cases": 22,
+    "categories_passed": {
+      "context_too_large": 2,
+      "correct_worker_selection": 1,
+      "insufficient_vram": 2,
+      "multiple_eligible_workers": 2,
+      "network_interruption": 2,
+      "parallel_tasks": 1,
+      "queue_saturation": 2,
+      "result_verification": 2,
+      "safe_reassignment": 1,
+      "worker_busy": 2,
+      "worker_unavailable": 2
+    },
+    "category_counts": {
+      "context_too_large": 2,
+      "correct_worker_selection": 2,
+      "insufficient_vram": 2,
+      "multiple_eligible_workers": 2,
+      "network_interruption": 2,
+      "parallel_tasks": 2,
+      "queue_saturation": 2,
+      "result_verification": 2,
+      "safe_reassignment": 2,
+      "worker_busy": 2,
+      "worker_unavailable": 2
+    },
+    "closed": {
+      "path": "data/campaign6-verifier/final-once/CLOSED.json",
+      "sha256": "859454ec031bf874c1a0620e3f7f969f199c0a6a747cead06ef4ffdf377fe317"
+    },
+    "closed_sha256": "859454ec031bf874c1a0620e3f7f969f199c0a6a747cead06ef4ffdf377fe317",
+    "controlled_http_requests": 10,
+    "exclusive_claim": {
+      "path": "data/campaign6-verifier/holdout/FINAL_CLAIM.json",
+      "sha256": "44565f9a3ec232358133d895a62d668ebf0ce1ceef34f856acf90895f7036cb5"
+    },
+    "failures": [
+      {
+        "category": "correct_worker_selection",
+        "failed_checks": [
+          "ordered_choices"
+        ],
+        "harness_error": false,
+        "id": "C6F-02"
+      },
+      {
+        "category": "parallel_tasks",
+        "failed_checks": [
+          "completed_receipts",
+          "request_calls",
+          "successful_requests"
+        ],
+        "harness_error": false,
+        "id": "C6F-14"
+      },
+      {
+        "category": "safe_reassignment",
+        "failed_checks": [
+          "attempt",
+          "request_calls",
+          "selected_worker",
+          "successful_requests"
+        ],
+        "harness_error": false,
+        "id": "C6F-17"
+      }
+    ],
+    "freeze": {
+      "archive_sha256": "41fbbdcdadca66ada33569431eb85f1b2d25395cf17b16dcfcd8aeb1a0e37579",
+      "files": 489,
+      "manifest_sha256": "bf6b2d88f3cf4c3454291090870f009916c90e0bd3307ec4f1b0013da6041316",
+      "source_matches": true
+    },
+    "grades": {
+      "path": "data/campaign6-verifier/final-once/GRADES.json",
+      "sha256": "d9c6e6044d2ba37d7af7900239b1ff822f159a3e0fe149e0f9c2d2b0de2a6acf"
+    },
+    "grades_sha256": "d9c6e6044d2ba37d7af7900239b1ff822f159a3e0fe149e0f9c2d2b0de2a6acf",
+    "harness_errors": 0,
+    "no_retries_tuning_or_grade_promotion": true,
+    "owned_cleanup_complete": true,
+    "passed": 19,
+    "private_evidence": "data/campaign6-verifier/final-once",
+    "publication": {
+      "path": "docs/campaign6/FINAL_HOLDOUT.json",
+      "sha256": "c7b77b5dee550630350ed6526a40d1e8e12703b96ee2c43401a766a8f9798e3d"
+    },
+    "quality_speed_tokens_peak_vram": null,
+    "raw": {
+      "path": "data/campaign6-verifier/final-once/RAW.json",
+      "sha256": "a001a80e90069465e51c28947a2873df91900499f23c04e77a7186ef52c6a4bb"
+    },
+    "raw_sha256": "a001a80e90069465e51c28947a2873df91900499f23c04e77a7186ef52c6a4bb",
+    "scope": "Original guarded scheduling with controlled loopback providers; no live-model/hardware claims.",
+    "seal_sha256": "08e8991550b3b0d21a95b365350ec7b8a3ce840b9836303e6a454a44ed9dc200"
+  },
+  "independent_review": {
+    "path": "docs/campaign6/INDEPENDENT_REVIEW.md",
+    "sha256": "c5a5f74252e3a003cfaaffb1215a7f135cbbee1985f655ca9d069d16847ae6f6"
+  },
+  "live_confirmation": {
+    "actual_generation_requests": 0,
+    "actual_hardware_observations": 0,
+    "authenticated": 0,
+    "nodes_checked": 2,
+    "receipt": {
+      "path": "data/campaign6-verifier/live-confirmation-01/RESULTS.json",
+      "sha256": "2f81725170a355b4c21ba09b3a6c166ba0e565eb1c7924ec32a4c79d78d9317b"
+    },
+    "strict_ssh_host_verification": "Not completed; authentication check required"
+  },
+  "manager_report_review": {
+    "accepted": true,
+    "all_relative_links_exist": true,
+    "manager_evidence": {
+      "path": "docs/campaign6/MANAGER_EVIDENCE.json",
+      "sha256": "cde74e93734a38d46a34d440c6323c1c0e5eaba2e9af6ecd5acbb9adcb945c20"
+    },
+    "no_reexecution": true,
+    "path": "docs/campaign6/REPORT.md",
+    "sha256": "ef4e1ec4dc0c654c6d082ffdc2d3f90adf7d804a5de78f31ac94fc2916504c0a"
+  },
+  "manual_annotations_separate_from_grades": [
+    {
+      "classification": "Authored ranking expectation conflicts with original active-slot penalty.",
+      "id": "C6F-02"
+    },
+    {
+      "classification": "Second serialized delivery blocked at the unchanged 0.2-second budget.",
+      "id": "C6F-14"
+    },
+    {
+      "classification": "Reassignment blocked after first disconnection at the unchanged 0.2-second budget.",
+      "id": "C6F-17"
+    }
+  ],
+  "overlapping_suites_not_summed": true,
+  "preserved_pre_fix": {
+    "credential_race": {
+      "path": "data/campaign6-verifier/CREDENTIAL_RACE_BEFORE.json",
+      "sha256": "ff184a33e3317aefb3e3929504136acfce29de4a81d74b3c08cb2cbb49073b5e"
+    },
+    "enabled_transition": {
+      "path": "data/campaign6-verifier/AUTHORITY_TRANSITION_BEFORE.json",
+      "sha256": "b81bdcc8287f71a0c515d8d2fa6e7b73c499882bb19bdc488d3b0e7f936181c0"
+    }
+  },
+  "private_answers_not_published": true,
+  "public_raw_crosscheck": {
+    "path": "data/campaign6-verifier/PUBLIC_RECEIPT_CROSSCHECK.json",
+    "sha256": "44d6f40fcdabe9aec99cb08fa4b24dee39f7740ee3da54f4ad71e2139a9e50bc"
+  },
+  "runtime_preservation": {
+    "generation_requests": 0,
+    "health_not_inference_admission": true,
+    "healthy_resident_endpoint": true,
+    "listeners_match": true,
+    "owner_models_yaml_matches": true,
+    "owner_services_started_stopped": 0,
+    "process_identity_matches": true,
+    "receipt": {
+      "path": "data/campaign6-verifier/runtime-after-final/RESULT.json",
+      "sha256": "361e6a6f612f1b9e106e091850ae6610bf0decf467f56c979f74327f76275538"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Independent controlled implementation verification and strict SSH/process-preservation observations; no real model/hardware certification.",
+  "source_freeze": {
+    "archive_sha256": "41fbbdcdadca66ada33569431eb85f1b2d25395cf17b16dcfcd8aeb1a0e37579",
+    "files": 489,
+    "manifest_sha256": "bf6b2d88f3cf4c3454291090870f009916c90e0bd3307ec4f1b0013da6041316",
+    "source_matches": true
+  },
+  "source_readiness": {
+    "path": "data/campaign6-verifier/SOURCE_READY_CYCLE3.json",
+    "sha256": "b39062b678d57b850a6230bc74e7b291c82719d66dedb75bfc8c06f8f4fa69fa"
+  },
+  "uncommitted": true,
+  "verified_at": "2026-10-10T11:27:00.213428+00:00"
+}

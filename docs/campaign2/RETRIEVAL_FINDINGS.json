@@ -1,0 +1,511 @@
+{
+  "scope": "Original metadata retrieval and host policy, not model inference.",
+  "failures": [
+    {
+      "id": "app.open",
+      "query": "Ask Windows to open the audit fixture file C:\\Users\\user\\AppData\\Local\\Temp\\hanni-campaign2-case-erp03sf3\\fixture-app.txt.",
+      "selected_menu": [
+        "hanni.audit_tail"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "app.open"
+      ],
+      "menu": [
+        {
+          "id": "hanni.audit_tail",
+          "wire_name": "hanni__hanni__audit_tail",
+          "fixed_arguments": {}
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "audio.status",
+      "query": "Read the exact system volume and mute state if available.",
+      "selected_menu": [],
+      "route_status": "blocked",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "audio.status"
+      ],
+      "menu": [],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "disk.folder_size",
+      "query": "How many bytes and files are in C:\\Users\\user\\AppData\\Local\\Temp\\hanni-campaign2-case-ddad27j1\\fixtures, including subfolders?",
+      "selected_menu": [
+        "file.list_dir",
+        "file.stat"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "disk.folder_size"
+      ],
+      "menu": [
+        {
+          "id": "file.list_dir",
+          "wire_name": "hanni__file__list_dir",
+          "fixed_arguments": {}
+        },
+        {
+          "id": "file.stat",
+          "wire_name": "hanni__file__stat",
+          "fixed_arguments": {}
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "disk.largest_folders",
+      "query": "Rank the immediate subdirectories of C:\\Users\\user\\AppData\\Local\\Temp\\hanni-campaign2-case-h8_5f5a6\\fixtures by their total size.",
+      "selected_menu": [
+        "file.stat",
+        "disk.folder_size"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "disk.largest_folders"
+      ],
+      "menu": [
+        {
+          "id": "file.stat",
+          "wire_name": "hanni__file__stat",
+          "fixed_arguments": {}
+        },
+        {
+          "id": "disk.folder_size",
+          "wire_name": "hanni__disk__folder_size",
+          "fixed_arguments": {}
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "file.empty_folders",
+      "query": "Which subfolders under C:\\Users\\user\\AppData\\Local\\Temp\\hanni-campaign2-case-g9iymx44\\fixtures are empty?",
+      "selected_menu": [
+        "file.list_dir"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "file.empty_folders"
+      ],
+      "menu": [
+        {
+          "id": "file.list_dir",
+          "wire_name": "hanni__file__list_dir",
+          "fixed_arguments": {}
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "file.recent",
+      "query": "Which files in C:\\Users\\user\\AppData\\Local\\Temp\\hanni-campaign2-case-rthgipab\\fixtures changed during the last 24 hours?",
+      "selected_menu": [
+        "file.tail"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "file.recent"
+      ],
+      "menu": [
+        {
+          "id": "file.tail",
+          "wire_name": "hanni__file__tail",
+          "fixed_arguments": {}
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "gmail.read",
+      "query": "Read the message with ID message-v36 from the synthetic personal Gmail account.",
+      "selected_menu": [
+        "google.gmail.search"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "email.read",
+        "gmail.read",
+        "google.gmail.read"
+      ],
+      "menu": [
+        {
+          "id": "google.gmail.search",
+          "wire_name": "hanni__google__gmail__search",
+          "fixed_arguments": {
+            "account": "personal",
+            "limit": 5,
+            "query": "from:the synthetic personal gmail account"
+          }
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "gmail.search",
+      "query": "Search the synthetic personal Gmail inbox for rehearsal.",
+      "selected_menu": [
+        "google.gmail.recent"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "email.search",
+        "gmail.search",
+        "google.gmail.search"
+      ],
+      "menu": [
+        {
+          "id": "google.gmail.recent",
+          "wire_name": "hanni__google__gmail__recent",
+          "fixed_arguments": {
+            "account": "personal",
+            "limit": 5
+          }
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "google.calendar.availability",
+      "query": "Am I free tomorrow between 14:00 and 15:00 on the synthetic personal Google calendar?",
+      "selected_menu": [
+        "google_calendar.agenda"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "google.calendar.availability"
+      ],
+      "menu": [
+        {
+          "id": "google_calendar.agenda",
+          "wire_name": "hanni__google_calendar__agenda",
+          "fixed_arguments": {
+            "start_date": "2026-10-11",
+            "days": 1,
+            "query": "",
+            "account": "personal"
+          }
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "google.calendar.read",
+      "query": "Read synthetic Google event event-v36 from primary in my personal account.",
+      "selected_menu": [
+        "google_calendar.agenda"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "google.calendar.read"
+      ],
+      "menu": [
+        {
+          "id": "google_calendar.agenda",
+          "wire_name": "hanni__google_calendar__agenda",
+          "fixed_arguments": {
+            "account": "personal",
+            "start_date": "2026-10-10",
+            "days": 1,
+            "query": ""
+          }
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "google.drive.list",
+      "query": "List the five newest files on the synthetic personal Google Drive.",
+      "selected_menu": [
+        "google.drive.search"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "google.drive.list",
+        "google.drive.recent"
+      ],
+      "menu": [
+        {
+          "id": "google.drive.search",
+          "wire_name": "hanni__google__drive__search",
+          "fixed_arguments": {
+            "account": "personal",
+            "limit": 10,
+            "docs_only": false,
+            "query": "five   on the synthetic personal google drive"
+          }
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "google.drive.metadata",
+      "query": "Show the metadata for the synthetic personal Google Drive file doc-v36.",
+      "selected_menu": [
+        "google.drive.search"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "google.drive.metadata"
+      ],
+      "menu": [
+        {
+          "id": "google.drive.search",
+          "wire_name": "hanni__google__drive__search",
+          "fixed_arguments": {
+            "account": "personal",
+            "limit": 10,
+            "docs_only": false,
+            "query": "metadata for the synthetic personal google drive file doc-v36"
+          }
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "google.drive.recent",
+      "query": "Which files were recently modified on the synthetic personal Google Drive?",
+      "selected_menu": [
+        "google.drive.search"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "google.drive.list",
+        "google.drive.recent"
+      ],
+      "menu": [
+        {
+          "id": "google.drive.search",
+          "wire_name": "hanni__google__drive__search",
+          "fixed_arguments": {
+            "account": "personal",
+            "limit": 10,
+            "docs_only": false,
+            "query": "which  were recently modified on the synthetic personal google drive"
+          }
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "google.gmail.recent",
+      "query": "Show the newest five messages from the synthetic personal Google mail account.",
+      "selected_menu": [
+        "email.search"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "google.gmail.recent"
+      ],
+      "menu": [
+        {
+          "id": "email.search",
+          "wire_name": "hanni__email__search",
+          "fixed_arguments": {
+            "plan": {
+              "query_type": "sender",
+              "entity": "the synthetic personal google mail account",
+              "concepts": [],
+              "account": "",
+              "start_time": "2026-07-12T02:52:38.366825-04:00",
+              "end_time": "2026-10-10T02:52:38.366825-04:00",
+              "temporal_source": "default_90_days",
+              "ordering": "newest_first",
+              "limit": 1,
+              "require_body": false,
+              "allow_expand": true,
+              "latest": true,
+              "followup": false,
+              "relation": "from",
+              "metadata_only": true,
+              "view": "messages",
+              "numbered": false,
+              "workflow_intent": ""
+            },
+            "account": "mail"
+          }
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "hanni.stop_state",
+      "query": "Is HANNI's emergency stop active?",
+      "selected_menu": [
+        "hanni.permissions"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "hanni.stop_state"
+      ],
+      "menu": [
+        {
+          "id": "hanni.permissions",
+          "wire_name": "hanni__hanni__permissions",
+          "fixed_arguments": {}
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "process.find",
+      "query": "Find running Python processes and their memory usage.",
+      "selected_menu": [
+        "system.stats"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "process.find"
+      ],
+      "menu": [
+        {
+          "id": "system.stats",
+          "wire_name": "hanni__system__stats",
+          "fixed_arguments": {}
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "process.list",
+      "query": "List the seven processes using the largest share of memory.",
+      "selected_menu": [
+        "process.top_memory",
+        "system.stats"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "process.list"
+      ],
+      "menu": [
+        {
+          "id": "process.top_memory",
+          "wire_name": "hanni__process__top_memory",
+          "fixed_arguments": {}
+        },
+        {
+          "id": "system.stats",
+          "wire_name": "hanni__system__stats",
+          "fixed_arguments": {}
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "process.top_disk_io",
+      "query": "Which five processes currently have the highest disk read and write rates?",
+      "selected_menu": [],
+      "route_status": "blocked",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "process.top_disk_io"
+      ],
+      "menu": [],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "random.pick",
+      "query": "Randomly choose one of cobalt, crimson and jade.",
+      "selected_menu": [],
+      "route_status": "clarification",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "random.pick"
+      ],
+      "menu": [],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "spotify.play_pause",
+      "query": "Toggle playback once in the local Spotify client.",
+      "selected_menu": [
+        "spotify.status"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "spotify.play_pause"
+      ],
+      "menu": [
+        {
+          "id": "spotify.status",
+          "wire_name": "hanni__spotify__status",
+          "fixed_arguments": {}
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "system.stats",
+      "query": "Show measured CPU, RAM, and available GPU usage on this computer.",
+      "selected_menu": [
+        "gpu.memory"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "system.stats"
+      ],
+      "menu": [
+        {
+          "id": "gpu.memory",
+          "wire_name": "hanni__gpu__memory",
+          "fixed_arguments": {}
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "todo.get",
+      "query": "Read the synthetic local task with ID bcc4af375e2c4a18b542c9e95b50a244.",
+      "selected_menu": [
+        "todo.list"
+      ],
+      "route_status": "tools",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "todo.get"
+      ],
+      "menu": [
+        {
+          "id": "todo.list",
+          "wire_name": "hanni__todo__list",
+          "fixed_arguments": {}
+        }
+      ],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    },
+    {
+      "id": "ui.active_window",
+      "query": "What is the foreground window and which process owns it?",
+      "selected_menu": [],
+      "route_status": "clarification",
+      "host_eligible": true,
+      "accepted_equivalents": [
+        "ui.active_window"
+      ],
+      "menu": [],
+      "scope": "Actual original natural-language retrieval and host-policy test, not model inference."
+    }
+  ]
+}

@@ -1,0 +1,725 @@
+{
+  "scope": "Independent controlled protocol/state holdout; not acoustic or vision quality",
+  "final_once": true,
+  "case_count": 60,
+  "aggregate": {
+    "category:acknowledgement": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:barge_in": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:disconnect_state": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:disengage": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:echo": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:filler": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:follow_up": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:mute_state": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:non_wake": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:pump_reconnect": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:screen_acquisition": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:screen_disabled": {
+      "total": 2,
+      "passed": 0,
+      "failed": 2,
+      "harness_errors": 0
+    },
+    "category:screen_expiry": {
+      "total": 2,
+      "passed": 1,
+      "failed": 1,
+      "harness_errors": 0
+    },
+    "category:screen_interpretation": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:screen_invocation": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:screen_missing_model": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:screen_permission": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:screen_selection": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:screen_sensitivity": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:screen_shutdown": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:screen_status": {
+      "total": 2,
+      "passed": 1,
+      "failed": 1,
+      "harness_errors": 0
+    },
+    "category:screen_ui": {
+      "total": 2,
+      "passed": 0,
+      "failed": 2,
+      "harness_errors": 0
+    },
+    "category:shutdown_state": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:stop_before_capture": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:stt_failure": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:stt_format": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:stt_protocol": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:stt_silence": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "category:tts_state": {
+      "total": 1,
+      "passed": 0,
+      "failed": 1,
+      "harness_errors": 0
+    },
+    "category:wake": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "harness_errors": 0
+    },
+    "domain:screen": {
+      "total": 24,
+      "passed": 18,
+      "failed": 6,
+      "harness_errors": 0
+    },
+    "domain:voice": {
+      "total": 36,
+      "passed": 35,
+      "failed": 1,
+      "harness_errors": 0
+    },
+    "overall": {
+      "total": 60,
+      "passed": 53,
+      "failed": 7,
+      "harness_errors": 0
+    }
+  },
+  "strict_failures": [
+    {
+      "id": "C7F-036",
+      "domain": "voice",
+      "category": "tts_state",
+      "failed_fields": [
+        "speaking"
+      ],
+      "harness_error_type": null,
+      "receipt_sha256": "042465b5ba19b9ee663daf15c140a31c5a271ab8aeed482e21cc8c01ccfe9acc"
+    },
+    {
+      "id": "C7F-038",
+      "domain": "screen",
+      "category": "screen_status",
+      "failed_fields": [
+        "enabled",
+        "capture_active"
+      ],
+      "harness_error_type": null,
+      "receipt_sha256": "70a67e7ce8e70dda85c8cead82af716d41bbcfd1c3ab180081aa8a8f9cedbb1b"
+    },
+    {
+      "id": "C7F-050",
+      "domain": "screen",
+      "category": "screen_expiry",
+      "failed_fields": [
+        "capture_active",
+        "context_available"
+      ],
+      "harness_error_type": null,
+      "receipt_sha256": "4a32c20b5c4e8155fe2942b0aec30ffe6c30ad34f26dce5f718bd159a1095c7d"
+    },
+    {
+      "id": "C7F-051",
+      "domain": "screen",
+      "category": "screen_disabled",
+      "failed_fields": [
+        "controls_disabled"
+      ],
+      "harness_error_type": null,
+      "receipt_sha256": "0f56bbcb1182b04bd1655965c42215dc6a2597aece1b1d4a1df0640eda68a74a"
+    },
+    {
+      "id": "C7F-052",
+      "domain": "screen",
+      "category": "screen_disabled",
+      "failed_fields": [
+        "controls_disabled"
+      ],
+      "harness_error_type": null,
+      "receipt_sha256": "047e924a1be6dc122aa5c4d6c2d14a7c0183ab6804f4b78121afedbc833aa01e"
+    },
+    {
+      "id": "C7F-057",
+      "domain": "screen",
+      "category": "screen_ui",
+      "failed_fields": [
+        "controls_disabled"
+      ],
+      "harness_error_type": null,
+      "receipt_sha256": "52d6e313882c1228165b3f834359e5a496dddf5849f1786ec733f720d4a6c1de"
+    },
+    {
+      "id": "C7F-058",
+      "domain": "screen",
+      "category": "screen_ui",
+      "failed_fields": [
+        "controls_disabled"
+      ],
+      "harness_error_type": null,
+      "receipt_sha256": "5380e6771d14164531a32133e522ca65cd358d52f2ce9c315446c7074038a176"
+    }
+  ],
+  "closed_sha256": "e3f29fc248c1feffdb4d321ba714eee218483c8b9b03e81fa3b150de664e455f",
+  "grades_sha256": "53018b4469bb53145423c568081df97d780c8df53a3f009d39f73a11c5b8fafc",
+  "raw_receipts": [
+    {
+      "id": "C7F-001",
+      "path": "C7F-001.json",
+      "sha256": "84fd4ae1c2a2b1b6498d618507f17cb5882f8f6ec0a74dd737f7ba28e329c7b5"
+    },
+    {
+      "id": "C7F-002",
+      "path": "C7F-002.json",
+      "sha256": "1694a8d3cba4dd19156ab1cecd0216b43115c8ff8c67f54de3b7ffd55af74973"
+    },
+    {
+      "id": "C7F-003",
+      "path": "C7F-003.json",
+      "sha256": "40b8e36281349d9597207147f7fdea5d46e6f57abba53fae854a8972cb4fb855"
+    },
+    {
+      "id": "C7F-004",
+      "path": "C7F-004.json",
+      "sha256": "054c31d67f890c7467a7194d81971bb5db815e38c09dd867fce10bc3f74382b7"
+    },
+    {
+      "id": "C7F-005",
+      "path": "C7F-005.json",
+      "sha256": "ff00a76687af061cd0504aef98276f6a3eeb1179b04e8ea5437669adb7a4e6c8"
+    },
+    {
+      "id": "C7F-006",
+      "path": "C7F-006.json",
+      "sha256": "665514b1a3797359ac83b2500dcf2ffc4c9d95a0aebd98eecf6bda9a525d6aef"
+    },
+    {
+      "id": "C7F-007",
+      "path": "C7F-007.json",
+      "sha256": "6671bc4d9a7e266672f95b0254106eebe3bcb38328bad62eaeb4c16fb9851a94"
+    },
+    {
+      "id": "C7F-008",
+      "path": "C7F-008.json",
+      "sha256": "5cb73168b593f37ee864cc820d2c1a5e2859c53e12458e291e3093a01908aa5e"
+    },
+    {
+      "id": "C7F-009",
+      "path": "C7F-009.json",
+      "sha256": "81adbac677646cd0e30fb877ff18713845f62d091f965e70028fdf1166eebca8"
+    },
+    {
+      "id": "C7F-010",
+      "path": "C7F-010.json",
+      "sha256": "03daad7ffff3c6fd60bbedcf6336aae7570c0aaa22a18b95de9c494cce16d013"
+    },
+    {
+      "id": "C7F-011",
+      "path": "C7F-011.json",
+      "sha256": "9c9b5b03d480c37dbbf05b620d9cc08e2d944b90c95028cc78cc53a3ffe2bc3a"
+    },
+    {
+      "id": "C7F-012",
+      "path": "C7F-012.json",
+      "sha256": "fcf66e36337f759f761947ae4a933b9f96a119c7869cb21bfe00152e601adf48"
+    },
+    {
+      "id": "C7F-013",
+      "path": "C7F-013.json",
+      "sha256": "a3a3a44e88bb66e1c62b3a8da3ae5ad9ebc5e5813392ca3224dfcb81afcfc6a1"
+    },
+    {
+      "id": "C7F-014",
+      "path": "C7F-014.json",
+      "sha256": "da7f59db1c90378b92fba79efd6b8e65dcc76117dcc5e798116159ad083c3cdb"
+    },
+    {
+      "id": "C7F-015",
+      "path": "C7F-015.json",
+      "sha256": "b9fb3e9614eb630e1ca5fc09d70d73aced7c56c7dd951c0966b3d47128cf152b"
+    },
+    {
+      "id": "C7F-016",
+      "path": "C7F-016.json",
+      "sha256": "a3cce0ad6efacd3b22b69a5402da42e3c4b508d14f0cf2c3f8a28fb40232b441"
+    },
+    {
+      "id": "C7F-017",
+      "path": "C7F-017.json",
+      "sha256": "81015efebd0f9e3f9a408c7f91a6d49dcef2b32f9e1eb976ea054f22b5d8ab72"
+    },
+    {
+      "id": "C7F-018",
+      "path": "C7F-018.json",
+      "sha256": "ef75f3997d0d1e4c447aee4a10a45205f5d95b7510235beee5de92787329bde1"
+    },
+    {
+      "id": "C7F-019",
+      "path": "C7F-019.json",
+      "sha256": "c66cac5f4e9664f234145ebc01525251d581101056651ec174db890e438bf998"
+    },
+    {
+      "id": "C7F-020",
+      "path": "C7F-020.json",
+      "sha256": "67a29dce93efaccc49ea739f522afcf075aed1960d5c5fbebe767f64980dcc56"
+    },
+    {
+      "id": "C7F-021",
+      "path": "C7F-021.json",
+      "sha256": "9a86b6f93aa73854d492bd4ea9338f4ebb060800b68a95772179332c859ad4c9"
+    },
+    {
+      "id": "C7F-022",
+      "path": "C7F-022.json",
+      "sha256": "0603c512343c649c0077eee11b9e6f01de5486720c85306c3ca9a4244fd420cb"
+    },
+    {
+      "id": "C7F-023",
+      "path": "C7F-023.json",
+      "sha256": "718b332ad30d4a9f3460489ad5372ac3d3be8b1bbe51f963969b51c23b19c733"
+    },
+    {
+      "id": "C7F-024",
+      "path": "C7F-024.json",
+      "sha256": "4402ed90e40598b3f3049de84e8666f92ac251d9f1d3b7ca212d14fd1ad300ea"
+    },
+    {
+      "id": "C7F-025",
+      "path": "C7F-025.json",
+      "sha256": "09bb63c3a7395506ceb90a8a7dae92866a30f9c0e0f79360565f1e129aa2f5f5"
+    },
+    {
+      "id": "C7F-026",
+      "path": "C7F-026.json",
+      "sha256": "c889dfd9bf7ab7d9ae025860b852466834208672e5c1546d6bcd482d34492f7a"
+    },
+    {
+      "id": "C7F-027",
+      "path": "C7F-027.json",
+      "sha256": "d2f6baebf929513dc9a102fddf944cd75dc6ea59745ac92f19125bbaef8139f4"
+    },
+    {
+      "id": "C7F-028",
+      "path": "C7F-028.json",
+      "sha256": "031b88277ed4ba6645c7c7242918029e9eddf031f19f684908ebd939b3739182"
+    },
+    {
+      "id": "C7F-029",
+      "path": "C7F-029.json",
+      "sha256": "b16eba6ab8f14b83e0984ccd6c511a080565017d74e5ed030bfe333814882365"
+    },
+    {
+      "id": "C7F-030",
+      "path": "C7F-030.json",
+      "sha256": "0f97225350af9447edf475d8ab7c44a09258748d80712e2383b92325baca8240"
+    },
+    {
+      "id": "C7F-031",
+      "path": "C7F-031.json",
+      "sha256": "c2c1124af43c3a4490ac09a9879c03b609ab5c7301fe8d310c23f00dab800cb1"
+    },
+    {
+      "id": "C7F-032",
+      "path": "C7F-032.json",
+      "sha256": "99decffd5a9f2b74258937f0b0e9a8b038b6ecd1183b183d15ecdf407de95d13"
+    },
+    {
+      "id": "C7F-033",
+      "path": "C7F-033.json",
+      "sha256": "343f442408efe4b191b1c9aff22b328bb17a2f763377a8af17030d715f592da1"
+    },
+    {
+      "id": "C7F-034",
+      "path": "C7F-034.json",
+      "sha256": "5e8b55e1c8fea6b3a8c756d07b5be144d75ba0736155ec98f7bb58951251d5dc"
+    },
+    {
+      "id": "C7F-035",
+      "path": "C7F-035.json",
+      "sha256": "ff41d1b6e2ee50cb5f8ffa662e086fced5bee6b2ecc5c861b34cf857ec05f686"
+    },
+    {
+      "id": "C7F-036",
+      "path": "C7F-036.json",
+      "sha256": "042465b5ba19b9ee663daf15c140a31c5a271ab8aeed482e21cc8c01ccfe9acc"
+    },
+    {
+      "id": "C7F-037",
+      "path": "C7F-037.json",
+      "sha256": "6a8ca65441cba4a319bc40e32cd04082661b33b3ec75c31e73d2cbed293b76a7"
+    },
+    {
+      "id": "C7F-038",
+      "path": "C7F-038.json",
+      "sha256": "70a67e7ce8e70dda85c8cead82af716d41bbcfd1c3ab180081aa8a8f9cedbb1b"
+    },
+    {
+      "id": "C7F-039",
+      "path": "C7F-039.json",
+      "sha256": "3919864ef72fb42367e1ff00bbb342b79c0716a800d49facb1d752dd8b846ac9"
+    },
+    {
+      "id": "C7F-040",
+      "path": "C7F-040.json",
+      "sha256": "1448acc2714f164488b15f500c55794aa577c07172e26d6ef1779b7c7545a6d1"
+    },
+    {
+      "id": "C7F-041",
+      "path": "C7F-041.json",
+      "sha256": "d7754ac7ff5cb674c2c07018f0d9d471a9945e15ffecc095739035cfe0bec59b"
+    },
+    {
+      "id": "C7F-042",
+      "path": "C7F-042.json",
+      "sha256": "ed657b000dab1199134a64146f913d2b4ba4abdd7bd646a23da88355b0974045"
+    },
+    {
+      "id": "C7F-043",
+      "path": "C7F-043.json",
+      "sha256": "d9c3ff7705568b9d30e2c1709e0a3686d037538e5f1a41afe204af2ce245746c"
+    },
+    {
+      "id": "C7F-044",
+      "path": "C7F-044.json",
+      "sha256": "84cf4c27ae72334f67bcf390c470d03ea4c3e634fdc01fa1bb5dcf8b3e9d6446"
+    },
+    {
+      "id": "C7F-045",
+      "path": "C7F-045.json",
+      "sha256": "e65c88f0827973115d10e0b5a42082f17297a9f8277ab21cc6aa74237e78ff89"
+    },
+    {
+      "id": "C7F-046",
+      "path": "C7F-046.json",
+      "sha256": "ca971273eb0a465c8434471db098145d2012a257d5cb0608c93537478c8ed4c3"
+    },
+    {
+      "id": "C7F-047",
+      "path": "C7F-047.json",
+      "sha256": "39163fd3a4bf3beebc28cbb51dcb0dea7e51e304e1d207b42df21691ee7b5a26"
+    },
+    {
+      "id": "C7F-048",
+      "path": "C7F-048.json",
+      "sha256": "106d53a68d1e1cadc519fa90886ffdcf47cb07ed71f1b0a0f69db31900b11428"
+    },
+    {
+      "id": "C7F-049",
+      "path": "C7F-049.json",
+      "sha256": "ad0009b3a2e589f3616520c78d71509f27cb8bc705ebc3c7184aec939a7f933d"
+    },
+    {
+      "id": "C7F-050",
+      "path": "C7F-050.json",
+      "sha256": "4a32c20b5c4e8155fe2942b0aec30ffe6c30ad34f26dce5f718bd159a1095c7d"
+    },
+    {
+      "id": "C7F-051",
+      "path": "C7F-051.json",
+      "sha256": "0f56bbcb1182b04bd1655965c42215dc6a2597aece1b1d4a1df0640eda68a74a"
+    },
+    {
+      "id": "C7F-052",
+      "path": "C7F-052.json",
+      "sha256": "047e924a1be6dc122aa5c4d6c2d14a7c0183ab6804f4b78121afedbc833aa01e"
+    },
+    {
+      "id": "C7F-053",
+      "path": "C7F-053.json",
+      "sha256": "908695392a3bf1d5a9bf787473b88438d800454900130ff5fa644edb790c2c2d"
+    },
+    {
+      "id": "C7F-054",
+      "path": "C7F-054.json",
+      "sha256": "6923fde027647634123b15b1ca145fb476e1c0e3f65ee725a69c9c4d3d1825b2"
+    },
+    {
+      "id": "C7F-055",
+      "path": "C7F-055.json",
+      "sha256": "1b10673f945f903f956ecbee3bdd4c7f06be8499b6e0619c16bc91290fc080b5"
+    },
+    {
+      "id": "C7F-056",
+      "path": "C7F-056.json",
+      "sha256": "5251539865124730511fba3eeeaac2f6335db768a5b8da3bb868b979fb820ce8"
+    },
+    {
+      "id": "C7F-057",
+      "path": "C7F-057.json",
+      "sha256": "52d6e313882c1228165b3f834359e5a496dddf5849f1786ec733f720d4a6c1de"
+    },
+    {
+      "id": "C7F-058",
+      "path": "C7F-058.json",
+      "sha256": "5380e6771d14164531a32133e522ca65cd358d52f2ce9c315446c7074038a176"
+    },
+    {
+      "id": "C7F-059",
+      "path": "C7F-059.json",
+      "sha256": "a4705513e6fc1e10b9d2e037f0b5c73d8df620fcb89c41c2f5a790eafd066adf"
+    },
+    {
+      "id": "C7F-060",
+      "path": "C7F-060.json",
+      "sha256": "d343ce1cee4f0c095f31b290ed710c772b9997c825255750121a064f7b7d417d"
+    }
+  ],
+  "private_seal": {
+    "schema_version": 1,
+    "created_at": "2026-10-10T11:36:52.273208+00:00",
+    "case_count": 60,
+    "domain_counts": {
+      "voice": 36,
+      "screen": 24
+    },
+    "category_counts": {
+      "wake": 3,
+      "non_wake": 3,
+      "follow_up": 3,
+      "disengage": 3,
+      "filler": 3,
+      "acknowledgement": 3,
+      "barge_in": 3,
+      "echo": 3,
+      "stt_format": 3,
+      "stt_silence": 1,
+      "stt_protocol": 1,
+      "stt_failure": 1,
+      "stop_before_capture": 1,
+      "pump_reconnect": 1,
+      "disconnect_state": 1,
+      "shutdown_state": 1,
+      "mute_state": 1,
+      "tts_state": 1,
+      "screen_status": 2,
+      "screen_permission": 2,
+      "screen_selection": 2,
+      "screen_acquisition": 2,
+      "screen_invocation": 2,
+      "screen_interpretation": 2,
+      "screen_expiry": 2,
+      "screen_disabled": 2,
+      "screen_missing_model": 2,
+      "screen_sensitivity": 2,
+      "screen_ui": 2,
+      "screen_shutdown": 2
+    },
+    "input_sha256": "ae7b9c345fdc4981b9fe6cf3f30c5dc04d6e74ac5804e213ae433e5cbff839d3",
+    "oracle_sha256": "6e596b247d11e44ef6013d95a7f9ada0a755033cf2bf85fdb34eff241e398022",
+    "protocol_sha256": "3c6ff233cd01060e69d4475fb7a9056924d88005167651678dfd5f307d7f7490",
+    "author_sha256": "890d1a89c429c4160227816c6fc4651662359e53e8da656edcb41f4939a51e6e",
+    "final_claimed": false,
+    "prompts_and_answers_private": true,
+    "original_implementation_scope": "Controlled protocol/state checks; no physical or actual-model success claim"
+  },
+  "source_before": {
+    "files": 592,
+    "manifest_sha256": "bf81ff201ddeb16f7b9fd281dc7e124190042031308fe3b6c8509630502ceffa"
+  },
+  "source_after": {
+    "files": 592,
+    "manifest_sha256": "bf81ff201ddeb16f7b9fd281dc7e124190042031308fe3b6c8509630502ceffa"
+  },
+  "raw_elapsed_scope": "Controlled adapter/case duration; not acoustic/model/vision latency",
+  "duration_seconds": 7.780999999959022,
+  "actual_asr_calls": 0,
+  "speaker_playbacks": 0,
+  "physical_audio_capture_calls": 0,
+  "actual_vision_inference_calls": 0,
+  "physical_screen_capture_calls": 0,
+  "physical_or_model_metrics": {
+    "wake_precision": null,
+    "wake_recall": null,
+    "word_error_rate": null,
+    "end_of_speech_latency_ms": null,
+    "first_audible_latency_ms": null,
+    "acoustic_interruption_latency_ms": null,
+    "vision_accuracy": null,
+    "capture_to_response_latency_ms": null
+  },
+  "limitations": [
+    "Matched software predicates do not imply microphone, speaker, room-noise, VAD/STT or multimodal model success.",
+    "Screen implementation and retention enforcement are absent; original disabled projection is audited.",
+    "Capability and model labels in controlled eligibility rows are not real hardware/model evidence.",
+    "Frontend final projection uses ScreenAwarenessPage SSR; actual shipped pages have separate seven-case browser evidence.",
+    "Synthetic profile/surface/image labels can be metadata only; string model lookup is catalog-only, not live readiness.",
+    "Strict oracles are immutable. Manual explanations never promote failed cases."
+  ],
+  "manual_classifications": {
+    "separate_from_immutable_grades": true,
+    "cases": [
+      {
+        "id": "C7F-036",
+        "category": "tts_state",
+        "classification": "known_logical_tts_state_limitation",
+        "grade_promoted": false
+      },
+      {
+        "id": "C7F-038",
+        "category": "screen_status",
+        "classification": "prospective_retention_setting_contract_conflict",
+        "grade_promoted": false
+      },
+      {
+        "id": "C7F-050",
+        "category": "screen_expiry",
+        "classification": "prospective_retention_setting_contract_conflict",
+        "grade_promoted": false
+      },
+      {
+        "id": "C7F-051",
+        "category": "screen_disabled",
+        "classification": "overbroad_disabled_button_oracle",
+        "grade_promoted": false
+      },
+      {
+        "id": "C7F-052",
+        "category": "screen_disabled",
+        "classification": "overbroad_disabled_button_oracle",
+        "grade_promoted": false
+      },
+      {
+        "id": "C7F-057",
+        "category": "screen_ui",
+        "classification": "overbroad_disabled_button_oracle",
+        "grade_promoted": false
+      },
+      {
+        "id": "C7F-058",
+        "category": "screen_ui",
+        "classification": "overbroad_disabled_button_oracle",
+        "grade_promoted": false
+      }
+    ],
+    "counts": {
+      "known_logical_tts_state_limitation": 1,
+      "prospective_retention_setting_contract_conflict": 2,
+      "overbroad_disabled_button_oracle": 4
+    }
+  },
+  "private_run_directory": "data/campaign7-verifier/final-once",
+  "aborted_precheck": {
+    "attempted_cases": 0,
+    "claim_consumed": false,
+    "path": "data/campaign7-verifier/final-precheck-blocked.json",
+    "sha256": "668cb744ae389f8d6f80ea2c6c6d547d043e214021d15badd443685d8c479427"
+  },
+  "actual_perception_eligible_final_cases": 0,
+  "grading_note": "53/60 is retained strict software-contract agreement, not adjusted for authoring conflicts and not acoustic/vision accuracy"
+}

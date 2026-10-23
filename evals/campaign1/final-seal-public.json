@@ -1,0 +1,53 @@
+{
+  "baseline": "227a628302fca3b425d453e980b838529dbed20f",
+  "sealed_at": 1791603226.262349,
+  "protocol_sha256": "b96221d8fe027ede7cfb1c75c059e50fa664b918cc4a4f092f08855a21174610",
+  "case_count": 256,
+  "turn_count": 273,
+  "multi_turn_cases": 16,
+  "task_strata": {
+    "system_process": 11,
+    "gpu_model": 11,
+    "disk_storage": 10,
+    "network": 11,
+    "power_battery": 10,
+    "security_status": 10,
+    "devices_display": 10,
+    "windows_apps": 11,
+    "file_inspection": 12,
+    "file_discovery": 11,
+    "isolated_file_actions": 11,
+    "archive_git": 10,
+    "calculation_text": 11,
+    "clock_timezone": 10,
+    "notes": 11,
+    "local_todos": 11,
+    "spotify_media": 11,
+    "environment_browser": 10,
+    "calendar": 11,
+    "drive_documents": 11,
+    "email": 11,
+    "google_tasks_accounts": 10,
+    "no_tool_ambiguity": 11,
+    "permission_adversarial": 10
+  },
+  "difficulty": {
+    "easy": 72,
+    "medium": 96,
+    "hard": 88
+  },
+  "registered_base_tools": 172,
+  "covered_base_tools": 129,
+  "no_model_or_route_consulted": true,
+  "no_existing_holdout_opened": true,
+  "private_oracles_not_shared": true,
+  "execution_bounds": {
+    "temperature": 0,
+    "top_p": 1,
+    "max_tokens": 256,
+    "max_tool_rounds": 3,
+    "max_inflight": 1,
+    "fallbacks": 0
+  },
+  "hashes_only_novelty_check_pending": true
+}

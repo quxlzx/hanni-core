@@ -1,0 +1,18 @@
+.compute-section { border-top: 1px solid var(--line, #ddd); margin-top: 28px; padding-top: 22px; }
+.compute-heading, .compute-worker > header, .compute-job > header { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.compute-heading h2 { margin: 0; font-size: 20px; font-weight: 600; }
+.compute-heading p, .compute-worker header p { margin: 5px 0 0; color: var(--muted, #666); font-size: 12px; }
+.compute-worker, .compute-job { padding: 20px 0; border-bottom: 1px solid var(--line, #ddd); }
+.compute-worker h3 { font-size: 16px; margin: 0; }
+.compute-worker > header > strong, .compute-job header span { font-size: 12px; text-transform: capitalize; }
+.compute-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px 24px; margin: 20px 0; }
+.compute-fields dt { color: var(--muted, #666); font-size: 12px; margin-bottom: 6px; }
+.compute-fields dd { margin: 0; font-size: 13px; overflow-wrap: anywhere; }
+.compute-worker details, .compute-job details { font-size: 12px; }
+.compute-controls { display: flex; gap: 12px; align-items: center; margin-top: 17px; flex-wrap: wrap; }
+.compute-controls label { font-size: 12px; display: flex; gap: 10px; align-items: center; }
+.compute-controls select { padding: 5px 9px; }
+.compute-empty { padding: 24px 0 6px; max-width: 620px; }
+.compute-empty h3 { font-size: 15px; font-weight: 500; }
+.compute-empty p { color: var(--muted, #666); line-height: 1.6; font-size: 13px; }
+@media(max-width: 850px) { .compute-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

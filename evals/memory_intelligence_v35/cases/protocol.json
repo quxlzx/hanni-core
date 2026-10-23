@@ -1,0 +1,18 @@
+{
+  "version": "v35-independent-1",
+  "authored_before_candidate_results": true,
+  "labels_reviewed_by": "Independent verification agent (synthetic semantic review, not external human panel)",
+  "groups": 15,
+  "cases": 240,
+  "splits": {
+    "development": 60,
+    "validation": 90,
+    "holdout": 90
+  },
+  "primary_accuracy": "Unmodified binary original oracle per evaluated feature; unavailable features reported separately",
+  "retrieval": "Recall@5 against relevant memory indices; negative retrieval scored separately; additional returned relevant context allowed only source-grounded and project-scoped",
+  "importance": "Coarse prospectively labeled minimum utility bands, not confidence calibration; no autonomous persistence gate",
+  "real_model": "C advisory model quality NOT TESTED if genuine authenticated installed LAYA unavailable; mocks never count as model quality",
+  "latency": "perf_counter timings on same isolated synthetic fixture path; single-run descriptive not speedup evidence",
+  "holdout_policy": "No input/oracle/evaluator sharing with implementation workers; only aggregate outcomes released after frozen candidate"
+}

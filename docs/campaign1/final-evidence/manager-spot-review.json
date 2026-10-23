@@ -1,0 +1,46 @@
+{
+  "scope": "Root independently inspected five complete postcollection queries, replies and receipts across pass/retrieval/decision/execution/synthesis; no inference retry or changed grade",
+  "all_five_agree": true,
+  "results": [
+    {
+      "case_id": "c1-final-001",
+      "turn": 0,
+      "raw_sha256": "4083e1dcfcff25a4bbced64a4bd7266b307bafabd3a17e2d2192239b2b1c0090",
+      "review_grounding": "PASS",
+      "primary": null,
+      "manager_manual_agreement": true
+    },
+    {
+      "case_id": "c1-final-004",
+      "turn": 0,
+      "raw_sha256": "8139b99e44a14852a9d5853fdf1b6e6c92c1955f0dd6b65e6183b14189bbe97f",
+      "review_grounding": "FAIL",
+      "primary": "response_synthesis",
+      "manager_manual_agreement": true
+    },
+    {
+      "case_id": "c1-final-007",
+      "turn": 0,
+      "raw_sha256": "c560118bbc4286e0673cdd8a057ec4967dd18d290af21d5664e2564edab18ad1",
+      "review_grounding": "FAIL",
+      "primary": "model_decision",
+      "manager_manual_agreement": true
+    },
+    {
+      "case_id": "c1-final-009",
+      "turn": 0,
+      "raw_sha256": "ea046eeffd90413d02fe6bd9fcd89600af6de0ce8191855d6cd4bc5ae0fd7304",
+      "review_grounding": "PASS",
+      "primary": "retrieval",
+      "manager_manual_agreement": true
+    },
+    {
+      "case_id": "c1-final-013",
+      "turn": 0,
+      "raw_sha256": "4851ccd8fc29ab2e16f96d9db9474fa26b3eb382f9bef1f0882a093e34952748",
+      "review_grounding": "NOT_APPLICABLE",
+      "primary": "execution",
+      "manager_manual_agreement": true
+    }
+  ]
+}

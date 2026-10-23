@@ -1,0 +1,2044 @@
+{
+  "schema_version": 1,
+  "status": "FINAL_ONCE_ONLY_COMPLETE; QUALITY_ACCEPTANCE_NOT_ACHIEVED",
+  "scope": "Independent synthetic retrieval/store holdout. No generated model answer or actual LAYA inference.",
+  "cases": 120,
+  "category_count": 20,
+  "arms": [
+    "legacy",
+    "context"
+  ],
+  "executed_arms": 240,
+  "fixture_level_execution_errors": 0,
+  "private_sealed_artifact_hashes": {
+    "cases.jsonl": "5464dd334fac7b8d8811fbf02c5ba25384c7ca794b075b91341314f956814d53",
+    "oracles.jsonl": "9e69a5098a583c5da6ea501a8f6deb0e1ac3b815ee5cefd916b266f356a2d8f6",
+    "protocol.json": "225638d97d1a0b1c74139c87f16320bc9a2a26eb55caa897381b0376f6d2d7d2",
+    "author.py": "d4fe290f244ba9c9995ecabe96d06179a48e8d758f707deaba7e4905a78f875c"
+  },
+  "source_archive_sha256": "6d6f5e6861852222e831a936824355ed1bd301e0ca2127a169972fa90f44def9",
+  "source_files": 223,
+  "source_integrity": {
+    "current_mismatches": 0,
+    "archive_mismatches": 0,
+    "receipt_mismatches": 0,
+    "sealed_inputs_unchanged": true
+  },
+  "aggregate": {
+    "legacy": {
+      "cases": 120,
+      "supported_checks_pass": 58,
+      "status_counts": {
+        "FAIL": 62,
+        "PARTIAL": 58
+      },
+      "recall_at_5": {
+        "hits": 42,
+        "relevant": 94,
+        "micro": 0.44680851063829785,
+        "macro": 0.44565217391304346,
+        "positive_cases": 92
+      },
+      "precision_returned_at_5": {
+        "hits": 42,
+        "returned": 52,
+        "micro": 0.8076923076923077,
+        "empty_positive_cases": 51
+      },
+      "negative_abstention": {
+        "correct": 25,
+        "eligible": 28
+      },
+      "project_accuracy": {
+        "correct": 12,
+        "eligible": 18
+      },
+      "unauthorized_retrieval_mutations": 0,
+      "latency_ms": {
+        "n": 120,
+        "p50": 1.2633000151254237,
+        "p95": 1.5025000320747495,
+        "boundary": "original retrieval only; fixture/project diagnostics excluded"
+      },
+      "actual_model_response_accuracy": null,
+      "unsupported_response_cases": 120
+    },
+    "context": {
+      "cases": 120,
+      "supported_checks_pass": 71,
+      "status_counts": {
+        "FAIL": 49,
+        "PARTIAL": 71
+      },
+      "recall_at_5": {
+        "hits": 57,
+        "relevant": 94,
+        "micro": 0.6063829787234043,
+        "macro": 0.6086956521739131,
+        "positive_cases": 92
+      },
+      "precision_returned_at_5": {
+        "hits": 57,
+        "returned": 68,
+        "micro": 0.8382352941176471,
+        "empty_positive_cases": 36
+      },
+      "negative_abstention": {
+        "correct": 24,
+        "eligible": 28
+      },
+      "project_accuracy": {
+        "correct": 12,
+        "eligible": 18
+      },
+      "unauthorized_retrieval_mutations": 0,
+      "latency_ms": {
+        "n": 120,
+        "p50": 1.264000020455569,
+        "p95": 1.5170000260695815,
+        "boundary": "original retrieval only; fixture/project diagnostics excluded"
+      },
+      "actual_model_response_accuracy": null,
+      "unsupported_response_cases": 120
+    }
+  },
+  "categories": {
+    "legacy": {
+      "explicit_user_preferences": {
+        "cases": 6,
+        "supported_checks_pass": 4,
+        "status_counts": {
+          "FAIL": 2,
+          "PARTIAL": 4
+        },
+        "recall_at_5": {
+          "hits": 4,
+          "relevant": 6,
+          "micro": 0.6666666666666666,
+          "macro": 0.6666666666666666,
+          "positive_cases": 6
+        },
+        "precision_returned_at_5": {
+          "hits": 4,
+          "returned": 4,
+          "micro": 1.0,
+          "empty_positive_cases": 2
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.3722999719902873,
+          "p95": 1.4421999221667647,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "temporary_preferences": {
+        "cases": 6,
+        "supported_checks_pass": 3,
+        "status_counts": {
+          "PARTIAL": 3,
+          "FAIL": 3
+        },
+        "recall_at_5": {
+          "hits": 3,
+          "relevant": 5,
+          "micro": 0.6,
+          "macro": 0.6,
+          "positive_cases": 5
+        },
+        "precision_returned_at_5": {
+          "hits": 3,
+          "returned": 3,
+          "micro": 1.0,
+          "empty_positive_cases": 2
+        },
+        "negative_abstention": {
+          "correct": 1,
+          "eligible": 1
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.296799979172647,
+          "p95": 1.522699953056872,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "important_project_decisions": {
+        "cases": 6,
+        "supported_checks_pass": 5,
+        "status_counts": {
+          "PARTIAL": 5,
+          "FAIL": 1
+        },
+        "recall_at_5": {
+          "hits": 5,
+          "relevant": 6,
+          "micro": 0.8333333333333334,
+          "macro": 0.8333333333333334,
+          "positive_cases": 6
+        },
+        "precision_returned_at_5": {
+          "hits": 5,
+          "returned": 5,
+          "micro": 1.0,
+          "empty_positive_cases": 1
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.3649500324390829,
+          "p95": 1.6734999371692538,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "tentative_plans_vs_confirmed_actions": {
+        "cases": 6,
+        "supported_checks_pass": 2,
+        "status_counts": {
+          "FAIL": 4,
+          "PARTIAL": 2
+        },
+        "recall_at_5": {
+          "hits": 3,
+          "relevant": 5,
+          "micro": 0.6,
+          "macro": 0.6,
+          "positive_cases": 5
+        },
+        "precision_returned_at_5": {
+          "hits": 3,
+          "returned": 5,
+          "micro": 0.6,
+          "empty_positive_cases": 2
+        },
+        "negative_abstention": {
+          "correct": 1,
+          "eligible": 1
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.3279499835334718,
+          "p95": 1.6723000444471836,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "project_identification": {
+        "cases": 6,
+        "supported_checks_pass": 4,
+        "status_counts": {
+          "PARTIAL": 4,
+          "FAIL": 2
+        },
+        "recall_at_5": {
+          "hits": 3,
+          "relevant": 5,
+          "micro": 0.6,
+          "macro": 0.6,
+          "positive_cases": 5
+        },
+        "precision_returned_at_5": {
+          "hits": 3,
+          "returned": 3,
+          "micro": 1.0,
+          "empty_positive_cases": 2
+        },
+        "negative_abstention": {
+          "correct": 1,
+          "eligible": 1
+        },
+        "project_accuracy": {
+          "correct": 6,
+          "eligible": 6
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.2349499738775194,
+          "p95": 1.71849993057549,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "similarly_named_projects": {
+        "cases": 6,
+        "supported_checks_pass": 1,
+        "status_counts": {
+          "FAIL": 5,
+          "PARTIAL": 1
+        },
+        "recall_at_5": {
+          "hits": 3,
+          "relevant": 3,
+          "micro": 1.0,
+          "macro": 1.0,
+          "positive_cases": 3
+        },
+        "precision_returned_at_5": {
+          "hits": 3,
+          "returned": 9,
+          "micro": 0.3333333333333333,
+          "empty_positive_cases": 0
+        },
+        "negative_abstention": {
+          "correct": 1,
+          "eligible": 3
+        },
+        "project_accuracy": {
+          "correct": 4,
+          "eligible": 6
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.4128999901004136,
+          "p95": 1.5005999011918902,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "contradictory_information": {
+        "cases": 6,
+        "supported_checks_pass": 1,
+        "status_counts": {
+          "FAIL": 5,
+          "PARTIAL": 1
+        },
+        "recall_at_5": {
+          "hits": 2,
+          "relevant": 8,
+          "micro": 0.25,
+          "macro": 0.16666666666666666,
+          "positive_cases": 6
+        },
+        "precision_returned_at_5": {
+          "hits": 2,
+          "returned": 2,
+          "micro": 1.0,
+          "empty_positive_cases": 5
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.3003000058233738,
+          "p95": 1.694299979135394,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "outdated_information": {
+        "cases": 6,
+        "supported_checks_pass": 2,
+        "status_counts": {
+          "FAIL": 4,
+          "PARTIAL": 2
+        },
+        "recall_at_5": {
+          "hits": 2,
+          "relevant": 6,
+          "micro": 0.3333333333333333,
+          "macro": 0.3333333333333333,
+          "positive_cases": 6
+        },
+        "precision_returned_at_5": {
+          "hits": 2,
+          "returned": 2,
+          "micro": 1.0,
+          "empty_positive_cases": 4
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.2202999787405133,
+          "p95": 1.319600036367774,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "corrections": {
+        "cases": 6,
+        "supported_checks_pass": 4,
+        "status_counts": {
+          "PARTIAL": 4,
+          "FAIL": 2
+        },
+        "recall_at_5": {
+          "hits": 4,
+          "relevant": 6,
+          "micro": 0.6666666666666666,
+          "macro": 0.6666666666666666,
+          "positive_cases": 6
+        },
+        "precision_returned_at_5": {
+          "hits": 4,
+          "returned": 4,
+          "micro": 1.0,
+          "empty_positive_cases": 2
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.247550011612475,
+          "p95": 1.5486000338569283,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "memory_deletion": {
+        "cases": 6,
+        "supported_checks_pass": 4,
+        "status_counts": {
+          "PARTIAL": 4,
+          "FAIL": 2
+        },
+        "recall_at_5": {
+          "hits": 0,
+          "relevant": 2,
+          "micro": 0.0,
+          "macro": 0.0,
+          "positive_cases": 2
+        },
+        "precision_returned_at_5": {
+          "hits": 0,
+          "returned": 0,
+          "micro": null,
+          "empty_positive_cases": 2
+        },
+        "negative_abstention": {
+          "correct": 4,
+          "eligible": 4
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.1067499872297049,
+          "p95": 1.2060999870300293,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "cross_session_continuity": {
+        "cases": 6,
+        "supported_checks_pass": 1,
+        "status_counts": {
+          "PARTIAL": 1,
+          "FAIL": 5
+        },
+        "recall_at_5": {
+          "hits": 1,
+          "relevant": 6,
+          "micro": 0.16666666666666666,
+          "macro": 0.16666666666666666,
+          "positive_cases": 6
+        },
+        "precision_returned_at_5": {
+          "hits": 1,
+          "returned": 1,
+          "micro": 1.0,
+          "empty_positive_cases": 5
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.1936500086449087,
+          "p95": 1.2697000056505203,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "source_attribution": {
+        "cases": 6,
+        "supported_checks_pass": 3,
+        "status_counts": {
+          "PARTIAL": 3,
+          "FAIL": 3
+        },
+        "recall_at_5": {
+          "hits": 2,
+          "relevant": 5,
+          "micro": 0.4,
+          "macro": 0.4,
+          "positive_cases": 5
+        },
+        "precision_returned_at_5": {
+          "hits": 2,
+          "returned": 2,
+          "micro": 1.0,
+          "empty_positive_cases": 3
+        },
+        "negative_abstention": {
+          "correct": 1,
+          "eligible": 1
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.2564000207930803,
+          "p95": 1.4187999768182635,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "unrelated_memory_exclusion": {
+        "cases": 6,
+        "supported_checks_pass": 5,
+        "status_counts": {
+          "PARTIAL": 5,
+          "FAIL": 1
+        },
+        "recall_at_5": {
+          "hits": 3,
+          "relevant": 4,
+          "micro": 0.75,
+          "macro": 0.75,
+          "positive_cases": 4
+        },
+        "precision_returned_at_5": {
+          "hits": 3,
+          "returned": 3,
+          "micro": 1.0,
+          "empty_positive_cases": 1
+        },
+        "negative_abstention": {
+          "correct": 2,
+          "eligible": 2
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.3080000644549727,
+          "p95": 1.4643999747931957,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "ambiguous_personal_references": {
+        "cases": 6,
+        "supported_checks_pass": 1,
+        "status_counts": {
+          "FAIL": 5,
+          "PARTIAL": 1
+        },
+        "recall_at_5": {
+          "hits": 0,
+          "relevant": 2,
+          "micro": 0.0,
+          "macro": 0.0,
+          "positive_cases": 2
+        },
+        "precision_returned_at_5": {
+          "hits": 0,
+          "returned": 2,
+          "micro": 0.0,
+          "empty_positive_cases": 2
+        },
+        "negative_abstention": {
+          "correct": 3,
+          "eligible": 4
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 4
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.235600037034601,
+          "p95": 1.37489999178797,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "privacy_and_sensitivity": {
+        "cases": 6,
+        "supported_checks_pass": 4,
+        "status_counts": {
+          "PARTIAL": 4,
+          "FAIL": 2
+        },
+        "recall_at_5": {
+          "hits": 0,
+          "relevant": 2,
+          "micro": 0.0,
+          "macro": 0.0,
+          "positive_cases": 2
+        },
+        "precision_returned_at_5": {
+          "hits": 0,
+          "returned": 0,
+          "micro": null,
+          "empty_positive_cases": 2
+        },
+        "negative_abstention": {
+          "correct": 4,
+          "eligible": 4
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.1874500196427107,
+          "p95": 1.2835999950766563,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "laya_timeout_and_disconnection": {
+        "cases": 6,
+        "supported_checks_pass": 1,
+        "status_counts": {
+          "FAIL": 5,
+          "PARTIAL": 1
+        },
+        "recall_at_5": {
+          "hits": 1,
+          "relevant": 6,
+          "micro": 0.16666666666666666,
+          "macro": 0.16666666666666666,
+          "positive_cases": 6
+        },
+        "precision_returned_at_5": {
+          "hits": 1,
+          "returned": 1,
+          "micro": 1.0,
+          "empty_positive_cases": 5
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.3080499484203756,
+          "p95": 1.4063999988138676,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "corrupted_or_missing_index": {
+        "cases": 6,
+        "supported_checks_pass": 3,
+        "status_counts": {
+          "PARTIAL": 3,
+          "FAIL": 3
+        },
+        "recall_at_5": {
+          "hits": 2,
+          "relevant": 5,
+          "micro": 0.4,
+          "macro": 0.4,
+          "positive_cases": 5
+        },
+        "precision_returned_at_5": {
+          "hits": 2,
+          "returned": 2,
+          "micro": 1.0,
+          "empty_positive_cases": 3
+        },
+        "negative_abstention": {
+          "correct": 1,
+          "eligible": 1
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.1204999755136669,
+          "p95": 1.26550009008497,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "small_context_budgets": {
+        "cases": 6,
+        "supported_checks_pass": 2,
+        "status_counts": {
+          "PARTIAL": 2,
+          "FAIL": 4
+        },
+        "recall_at_5": {
+          "hits": 0,
+          "relevant": 4,
+          "micro": 0.0,
+          "macro": 0.0,
+          "positive_cases": 4
+        },
+        "precision_returned_at_5": {
+          "hits": 0,
+          "returned": 0,
+          "micro": null,
+          "empty_positive_cases": 4
+        },
+        "negative_abstention": {
+          "correct": 2,
+          "eligible": 2
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.3496000319719315,
+          "p95": 1.4857000205665827,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "workflow_checkpoint_retrieval": {
+        "cases": 6,
+        "supported_checks_pass": 5,
+        "status_counts": {
+          "PARTIAL": 5,
+          "FAIL": 1
+        },
+        "recall_at_5": {
+          "hits": 4,
+          "relevant": 5,
+          "micro": 0.8,
+          "macro": 0.8,
+          "positive_cases": 5
+        },
+        "precision_returned_at_5": {
+          "hits": 4,
+          "returned": 4,
+          "micro": 1.0,
+          "empty_positive_cases": 1
+        },
+        "negative_abstention": {
+          "correct": 1,
+          "eligible": 1
+        },
+        "project_accuracy": {
+          "correct": 2,
+          "eligible": 2
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.345450000371784,
+          "p95": 1.4679000014439225,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "stored_instruction_resistance": {
+        "cases": 6,
+        "supported_checks_pass": 3,
+        "status_counts": {
+          "PARTIAL": 3,
+          "FAIL": 3
+        },
+        "recall_at_5": {
+          "hits": 0,
+          "relevant": 3,
+          "micro": 0.0,
+          "macro": 0.0,
+          "positive_cases": 3
+        },
+        "precision_returned_at_5": {
+          "hits": 0,
+          "returned": 0,
+          "micro": null,
+          "empty_positive_cases": 3
+        },
+        "negative_abstention": {
+          "correct": 3,
+          "eligible": 3
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.1978500406257808,
+          "p95": 1.407400006428361,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      }
+    },
+    "context": {
+      "explicit_user_preferences": {
+        "cases": 6,
+        "supported_checks_pass": 4,
+        "status_counts": {
+          "FAIL": 2,
+          "PARTIAL": 4
+        },
+        "recall_at_5": {
+          "hits": 4,
+          "relevant": 6,
+          "micro": 0.6666666666666666,
+          "macro": 0.6666666666666666,
+          "positive_cases": 6
+        },
+        "precision_returned_at_5": {
+          "hits": 4,
+          "returned": 4,
+          "micro": 1.0,
+          "empty_positive_cases": 2
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.2465000618249178,
+          "p95": 1.4152999501675367,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "temporary_preferences": {
+        "cases": 6,
+        "supported_checks_pass": 4,
+        "status_counts": {
+          "PARTIAL": 4,
+          "FAIL": 2
+        },
+        "recall_at_5": {
+          "hits": 4,
+          "relevant": 5,
+          "micro": 0.8,
+          "macro": 0.8,
+          "positive_cases": 5
+        },
+        "precision_returned_at_5": {
+          "hits": 4,
+          "returned": 4,
+          "micro": 1.0,
+          "empty_positive_cases": 1
+        },
+        "negative_abstention": {
+          "correct": 1,
+          "eligible": 1
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.257200026884675,
+          "p95": 1.3728999765589833,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "important_project_decisions": {
+        "cases": 6,
+        "supported_checks_pass": 5,
+        "status_counts": {
+          "PARTIAL": 5,
+          "FAIL": 1
+        },
+        "recall_at_5": {
+          "hits": 5,
+          "relevant": 6,
+          "micro": 0.8333333333333334,
+          "macro": 0.8333333333333334,
+          "positive_cases": 6
+        },
+        "precision_returned_at_5": {
+          "hits": 5,
+          "returned": 5,
+          "micro": 1.0,
+          "empty_positive_cases": 1
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.3246499584056437,
+          "p95": 1.6425000503659248,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "tentative_plans_vs_confirmed_actions": {
+        "cases": 6,
+        "supported_checks_pass": 4,
+        "status_counts": {
+          "PARTIAL": 4,
+          "FAIL": 2
+        },
+        "recall_at_5": {
+          "hits": 5,
+          "relevant": 5,
+          "micro": 1.0,
+          "macro": 1.0,
+          "positive_cases": 5
+        },
+        "precision_returned_at_5": {
+          "hits": 5,
+          "returned": 7,
+          "micro": 0.7142857142857143,
+          "empty_positive_cases": 0
+        },
+        "negative_abstention": {
+          "correct": 1,
+          "eligible": 1
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.2920000008307397,
+          "p95": 4.670899943448603,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "project_identification": {
+        "cases": 6,
+        "supported_checks_pass": 4,
+        "status_counts": {
+          "PARTIAL": 4,
+          "FAIL": 2
+        },
+        "recall_at_5": {
+          "hits": 4,
+          "relevant": 5,
+          "micro": 0.8,
+          "macro": 0.8,
+          "positive_cases": 5
+        },
+        "precision_returned_at_5": {
+          "hits": 4,
+          "returned": 5,
+          "micro": 0.8,
+          "empty_positive_cases": 1
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 1
+        },
+        "project_accuracy": {
+          "correct": 6,
+          "eligible": 6
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.2479499564506114,
+          "p95": 1.4344999799504876,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "similarly_named_projects": {
+        "cases": 6,
+        "supported_checks_pass": 1,
+        "status_counts": {
+          "FAIL": 5,
+          "PARTIAL": 1
+        },
+        "recall_at_5": {
+          "hits": 3,
+          "relevant": 3,
+          "micro": 1.0,
+          "macro": 1.0,
+          "positive_cases": 3
+        },
+        "precision_returned_at_5": {
+          "hits": 3,
+          "returned": 9,
+          "micro": 0.3333333333333333,
+          "empty_positive_cases": 0
+        },
+        "negative_abstention": {
+          "correct": 1,
+          "eligible": 3
+        },
+        "project_accuracy": {
+          "correct": 4,
+          "eligible": 6
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.3879500329494476,
+          "p95": 2.818699926137924,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "contradictory_information": {
+        "cases": 6,
+        "supported_checks_pass": 3,
+        "status_counts": {
+          "PARTIAL": 3,
+          "FAIL": 3
+        },
+        "recall_at_5": {
+          "hits": 4,
+          "relevant": 8,
+          "micro": 0.5,
+          "macro": 0.5,
+          "positive_cases": 6
+        },
+        "precision_returned_at_5": {
+          "hits": 4,
+          "returned": 4,
+          "micro": 1.0,
+          "empty_positive_cases": 3
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.2268999707885087,
+          "p95": 1.4130999334156513,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "outdated_information": {
+        "cases": 6,
+        "supported_checks_pass": 2,
+        "status_counts": {
+          "FAIL": 4,
+          "PARTIAL": 2
+        },
+        "recall_at_5": {
+          "hits": 2,
+          "relevant": 6,
+          "micro": 0.3333333333333333,
+          "macro": 0.3333333333333333,
+          "positive_cases": 6
+        },
+        "precision_returned_at_5": {
+          "hits": 2,
+          "returned": 2,
+          "micro": 1.0,
+          "empty_positive_cases": 4
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.2662499793805182,
+          "p95": 1.2979001039639115,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "corrections": {
+        "cases": 6,
+        "supported_checks_pass": 5,
+        "status_counts": {
+          "PARTIAL": 5,
+          "FAIL": 1
+        },
+        "recall_at_5": {
+          "hits": 5,
+          "relevant": 6,
+          "micro": 0.8333333333333334,
+          "macro": 0.8333333333333334,
+          "positive_cases": 6
+        },
+        "precision_returned_at_5": {
+          "hits": 5,
+          "returned": 5,
+          "micro": 1.0,
+          "empty_positive_cases": 1
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.252350048162043,
+          "p95": 1.3470998965203762,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "memory_deletion": {
+        "cases": 6,
+        "supported_checks_pass": 4,
+        "status_counts": {
+          "PARTIAL": 4,
+          "FAIL": 2
+        },
+        "recall_at_5": {
+          "hits": 0,
+          "relevant": 2,
+          "micro": 0.0,
+          "macro": 0.0,
+          "positive_cases": 2
+        },
+        "precision_returned_at_5": {
+          "hits": 0,
+          "returned": 0,
+          "micro": null,
+          "empty_positive_cases": 2
+        },
+        "negative_abstention": {
+          "correct": 4,
+          "eligible": 4
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.146750000771135,
+          "p95": 1.2854000087827444,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "cross_session_continuity": {
+        "cases": 6,
+        "supported_checks_pass": 2,
+        "status_counts": {
+          "PARTIAL": 2,
+          "FAIL": 4
+        },
+        "recall_at_5": {
+          "hits": 2,
+          "relevant": 6,
+          "micro": 0.3333333333333333,
+          "macro": 0.3333333333333333,
+          "positive_cases": 6
+        },
+        "precision_returned_at_5": {
+          "hits": 2,
+          "returned": 2,
+          "micro": 1.0,
+          "empty_positive_cases": 4
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.2322000111453235,
+          "p95": 1.3309000059962273,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "source_attribution": {
+        "cases": 6,
+        "supported_checks_pass": 3,
+        "status_counts": {
+          "PARTIAL": 3,
+          "FAIL": 3
+        },
+        "recall_at_5": {
+          "hits": 2,
+          "relevant": 5,
+          "micro": 0.4,
+          "macro": 0.4,
+          "positive_cases": 5
+        },
+        "precision_returned_at_5": {
+          "hits": 2,
+          "returned": 2,
+          "micro": 1.0,
+          "empty_positive_cases": 3
+        },
+        "negative_abstention": {
+          "correct": 1,
+          "eligible": 1
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.2788500171154737,
+          "p95": 1.402099966071546,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "unrelated_memory_exclusion": {
+        "cases": 6,
+        "supported_checks_pass": 5,
+        "status_counts": {
+          "PARTIAL": 5,
+          "FAIL": 1
+        },
+        "recall_at_5": {
+          "hits": 3,
+          "relevant": 4,
+          "micro": 0.75,
+          "macro": 0.75,
+          "positive_cases": 4
+        },
+        "precision_returned_at_5": {
+          "hits": 3,
+          "returned": 3,
+          "micro": 1.0,
+          "empty_positive_cases": 1
+        },
+        "negative_abstention": {
+          "correct": 2,
+          "eligible": 2
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.3170000165700912,
+          "p95": 1.4467000728473067,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "ambiguous_personal_references": {
+        "cases": 6,
+        "supported_checks_pass": 2,
+        "status_counts": {
+          "FAIL": 4,
+          "PARTIAL": 2
+        },
+        "recall_at_5": {
+          "hits": 2,
+          "relevant": 2,
+          "micro": 1.0,
+          "macro": 1.0,
+          "positive_cases": 2
+        },
+        "precision_returned_at_5": {
+          "hits": 2,
+          "returned": 4,
+          "micro": 0.5,
+          "empty_positive_cases": 0
+        },
+        "negative_abstention": {
+          "correct": 3,
+          "eligible": 4
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 4
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.2851000064983964,
+          "p95": 1.3657999224960804,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "privacy_and_sensitivity": {
+        "cases": 6,
+        "supported_checks_pass": 5,
+        "status_counts": {
+          "PARTIAL": 5,
+          "FAIL": 1
+        },
+        "recall_at_5": {
+          "hits": 1,
+          "relevant": 2,
+          "micro": 0.5,
+          "macro": 0.5,
+          "positive_cases": 2
+        },
+        "precision_returned_at_5": {
+          "hits": 1,
+          "returned": 1,
+          "micro": 1.0,
+          "empty_positive_cases": 1
+        },
+        "negative_abstention": {
+          "correct": 4,
+          "eligible": 4
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.1641000164672732,
+          "p95": 1.236199983395636,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "laya_timeout_and_disconnection": {
+        "cases": 6,
+        "supported_checks_pass": 3,
+        "status_counts": {
+          "FAIL": 3,
+          "PARTIAL": 3
+        },
+        "recall_at_5": {
+          "hits": 3,
+          "relevant": 6,
+          "micro": 0.5,
+          "macro": 0.5,
+          "positive_cases": 6
+        },
+        "precision_returned_at_5": {
+          "hits": 3,
+          "returned": 3,
+          "micro": 1.0,
+          "empty_positive_cases": 3
+        },
+        "negative_abstention": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.4974500518292189,
+          "p95": 1.5581999905407429,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "corrupted_or_missing_index": {
+        "cases": 6,
+        "supported_checks_pass": 3,
+        "status_counts": {
+          "PARTIAL": 3,
+          "FAIL": 3
+        },
+        "recall_at_5": {
+          "hits": 2,
+          "relevant": 5,
+          "micro": 0.4,
+          "macro": 0.4,
+          "positive_cases": 5
+        },
+        "precision_returned_at_5": {
+          "hits": 2,
+          "returned": 2,
+          "micro": 1.0,
+          "empty_positive_cases": 3
+        },
+        "negative_abstention": {
+          "correct": 1,
+          "eligible": 1
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.2119000311940908,
+          "p95": 1.3400999596342444,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "small_context_budgets": {
+        "cases": 6,
+        "supported_checks_pass": 3,
+        "status_counts": {
+          "PARTIAL": 3,
+          "FAIL": 3
+        },
+        "recall_at_5": {
+          "hits": 1,
+          "relevant": 4,
+          "micro": 0.25,
+          "macro": 0.25,
+          "positive_cases": 4
+        },
+        "precision_returned_at_5": {
+          "hits": 1,
+          "returned": 1,
+          "micro": 1.0,
+          "empty_positive_cases": 3
+        },
+        "negative_abstention": {
+          "correct": 2,
+          "eligible": 2
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.2917000567540526,
+          "p95": 1.3371999375522137,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "workflow_checkpoint_retrieval": {
+        "cases": 6,
+        "supported_checks_pass": 6,
+        "status_counts": {
+          "PARTIAL": 6
+        },
+        "recall_at_5": {
+          "hits": 5,
+          "relevant": 5,
+          "micro": 1.0,
+          "macro": 1.0,
+          "positive_cases": 5
+        },
+        "precision_returned_at_5": {
+          "hits": 5,
+          "returned": 5,
+          "micro": 1.0,
+          "empty_positive_cases": 0
+        },
+        "negative_abstention": {
+          "correct": 1,
+          "eligible": 1
+        },
+        "project_accuracy": {
+          "correct": 2,
+          "eligible": 2
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.1998499976471066,
+          "p95": 1.3657000381499529,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      },
+      "stored_instruction_resistance": {
+        "cases": 6,
+        "supported_checks_pass": 3,
+        "status_counts": {
+          "PARTIAL": 3,
+          "FAIL": 3
+        },
+        "recall_at_5": {
+          "hits": 0,
+          "relevant": 3,
+          "micro": 0.0,
+          "macro": 0.0,
+          "positive_cases": 3
+        },
+        "precision_returned_at_5": {
+          "hits": 0,
+          "returned": 0,
+          "micro": null,
+          "empty_positive_cases": 3
+        },
+        "negative_abstention": {
+          "correct": 3,
+          "eligible": 3
+        },
+        "project_accuracy": {
+          "correct": 0,
+          "eligible": 0
+        },
+        "unauthorized_retrieval_mutations": 0,
+        "latency_ms": {
+          "n": 6,
+          "p50": 1.2613500002771616,
+          "p95": 2.5908000534400344,
+          "boundary": "original retrieval only; fixture/project diagnostics excluded"
+        },
+        "actual_model_response_accuracy": null,
+        "unsupported_response_cases": 6
+      }
+    }
+  },
+  "grouped": {
+    "legacy": {
+      "difficulty": {
+        "medium": {
+          "cases": 120,
+          "supported_checks_pass": 58,
+          "hits": 42,
+          "relevant": 94,
+          "returned": 52,
+          "recall_at_5": 0.44680851063829785,
+          "precision_returned_at_5": 0.8076923076923077,
+          "status_counts": {
+            "FAIL": 62,
+            "PARTIAL": 58
+          }
+        }
+      },
+      "linguistic_tags": {
+        "independently_authored": {
+          "cases": 120,
+          "supported_checks_pass": 58,
+          "hits": 42,
+          "relevant": 94,
+          "returned": 52,
+          "recall_at_5": 0.44680851063829785,
+          "precision_returned_at_5": 0.8076923076923077,
+          "status_counts": {
+            "FAIL": 62,
+            "PARTIAL": 58
+          }
+        }
+      }
+    },
+    "context": {
+      "difficulty": {
+        "medium": {
+          "cases": 120,
+          "supported_checks_pass": 71,
+          "hits": 57,
+          "relevant": 94,
+          "returned": 68,
+          "recall_at_5": 0.6063829787234043,
+          "precision_returned_at_5": 0.8382352941176471,
+          "status_counts": {
+            "FAIL": 49,
+            "PARTIAL": 71
+          }
+        }
+      },
+      "linguistic_tags": {
+        "independently_authored": {
+          "cases": 120,
+          "supported_checks_pass": 71,
+          "hits": 57,
+          "relevant": 94,
+          "returned": 68,
+          "recall_at_5": 0.6063829787234043,
+          "precision_returned_at_5": 0.8382352941176471,
+          "status_counts": {
+            "FAIL": 49,
+            "PARTIAL": 71
+          }
+        }
+      }
+    }
+  },
+  "context_utf8_byte_upper_bounds": {
+    "legacy": {
+      "n": 120,
+      "mean_utf8_bytes": 410.18333333333334,
+      "median_utf8_bytes": 0.0,
+      "max_utf8_bytes": 1636,
+      "empty_contexts": 76,
+      "boundary": "Final primary context text only. UTF-8 bytes are a conservative token upper bound, not native tokenizer counts or generated tokens."
+    },
+    "context": {
+      "n": 120,
+      "mean_utf8_bytes": 427.48333333333335,
+      "median_utf8_bytes": 362.5,
+      "max_utf8_bytes": 1402,
+      "empty_contexts": 60,
+      "boundary": "Final primary context text only. UTF-8 bytes are a conservative token upper bound, not native tokenizer counts or generated tokens."
+    }
+  },
+  "controlled_lifecycle": {
+    "legacy": {
+      "operation_counts": {
+        "retrieval_boundaries": 132,
+        "warm_retrieval_boundaries": 12,
+        "retrieve": 12,
+        "expected_rejections": 2,
+        "remember": 2,
+        "analyze_statement": 3,
+        "analyze_statement_no_authoritative_change": 3,
+        "correct": 13,
+        "correct_success_readback": 11,
+        "restart": 10,
+        "expected_rejection_unchanged_records": 2,
+        "delete": 7,
+        "delete_success_absent_store_and_recall": 7,
+        "propose": 1,
+        "propose_no_authoritative_change": 1,
+        "drop_index": 3,
+        "tamper": 2,
+        "external_update": 3
+      },
+      "controlled_readbacks": {
+        "deleted_ids": 7,
+        "history_purged_ids": 2,
+        "retained_ids": 2,
+        "suggestions_purged_ids": 1,
+        "cache_oracle_cases": 1,
+        "cache_oracle_no_returned_record": 1,
+        "cache_actual_current_returned_record_checks": 0,
+        "maximum complete context characters": 6,
+        "maximum UTF-8 byte budget": 6,
+        "context consists of whole original records": 3,
+        "whole_record_checks_with_returned_records": 0,
+        "whole_record_checks_empty_context_unexercised": 3
+      },
+      "warm_target_evidence": {
+        "correct_target_actually_recalled_before_mutation": 4,
+        "delete_target_actually_recalled_before_mutation": 4
+      },
+      "scope": "Original isolated store APIs and declared cache/index/SQL fixtures; these approved setup operations are separate from permission enforcement. Warm target coverage is explicit; an empty pre-mutation result does not prove invalidation of a previously returned record."
+    },
+    "context": {
+      "operation_counts": {
+        "retrieval_boundaries": 132,
+        "warm_retrieval_boundaries": 12,
+        "retrieve": 12,
+        "expected_rejections": 2,
+        "remember": 2,
+        "analyze_statement": 3,
+        "analyze_statement_no_authoritative_change": 3,
+        "correct": 13,
+        "correct_success_readback": 11,
+        "restart": 10,
+        "expected_rejection_unchanged_records": 2,
+        "delete": 7,
+        "delete_success_absent_store_and_recall": 7,
+        "propose": 1,
+        "propose_no_authoritative_change": 1,
+        "drop_index": 3,
+        "tamper": 2,
+        "external_update": 3
+      },
+      "controlled_readbacks": {
+        "deleted_ids": 7,
+        "history_purged_ids": 2,
+        "retained_ids": 2,
+        "suggestions_purged_ids": 1,
+        "cache_oracle_cases": 1,
+        "cache_oracle_no_returned_record": 1,
+        "cache_actual_current_returned_record_checks": 0,
+        "maximum complete context characters": 6,
+        "maximum UTF-8 byte budget": 6,
+        "context consists of whole original records": 3,
+        "whole_record_checks_with_returned_records": 0,
+        "whole_record_checks_empty_context_unexercised": 3
+      },
+      "warm_target_evidence": {
+        "correct_target_actually_recalled_before_mutation": 4,
+        "delete_target_actually_recalled_before_mutation": 4
+      },
+      "scope": "Original isolated store APIs and declared cache/index/SQL fixtures; these approved setup operations are separate from permission enforcement. Warm target coverage is explicit; an empty pre-mutation result does not prove invalidation of a previously returned record."
+    }
+  },
+  "failure_analysis": {
+    "legacy": {
+      "failed_cases": 62,
+      "failed_check_occurrences": {
+        "all relevant IDs recalled": 51,
+        "semantic_status": 8,
+        "excluded IDs withheld": 7,
+        "negative query abstention": 3,
+        "original project status": 6,
+        "exact ambiguous project candidates": 4,
+        "original project identity": 2,
+        "current content": 11,
+        "source_ref": 5
+      },
+      "provenance_and_content_missing_vs_wrong": {
+        "status_missing_record": 8,
+        "content_missing_record": 11,
+        "source_ref_missing_record": 5
+      },
+      "primary_reporting_classes": {
+        "retrieval_omission": 51,
+        "retrieval_ineligible_or_unrelated_return": 7,
+        "project_resolution": 3,
+        "authored_oracle_contradiction": 1
+      },
+      "counts_overlap": true,
+      "scope": "Frozen supported-check failures, with retrieval absence separated from a wrong field on an actually returned record; no generated-answer failures are inferred.",
+      "authored_oracle_internal_conflicts": 1
+    },
+    "context": {
+      "failed_cases": 49,
+      "failed_check_occurrences": {
+        "all relevant IDs recalled": 36,
+        "semantic_status": 6,
+        "excluded IDs withheld": 8,
+        "negative query abstention": 4,
+        "original project status": 6,
+        "exact ambiguous project candidates": 4,
+        "original project identity": 2,
+        "current content": 8,
+        "source_ref": 4,
+        "controlled original advisory boundary actually exercised": 2
+      },
+      "provenance_and_content_missing_vs_wrong": {
+        "status_missing_record": 6,
+        "content_missing_record": 8,
+        "source_ref_missing_record": 4
+      },
+      "primary_reporting_classes": {
+        "retrieval_omission": 36,
+        "retrieval_ineligible_or_unrelated_return": 8,
+        "project_resolution": 4,
+        "authored_oracle_contradiction": 1
+      },
+      "counts_overlap": true,
+      "scope": "Frozen supported-check failures, with retrieval absence separated from a wrong field on an actually returned record; no generated-answer failures are inferred.",
+      "authored_oracle_internal_conflicts": 1
+    }
+  },
+  "controlled_advisory_fallback": {
+    "legacy": {
+      "declared_fallback_cases": 6,
+      "no_retrieval_exception": 6,
+      "actual_controlled_advisory_calls": 0,
+      "cases_boundary_exercised": 0
+    },
+    "context": {
+      "declared_fallback_cases": 6,
+      "no_retrieval_exception": 6,
+      "actual_controlled_advisory_calls": 4,
+      "cases_boundary_exercised": 4
+    }
+  },
+  "actual_model_diagnostics": {
+    "attempts": 40,
+    "status_counts": {
+      "blocked": 40
+    },
+    "actual_generation_http_requests": 0,
+    "all_stores_unchanged": true,
+    "all_native_errors_ModelSelectionError": true,
+    "all_answer_absent": true,
+    "all_recorded_client_calls_empty": true,
+    "all_injected_blocks_match": true,
+    "separate_inspection_reason_counts": {
+      "insufficient_ram_reserve": 40
+    },
+    "actual_response_accuracy": null,
+    "incorrect_memory_claims": null,
+    "scope": "Twenty prospectively selected public development scenarios, two original guarded session arms. Separate selector inspection is a diagnostic after native refusal, not an actual generated response or a direct trace of native cause.",
+    "source_hashes_match_freeze": true,
+    "native_admission_attempt_ms": {
+      "n": 40,
+      "p50": 13.86030000867322,
+      "p95": 15.407799975946546,
+      "scope": "Native MemoryAwareSession request boundary before separate post-refusal selector inspection; no model latency claim."
+    },
+    "available_ram_before_attempt_bytes": {
+      "min": 1815719936,
+      "max": 1951064064
+    },
+    "requested_evaluation_options": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_tokens": 256,
+      "scope": "Requested bounded evaluation settings; no actual generation HTTP payload was sent."
+    }
+  },
+  "acceptance": {
+    "recall_at_5_ge_90": "NOT_MET",
+    "project_resolution_ge_95": "NOT_MET; ORIGINAL_RESOLVER_DIAGNOSTIC_ONLY",
+    "zero_unauthorized_writes": "PASS_IN_INDEPENDENT_CONTROLLED_REPAIRED_PROFILE_PROBES; HOLDOUT_ZERO_RETRIEVAL_MUTATIONS",
+    "controlled_deletion_and_cache": "PASS_FOR_MEASURED_STORE_AND_WARM_TARGET_CONTROLS; NOT_UNIVERSAL_INFERENCE",
+    "graceful_laya_fallback": "ORIGINAL_CONTROLLED_DEVELOPMENT_BOUNDARIES_PASS; FINAL_CONTEXT_4_OF_6_FAULT_BOUNDARIES_EXERCISED",
+    "actual_laya_assisted_model": "BLOCKED_DISABLED; ZERO_CALLS",
+    "actual_model_answer_quality": "BLOCKED_ORIGINAL_ADMISSION; ZERO_GENERATION_HTTP"
+  },
+  "evidence_refs": {
+    "complete": {
+      "path": "data/campaign3-verifier/final-01/COMPLETE.json",
+      "sha256": "49e3eae48411318e0b7b3ea2f9bd85d4b71b27de8b46cc978d02022eff617661",
+      "scope": "240 individual raw receipt SHA commitments"
+    },
+    "raw_aggregate": {
+      "path": "data/campaign3-verifier/final-01/SUMMARY.json",
+      "sha256": "d1dac9f995d0aedc0caae35b574fa2061673bc2e9c6896f25031c1eb4d27c7b5"
+    },
+    "legacy_grades": {
+      "path": "data/campaign3-verifier/final-01/grades/legacy.json",
+      "sha256": "901a20a94313389964d5f9c51b07b8ec735280fb28caead9b4c5089c9cb42926",
+      "private_oracles": true
+    },
+    "context_grades": {
+      "path": "data/campaign3-verifier/final-01/grades/context.json",
+      "sha256": "efde85e325d8e9b542b0904a27775fb12e12eb1033c2796a31950d879b784134",
+      "private_oracles": true
+    },
+    "integrity": {
+      "path": "data/campaign3-verifier/final-integrity.json",
+      "sha256": "67cea1b28b25ab73c02174ec4c15d9d5ee7c71ca33069595dde800e74244fb7e"
+    },
+    "controlled_readbacks": {
+      "path": "data/campaign3-verifier/final-lifecycle-crosscheck.json",
+      "sha256": "53cc9dad5ae32af9220caf2b98f7f535ad303e5baf7505845237777c74c3afcb"
+    },
+    "private_failure_analysis": {
+      "path": "data/campaign3-verifier/final-failure-analysis.json",
+      "sha256": "e3249505cbd5ae618c86e16e9825955b8f1f101e82b4f63117876b5e3c0ec4ec",
+      "private_oracles": true
+    },
+    "model_audit": {
+      "path": "data/campaign3-verifier/final-model-independent-audit.json",
+      "sha256": "b30a9e9081fa307c5b3cddfb66916c51925dc27799ac1845c7533622b7976de3"
+    },
+    "model_raw_summary": {
+      "path": "data/campaign3-manager/final-model/SUMMARY.json",
+      "sha256": "62c9e39387f4b213d3539135e11a1ac75513253dc980e3e87b185804b9fb714d"
+    },
+    "model_runtime": {
+      "path": "data/campaign3-manager/final-model/RUNTIME_IDENTITY.json",
+      "sha256": "cde42e8bab1acf6ae37404b9807e335e16f2268b193fcfabf2c3b76499ce9abf"
+    },
+    "freeze_proof": {
+      "path": "data/campaign3-manager/final-freeze/proof.json",
+      "sha256": "9b0e5be5aea9042680b79fb211584e5e3fdc639233928d7968aa3601224a1a28"
+    },
+    "verifier_tests": {
+      "path": "data/campaign3-verifier/verifier-final-development.xml",
+      "sha256": "26f7e5365df3c43497a6fe8530aeb597ab2e178e8e7c8d03b5db2d5dc12895aa",
+      "passed": 19
+    },
+    "manager_regressions": {
+      "path": "data/campaign3-manager/final-regressions-02.xml",
+      "sha256": "2a53e67112eccb7083407c187c882934b89fe9631f9a95120afef6a202c803ab",
+      "passed": 463
+    },
+    "native_holdout_tokens": {
+      "path": "data/campaign3-verifier/final-native-tokens/SUMMARY.json",
+      "sha256": "202de165b0506a0262e3a341de2d00fd0e98328cc5a2bea6dcc0a36d21db384c"
+    },
+    "native_holdout_token_receipts": {
+      "path": "data\\campaign3-verifier\\final-native-tokens\\TOKEN_RECEIPTS.json",
+      "sha256": "5d799fa576c6cd39d2420ad24a787782aac9fe9d84887517a7332314d2424080"
+    }
+  },
+  "limitations": [
+    "Every holdout case retains actual response/action requirements as unmeasured; 58/71 supported passing cases are PARTIAL, never full PASS.",
+    "Project resolution uses the original resolver diagnostic, not model or native-session identification.",
+    "Precision on returned records does not reward empty positive answers; all 94 relevant IDs remain in recall denominator.",
+    "Actual LAYA B disabled. Controlled advisory faults and optional deterministic D are not LAYA inference.",
+    "No post-holdout retries, oracle-guided repairs or prompt changes.",
+    "Native final model attempts all blocked; no actual parameter payload, generated tokens or answer accuracy can be claimed.",
+    "Low sample size and purposively authored scenarios: no population-confidence interval or production service guarantee.",
+    "One frozen oracle simultaneously requires exclusion and inspection of the excluded returned record status. Its literal failure remains in each arm; this is an authored-oracle contradiction, not an observed wrong status value. Recall and project counts are unaffected.",
+    "The three final whole-record serialization checks per arm receive empty contexts. Their literal pass proves no truncation in those receipts, but does not exercise serialization of a returned record. Independent development controls provide the separate populated-record evidence."
+  ],
+  "native_context_tokens": {
+    "captured_at": "2026-10-10T08:20:38.398556+00:00",
+    "scope": "Actual installed native tokenizer applied to already executed private synthetic holdout contexts, including declared warm retrievals; no new retrieval or inference, no LAYA call, no model response or injected-prompt accuracy claim.",
+    "tokenizer_requests": 264,
+    "actual_model_generation_requests": 0,
+    "source_unchanged": true,
+    "original_process_identity_unchanged": true,
+    "identity_before": {
+      "pid": 38832,
+      "create_time": 1791595415.4806464,
+      "command_sha256": "e85d34791565355ab170c1734e237bb6c5e828551ab2bb720a2d599c8e75cc6f",
+      "parent_pid": 46084,
+      "parent_create_time": 1791595411.2839503
+    },
+    "identity_after": {
+      "pid": 38832,
+      "create_time": 1791595415.4806464,
+      "command_sha256": "e85d34791565355ab170c1734e237bb6c5e828551ab2bb720a2d599c8e75cc6f",
+      "parent_pid": 46084,
+      "parent_create_time": 1791595411.2839503
+    },
+    "raw_receipts": {
+      "path": "data\\campaign3-verifier\\final-native-tokens\\TOKEN_RECEIPTS.json",
+      "sha256": "5d799fa576c6cd39d2420ad24a787782aac9fe9d84887517a7332314d2424080"
+    },
+    "arms": {
+      "legacy": {
+        "contexts": 132,
+        "measured": 132,
+        "unavailable": 0,
+        "mean_context_tokens": 145.86363636363637,
+        "median_context_tokens": 0.0,
+        "max_context_tokens": 590,
+        "empty_contexts": 76,
+        "primary_contexts": 120,
+        "warm_contexts": 12
+      },
+      "context": {
+        "contexts": 132,
+        "measured": 132,
+        "unavailable": 0,
+        "mean_context_tokens": 146.6439393939394,
+        "median_context_tokens": 229.5,
+        "max_context_tokens": 506,
+        "empty_contexts": 60,
+        "primary_contexts": 120,
+        "warm_contexts": 12
+      }
+    }
+  }
+}

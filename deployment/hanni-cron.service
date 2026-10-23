@@ -1,0 +1,14 @@
+[Unit]
+Description=HANNI agent cron daemon
+After=hanni-native-bridge.service
+Requires=hanni-native-bridge.service
+
+[Service]
+Type=simple
+WorkingDirectory=%h/HANNI-core
+ExecStart=%h/HANNI-core/.venv/bin/python -m hanni.native.cron --root %h/hanni-cron/state daemon
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target

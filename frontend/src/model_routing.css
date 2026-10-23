@@ -1,0 +1,381 @@
+.model-routing-page {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.routing-notice {
+  font-size: 12px;
+  padding: 10px 0;
+  overflow-wrap: anywhere;
+}
+.routing-policy {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+  margin-bottom: 25px;
+}
+.routing-policy-summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 13px;
+}
+.routing-policy-summary strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+.routing-policy-summary span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.routing-policy-controls {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.routing-policy-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.routing-policy-controls select {
+  min-width: 170px;
+  max-width: 100%;
+  font-size: 12px;
+}
+.routing-policy > p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+.routing-section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.routing-section-heading h2 {
+  font-size: 14px;
+}
+.routing-section-heading > span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.routing-inventory {
+  margin-bottom: 28px;
+}
+.routing-endpoint {
+  border-top: 1px solid var(--line);
+  padding: 14px 0;
+}
+.routing-endpoint:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.routing-endpoint-row {
+  display: grid;
+  grid-template-columns:
+    minmax(200px, 2.1fr) minmax(80px, 0.6fr) minmax(130px, 0.8fr)
+    minmax(105px, 0.6fr);
+  gap: 18px;
+  align-items: center;
+}
+.routing-model-name {
+  min-width: 0;
+}
+.routing-model-name h3 {
+  font-weight: 500;
+  font-size: 13px;
+}
+.routing-model-name p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 3px;
+  overflow-wrap: anywhere;
+}
+.routing-model-name small {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--quiet);
+}
+.routing-reading {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.routing-reading > span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.routing-reading strong {
+  font-size: 12px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.routing-endpoint-details {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.routing-performance {
+  margin-top: 15px;
+}
+.routing-performance-readings {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px 24px;
+  margin: 0;
+}
+.routing-performance-readings dt {
+  color: var(--muted);
+  font-size: 12px;
+}
+.routing-performance-readings dd {
+  margin: 4px 0 0;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.routing-performance-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.routing-performance-note,
+.routing-history-empty {
+  font-size: 12px;
+  color: var(--quiet);
+  line-height: 1.6;
+  margin-top: 8px;
+}
+.routing-latency-history {
+  margin: 14px 0 0;
+  max-width: 560px;
+}
+.routing-latency-history figcaption {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.routing-latency-history svg {
+  display: block;
+  width: 100%;
+  max-height: 72px;
+  overflow: visible;
+}
+.routing-history-baseline {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+.routing-history-line {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+.routing-history-failure {
+  fill: var(--warning);
+}
+.routing-history-sample {
+  fill: var(--text);
+}
+.routing-endpoint-details summary,
+.routing-decision summary {
+  cursor: pointer;
+  padding: 4px 0;
+}
+.routing-facts {
+  margin: 12px 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px 26px;
+}
+.routing-facts > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--line);
+}
+.routing-facts dt {
+  font-size: 12px;
+}
+.routing-facts dd {
+  margin: 0;
+  text-align: right;
+  color: var(--text);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.routing-limit-note {
+  color: var(--warning);
+  margin: 8px 0;
+  line-height: 1.6;
+}
+.routing-profile-scroll {
+  overflow-x: auto;
+  margin-top: 15px;
+}
+.routing-profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.routing-profile-table caption {
+  text-align: left;
+  padding-bottom: 8px;
+  color: var(--text);
+}
+.routing-profile-table th,
+.routing-profile-table td {
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  padding: 7px 12px 7px 0;
+  white-space: nowrap;
+}
+.routing-profile-table th {
+  font-weight: 500;
+}
+.routing-profile-table tbody td {
+  color: var(--text);
+}
+.routing-evaluation-note {
+  font-size: 12px;
+  margin-top: 8px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.routing-empty {
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+.routing-empty h3 {
+  font-weight: 500;
+  font-size: 13px;
+}
+.routing-empty p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 5px;
+  max-width: 610px;
+  line-height: 1.6;
+}
+.routing-decision {
+  padding: 13px 0;
+  border-top: 1px solid var(--line);
+}
+.routing-decision header {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+.routing-decision header strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+.routing-decision header span,
+.routing-decision time {
+  font-size: 12px;
+  color: var(--muted);
+}
+.routing-decision time {
+  margin-left: auto;
+}
+.routing-decision > p {
+  margin: 7px 0;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.routing-decision-meta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--muted);
+}
+.routing-decision details {
+  margin-top: 7px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.routing-decision ul {
+  margin: 6px 0;
+  padding-left: 18px;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.routing-fallbacks {
+  color: var(--warning);
+}
+.routing-skeleton {
+  display: grid;
+  gap: 18px;
+  padding: 20px 0;
+}
+.routing-skeleton span {
+  display: block;
+  height: 38px;
+  background: var(--surface);
+  border-radius: 3px;
+}
+@media (max-width: 950px) {
+  .routing-endpoint-row {
+    grid-template-columns: minmax(170px, 1.5fr) minmax(70px, 0.6fr) minmax(
+        110px,
+        0.8fr
+      );
+    gap: 12px;
+  }
+  .routing-reading:last-child {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .routing-facts {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .routing-performance-readings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .routing-endpoint-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .routing-model-name {
+    grid-column: 1 / -1;
+  }
+  .routing-reading:last-child {
+    grid-column: auto;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .routing-section-heading,
+  .routing-policy-summary {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .routing-policy-controls label {
+    width: 100%;
+  }
+  .routing-policy-controls select {
+    width: 100%;
+  }
+}

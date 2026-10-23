@@ -1,0 +1,582 @@
+{
+  "baseline_commit": "0aede831853b6876bc8904838a41f7b2ce8f3967",
+  "freeze": {
+    "manifest_sha256": "f7f3ef6ca9a9772223b0a3dd2a0947826e4f7b942f43a5bce53e2c36eda42e49",
+    "source_zip_sha256": "09de198ca6101c7cc1699464f1d1242d1fb0ed31ead88aa5c5524951cb17bf08",
+    "scope": "All HANNI Python source, configuration YAML, Campaign4 code/corpus, workflow regressions and protocol."
+  },
+  "frozen_files": 288,
+  "original_complete_package_modules": 192,
+  "original_with_final_helpers": {
+    "cases": 120,
+    "passed": 114,
+    "harness_errors": 0,
+    "completion": {
+      "eligible": 34,
+      "whole_case_pass": 32,
+      "status_pass": 32,
+      "workflow_observed_duration_ms": {
+        "n": 34,
+        "p50": 141.0000000614673,
+        "p95": 250.0
+      }
+    },
+    "recovery": {
+      "eligible": 10,
+      "whole_case_pass": 7,
+      "status_pass": 7,
+      "workflow_observed_duration_ms": {
+        "n": 6,
+        "p50": 125.0,
+        "p95": 141.0000000614673
+      }
+    },
+    "cancel": {
+      "eligible": 7,
+      "whole_case_pass": 7,
+      "status_pass": 7,
+      "workflow_observed_duration_ms": {
+        "n": 7,
+        "p50": 125.0,
+        "p95": 140.00000001396984
+      }
+    },
+    "partial": {
+      "eligible": 15,
+      "whole_case_pass": 15,
+      "status_pass": 15,
+      "workflow_observed_duration_ms": {
+        "n": 15,
+        "p50": 140.99999994505197,
+        "p95": 187.99999996554106
+      }
+    },
+    "write_effects": {
+      "entries": 19,
+      "actual_effects": 16,
+      "unauthorized_entries": 0,
+      "unauthorized_effects": 0
+    },
+    "workflow_observed_duration_ms": {
+      "n": 102,
+      "p50": 125.0,
+      "p95": 203.00000009592623,
+      "scope": "original scheduler submit through observed stopping outcome; excludes setup and cleanup",
+      "nonzero_clock_offsets": 0
+    }
+  },
+  "final_public": {
+    "cases": 120,
+    "passed": 103,
+    "harness_errors": 0,
+    "scopes": {
+      "native_original_scheduler": 102,
+      "direct_original_store": 18
+    },
+    "completion": {
+      "eligible": 34,
+      "whole_case_pass": 26,
+      "status_pass": 26,
+      "workflow_observed_duration_ms": {
+        "n": 34,
+        "p50": 155.9999999590218,
+        "p95": 297.0000000204891
+      }
+    },
+    "recovery": {
+      "eligible": 10,
+      "whole_case_pass": 7,
+      "status_pass": 7,
+      "workflow_observed_duration_ms": {
+        "n": 6,
+        "p50": 140.50000003771856,
+        "p95": 156.00000007543713
+      }
+    },
+    "cancel": {
+      "eligible": 7,
+      "whole_case_pass": 7,
+      "status_pass": 7,
+      "workflow_observed_duration_ms": {
+        "n": 7,
+        "p50": 125.0,
+        "p95": 155.9999999590218
+      }
+    },
+    "partial": {
+      "eligible": 15,
+      "whole_case_pass": 12,
+      "status_pass": 12,
+      "workflow_observed_duration_ms": {
+        "n": 15,
+        "p50": 141.0000000614673,
+        "p95": 250.0
+      }
+    },
+    "write_effects": {
+      "entries": 18,
+      "actual_effects": 15,
+      "unauthorized_entries": 0,
+      "unauthorized_effects": 0
+    },
+    "workflow_observed_duration_ms": {
+      "n": 102,
+      "p50": 140.00000001396984,
+      "p95": 234.00000005494803,
+      "scope": "original scheduler submit through observed stopping outcome; excludes setup and cleanup",
+      "nonzero_clock_offsets": 0
+    },
+    "checkpoint_sequence_correctness": {
+      "eligible_original_scheduler_cases": 102,
+      "strict_sequence_pass": 102,
+      "scope": "persisted sequence monotonicity, not full restart proof"
+    }
+  },
+  "public_failed_assertions": [
+    {
+      "id": "WFDEV-04-01",
+      "category": "Dependency ordering",
+      "failed_assertions": [
+        "final stopping state",
+        "verified_steps",
+        "dispatch order"
+      ]
+    },
+    {
+      "id": "WFDEV-05-03",
+      "category": "Sequential execution",
+      "failed_assertions": [
+        "final stopping state",
+        "verified_steps",
+        "dispatch order"
+      ]
+    },
+    {
+      "id": "WFDEV-05-05",
+      "category": "Sequential execution",
+      "failed_assertions": [
+        "invocations"
+      ]
+    },
+    {
+      "id": "WFDEV-06-01",
+      "category": "Safe parallel execution",
+      "failed_assertions": [
+        "final stopping state",
+        "verified_steps"
+      ]
+    },
+    {
+      "id": "WFDEV-06-02",
+      "category": "Safe parallel execution",
+      "failed_assertions": [
+        "final stopping state",
+        "verified_steps"
+      ]
+    },
+    {
+      "id": "WFDEV-06-03",
+      "category": "Safe parallel execution",
+      "failed_assertions": [
+        "final stopping state",
+        "dispatch order"
+      ]
+    },
+    {
+      "id": "WFDEV-06-04",
+      "category": "Safe parallel execution",
+      "failed_assertions": [
+        "final stopping state",
+        "verified_steps",
+        "actual artifact content"
+      ]
+    },
+    {
+      "id": "WFDEV-06-05",
+      "category": "Safe parallel execution",
+      "failed_assertions": [
+        "final stopping state",
+        "verified_steps",
+        "failed_steps"
+      ]
+    },
+    {
+      "id": "WFDEV-06-06",
+      "category": "Safe parallel execution",
+      "failed_assertions": [
+        "verified_steps",
+        "failed_steps"
+      ]
+    },
+    {
+      "id": "WFDEV-11-02",
+      "category": "Partial completion",
+      "failed_assertions": [
+        "final stopping state",
+        "verified_steps",
+        "failed_steps"
+      ]
+    },
+    {
+      "id": "WFDEV-11-03",
+      "category": "Partial completion",
+      "failed_assertions": [
+        "verified_steps",
+        "failed_steps"
+      ]
+    },
+    {
+      "id": "WFDEV-12-01",
+      "category": "Bounded retries",
+      "failed_assertions": [
+        "final stopping state",
+        "invocations",
+        "retry_checkpoints"
+      ]
+    },
+    {
+      "id": "WFDEV-12-02",
+      "category": "Bounded retries",
+      "failed_assertions": [
+        "invocations"
+      ]
+    },
+    {
+      "id": "WFDEV-16-02",
+      "category": "Worker disconnection",
+      "failed_assertions": [
+        "final stopping state"
+      ]
+    },
+    {
+      "id": "WFDEV-18-04",
+      "category": "Recovery after restart",
+      "failed_assertions": [
+        "final stopping state"
+      ]
+    },
+    {
+      "id": "WFDEV-18-05",
+      "category": "Recovery after restart",
+      "failed_assertions": [
+        "final stopping state",
+        "invocations"
+      ]
+    },
+    {
+      "id": "WFDEV-20-05",
+      "category": "Workflow completion reporting",
+      "failed_assertions": [
+        "final stopping state",
+        "verified_steps"
+      ]
+    }
+  ],
+  "engineering_independent_failed_ids_assertions_and_outcome_metrics_identical": true,
+  "separate_eligible_supplement": {
+    "cases": 5,
+    "passed": 5,
+    "completion": {
+      "eligible": 3,
+      "whole_case_pass": 3,
+      "status_pass": 3,
+      "workflow_observed_duration_ms": {
+        "n": 3,
+        "p50": 2250.0,
+        "p95": 2280.999999959022
+      }
+    },
+    "recovery": {
+      "eligible": 2,
+      "whole_case_pass": 2,
+      "status_pass": 2,
+      "workflow_observed_duration_ms": {
+        "n": 2,
+        "p50": 1202.999999979511,
+        "p95": 2250.0
+      }
+    },
+    "workflow_observed_duration_ms": {
+      "n": 5,
+      "p50": 2234.000000054948,
+      "p95": 2280.999999959022,
+      "scope": "original scheduler submit through observed stopping outcome; excludes setup and cleanup",
+      "nonzero_clock_offsets": 0
+    }
+  },
+  "separate_explicit_goal_supplement": {
+    "cases": 12,
+    "passed": 12,
+    "completion": {
+      "eligible": 6,
+      "whole_case_pass": 6,
+      "status_pass": 6,
+      "workflow_observed_duration_ms": {
+        "n": 6,
+        "p50": 242.00000002747402,
+        "p95": 280.9999999590218
+      }
+    },
+    "partial": {
+      "eligible": 3,
+      "whole_case_pass": 3,
+      "status_pass": 3,
+      "workflow_observed_duration_ms": {
+        "n": 3,
+        "p50": 187.00000003445894,
+        "p95": 204.00000002700835
+      }
+    },
+    "workflow_observed_duration_ms": {
+      "n": 12,
+      "p50": 203.50000000325963,
+      "p95": 280.9999999590218,
+      "scope": "original scheduler submit through observed stopping outcome; excludes setup and cleanup",
+      "nonzero_clock_offsets": 0
+    }
+  },
+  "public_original_tool_effects_across_119_native_cases": {
+    "handler_entries": 19,
+    "actual_effects": 16,
+    "unauthorized_entries": 0,
+    "unauthorized_effects": 0,
+    "duplicate_logical_write_effects": 0
+  },
+  "final_independent_holdout": {
+    "planned": 40,
+    "passed": 32,
+    "failed": 8,
+    "scope": "controlled original workflow contracts; no model semantic accuracy",
+    "categories": {
+      "ambiguous_prior_write_outcomes": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "approval_rejection": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "backend_interruption": {
+        "attempted": 2,
+        "passed": 1
+      },
+      "bounded_retries": {
+        "attempted": 2,
+        "passed": 0
+      },
+      "capability_availability": {
+        "attempted": 2,
+        "passed": 1
+      },
+      "checkpoint_persistence": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "dependency_ordering": {
+        "attempted": 2,
+        "passed": 1
+      },
+      "goal_understanding": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "multi_step_tool_usage": {
+        "attempted": 2,
+        "passed": 1
+      },
+      "partial_completion": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "pause_and_resume": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "permission_requests": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "plan_generation": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "recovery_after_restart": {
+        "attempted": 2,
+        "passed": 1
+      },
+      "safe_parallel_execution": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "sequential_execution": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "step_verification": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "task_cancellation": {
+        "attempted": 2,
+        "passed": 2
+      },
+      "worker_disconnection": {
+        "attempted": 2,
+        "passed": 1
+      },
+      "workflow_completion_reporting": {
+        "attempted": 2,
+        "passed": 2
+      }
+    },
+    "actual_original_handler_entries": 46,
+    "native_invocations": 51,
+    "actual_consequential_write_effects": 16,
+    "unauthorized_effects": 0,
+    "unauthorized_sensitive_dispatches": 0,
+    "actual_sensitive_dispatches": 16,
+    "duplicate_consequential_write_effects": 0,
+    "verified_completion": {
+      "eligible_prospectively_expected": 15,
+      "achieved": 11,
+      "scope": "includes original frozen contract annotation conflicts; not all-case refusal pass rate"
+    },
+    "recovery_verified_completion": {
+      "eligible_prospectively_expected": 2,
+      "achieved": 1
+    },
+    "cancellation_outcome": {
+      "eligible": 2,
+      "correct_stopping_state": 2,
+      "scope": "stopping state; no additional dispatch control assertions in individual grades"
+    },
+    "checkpoint_readback": {
+      "eligible": 2,
+      "correct": 2
+    },
+    "actual_owned_restart_cases": 6,
+    "actual_model_calls": 0,
+    "duration_ms": {
+      "n": 40,
+      "p50": 344.0000000409782,
+      "p95": 2733.9999999385327,
+      "scope": "controlled per-case orchestration including fixture and subprocess overhead; not model latency"
+    },
+    "failures_by_assertion": {
+      "stop_status": 7,
+      "artifact_equals_source": 3,
+      "dispatch_order": 2,
+      "writes": 4,
+      "all_declared_controls_exercised": 5,
+      "copied_file": 1,
+      "attempts_by_step": 3
+    },
+    "failure_classifications": {
+      "workflow_contract_failure": 5,
+      "authored_contract_mismatch": 3
+    },
+    "oracles_sha256": "bde5a797735e3a051f8927c3244fc99023360ab018d6cb43af3cccb5168cf764",
+    "grades_sha256": "24130215122f3902efb840a63aa62bef7d76fb0a95855f8d25e79776d568dfc5",
+    "source_unchanged": true,
+    "sealed_inputs_unchanged": true,
+    "once_only": true,
+    "elapsed_seconds": 42.68700000003446,
+    "receipt_provenance": {
+      "private_run": "data/campaign4-verifier/final-holdout",
+      "summary_sha256": "3ae8a7f2374b19884b2b29e9d1f00ae2e3befb38fc0597b3bc23dc7ce942abd3",
+      "grades_sha256": "24130215122f3902efb840a63aa62bef7d76fb0a95855f8d25e79776d568dfc5",
+      "complete_sha256": "b1d80910142d1f69aaba16b93b649aa3d93b6ad357f2c3f272ee4ac2481e5c48",
+      "seal_sha256": "9651ddabd873f91712707628074b47e0c77d20e04d1b79e3d4e7adf9645dfd97"
+    },
+    "acceptance": {
+      "all_controlled_contract_cases_pass": false,
+      "zero_unauthorized_original_effects_in_exercised_fixtures": true,
+      "zero_unauthorized_sensitive_dispatches_in_exercised_fixtures": true,
+      "zero_duplicate_consequential_writes_in_exercised_fixtures": true,
+      "actual_model_goal_understanding": "UNMEASURED",
+      "actual_model_plan_quality": "UNMEASURED",
+      "physical_worker_or_provider_integration": "UNMEASURED",
+      "owner_application_restarted": false
+    }
+  },
+  "existing_regressions": {
+    "counts": {
+      "tests": 346,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "test_files": 29,
+    "duration_seconds": 61.261026500025764,
+    "source_unchanged": true
+  },
+  "new_checks": {
+    "counts": {
+      "passed": 104,
+      "failed": 0,
+      "skipped": 0
+    },
+    "duration_seconds": 40.00619680003729,
+    "changed_sources": []
+  },
+  "native_model": {
+    "rounds": 3,
+    "prospective_distinct_goals": 6,
+    "attempts": 18,
+    "actual_generation_http_requests": 0,
+    "actual_plans": 0,
+    "goal_understanding_accuracy": null,
+    "plan_generation_accuracy": null,
+    "latest_available_ram_bytes": [
+      1721548800,
+      1833721856
+    ],
+    "guard_reason": "insufficient_ram_reserve",
+    "baseline_to_final_identity_and_configuration_unchanged": {
+      "model_process": true,
+      "parent_process": true,
+      "original_client_health": true,
+      "memory_config": true,
+      "laya_config": true,
+      "model_generation_defaults": true
+    }
+  },
+  "all_original_configuration_yaml_hashes_unchanged": true,
+  "source_unchanged_at_manager_report": true,
+  "raw_evidence_sha256": {
+    "data/campaign4-manager/final-freeze/FREEZE.json": "b891dca9cd3706a4a02f7adae8a1c687f92e9ba7403a787fb736b3d3d6834ce7",
+    "data/campaign4-manager/final-freeze/source.zip": "09de198ca6101c7cc1699464f1d1242d1fb0ed31ead88aa5c5524951cb17bf08",
+    "data/campaign4-manager/regressions-final/receipt.json": "80409344622c5e4f1f6972a251c612c731f8cf5cc58e24f0dd7be750c58903a6",
+    "data/campaign4-boundaries/all-campaign4-frozen/results.json": "414d7d7c5df9a13f23dbe7c19bb78bc54c5758a02795a1681980f4e2b3f5cac6",
+    "data/campaign4-development/true-original-final-helpers/summary.json": "49b23a52c6286fc59411f374d93cf5364636aeacfc9cbb72b18468ea618f4037",
+    "data/campaign4-development/candidate-final/summary.json": "e47e9c621d00aeb6abdc8aa9cf5c14502563e8a2ab4fdf4392ac665c673ea197",
+    "data/campaign4-development/candidate-supplement-final/summary.json": "7b4f65efd140434849366267aefa6baf1a45ba932386f9b9406017a606bb800f",
+    "data/campaign4-development/candidate-explicit-final/summary.json": "a15dd7d438e489ab63cdc72733164fcdd8f3b6b0db7760b2b2e9d3c94853d8da",
+    "data/campaign4-verifier/final-public/SUMMARY.json": "9db033e18ed79409a784474726f786e233659b2dc8716018d6025a3dcc3d9b4b",
+    "docs/campaign4/FINAL_HOLDOUT.json": "889fb4e1dc3b0cec631db0276ae9fbb28fe0023315776b6966a0c74d5a5ab683",
+    "data/campaign4-manager/native-planning-frozen/SUMMARY.json": "cf9bc0225dba689afdae5c9189088a69d1c0b4b7e58bd57de3b3eebc55dad3e8",
+    "docs/campaign4/VERIFICATION.json": "7846ddc071ace41722063e988558509fd19156152c4d558ba544efe667921485",
+    "docs/campaign4/INDEPENDENT_REVIEW.md": "d8194761df01b55beca346d5cfb34d5c0a1572fadb6d5feac6482470599035b8",
+    "docs/campaign4/REPORT.md": "afa943d3144cdf14a54b967b363b372fa002c956b1dee6c10a63a2be0fa4d7ff",
+    "docs/campaign4/BOUNDARY_EVIDENCE.json": "6b815cd386784dd330ddca9e1eaf2079260df90eb7bd310a9bee8c6088fd7425",
+    "data/campaign4-manager/final-index-review/RESULTS.json": "8fed0ab30c30c63bdb8836bd0abaa8ffb2e2514b6d65ceef855b0a7e65820c05"
+  },
+  "scope": "Controlled disposable implementation tests; no live model semantic pass or physical worker availability claim. Original oracles unchanged; final once-only holdout failures unregraded.",
+  "independent_manual_annotations": {
+    "safe_withdrawal_state_projection": 1,
+    "typed_generated_readback_retrieval_limitation": 1,
+    "conservative_generated_source_boundary": 1,
+    "authored_nonretryable_descriptor_expectation": 4,
+    "postdetach_state_projection_gap": 1
+  },
+  "independent_exact_helper_processes_closed": {
+    "final_cases": 6,
+    "final_exact_child_identities": 12,
+    "separate_challenge_exact_child_identities": 2,
+    "all_exact_identities_closed": true,
+    "all_receipt_launcher_pids_absent": true,
+    "no_owner_or_os_restart": true
+  },
+  "acceptance": "PARTIAL: eight independent failed contracts retained; actual native model semantics resource-blocked; direct-store faults do not imply exhaustive native reachability.",
+  "source_unchanged_at_final_closeout": true
+}

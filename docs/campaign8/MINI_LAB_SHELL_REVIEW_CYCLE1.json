@@ -1,0 +1,499 @@
+{
+  "scope": "Independent exposed-development actual native Mini/Lab/shell control review; immutable original raw errors retained, no private final or model generation",
+  "raw": {
+    "path": "data/campaign8-native/cycle23-original-mini-lab-shell21/RESULTS.json",
+    "sha256": "5aad6e7c12daa6a4799d987e1ea0ca0e2a19821abb9726b836daa9a088b90a04"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "5b77e1673872fe543fa5cc7f69be2705b76b2bc80294bfbf6b8729ebabf53705",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "counts": {
+    "cases": 21,
+    "native_executed": 14,
+    "PASS_scoped": 14,
+    "FAIL_preflight_same_root_cause": 2,
+    "BLOCKED_DEPENDENCY": 5,
+    "final_or_error_PNGs_viewed": 21
+  },
+  "case_grades": [
+    {
+      "id": "lifecycle-retrieval-start-first",
+      "input_sha256": "28d6df884dd5ebe6eb94e5fef556bce865cd6c593d50118103e7249226aea41e",
+      "status": "FAIL",
+      "observed_scope": "Original model-free routing suite is selected but Start remains disabled because its original preflight query returns400 after blank endpoint is dropped. Genuine API defect independently reproduced; no run/inference.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-retrieval-start-first-error.png",
+        "sha256": "d8b106c3e018faef395601f8db56c1d01d20988d78f7b735cd03eafc50d13df1"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "717a7c0c712113629578a4dd96d48343559898dd4a7f3c7723f0caed3f8f274e"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Start benchmark\", exact=True).first\n    - locator resolved to <button disabled class=\"primary\">Start benchmark</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click acti"
+      }
+    },
+    {
+      "id": "lifecycle-retrieval-inspect-first",
+      "input_sha256": "93e4ae3d8562777a9a9d16c163ced446c4172f7afa4dae3926c7261ea17735f0",
+      "status": "BLOCKED_DEPENDENCY",
+      "observed_scope": "No successful first run from the preceding preflight defect, so Inspect results is absent. Dependent blocked coverage, not a separately proven inspect implementation defect.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-retrieval-inspect-first-error.png",
+        "sha256": "a2d07f9d948c7080ce57d6042f299d18dcdab9d1a50b3ecf5ca1a966e4ed937c"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "a8646da04f7217d86f57fe7cd4a1781625dee209da9da9289c87cebe7b52a6d8"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Inspect results\", exact=True).first\n"
+      }
+    },
+    {
+      "id": "lifecycle-retrieval-transcript",
+      "input_sha256": "546f2df8f7f15ac8fa87e7f6d7393996fbb95315f57908e6e442c68ff08ec0ff",
+      "status": "BLOCKED_DEPENDENCY",
+      "observed_scope": "No actual case result from preceding failed start; absent transcript control. Dependent blocked coverage.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-retrieval-transcript-error.png",
+        "sha256": "d8b106c3e018faef395601f8db56c1d01d20988d78f7b735cd03eafc50d13df1"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "a8646da04f7217d86f57fe7cd4a1781625dee209da9da9289c87cebe7b52a6d8"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\".lab-case-detail details summary\").nth(1)\n"
+      }
+    },
+    {
+      "id": "lifecycle-retrieval-protocol",
+      "input_sha256": "e72f5d0e6410e74155bf496bd3055047a1170f0c7910acd204d22b3df12f51d4",
+      "status": "BLOCKED_DEPENDENCY",
+      "observed_scope": "No actual run from preceding failed start; absent run protocol disclosure. Dependent blocked coverage.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-retrieval-protocol-error.png",
+        "sha256": "a2d07f9d948c7080ce57d6042f299d18dcdab9d1a50b3ecf5ca1a966e4ed937c"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "75b935a30892eb7b130b135542bbf9ecae173e3f4a4054fa2cadbda923969620"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\".lab-run-protocol summary\").first\n"
+      }
+    },
+    {
+      "id": "lifecycle-retrieval-outcome-filter",
+      "input_sha256": "618b5a719bcb44ece6e26585e88401cdbd088f15ca8076a19b291a6c834bb230",
+      "status": "BLOCKED_DEPENDENCY",
+      "observed_scope": "No actual run/case outcome from preceding failed start; absent outcome selector. Dependent blocked coverage.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-retrieval-outcome-filter-error.png",
+        "sha256": "d8b106c3e018faef395601f8db56c1d01d20988d78f7b735cd03eafc50d13df1"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "90d9f2c989e6f496df1e5b11ccb7250c1f9ce799c4ce2e90bddc9fd0b5bf9081"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.select_option: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"combobox\", name=\"Filter case outcome\", exact=True).first\n"
+      }
+    },
+    {
+      "id": "lifecycle-retrieval-start-second",
+      "input_sha256": "8f9cec0b3142ad1817410bd7e11e82c6ea8018d1b26a401721fff76a2aa45a9d",
+      "status": "FAIL",
+      "observed_scope": "Second unchanged model-free Start also disabled by same preflight400 defect; no separate second root cause and no completed run.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-retrieval-start-second-error.png",
+        "sha256": "080fdf5898ec10ba70a2742d79e737d037bbaafa7c09fdc62329c651594968fe"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "90d9f2c989e6f496df1e5b11ccb7250c1f9ce799c4ce2e90bddc9fd0b5bf9081"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Start benchmark\", exact=True).first\n    - locator resolved to <button disabled class=\"primary\">Start benchmark</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click acti"
+      }
+    },
+    {
+      "id": "lifecycle-retrieval-history-search",
+      "input_sha256": "5568faf84b1559aae6476c7775de7be860e25a3199e81e98ae9644e87b3fd699",
+      "status": "PASS",
+      "observed_scope": "Search/status/suite controls retain recorded values and display truthful zero matching history. No populated history discrimination/result lifecycle.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-retrieval-history-search.png",
+        "sha256": "4e905c4554e06c24fb43bd659ab20cc5fd6ef7729a8b88218e20c6a5bf446c56"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "0a155a5176e32010d00266023c01016bd13300ce21660813d2dd1735e272e5d6"
+        }
+      ],
+      "original_error_retained": null
+    },
+    {
+      "id": "lifecycle-retrieval-compare",
+      "input_sha256": "75d131ec6384e5a1804153d530e0de357ed76b25900c92cd14b43fddc7e1486c",
+      "status": "BLOCKED_DEPENDENCY",
+      "observed_scope": "No preceding successful runs, so no selection checkboxes exist. Dependent blocked comparison coverage, not model comparison or separately proven comparison defect.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-retrieval-compare-error.png",
+        "sha256": "a5a8ca38d161c03708f064b5cadec940fa6c8c2aab2a4aa50a0d562c172ee227"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "0a155a5176e32010d00266023c01016bd13300ce21660813d2dd1735e272e5d6"
+        }
+      ],
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for locator(\".lab-history input[type=\\\"checkbox\\\"]\").first\n"
+      }
+    },
+    {
+      "id": "lifecycle-mini-pin",
+      "input_sha256": "f9624ab7770983f239c1bc493f39af3df67799e578f458c8275b5319fd68b4d2",
+      "status": "PASS",
+      "observed_scope": "Original visible Mini Pin button changes exact Mini HWND topmost false to true, agrees with Pinned native pixels. No substituted bridge invocation.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-mini-pin.png",
+        "sha256": "0a8cc0e67ad6affb3a93f2c22d72a6878417691e43c41b3e06b2eb7cd64433ab"
+      },
+      "source_API_evidence": [],
+      "original_error_retained": null
+    },
+    {
+      "id": "lifecycle-mini-unpin",
+      "input_sha256": "5f6f9963baae6e54b3489576f17f588ce49aa14c3f2845bb1f250576d8ec1e70",
+      "status": "PASS",
+      "observed_scope": "Original visible Mini unpin changes exact Mini HWND topmost true to false; native label returns Pin.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-mini-unpin.png",
+        "sha256": "ab8d829a5626f6c31e209f2ac4695fa69591aa89d8aa0339c3b1ab8785516f13"
+      },
+      "source_API_evidence": [],
+      "original_error_retained": null
+    },
+    {
+      "id": "lifecycle-mini-shortcut",
+      "input_sha256": "254069fda70674e31ed6624715432654b28cb7bee31028a412f735b48ba41178",
+      "status": "PASS",
+      "observed_scope": "Original Shortcut menu opens, actual combobox selects already-current Ctrl+Shift+H and closes. Selected value is present; does not prove new binding or actual OS hotkey delivery in this case.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-mini-shortcut.png",
+        "sha256": "c6f9cea0412fdbf69ebbf98327a3d81a3c9ed1385be8bd85c69dcbf5f33a601b"
+      },
+      "source_API_evidence": [],
+      "original_error_retained": null
+    },
+    {
+      "id": "lifecycle-mini-capability-draft",
+      "input_sha256": "890c824bc6e73c1328078223053e849d84da360198b309e1350c52ca2736f9cd",
+      "status": "PASS",
+      "observed_scope": "Typing /file opens original capability choices; clicking first suggestion produces exact draft Help me use disk.largest_files: then clears. No tool dispatch or message send.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-mini-capability-draft.png",
+        "sha256": "b6760cdc96ba8d71f34b2494670c6b9ffb6f7db1839a2a6dbd26e20d72914ac5"
+      },
+      "source_API_evidence": [],
+      "original_error_retained": null
+    },
+    {
+      "id": "lifecycle-mini-expand",
+      "input_sha256": "cff7490ccdfc16b58888c89e210389ab1799511dab2484bb8d1cdea350d60073",
+      "status": "PASS",
+      "observed_scope": "Original Mini frontend Expand hides same Mini HWND and makes main Conversation view visible. No conversation continuity claim from empty history.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-mini-expand.png",
+        "sha256": "df18065c4461f2f19b84452f5069a30b11b4893f7a2ba1e51f84817d70a40d25"
+      },
+      "source_API_evidence": [],
+      "original_error_retained": null
+    },
+    {
+      "id": "lifecycle-mini-dismiss",
+      "input_sha256": "62c69763400954dd1cd263f6f739f9058723afa5ce25f22b3cd647380cb6460e",
+      "status": "PASS",
+      "observed_scope": "Original Mini frontend Dismiss hides same Mini HWND after collector explicitly reopens it. Main HWND remains visible; hidden Mini is not claimed as final visible pixels.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-mini-dismiss.png",
+        "sha256": "df18065c4461f2f19b84452f5069a30b11b4893f7a2ba1e51f84817d70a40d25"
+      },
+      "source_API_evidence": [],
+      "original_error_retained": null
+    },
+    {
+      "id": "lifecycle-shell-skiplink",
+      "input_sha256": "4f7e77e2b578343249b1293c568eede0c98f09014b80c899a64476f8cda358f2",
+      "status": "PASS",
+      "observed_scope": "Direct original skip-link Enter leaves DOM focus on MAIN, actual Home pixels present. Locator-targeted key events; not exhaustive native Tab navigation.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-shell-skiplink.png",
+        "sha256": "41a2ee3186f3a0e8e5eef9935ff676f18ef9631be2ff30c22939f4ba3ab1466b"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "cb92df1b8be24ffb2b9ae729ba09b0c90dd928898ce11f6e2d23c1c37dd3f3b0"
+        },
+        {
+          "path": "/api/voice",
+          "status": 200,
+          "data_sha256": "a1f29de8410d6dc79a64abe5e160b7808f38535668a98e63b2e1df0173ee75ca"
+        },
+        {
+          "path": "/api/awareness",
+          "status": 200,
+          "data_sha256": "6826f8d08e20de635bc80366f90e9e5c875dccaa64848c4614c8e10dcc8a6b64"
+        }
+      ],
+      "original_error_retained": null
+    },
+    {
+      "id": "lifecycle-shell-home",
+      "input_sha256": "bcdd25939f1f29d39d864f40146dca82544ac070ee14a0ad41adca843b45476b",
+      "status": "PASS",
+      "observed_scope": "Original HANNI home control returns Home with truthful conversation unavailable projection.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-shell-home.png",
+        "sha256": "a13dfa8fe85460101de071e18930b6e42d735136193a2d62a0a7af811c6200e9"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "cb92df1b8be24ffb2b9ae729ba09b0c90dd928898ce11f6e2d23c1c37dd3f3b0"
+        },
+        {
+          "path": "/api/voice",
+          "status": 200,
+          "data_sha256": "a1f29de8410d6dc79a64abe5e160b7808f38535668a98e63b2e1df0173ee75ca"
+        },
+        {
+          "path": "/api/awareness",
+          "status": 200,
+          "data_sha256": "6826f8d08e20de635bc80366f90e9e5c875dccaa64848c4614c8e10dcc8a6b64"
+        }
+      ],
+      "original_error_retained": null
+    },
+    {
+      "id": "lifecycle-shell-navigation-groups",
+      "input_sha256": "35c0373e90dbedebbcc00e854f8996df16d0d115041a69cef6d3c9170c67d4f3",
+      "status": "PASS",
+      "observed_scope": "Original Workspace/Mission/Assistant controls expand their real group states and retain focused original buttons; final Assistant expansion visible.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-shell-navigation-groups.png",
+        "sha256": "220755ee62474c50127b1c1345e1d94d94182befa9d108869d6a7db10bf7dbcc"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "cb92df1b8be24ffb2b9ae729ba09b0c90dd928898ce11f6e2d23c1c37dd3f3b0"
+        },
+        {
+          "path": "/api/voice",
+          "status": 200,
+          "data_sha256": "a1f29de8410d6dc79a64abe5e160b7808f38535668a98e63b2e1df0173ee75ca"
+        },
+        {
+          "path": "/api/awareness",
+          "status": 200,
+          "data_sha256": "6826f8d08e20de635bc80366f90e9e5c875dccaa64848c4614c8e10dcc8a6b64"
+        }
+      ],
+      "original_error_retained": null
+    },
+    {
+      "id": "lifecycle-shell-status-details",
+      "input_sha256": "35f7d52bb814d034b210ad579f46280c4b4e6a821f8ad2a8559f4ea2cc6a3ec7",
+      "status": "PASS",
+      "observed_scope": "Original connection disclosure opens and closes without mutating backend. Connected dashboard is separate from unreachable model.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-shell-status-details.png",
+        "sha256": "169a8bbac2e5d6712fe5cedee8a59a5727d18b00afd475b479e2302940c49729"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "cb92df1b8be24ffb2b9ae729ba09b0c90dd928898ce11f6e2d23c1c37dd3f3b0"
+        },
+        {
+          "path": "/api/voice",
+          "status": 200,
+          "data_sha256": "a1f29de8410d6dc79a64abe5e160b7808f38535668a98e63b2e1df0173ee75ca"
+        },
+        {
+          "path": "/api/awareness",
+          "status": 200,
+          "data_sha256": "6826f8d08e20de635bc80366f90e9e5c875dccaa64848c4614c8e10dcc8a6b64"
+        }
+      ],
+      "original_error_retained": null
+    },
+    {
+      "id": "lifecycle-shell-voice-details",
+      "input_sha256": "5bbd8887b1802857c338b0c4ef3e75b4d536e9934e1b8982be61172055b75a50",
+      "status": "PASS",
+      "observed_scope": "Original voice details opens, local visual Pause/Resume labels change and panel closes. No audio, physical voice, OS preference or live pipeline action.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-shell-voice-details.png",
+        "sha256": "e6a2d2d72943d41ec7d1d71240e1a8bbd6f5411eee0fbe0662ecf8cffab23b0f"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "cb92df1b8be24ffb2b9ae729ba09b0c90dd928898ce11f6e2d23c1c37dd3f3b0"
+        },
+        {
+          "path": "/api/voice",
+          "status": 200,
+          "data_sha256": "a1f29de8410d6dc79a64abe5e160b7808f38535668a98e63b2e1df0173ee75ca"
+        },
+        {
+          "path": "/api/awareness",
+          "status": 200,
+          "data_sha256": "6826f8d08e20de635bc80366f90e9e5c875dccaa64848c4614c8e10dcc8a6b64"
+        }
+      ],
+      "original_error_retained": null
+    },
+    {
+      "id": "lifecycle-shell-stop-cancel",
+      "input_sha256": "9bcf10b134d53e972a9d2bb2d0cc67129927cbdb6cd165f4989e3070f6d5ec58",
+      "status": "PASS",
+      "observed_scope": "Original Stop HANNI dialog opens then Cancel closes; native/backend remains running until owned cleanup. No global stop action executed.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-shell-stop-cancel.png",
+        "sha256": "2e72d1d3d971145b7463d0ac8e2dd5fbf3d484abf2051546463782a594880989"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "cb92df1b8be24ffb2b9ae729ba09b0c90dd928898ce11f6e2d23c1c37dd3f3b0"
+        },
+        {
+          "path": "/api/voice",
+          "status": 200,
+          "data_sha256": "a1f29de8410d6dc79a64abe5e160b7808f38535668a98e63b2e1df0173ee75ca"
+        },
+        {
+          "path": "/api/awareness",
+          "status": 200,
+          "data_sha256": "6826f8d08e20de635bc80366f90e9e5c875dccaa64848c4614c8e10dcc8a6b64"
+        }
+      ],
+      "original_error_retained": null
+    },
+    {
+      "id": "lifecycle-shell-palette-route",
+      "input_sha256": "84421f94e875c79c8e32f0a182d0fa97521ee0d4bf8b99537f920876754f389c",
+      "status": "PASS",
+      "observed_scope": "Original Search workspace dialog filter Notifications selects real route; native Notifications and original authenticated readback agree. No arbitrary command dispatch.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle23-original-mini-lab-shell21/screenshots/lifecycle-shell-palette-route.png",
+        "sha256": "218b60c5afe276f53c91f4f7813a98c65a9aa9c9313f305917a3f4d15bc40c52"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "e2783b868044b909b7942c004107f9060c03ceb20e185ba49671c3f05a2fd612"
+        }
+      ],
+      "original_error_retained": null
+    }
+  ],
+  "preflight_original_proof": "FIELD_AND_PREFLIGHT_BEFORE.json",
+  "preflight_separate_repair_proof": "PREFLIGHT_REPAIR_REVIEW.json",
+  "cleanup": {
+    "owned_native_cleanup": true,
+    "native_exit_code": 0,
+    "javascript_errors": []
+  },
+  "limitations": [
+    "Fourteen executed flags are not automatic passes; each grade is bounded by the stated native/API scope.",
+    "Failed model-free preflight is separate from original correctly unavailable model-serving path.",
+    "Successful repair API proof does not rewrite original21 results; fresh native after must be separate.",
+    "Mini initial show uses explicit owned-HWND adapter, separate actual Application-menu show proof is APPLICATION_MENU_REVIEW.json."
+  ]
+}

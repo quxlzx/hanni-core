@@ -1,0 +1,45 @@
+{
+  "sealed_before_repair": true,
+  "cases": [
+    {
+      "id": "medical-new",
+      "request": "Put physiotherapy next Tuesday at 11am.",
+      "calendar_write_menu": true
+    },
+    {
+      "id": "social-new",
+      "request": "Add badminton practice this Sunday at 4pm.",
+      "calendar_write_menu": true
+    },
+    {
+      "id": "academic-new",
+      "request": "Add tutoring hours next Thursday at 2pm.",
+      "calendar_write_menu": true
+    },
+    {
+      "id": "local-note-new",
+      "request": "Add to my local notes: optometrist next Friday at 10am.",
+      "calendar_write_menu": false
+    },
+    {
+      "id": "local-task-new",
+      "request": "Create a local task called tutoring hours next Thursday at 2pm.",
+      "calendar_write_menu": false
+    },
+    {
+      "id": "quoted-record-new",
+      "request": "Add a record with text \"put physiotherapy next Tuesday at 11am\" tomorrow at noon.",
+      "calendar_write_menu": false
+    },
+    {
+      "id": "ambiguous-object-new",
+      "request": "Add sapphire package Friday at 3pm.",
+      "calendar_write_menu": false
+    },
+    {
+      "id": "explicit-destination-new",
+      "request": "Add \"sapphire package\" to my calendar Friday at 3pm.",
+      "calendar_write_menu": true
+    }
+  ]
+}

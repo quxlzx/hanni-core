@@ -1,0 +1,1217 @@
+{
+  "captured_at": "2026-10-10T07:00:43.582124+00:00",
+  "attempts": 173,
+  "counts": {
+    "pass": 0,
+    "fail": 0,
+    "blocked": 173
+  },
+  "actual_model_http_requests": 0,
+  "scope": "Guarded actual selection diagnostics; retrieval scorecard is separate; foreign actions never dispatched.",
+  "per_capability": [
+    {
+      "id": "app.list_installed",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/app.list_installed.json",
+      "raw_receipt_sha256": "aa4a9af31ab0c1014bb584a8eb57e378f1a861ee579e9c876db6480bb6c66ecf"
+    },
+    {
+      "id": "app.open",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/app.open.json",
+      "raw_receipt_sha256": "f511d49a8deb627c110b1a9655470485ae1cf512a7cec7ec915bff5601e41386"
+    },
+    {
+      "id": "archive.list",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/archive.list.json",
+      "raw_receipt_sha256": "71d1bd26d568aa5d1acd7f7fcb18d745b28f2e48ede293c2db490247c35e339e"
+    },
+    {
+      "id": "archive.unzip",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/archive.unzip.json",
+      "raw_receipt_sha256": "2412305a0744f3fbf8640e68be7bdcaf54acedd06995a1413a0c6fba999d0fbd"
+    },
+    {
+      "id": "archive.zip",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/archive.zip.json",
+      "raw_receipt_sha256": "097841e5588b02467c774702a1dcca3e9d2511ed1b425d5f5c5e4cbd2a4c8b0d"
+    },
+    {
+      "id": "audio.mute",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/audio.mute.json",
+      "raw_receipt_sha256": "8038f13d49a2c184d1fa7aed176b795a3cce3ea352c38af38df2412cd6e42712"
+    },
+    {
+      "id": "audio.set_volume",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/audio.set_volume.json",
+      "raw_receipt_sha256": "a934917c382b6bfc56d01f608307117257e75bd6e67fa56900f100f369978f3f"
+    },
+    {
+      "id": "audio.status",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/audio.status.json",
+      "raw_receipt_sha256": "5096e59bb2334d4fe36e50f4b09bbfaa9d1341b41cf35e3c8569b682465b7b34"
+    },
+    {
+      "id": "browser.open_url",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/browser.open_url.json",
+      "raw_receipt_sha256": "ce8eb5833175eeb8b38cd7afadc45af9653a51c8c1ab6f0f11051c4a7a8202fb"
+    },
+    {
+      "id": "calc.evaluate",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/calc.evaluate.json",
+      "raw_receipt_sha256": "9d64678b013487673b47e09a9d75aefdbefbff75f7450dbcd1c7430117b198f6"
+    },
+    {
+      "id": "clipboard.read",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/clipboard.read.json",
+      "raw_receipt_sha256": "f967bdfb7fd92c367813706397bf9f0549d93a6c70547f5d70e4c8ba175438ac"
+    },
+    {
+      "id": "clipboard.write",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/clipboard.write.json",
+      "raw_receipt_sha256": "3de8c21e3e4887fa9ec225b65b61ffd7a36036b09fc8d99c07d4a2a897cccdc2"
+    },
+    {
+      "id": "device.audio",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/device.audio.json",
+      "raw_receipt_sha256": "e683456a6cae2f024b37d5debbafeb904b9e5eabc3b759c215fa268a76917a24"
+    },
+    {
+      "id": "device.bluetooth",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/device.bluetooth.json",
+      "raw_receipt_sha256": "24d838820b54d471493359d7c7b628fcf5e35c5dff2a653a5d8c4fa101a5f983"
+    },
+    {
+      "id": "device.disk_health",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/device.disk_health.json",
+      "raw_receipt_sha256": "7b4355027bd6c552d04934f9964a4c88d25bfc84011b687522497e58560cece6"
+    },
+    {
+      "id": "device.printers",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/device.printers.json",
+      "raw_receipt_sha256": "2aabaffe3c7929d57c112b556f82b9560f263960a69df4e41f1d4f8122d4d247"
+    },
+    {
+      "id": "device.usb",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/device.usb.json",
+      "raw_receipt_sha256": "921dd20444499cad6627658f27d117b0064bf23f06303fa25435d75e34df9ca9"
+    },
+    {
+      "id": "disk.cleanup_temp",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/disk.cleanup_temp.json",
+      "raw_receipt_sha256": "4b46808c7b20d78235e3edbdff2e3a2ba14fccdd656a18992f1ea6be1e752a5b"
+    },
+    {
+      "id": "disk.folder_size",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/disk.folder_size.json",
+      "raw_receipt_sha256": "0d5ac11b2538a25e935c51f110b7432efa6e4cadf8a12e0d144ff0f361b8139b"
+    },
+    {
+      "id": "disk.free_space",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/disk.free_space.json",
+      "raw_receipt_sha256": "f6ca6591ee3934f152815c6197bab5aa9d9386d4d043ff6505c94e0441711fed"
+    },
+    {
+      "id": "disk.largest_files",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/disk.largest_files.json",
+      "raw_receipt_sha256": "7e36784ce4304225091a450aaaf2340901bd36da977198e15b9d23a607f4a6e6"
+    },
+    {
+      "id": "disk.largest_folders",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/disk.largest_folders.json",
+      "raw_receipt_sha256": "a58fa868f218aeae9c5f1874cacf428df7068c4865bd697ad7dd2b5b4b80b2e1"
+    },
+    {
+      "id": "disk.recycle_bin_size",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/disk.recycle_bin_size.json",
+      "raw_receipt_sha256": "60f99f5049196fc6d3a0c2aaf53e158756a0f428301eb73121998f3373f98bc6"
+    },
+    {
+      "id": "disk.usage",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/disk.usage.json",
+      "raw_receipt_sha256": "fb2a421e23c8fcf3fe9baee64fd8482a15c78ffcb21bb4bf9d44d9e4f53d5312"
+    },
+    {
+      "id": "display.brightness",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/display.brightness.json",
+      "raw_receipt_sha256": "34633ddd7feef47a3176cedffd3986e00fa9c759bbe9db2afea25a8be63d5f4d"
+    },
+    {
+      "id": "display.info",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/display.info.json",
+      "raw_receipt_sha256": "c4d50e2f88e7204f9ce70bfdc2aa82167ae412ec91bdbd791ef7eb9928a39cfc"
+    },
+    {
+      "id": "email.read",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/email.read.json",
+      "raw_receipt_sha256": "6dd99008e2f0e2fe7a86b3db6cc11fc64592af172b90129b8862f062785301eb"
+    },
+    {
+      "id": "email.search",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/email.search.json",
+      "raw_receipt_sha256": "3e2415c99a4742e2fab8e488af2f34bd325b9b213c0a6eec20b1e64e3af3c5c2"
+    },
+    {
+      "id": "env.get",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/env.get.json",
+      "raw_receipt_sha256": "e4f046c05f81e1b169a4b2369d0b39d8cc3db8f7da4770755182f4ab4abd94e5"
+    },
+    {
+      "id": "env.list",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/env.list.json",
+      "raw_receipt_sha256": "a4dca331d0d6205e195a18220d1769ff6ac74effc75e66a75823745c85846f5f"
+    },
+    {
+      "id": "env.path",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/env.path.json",
+      "raw_receipt_sha256": "75fbee09b6c785228e5ebe49a4d56b0ab5becd0fc1734e45b653999bdb988e3f"
+    },
+    {
+      "id": "env.user_folders",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/env.user_folders.json",
+      "raw_receipt_sha256": "54f19bd62c78091119bdfce3556fbda532a4b00c21cc2bd9e9934b4fa330b2b0"
+    },
+    {
+      "id": "env.which",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/env.which.json",
+      "raw_receipt_sha256": "3db91270d975aa710523f4e49e644e84a6d35278b215402a713dac7e72248033"
+    },
+    {
+      "id": "file.compare",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.compare.json",
+      "raw_receipt_sha256": "6b4b7982c29033da7f5bc7b20a94153b97786af486826a2b7432e9ca29614690"
+    },
+    {
+      "id": "file.composition",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.composition.json",
+      "raw_receipt_sha256": "156be76e5b40f622453e271da6f214a234f2bb4d2552bd187454fc1c7c418445"
+    },
+    {
+      "id": "file.copy",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.copy.json",
+      "raw_receipt_sha256": "a65a743e7205c07f222eba6e784e12f78fc796ad7546ce3748b92ef6b3b293a2"
+    },
+    {
+      "id": "file.delete",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.delete.json",
+      "raw_receipt_sha256": "ebe6ad04b98184c80a160ad19d143781649fbcd9d50445d29c1bfd8a195574d2"
+    },
+    {
+      "id": "file.duplicates",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.duplicates.json",
+      "raw_receipt_sha256": "fa909164acbc343a0100967b9e2f57c70ae1543f9c24deae939c5635b13b5883"
+    },
+    {
+      "id": "file.empty_folders",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.empty_folders.json",
+      "raw_receipt_sha256": "3def8848cbdd8eca3f00a4beac9e6bd08d09901f346a03b2f5c9d1944a284205"
+    },
+    {
+      "id": "file.grep",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.grep.json",
+      "raw_receipt_sha256": "2cf4611449cc1f92b3f6873857d2ac056a56922511081680b40bdb9a269e63f0"
+    },
+    {
+      "id": "file.head",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.head.json",
+      "raw_receipt_sha256": "b1d3dbf75885ffaa026ed04d7956d6df595c5d3110e5bf02191468170e3ab78a"
+    },
+    {
+      "id": "file.list_dir",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.list_dir.json",
+      "raw_receipt_sha256": "151f9e6473291f88ecd8624f1505ac19ef194b1f8fa0cb7390f439ccae6ba113"
+    },
+    {
+      "id": "file.locate",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.locate.json",
+      "raw_receipt_sha256": "b16622f46cacbbd9282279beaa4398e6bdf3c63ccdd636fe6b5a1d113fb67b5f"
+    },
+    {
+      "id": "file.mkdir",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.mkdir.json",
+      "raw_receipt_sha256": "97af05cf1d3090b591c220070a40f00c56f933f96a8024f5dbc8d3d42bd21199"
+    },
+    {
+      "id": "file.move",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.move.json",
+      "raw_receipt_sha256": "52af43078c3aa240b989fbe95ebd72e134a4cb8b42997f09b3300a13939ba915"
+    },
+    {
+      "id": "file.open",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.open.json",
+      "raw_receipt_sha256": "9dd87f671980f1df5eab248fdda42292fc0bd518e20931883dd61cd3f7642538"
+    },
+    {
+      "id": "file.read",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.read.json",
+      "raw_receipt_sha256": "03a1a5e7e8bcd2a9529dc8f5846760252016bdff1f9c8f2f10cdf10388c53bc6"
+    },
+    {
+      "id": "file.recent",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.recent.json",
+      "raw_receipt_sha256": "64f132b46db9727655a4ecb6c813e337484fa97c98e0b26bc06de516713c129f"
+    },
+    {
+      "id": "file.search",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.search.json",
+      "raw_receipt_sha256": "6feec361c46005ec4c1fa9962343cb55f20d935753e511c5c47bb1a7899d10ac"
+    },
+    {
+      "id": "file.stat",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.stat.json",
+      "raw_receipt_sha256": "7710b34db09d0df29340ac4b8ea658bfc54350e6491307b7d155c7610baf589b"
+    },
+    {
+      "id": "file.tail",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.tail.json",
+      "raw_receipt_sha256": "2592069962640d46efd100658b3aa75693225fa1241efe12760ddbde448a58a5"
+    },
+    {
+      "id": "file.write",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/file.write.json",
+      "raw_receipt_sha256": "5654c10719b8f8ffdcb3c9e95689e5b0fce2db193e6fde1ed4fd219b19166515"
+    },
+    {
+      "id": "folder.open",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/folder.open.json",
+      "raw_receipt_sha256": "d70add802377197e8d41744c159ddcb9acec1c3d7d14084d47f4bb3999351396"
+    },
+    {
+      "id": "git.branches",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/git.branches.json",
+      "raw_receipt_sha256": "b237b687bb9363fd045d9ee3540c7f2f64959dd3b80ba5dfc72ec42509ded029"
+    },
+    {
+      "id": "git.diff",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/git.diff.json",
+      "raw_receipt_sha256": "e5fe7e89b6350141f8c950de2ea267df84aa3981c6115c9b661c5bb80a16428f"
+    },
+    {
+      "id": "git.log",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/git.log.json",
+      "raw_receipt_sha256": "d86ead29213e182c7689e6a2810dcd1b623881cc11c2f7681d0c31da708c24f3"
+    },
+    {
+      "id": "git.status",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/git.status.json",
+      "raw_receipt_sha256": "23123ce75af76a0d68aee34cac23574c4e02de8e5bd00e3c2f61ede1a8d5503a"
+    },
+    {
+      "id": "gmail.read",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/gmail.read.json",
+      "raw_receipt_sha256": "bfef346011aa2f03715e487b9c8571d6967d6e30cda12bfb80d4ff9f0588676f"
+    },
+    {
+      "id": "gmail.search",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/gmail.search.json",
+      "raw_receipt_sha256": "ae2c4f47f64ba0f7bd60f46e3c8d08b703ddd6cafee0d06ead2e971f0b965313"
+    },
+    {
+      "id": "google.accounts",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.accounts.json",
+      "raw_receipt_sha256": "7cd1a2a6d8bdf72511d1a81113e2c4e55c3e839ef7dabf7c1db670042182ee51"
+    },
+    {
+      "id": "google.calendar.availability",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.calendar.availability.json",
+      "raw_receipt_sha256": "e6c18e50530c3438c919209ad88b2b62d89a807806b37c82766c67255d0502c2"
+    },
+    {
+      "id": "google.calendar.create",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.calendar.create.json",
+      "raw_receipt_sha256": "13a350e56ce6c3479482c45650b5fed65537bbd1d1fb191a4296761917c0d2bb"
+    },
+    {
+      "id": "google.calendar.delete",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.calendar.delete.json",
+      "raw_receipt_sha256": "76ddf194bee2ca8d859bc777e1dce46e4b14391785b695eb561ecc28f9913c10"
+    },
+    {
+      "id": "google.calendar.events",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.calendar.events.json",
+      "raw_receipt_sha256": "50d88da633b25abca0e911d047988234cc29b4d4b7607987edd352fa72ae0cc3"
+    },
+    {
+      "id": "google.calendar.list_calendars",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.calendar.list_calendars.json",
+      "raw_receipt_sha256": "e30477d3100cff869cc8abe1aaa22c79660a358f9847e44cd4f41fe468861536"
+    },
+    {
+      "id": "google.calendar.next",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.calendar.next.json",
+      "raw_receipt_sha256": "1483865647bb50cf50f8210e7db2960ecff4cfab4cb06677ace6b113c51ed0da"
+    },
+    {
+      "id": "google.calendar.read",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.calendar.read.json",
+      "raw_receipt_sha256": "b5646b29537677c45f686bb5ffef6e2c22ba05b20c881cf97e917df7efb5c15a"
+    },
+    {
+      "id": "google.calendar.update",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.calendar.update.json",
+      "raw_receipt_sha256": "57b8ff3974f660c6c54bd984eec1ed63134764f76ee6e6ee9eec5a5dca41434b"
+    },
+    {
+      "id": "google.docs.read",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.docs.read.json",
+      "raw_receipt_sha256": "54a34978acc2aa69b0be94591414e3060c0ce10fc0c0f2876ee631f0182562ff"
+    },
+    {
+      "id": "google.drive.list",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.drive.list.json",
+      "raw_receipt_sha256": "7908520f4c451986a7e5a4d083ceec4293c2f4b77216522eeef1abd237859206"
+    },
+    {
+      "id": "google.drive.metadata",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.drive.metadata.json",
+      "raw_receipt_sha256": "a89a40df80980110f0749d07ec9d0662c02406e7452439cb2ec0cb0c59289994"
+    },
+    {
+      "id": "google.drive.recent",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.drive.recent.json",
+      "raw_receipt_sha256": "6768bf153b46cbc820e6bc39a4aa0e4705e798d7ed4f8f2e07bcf96bb61ad1e7"
+    },
+    {
+      "id": "google.drive.search",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.drive.search.json",
+      "raw_receipt_sha256": "474c2556d79100c61b0797d92691db967ccb68ada6df4aa04d58f7e219fda1a1"
+    },
+    {
+      "id": "google.gmail.read",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.gmail.read.json",
+      "raw_receipt_sha256": "0dbff277365583300b609f286743fdfd1c34f2640bc018fdbb462705f3bd2736"
+    },
+    {
+      "id": "google.gmail.recent",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.gmail.recent.json",
+      "raw_receipt_sha256": "f9ff416dade1108e07b53bdab282d1a33a52171712860da5e3f9385907880095"
+    },
+    {
+      "id": "google.gmail.search",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.gmail.search.json",
+      "raw_receipt_sha256": "c5b1e4c64949e597ad262cb87b4f7f55f19b021d00f6df9d13ea78d3942e6ccf"
+    },
+    {
+      "id": "google.gmail.thread",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.gmail.thread.json",
+      "raw_receipt_sha256": "b54dacb199f1acc71be31059421793146fda892b28031fc07d4ea047e95fcc36"
+    },
+    {
+      "id": "google.tasks.complete",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.tasks.complete.json",
+      "raw_receipt_sha256": "cdff4ce19583d42e219e54dc8da93b5ebd1e83d1cfcdaca2d6aa9173739638ed"
+    },
+    {
+      "id": "google.tasks.create",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.tasks.create.json",
+      "raw_receipt_sha256": "5f40b9a094d4e091b8e39ac079fc2d27e9b23a052fd1d750ee3ec2292e0f3f9e"
+    },
+    {
+      "id": "google.tasks.list",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google.tasks.list.json",
+      "raw_receipt_sha256": "2ca10806ae69b74f7b2d1e1bd74de5c102e2db87edae2fe8627d9068affd58ee"
+    },
+    {
+      "id": "google_calendar.agenda",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google_calendar.agenda.json",
+      "raw_receipt_sha256": "fffb8da6b0e6bade0faae1f5c22f4d76409d5b0fccfee6d6a5d0954a3e117834"
+    },
+    {
+      "id": "google_calendar.create",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google_calendar.create.json",
+      "raw_receipt_sha256": "337e130f907b0e752e61503fb2339710a917e374c9e536675bbd6d98d49a4a77"
+    },
+    {
+      "id": "google_calendar.list",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google_calendar.list.json",
+      "raw_receipt_sha256": "dd1758339534300d5173712936f68eced52a45cbc4bc08a22dd52bb5e8788f62"
+    },
+    {
+      "id": "google_calendar.next",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/google_calendar.next.json",
+      "raw_receipt_sha256": "d01356d79ce89826937bd84053542b44a48c58a35efb0b8846863da968e02d92"
+    },
+    {
+      "id": "gpu.memory",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/gpu.memory.json",
+      "raw_receipt_sha256": "e3296520db896a06a4d29dc7c74417cc7709ecef7d61fd1d44af0f06e07db7f5"
+    },
+    {
+      "id": "gpu.top_processes",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/gpu.top_processes.json",
+      "raw_receipt_sha256": "4fcc60b5bf45e382c0c88a3f542862376299f139eb35aa8db8e4590f85bff273"
+    },
+    {
+      "id": "hanni.audit_tail",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/hanni.audit_tail.json",
+      "raw_receipt_sha256": "816471d56d39fe13c334e3633beb25b36bf99ebe7ec4477bfcb74965ef8e92eb"
+    },
+    {
+      "id": "hanni.capabilities",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/hanni.capabilities.json",
+      "raw_receipt_sha256": "33df66e27f4a18ecded8b69a7c1a0e733088a2c2e3ffa02193e1eb775ba95f81"
+    },
+    {
+      "id": "hanni.permissions",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/hanni.permissions.json",
+      "raw_receipt_sha256": "9760508179a2edb39657400db481f670111fcbe5f34cd18a0d19a80b23c4f74a"
+    },
+    {
+      "id": "hanni.stop_state",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/hanni.stop_state.json",
+      "raw_receipt_sha256": "75ea7470838e6293d9df02385bb35a0a46679ebfe18cc4f32b17bc7ec31c4d18"
+    },
+    {
+      "id": "id.generate",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/id.generate.json",
+      "raw_receipt_sha256": "4b4a2e96a51fc753aa576537ae8e972c0c5460590cc05028e54ca002178917ee"
+    },
+    {
+      "id": "media.next_track",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/media.next_track.json",
+      "raw_receipt_sha256": "f5aecd0ad23947a38c766db2cdc9e5d3f919df2362775022221e49d709e5973f"
+    },
+    {
+      "id": "media.play_pause",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/media.play_pause.json",
+      "raw_receipt_sha256": "1a7ff081725bf3ee840d7e9ea5a03e6282e1fc4a649d0fc23b9861c0c5ee150c"
+    },
+    {
+      "id": "media.previous_track",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/media.previous_track.json",
+      "raw_receipt_sha256": "52a3b05b41ae3853d628b65574e92979801df72cdd663f533f240b03c0c7dc54"
+    },
+    {
+      "id": "media.stop",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/media.stop.json",
+      "raw_receipt_sha256": "4d11d3c41c3aaee0ebf218b593b84e5db420875c59000049dd3f5ebd2bef0bb7"
+    },
+    {
+      "id": "model.status",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/model.status.json",
+      "raw_receipt_sha256": "fcde8ded2b5ba68c0b55d1391ac35c7cf888d604f0130e5b2f6c7670c5dcf383"
+    },
+    {
+      "id": "net.dns_lookup",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/net.dns_lookup.json",
+      "raw_receipt_sha256": "00936e212d369901ce27ea057e6d94974953bf88e26c7ee2fe5a9ea4ef528af2"
+    },
+    {
+      "id": "net.info",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/net.info.json",
+      "raw_receipt_sha256": "30c3dba4b0754be81763c25380c5bc822d81b90267fdfd490a0e1d5818ddea29"
+    },
+    {
+      "id": "net.ping",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/net.ping.json",
+      "raw_receipt_sha256": "8b5fd86057e9a47ffb7905ef9b2b9fb2ceba37a236ad8314df41d8e2de180a5b"
+    },
+    {
+      "id": "net.ports",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/net.ports.json",
+      "raw_receipt_sha256": "2d9ba9098244820739c38a83ff915ca09ba0a233416ab74436d70a8104e4e134"
+    },
+    {
+      "id": "net.throughput",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/net.throughput.json",
+      "raw_receipt_sha256": "965b79ea19cdc1642b9d435e515f7fde39f34f00a05b4aa5c4d27293d2c3ae1a"
+    },
+    {
+      "id": "net.wifi",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/net.wifi.json",
+      "raw_receipt_sha256": "ce017b14c3670dc6d629cb821c14f8024cf01a7cb4969ce7c41712bad13c3add"
+    },
+    {
+      "id": "note.append",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/note.append.json",
+      "raw_receipt_sha256": "7ccd18fb26afc29be14ee77e6a1d90f7e8a902224349d2e6a84d502d59e33aad"
+    },
+    {
+      "id": "note.days",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/note.days.json",
+      "raw_receipt_sha256": "78632e83a3ee5fccbf050ba037cfdfcdb0011f7781564383ca030ad0a7fb71c2"
+    },
+    {
+      "id": "note.list",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/note.list.json",
+      "raw_receipt_sha256": "8686869e7928e622c6a22b81a9a505192d00387ae507223aee3da269e7b7c0ee"
+    },
+    {
+      "id": "note.search",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/note.search.json",
+      "raw_receipt_sha256": "09c6a6ad9603ba0239b79614a407c08e17624d33b1ebfb181813636d47866b4d"
+    },
+    {
+      "id": "notify.toast",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/notify.toast.json",
+      "raw_receipt_sha256": "9a34a29415b41832cb9259ec43bb6851a80fa4522bf3b0a3e06e21947aa1f6b8"
+    },
+    {
+      "id": "power.battery_detail",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/power.battery_detail.json",
+      "raw_receipt_sha256": "577f462aa167a5775abe3cfa1da0e6c078d8b64ffddfdd6935497de046ce4976"
+    },
+    {
+      "id": "power.battery_report",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/power.battery_report.json",
+      "raw_receipt_sha256": "0fe8157f6d585e65d3857bf502b5914d96c3c62130ec5390f39f1e8d19aac2e2"
+    },
+    {
+      "id": "power.idle_settings",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/power.idle_settings.json",
+      "raw_receipt_sha256": "a7405074096802cf9a8b563514baf70acedd6bf242163ec69c62ec538066b71c"
+    },
+    {
+      "id": "power.plans",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/power.plans.json",
+      "raw_receipt_sha256": "f6b0c1bc470760ea4d29c1e5ea56355ed8b20a1a27e8d8c48cc9f1a3eb8fca68"
+    },
+    {
+      "id": "power.set_idle",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/power.set_idle.json",
+      "raw_receipt_sha256": "eed5d9460fe43782a1e8352d527704c93deb13e658c85cc8d12d161482615882"
+    },
+    {
+      "id": "power.set_plan",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/power.set_plan.json",
+      "raw_receipt_sha256": "952a37860814bb04e311cb7c911b75d8319fdabf5536595efa7417078a85dfda"
+    },
+    {
+      "id": "powershell.run",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/powershell.run.json",
+      "raw_receipt_sha256": "35efd58559a7335af26d4ec6075c4010c3fe913102a3264ab8f1c0ed322547f0"
+    },
+    {
+      "id": "process.find",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/process.find.json",
+      "raw_receipt_sha256": "51cdb0f7b55badf0c08fe884803b43765c0d78be37e206e52864757690d36e5f"
+    },
+    {
+      "id": "process.inspect",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/process.inspect.json",
+      "raw_receipt_sha256": "4df558c08cece5fb086356c55fdfc20555adbcf200d67dd261f294a215417c4c"
+    },
+    {
+      "id": "process.list",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/process.list.json",
+      "raw_receipt_sha256": "c37fc50dd78e8d7a93cbe56e2b8761c3782fed92be6a119ad0e3cba8d19dc66c"
+    },
+    {
+      "id": "process.stop",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/process.stop.json",
+      "raw_receipt_sha256": "c873add5d8590a334f1582ebce06c65c099d3ed7d3d91a020b7db7111e399204"
+    },
+    {
+      "id": "process.top_cpu",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/process.top_cpu.json",
+      "raw_receipt_sha256": "e3e04fb1e9e7c9744e4044a7837612c8907d37d1422bd74619debe2dc1d8f0ca"
+    },
+    {
+      "id": "process.top_disk_io",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/process.top_disk_io.json",
+      "raw_receipt_sha256": "4b83f67c94210ac4a1f22c286d8a3331ced885cb327fa7e00d0dd70fe55faf9e"
+    },
+    {
+      "id": "process.top_memory",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/process.top_memory.json",
+      "raw_receipt_sha256": "8052a800c3c8d7fff863338b5ba039e661a15caa9a7cb1f3fd3afc614077d0c7"
+    },
+    {
+      "id": "process.uptime",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/process.uptime.json",
+      "raw_receipt_sha256": "555ec6ba1ef6c22bc760b53837ccf8e361a3a596deefcf8a6b568352007cd6ac"
+    },
+    {
+      "id": "project.format",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/project.format.json",
+      "raw_receipt_sha256": "1c5fcaf5019b8ab5de31bd1ec89dc6ae5fbb96828454d4de09cfc72b32f6409a"
+    },
+    {
+      "id": "project.lint",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/project.lint.json",
+      "raw_receipt_sha256": "238b0a08d9f1432ce8e2cba901c66b92ab7e9f20de9bd570b4c3b44b2d1b7c77"
+    },
+    {
+      "id": "project.test",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/project.test.json",
+      "raw_receipt_sha256": "ae7872a15e561162656327e727b9a15f09c28f95ea1c51eb003e65a5bace2f0d"
+    },
+    {
+      "id": "python.env_info",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/python.env_info.json",
+      "raw_receipt_sha256": "fd3b8a2511424535b03eb0fb2588fe2740ea2ce33fdf8e7267550ae1c3b72d21"
+    },
+    {
+      "id": "random.number",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/random.number.json",
+      "raw_receipt_sha256": "217e3eac835d6dde0a70257cfa4aefb661fb041f6fd57c825562e34859bf6edc"
+    },
+    {
+      "id": "random.pick",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/random.pick.json",
+      "raw_receipt_sha256": "f9d35b44007cc0b930efdeda6f0d8fe1c623eb8f524d221360781f7bba2a13e3"
+    },
+    {
+      "id": "schedule.list_tasks",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/schedule.list_tasks.json",
+      "raw_receipt_sha256": "48f858f8511ac629df064af1392675d188fb06f949ee4ba4b627b893909557dd"
+    },
+    {
+      "id": "security.bitlocker",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/security.bitlocker.json",
+      "raw_receipt_sha256": "a6b3932d98ebb200ae4014eba2189fdf19bae373bad36d171595e9f7f7a1ff09"
+    },
+    {
+      "id": "security.defender",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/security.defender.json",
+      "raw_receipt_sha256": "2d76fd31b192f414487b5de77b67bceeaf9925bb59a9f58b4fd62892236ebd24"
+    },
+    {
+      "id": "security.firewall",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/security.firewall.json",
+      "raw_receipt_sha256": "e3db9da050f3914c4136224e770d48e877b78031c9dc70ad741dc9c1f28721be"
+    },
+    {
+      "id": "security.pending_reboot",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/security.pending_reboot.json",
+      "raw_receipt_sha256": "070325635f0604f218c2faf63403b89a4de7b53b1d8546cd61d69aaabc2d6b99"
+    },
+    {
+      "id": "security.updates",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/security.updates.json",
+      "raw_receipt_sha256": "e5abb7ef285280d89981ead417f7b245e50896cc00f2407d9f090a654b3c42d3"
+    },
+    {
+      "id": "service.control",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/service.control.json",
+      "raw_receipt_sha256": "9e89cab827788f962073ad7268f834ba234c011b1c7157d22b3c7af0911befe7"
+    },
+    {
+      "id": "service.list",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/service.list.json",
+      "raw_receipt_sha256": "796fb088a973d62cc31e8fae20254bf18909f265f5b5384dd40d0cbcaf4eefbf"
+    },
+    {
+      "id": "spotify.focus",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/spotify.focus.json",
+      "raw_receipt_sha256": "ca358ce85411840f1adec9dde2879fd09584bf536e10e524af94a9b73574a49c"
+    },
+    {
+      "id": "spotify.launch",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/spotify.launch.json",
+      "raw_receipt_sha256": "3c529760ef368bee1802ebc1664f0c5dd1c3681d49514fb7d05567f35b684067"
+    },
+    {
+      "id": "spotify.next",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/spotify.next.json",
+      "raw_receipt_sha256": "7632199ab0fc32b517db780c5cb5ecc72df173450ec0a72d5f96ede61ae55a06"
+    },
+    {
+      "id": "spotify.open_uri",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/spotify.open_uri.json",
+      "raw_receipt_sha256": "2045c2ebd42a9e55355d09c798f8498c348120522094c310c064d923d6504c8b"
+    },
+    {
+      "id": "spotify.play_pause",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/spotify.play_pause.json",
+      "raw_receipt_sha256": "ba63623d7527d4bb4df4cb471504926e8be63f8b05fca67c47f9e0a804972f60"
+    },
+    {
+      "id": "spotify.previous",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/spotify.previous.json",
+      "raw_receipt_sha256": "ce9d8160253b61b4ffd1ce95f0390744d2fc10e1b73c7665990b92300c24de32"
+    },
+    {
+      "id": "spotify.search",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/spotify.search.json",
+      "raw_receipt_sha256": "8ed32cfd95ee1093d837d51cbfdb138f0621655941ab689c2560c5be86ce59d0"
+    },
+    {
+      "id": "spotify.status",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/spotify.status.json",
+      "raw_receipt_sha256": "cbc124b74c24c60bd27ed14654e39d5330cca6fa6c92e792a587f330d6ce1c3a"
+    },
+    {
+      "id": "spotify.volume",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/spotify.volume.json",
+      "raw_receipt_sha256": "cdf04a96be7e3f259b4cceb6f4b558ed4debe1be81c521936b26c1673454eee4"
+    },
+    {
+      "id": "startup.list",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/startup.list.json",
+      "raw_receipt_sha256": "d58243eed3fa73e0c33b84d66f83d6edac769a08e4fe2b17068a616f18656444"
+    },
+    {
+      "id": "system.battery",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/system.battery.json",
+      "raw_receipt_sha256": "6baba9124c821c8a1de16870d8bff896b394a8be92e4a072418f27430c7d358a"
+    },
+    {
+      "id": "system.event_errors",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/system.event_errors.json",
+      "raw_receipt_sha256": "4916a7165cda39836bbd546739eecd6602920c730f843a82c335bbf2140cf173"
+    },
+    {
+      "id": "system.os_info",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/system.os_info.json",
+      "raw_receipt_sha256": "2e0da891108224d97a7343e6dcebe783893a5c7094d0b7a186c1443e97484427"
+    },
+    {
+      "id": "system.performance",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/system.performance.json",
+      "raw_receipt_sha256": "145227fec43ad43d18502a2eedeb303f54fd8344fb6712ac039d6b9962f25bb7"
+    },
+    {
+      "id": "system.stats",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/system.stats.json",
+      "raw_receipt_sha256": "a8e7ff21cbfa7b4e4533f3413af43975768c2e8e862bb4aa9880551909fe2c87"
+    },
+    {
+      "id": "system.uptime",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/system.uptime.json",
+      "raw_receipt_sha256": "fffc5e9bf9e97c945ed618cac55ed529a7d3986931b652ca3b6ca99b8b311032"
+    },
+    {
+      "id": "text.hash",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/text.hash.json",
+      "raw_receipt_sha256": "57c9103f33a04435461dc7621f21f8c73e81db6f03312c29b41a1fc476a91505"
+    },
+    {
+      "id": "text.normalize",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/text.normalize.json",
+      "raw_receipt_sha256": "bfbc73b5a1263e2e0fc5271e7335e8a4c02990659f039eba00f06e3af7a384f9"
+    },
+    {
+      "id": "text.stats",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/text.stats.json",
+      "raw_receipt_sha256": "69bb60914d4936fcdae10e5cb2a27d6665da17ce2f0055e49deeaaf25a9a6bf3"
+    },
+    {
+      "id": "time.convert",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/time.convert.json",
+      "raw_receipt_sha256": "531e99ec7778865dda4c90edbe5831bd9edddfa8b51c95eb97cf8d19c97b803f"
+    },
+    {
+      "id": "time.elapsed",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/time.elapsed.json",
+      "raw_receipt_sha256": "d1e1057a63e4a511c6d733228368f10d668f9dc88d466cb4142eff24beec1172"
+    },
+    {
+      "id": "time.now",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/time.now.json",
+      "raw_receipt_sha256": "c1dc09b4377c9be35e8f4aeaa087217966bd2920bd8bc657cbdb982f85e601c9"
+    },
+    {
+      "id": "timer.set",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/timer.set.json",
+      "raw_receipt_sha256": "9777cb5b262a629744a089c04142f2f30aaca8381cd4115bc12f9b60b158b26e"
+    },
+    {
+      "id": "todo.add",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/todo.add.json",
+      "raw_receipt_sha256": "72b60a2666ca7cec2f6ef824afbee0b5eef857d930c68a669ca115249f9cea6c"
+    },
+    {
+      "id": "todo.complete",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/todo.complete.json",
+      "raw_receipt_sha256": "24f5b6a532f794c9806202672e857c1c4fae3f71b3cbd4cd5ddecfabf11028ad"
+    },
+    {
+      "id": "todo.due",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/todo.due.json",
+      "raw_receipt_sha256": "8216c62b630f3e9215518508f19e41230100b764ad8ad7b91353341874b086d9"
+    },
+    {
+      "id": "todo.get",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/todo.get.json",
+      "raw_receipt_sha256": "e58707a37792510c895e789cb1288036a2f1136a184fee6db3a7a04f2468dde4"
+    },
+    {
+      "id": "todo.list",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/todo.list.json",
+      "raw_receipt_sha256": "3a9893446f5e35605261536e3993b1a5d62d8d71913145924739c421c52df52e"
+    },
+    {
+      "id": "ui.active_window",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/ui.active_window.json",
+      "raw_receipt_sha256": "119a768ee668908af1f80af23c4e3de84887ea355922dc195c262cae27e21229"
+    },
+    {
+      "id": "ui.close_window",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/ui.close_window.json",
+      "raw_receipt_sha256": "82aba1838bdea9e1dd1646d5cc238c07985fd27e7d35b6a2cc50946a545807e6"
+    },
+    {
+      "id": "ui.focus_window",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/ui.focus_window.json",
+      "raw_receipt_sha256": "e5698217325afb7d1152339aaae293e739290c4d268bb7608f76dd6074836b56"
+    },
+    {
+      "id": "ui.list_windows",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/ui.list_windows.json",
+      "raw_receipt_sha256": "11c0a25cbea4a478f9a22f5b571482bef751a799870f3dfc5ee299543b56cc91"
+    },
+    {
+      "id": "ui.minimize_all",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/ui.minimize_all.json",
+      "raw_receipt_sha256": "2537f553737b52cb2d04d92f28160874b2301adce4f847ea8409038653e23bd6"
+    },
+    {
+      "id": "ui.window_state",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/ui.window_state.json",
+      "raw_receipt_sha256": "718196e6c12d7fa89d4a04a8937e01680030d281f318647792c4fcb74994dbd9"
+    },
+    {
+      "id": "ui.windows_detailed",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/ui.windows_detailed.json",
+      "raw_receipt_sha256": "b41affea3cd9a88ba1ed40449c261adb479b159938dbd61d56742ece35a47d3e"
+    },
+    {
+      "id": "unit.convert",
+      "status": "blocked",
+      "actual_model_http_requests": 0,
+      "raw_receipt": "data/campaign2-manager/model-final/receipts/unit.convert.json",
+      "raw_receipt_sha256": "195d845a28509f1f07a9ceb1e448a1a3386297adb7d6da327aa0b489b29c7a9b"
+    }
+  ]
+}

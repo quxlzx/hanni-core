@@ -1,0 +1,23 @@
+{
+  "original_commit": "791bdab9e4921e2958c20b55fdfadb7ce44e04d6",
+  "samples": 60,
+  "sha256": "b1ccb0aa512a95f418582d7bc7814f096af6788be7da7f13e3bbd686ae433d25",
+  "categories": {
+    "ambiguous": 4,
+    "broad_diagnostics": 4,
+    "calendar": 4,
+    "dynamic_mcp": 4,
+    "files": 4,
+    "forbidden": 4,
+    "indirect_slang_typos": 8,
+    "model_status": 4,
+    "multi_domain": 4,
+    "multiple_valid": 4,
+    "no_tool": 4,
+    "precise_diagnostics": 8,
+    "unavailable_mcp": 4
+  },
+  "exact_existing_query_matches": 0,
+  "original_archive_sha256": "b1ec49fe585abcc1b46e05d8b3c145e68a05f568fd16ae824cf7b2658e2d10ee",
+  "contamination_rule": "Final queries/expectations remain private until final source freeze; no development debugging or retuning on final failures; disclosed final set is future-contaminated."
+}

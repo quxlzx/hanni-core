@@ -1,0 +1,207 @@
+{
+  "scope": "Three actual temporary SDK imports, separate from the 196 observed default/private-desktop union and current production runtime.",
+  "summary": {
+    "actual_tools": 3,
+    "direct_scoped_pass": 3,
+    "measured_model_tool_cases": 2,
+    "measured_selected": 2,
+    "model_write_blocked": 1,
+    "actual_inference_requests": 7,
+    "mean_response_score": 8.566666666666666,
+    "live_third_party_success": false,
+    "independent_review": "actual retained SDK receipts/artifacts, no live replay"
+  },
+  "rows": [
+    {
+      "id": "mcp.73cc2b132f1047f5add244c5f3ced3b1.34df483a1ba3bf7d",
+      "description": "Read the local V36 integration fixture status and stored record count.",
+      "input_schema": {
+        "properties": {},
+        "type": "object",
+        "additionalProperties": false
+      },
+      "output_contract": {
+        "content": "array",
+        "structured_content": "object"
+      },
+      "domain": "mcp",
+      "risk_level": 0,
+      "permission_level": 0,
+      "confirmation_policy": "runtime profile check",
+      "required_dependencies": [
+        "Temporary local SDK stdio test server"
+      ],
+      "origin": "Actual approved temporary MCP registry import",
+      "availability": {
+        "outcome": "BLOCKED",
+        "reason": "Temporary local integration server is intentionally closed after the campaign; it is not configured in production."
+      },
+      "direct_execution_test": {
+        "outcome": "ISOLATED_PASS",
+        "invalid_fields_rejected": true,
+        "verification_method": "Independent actual SDK call-journal and retained record-file readback plus manual frozen-rubric response review; no new inference or handler execution",
+        "evidence": [
+          "data\\v36-engineering\\actual-external-mcp-cycle4\\results.jsonl",
+          "data\\v36-engineering\\actual-external-mcp-cycle4\\server\\calls.jsonl",
+          "data\\v36-engineering\\actual-external-mcp-cycle4\\server\\records.json"
+        ]
+      },
+      "model_selection_test": {
+        "outcome": "ISOLATED_PASS",
+        "scope": "Original configured controller menu; write policy is unchanged"
+      },
+      "argument_generation_test": {
+        "rubric_component": 1.5,
+        "maximum": 1.5
+      },
+      "response_quality_test": {
+        "outcome": "ISOLATED_PASS",
+        "score": 8.9,
+        "components": {
+          "correct_understanding": 1.8,
+          "correct_capability_selection": 2,
+          "accurate_tool_arguments": 1.5,
+          "factual_correctness_and_grounding": 2,
+          "clarity_and_helpfulness": 0.4,
+          "appropriate_permissions_and_execution_claims": 1,
+          "efficiency": 0.2
+        },
+        "reason": "Real configured model selects actual imported SDK tool; explicit server-reported JSON matches independent server call journal. Honest external UNVERIFIED provenance retained. Escaped double-quoted JSON and generic remaining-evidence caveat lower clarity/efficiency; no third-party live integration claim."
+      },
+      "final_result": "ISOLATED_PASS"
+    },
+    {
+      "id": "mcp.73cc2b132f1047f5add244c5f3ced3b1.7a691591f13eb4a1",
+      "description": "Echo the exact supplied message in the V36 integration fixture.",
+      "input_schema": {
+        "properties": {
+          "message": {
+            "type": "string",
+            "maxLength": 500
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "output_contract": {
+        "content": "array",
+        "structured_content": "object"
+      },
+      "domain": "mcp",
+      "risk_level": 0,
+      "permission_level": 0,
+      "confirmation_policy": "runtime profile check",
+      "required_dependencies": [
+        "Temporary local SDK stdio test server"
+      ],
+      "origin": "Actual approved temporary MCP registry import",
+      "availability": {
+        "outcome": "BLOCKED",
+        "reason": "Temporary local integration server is intentionally closed after the campaign; it is not configured in production."
+      },
+      "direct_execution_test": {
+        "outcome": "ISOLATED_PASS",
+        "invalid_fields_rejected": true,
+        "verification_method": "Independent actual SDK call-journal and retained record-file readback plus manual frozen-rubric response review; no new inference or handler execution",
+        "evidence": [
+          "data\\v36-engineering\\actual-external-mcp-cycle4\\results.jsonl",
+          "data\\v36-engineering\\actual-external-mcp-cycle4\\server\\calls.jsonl",
+          "data\\v36-engineering\\actual-external-mcp-cycle4\\server\\records.json"
+        ]
+      },
+      "model_selection_test": {
+        "outcome": "ISOLATED_PASS",
+        "scope": "Original configured controller menu; write policy is unchanged"
+      },
+      "argument_generation_test": {
+        "rubric_component": 1.5,
+        "maximum": 1.5
+      },
+      "response_quality_test": {
+        "outcome": "ISOLATED_PASS",
+        "score": 8.9,
+        "components": {
+          "correct_understanding": 1.8,
+          "correct_capability_selection": 2,
+          "accurate_tool_arguments": 1.5,
+          "factual_correctness_and_grounding": 2,
+          "clarity_and_helpfulness": 0.4,
+          "appropriate_permissions_and_execution_claims": 1,
+          "efficiency": 0.2
+        },
+        "reason": "Real configured model selects actual imported SDK tool; explicit server-reported JSON matches independent server call journal. Honest external UNVERIFIED provenance retained. Escaped double-quoted JSON and generic remaining-evidence caveat lower clarity/efficiency; no third-party live integration claim."
+      },
+      "final_result": "ISOLATED_PASS"
+    },
+    {
+      "id": "mcp.73cc2b132f1047f5add244c5f3ced3b1.b50fe47a39c35c20",
+      "description": "Create and durably store a titled record in the local V36 integration fixture.",
+      "input_schema": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          }
+        },
+        "required": [
+          "title"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "output_contract": {
+        "content": "array",
+        "structured_content": "object"
+      },
+      "domain": "mcp",
+      "risk_level": 2,
+      "permission_level": 2,
+      "confirmation_policy": "runtime profile check; dynamic argument-dependent confirmation",
+      "required_dependencies": [
+        "Temporary local SDK stdio test server"
+      ],
+      "origin": "Actual approved temporary MCP registry import",
+      "availability": {
+        "outcome": "BLOCKED",
+        "reason": "Temporary local integration server is intentionally closed after the campaign; it is not configured in production."
+      },
+      "direct_execution_test": {
+        "outcome": "ISOLATED_PASS",
+        "invalid_fields_rejected": true,
+        "verification_method": "Independent actual SDK call-journal and retained record-file readback plus manual frozen-rubric response review; no new inference or handler execution",
+        "evidence": [
+          "data\\v36-engineering\\actual-external-mcp-cycle4\\results.jsonl",
+          "data\\v36-engineering\\actual-external-mcp-cycle4\\server\\calls.jsonl",
+          "data\\v36-engineering\\actual-external-mcp-cycle4\\server\\records.json"
+        ]
+      },
+      "model_selection_test": {
+        "outcome": "BLOCKED",
+        "scope": "Original configured controller menu; write policy is unchanged"
+      },
+      "argument_generation_test": {
+        "rubric_component": 1.5,
+        "maximum": 1.5
+      },
+      "response_quality_test": {
+        "outcome": "BLOCKED",
+        "score": 7.9,
+        "components": {
+          "correct_understanding": 1.8,
+          "correct_capability_selection": 0.5,
+          "accurate_tool_arguments": 1.5,
+          "factual_correctness_and_grounding": 2,
+          "clarity_and_helpfulness": 0.7,
+          "appropriate_permissions_and_execution_claims": 1,
+          "efficiency": 0.4
+        },
+        "reason": "Original direct isolated SDK write durably created exact record. Conversational policy correctly refuses imported write; subsequent actual model response-only diagnostic never writes. Direct pass is separate from blocked model execution."
+      },
+      "final_result": "BLOCKED"
+    }
+  ]
+}

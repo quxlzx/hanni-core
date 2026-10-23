@@ -1,0 +1,246 @@
+.activity-page,
+.productivity-page,
+.awareness-page {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.feature-error {
+  color: var(--warning);
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+.feature-empty {
+  padding: 20px 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.feature-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 8px 0;
+  line-height: 1.6;
+}
+.feature-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0;
+  flex-wrap: wrap;
+}
+.feature-toolbar input {
+  flex: 1;
+  min-width: 150px;
+  max-width: 400px;
+}
+.feature-toolbar input,
+.feature-toolbar select {
+  font-size: 12px;
+  min-height: 31px;
+  padding: 5px 9px;
+}
+.controller-list {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.controller-list > div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 0;
+}
+.controller-list h2 {
+  font-size: 14px;
+}
+.controller-list p {
+  font-size: 12px;
+  color: var(--muted);
+}
+.controller-list > div > span:not(.controller-mark) {
+  margin-left: auto;
+  color: var(--accent);
+  font-size: 12px;
+}
+.controller-list small {
+  color: var(--muted);
+  font-size: 12px;
+}
+.controller-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  background: var(--surface);
+  color: var(--accent);
+  font: 600 21px/1 var(--sans);
+  border-radius: 6px;
+}
+.activity-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 25px;
+  padding: 13px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.activity-metrics strong {
+  color: var(--text);
+  font-size: 13px;
+  margin-right: 4px;
+}
+.activity-columns {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.85fr) minmax(0, 1.3fr);
+  gap: 28px;
+}
+.activity-page .section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 12px;
+}
+.activity-page .section-title h2 {
+  font-size: 13px;
+}
+.activity-page .section-title span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.capability-list {
+  min-width: 0;
+}
+.capability-list > div:not(.section-title) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+.capability-list strong {
+  font: 12px/1.6 var(--mono);
+  margin-right: auto;
+  overflow-wrap: anywhere;
+}
+.capability-list > div > span {
+  white-space: nowrap;
+  color: var(--muted);
+}
+.capability-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.capability-pagination button {
+  font-size: 12px;
+}
+.execution-record {
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+.execution-record > summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+.execution-record > summary strong {
+  font: 12px/1.6 var(--mono);
+  overflow-wrap: anywhere;
+  margin-right: auto;
+}
+.execution-record time,
+.execution-record > summary > span:last-child {
+  font-size: 12px;
+  color: var(--muted);
+}
+.execution-record-body {
+  padding: 5px 0 14px;
+  font-size: 12px;
+}
+.execution-record-body dl {
+  margin: 0;
+}
+.execution-record-body dl > div {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 12px;
+  padding: 6px 0;
+}
+.execution-record-body dt {
+  color: var(--muted);
+  font-size: 12px;
+}
+.execution-record-body dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.execution-record-body pre {
+  font: 12px/1.7 var(--mono);
+  padding: 10px;
+  background: var(--surface);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.execution-record-body details > summary {
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--muted);
+}
+.active-executions h2 {
+  font-size: 13px;
+}
+.active-executions > div {
+  display: flex;
+  gap: 15px;
+  padding: 8px 0;
+  font-size: 12px;
+}
+@media (max-width: 760px) {
+  .activity-columns {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .controller-list > div {
+    flex-wrap: wrap;
+  }
+  .controller-list small {
+    display: none;
+  }
+}
+@media (max-height: 650px) {
+  .activity-page .screen-heading {
+    margin-bottom: 12px;
+  }
+  .controller-list > div {
+    padding: 8px 0;
+  }
+  .activity-metrics {
+    padding: 9px 0;
+    gap: 8px 20px;
+  }
+  .activity-page .feature-toolbar {
+    margin: 10px 0;
+  }
+  .activity-columns {
+    gap: 20px;
+  }
+  .capability-list > div:not(.section-title),
+  .execution-record > summary {
+    padding: 6px 0;
+  }
+  .execution-record > summary {
+    gap: 4px 8px;
+  }
+  .execution-record time {
+    font-size: 12px;
+  }
+}

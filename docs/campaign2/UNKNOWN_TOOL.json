@@ -1,0 +1,77 @@
+{
+  "capability_id": "mcp.174a87f3717d4743b39bf5e8bb82bf79.d55b8048473b7618",
+  "original_name": "quartz.inspect_flux_band",
+  "schema": {
+    "properties": {
+      "calibration": {
+        "type": "string",
+        "enum": [
+          "AX-17",
+          "BQ-04"
+        ]
+      }
+    },
+    "required": [
+      "calibration"
+    ],
+    "type": "object",
+    "additionalProperties": false
+  },
+  "discovered_by_actual_sdk": true,
+  "model_retraining_performed": false,
+  "status": "blocked",
+  "reason": "Original model inference admission or dependency refused the request.",
+  "actual_model_http_requests": 0,
+  "separate_original_registry_call": {
+    "scope": "Declared fixture arguments, not model inference completion",
+    "result": {
+      "name": "mcp.174a87f3717d4743b39bf5e8bb82bf79.d55b8048473b7618",
+      "ok": true,
+      "message": "{\"calibration\": \"AX-17\", \"band\": \"narrow\", \"intensity\": 0.42}",
+      "data": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"calibration\": \"AX-17\", \"band\": \"narrow\", \"intensity\": 0.42}"
+          }
+        ],
+        "structured_content": {
+          "calibration": "AX-17",
+          "band": "narrow",
+          "intensity": 0.42
+        },
+        "metadata": null,
+        "is_error": false,
+        "correlation": {
+          "server_id": "174a87f3717d4743b39bf5e8bb82bf79",
+          "original_name": "quartz.inspect_flux_band",
+          "definition_hash": "328550a0f92cdb217f988a5d94e5ede15b8a08ba3b9061a50dcf3985d41ed21f",
+          "capability_id": "mcp.174a87f3717d4743b39bf5e8bb82bf79.d55b8048473b7618",
+          "correlation_id": "campaign2-e941e64e577d4d1faffd12baac95f5ff"
+        }
+      },
+      "duration_ms": 6.835700012743473,
+      "verification": {
+        "status": "UNVERIFIED",
+        "method": "tool_response",
+        "scope": "external_tool_response",
+        "independent": false,
+        "checks": {}
+      }
+    },
+    "calls": [
+      {
+        "event": "call",
+        "name": "quartz.inspect_flux_band",
+        "arguments": {
+          "calibration": "AX-17"
+        }
+      }
+    ]
+  },
+  "raw_receipt": "data/campaign2-manager/model-final/UNKNOWN_TOOL_DEMO.json",
+  "raw_receipt_sha256": "c6befc6cd46be19f157192a6445dd01150174a9900514d1dd4d0cdd84da18b89",
+  "retrieved_menu_ids": [
+    "mcp.174a87f3717d4743b39bf5e8bb82bf79.d55b8048473b7618"
+  ]
+}

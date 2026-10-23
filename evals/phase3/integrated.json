@@ -1,0 +1,36 @@
+[
+  {
+    "id": "memory-remember",
+    "prompt": "Remember my preferred code editor is Code.",
+    "contains": "remember",
+    "memory_value": "Code"
+  },
+  {
+    "id": "memory-recall",
+    "prompt": "What is my preferred code editor?",
+    "contains": "Code"
+  },
+  {
+    "id": "memory-correct",
+    "prompt": "Remember my preferred code editor is Vim.",
+    "contains": "remember",
+    "memory_value": "Vim"
+  },
+  {
+    "id": "memory-recall-corrected",
+    "prompt": "What is my preferred code editor?",
+    "contains": "Vim",
+    "absent": "Code"
+  },
+  {
+    "id": "grounded-read",
+    "prompt": "Read \"{source}\".",
+    "contains": "12",
+    "tool": "file.read"
+  },
+  {
+    "id": "memory-delete",
+    "prompt": "Forget my preferred code editor.",
+    "deleted": true
+  }
+]

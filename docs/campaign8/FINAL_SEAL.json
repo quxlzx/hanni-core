@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "campaign": 8,
+  "sealed_at_utc": "2026-10-10T12:15:43.583307+00:00",
+  "case_count": 60,
+  "surface_count": 20,
+  "family_counts": {
+    "surface_layout": 40,
+    "native_interaction": 10,
+    "backend_truth": 10
+  },
+  "surface_names": [
+    "Home",
+    "Conversation",
+    "Voice",
+    "Planner",
+    "Workflows",
+    "Tasks",
+    "Calendar",
+    "Projects",
+    "Memory",
+    "Mission Control",
+    "Cluster",
+    "Model Lab",
+    "Model Routing",
+    "Agents",
+    "Activity",
+    "Screen awareness",
+    "Notifications",
+    "Settings",
+    "MCP Hub",
+    "Mini"
+  ],
+  "input_sha256": "d7bcf56dc1465fadaa115840c27b4861ce3391a6c9c0f07d2a866eb8fe505b1d",
+  "oracle_sha256": "0ceb8edab0c4e6c6f3f8c615a9735d316f9ab56bf3b234c2b019a20572c191b4",
+  "protocol_sha256": "0a49591c8872651b9816731142387d7baca595e6ca4dd9e9be477021dfc0297a",
+  "author_sha256": "57e46b4668b6075bdf0dc33ba7ca8c8d53e6d3db47a02eabb713c0ae4c8021b6",
+  "development_tuning_started": false,
+  "attempted_cases": 0,
+  "private_cases_or_oracles_shared": false
+}

@@ -1,0 +1,94 @@
+{
+  "scope": "Campaign 6 source-held implementation audit; live hardware/inference blocked; controlled scheduling partial. Counts overlap; never sum as unique tests.",
+  "verification": {
+    "related_regression": {
+      "tests": 522,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "b3a17eb788b2207b398975636dc9023351eeea27b25c070a51eb405decddea2b",
+      "path": "data/campaign6-cluster/credential-final-relevant.xml"
+    },
+    "independent_development": {
+      "tests": 46,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "07a742c5775c608c4ee2f77cfcbd57c6b572e9651c7ff9e556dff4e36cacf285",
+      "path": "data/campaign6-verifier/independent-final-development-cycle3.xml"
+    },
+    "scheduling_focused": {
+      "tests": 56,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xml_sha256": "d5f935e38be41f2a319682144276e222cdea3d058c7a59b2e56e1a707cb997a6",
+      "path": "data/campaign6-scheduling/guard-final-source-uniform-cycle2.xml"
+    }
+  },
+  "primary_scheduling": {
+    "baseline": 66,
+    "before_credential_repair": 68,
+    "final": 69,
+    "cases": 79,
+    "final_receipts": 79,
+    "final_harness_errors": 0,
+    "additional_overlap_pass_is_timing_variance": true
+  },
+  "separate_controls": {
+    "passed": 10,
+    "cases": 10
+  },
+  "independent_final": {
+    "passed": 19,
+    "cases": 22,
+    "harness_errors": 0,
+    "owned_cleanup_complete": true,
+    "controlled_http_requests": 10,
+    "publication_sha256": "c7b77b5dee550630350ed6526a40d1e8e12703b96ee2c43401a766a8f9798e3d",
+    "raw_sha256": "a001a80e90069465e51c28947a2873df91900499f23c04e77a7186ef52c6a4bb",
+    "grades_sha256": "d9c6e6044d2ba37d7af7900239b1ff822f159a3e0fe149e0f9c2d2b0de2a6acf",
+    "closed_sha256": "859454ec031bf874c1a0620e3f7f969f199c0a6a747cead06ef4ffdf377fe317",
+    "seal_sha256": "08e8991550b3b0d21a95b365350ec7b8a3ce840b9836303e6a454a44ed9dc200",
+    "no_retries_or_tuning": true
+  },
+  "live": {
+    "configured_nodes": 9,
+    "active_tailscale_online_nodes": 8,
+    "maintenance_nodes": 1,
+    "registered_workers": 3,
+    "roster_rounds": 2,
+    "authenticated_nodes": 0,
+    "hardware_measurements": 0,
+    "generation_requests": 0,
+    "context_stages_not_executed": 15,
+    "worker_quality_speed_latency_peak_vram_error_rate": null,
+    "blocker": "Fresh Tailscale SSH authentication required; no current host/hardware/model verification."
+  },
+  "source_freeze": {
+    "files": 489,
+    "created_at": "2026-10-10T11:19:01.586113+00:00",
+    "manifest_sha256": "bf6b2d88f3cf4c3454291090870f009916c90e0bd3307ec4f1b0013da6041316",
+    "archive_sha256": "41fbbdcdadca66ada33569431eb85f1b2d25395cf17b16dcfcd8aeb1a0e37579",
+    "check": {
+      "source_mismatches": [],
+      "source_membership_changes": [],
+      "archive_mismatches": [],
+      "owner_configuration_mismatches": [],
+      "manifest_matches": true,
+      "archive_matches": true
+    }
+  },
+  "preservation_passed": true,
+  "preservation_sha256": "102bf4a6c23f034daa73c981e454aa116c44b15649c3115a5d4c549215874f40",
+  "owner_runtime_identity_listeners_health_config_match": true,
+  "runtime_receipt_sha256": "aeb88a027b65a0f87ce0f6d83aae2667ef0f0e79f5868c48a4369fe39b2e7d3c",
+  "live_scorecard_sha256": "9ba52f4f3e8dcce0756bddfc961a2774556ae7aff01c6de12575fca16809d32d",
+  "production_changed_files": [
+    "src/hanni/compute/registry.py",
+    "src/hanni/compute/scheduler.py",
+    "src/hanni/compute/transport.py",
+    "src/hanni/dashboard/cluster.py"
+  ],
+  "uncommitted": true
+}

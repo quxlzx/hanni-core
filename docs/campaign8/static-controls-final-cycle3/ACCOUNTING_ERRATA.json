@@ -1,0 +1,20 @@
+[
+  {
+    "source_id": "mcp_hub.tsx:933:13",
+    "original_outcome": "BLOCKED",
+    "corrected_outcome": "NOT_RUN",
+    "reason": "No technical permission/dependency failure was measured. This secondary original clipboard-write operation was omitted to preserve the existing owner clipboard; selected-text export is a separate tested scope."
+  },
+  {
+    "source_id": "model_lab.tsx:1104:13",
+    "original_outcome": "NOT_RUN",
+    "corrected_outcome": "NOT_RUN",
+    "reason": "Original historyQuery limit and historyPage offset are100, not50; measured two-run history cannot page."
+  },
+  {
+    "source_id": "model_lab.tsx:1111:13",
+    "original_outcome": "NOT_RUN",
+    "corrected_outcome": "NOT_RUN",
+    "reason": "Original historyQuery limit and historyPage offset are100, not50; measured two-run history cannot page."
+  }
+]

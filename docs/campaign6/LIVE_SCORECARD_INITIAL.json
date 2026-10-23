@@ -1,0 +1,410 @@
+{
+  "phase": "INITIAL_PRE_REPAIR_LIVE_DISCOVERY",
+  "node_count": 9,
+  "worker_count": 3,
+  "nodes": [
+    {
+      "node_id": "hanni",
+      "maintenance": false,
+      "tailscale_peer_online": true,
+      "tcp_ssh_tailscale": true,
+      "authenticated_ssh": false,
+      "strict_host_verification": "NOT_COMPLETED",
+      "probe_status": "SSH_UNAVAILABLE",
+      "hardware": null,
+      "cpu": null,
+      "ram_total_bytes": null,
+      "gpu_measurements": null,
+      "configured_worker_ids": [
+        "athena-p6000",
+        "athena-p40"
+      ]
+    },
+    {
+      "node_id": "wonyoung",
+      "maintenance": false,
+      "tailscale_peer_online": true,
+      "tcp_ssh_tailscale": true,
+      "authenticated_ssh": false,
+      "strict_host_verification": "NOT_COMPLETED",
+      "probe_status": "SSH_UNAVAILABLE",
+      "hardware": null,
+      "cpu": null,
+      "ram_total_bytes": null,
+      "gpu_measurements": null,
+      "configured_worker_ids": [
+        "wonyoung-strata"
+      ]
+    },
+    {
+      "node_id": "haerin",
+      "maintenance": false,
+      "tailscale_peer_online": true,
+      "tcp_ssh_tailscale": true,
+      "authenticated_ssh": false,
+      "strict_host_verification": "NOT_COMPLETED",
+      "probe_status": "SSH_UNAVAILABLE",
+      "hardware": null,
+      "cpu": null,
+      "ram_total_bytes": null,
+      "gpu_measurements": null,
+      "configured_worker_ids": []
+    },
+    {
+      "node_id": "chaewon",
+      "maintenance": false,
+      "tailscale_peer_online": true,
+      "tcp_ssh_tailscale": true,
+      "authenticated_ssh": false,
+      "strict_host_verification": "NOT_COMPLETED",
+      "probe_status": "SSH_UNAVAILABLE",
+      "hardware": null,
+      "cpu": null,
+      "ram_total_bytes": null,
+      "gpu_measurements": null,
+      "configured_worker_ids": []
+    },
+    {
+      "node_id": "minju",
+      "maintenance": false,
+      "tailscale_peer_online": true,
+      "tcp_ssh_tailscale": true,
+      "authenticated_ssh": false,
+      "strict_host_verification": "NOT_COMPLETED",
+      "probe_status": "SSH_UNAVAILABLE",
+      "hardware": null,
+      "cpu": null,
+      "ram_total_bytes": null,
+      "gpu_measurements": null,
+      "configured_worker_ids": []
+    },
+    {
+      "node_id": "wonhee",
+      "maintenance": false,
+      "tailscale_peer_online": true,
+      "tcp_ssh_tailscale": true,
+      "authenticated_ssh": false,
+      "strict_host_verification": "NOT_COMPLETED",
+      "probe_status": "SSH_UNAVAILABLE",
+      "hardware": null,
+      "cpu": null,
+      "ram_total_bytes": null,
+      "gpu_measurements": null,
+      "configured_worker_ids": []
+    },
+    {
+      "node_id": "jeongyeon",
+      "maintenance": false,
+      "tailscale_peer_online": true,
+      "tcp_ssh_tailscale": true,
+      "authenticated_ssh": false,
+      "strict_host_verification": "NOT_COMPLETED",
+      "probe_status": "SSH_UNAVAILABLE",
+      "hardware": null,
+      "cpu": null,
+      "ram_total_bytes": null,
+      "gpu_measurements": null,
+      "configured_worker_ids": []
+    },
+    {
+      "node_id": "karina",
+      "maintenance": false,
+      "tailscale_peer_online": true,
+      "tcp_ssh_tailscale": true,
+      "authenticated_ssh": false,
+      "strict_host_verification": "NOT_COMPLETED",
+      "probe_status": "SSH_UNAVAILABLE",
+      "hardware": null,
+      "cpu": null,
+      "ram_total_bytes": null,
+      "gpu_measurements": null,
+      "configured_worker_ids": []
+    },
+    {
+      "node_id": "yunjin",
+      "maintenance": true,
+      "tailscale_peer_online": null,
+      "tcp_ssh_tailscale": false,
+      "authenticated_ssh": false,
+      "strict_host_verification": "NOT_COMPLETED",
+      "probe_status": "MAINTENANCE_SKIPPED",
+      "hardware": null,
+      "cpu": null,
+      "ram_total_bytes": null,
+      "gpu_measurements": null,
+      "configured_worker_ids": []
+    }
+  ],
+  "workers": [
+    {
+      "worker_id": "athena-p6000",
+      "node_id": "hanni",
+      "configured_gpu_label": "Quadro P6000",
+      "verified_gpu_hardware": null,
+      "configured_model": "/home/user/hanni-bench/models/Qwen3.8-27B-Q4_K_S.gguf",
+      "actual_loaded_model": null,
+      "current_health_observation": "unhealthy",
+      "healthy_observations": 0,
+      "health_observations": 1,
+      "inference_requests": 0,
+      "configured_context": 32768,
+      "reported_context_current": null,
+      "verified_context_current": null,
+      "historical_snapshot_verified_prompt_target": 32768,
+      "historical_snapshot_is_fresh_context_proof": false,
+      "prompt_processing_tokens_per_second": null,
+      "generation_tokens_per_second": null,
+      "inference_latency_ms": {
+        "count": 0,
+        "p50": null,
+        "p95": null
+      },
+      "peak_inference_vram_bytes": null,
+      "inference_error_rate": null,
+      "steady_state_availability": null,
+      "live_distributed_workflow_success_rate": null,
+      "context_stages": [
+        {
+          "total_allocation_tokens": 8192,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        },
+        {
+          "total_allocation_tokens": 16384,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        },
+        {
+          "total_allocation_tokens": 32768,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        },
+        {
+          "total_allocation_tokens": 65536,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION",
+            "EXCEEDS_EXISTING_CONFIGURED_ALLOCATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        },
+        {
+          "total_allocation_tokens": 131072,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION",
+            "EXCEEDS_EXISTING_CONFIGURED_ALLOCATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        }
+      ],
+      "live_cancellation_concurrency_pressure_queue_reconnection": "NOT_EXECUTED_AUTHENTICATION_BLOCKED"
+    },
+    {
+      "worker_id": "athena-p40",
+      "node_id": "hanni",
+      "configured_gpu_label": "Tesla P40",
+      "verified_gpu_hardware": null,
+      "configured_model": "/home/user/hanni-bench/models/Qwen3.8-27B-Q4_K_S.gguf",
+      "actual_loaded_model": null,
+      "current_health_observation": "unhealthy",
+      "healthy_observations": 0,
+      "health_observations": 1,
+      "inference_requests": 0,
+      "configured_context": 32768,
+      "reported_context_current": null,
+      "verified_context_current": null,
+      "historical_snapshot_verified_prompt_target": 32768,
+      "historical_snapshot_is_fresh_context_proof": false,
+      "prompt_processing_tokens_per_second": null,
+      "generation_tokens_per_second": null,
+      "inference_latency_ms": {
+        "count": 0,
+        "p50": null,
+        "p95": null
+      },
+      "peak_inference_vram_bytes": null,
+      "inference_error_rate": null,
+      "steady_state_availability": null,
+      "live_distributed_workflow_success_rate": null,
+      "context_stages": [
+        {
+          "total_allocation_tokens": 8192,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        },
+        {
+          "total_allocation_tokens": 16384,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        },
+        {
+          "total_allocation_tokens": 32768,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        },
+        {
+          "total_allocation_tokens": 65536,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION",
+            "EXCEEDS_EXISTING_CONFIGURED_ALLOCATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        },
+        {
+          "total_allocation_tokens": 131072,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION",
+            "EXCEEDS_EXISTING_CONFIGURED_ALLOCATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        }
+      ],
+      "live_cancellation_concurrency_pressure_queue_reconnection": "NOT_EXECUTED_AUTHENTICATION_BLOCKED"
+    },
+    {
+      "worker_id": "wonyoung-strata",
+      "node_id": "wonyoung",
+      "configured_gpu_label": null,
+      "verified_gpu_hardware": null,
+      "configured_model": "qwen3.8-flash-next-iq3_s",
+      "actual_loaded_model": null,
+      "current_health_observation": "unhealthy",
+      "healthy_observations": 0,
+      "health_observations": 1,
+      "inference_requests": 0,
+      "configured_context": 8192,
+      "reported_context_current": null,
+      "verified_context_current": null,
+      "historical_snapshot_verified_prompt_target": 8192,
+      "historical_snapshot_is_fresh_context_proof": false,
+      "prompt_processing_tokens_per_second": null,
+      "generation_tokens_per_second": null,
+      "inference_latency_ms": {
+        "count": 0,
+        "p50": null,
+        "p95": null
+      },
+      "peak_inference_vram_bytes": null,
+      "inference_error_rate": null,
+      "steady_state_availability": null,
+      "live_distributed_workflow_success_rate": null,
+      "context_stages": [
+        {
+          "total_allocation_tokens": 8192,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        },
+        {
+          "total_allocation_tokens": 16384,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION",
+            "EXCEEDS_EXISTING_CONFIGURED_ALLOCATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        },
+        {
+          "total_allocation_tokens": 32768,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION",
+            "EXCEEDS_EXISTING_CONFIGURED_ALLOCATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        },
+        {
+          "total_allocation_tokens": 65536,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION",
+            "EXCEEDS_EXISTING_CONFIGURED_ALLOCATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        },
+        {
+          "total_allocation_tokens": 131072,
+          "status": "NOT_EXECUTED",
+          "reasons": [
+            "AUTHENTICATED_CONNECTION_UNAVAILABLE",
+            "NO_CURRENT_MODEL_OR_HARDWARE_VERIFICATION",
+            "EXCEEDS_EXISTING_CONFIGURED_ALLOCATION"
+          ],
+          "actual_prompt_tokens": null,
+          "actual_completion_tokens": null,
+          "exact_retrieval_pass": null
+        }
+      ],
+      "live_cancellation_concurrency_pressure_queue_reconnection": "NOT_EXECUTED_AUTHENTICATION_BLOCKED"
+    }
+  ],
+  "scope": "Actual bounded discovery, no model generation or controlled provider substituted. Historical proof fields are not current runtime verification. One-time health observations are not a long-term availability estimate.",
+  "source_manifest_sha256": "67f1558414362db0993c49f923679bd5885e448119b8e1c5b8f84859d45edc53",
+  "owner_configurations_unchanged": true,
+  "owner_services_started_or_stopped": 0
+}

@@ -1,0 +1,30 @@
+{
+  "cases": 320,
+  "sha256": "4d0b33856ea6f406b673458c9c72b1185cd4a1794d391abddfb00e77746fcece",
+  "categories": {
+    "explicit user preferences": 16,
+    "temporary preferences": 16,
+    "important project decisions": 16,
+    "tentative plans versus confirmed actions": 16,
+    "project identification": 16,
+    "multiple similarly named projects": 16,
+    "contradictory information": 16,
+    "outdated information": 16,
+    "corrections": 16,
+    "memory deletion": 16,
+    "cross-session continuity": 16,
+    "source attribution": 16,
+    "unrelated memory exclusion": 16,
+    "ambiguous personal references": 16,
+    "privacy and sensitivity handling": 16,
+    "LAYA timeout and disconnection": 16,
+    "corrupted or missing index data": 16,
+    "memory retrieval with small context budgets": 16,
+    "workflow checkpoint retrieval": 16,
+    "resistance to malicious instructions embedded in stored content": 16
+  },
+  "annotation_provenance": "authored before original execution; no result-driven oracle generation",
+  "positive_cases": 193,
+  "negative_cases": 127,
+  "model_probe_annotations": 112
+}

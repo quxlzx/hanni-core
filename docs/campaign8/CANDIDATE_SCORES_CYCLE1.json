@@ -1,0 +1,1325 @@
+{
+  "at": "2026-10-10T13:18:04.981743+00:00",
+  "cycle": "candidate34aab-e372-before-ModelLab-presentation-repair",
+  "reviewer": "Independent Verifier",
+  "evidence_class": "CONTROLLED",
+  "source_receipt": {
+    "path": "data/campaign8-native/cycle6-final-surface-pairs/RESULTS.json",
+    "sha256": "18b6400c4bb1d1aac622eca0cd4218d0ab2eef866b2283720106e7e6621607be",
+    "assets": {
+      "src\\hanni\\dashboard\\static\\app.js": "34aab787b10ae01898df2813a3a24f52417d801d36ac8e0daaf5a7a13d0b90f0",
+      "src\\hanni\\dashboard\\static\\style.css": "e372ca41adaf41586863ea391446e892704c46725b71cb3cab539eed9a245e81"
+    }
+  },
+  "supplemental_receipts": [
+    {
+      "path": "data/campaign8-native/cycle6b-api-and-scale/RESULTS.json",
+      "sha256": "5286d8385e1750d9d99a5fd373e00a88bb45fd3a8a53e53361e319b8697f837d"
+    },
+    {
+      "path": "data/campaign8-native/cycle7-final-native-controls/RESULTS.json",
+      "sha256": "02ae7c4b943b0a7ebe39f652c0cba7756f6abe62a894b64a69f0a81198c5adad"
+    },
+    {
+      "path": "data/campaign8-verifier/memory-cluster-candidate-after-01/RESULTS.json",
+      "sha256": "43374c1789f2aadef6820759a3e9cc2df6a1204152127578ecd40ec63fd07a99"
+    }
+  ],
+  "screen_count": 20,
+  "captures_viewed": 40,
+  "actual_windows_dpi": 120,
+  "actual_windows_scaling_percent": 125,
+  "other_actual_OS_DPI_levels": [],
+  "overall_visual_score": 8.794,
+  "weighted_screen_target_count": 19,
+  "overall_visual_acceptance": false,
+  "typography_min": 8.6,
+  "template_max": 1.8,
+  "complete_functional_acceptance": false,
+  "functional_scope": "Native rendered unavailable/empty-state presentation, original authenticated projections and actual shell/navigation. All controls, owned CRUD, foreign integrations and live inference require separate semantic receipts.",
+  "physical_audio": "BLOCKED: user explicitly reports microphone and speakers unavailable",
+  "private_final_attempts": 0,
+  "scores_are_development_not_final": true,
+  "screens": [
+    {
+      "route": "home",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9,
+        "windows_interaction": 8.8,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.795,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Short basename restores summary hierarchy; unavailable copy matches original unattached controller. Greeting and editor remain distinct.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.7. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/home-1366x860.png",
+          "sha256": "ca06c01e85c919b7a392bdf2eeaf1f9cb2d099988694ca8c1cf2cfd381593e02",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/home-900x650.png",
+          "sha256": "81d094be65abe818b25123bc21f80162c7296e0acac8c0ea903f5d1130c9ba55",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "chat",
+      "dimensions": {
+        "typography": 8.8,
+        "hierarchy": 8.7,
+        "spacing": 8.8,
+        "density": 8.8,
+        "truthful_states": 9,
+        "windows_interaction": 8.8,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.81,
+        "template_score": 1.2,
+        "typography_score": 8.8,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Readable canvas and disabled editor. Unavailability repeats three times but no progress is invented; these frames do not prove streaming.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.8. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/chat-1366x860.png",
+          "sha256": "1cddd4e70760924800fb3e8bf3c8e735a5936f3a055f2487b8a7694f1c6ea18a",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/chat-900x650.png",
+          "sha256": "1006a326413bfabf0da3b57803fbec0a834dee309fea99fce5a2b3f80cde2ed8",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "voice",
+      "dimensions": {
+        "typography": 8.6,
+        "hierarchy": 8.7,
+        "spacing": 8.7,
+        "density": 8.6,
+        "truthful_states": 9.1,
+        "windows_interaction": 8.8,
+        "finishing": 8.7
+      },
+      "result": {
+        "score": 8.735,
+        "template_score": 1.2,
+        "typography_score": 8.6,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Device columns/timing labels are readable. Inactive/Disabled and Not measured agree with original unavailable provider; no physical audio pass.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.6. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/voice-1366x860.png",
+          "sha256": "95366ce9b132c411a36f24f1c2694a0508f58860b697dd20d860c81aa32184f3",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/voice-900x650.png",
+          "sha256": "d438518af5f95633a90286a04b274f6e6e100cec963210e668ab664a6087ba81",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "screen",
+      "dimensions": {
+        "typography": 8.8,
+        "hierarchy": 8.9,
+        "spacing": 8.8,
+        "density": 8.9,
+        "truthful_states": 9.2,
+        "windows_interaction": 8.8,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.895,
+        "template_score": 1.2,
+        "typography_score": 8.8,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "No-image and disabled Analyze are clear. Saved120-second policy is distinguished from active capture; endpoint vision metadata is not pipeline execution.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.8. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/screen-1366x860.png",
+          "sha256": "89fe0335e7594ffb5595713541fa9b6bd8bc62534ba177ea32ac89f671b90446",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/screen-900x650.png",
+          "sha256": "9ab8f855edb63fda42a4a2ef2d7a2d2b6d784e04417e2a005d5b4467549c1047",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "mission",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.7,
+        "spacing": 8.7,
+        "density": 8.6,
+        "truthful_states": 9,
+        "windows_interaction": 8.8,
+        "finishing": 8.7
+      },
+      "result": {
+        "score": 8.74,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Measured CPU/RAM/sample time lead; configured basename is secondary. Compact charts are reachable; GPU exit127 is disclosed.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.7. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/mission-1366x860.png",
+          "sha256": "9925e44488c06dab79cc474d614448a474bc83bd49d21d88a6a606144224c6b1",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/mission-900x650.png",
+          "sha256": "dccb38087285956fae87eb273fff0c0c0e9e3cfa8d4c0ad4445519d7d73edf29",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "model-routing",
+      "dimensions": {
+        "typography": 8.6,
+        "hierarchy": 8.7,
+        "spacing": 8.6,
+        "density": 8.6,
+        "truthful_states": 9.1,
+        "windows_interaction": 8.8,
+        "finishing": 8.7
+      },
+      "result": {
+        "score": 8.72,
+        "template_score": 1.2,
+        "typography_score": 8.6,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Unattached controller/unverified context are explicit; P50/P95 Not measured is honest. Dense long footnote remains modestly crowded.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.6. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/model-routing-1366x860.png",
+          "sha256": "6fa9b2b3d212861a354c5e63678bdbd34b8aef79174a325977a7bf2beaa6e046",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/model-routing-900x650.png",
+          "sha256": "91f2fc4c3b0f63b48bc9b3ec148951a59d9b0fc0fb5ad1e580e0af137065e821",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "models",
+      "dimensions": {
+        "typography": 8.6,
+        "hierarchy": 8.4,
+        "spacing": 8.5,
+        "density": 8.3,
+        "truthful_states": 9,
+        "windows_interaction": 8.8,
+        "finishing": 8.5
+      },
+      "result": {
+        "score": 8.575,
+        "template_score": 1.8,
+        "typography_score": 8.6,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": false,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Six-column inventory is legible. Extra inset/padding and repeated boxed selected-endpoint title compete with overview; this exposed pre-repair score fails8.6.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.6. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/models-1366x860.png",
+          "sha256": "dc29667b07d48af9274c3a44c2caaadfe99b823887b1611f28f22a8b17e66a50",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/models-900x650.png",
+          "sha256": "5fce15034a75ac387fb470b1c3b56af32523991bcf35d0a4a59edabf1d4cea88",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "agents",
+      "dimensions": {
+        "typography": 8.6,
+        "hierarchy": 8.7,
+        "spacing": 8.7,
+        "density": 8.6,
+        "truthful_states": 9,
+        "windows_interaction": 8.8,
+        "finishing": 8.7
+      },
+      "result": {
+        "score": 8.72,
+        "template_score": 1.2,
+        "typography_score": 8.6,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Original capability/permission/risk rows are legible; unavailability is explicit. Counts describe inventory rather than executed autonomy.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.6. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/agents-1366x860.png",
+          "sha256": "191bc72b744f6a810c38708a7a21d0bbb92be4079a83a587c01d4ac1c7f58f6d",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/agents-900x650.png",
+          "sha256": "4ab74309015b83fad0760c16a83363a26c5659447ad259e72efb97f6bd878dce",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "activity",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9,
+        "windows_interaction": 8.8,
+        "finishing": 8.7
+      },
+      "result": {
+        "score": 8.79,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Outcome/history filter scopes are distinct; sparse evidence is readable. Similar filter styles remain a modest hierarchy rough edge.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.7. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/activity-1366x860.png",
+          "sha256": "aaf5d73744f5a2dd8bd0ea4f37168cfd9d97dd46b6e19771592dfd6c88b0fecf",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/activity-900x650.png",
+          "sha256": "4e91f042065453dd66b01c645761300ddb12976ddf819149cc4ca10f23fbf4f0",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "workflows",
+      "dimensions": {
+        "typography": 8.8,
+        "hierarchy": 8.9,
+        "spacing": 8.9,
+        "density": 8.8,
+        "truthful_states": 9.1,
+        "windows_interaction": 8.8,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.88,
+        "template_score": 1.2,
+        "typography_score": 8.8,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Unavailable runner explains disabled New goal; clear filters/empty state do not imply scheduling. Manual seeded receipts are separate.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.8. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/workflows-1366x860.png",
+          "sha256": "b1038bdbba0d0a53d844f8a0a3a3bc80900e6b5c22fdbe40e0df8ccd16076523",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/workflows-900x650.png",
+          "sha256": "5e60957b8a9b0b0b744ea1eb489774883b4ab8fd9fcd4d74323f0e181edbbd41",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "planner",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.7,
+        "truthful_states": 9.1,
+        "windows_interaction": 8.8,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.81,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Needs-attention and calendar columns stack clearly. Disconnected provider stays distinct from local task deadlines.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.7. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/planner-1366x860.png",
+          "sha256": "e16f9c5ceecdcaa0844287da1faadf5cc589c7257d039b9fe2c07f28351f435a",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/planner-900x650.png",
+          "sha256": "06423a882fa3a9f64d66e91c9ed09a59358b0c254c753ef1082178fb490045c5",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "tasks",
+      "dimensions": {
+        "typography": 8.8,
+        "hierarchy": 8.9,
+        "spacing": 8.8,
+        "density": 8.8,
+        "truthful_states": 9,
+        "windows_interaction": 8.9,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.86,
+        "template_score": 1.2,
+        "typography_score": 8.8,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Filter/action row fits compactly; New task leads. Empty local store is honest; owned CRUD readbacks are separate.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.8. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/tasks-1366x860.png",
+          "sha256": "fb2427257adb0b9c605bfbe4eae2fa9e8075e80b85397614dda600f95714397e",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/tasks-900x650.png",
+          "sha256": "7a15cc2c78bc7829d0ec13668569f98e3a0e2da9816bce7ac50a0d5eb886592f",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "calendar",
+      "dimensions": {
+        "typography": 8.8,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.8,
+        "truthful_states": 9.1,
+        "windows_interaction": 8.8,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.845,
+        "template_score": 1.2,
+        "typography_score": 8.8,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Date navigation/schedule grouping are readable. Not connected applies to provider; local deadlines remain separate.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.8. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/calendar-1366x860.png",
+          "sha256": "41f506c7804d2a5c3ef82c6649d2a78a1b8b10eedf889683f2f5ae156cccde81",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/calendar-900x650.png",
+          "sha256": "e76a1de0042deaa24da0126ec9179c31d88a39be1fa53bac5d4fdb9450238f30",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "projects",
+      "dimensions": {
+        "typography": 8.8,
+        "hierarchy": 8.9,
+        "spacing": 8.9,
+        "density": 8.8,
+        "truthful_states": 9,
+        "windows_interaction": 8.9,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.875,
+        "template_score": 1.2,
+        "typography_score": 8.8,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "List/detail divider and New project lead; compact details stack. Empty state does not claim an existing project.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.8. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/projects-1366x860.png",
+          "sha256": "48b1e8371b460d4aff5081aa86d79ddfea11f0f4c528515f4b58ffa6cccdb71a",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/projects-900x650.png",
+          "sha256": "7193ad59439a91cd91283a30d572f86ad8285e33aaef0d414fa45fd91a20d0c4",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "memory",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.7,
+        "density": 8.6,
+        "truthful_states": 9.1,
+        "windows_interaction": 8.9,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.79,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Four labeled filters form two compact columns. Local memory/LAYA disabled are explicit. Fresh ArrowLeft/Right/Home/user proves focus/selection/roving index without scroll.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.7. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/memory-1366x860.png",
+          "sha256": "85304eba0828e8575d6f7080efb5a00c5daebfdede7afd50a6f524c0aeb46e8c",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/memory-900x650.png",
+          "sha256": "779b953393ecd51badd5449203748cc788b2bdcdfc6f064dbfa378e6c7405923",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "mcp",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.7,
+        "density": 8.7,
+        "truthful_states": 9.1,
+        "windows_interaction": 8.8,
+        "finishing": 8.7
+      },
+      "result": {
+        "score": 8.79,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Readable counts/private approval guidance; Add server is local entry. Zero imports do not imply external MCP success.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.7. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/mcp-1366x860.png",
+          "sha256": "e79382b11fa84bd5893f372f6703f98aa4e28c2c1554daa1b95a48304231cd0f",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/mcp-900x650.png",
+          "sha256": "f1de90f231e28cd6a276699dd51125801866ceb877e6acb6f675418daeb6f917",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "notifications",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.8,
+        "truthful_states": 9,
+        "windows_interaction": 8.8,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.81,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Timestamped unreachable-model record corresponds to original store; read/dismiss are distinct from authority approval.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.7. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/notifications-1366x860.png",
+          "sha256": "f5c300bd18c0a0e982f925e7fac3b9ace57b90f0e412259bd15be007a377d37f",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/notifications-900x650.png",
+          "sha256": "996745a7e8815cf2c5b111daa2ac145efc1640cff091e88e8467d2851606dfd3",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "settings",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.7,
+        "density": 8.6,
+        "truthful_states": 9.1,
+        "windows_interaction": 8.8,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.78,
+        "template_score": 1.2,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Grouped labels/permission summaries wrap compactly. Audio/GPU errors stay disclosed rather than healthy defaults.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.7. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/settings-1366x860.png",
+          "sha256": "1d4795e54e02e4835b455976157334c6ac3626cdfb5de2e0ddd838a9fc460e0b",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/settings-900x650.png",
+          "sha256": "3dcf8dcdd3b2980e0dd190dded69f24a72061ee9107dd7844f5673b82155497c",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "mini",
+      "dimensions": {
+        "typography": 8.8,
+        "hierarchy": 8.8,
+        "spacing": 8.8,
+        "density": 8.8,
+        "truthful_states": 9,
+        "windows_interaction": 8.9,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.84,
+        "template_score": 1.0,
+        "typography_score": 8.8,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Quiet offline editor/borders are restrained; own620x640 smoke and actual tray/hotkey supplement unusually large pair sizes.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.8. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/mini-1366x860.png",
+          "sha256": "0a3dbf54fc1049175fceebd5d4b8abde69363867eb8e38fa4c3db9f8b15fad03",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/mini-900x650.png",
+          "sha256": "213dd5c4b47af3285b7792e092e3aebac2ba80b2ecf0aa7df40e0a4ef16f55a8",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    },
+    {
+      "route": "cluster",
+      "dimensions": {
+        "typography": 8.7,
+        "hierarchy": 8.8,
+        "spacing": 8.7,
+        "density": 8.7,
+        "truthful_states": 9.2,
+        "windows_interaction": 8.9,
+        "finishing": 8.8
+      },
+      "result": {
+        "score": 8.82,
+        "template_score": 1.3,
+        "typography_score": 8.7,
+        "eligible": true,
+        "critical_defects": [],
+        "accepted": true,
+        "score_scope": "Independent screenshot judgment, not inferred from CSS or a font name"
+      },
+      "observation": "Null readings are muted readable sans; numeric0 stays mono by source branch. Original unreachable fixtures are not owner hardware. Fresh filter proves9-to1-to0-to9.",
+      "findings": {
+        "alignment": "Header/content/control baselines inspected in both actual frames; no overlap with owned title/menu/status chrome.",
+        "spacing": "Panel edges/gaps and reachable scroll judged from pixels; native chrome is retained.",
+        "information_density": "Both1366x860/900x650 physical windows at120DPI inspected; intentional below-fold sections retain original scroll.",
+        "visual_hierarchy": "Title/action/status priority assessed; route-specific strengths and rough edges appear in observation.",
+        "graphs": "Only observed Mission measured plots and Cluster unavailable-history disclosure credited. No absent benchmark graph is a quality pass.",
+        "navigation": "All19 original visible main navigation controls reach correct route. Mini overview uses labelled owned-HWND show; real tray/hotkey has separate evidence.",
+        "empty_states": "Compared original authenticated API projection to empty/unavailable UI. Controlled fixture snapshots do not prove owner-provider success.",
+        "error_states": "Provider/controller/telemetry errors remain explicit; configured or historical fields are not fresh live proof.",
+        "dialogs": "Two overview frames alone do not prove dialog submissions; populated57 semantic/readback review is separate.",
+        "keyboard_focus": "Real native navigation/shell focus evidence supports shell quality. Complete route-control semantics are not assumed; Memory fresh afterproof is explicit.",
+        "accessibility": "Actual AX/name evidence replaces DOM text-only guesses. Search name repair independently reproduced; unexercised controls remain outside full functional acceptance.",
+        "consistent_design_language": "Segoe UI/readable metadata/restrained dark borders/original Windows chrome are consistent; owner-requested Cluster emojis are intentional.",
+        "typography": "Native Segoe UI and metadata are readable at both widths; score8.7. No family-name-only grade.",
+        "tables": "Actual list/table field distinctions and compact wrapping inspected; absent tables are not interaction passes.",
+        "text_clipping": "No unintended root horizontal overflow or inaccessible text observed; intentional wrap/scroll are retained."
+      },
+      "captures": [
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/cluster-1366x860.png",
+          "sha256": "ef25c0962d623762228ecb6de6b9fce001472f20151ba23a052d7ad30d9ece28",
+          "physical_size": [
+            1366,
+            860
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        },
+        {
+          "path": "data/campaign8-native/cycle6-final-surface-pairs/screenshots/cluster-900x650.png",
+          "sha256": "17ffff0a4bf7ed72039903fae22e496aef0ecaa285f2522d52b7e1ad464f5379",
+          "physical_size": [
+            900,
+            650
+          ],
+          "dpi": 120,
+          "method": "Win32 PrintWindow PW_RENDERFULLCONTENT",
+          "independently_viewed": true
+        }
+      ],
+      "complete_functional_acceptance": false
+    }
+  ]
+}

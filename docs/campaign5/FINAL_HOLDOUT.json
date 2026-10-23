@@ -1,0 +1,1266 @@
+{
+  "seal_sha256": "68ebb86a18b09e3188cfab1c154c8dc445ba78dcec08af9ab84fcd9d51b0a665",
+  "cases": 100,
+  "receipt_sha256": "e841249e32a94489fa5d8454161692c4a0b8f2526df8d6d5aa0ac6dc62b72b79",
+  "grades_sha256": "78aa68cefe1bca600f4ba765b20c6b0f24dcd8c32c6a11fe919033caebd4e66e",
+  "source_proof": {
+    "manifest_sha256": "10c73380215acfe307906da905daab58570eea5e7e9b7a53ca3938d66ff85e62",
+    "archive_sha256": "a822b91e45e6e9a62e090eab737fbeb78d7594049df3e2ea780438452c58d466",
+    "files": 427
+  },
+  "arms": {
+    "adaptive": {
+      "planned_or_attempted": 100,
+      "semantic_response_eligible": 0,
+      "independently_correct": 0,
+      "semantic_accuracy": null,
+      "unconditional_task_successes": 0,
+      "actual_model_http_requests": 0,
+      "unmeasured": 100,
+      "outcomes": {
+        "blocked_no_inference": 100
+      },
+      "by_category": {
+        "analytical_reasoning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "coding": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "complex_multi_step_analysis": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "long_context_retrieval": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "memory_assisted_questions": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "planning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "simple_commands": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "structured_output": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "tool_selection": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "workflow_reasoning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        }
+      },
+      "costs": {
+        "http_requests": 0,
+        "reported_tokens": {
+          "prompt_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          },
+          "completion_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          },
+          "total_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          }
+        },
+        "request_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "http_latency_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "native_text_ttft_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "native_generation_tokens_per_second": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "orchestration_outside_wire_span_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "peak_incremental_ram_vram": null,
+        "scope": "Actual reported server usage and original telemetry; request latency includes orchestration. Admission headroom is not measured peak resource cost. Missing usage is null."
+      },
+      "response_scopes": {
+        "missing_or_multiple_unselected_original_responses": 100
+      }
+    },
+    "pinned:local:supervisor": {
+      "planned_or_attempted": 100,
+      "semantic_response_eligible": 0,
+      "independently_correct": 0,
+      "semantic_accuracy": null,
+      "unconditional_task_successes": 0,
+      "actual_model_http_requests": 0,
+      "unmeasured": 100,
+      "outcomes": {
+        "blocked_no_inference": 100
+      },
+      "by_category": {
+        "analytical_reasoning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "coding": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "complex_multi_step_analysis": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "long_context_retrieval": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "memory_assisted_questions": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "planning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "simple_commands": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "structured_output": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "tool_selection": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "workflow_reasoning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        }
+      },
+      "costs": {
+        "http_requests": 0,
+        "reported_tokens": {
+          "prompt_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          },
+          "completion_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          },
+          "total_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          }
+        },
+        "request_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "http_latency_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "native_text_ttft_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "native_generation_tokens_per_second": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "orchestration_outside_wire_span_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "peak_incremental_ram_vram": null,
+        "scope": "Actual reported server usage and original telemetry; request latency includes orchestration. Admission headroom is not measured peak resource cost. Missing usage is null."
+      },
+      "response_scopes": {
+        "missing_or_multiple_unselected_original_responses": 100
+      }
+    },
+    "pinned:worker:athena-p40": {
+      "planned_or_attempted": 100,
+      "semantic_response_eligible": 0,
+      "independently_correct": 0,
+      "semantic_accuracy": null,
+      "unconditional_task_successes": 0,
+      "actual_model_http_requests": 0,
+      "unmeasured": 100,
+      "outcomes": {
+        "blocked_no_inference": 100
+      },
+      "by_category": {
+        "analytical_reasoning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "coding": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "complex_multi_step_analysis": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "long_context_retrieval": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "memory_assisted_questions": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "planning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "simple_commands": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "structured_output": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "tool_selection": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "workflow_reasoning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        }
+      },
+      "costs": {
+        "http_requests": 0,
+        "reported_tokens": {
+          "prompt_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          },
+          "completion_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          },
+          "total_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          }
+        },
+        "request_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "http_latency_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "native_text_ttft_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "native_generation_tokens_per_second": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "orchestration_outside_wire_span_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "peak_incremental_ram_vram": null,
+        "scope": "Actual reported server usage and original telemetry; request latency includes orchestration. Admission headroom is not measured peak resource cost. Missing usage is null."
+      },
+      "response_scopes": {
+        "missing_or_multiple_unselected_original_responses": 100
+      }
+    },
+    "pinned:worker:athena-p6000": {
+      "planned_or_attempted": 100,
+      "semantic_response_eligible": 0,
+      "independently_correct": 0,
+      "semantic_accuracy": null,
+      "unconditional_task_successes": 0,
+      "actual_model_http_requests": 0,
+      "unmeasured": 100,
+      "outcomes": {
+        "blocked_no_inference": 100
+      },
+      "by_category": {
+        "analytical_reasoning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "coding": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "complex_multi_step_analysis": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "long_context_retrieval": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "memory_assisted_questions": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "planning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "simple_commands": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "structured_output": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "tool_selection": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "workflow_reasoning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        }
+      },
+      "costs": {
+        "http_requests": 0,
+        "reported_tokens": {
+          "prompt_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          },
+          "completion_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          },
+          "total_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          }
+        },
+        "request_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "http_latency_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "native_text_ttft_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "native_generation_tokens_per_second": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "orchestration_outside_wire_span_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "peak_incremental_ram_vram": null,
+        "scope": "Actual reported server usage and original telemetry; request latency includes orchestration. Admission headroom is not measured peak resource cost. Missing usage is null."
+      },
+      "response_scopes": {
+        "missing_or_multiple_unselected_original_responses": 100
+      }
+    },
+    "pinned:worker:wonyoung-strata": {
+      "planned_or_attempted": 100,
+      "semantic_response_eligible": 0,
+      "independently_correct": 0,
+      "semantic_accuracy": null,
+      "unconditional_task_successes": 0,
+      "actual_model_http_requests": 0,
+      "unmeasured": 100,
+      "outcomes": {
+        "blocked_no_inference": 100
+      },
+      "by_category": {
+        "analytical_reasoning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "coding": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "complex_multi_step_analysis": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "long_context_retrieval": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "memory_assisted_questions": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "planning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "simple_commands": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "structured_output": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "tool_selection": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "workflow_reasoning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        }
+      },
+      "costs": {
+        "http_requests": 0,
+        "reported_tokens": {
+          "prompt_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          },
+          "completion_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          },
+          "total_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          }
+        },
+        "request_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "http_latency_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "native_text_ttft_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "native_generation_tokens_per_second": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "orchestration_outside_wire_span_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "peak_incremental_ram_vram": null,
+        "scope": "Actual reported server usage and original telemetry; request latency includes orchestration. Admission headroom is not measured peak resource cost. Missing usage is null."
+      },
+      "response_scopes": {
+        "missing_or_multiple_unselected_original_responses": 100
+      }
+    },
+    "selective": {
+      "planned_or_attempted": 100,
+      "semantic_response_eligible": 0,
+      "independently_correct": 0,
+      "semantic_accuracy": null,
+      "unconditional_task_successes": 0,
+      "actual_model_http_requests": 0,
+      "unmeasured": 100,
+      "outcomes": {
+        "blocked_no_inference": 100
+      },
+      "by_category": {
+        "analytical_reasoning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "coding": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "complex_multi_step_analysis": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "long_context_retrieval": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "memory_assisted_questions": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "planning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "simple_commands": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "structured_output": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "tool_selection": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        },
+        "workflow_reasoning": {
+          "planned_or_attempted": 10,
+          "semantic_response_eligible": 0,
+          "independently_correct": 0,
+          "semantic_accuracy": null,
+          "unconditional_task_successes": 0,
+          "actual_model_http_requests": 0,
+          "unmeasured": 10,
+          "outcomes": {
+            "blocked_no_inference": 10
+          }
+        }
+      },
+      "costs": {
+        "http_requests": 0,
+        "reported_tokens": {
+          "prompt_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          },
+          "completion_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          },
+          "total_tokens": {
+            "http_requests": 0,
+            "reported": 0,
+            "total": null,
+            "complete_reporting": false
+          }
+        },
+        "request_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "http_latency_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "native_text_ttft_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "native_generation_tokens_per_second": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "orchestration_outside_wire_span_ms": {
+          "n": 0,
+          "mean": null,
+          "p50": null,
+          "p95": null
+        },
+        "peak_incremental_ram_vram": null,
+        "scope": "Actual reported server usage and original telemetry; request latency includes orchestration. Admission headroom is not measured peak resource cost. Missing usage is null."
+      },
+      "response_scopes": {
+        "missing_or_multiple_unselected_original_responses": 100
+      }
+    }
+  },
+  "paired": {
+    "pinned:local:supervisor versus adaptive": {
+      "paired_planned_or_attempted": 100,
+      "paired_observable_actual_responses": 0,
+      "mode_wins": 0,
+      "mode_losses": 0,
+      "ties": 0,
+      "net_correctness_gain": null,
+      "improvement_established": false,
+      "population_confidence_interval": null,
+      "interpretation": "Purposive task pairs and shared runtimes/caches; cannot claim overall reliability or stronger-baseline benefit from missing models. Independent claim requires applicable frozen DEV-selected stronger baseline and measured costs."
+    },
+    "pinned:local:supervisor versus selective": {
+      "paired_planned_or_attempted": 100,
+      "paired_observable_actual_responses": 0,
+      "mode_wins": 0,
+      "mode_losses": 0,
+      "ties": 0,
+      "net_correctness_gain": null,
+      "improvement_established": false,
+      "population_confidence_interval": null,
+      "interpretation": "Purposive task pairs and shared runtimes/caches; cannot claim overall reliability or stronger-baseline benefit from missing models. Independent claim requires applicable frozen DEV-selected stronger baseline and measured costs."
+    },
+    "pinned:worker:athena-p40 versus adaptive": {
+      "paired_planned_or_attempted": 100,
+      "paired_observable_actual_responses": 0,
+      "mode_wins": 0,
+      "mode_losses": 0,
+      "ties": 0,
+      "net_correctness_gain": null,
+      "improvement_established": false,
+      "population_confidence_interval": null,
+      "interpretation": "Purposive task pairs and shared runtimes/caches; cannot claim overall reliability or stronger-baseline benefit from missing models. Independent claim requires applicable frozen DEV-selected stronger baseline and measured costs."
+    },
+    "pinned:worker:athena-p40 versus selective": {
+      "paired_planned_or_attempted": 100,
+      "paired_observable_actual_responses": 0,
+      "mode_wins": 0,
+      "mode_losses": 0,
+      "ties": 0,
+      "net_correctness_gain": null,
+      "improvement_established": false,
+      "population_confidence_interval": null,
+      "interpretation": "Purposive task pairs and shared runtimes/caches; cannot claim overall reliability or stronger-baseline benefit from missing models. Independent claim requires applicable frozen DEV-selected stronger baseline and measured costs."
+    },
+    "pinned:worker:athena-p6000 versus adaptive": {
+      "paired_planned_or_attempted": 100,
+      "paired_observable_actual_responses": 0,
+      "mode_wins": 0,
+      "mode_losses": 0,
+      "ties": 0,
+      "net_correctness_gain": null,
+      "improvement_established": false,
+      "population_confidence_interval": null,
+      "interpretation": "Purposive task pairs and shared runtimes/caches; cannot claim overall reliability or stronger-baseline benefit from missing models. Independent claim requires applicable frozen DEV-selected stronger baseline and measured costs."
+    },
+    "pinned:worker:athena-p6000 versus selective": {
+      "paired_planned_or_attempted": 100,
+      "paired_observable_actual_responses": 0,
+      "mode_wins": 0,
+      "mode_losses": 0,
+      "ties": 0,
+      "net_correctness_gain": null,
+      "improvement_established": false,
+      "population_confidence_interval": null,
+      "interpretation": "Purposive task pairs and shared runtimes/caches; cannot claim overall reliability or stronger-baseline benefit from missing models. Independent claim requires applicable frozen DEV-selected stronger baseline and measured costs."
+    },
+    "pinned:worker:wonyoung-strata versus adaptive": {
+      "paired_planned_or_attempted": 100,
+      "paired_observable_actual_responses": 0,
+      "mode_wins": 0,
+      "mode_losses": 0,
+      "ties": 0,
+      "net_correctness_gain": null,
+      "improvement_established": false,
+      "population_confidence_interval": null,
+      "interpretation": "Purposive task pairs and shared runtimes/caches; cannot claim overall reliability or stronger-baseline benefit from missing models. Independent claim requires applicable frozen DEV-selected stronger baseline and measured costs."
+    },
+    "pinned:worker:wonyoung-strata versus selective": {
+      "paired_planned_or_attempted": 100,
+      "paired_observable_actual_responses": 0,
+      "mode_wins": 0,
+      "mode_losses": 0,
+      "ties": 0,
+      "net_correctness_gain": null,
+      "improvement_established": false,
+      "population_confidence_interval": null,
+      "interpretation": "Purposive task pairs and shared runtimes/caches; cannot claim overall reliability or stronger-baseline benefit from missing models. Independent claim requires applicable frozen DEV-selected stronger baseline and measured costs."
+    }
+  },
+  "acceptance": {
+    "real_independent_model_quality": false,
+    "adaptive_superiority_established": false,
+    "selective_collaboration_superiority_established": false,
+    "configured_baseline_change_authorized_by_evidence": false,
+    "overall": "PARTIAL_OR_BLOCKED; preserve baseline unless independently reviewed applicable paired real-response benefit is established"
+  },
+  "no_final_oracle_feedback_to_model_policy": true,
+  "coding": "Canonical AST references, no model-authored execution; unannotated equivalent patches may be missed.",
+  "memory": "Supplied synthetic evidence only, no production retrieval validation.",
+  "native_tools": "Original schemas/native proposals only; no action execution."
+}

@@ -1,0 +1,905 @@
+{
+  "version": 1,
+  "state": "FINAL_SCORED_ONCE",
+  "verdict": "ACCEPTANCE_NOT_MET",
+  "task_count": 45,
+  "turn_count": 46,
+  "complete_passes": 0,
+  "complete_nonpasses": 45,
+  "required_assertions": 164,
+  "passed_assertions": 48,
+  "partial_assertions_are_not_task_passes": true,
+  "families": {
+    "diagnostics": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 8,
+      "generated_tasks": 3,
+      "eligible_tool_selection_tasks": 3,
+      "appropriate_selections": 0,
+      "selection_rate": 0.0,
+      "required_assertions": 10,
+      "passed_assertions": 3,
+      "complete_execution_blocked": 2,
+      "dimension_counts": {
+        "intent": {
+          "FAIL": 1,
+          "PASS": 2
+        },
+        "retrieved_context": {
+          "FAIL": 3
+        },
+        "tools": {
+          "FAIL": 3
+        },
+        "arguments": {
+          "FAIL": 2,
+          "NOT_MEASURED": 1
+        },
+        "authorization": {
+          "BLOCKED": 1,
+          "PASS": 1,
+          "NOT_MEASURED": 1
+        },
+        "execution": {
+          "BLOCKED": 2,
+          "FAIL": 1
+        },
+        "outcome_verification": {
+          "BLOCKED": 2,
+          "FAIL": 1
+        },
+        "final_response": {
+          "BLOCKED": 1,
+          "FAIL": 2
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "FAIL": 1,
+          "NOT_APPLICABLE": 1,
+          "BLOCKED": 1
+        }
+      }
+    },
+    "files": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 7,
+      "generated_tasks": 3,
+      "eligible_tool_selection_tasks": 2,
+      "appropriate_selections": 1,
+      "selection_rate": 0.5,
+      "required_assertions": 9,
+      "passed_assertions": 2,
+      "complete_execution_blocked": 1,
+      "dimension_counts": {
+        "intent": {
+          "FAIL": 1,
+          "PASS": 2
+        },
+        "retrieved_context": {
+          "FAIL": 3
+        },
+        "tools": {
+          "PASS": 1,
+          "FAIL": 2
+        },
+        "arguments": {
+          "FAIL": 2,
+          "NOT_MEASURED": 1
+        },
+        "authorization": {
+          "BLOCKED": 1,
+          "PASS": 1,
+          "NOT_MEASURED": 1
+        },
+        "execution": {
+          "BLOCKED": 1,
+          "FAIL": 2
+        },
+        "outcome_verification": {
+          "BLOCKED": 1,
+          "FAIL": 2
+        },
+        "final_response": {
+          "FAIL": 3
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "NOT_APPLICABLE": 3
+        }
+      }
+    },
+    "apps": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 6,
+      "generated_tasks": 3,
+      "eligible_tool_selection_tasks": 2,
+      "appropriate_selections": 2,
+      "selection_rate": 1.0,
+      "required_assertions": 10,
+      "passed_assertions": 3,
+      "complete_execution_blocked": 2,
+      "dimension_counts": {
+        "intent": {
+          "FAIL": 1,
+          "PASS": 2
+        },
+        "retrieved_context": {
+          "FAIL": 2,
+          "BLOCKED": 1
+        },
+        "tools": {
+          "PASS": 2,
+          "FAIL": 1
+        },
+        "arguments": {
+          "PASS": 1,
+          "FAIL": 1,
+          "NOT_MEASURED": 1
+        },
+        "authorization": {
+          "BLOCKED": 2,
+          "NOT_MEASURED": 1
+        },
+        "execution": {
+          "BLOCKED": 2,
+          "FAIL": 1
+        },
+        "outcome_verification": {
+          "BLOCKED": 2,
+          "FAIL": 1
+        },
+        "final_response": {
+          "FAIL": 1,
+          "BLOCKED": 1,
+          "PASS": 1
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "NOT_APPLICABLE": 2,
+          "FAIL": 1
+        }
+      }
+    },
+    "calendar": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 5,
+      "generated_tasks": 2,
+      "eligible_tool_selection_tasks": 2,
+      "appropriate_selections": 2,
+      "selection_rate": 1.0,
+      "required_assertions": 10,
+      "passed_assertions": 1,
+      "complete_execution_blocked": 3,
+      "dimension_counts": {
+        "intent": {
+          "PASS": 1,
+          "FAIL": 1,
+          "NOT_MEASURED": 1
+        },
+        "retrieved_context": {
+          "FAIL": 1,
+          "BLOCKED": 2
+        },
+        "tools": {
+          "PASS": 2,
+          "NOT_MEASURED": 1
+        },
+        "arguments": {
+          "FAIL": 2,
+          "NOT_MEASURED": 1
+        },
+        "authorization": {
+          "BLOCKED": 2,
+          "PASS": 1
+        },
+        "execution": {
+          "BLOCKED": 3
+        },
+        "outcome_verification": {
+          "BLOCKED": 3
+        },
+        "final_response": {
+          "BLOCKED": 1,
+          "FAIL": 1,
+          "NOT_MEASURED": 1
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "FAIL": 1,
+          "NOT_APPLICABLE": 1,
+          "BLOCKED": 1
+        }
+      }
+    },
+    "tasks": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 0,
+      "generated_tasks": 0,
+      "eligible_tool_selection_tasks": 0,
+      "appropriate_selections": 0,
+      "selection_rate": null,
+      "required_assertions": 10,
+      "passed_assertions": 5,
+      "complete_execution_blocked": 3,
+      "dimension_counts": {
+        "intent": {
+          "NOT_MEASURED": 3
+        },
+        "retrieved_context": {
+          "FAIL": 3
+        },
+        "tools": {
+          "NOT_MEASURED": 3
+        },
+        "arguments": {
+          "NOT_MEASURED": 3
+        },
+        "authorization": {
+          "PASS": 3
+        },
+        "execution": {
+          "BLOCKED": 3
+        },
+        "outcome_verification": {
+          "BLOCKED": 3
+        },
+        "final_response": {
+          "NOT_MEASURED": 3
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "NOT_APPLICABLE": 3
+        }
+      }
+    },
+    "memory": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 2,
+      "generated_tasks": 1,
+      "eligible_tool_selection_tasks": 1,
+      "appropriate_selections": 0,
+      "selection_rate": 0.0,
+      "required_assertions": 10,
+      "passed_assertions": 3,
+      "complete_execution_blocked": 0,
+      "dimension_counts": {
+        "intent": {
+          "NOT_MEASURED": 2,
+          "PASS": 1
+        },
+        "retrieved_context": {
+          "FAIL": 3
+        },
+        "tools": {
+          "NOT_MEASURED": 2,
+          "FAIL": 1
+        },
+        "arguments": {
+          "NOT_MEASURED": 2,
+          "FAIL": 1
+        },
+        "authorization": {
+          "PASS": 3
+        },
+        "execution": {
+          "FAIL": 3
+        },
+        "outcome_verification": {
+          "FAIL": 3
+        },
+        "final_response": {
+          "NOT_MEASURED": 2,
+          "FAIL": 1
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "NOT_APPLICABLE": 3
+        }
+      }
+    },
+    "projects": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 3,
+      "generated_tasks": 1,
+      "eligible_tool_selection_tasks": 1,
+      "appropriate_selections": 0,
+      "selection_rate": 0.0,
+      "required_assertions": 12,
+      "passed_assertions": 3,
+      "complete_execution_blocked": 3,
+      "dimension_counts": {
+        "intent": {
+          "PASS": 1,
+          "NOT_MEASURED": 2
+        },
+        "retrieved_context": {
+          "FAIL": 3
+        },
+        "tools": {
+          "FAIL": 1,
+          "NOT_MEASURED": 2
+        },
+        "arguments": {
+          "NOT_MEASURED": 3
+        },
+        "authorization": {
+          "NOT_MEASURED": 1,
+          "PASS": 2
+        },
+        "execution": {
+          "BLOCKED": 3
+        },
+        "outcome_verification": {
+          "BLOCKED": 3
+        },
+        "final_response": {
+          "PASS": 1,
+          "NOT_MEASURED": 2
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "NOT_APPLICABLE": 3
+        }
+      }
+    },
+    "mcp": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 0,
+      "generated_tasks": 0,
+      "eligible_tool_selection_tasks": 0,
+      "appropriate_selections": 0,
+      "selection_rate": null,
+      "required_assertions": 11,
+      "passed_assertions": 2,
+      "complete_execution_blocked": 3,
+      "dimension_counts": {
+        "intent": {
+          "BLOCKED": 3
+        },
+        "retrieved_context": {
+          "BLOCKED": 3
+        },
+        "tools": {
+          "BLOCKED": 3
+        },
+        "arguments": {
+          "BLOCKED": 3
+        },
+        "authorization": {
+          "BLOCKED": 3
+        },
+        "execution": {
+          "BLOCKED": 3
+        },
+        "outcome_verification": {
+          "BLOCKED": 3
+        },
+        "final_response": {
+          "BLOCKED": 3
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "BLOCKED": 3
+        }
+      }
+    },
+    "workflows": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 4,
+      "generated_tasks": 2,
+      "eligible_tool_selection_tasks": 1,
+      "appropriate_selections": 0,
+      "selection_rate": 0.0,
+      "required_assertions": 12,
+      "passed_assertions": 3,
+      "complete_execution_blocked": 3,
+      "dimension_counts": {
+        "intent": {
+          "PASS": 2,
+          "NOT_MEASURED": 1
+        },
+        "retrieved_context": {
+          "FAIL": 3
+        },
+        "tools": {
+          "FAIL": 2,
+          "NOT_MEASURED": 1
+        },
+        "arguments": {
+          "FAIL": 1,
+          "NOT_MEASURED": 2
+        },
+        "authorization": {
+          "PASS": 2,
+          "NOT_MEASURED": 1
+        },
+        "execution": {
+          "BLOCKED": 3
+        },
+        "outcome_verification": {
+          "BLOCKED": 3
+        },
+        "final_response": {
+          "PASS": 2,
+          "NOT_MEASURED": 1
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "NOT_APPLICABLE": 1,
+          "BLOCKED": 2
+        }
+      }
+    },
+    "distributed": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 5,
+      "generated_tasks": 3,
+      "eligible_tool_selection_tasks": 1,
+      "appropriate_selections": 0,
+      "selection_rate": 0.0,
+      "required_assertions": 12,
+      "passed_assertions": 2,
+      "complete_execution_blocked": 3,
+      "dimension_counts": {
+        "intent": {
+          "PASS": 3
+        },
+        "retrieved_context": {
+          "BLOCKED": 3
+        },
+        "tools": {
+          "FAIL": 3
+        },
+        "arguments": {
+          "NOT_MEASURED": 2,
+          "FAIL": 1
+        },
+        "authorization": {
+          "NOT_MEASURED": 2,
+          "PASS": 1
+        },
+        "execution": {
+          "BLOCKED": 3
+        },
+        "outcome_verification": {
+          "BLOCKED": 3
+        },
+        "final_response": {
+          "PASS": 2,
+          "FAIL": 1
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "NOT_APPLICABLE": 1,
+          "BLOCKED": 2
+        }
+      }
+    },
+    "cluster": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 6,
+      "generated_tasks": 3,
+      "eligible_tool_selection_tasks": 2,
+      "appropriate_selections": 0,
+      "selection_rate": 0.0,
+      "required_assertions": 10,
+      "passed_assertions": 4,
+      "complete_execution_blocked": 3,
+      "dimension_counts": {
+        "intent": {
+          "PASS": 2,
+          "FAIL": 1
+        },
+        "retrieved_context": {
+          "BLOCKED": 3
+        },
+        "tools": {
+          "FAIL": 3
+        },
+        "arguments": {
+          "NOT_MEASURED": 2,
+          "FAIL": 1
+        },
+        "authorization": {
+          "NOT_MEASURED": 2,
+          "BLOCKED": 1
+        },
+        "execution": {
+          "BLOCKED": 3
+        },
+        "outcome_verification": {
+          "BLOCKED": 3
+        },
+        "final_response": {
+          "PASS": 2,
+          "FAIL": 1
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "NOT_APPLICABLE": 2,
+          "BLOCKED": 1
+        }
+      }
+    },
+    "benchmark": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 4,
+      "generated_tasks": 2,
+      "eligible_tool_selection_tasks": 1,
+      "appropriate_selections": 0,
+      "selection_rate": 0.0,
+      "required_assertions": 12,
+      "passed_assertions": 5,
+      "complete_execution_blocked": 3,
+      "dimension_counts": {
+        "intent": {
+          "NOT_MEASURED": 1,
+          "FAIL": 1,
+          "PASS": 1
+        },
+        "retrieved_context": {
+          "BLOCKED": 2,
+          "FAIL": 1
+        },
+        "tools": {
+          "NOT_MEASURED": 1,
+          "FAIL": 2
+        },
+        "arguments": {
+          "NOT_MEASURED": 2,
+          "PASS": 1
+        },
+        "authorization": {
+          "PASS": 1,
+          "BLOCKED": 1,
+          "NOT_MEASURED": 1
+        },
+        "execution": {
+          "BLOCKED": 3
+        },
+        "outcome_verification": {
+          "BLOCKED": 3
+        },
+        "final_response": {
+          "NOT_MEASURED": 1,
+          "FAIL": 1,
+          "PASS": 1
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "NOT_APPLICABLE": 2,
+          "BLOCKED": 1
+        }
+      }
+    },
+    "voice": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 5,
+      "generated_tasks": 2,
+      "eligible_tool_selection_tasks": 2,
+      "appropriate_selections": 1,
+      "selection_rate": 0.5,
+      "required_assertions": 11,
+      "passed_assertions": 2,
+      "complete_execution_blocked": 3,
+      "dimension_counts": {
+        "intent": {
+          "NOT_MEASURED": 1,
+          "FAIL": 1,
+          "PASS": 1
+        },
+        "retrieved_context": {
+          "BLOCKED": 1,
+          "PASS": 1,
+          "FAIL": 1
+        },
+        "tools": {
+          "NOT_MEASURED": 1,
+          "PASS": 1,
+          "FAIL": 1
+        },
+        "arguments": {
+          "NOT_MEASURED": 2,
+          "PASS": 1
+        },
+        "authorization": {
+          "PASS": 2,
+          "NOT_MEASURED": 1
+        },
+        "execution": {
+          "BLOCKED": 3
+        },
+        "outcome_verification": {
+          "BLOCKED": 3
+        },
+        "final_response": {
+          "NOT_MEASURED": 1,
+          "FAIL": 1,
+          "PASS": 1
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "NOT_APPLICABLE": 2,
+          "BLOCKED": 1
+        }
+      }
+    },
+    "screen": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 9,
+      "generated_tasks": 3,
+      "eligible_tool_selection_tasks": 3,
+      "appropriate_selections": 1,
+      "selection_rate": 0.3333333333333333,
+      "required_assertions": 12,
+      "passed_assertions": 5,
+      "complete_execution_blocked": 3,
+      "dimension_counts": {
+        "intent": {
+          "FAIL": 1,
+          "PASS": 2
+        },
+        "retrieved_context": {
+          "FAIL": 2,
+          "PASS": 1
+        },
+        "tools": {
+          "FAIL": 2,
+          "PASS": 1
+        },
+        "arguments": {
+          "FAIL": 1,
+          "NOT_MEASURED": 1,
+          "PASS": 1
+        },
+        "authorization": {
+          "PASS": 2,
+          "NOT_MEASURED": 1
+        },
+        "execution": {
+          "BLOCKED": 3
+        },
+        "outcome_verification": {
+          "BLOCKED": 3
+        },
+        "final_response": {
+          "FAIL": 1,
+          "PASS": 2
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "NOT_APPLICABLE": 2,
+          "BLOCKED": 1
+        }
+      }
+    },
+    "recovery_permissions": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "actual_model_posts": 6,
+      "generated_tasks": 2,
+      "eligible_tool_selection_tasks": 2,
+      "appropriate_selections": 0,
+      "selection_rate": 0.0,
+      "required_assertions": 13,
+      "passed_assertions": 5,
+      "complete_execution_blocked": 3,
+      "dimension_counts": {
+        "intent": {
+          "PASS": 1,
+          "NOT_MEASURED": 1,
+          "FAIL": 1
+        },
+        "retrieved_context": {
+          "BLOCKED": 3
+        },
+        "tools": {
+          "FAIL": 2,
+          "NOT_MEASURED": 1
+        },
+        "arguments": {
+          "NOT_MEASURED": 2,
+          "FAIL": 1
+        },
+        "authorization": {
+          "NOT_MEASURED": 1,
+          "PASS": 1,
+          "BLOCKED": 1
+        },
+        "execution": {
+          "BLOCKED": 3
+        },
+        "outcome_verification": {
+          "BLOCKED": 3
+        },
+        "final_response": {
+          "FAIL": 2,
+          "NOT_MEASURED": 1
+        },
+        "latency": {
+          "PASS": 3
+        },
+        "recovery": {
+          "BLOCKED": 3
+        }
+      }
+    }
+  },
+  "evidence_category_results": {
+    "LIVE_MODEL_ISOLATED_SERVICES": {
+      "tasks": 30,
+      "complete_passes": 0,
+      "required_assertions": 110,
+      "passed_assertions": 32
+    },
+    "ISOLATED_IMPLEMENTATION": {
+      "tasks": 12,
+      "complete_passes": 0,
+      "required_assertions": 43,
+      "passed_assertions": 14
+    },
+    "BLOCKED": {
+      "tasks": 3,
+      "complete_passes": 0,
+      "required_assertions": 11,
+      "passed_assertions": 2
+    }
+  },
+  "core_workflow_metric": {
+    "final_status": "NOT_ESTABLISHED",
+    "prospective_final_eligible_denominator": null,
+    "reason": "The sealed final protocol does not define a separate eligible controlled-core subset. No subset or exclusions are invented after final results.",
+    "development_only": {
+      "eligible": 63,
+      "passes": 57,
+      "rate": 0.9047619047619048,
+      "target": 0.95,
+      "target_met": false,
+      "scope": "Controlled original Core service contracts; distinct from final ordinary-controller multi-system acceptance."
+    }
+  },
+  "model_selection_scope": {
+    "eligible": 23,
+    "appropriate_selected_capability_types": 7,
+    "rate": 0.30434782608695654,
+    "target": 0.95,
+    "target_met": false,
+    "generated_tasks": 30,
+    "zero_generation_tasks": 15,
+    "actual_posts": 70,
+    "exclusion_rule": "No actual generation or no exposed nonempty tool menu. These tasks remain in the45-task completion denominator.",
+    "note": "An appropriate selected capability type does not prove correct arguments, successful execution, complete coverage or outcome verification."
+  },
+  "gaps": {
+    "raw_essential_gap_count": 3,
+    "raw_gap_meaning": "Three unsupported sealed MCP fixture contracts were rejected before original session/fixture creation.",
+    "independent_complete_execution_blocked": 38,
+    "independent_complete_execution_failed": 7,
+    "dimension_gap_meaning": "Independent complete-execution grading includes missing source/context, unsupported prerequisites, configured read-only mutations, isolation refusals and unavailable controller or physical paths. Raw category BLOCKED is narrower.",
+    "not_applied_fixture_declarations": 18,
+    "tasks_with_not_applied_fixtures": 17,
+    "original_request_path_tasks": 42,
+    "budget_exhaustion_without_final_answer_tasks": 3,
+    "scope": "Full-suite nonpasses are not a claim that all45 are intrinsic model errors. Sealed collector/fixture entry-point mismatches and unmet prerequisites remain acceptance gaps."
+  },
+  "safety": {
+    "observed_unauthorized_effects": 0,
+    "fabricated_source_summary_completions": 1,
+    "other_partial_grounding_errors": 1,
+    "fabrication_severity": "Acceptance-blocking correctness failure; unsupported source content presented without source read. No physical/provider/native action completion was claimed.",
+    "other_grounding_scope": "A returned future task date was described as today; the task identifier matched. No saved-memory outcome was established.",
+    "reviewed_receipts": 45,
+    "source_fixture_files_preserved": true,
+    "seeded_workspace_state_preserved": true,
+    "unmeasured_boundaries": [
+      "Guest/Safe Mode authority fixture",
+      "Live provider/calendar permission",
+      "Remote worker trust",
+      "Physical voice/audio interruption",
+      "Physical vision/screen acquisition",
+      "Whole native Mini keyboard/foreground interaction"
+    ],
+    "scope": "Receipt-scoped absence of unauthorized effects in actual isolated owner-interface paths. VERIFIED_SAFE in canonical scores does not certify these unexercised boundaries."
+  },
+  "performance": {
+    "all_task_elapsed": {
+      "measured": 45,
+      "p50_ms": 4806.617299999971,
+      "p95_ms": 7079.399680000005,
+      "max_ms": 7519.989500000065
+    },
+    "prepared_original_session_task_elapsed": {
+      "measured": 42,
+      "p50_ms": 5097.7878999999575,
+      "p95_ms": 7117.3235950000035,
+      "max_ms": 7519.989500000065
+    },
+    "generated_task_elapsed": {
+      "measured": 30,
+      "p50_ms": 6082.501500000035,
+      "p95_ms": 7193.508599999893,
+      "max_ms": 7519.989500000065
+    },
+    "actual_post_wire_elapsed": {
+      "measured": 70,
+      "p50_ms": 833.4048986434937,
+      "p95_ms": 1559.114360809326,
+      "max_ms": 1785.0162982940674
+    },
+    "reported_usage": {
+      "measured_posts": 70,
+      "measured_generated_tasks": 30,
+      "prompt_tokens": 99621,
+      "completion_tokens": 3327,
+      "total_tokens": 102948,
+      "meaning": "Server-reported prompt plus completion tokens over actual POSTs; repeated context is counted. Tokens are not hardware energy or a successful-goal cost."
+    },
+    "scope": "Measured all45 task elapsed includes three early pre-session rejections; POST wire timing is a separate70-request distribution."
+  },
+  "physical_or_live_external_passes": 0,
+  "current_whole_visual_acceptance": null,
+  "native_primary_presentation": {
+    "mean": 8.7497,
+    "minimum": 8.6925,
+    "typography_minimum": 8.65,
+    "template_maximum": 1.2
+  },
+  "native_mini_partial_presentation": {
+    "mean": 8.7222,
+    "windows_interaction": null,
+    "scope": "Readable pixels with conditional repaint; native keyboard/foreground path not established."
+  },
+  "collection_attempts": 1,
+  "score_attempts": 1,
+  "source_sha256": "669452622a4a9a4a4d68a5022dc97a00d084be2b50fdf59e3bbd7556f94f87d7",
+  "go_sha256": "b58c4636633363da2be6e7863e357ff5c9b04f22a453d99638c045b0bc65cf92",
+  "result_sha256": "dc34d6b9f2fc56ab34e20f64d54582827c84f2897a5433258056eb20bc5ada5b",
+  "review_sha256": "1bc968872b1e6e2ea1f9e7ea1d7ad4fa4fde6638bce85a94b9f6ac9f99b2ac8a",
+  "readback_private_sha256": "97ab6813402c0c44b696dc54336c1ccb6e5668f8e83e08257ec8863869a5f4ac",
+  "receipt_manifest_sha256": "f3862ad116fdc75952b0ffddbbebc39609085c5480cba993d9756406c92e621b",
+  "private_cases_or_answers_published": false,
+  "frozen_source_reverified_after_scoring": true,
+  "no_final_guided_tuning": true
+}

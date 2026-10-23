@@ -1,0 +1,31 @@
+{
+  "source": "evals/llm_tools/results/language_v2_qwen_dev150_final.json",
+  "status": "manual_review_of_all_25_failed_cases",
+  "reviews": {
+    "DIAG-016": {"root_cause": "EVALUATOR_OVERCONSTRAINT", "layer": "EVALUATOR", "note": "OneDrive's measured process disk I/O supports the cautious conclusion; the oracle additionally demands broad CPU/RAM evidence that cannot measure disk load."},
+    "DIAG-018": {"root_cause": "EVALUATOR_OVERCONSTRAINT", "layer": "EVALUATOR", "note": "Disk health was a relevant extra check for the user's disk symptom; the final answer distinguishes health from current I/O."},
+    "DIAG-019": {"root_cause": "EVALUATOR_OVERCONSTRAINT", "layer": "EVALUATOR", "note": "A high per-process disk I/O result supports a likely loading contributor without broad CPU/RAM data; current oracle forbids that sequence."},
+    "DIAG-020": {"root_cause": "REAL_MODEL_FAILURE", "layer": "MODEL", "note": "Qwen stopped at healthy broad CPU/RAM and unrelated process lists instead of inspecting process disk I/O for loading pauses."},
+    "DIAG-024": {"root_cause": "REAL_MODEL_FAILURE", "layer": "MODEL", "note": "Qwen made no available broad measurement and gave an unhelpful uncertainty answer."},
+    "DIAG-026": {"root_cause": "GENERATION_DEGENERATION", "layer": "MODEL", "note": "Runaway repeated output; also missed active power-plan evidence and claimed the reported slowness was absent."},
+    "DIAG-027": {"root_cause": "GENERATION_DEGENERATION", "layer": "MODEL", "note": "Runaway digit repetition; healthy CPU/RAM incorrectly ended a battery-power investigation."},
+    "DIAG-028": {"root_cause": "REAL_MODEL_FAILURE", "layer": "MODEL", "note": "Qwen selected the power-plan tool but did not explain the active Power saver plan or the user's symptom."},
+    "DIAG-029": {"root_cause": "REAL_MODEL_FAILURE", "layer": "MODEL", "note": "Qwen saw Power saver but declared performance normal because CPU/RAM were healthy."},
+    "DIAG-030": {"root_cause": "REAL_TOOL_SEMANTICS_FAILURE", "layer": "TOOL_RESULT_SCHEMA", "note": "The synthetic power-plan result names Power saver but does not explicitly encode its performance-limiting meaning; answer is also truncated/repetitive."},
+    "DIAG-035": {"root_cause": "REAL_MODEL_FAILURE", "layer": "MODEL", "note": "Blender CPU was identified, but Qwen falsely called overall RAM low from one process and missed the also-high GPU/RAM snapshot."},
+    "DIAG-042": {"root_cause": "REAL_MODEL_FAILURE", "layer": "MODEL", "note": "Qwen identified VRAM pressure but skipped the GPU contributor and proposed unloading models with no evidence HANNI caused it."},
+    "DIAG-043": {"root_cause": "REAL_MODEL_FAILURE", "layer": "MODEL", "note": "Qwen made no tool call and invented a generic temporal diagnosis from no current measurements."},
+    "SYS-004": {"root_cause": "MISSING_CAPABILITY_DATA", "layer": "TOOL_RESULT_SCHEMA", "note": "model.status lacks deterministic selected-GPU placement; an empty gpu.top_processes list cannot answer where HANNI runs."},
+    "SYS-014": {"root_cause": "REAL_MODEL_FAILURE", "layer": "MODEL", "note": "A logged driver-recovered event is not proof the underlying issue is fully resolved."},
+    "CAL-001": {"root_cause": "REAL_MODEL_FAILURE", "layer": "MODEL", "note": "Qwen omitted the event title Chem from a successful agenda result."},
+    "CAL-015": {"root_cause": "REAL_MODEL_FAILURE", "layer": "MODEL", "note": "Raw model start/end arguments conflicted with deterministic date resolution; host-enforced values hid the mistake from the final answer."},
+    "CAL-019": {"root_cause": "MISSING_EVIDENCE", "layer": "TOOL_RESULT_SCHEMA", "note": "The fixture exposes fetched_at in UTC but no explicit owner-local current time or minutes_until_start; Qwen used the wrong clock."},
+    "CAL-020": {"root_cause": "MISSING_EVIDENCE", "layer": "TOOL_RESULT_SCHEMA", "note": "Qwen compared requested game length with event duration instead of available time before the event; explicit local interval is needed."},
+    "APP-012": {"root_cause": "MOCK_FIXTURE_PROBLEM", "layer": "FIXTURE", "note": "Mock spotify.play_pause returned success while mock status said Spotify was not running and no launch occurred; the claimed playback is not justified."},
+    "HANNI-003": {"root_cause": "MISSING_CAPABILITY_DATA", "layer": "TOOL_RESULT_SCHEMA", "note": "No safe model.status GPU-placement field; empty process telemetry is not a substitute."},
+    "MIX-001": {"root_cause": "REAL_MODEL_FAILURE", "layer": "MODEL", "note": "Qwen provided RAM correctly but shifted the Calendar date by one day and submitted a conflicting raw start_date."},
+    "MIX-002": {"root_cause": "MISSING_CAPABILITY_DATA", "layer": "TOOL_RESULT_SCHEMA", "note": "Spotify launch succeeded; selected-GPU placement was unavailable and Qwen inferred no GPU from an empty process list."},
+    "MIX-004": {"root_cause": "MISSING_EVIDENCE", "layer": "TOOL_RESULT_SCHEMA", "note": "Qwen found both tools but miscomputed 16:15-to-18:00 as 2h15; the result lacks explicit minutes_until_start."},
+    "MIX-005": {"root_cause": "REAL_MODEL_FAILURE", "layer": "MODEL", "note": "Qwen repeated app.open and used top-process CPU instead of overall CPU; the lowercase Discord argument is separately an evaluator case-sensitivity overconstraint."}
+  }
+}

@@ -1,0 +1,4483 @@
+{
+  "total": 150,
+  "missing": [],
+  "unverified": [],
+  "capabilities": [
+    {
+      "name": "app.list_installed",
+      "family": "app",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 17,
+      "aliases_tested": [
+        "what applications are installed on this pc",
+        "show installed programs",
+        "list installed software",
+        "do i have docker installed",
+        "is visual studio code installed",
+        "what apps do i have installed",
+        "show software installed on windows",
+        "which programs are installed",
+        "do i have python installed as an app",
+        "list my installed applications",
+        "what programs are installed",
+        "is docker installed on this machine",
+        "show installed software",
+        "what version of python is installed",
+        "list installed apps",
+        "Which software is installed on this laptop?",
+        "Do I have Firefox installed already?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-241",
+        "DIAGNOSTICS-242",
+        "DIAGNOSTICS-243",
+        "DIAGNOSTICS-244",
+        "DIAGNOSTICS-245",
+        "DIAGNOSTICS-246",
+        "DIAGNOSTICS-247",
+        "DIAGNOSTICS-248",
+        "DIAGNOSTICS-249",
+        "DIAGNOSTICS-250",
+        "PROCESS-SYSTEM-026",
+        "PROCESS-SYSTEM-027",
+        "PROCESS-SYSTEM-028",
+        "PROCESS-SYSTEM-029",
+        "PROCESS-SYSTEM-030",
+        "REGISTRY-app.list_installed-1",
+        "REGISTRY-app.list_installed-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 17
+    },
+    {
+      "name": "app.open",
+      "family": "app",
+      "classification": "safe_action",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 3,
+      "aliases_tested": [
+        "Can you open Discord?",
+        "Launch Notepad for me",
+        "Open Discord and play Spotify"
+      ],
+      "case_ids": [
+        "REGISTRY-app.open-1",
+        "REGISTRY-app.open-2",
+        "HARDENING-012"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 3
+    },
+    {
+      "name": "archive.list",
+      "family": "files",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Show the entries in backup.zip without extracting",
+        "What files are inside this zip archive?"
+      ],
+      "case_ids": [
+        "REGISTRY-archive.list-1",
+        "REGISTRY-archive.list-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "archive.unzip",
+      "family": "files",
+      "classification": "sensitive_action",
+      "side_effect": "reversible_write",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Extract backup.zip into Downloads",
+        "Unpack the archive into a new folder"
+      ],
+      "case_ids": [
+        "REGISTRY-archive.unzip-1",
+        "REGISTRY-archive.unzip-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "archive.zip",
+      "family": "files",
+      "classification": "sensitive_action",
+      "side_effect": "reversible_write",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Compress my project folder into a zip",
+        "Bundle these documents in an archive"
+      ],
+      "case_ids": [
+        "REGISTRY-archive.zip-1",
+        "REGISTRY-archive.zip-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "audio.mute",
+      "family": "media",
+      "classification": "sensitive_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Silence the computer audio",
+        "Unmute my speakers"
+      ],
+      "case_ids": [
+        "REGISTRY-audio.mute-1",
+        "REGISTRY-audio.mute-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "audio.set_volume",
+      "family": "media",
+      "classification": "sensitive_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Turn the system volume down a little",
+        "Set speaker volume to twenty percent"
+      ],
+      "case_ids": [
+        "REGISTRY-audio.set_volume-1",
+        "REGISTRY-audio.set_volume-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "audio.status",
+      "family": "media",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 12,
+      "aliases_tested": [
+        "what volume is my pc at",
+        "is my computer muted",
+        "show current audio volume",
+        "how loud is windows right now",
+        "what's the system volume",
+        "check sound volume",
+        "tell me current volume level",
+        "is audio muted",
+        "what is my speaker volume",
+        "show audio status",
+        "How loud is the system audio currently?",
+        "Are my speakers muted?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-211",
+        "DIAGNOSTICS-212",
+        "DIAGNOSTICS-213",
+        "DIAGNOSTICS-214",
+        "DIAGNOSTICS-215",
+        "DIAGNOSTICS-216",
+        "DIAGNOSTICS-217",
+        "DIAGNOSTICS-218",
+        "DIAGNOSTICS-219",
+        "DIAGNOSTICS-220",
+        "REGISTRY-audio.status-1",
+        "REGISTRY-audio.status-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 12
+    },
+    {
+      "name": "browser.open_url",
+      "family": "browser",
+      "classification": "safe_action",
+      "side_effect": null,
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Open https://example.com in my browser",
+        "Visit this website in the default browser"
+      ],
+      "case_ids": [
+        "REGISTRY-browser.open_url-1",
+        "REGISTRY-browser.open_url-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "calc.evaluate",
+      "family": "calc",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "calculate 18 percent of 250",
+        "what is 45 plus 77",
+        "work out 120 divided by 6",
+        "calculate 7 times 9",
+        "what's 15 percent of 80",
+        "Calculate the total when 19 is multiplied by 7",
+        "Work out 72 divided by 8"
+      ],
+      "case_ids": [
+        "DATE-TIME-031",
+        "DATE-TIME-032",
+        "DATE-TIME-033",
+        "DATE-TIME-034",
+        "DATE-TIME-035",
+        "REGISTRY-calc.evaluate-1",
+        "REGISTRY-calc.evaluate-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "clipboard.read",
+      "family": "clipboard",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "What text did I copy to the clipboard?",
+        "Read my paste buffer"
+      ],
+      "case_ids": [
+        "REGISTRY-clipboard.read-1",
+        "REGISTRY-clipboard.read-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "clipboard.write",
+      "family": "clipboard",
+      "classification": "sensitive_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Put hello on my clipboard",
+        "Copy this sentence to the paste buffer"
+      ],
+      "case_ids": [
+        "REGISTRY-clipboard.write-1",
+        "REGISTRY-clipboard.write-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "device.audio",
+      "family": "devices",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 4,
+      "aliases_tested": [
+        "what audio devices do i have",
+        "show my speakers and microphones",
+        "Which audio endpoints are available?",
+        "List the connected microphones and speakers"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-153",
+        "DIAGNOSTICS-154",
+        "REGISTRY-device.audio-1",
+        "REGISTRY-device.audio-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 4
+    },
+    {
+      "name": "device.bluetooth",
+      "family": "devices",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 4,
+      "aliases_tested": [
+        "are my bluetooth headphones connected",
+        "show bluetooth devices",
+        "Are the Bluetooth headphones connected?",
+        "Show paired wireless Bluetooth devices"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-151",
+        "DIAGNOSTICS-152",
+        "REGISTRY-device.bluetooth-1",
+        "REGISTRY-device.bluetooth-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 4
+    },
+    {
+      "name": "device.disk_health",
+      "family": "devices",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 12,
+      "aliases_tested": [
+        "is my ssd healthy",
+        "is my drive failing",
+        "check smart status on my disk",
+        "could my ssd be dying",
+        "what's the health of my nvme",
+        "is there anything wrong with my hard drive",
+        "check disk health",
+        "does my drive look healthy",
+        "is my storage device failing",
+        "show ssd smart health",
+        "Does my SSD report SMART health problems?",
+        "Check the SMART status of my physical drives"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-081",
+        "DIAGNOSTICS-082",
+        "DIAGNOSTICS-083",
+        "DIAGNOSTICS-084",
+        "DIAGNOSTICS-085",
+        "DIAGNOSTICS-086",
+        "DIAGNOSTICS-087",
+        "DIAGNOSTICS-088",
+        "DIAGNOSTICS-089",
+        "DIAGNOSTICS-090",
+        "REGISTRY-device.disk_health-1",
+        "REGISTRY-device.disk_health-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 12
+    },
+    {
+      "name": "device.printers",
+      "family": "devices",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 4,
+      "aliases_tested": [
+        "what printers are installed",
+        "show printers",
+        "Which printer is the default?",
+        "List printers installed on this machine"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-157",
+        "DIAGNOSTICS-158",
+        "REGISTRY-device.printers-1",
+        "REGISTRY-device.printers-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 4
+    },
+    {
+      "name": "device.usb",
+      "family": "devices",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 4,
+      "aliases_tested": [
+        "what usb devices are plugged in",
+        "show connected usb devices",
+        "Are any USB devices reporting problems?",
+        "List what's plugged into USB"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-155",
+        "DIAGNOSTICS-156",
+        "REGISTRY-device.usb-1",
+        "REGISTRY-device.usb-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 4
+    },
+    {
+      "name": "disk.cleanup_temp",
+      "family": "computer",
+      "classification": "sensitive_action",
+      "side_effect": "destructive",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Delete old temporary files",
+        "Clean up the temp directories"
+      ],
+      "case_ids": [
+        "REGISTRY-disk.cleanup_temp-1",
+        "REGISTRY-disk.cleanup_temp-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "disk.folder_size",
+      "family": "computer",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "How big is my Downloads folder altogether?",
+        "Measure the size of this directory tree"
+      ],
+      "case_ids": [
+        "REGISTRY-disk.folder_size-1",
+        "REGISTRY-disk.folder_size-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "disk.free_space",
+      "family": "computer",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 15,
+      "aliases_tested": [
+        "how much disk space do i have left",
+        "show free space on my drives",
+        "check my remaining storage",
+        "what do i have tomorrow and how much disk space is left",
+        "what do i have tomorrow and how much disk space is left?",
+        "what do i have tomorrow plus how much disk space is left",
+        "hanni, what do i have tomorrow and how much disk space is left",
+        "what do i have tomorrow and how much disk space is left please",
+        "how much ssd space left rn",
+        "disk almost cooked how much free",
+        "storage left pls",
+        "how much room on drive",
+        "ssd space rn",
+        "Is there enough free space for a 20 GB copy?",
+        "Check remaining capacity on drive D before copying"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-071",
+        "DIAGNOSTICS-076",
+        "DIAGNOSTICS-080",
+        "MIXED-DOMAIN-021",
+        "MIXED-DOMAIN-022",
+        "MIXED-DOMAIN-023",
+        "MIXED-DOMAIN-024",
+        "MIXED-DOMAIN-025",
+        "SLANG-TYPOS-021",
+        "SLANG-TYPOS-022",
+        "SLANG-TYPOS-023",
+        "SLANG-TYPOS-024",
+        "SLANG-TYPOS-025",
+        "REGISTRY-disk.free_space-1",
+        "REGISTRY-disk.free_space-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 15
+    },
+    {
+      "name": "disk.largest_files",
+      "family": "computer",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 4,
+      "aliases_tested": [
+        "what files are taking the most space",
+        "which files are huge on my pc",
+        "Find the largest files under Documents",
+        "Which individual files are wasting the most disk space?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-073",
+        "DIAGNOSTICS-077",
+        "REGISTRY-disk.largest_files-1",
+        "REGISTRY-disk.largest_files-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 4
+    },
+    {
+      "name": "disk.largest_folders",
+      "family": "computer",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 5,
+      "aliases_tested": [
+        "what folders are using the most storage",
+        "where did all my disk space go",
+        "what is taking up storage",
+        "Rank subfolders by total size",
+        "Which folders take up the most storage?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-074",
+        "DIAGNOSTICS-075",
+        "DIAGNOSTICS-079",
+        "REGISTRY-disk.largest_folders-1",
+        "REGISTRY-disk.largest_folders-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 5
+    },
+    {
+      "name": "disk.recycle_bin_size",
+      "family": "computer",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 12,
+      "aliases_tested": [
+        "how big is my recycle bin",
+        "how much space is in the recycle bin",
+        "what size is the trash on this pc",
+        "check recycle bin size",
+        "how much storage is the recycle bin using",
+        "is my recycle bin taking lots of space",
+        "show recycle bin storage usage",
+        "how many gb are in recycle bin",
+        "what's sitting in the recycle bin size wise",
+        "measure my recycle bin",
+        "How much space is in the trash?",
+        "Measure my Recycle Bin without emptying it"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-181",
+        "DIAGNOSTICS-182",
+        "DIAGNOSTICS-183",
+        "DIAGNOSTICS-184",
+        "DIAGNOSTICS-185",
+        "DIAGNOSTICS-186",
+        "DIAGNOSTICS-187",
+        "DIAGNOSTICS-188",
+        "DIAGNOSTICS-189",
+        "DIAGNOSTICS-190",
+        "REGISTRY-disk.recycle_bin_size-1",
+        "REGISTRY-disk.recycle_bin_size-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 12
+    },
+    {
+      "name": "disk.usage",
+      "family": "computer",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 4,
+      "aliases_tested": [
+        "is my drive almost full",
+        "how full is my ssd",
+        "Show used and free space for all drives",
+        "How full are my disks?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-072",
+        "DIAGNOSTICS-078",
+        "REGISTRY-disk.usage-1",
+        "REGISTRY-disk.usage-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 4
+    },
+    {
+      "name": "display.brightness",
+      "family": "display",
+      "classification": "sensitive_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Dim the laptop panel",
+        "Set screen brightness to fifty percent"
+      ],
+      "case_ids": [
+        "REGISTRY-display.brightness-1",
+        "REGISTRY-display.brightness-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "display.info",
+      "family": "display",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 4,
+      "aliases_tested": [
+        "what monitors do i have",
+        "what resolution and refresh rate am i using",
+        "What refresh rate are my monitors using?",
+        "Show display resolution and adapters"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-159",
+        "DIAGNOSTICS-160",
+        "REGISTRY-display.info-1",
+        "REGISTRY-display.info-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 4
+    },
+    {
+      "name": "env.get",
+      "family": "env",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "What is the value of the TEMP environment variable?",
+        "Read just the USERPROFILE variable"
+      ],
+      "case_ids": [
+        "REGISTRY-env.get-1",
+        "REGISTRY-env.get-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "env.list",
+      "family": "env",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "List my environment variables",
+        "Show the environment with secret values hidden"
+      ],
+      "case_ids": [
+        "REGISTRY-env.list-1",
+        "REGISTRY-env.list-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "env.path",
+      "family": "env",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "what's on my path",
+        "show my path",
+        "is my path broken",
+        "list path entries",
+        "check environment path",
+        "Does my PATH contain nonexistent directories?",
+        "Check PATH for duplicate entries"
+      ],
+      "case_ids": [
+        "PROCESS-SYSTEM-036",
+        "PROCESS-SYSTEM-037",
+        "PROCESS-SYSTEM-038",
+        "PROCESS-SYSTEM-039",
+        "PROCESS-SYSTEM-040",
+        "REGISTRY-env.path-1",
+        "REGISTRY-env.path-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "env.user_folders",
+      "family": "env",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Where does my Downloads directory actually live?",
+        "Resolve my standard user folder locations"
+      ],
+      "case_ids": [
+        "REGISTRY-env.user_folders-1",
+        "REGISTRY-env.user_folders-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "env.which",
+      "family": "env",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "where is python",
+        "is git on my path",
+        "where is node",
+        "do i have npm command",
+        "which python am i using",
+        "Where is the git executable on PATH?",
+        "Can this machine find the node command?"
+      ],
+      "case_ids": [
+        "PROCESS-SYSTEM-031",
+        "PROCESS-SYSTEM-032",
+        "PROCESS-SYSTEM-033",
+        "PROCESS-SYSTEM-034",
+        "PROCESS-SYSTEM-035",
+        "REGISTRY-env.which-1",
+        "REGISTRY-env.which-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "file.compare",
+      "family": "files",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 12,
+      "aliases_tested": [
+        "compare these two files",
+        "what changed between these files",
+        "diff these two files",
+        "are these files the same",
+        "show differences between the two files",
+        "compare file a and file b",
+        "what is different in these files",
+        "check if these two files match",
+        "diff the old and new config",
+        "compare these versions",
+        "Compare the contents of these two text files",
+        "Are old.txt and new.txt identical?"
+      ],
+      "case_ids": [
+        "FILES-031",
+        "FILES-032",
+        "FILES-033",
+        "FILES-034",
+        "FILES-035",
+        "FILES-036",
+        "FILES-037",
+        "FILES-038",
+        "FILES-039",
+        "FILES-040",
+        "REGISTRY-file.compare-1",
+        "REGISTRY-file.compare-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 12
+    },
+    {
+      "name": "file.composition",
+      "family": "files",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Break Downloads down by file type",
+        "How many PDFs and images are in this folder?"
+      ],
+      "case_ids": [
+        "REGISTRY-file.composition-1",
+        "REGISTRY-file.composition-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "file.copy",
+      "family": "files",
+      "classification": "sensitive_action",
+      "side_effect": null,
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Copy report.txt into Documents",
+        "Duplicate this file into another folder"
+      ],
+      "case_ids": [
+        "REGISTRY-file.copy-1",
+        "REGISTRY-file.copy-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "file.delete",
+      "family": "files",
+      "classification": "sensitive_action",
+      "side_effect": null,
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 3,
+      "aliases_tested": [
+        "Permanently delete this document",
+        "Erase the entire scratch folder",
+        "Show my calendar tomorrow and delete the Downloads folder"
+      ],
+      "case_ids": [
+        "REGISTRY-file.delete-1",
+        "REGISTRY-file.delete-2",
+        "HARDENING-034"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 3
+    },
+    {
+      "name": "file.duplicates",
+      "family": "files",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 12,
+      "aliases_tested": [
+        "do i have duplicate files",
+        "find duplicate files",
+        "are there copies of the same file",
+        "show duplicate copies",
+        "find identical files",
+        "any duplicates in this folder",
+        "which files are duplicated",
+        "look for duplicate files",
+        "do i have the same file twice",
+        "find wasted space from duplicates",
+        "Find byte-identical copies under Downloads",
+        "Which files are duplicates by content?"
+      ],
+      "case_ids": [
+        "FILES-051",
+        "FILES-052",
+        "FILES-053",
+        "FILES-054",
+        "FILES-055",
+        "FILES-056",
+        "FILES-057",
+        "FILES-058",
+        "FILES-059",
+        "FILES-060",
+        "REGISTRY-file.duplicates-1",
+        "REGISTRY-file.duplicates-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 12
+    },
+    {
+      "name": "file.empty_folders",
+      "family": "files",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Locate empty directories without removing them",
+        "Which folders have nothing inside?"
+      ],
+      "case_ids": [
+        "REGISTRY-file.empty_folders-1",
+        "REGISTRY-file.empty_folders-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "file.grep",
+      "family": "files",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 12,
+      "aliases_tested": [
+        "which file mentions kubernetes",
+        "search inside my files for HANNI",
+        "where did i write localforge",
+        "find text inside files for llama.cpp",
+        "which file contains qwen",
+        "look through files for GPU routing",
+        "search in my documents for internship",
+        "find where i mentioned MCP",
+        "grep my files for calendar routing",
+        "which file says 6600 xt",
+        "Search inside my text files for invoice",
+        "Which document mentions the project deadline?"
+      ],
+      "case_ids": [
+        "FILES-011",
+        "FILES-012",
+        "FILES-013",
+        "FILES-014",
+        "FILES-015",
+        "FILES-016",
+        "FILES-017",
+        "FILES-018",
+        "FILES-019",
+        "FILES-020",
+        "REGISTRY-file.grep-1",
+        "REGISTRY-file.grep-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 12
+    },
+    {
+      "name": "file.head",
+      "family": "files",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Preview the first ten lines of server.log",
+        "Show the beginning of this text file"
+      ],
+      "case_ids": [
+        "REGISTRY-file.head-1",
+        "REGISTRY-file.head-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "file.list_dir",
+      "family": "files",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 12,
+      "aliases_tested": [
+        "what's in my downloads folder",
+        "list my downloads",
+        "show me what is in downloads",
+        "what files are in my desktop",
+        "list my documents folder",
+        "show what's inside my downloads",
+        "what's in my desktop folder",
+        "list files in my documents",
+        "show downloads contents",
+        "what do i have in downloads",
+        "List the contents of my Desktop folder",
+        "What files are directly inside Documents?"
+      ],
+      "case_ids": [
+        "FILES-001",
+        "FILES-002",
+        "FILES-003",
+        "FILES-004",
+        "FILES-005",
+        "FILES-006",
+        "FILES-007",
+        "FILES-008",
+        "FILES-009",
+        "FILES-010",
+        "REGISTRY-file.list_dir-1",
+        "REGISTRY-file.list_dir-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 12
+    },
+    {
+      "name": "file.locate",
+      "family": "files",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Locate the exact file budget.xlsx",
+        "Where did I put receipt.pdf?"
+      ],
+      "case_ids": [
+        "REGISTRY-file.locate-1",
+        "REGISTRY-file.locate-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "file.mkdir",
+      "family": "files",
+      "classification": "sensitive_action",
+      "side_effect": null,
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Make a new directory called invoices",
+        "Create a folder for this project"
+      ],
+      "case_ids": [
+        "REGISTRY-file.mkdir-1",
+        "REGISTRY-file.mkdir-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "file.move",
+      "family": "files",
+      "classification": "sensitive_action",
+      "side_effect": null,
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Rename draft.txt to final.txt",
+        "Move my report into Documents"
+      ],
+      "case_ids": [
+        "REGISTRY-file.move-1",
+        "REGISTRY-file.move-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "file.open",
+      "family": "files",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Open this PDF with its default application",
+        "Show report.txt in its associated app"
+      ],
+      "case_ids": [
+        "REGISTRY-file.open-1",
+        "REGISTRY-file.open-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "file.read",
+      "family": "files",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 3,
+      "aliases_tested": [
+        "Read the contents of settings.txt",
+        "Tell me what this text file says",
+        "Read settings.txt and show my CPU and RAM utilization"
+      ],
+      "case_ids": [
+        "REGISTRY-file.read-1",
+        "REGISTRY-file.read-2",
+        "HARDENING-009"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 3
+    },
+    {
+      "name": "file.recent",
+      "family": "files",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 12,
+      "aliases_tested": [
+        "what files changed recently",
+        "what did i work on today",
+        "show recently modified files",
+        "which files changed yesterday",
+        "what files have i touched lately",
+        "show recent files",
+        "what changed on disk recently",
+        "find files modified today",
+        "what files did i edit recently",
+        "list latest changed files",
+        "Which files changed most recently?",
+        "Show documents I worked on yesterday"
+      ],
+      "case_ids": [
+        "FILES-041",
+        "FILES-042",
+        "FILES-043",
+        "FILES-044",
+        "FILES-045",
+        "FILES-046",
+        "FILES-047",
+        "FILES-048",
+        "FILES-049",
+        "FILES-050",
+        "REGISTRY-file.recent-1",
+        "REGISTRY-file.recent-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 12
+    },
+    {
+      "name": "file.search",
+      "family": "files",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Find filenames matching invoice under Documents",
+        "Search Downloads recursively for PDFs"
+      ],
+      "case_ids": [
+        "REGISTRY-file.search-1",
+        "REGISTRY-file.search-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "file.stat",
+      "family": "files",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Does C:\\Temp\\report.txt exist?",
+        "Check metadata for this path"
+      ],
+      "case_ids": [
+        "REGISTRY-file.stat-1",
+        "REGISTRY-file.stat-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "file.tail",
+      "family": "files",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 12,
+      "aliases_tested": [
+        "what does the end of this log say",
+        "show the last lines of my log",
+        "tail the hanni log",
+        "read the end of the log file",
+        "what are the latest log lines",
+        "show recent lines from this log",
+        "tail this file",
+        "what does the log say at the end",
+        "last 50 lines of the log",
+        "show me the bottom of this log",
+        "Show the final twenty lines of error.log",
+        "Read the end of the application log"
+      ],
+      "case_ids": [
+        "FILES-021",
+        "FILES-022",
+        "FILES-023",
+        "FILES-024",
+        "FILES-025",
+        "FILES-026",
+        "FILES-027",
+        "FILES-028",
+        "FILES-029",
+        "FILES-030",
+        "REGISTRY-file.tail-1",
+        "REGISTRY-file.tail-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 12
+    },
+    {
+      "name": "file.write",
+      "family": "files",
+      "classification": "sensitive_action",
+      "side_effect": null,
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Save this text to a new file",
+        "Replace the contents of draft.txt"
+      ],
+      "case_ids": [
+        "REGISTRY-file.write-1",
+        "REGISTRY-file.write-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "folder.open",
+      "family": "files",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Open my Documents directory in Explorer",
+        "Show the Downloads folder in File Explorer"
+      ],
+      "case_ids": [
+        "REGISTRY-folder.open-1",
+        "REGISTRY-folder.open-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "git.branches",
+      "family": "git",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Which git branch am I on?",
+        "List local and remote repository branches"
+      ],
+      "case_ids": [
+        "REGISTRY-git.branches-1",
+        "REGISTRY-git.branches-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "git.diff",
+      "family": "git",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Show my staged git diff",
+        "Review the unstaged patch in this repository"
+      ],
+      "case_ids": [
+        "REGISTRY-git.diff-1",
+        "REGISTRY-git.diff-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "git.log",
+      "family": "git",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Who made the recent commits?",
+        "Show the repository commit history"
+      ],
+      "case_ids": [
+        "REGISTRY-git.log-1",
+        "REGISTRY-git.log-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "git.status",
+      "family": "git",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Is this git repository dirty?",
+        "Which changes are uncommitted?"
+      ],
+      "case_ids": [
+        "REGISTRY-git.status-1",
+        "REGISTRY-git.status-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "gmail.read",
+      "family": "email",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "read my latest email",
+        "show the most recent email",
+        "read that gmail message",
+        "open the email you found",
+        "what does the latest email say",
+        "Read the email with ID abc from my school account",
+        "Show the full body of that Gmail message"
+      ],
+      "case_ids": [
+        "HANNI-MODEL-036",
+        "HANNI-MODEL-037",
+        "HANNI-MODEL-038",
+        "HANNI-MODEL-039",
+        "HANNI-MODEL-040",
+        "REGISTRY-gmail.read-1",
+        "REGISTRY-gmail.read-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "gmail.search",
+      "family": "email",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "find emails from intel",
+        "search gmail for temporary password",
+        "look for email about capital one",
+        "search my email for internship",
+        "find gmail messages from umd",
+        "Find emails about my tuition",
+        "Search my inbox for messages from Alex"
+      ],
+      "case_ids": [
+        "HANNI-MODEL-031",
+        "HANNI-MODEL-032",
+        "HANNI-MODEL-033",
+        "HANNI-MODEL-034",
+        "HANNI-MODEL-035",
+        "REGISTRY-gmail.search-1",
+        "REGISTRY-gmail.search-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "google.accounts",
+      "family": "google",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "which google accounts are connected",
+        "show connected google accounts",
+        "is my school google account connected",
+        "what google accounts do you have",
+        "list google connections",
+        "Are both my Google account slots connected?",
+        "Check my school Google login status"
+      ],
+      "case_ids": [
+        "HANNI-MODEL-026",
+        "HANNI-MODEL-027",
+        "HANNI-MODEL-028",
+        "HANNI-MODEL-029",
+        "HANNI-MODEL-030",
+        "REGISTRY-google.accounts-1",
+        "REGISTRY-google.accounts-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "google_calendar.agenda",
+      "family": "calendar",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 122,
+      "aliases_tested": [
+        "what's on my calendar today",
+        "what do i have today",
+        "show me my schedule today",
+        "calendar for today please",
+        "do i have anything today",
+        "what am i doing today",
+        "check my calendar today",
+        "what events do i have today",
+        "tell me what's on my calendar today",
+        "my schedule today",
+        "what's on my calendar tomorrow",
+        "what do i have tomorrow",
+        "anything on my calendar tmr",
+        "show my schedule tomorrow",
+        "do i have anything tomorrow",
+        "what am i doing tmr",
+        "check calendar for tomorrow",
+        "what events are tomorrow",
+        "tell me my schedule tmr",
+        "calendar tomorrow please",
+        "what was on my calendar yesterday",
+        "show yesterday's calendar",
+        "what did i have yesterday",
+        "calendar yesterday please",
+        "check my schedule yesterday",
+        "what events were yesterday",
+        "show me yesterday's agenda",
+        "did i have anything yesterday",
+        "what was my schedule yesterday",
+        "list yesterday's calendar",
+        "what's on my calendar 2026-09-25",
+        "show my calendar 2026-9-25",
+        "calendar for 2026-09-25",
+        "what do i have on 2026-09-25",
+        "check my schedule 2026-09-25",
+        "show events on 2026-9-25",
+        "what's scheduled 2026-09-25",
+        "list calendar 2026-09-25",
+        "my agenda 2026-9-25",
+        "read my calendar 2026-09-25",
+        "what's on my school calendar tomorrow",
+        "show school calendar tomorrow",
+        "what do i have on my school calendar tomorrow",
+        "school google calendar tomorrow",
+        "check my school schedule tomorrow",
+        "anything on school calendar tmr",
+        "list school calendar tomorrow",
+        "what events are on my school calendar tomorrow",
+        "tell me school schedule tomorrow",
+        "read school calendar tmr",
+        "what's on my personal calendar tomorrow",
+        "show personal calendar tomorrow",
+        "what do i have on my personal calendar tomorrow",
+        "personal google calendar tomorrow",
+        "check my personal schedule tomorrow",
+        "anything on personal calendar tmr",
+        "list personal calendar tomorrow",
+        "what events are on my personal calendar tomorrow",
+        "tell me personal schedule tomorrow",
+        "read personal calendar tmr",
+        "what's on both calendars tomorrow",
+        "show all calendars tomorrow",
+        "what do i have across all calendars tomorrow",
+        "both google calendars tomorrow",
+        "check all my schedules tomorrow",
+        "anything on both calendars tmr",
+        "list all calendars tomorrow",
+        "what events are on all my calendars tomorrow",
+        "tell me both schedules tomorrow",
+        "read all calendars tmr",
+        "and tomorrow?",
+        "how about tomorrow?",
+        "what about tomorrow",
+        "and 2026-09-25?",
+        "how about 2026-09-25",
+        "what about the next day",
+        "and yesterday?",
+        "how about yesterday",
+        "what about today",
+        "what's on my calendar tomorrow and how much ram am i using",
+        "what's on my calendar tomorrow and how much ram am i using?",
+        "what's on my calendar tomorrow plus how much ram am i using",
+        "hanni, what's on my calendar tomorrow and how much ram am i using",
+        "whats on my calendar tomorrow and how much ram am i using",
+        "am i free tomorrow and is my gpu memory full",
+        "am i free tomorrow and is my gpu memory full?",
+        "am i free tomorrow plus is my gpu memory full",
+        "hanni, am i free tomorrow and is my gpu memory full",
+        "am i free tomorrow and is my gpu memory full please",
+        "show my schedule tomorrow and tell me what's using cpu",
+        "show my schedule tomorrow and tell me what's using cpu?",
+        "show my schedule tomorrow plus tell me what's using cpu",
+        "hanni, show my schedule tomorrow and tell me what's using cpu",
+        "show my schedule tomorrow and tell me whats using cpu",
+        "what do i have tomorrow and how much disk space is left",
+        "what do i have tomorrow and how much disk space is left?",
+        "what do i have tomorrow plus how much disk space is left",
+        "hanni, what do i have tomorrow and how much disk space is left",
+        "what do i have tomorrow and how much disk space is left please",
+        "is my pc slow and do i have anything tomorrow",
+        "is my pc slow and do i have anything tomorrow?",
+        "is my pc slow plus do i have anything tomorrow",
+        "hanni, is my pc slow and do i have anything tomorrow",
+        "is my pc slow and do i have anything tomorrow please",
+        "wats on cal tmr",
+        "what i got tmr",
+        "anything goin on tmr",
+        "tmr schedule pls",
+        "do i got stuff tmr",
+        "Anything on the calendar this weekend?",
+        "How busy am I next week?",
+        "Anything Friday?",
+        "What about next Friday?",
+        "What do I have this weekend?",
+        "What appointments fill next week?",
+        "Am I free after 6?",
+        "What was on my calendar yesterday?",
+        "What do I have tmr?",
+        "Anything tomorrow?",
+        "What time is it and what is on my calendar tomorrow?",
+        "How busy am I next week and is Qwen healthy?",
+        "Which app uses the most RAM and what is on my calendar Friday?"
+      ],
+      "case_ids": [
+        "CALENDAR-READ-001",
+        "CALENDAR-READ-002",
+        "CALENDAR-READ-003",
+        "CALENDAR-READ-004",
+        "CALENDAR-READ-005",
+        "CALENDAR-READ-006",
+        "CALENDAR-READ-007",
+        "CALENDAR-READ-008",
+        "CALENDAR-READ-009",
+        "CALENDAR-READ-010",
+        "CALENDAR-READ-011",
+        "CALENDAR-READ-012",
+        "CALENDAR-READ-013",
+        "CALENDAR-READ-014",
+        "CALENDAR-READ-015",
+        "CALENDAR-READ-016",
+        "CALENDAR-READ-017",
+        "CALENDAR-READ-018",
+        "CALENDAR-READ-019",
+        "CALENDAR-READ-020",
+        "CALENDAR-READ-021",
+        "CALENDAR-READ-022",
+        "CALENDAR-READ-023",
+        "CALENDAR-READ-024",
+        "CALENDAR-READ-025",
+        "CALENDAR-READ-026",
+        "CALENDAR-READ-027",
+        "CALENDAR-READ-028",
+        "CALENDAR-READ-029",
+        "CALENDAR-READ-030",
+        "CALENDAR-READ-031",
+        "CALENDAR-READ-032",
+        "CALENDAR-READ-033",
+        "CALENDAR-READ-034",
+        "CALENDAR-READ-035",
+        "CALENDAR-READ-036",
+        "CALENDAR-READ-037",
+        "CALENDAR-READ-038",
+        "CALENDAR-READ-039",
+        "CALENDAR-READ-040",
+        "CALENDAR-READ-051",
+        "CALENDAR-READ-052",
+        "CALENDAR-READ-053",
+        "CALENDAR-READ-054",
+        "CALENDAR-READ-055",
+        "CALENDAR-READ-056",
+        "CALENDAR-READ-057",
+        "CALENDAR-READ-058",
+        "CALENDAR-READ-059",
+        "CALENDAR-READ-060",
+        "CALENDAR-READ-061",
+        "CALENDAR-READ-062",
+        "CALENDAR-READ-063",
+        "CALENDAR-READ-064",
+        "CALENDAR-READ-065",
+        "CALENDAR-READ-066",
+        "CALENDAR-READ-067",
+        "CALENDAR-READ-068",
+        "CALENDAR-READ-069",
+        "CALENDAR-READ-070",
+        "CALENDAR-READ-071",
+        "CALENDAR-READ-072",
+        "CALENDAR-READ-073",
+        "CALENDAR-READ-074",
+        "CALENDAR-READ-075",
+        "CALENDAR-READ-076",
+        "CALENDAR-READ-077",
+        "CALENDAR-READ-078",
+        "CALENDAR-READ-079",
+        "CALENDAR-READ-080",
+        "CALENDAR-READ-081",
+        "CALENDAR-READ-082",
+        "CALENDAR-READ-083",
+        "CALENDAR-READ-084",
+        "CALENDAR-READ-085",
+        "CALENDAR-READ-086",
+        "CALENDAR-READ-087",
+        "CALENDAR-READ-088",
+        "CALENDAR-READ-089",
+        "MIXED-DOMAIN-001",
+        "MIXED-DOMAIN-002",
+        "MIXED-DOMAIN-003",
+        "MIXED-DOMAIN-004",
+        "MIXED-DOMAIN-005",
+        "MIXED-DOMAIN-006",
+        "MIXED-DOMAIN-007",
+        "MIXED-DOMAIN-008",
+        "MIXED-DOMAIN-009",
+        "MIXED-DOMAIN-010",
+        "MIXED-DOMAIN-016",
+        "MIXED-DOMAIN-017",
+        "MIXED-DOMAIN-018",
+        "MIXED-DOMAIN-019",
+        "MIXED-DOMAIN-020",
+        "MIXED-DOMAIN-021",
+        "MIXED-DOMAIN-022",
+        "MIXED-DOMAIN-023",
+        "MIXED-DOMAIN-024",
+        "MIXED-DOMAIN-025",
+        "MIXED-DOMAIN-026",
+        "MIXED-DOMAIN-027",
+        "MIXED-DOMAIN-028",
+        "MIXED-DOMAIN-029",
+        "MIXED-DOMAIN-030",
+        "SLANG-TYPOS-016",
+        "SLANG-TYPOS-017",
+        "SLANG-TYPOS-018",
+        "SLANG-TYPOS-019",
+        "SLANG-TYPOS-020",
+        "REGISTRY-google_calendar.agenda-1",
+        "REGISTRY-google_calendar.agenda-2",
+        "HARDENING-001",
+        "HARDENING-002",
+        "HARDENING-003",
+        "HARDENING-004",
+        "HARDENING-005",
+        "HARDENING-006",
+        "HARDENING-007",
+        "HARDENING-008",
+        "HARDENING-011",
+        "HARDENING-013",
+        "HARDENING-015"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 122
+    },
+    {
+      "name": "google_calendar.create",
+      "family": "calendar",
+      "classification": "sensitive_action",
+      "side_effect": "external_action",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 72,
+      "aliases_tested": [
+        "Schedule dinner Friday at 8pm for 2 hours",
+        "Add dinner to my calendar Friday at 8pm for 2 hours",
+        "Put dinner on my calendar Friday at 8pm for 2 hours",
+        "Create an event called dinner Friday at 8pm for 2 hours",
+        "Schedule dinner on Friday at 8pm for 2 hours",
+        "Please schedule dinner Friday at 8pm for 2 hours",
+        "Add dinner Friday at 8pm for 2 hours to my calendar",
+        "Schedule dinner for Friday at 8pm for 2 hours",
+        "Put dinner Friday at 8pm for 2 hours on my Google calendar",
+        "Create calendar event called dinner Friday at 8pm for 2 hours",
+        "Schedule dentist tomorrow at 3pm for 1 hour",
+        "Add dentist to my calendar tomorrow at 3pm for 1 hour",
+        "Put dentist on my calendar tomorrow at 3pm for 1 hour",
+        "Create an event called dentist tomorrow at 3pm for 1 hour",
+        "Schedule dentist on tomorrow at 3pm for 1 hour",
+        "Please schedule dentist tomorrow at 3pm for 1 hour",
+        "Add dentist tomorrow at 3pm for 1 hour to my calendar",
+        "Schedule dentist for tomorrow at 3pm for 1 hour",
+        "Put dentist tomorrow at 3pm for 1 hour on my Google calendar",
+        "Create calendar event called dentist tomorrow at 3pm for 1 hour",
+        "Schedule study session Thursday at 6pm for 2 hours",
+        "Add study session to my calendar Thursday at 6pm for 2 hours",
+        "Put study session on my calendar Thursday at 6pm for 2 hours",
+        "Create an event called study session Thursday at 6pm for 2 hours",
+        "Schedule study session on Thursday at 6pm for 2 hours",
+        "Please schedule study session Thursday at 6pm for 2 hours",
+        "Add study session Thursday at 6pm for 2 hours to my calendar",
+        "Schedule study session for Thursday at 6pm for 2 hours",
+        "Put study session Thursday at 6pm for 2 hours on my Google calendar",
+        "Create calendar event called study session Thursday at 6pm for 2 hours",
+        "Schedule gym Saturday at 10am for 1 hour",
+        "Add gym to my calendar Saturday at 10am for 1 hour",
+        "Put gym on my calendar Saturday at 10am for 1 hour",
+        "Create an event called gym Saturday at 10am for 1 hour",
+        "Schedule gym on Saturday at 10am for 1 hour",
+        "Please schedule gym Saturday at 10am for 1 hour",
+        "Add gym Saturday at 10am for 1 hour to my calendar",
+        "Schedule gym for Saturday at 10am for 1 hour",
+        "Put gym Saturday at 10am for 1 hour on my Google calendar",
+        "Create calendar event called gym Saturday at 10am for 1 hour",
+        "Schedule project meeting Monday at 4pm for 1 hour",
+        "Add project meeting to my calendar Monday at 4pm for 1 hour",
+        "Put project meeting on my calendar Monday at 4pm for 1 hour",
+        "Create an event called project meeting Monday at 4pm for 1 hour",
+        "Schedule project meeting on Monday at 4pm for 1 hour",
+        "Please schedule project meeting Monday at 4pm for 1 hour",
+        "Add project meeting Monday at 4pm for 1 hour to my calendar",
+        "Schedule project meeting for Monday at 4pm for 1 hour",
+        "Put project meeting Monday at 4pm for 1 hour on my Google calendar",
+        "Create calendar event called project meeting Monday at 4pm for 1 hour",
+        "Schedule lunch tomorrow at 12pm for 1 hour",
+        "Add lunch to my calendar tomorrow at 12pm for 1 hour",
+        "Put lunch on my calendar tomorrow at 12pm for 1 hour",
+        "Create an event called lunch tomorrow at 12pm for 1 hour",
+        "Schedule lunch on tomorrow at 12pm for 1 hour",
+        "Please schedule lunch tomorrow at 12pm for 1 hour",
+        "Add lunch tomorrow at 12pm for 1 hour to my calendar",
+        "Schedule lunch for tomorrow at 12pm for 1 hour",
+        "Put lunch tomorrow at 12pm for 1 hour on my Google calendar",
+        "Create calendar event called lunch tomorrow at 12pm for 1 hour",
+        "Schedule TASA Friday at 7pm for 2 hours",
+        "Add TASA to my calendar Friday at 7pm for 2 hours",
+        "Put TASA on my calendar Friday at 7pm for 2 hours",
+        "Create an event called TASA Friday at 7pm for 2 hours",
+        "Schedule TASA on Friday at 7pm for 2 hours",
+        "Please schedule TASA Friday at 7pm for 2 hours",
+        "Add TASA Friday at 7pm for 2 hours to my calendar",
+        "Schedule TASA for Friday at 7pm for 2 hours",
+        "Put TASA Friday at 7pm for 2 hours on my Google calendar",
+        "Create calendar event called TASA Friday at 7pm for 2 hours",
+        "Schedule piano practice tomorrow at 5pm",
+        "Add a dentist appointment Friday at noon"
+      ],
+      "case_ids": [
+        "CALENDAR-CREATE-001",
+        "CALENDAR-CREATE-002",
+        "CALENDAR-CREATE-003",
+        "CALENDAR-CREATE-004",
+        "CALENDAR-CREATE-005",
+        "CALENDAR-CREATE-006",
+        "CALENDAR-CREATE-007",
+        "CALENDAR-CREATE-008",
+        "CALENDAR-CREATE-009",
+        "CALENDAR-CREATE-010",
+        "CALENDAR-CREATE-011",
+        "CALENDAR-CREATE-012",
+        "CALENDAR-CREATE-013",
+        "CALENDAR-CREATE-014",
+        "CALENDAR-CREATE-015",
+        "CALENDAR-CREATE-016",
+        "CALENDAR-CREATE-017",
+        "CALENDAR-CREATE-018",
+        "CALENDAR-CREATE-019",
+        "CALENDAR-CREATE-020",
+        "CALENDAR-CREATE-021",
+        "CALENDAR-CREATE-022",
+        "CALENDAR-CREATE-023",
+        "CALENDAR-CREATE-024",
+        "CALENDAR-CREATE-025",
+        "CALENDAR-CREATE-026",
+        "CALENDAR-CREATE-027",
+        "CALENDAR-CREATE-028",
+        "CALENDAR-CREATE-029",
+        "CALENDAR-CREATE-030",
+        "CALENDAR-CREATE-031",
+        "CALENDAR-CREATE-032",
+        "CALENDAR-CREATE-033",
+        "CALENDAR-CREATE-034",
+        "CALENDAR-CREATE-035",
+        "CALENDAR-CREATE-036",
+        "CALENDAR-CREATE-037",
+        "CALENDAR-CREATE-038",
+        "CALENDAR-CREATE-039",
+        "CALENDAR-CREATE-040",
+        "CALENDAR-CREATE-041",
+        "CALENDAR-CREATE-042",
+        "CALENDAR-CREATE-043",
+        "CALENDAR-CREATE-044",
+        "CALENDAR-CREATE-045",
+        "CALENDAR-CREATE-046",
+        "CALENDAR-CREATE-047",
+        "CALENDAR-CREATE-048",
+        "CALENDAR-CREATE-049",
+        "CALENDAR-CREATE-050",
+        "CALENDAR-CREATE-051",
+        "CALENDAR-CREATE-052",
+        "CALENDAR-CREATE-053",
+        "CALENDAR-CREATE-054",
+        "CALENDAR-CREATE-055",
+        "CALENDAR-CREATE-056",
+        "CALENDAR-CREATE-057",
+        "CALENDAR-CREATE-058",
+        "CALENDAR-CREATE-059",
+        "CALENDAR-CREATE-060",
+        "CALENDAR-CREATE-061",
+        "CALENDAR-CREATE-062",
+        "CALENDAR-CREATE-063",
+        "CALENDAR-CREATE-064",
+        "CALENDAR-CREATE-065",
+        "CALENDAR-CREATE-066",
+        "CALENDAR-CREATE-067",
+        "CALENDAR-CREATE-068",
+        "CALENDAR-CREATE-069",
+        "CALENDAR-CREATE-070",
+        "REGISTRY-google_calendar.create-1",
+        "REGISTRY-google_calendar.create-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 72
+    },
+    {
+      "name": "google_calendar.list",
+      "family": "calendar",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Which Google calendars can you access?",
+        "List calendar IDs for my personal account"
+      ],
+      "case_ids": [
+        "REGISTRY-google_calendar.list-1",
+        "REGISTRY-google_calendar.list-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "google_calendar.next",
+      "family": "calendar",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 24,
+      "aliases_tested": [
+        "what's my next meeting",
+        "what's my next event",
+        "what do i have next",
+        "when is my next meeting",
+        "show my next calendar event",
+        "what event is next",
+        "anything starting soon",
+        "what's coming up next",
+        "next appointment on my calendar",
+        "tell me my next event",
+        "and my next event?",
+        "what's my next meeting and is qwen running",
+        "what's my next meeting and is qwen running?",
+        "what's my next meeting plus is qwen running",
+        "hanni, what's my next meeting and is qwen running",
+        "whats my next meeting and is qwen running",
+        "what's using my ram and when is my next meeting",
+        "what's using my ram and when is my next meeting?",
+        "what's using my ram plus when is my next meeting",
+        "hanni, what's using my ram and when is my next meeting",
+        "whats using my ram and when is my next meeting",
+        "When is my next appointment?",
+        "What's coming up next on my calendar?",
+        "Why is my PC slow and what is my next event?"
+      ],
+      "case_ids": [
+        "CALENDAR-READ-041",
+        "CALENDAR-READ-042",
+        "CALENDAR-READ-043",
+        "CALENDAR-READ-044",
+        "CALENDAR-READ-045",
+        "CALENDAR-READ-046",
+        "CALENDAR-READ-047",
+        "CALENDAR-READ-048",
+        "CALENDAR-READ-049",
+        "CALENDAR-READ-050",
+        "CALENDAR-READ-090",
+        "MIXED-DOMAIN-011",
+        "MIXED-DOMAIN-012",
+        "MIXED-DOMAIN-013",
+        "MIXED-DOMAIN-014",
+        "MIXED-DOMAIN-015",
+        "MIXED-DOMAIN-031",
+        "MIXED-DOMAIN-032",
+        "MIXED-DOMAIN-033",
+        "MIXED-DOMAIN-034",
+        "MIXED-DOMAIN-035",
+        "REGISTRY-google_calendar.next-1",
+        "REGISTRY-google_calendar.next-2",
+        "HARDENING-014"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 24
+    },
+    {
+      "name": "gpu.memory",
+      "family": "computer",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 18,
+      "aliases_tested": [
+        "how much vram do i have free",
+        "what's my vram usage",
+        "can i load another model in vram",
+        "how much gpu memory is left",
+        "show gpu memory usage",
+        "is my vram almost full",
+        "how much memory is on my gpu",
+        "vram free rn",
+        "do i have enough vram for another model",
+        "check my gpu memory headroom",
+        "am i free tomorrow and is my gpu memory full",
+        "am i free tomorrow and is my gpu memory full?",
+        "am i free tomorrow plus is my gpu memory full",
+        "hanni, am i free tomorrow and is my gpu memory full",
+        "am i free tomorrow and is my gpu memory full please",
+        "How much video memory is free?",
+        "Show VRAM headroom on each GPU",
+        "What is my GPU memory usage and is Firefox running?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-041",
+        "DIAGNOSTICS-042",
+        "DIAGNOSTICS-043",
+        "DIAGNOSTICS-044",
+        "DIAGNOSTICS-045",
+        "DIAGNOSTICS-046",
+        "DIAGNOSTICS-047",
+        "DIAGNOSTICS-048",
+        "DIAGNOSTICS-049",
+        "DIAGNOSTICS-050",
+        "MIXED-DOMAIN-006",
+        "MIXED-DOMAIN-007",
+        "MIXED-DOMAIN-008",
+        "MIXED-DOMAIN-009",
+        "MIXED-DOMAIN-010",
+        "REGISTRY-gpu.memory-1",
+        "REGISTRY-gpu.memory-2",
+        "HARDENING-010"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 18
+    },
+    {
+      "name": "gpu.top_processes",
+      "family": "computer",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 18,
+      "aliases_tested": [
+        "what's using my gpu",
+        "which process is using the most gpu",
+        "what is eating my vram",
+        "who is hogging the gpu",
+        "show top gpu processes",
+        "what app is taking all the vram",
+        "why is my gpu busy",
+        "what's using gpu 1 so much",
+        "which program is hammering my graphics card",
+        "who is using the most vram right now",
+        "wats eatin vram",
+        "gpu cooked whats using it",
+        "who hoggin gpu rn",
+        "vram gone lol what app",
+        "whats slammin my graphics card",
+        "Which apps are hammering the graphics card?",
+        "Rank processes by GPU memory consumption",
+        "Which apps are using the GPU?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-031",
+        "DIAGNOSTICS-032",
+        "DIAGNOSTICS-033",
+        "DIAGNOSTICS-034",
+        "DIAGNOSTICS-035",
+        "DIAGNOSTICS-036",
+        "DIAGNOSTICS-037",
+        "DIAGNOSTICS-038",
+        "DIAGNOSTICS-039",
+        "DIAGNOSTICS-040",
+        "SLANG-TYPOS-011",
+        "SLANG-TYPOS-012",
+        "SLANG-TYPOS-013",
+        "SLANG-TYPOS-014",
+        "SLANG-TYPOS-015",
+        "REGISTRY-gpu.top_processes-1",
+        "REGISTRY-gpu.top_processes-2",
+        "HARDENING-029"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 18
+    },
+    {
+      "name": "hanni.audit_tail",
+      "family": "hanni",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "what did you just do",
+        "show your recent audit log",
+        "what tool calls failed",
+        "show recent hanni actions",
+        "what have you done recently",
+        "What actions did you recently perform?",
+        "Show your failed tool calls from the audit log"
+      ],
+      "case_ids": [
+        "HANNI-MODEL-011",
+        "HANNI-MODEL-012",
+        "HANNI-MODEL-013",
+        "HANNI-MODEL-014",
+        "HANNI-MODEL-015",
+        "REGISTRY-hanni.audit_tail-1",
+        "REGISTRY-hanni.audit_tail-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "hanni.capabilities",
+      "family": "hanni",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "what can you do",
+        "what tools do you have",
+        "show your capabilities",
+        "what are you able to access",
+        "which capabilities are available",
+        "What kinds of things can you help me do?",
+        "List your available capabilities"
+      ],
+      "case_ids": [
+        "HANNI-MODEL-006",
+        "HANNI-MODEL-007",
+        "HANNI-MODEL-008",
+        "HANNI-MODEL-009",
+        "HANNI-MODEL-010",
+        "REGISTRY-hanni.capabilities-1",
+        "REGISTRY-hanni.capabilities-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "hanni.permissions",
+      "family": "hanni",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "what are you allowed to do",
+        "do you need permission",
+        "what actions require confirmation",
+        "show your permissions",
+        "can you make changes without asking",
+        "Which actions require my approval?",
+        "Explain your current permission boundaries"
+      ],
+      "case_ids": [
+        "HANNI-MODEL-021",
+        "HANNI-MODEL-022",
+        "HANNI-MODEL-023",
+        "HANNI-MODEL-024",
+        "HANNI-MODEL-025",
+        "REGISTRY-hanni.permissions-1",
+        "REGISTRY-hanni.permissions-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "hanni.stop_state",
+      "family": "hanni",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "are you stopped",
+        "is emergency stop active",
+        "are you in safe mode",
+        "is hanni halted",
+        "check emergency stop state",
+        "Is your emergency stop active?",
+        "Are you currently halted?"
+      ],
+      "case_ids": [
+        "HANNI-MODEL-016",
+        "HANNI-MODEL-017",
+        "HANNI-MODEL-018",
+        "HANNI-MODEL-019",
+        "HANNI-MODEL-020",
+        "REGISTRY-hanni.stop_state-1",
+        "REGISTRY-hanni.stop_state-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "id.generate",
+      "family": "id",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Give me a new UUID",
+        "Generate a random URL-safe identifier"
+      ],
+      "case_ids": [
+        "REGISTRY-id.generate-1",
+        "REGISTRY-id.generate-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "media.next_track",
+      "family": "media",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Skip the current video in the media player",
+        "Send the next-track media key"
+      ],
+      "case_ids": [
+        "REGISTRY-media.next_track-1",
+        "REGISTRY-media.next_track-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "media.play_pause",
+      "family": "media",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Pause the video player",
+        "Resume playback in the current media app"
+      ],
+      "case_ids": [
+        "REGISTRY-media.play_pause-1",
+        "REGISTRY-media.play_pause-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "media.previous_track",
+      "family": "media",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Go back to the previous video in the media player",
+        "Send the previous-track media key"
+      ],
+      "case_ids": [
+        "REGISTRY-media.previous_track-1",
+        "REGISTRY-media.previous_track-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "media.stop",
+      "family": "media",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Stop playback in the media player",
+        "Send the media stop key"
+      ],
+      "case_ids": [
+        "REGISTRY-media.stop-1",
+        "REGISTRY-media.stop-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "model.status",
+      "family": "model",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 29,
+      "aliases_tested": [
+        "is hanni's model running",
+        "is the llm loaded",
+        "why are you responding slowly",
+        "check the model server",
+        "is qwen up",
+        "what model is running right now",
+        "is the local model healthy",
+        "did the model server go down",
+        "check hanni model status",
+        "is the assistant model loaded",
+        "is the model running",
+        "what model is loaded",
+        "is hanni's llm healthy",
+        "check model status",
+        "why is the model slow",
+        "what's my next meeting and is qwen running",
+        "what's my next meeting and is qwen running?",
+        "what's my next meeting plus is qwen running",
+        "hanni, what's my next meeting and is qwen running",
+        "whats my next meeting and is qwen running",
+        "qwen up rn",
+        "is llm alive",
+        "hanni model good?",
+        "model server cooked?",
+        "is ur model runnin",
+        "Is the local model endpoint reachable?",
+        "Check whether Qwen is loaded",
+        "How busy am I next week and is Qwen healthy?",
+        "Is the Qwen inference endpoint alive?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-161",
+        "DIAGNOSTICS-162",
+        "DIAGNOSTICS-163",
+        "DIAGNOSTICS-164",
+        "DIAGNOSTICS-165",
+        "DIAGNOSTICS-166",
+        "DIAGNOSTICS-167",
+        "DIAGNOSTICS-168",
+        "DIAGNOSTICS-169",
+        "DIAGNOSTICS-170",
+        "HANNI-MODEL-001",
+        "HANNI-MODEL-002",
+        "HANNI-MODEL-003",
+        "HANNI-MODEL-004",
+        "HANNI-MODEL-005",
+        "MIXED-DOMAIN-011",
+        "MIXED-DOMAIN-012",
+        "MIXED-DOMAIN-013",
+        "MIXED-DOMAIN-014",
+        "MIXED-DOMAIN-015",
+        "SLANG-TYPOS-026",
+        "SLANG-TYPOS-027",
+        "SLANG-TYPOS-028",
+        "SLANG-TYPOS-029",
+        "SLANG-TYPOS-030",
+        "REGISTRY-model.status-1",
+        "REGISTRY-model.status-2",
+        "HARDENING-013",
+        "HARDENING-033"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 29
+    },
+    {
+      "name": "net.dns_lookup",
+      "family": "network",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Resolve example.com to its IP addresses",
+        "Check DNS resolution for this hostname"
+      ],
+      "case_ids": [
+        "REGISTRY-net.dns_lookup-1",
+        "REGISTRY-net.dns_lookup-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "net.info",
+      "family": "network",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 5,
+      "aliases_tested": [
+        "what's my ip address",
+        "show my network adapters",
+        "What is my private IP address?",
+        "Are the network adapters connected?",
+        "Why is wireless internet so sluggish?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-095",
+        "DIAGNOSTICS-098",
+        "REGISTRY-net.info-1",
+        "REGISTRY-net.info-2",
+        "HARDENING-028"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 5
+    },
+    {
+      "name": "net.ping",
+      "family": "network",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Measure packet loss to my router",
+        "Ping example.com and show latency"
+      ],
+      "case_ids": [
+        "REGISTRY-net.ping-1",
+        "REGISTRY-net.ping-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "net.ports",
+      "family": "network",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 4,
+      "aliases_tested": [
+        "which ports are listening on my pc",
+        "is anything using port 8080",
+        "Which process owns port 8080?",
+        "List listening TCP and UDP sockets"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-096",
+        "DIAGNOSTICS-097",
+        "REGISTRY-net.ports-1",
+        "REGISTRY-net.ports-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 4
+    },
+    {
+      "name": "net.throughput",
+      "family": "network",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 5,
+      "aliases_tested": [
+        "why is my internet slow",
+        "what's my current network throughput",
+        "check how much network traffic i have",
+        "How many bytes per second are going over the network?",
+        "Measure current upload and download throughput"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-091",
+        "DIAGNOSTICS-092",
+        "DIAGNOSTICS-100",
+        "REGISTRY-net.throughput-1",
+        "REGISTRY-net.throughput-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 5
+    },
+    {
+      "name": "net.wifi",
+      "family": "network",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 5,
+      "aliases_tested": [
+        "how strong is my wifi signal",
+        "what wifi am i connected to",
+        "why does my wifi feel weak",
+        "Which wireless SSID am I connected to?",
+        "How strong is my Wi-Fi signal?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-093",
+        "DIAGNOSTICS-094",
+        "DIAGNOSTICS-099",
+        "REGISTRY-net.wifi-1",
+        "REGISTRY-net.wifi-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 5
+    },
+    {
+      "name": "note.append",
+      "family": "note",
+      "classification": "sensitive_action",
+      "side_effect": "reversible_write",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Jot down that I need printer paper",
+        "Append a note about the meeting"
+      ],
+      "case_ids": [
+        "REGISTRY-note.append-1",
+        "REGISTRY-note.append-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "note.days",
+      "family": "note",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Which days have saved notes?",
+        "Show the dates in my note history"
+      ],
+      "case_ids": [
+        "REGISTRY-note.days-1",
+        "REGISTRY-note.days-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "note.list",
+      "family": "note",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Read my notes from today",
+        "Show the notes I recorded yesterday"
+      ],
+      "case_ids": [
+        "REGISTRY-note.list-1",
+        "REGISTRY-note.list-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "note.search",
+      "family": "note",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Search my notes for flight details",
+        "Find the note mentioning the dentist"
+      ],
+      "case_ids": [
+        "REGISTRY-note.search-1",
+        "REGISTRY-note.search-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "notify.toast",
+      "family": "notify",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Show a desktop notification saying done",
+        "Pop up an alert on my computer"
+      ],
+      "case_ids": [
+        "REGISTRY-notify.toast-1",
+        "REGISTRY-notify.toast-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "power.battery_detail",
+      "family": "power",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 4,
+      "aliases_tested": [
+        "how much battery time do i have left",
+        "am i charging right now",
+        "How long will the battery last unplugged?",
+        "Estimate battery time remaining"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-145",
+        "DIAGNOSTICS-146",
+        "REGISTRY-power.battery_detail-1",
+        "REGISTRY-power.battery_detail-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 4
+    },
+    {
+      "name": "power.battery_report",
+      "family": "power",
+      "classification": "sensitive_action",
+      "side_effect": "reversible_write",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Generate a battery health report on disk",
+        "Save the Windows battery wear report"
+      ],
+      "case_ids": [
+        "REGISTRY-power.battery_report-1",
+        "REGISTRY-power.battery_report-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "power.idle_settings",
+      "family": "power",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 5,
+      "aliases_tested": [
+        "when does my screen turn off",
+        "what is my sleep timeout",
+        "show idle power settings",
+        "How long until the screen sleeps?",
+        "Read my AC power idle timeouts"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-143",
+        "DIAGNOSTICS-144",
+        "DIAGNOSTICS-150",
+        "REGISTRY-power.idle_settings-1",
+        "REGISTRY-power.idle_settings-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 5
+    },
+    {
+      "name": "power.plans",
+      "family": "power",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 4,
+      "aliases_tested": [
+        "what power plan am i on",
+        "show my power mode",
+        "Which Windows power plan is active?",
+        "List the available power profiles"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-141",
+        "DIAGNOSTICS-142",
+        "REGISTRY-power.plans-1",
+        "REGISTRY-power.plans-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 4
+    },
+    {
+      "name": "power.set_idle",
+      "family": "power",
+      "classification": "sensitive_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Keep my laptop awake indefinitely",
+        "Change the screen-off timeout to ten minutes"
+      ],
+      "case_ids": [
+        "REGISTRY-power.set_idle-1",
+        "REGISTRY-power.set_idle-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "power.set_plan",
+      "family": "power",
+      "classification": "sensitive_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Switch to the balanced power plan",
+        "Enable the high performance power profile"
+      ],
+      "case_ids": [
+        "REGISTRY-power.set_plan-1",
+        "REGISTRY-power.set_plan-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "powershell.run",
+      "family": "powershell",
+      "classification": "sensitive_action",
+      "side_effect": null,
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Execute Get-Process in PowerShell",
+        "Run a terminal command for me"
+      ],
+      "case_ids": [
+        "REGISTRY-powershell.run-1",
+        "REGISTRY-powershell.run-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "process.find",
+      "family": "process",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 8,
+      "aliases_tested": [
+        "is discord running",
+        "is chrome open",
+        "find the llama-server process",
+        "is spotify running",
+        "find vscode process",
+        "Is Firefox currently running?",
+        "Find the process called Code.exe",
+        "What is my GPU memory usage and is Firefox running?"
+      ],
+      "case_ids": [
+        "PROCESS-SYSTEM-006",
+        "PROCESS-SYSTEM-007",
+        "PROCESS-SYSTEM-008",
+        "PROCESS-SYSTEM-009",
+        "PROCESS-SYSTEM-010",
+        "REGISTRY-process.find-1",
+        "REGISTRY-process.find-2",
+        "HARDENING-010"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 8
+    },
+    {
+      "name": "process.inspect",
+      "family": "process",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "inspect process 1234",
+        "show details for pid 1234",
+        "what is process 1234 doing",
+        "inspect pid 4321",
+        "give me process details for 4321",
+        "Does PID 4321 still exist?",
+        "Check whether process number 8765 is alive"
+      ],
+      "case_ids": [
+        "PROCESS-SYSTEM-011",
+        "PROCESS-SYSTEM-012",
+        "PROCESS-SYSTEM-013",
+        "PROCESS-SYSTEM-014",
+        "PROCESS-SYSTEM-015",
+        "REGISTRY-process.inspect-1",
+        "REGISTRY-process.inspect-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "process.list",
+      "family": "process",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 17,
+      "aliases_tested": [
+        "what processes are currently running",
+        "show me running processes",
+        "list the programs running in background",
+        "which processes are active",
+        "what is running on my pc right now",
+        "show process list",
+        "list active processes",
+        "what software processes are open",
+        "show background processes",
+        "what tasks are running",
+        "list running processes",
+        "show all processes",
+        "what programs are running",
+        "what processes are open",
+        "show running programs",
+        "List all running programs on this computer",
+        "Show me the process inventory"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-201",
+        "DIAGNOSTICS-202",
+        "DIAGNOSTICS-203",
+        "DIAGNOSTICS-204",
+        "DIAGNOSTICS-205",
+        "DIAGNOSTICS-206",
+        "DIAGNOSTICS-207",
+        "DIAGNOSTICS-208",
+        "DIAGNOSTICS-209",
+        "DIAGNOSTICS-210",
+        "PROCESS-SYSTEM-001",
+        "PROCESS-SYSTEM-002",
+        "PROCESS-SYSTEM-003",
+        "PROCESS-SYSTEM-004",
+        "PROCESS-SYSTEM-005",
+        "REGISTRY-process.list-1",
+        "REGISTRY-process.list-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 17
+    },
+    {
+      "name": "process.stop",
+      "family": "process",
+      "classification": "sensitive_action",
+      "side_effect": null,
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 3,
+      "aliases_tested": [
+        "Terminate the frozen Chrome process",
+        "Kill the application with PID 4321",
+        "Open Discord and terminate the frozen app"
+      ],
+      "case_ids": [
+        "REGISTRY-process.stop-1",
+        "REGISTRY-process.stop-2",
+        "HARDENING-035"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 3
+    },
+    {
+      "name": "process.top_cpu",
+      "family": "process",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 23,
+      "aliases_tested": [
+        "what's using all my cpu",
+        "which process is hammering the cpu",
+        "why is cpu usage at 100 percent",
+        "show the top cpu users",
+        "what app is eating my processor",
+        "who is using the most cpu right now",
+        "cpu is pinned what's causing it",
+        "what's maxing out my processor",
+        "find the highest cpu process",
+        "why is my processor so busy",
+        "show my schedule tomorrow and tell me what's using cpu",
+        "show my schedule tomorrow and tell me what's using cpu?",
+        "show my schedule tomorrow plus tell me what's using cpu",
+        "hanni, show my schedule tomorrow and tell me what's using cpu",
+        "show my schedule tomorrow and tell me whats using cpu",
+        "wats maxin cpu rn",
+        "cpu cooked what process",
+        "why cpu go brrr",
+        "whats hoggin processor",
+        "cpu at 100 who did it",
+        "Which app is hogging processor time?",
+        "Rank the biggest CPU consumers",
+        "Who is hogging the processor?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-021",
+        "DIAGNOSTICS-022",
+        "DIAGNOSTICS-023",
+        "DIAGNOSTICS-024",
+        "DIAGNOSTICS-025",
+        "DIAGNOSTICS-026",
+        "DIAGNOSTICS-027",
+        "DIAGNOSTICS-028",
+        "DIAGNOSTICS-029",
+        "DIAGNOSTICS-030",
+        "MIXED-DOMAIN-016",
+        "MIXED-DOMAIN-017",
+        "MIXED-DOMAIN-018",
+        "MIXED-DOMAIN-019",
+        "MIXED-DOMAIN-020",
+        "SLANG-TYPOS-006",
+        "SLANG-TYPOS-007",
+        "SLANG-TYPOS-008",
+        "SLANG-TYPOS-009",
+        "SLANG-TYPOS-010",
+        "REGISTRY-process.top_cpu-1",
+        "REGISTRY-process.top_cpu-2",
+        "HARDENING-027"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 23
+    },
+    {
+      "name": "process.top_disk_io",
+      "family": "process",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 13,
+      "aliases_tested": [
+        "what process is hammering my disk",
+        "what's using the most disk io",
+        "why is my ssd at 100 percent active time",
+        "which app is reading and writing the most",
+        "show top disk io processes",
+        "what program is thrashing my drive",
+        "who is using my disk so much",
+        "why is disk activity maxed out",
+        "find the biggest disk io user",
+        "what's causing all these disk reads and writes",
+        "Which process is doing the most disk writes?",
+        "Find the applications hammering disk I/O",
+        "What process is generating all those disk writes?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-061",
+        "DIAGNOSTICS-062",
+        "DIAGNOSTICS-063",
+        "DIAGNOSTICS-064",
+        "DIAGNOSTICS-065",
+        "DIAGNOSTICS-066",
+        "DIAGNOSTICS-067",
+        "DIAGNOSTICS-068",
+        "DIAGNOSTICS-069",
+        "DIAGNOSTICS-070",
+        "REGISTRY-process.top_disk_io-1",
+        "REGISTRY-process.top_disk_io-2",
+        "HARDENING-030"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 13
+    },
+    {
+      "name": "process.top_memory",
+      "family": "process",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 24,
+      "aliases_tested": [
+        "what's eating all my ram",
+        "why is my memory usage so high",
+        "which app is hogging memory",
+        "what process is using the most ram",
+        "why do i only have 2 gb of ram free",
+        "my ram is cooked what's using it",
+        "who is taking all my memory",
+        "show me the biggest memory users",
+        "what's using up my memory rn",
+        "why did ram usage jump so much",
+        "what's using my ram and when is my next meeting",
+        "what's using my ram and when is my next meeting?",
+        "what's using my ram plus when is my next meeting",
+        "hanni, what's using my ram and when is my next meeting",
+        "whats using my ram and when is my next meeting",
+        "wats eatin my ram rn",
+        "why my ram so high bro",
+        "memory usage is cooked whats up",
+        "whats hoggin mem",
+        "ram goin crazy what app",
+        "whats eating my ram rn",
+        "Which app consumes the most system memory?",
+        "Which app uses the most RAM and what is on my calendar Friday?",
+        "Which application is hammering RAM?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-011",
+        "DIAGNOSTICS-012",
+        "DIAGNOSTICS-013",
+        "DIAGNOSTICS-014",
+        "DIAGNOSTICS-015",
+        "DIAGNOSTICS-016",
+        "DIAGNOSTICS-017",
+        "DIAGNOSTICS-018",
+        "DIAGNOSTICS-019",
+        "DIAGNOSTICS-020",
+        "MIXED-DOMAIN-031",
+        "MIXED-DOMAIN-032",
+        "MIXED-DOMAIN-033",
+        "MIXED-DOMAIN-034",
+        "MIXED-DOMAIN-035",
+        "SLANG-TYPOS-001",
+        "SLANG-TYPOS-002",
+        "SLANG-TYPOS-003",
+        "SLANG-TYPOS-004",
+        "SLANG-TYPOS-005",
+        "REGISTRY-process.top_memory-1",
+        "REGISTRY-process.top_memory-2",
+        "HARDENING-015",
+        "HARDENING-025"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 24
+    },
+    {
+      "name": "process.uptime",
+      "family": "process",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "how long has chrome been running",
+        "when did discord start",
+        "how long has llama-server been open",
+        "how long has vscode been running",
+        "when did spotify start",
+        "How long has Firefox been running?",
+        "When did process 4321 start?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-176",
+        "DIAGNOSTICS-177",
+        "DIAGNOSTICS-178",
+        "DIAGNOSTICS-179",
+        "DIAGNOSTICS-180",
+        "REGISTRY-process.uptime-1",
+        "REGISTRY-process.uptime-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "project.format",
+      "family": "project",
+      "classification": "sensitive_action",
+      "side_effect": "reversible_write",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Reformat this Python project with black",
+        "Apply consistent formatting to my source files"
+      ],
+      "case_ids": [
+        "REGISTRY-project.format-1",
+        "REGISTRY-project.format-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "project.lint",
+      "family": "project",
+      "classification": "sensitive_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Run ruff on my project",
+        "Lint this code and report style errors"
+      ],
+      "case_ids": [
+        "REGISTRY-project.lint-1",
+        "REGISTRY-project.lint-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "project.test",
+      "family": "project",
+      "classification": "sensitive_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Run the project's automated tests",
+        "Check whether the pytest suite passes"
+      ],
+      "case_ids": [
+        "REGISTRY-project.test-1",
+        "REGISTRY-project.test-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "python.env_info",
+      "family": "python",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "which python environment am i using",
+        "show my venv info",
+        "what packages are installed in python",
+        "pip list for this environment",
+        "is pytest installed in my python env",
+        "Which Python interpreter am I using?",
+        "Show packages in my active virtual environment"
+      ],
+      "case_ids": [
+        "PROCESS-SYSTEM-041",
+        "PROCESS-SYSTEM-042",
+        "PROCESS-SYSTEM-043",
+        "PROCESS-SYSTEM-044",
+        "PROCESS-SYSTEM-045",
+        "REGISTRY-python.env_info-1",
+        "REGISTRY-python.env_info-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "random.number",
+      "family": "random",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Roll a twenty-sided die",
+        "Pick a random integer between ten and fifty"
+      ],
+      "case_ids": [
+        "REGISTRY-random.number-1",
+        "REGISTRY-random.number-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "random.pick",
+      "family": "random",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Flip a coin to decide",
+        "Choose randomly between tea and coffee"
+      ],
+      "case_ids": [
+        "REGISTRY-random.pick-1",
+        "REGISTRY-random.pick-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "schedule.list_tasks",
+      "family": "schedule",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Which Windows tasks run automatically?",
+        "List scheduled jobs and their state"
+      ],
+      "case_ids": [
+        "REGISTRY-schedule.list_tasks-1",
+        "REGISTRY-schedule.list_tasks-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "security.bitlocker",
+      "family": "security",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 4,
+      "aliases_tested": [
+        "is bitlocker enabled",
+        "is my drive encrypted",
+        "Is my drive encrypted with BitLocker?",
+        "Check volume encryption status"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-135",
+        "DIAGNOSTICS-136",
+        "REGISTRY-security.bitlocker-1",
+        "REGISTRY-security.bitlocker-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 4
+    },
+    {
+      "name": "security.defender",
+      "family": "security",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 4,
+      "aliases_tested": [
+        "is windows defender running",
+        "am i protected by antivirus",
+        "Is antivirus protection turned on?",
+        "Are my Defender signatures current?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-131",
+        "DIAGNOSTICS-132",
+        "REGISTRY-security.defender-1",
+        "REGISTRY-security.defender-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 4
+    },
+    {
+      "name": "security.firewall",
+      "family": "security",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 4,
+      "aliases_tested": [
+        "is my firewall on",
+        "check windows firewall",
+        "Are all firewall profiles enabled?",
+        "Check default inbound firewall rules"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-133",
+        "DIAGNOSTICS-134",
+        "REGISTRY-security.firewall-1",
+        "REGISTRY-security.firewall-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 4
+    },
+    {
+      "name": "security.pending_reboot",
+      "family": "security",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 4,
+      "aliases_tested": [
+        "do i need to restart for updates",
+        "is a reboot pending",
+        "Is Windows waiting for a restart?",
+        "Do updates require me to reboot?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-137",
+        "DIAGNOSTICS-138",
+        "REGISTRY-security.pending_reboot-1",
+        "REGISTRY-security.pending_reboot-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 4
+    },
+    {
+      "name": "security.updates",
+      "family": "security",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 14,
+      "aliases_tested": [
+        "what windows updates were installed recently",
+        "when did windows last update",
+        "what windows updates were installed",
+        "show recent windows patches",
+        "when did my pc last get updated",
+        "list recent system updates",
+        "what patches are on this computer",
+        "check recent windows updates",
+        "did windows update recently",
+        "show installed hotfixes",
+        "what update did windows install",
+        "when was the latest windows patch",
+        "Which hotfixes were installed recently?",
+        "Which security hotfixes did Windows install last?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-139",
+        "DIAGNOSTICS-140",
+        "DIAGNOSTICS-221",
+        "DIAGNOSTICS-222",
+        "DIAGNOSTICS-223",
+        "DIAGNOSTICS-224",
+        "DIAGNOSTICS-225",
+        "DIAGNOSTICS-226",
+        "DIAGNOSTICS-227",
+        "DIAGNOSTICS-228",
+        "DIAGNOSTICS-229",
+        "DIAGNOSTICS-230",
+        "REGISTRY-security.updates-1",
+        "REGISTRY-security.updates-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 14
+    },
+    {
+      "name": "service.control",
+      "family": "service",
+      "classification": "sensitive_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Restart the print spooler service",
+        "Stop the SSH service"
+      ],
+      "case_ids": [
+        "REGISTRY-service.control-1",
+        "REGISTRY-service.control-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "service.list",
+      "family": "service",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 12,
+      "aliases_tested": [
+        "list my windows services",
+        "what services are running",
+        "show background services",
+        "is the windows update service running",
+        "check my services",
+        "which services are active",
+        "show service status",
+        "what background windows services do i have",
+        "list running services",
+        "can you tell me which services are running",
+        "Which Windows services are stopped?",
+        "Show background services and their start types"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-121",
+        "DIAGNOSTICS-122",
+        "DIAGNOSTICS-123",
+        "DIAGNOSTICS-124",
+        "DIAGNOSTICS-125",
+        "DIAGNOSTICS-126",
+        "DIAGNOSTICS-127",
+        "DIAGNOSTICS-128",
+        "DIAGNOSTICS-129",
+        "DIAGNOSTICS-130",
+        "REGISTRY-service.list-1",
+        "REGISTRY-service.list-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 12
+    },
+    {
+      "name": "spotify.focus",
+      "family": "media",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Bring Spotify to the foreground",
+        "Switch to the Spotify window"
+      ],
+      "case_ids": [
+        "REGISTRY-spotify.focus-1",
+        "REGISTRY-spotify.focus-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "spotify.launch",
+      "family": "media",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Launch the Spotify desktop app",
+        "Open Spotify for me please"
+      ],
+      "case_ids": [
+        "REGISTRY-spotify.launch-1",
+        "REGISTRY-spotify.launch-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "spotify.next",
+      "family": "media",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Skip this Spotify song",
+        "Go to the next track on Spotify"
+      ],
+      "case_ids": [
+        "REGISTRY-spotify.next-1",
+        "REGISTRY-spotify.next-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "spotify.open_uri",
+      "family": "media",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Open spotify:track:abc123",
+        "Play this Spotify URI in the client"
+      ],
+      "case_ids": [
+        "REGISTRY-spotify.open_uri-1",
+        "REGISTRY-spotify.open_uri-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "spotify.play_pause",
+      "family": "media",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 3,
+      "aliases_tested": [
+        "Can you play Spotify?",
+        "Pause my Spotify music",
+        "Open Discord and play Spotify"
+      ],
+      "case_ids": [
+        "REGISTRY-spotify.play_pause-1",
+        "REGISTRY-spotify.play_pause-2",
+        "HARDENING-012"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "spotify.previous",
+      "family": "media",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Replay the previous Spotify track",
+        "Go back one song in Spotify"
+      ],
+      "case_ids": [
+        "REGISTRY-spotify.previous-1",
+        "REGISTRY-spotify.previous-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "spotify.search",
+      "family": "media",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Find jazz playlists on Spotify",
+        "Search Spotify for Nina Simone"
+      ],
+      "case_ids": [
+        "REGISTRY-spotify.search-1",
+        "REGISTRY-spotify.search-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "spotify.status",
+      "family": "media",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "What song is Spotify playing?",
+        "Who's the artist on the current Spotify track?"
+      ],
+      "case_ids": [
+        "REGISTRY-spotify.status-1",
+        "REGISTRY-spotify.status-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "spotify.volume",
+      "family": "media",
+      "classification": "sensitive_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Lower Spotify's own volume",
+        "Set Spotify volume to thirty percent"
+      ],
+      "case_ids": [
+        "REGISTRY-spotify.volume-1",
+        "REGISTRY-spotify.volume-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "startup.list",
+      "family": "startup",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 12,
+      "aliases_tested": [
+        "what programs start with windows",
+        "show startup apps",
+        "what launches when i log in",
+        "which apps run at startup",
+        "what is slowing down my startup",
+        "list everything that starts with my pc",
+        "what auto starts on boot",
+        "show windows startup items",
+        "which programs launch automatically",
+        "what starts when my computer turns on",
+        "Which programs launch at login?",
+        "Show the Windows startup entries"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-111",
+        "DIAGNOSTICS-112",
+        "DIAGNOSTICS-113",
+        "DIAGNOSTICS-114",
+        "DIAGNOSTICS-115",
+        "DIAGNOSTICS-116",
+        "DIAGNOSTICS-117",
+        "DIAGNOSTICS-118",
+        "DIAGNOSTICS-119",
+        "DIAGNOSTICS-120",
+        "REGISTRY-startup.list-1",
+        "REGISTRY-startup.list-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 12
+    },
+    {
+      "name": "system.battery",
+      "family": "computer",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 5,
+      "aliases_tested": [
+        "what percent battery do i have",
+        "check my battery level",
+        "what's my current battery status",
+        "What percentage of battery is left?",
+        "Is my laptop charging right now?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-147",
+        "DIAGNOSTICS-148",
+        "DIAGNOSTICS-149",
+        "REGISTRY-system.battery-1",
+        "REGISTRY-system.battery-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 5
+    },
+    {
+      "name": "system.event_errors",
+      "family": "computer",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 13,
+      "aliases_tested": [
+        "did windows log any recent errors",
+        "why did my pc crash",
+        "any critical errors today",
+        "check the event log for problems",
+        "why did windows blue screen",
+        "what went wrong with my computer",
+        "show recent system errors",
+        "did anything crash recently",
+        "are there errors in the windows event log",
+        "what errors happened on this pc",
+        "Show recent critical Windows event errors",
+        "Why did my PC blue screen?",
+        "Check the Windows event log for critical errors"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-101",
+        "DIAGNOSTICS-102",
+        "DIAGNOSTICS-103",
+        "DIAGNOSTICS-104",
+        "DIAGNOSTICS-105",
+        "DIAGNOSTICS-106",
+        "DIAGNOSTICS-107",
+        "DIAGNOSTICS-108",
+        "DIAGNOSTICS-109",
+        "DIAGNOSTICS-110",
+        "REGISTRY-system.event_errors-1",
+        "REGISTRY-system.event_errors-2",
+        "HARDENING-032"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 13
+    },
+    {
+      "name": "system.os_info",
+      "family": "computer",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 17,
+      "aliases_tested": [
+        "what cpu and windows version do i have",
+        "show my computer specs",
+        "tell me this pc's system info",
+        "what windows build am i running",
+        "what are the basic specs of this machine",
+        "show os and hardware info",
+        "which version of windows is installed",
+        "what machine am i on",
+        "give me system information",
+        "what are this computer's specs",
+        "what version of windows am i on",
+        "show my pc specs",
+        "what are my system specs",
+        "which windows build is this",
+        "tell me my os info",
+        "Which Windows edition and build am I on?",
+        "What is this computer's hostname?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-191",
+        "DIAGNOSTICS-192",
+        "DIAGNOSTICS-193",
+        "DIAGNOSTICS-194",
+        "DIAGNOSTICS-195",
+        "DIAGNOSTICS-196",
+        "DIAGNOSTICS-197",
+        "DIAGNOSTICS-198",
+        "DIAGNOSTICS-199",
+        "DIAGNOSTICS-200",
+        "PROCESS-SYSTEM-016",
+        "PROCESS-SYSTEM-017",
+        "PROCESS-SYSTEM-018",
+        "PROCESS-SYSTEM-019",
+        "PROCESS-SYSTEM-020",
+        "REGISTRY-system.os_info-1",
+        "REGISTRY-system.os_info-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 17
+    },
+    {
+      "name": "system.performance",
+      "family": "computer",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 29,
+      "aliases_tested": [
+        "Why is my PC so slow right now?",
+        "my computer feels really slow rn",
+        "why tf is my pc lagging",
+        "everything on my computer is sluggish",
+        "can you figure out why my laptop is slow",
+        "what's making this pc crawl",
+        "my machine suddenly got slow",
+        "why does windows feel so slow",
+        "computer is dragging, what's wrong",
+        "check why my pc is running slow",
+        "is my computer healthy right now",
+        "does anything look wrong with my pc",
+        "check overall pc health",
+        "is everything okay on my computer",
+        "how is my system doing",
+        "give me a health check of my pc",
+        "does my computer look normal",
+        "check if my system has any obvious issues",
+        "is this pc running normally",
+        "tell me if anything looks unhealthy",
+        "is my pc slow and do i have anything tomorrow",
+        "is my pc slow and do i have anything tomorrow?",
+        "is my pc slow plus do i have anything tomorrow",
+        "hanni, is my pc slow and do i have anything tomorrow",
+        "is my pc slow and do i have anything tomorrow please",
+        "y my pc so slow",
+        "Check my computer for performance bottlenecks",
+        "Why is my PC slow and what is my next event?",
+        "Why does my PC stutter?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-001",
+        "DIAGNOSTICS-002",
+        "DIAGNOSTICS-003",
+        "DIAGNOSTICS-004",
+        "DIAGNOSTICS-005",
+        "DIAGNOSTICS-006",
+        "DIAGNOSTICS-007",
+        "DIAGNOSTICS-008",
+        "DIAGNOSTICS-009",
+        "DIAGNOSTICS-010",
+        "DIAGNOSTICS-231",
+        "DIAGNOSTICS-232",
+        "DIAGNOSTICS-233",
+        "DIAGNOSTICS-234",
+        "DIAGNOSTICS-235",
+        "DIAGNOSTICS-236",
+        "DIAGNOSTICS-237",
+        "DIAGNOSTICS-238",
+        "DIAGNOSTICS-239",
+        "DIAGNOSTICS-240",
+        "MIXED-DOMAIN-026",
+        "MIXED-DOMAIN-027",
+        "MIXED-DOMAIN-028",
+        "MIXED-DOMAIN-029",
+        "MIXED-DOMAIN-030",
+        "REGISTRY-system.performance-1",
+        "REGISTRY-system.performance-2",
+        "HARDENING-014",
+        "HARDENING-026"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 29
+    },
+    {
+      "name": "system.stats",
+      "family": "computer",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 19,
+      "aliases_tested": [
+        "show my cpu ram and gpu usage",
+        "what are my system stats",
+        "how much cpu and memory am i using",
+        "check current resource usage",
+        "what's my cpu usage and ram usage",
+        "give me current cpu ram gpu stats",
+        "how loaded is my computer",
+        "show current hardware utilization",
+        "what percent cpu and ram am i at",
+        "how much of my system resources are being used",
+        "what's on my calendar tomorrow and how much ram am i using",
+        "what's on my calendar tomorrow and how much ram am i using?",
+        "what's on my calendar tomorrow plus how much ram am i using",
+        "hanni, what's on my calendar tomorrow and how much ram am i using",
+        "whats on my calendar tomorrow and how much ram am i using",
+        "Show overall CPU and RAM utilization",
+        "How much system memory am I using?",
+        "Read settings.txt and show my CPU and RAM utilization",
+        "Why are the fans spinning so loudly?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-051",
+        "DIAGNOSTICS-052",
+        "DIAGNOSTICS-053",
+        "DIAGNOSTICS-054",
+        "DIAGNOSTICS-055",
+        "DIAGNOSTICS-056",
+        "DIAGNOSTICS-057",
+        "DIAGNOSTICS-058",
+        "DIAGNOSTICS-059",
+        "DIAGNOSTICS-060",
+        "MIXED-DOMAIN-001",
+        "MIXED-DOMAIN-002",
+        "MIXED-DOMAIN-003",
+        "MIXED-DOMAIN-004",
+        "MIXED-DOMAIN-005",
+        "REGISTRY-system.stats-1",
+        "REGISTRY-system.stats-2",
+        "HARDENING-009",
+        "HARDENING-031"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 19
+    },
+    {
+      "name": "system.uptime",
+      "family": "computer",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 12,
+      "aliases_tested": [
+        "how long has my pc been running",
+        "when did i last reboot",
+        "what's my computer uptime",
+        "how long has windows been up",
+        "when was this pc restarted",
+        "what's my pc uptime",
+        "how long has my computer been on",
+        "when did windows boot",
+        "how long since reboot",
+        "when did i last restart",
+        "How long since this laptop booted?",
+        "When was my computer last restarted?"
+      ],
+      "case_ids": [
+        "DIAGNOSTICS-171",
+        "DIAGNOSTICS-172",
+        "DIAGNOSTICS-173",
+        "DIAGNOSTICS-174",
+        "DIAGNOSTICS-175",
+        "PROCESS-SYSTEM-021",
+        "PROCESS-SYSTEM-022",
+        "PROCESS-SYSTEM-023",
+        "PROCESS-SYSTEM-024",
+        "PROCESS-SYSTEM-025",
+        "REGISTRY-system.uptime-1",
+        "REGISTRY-system.uptime-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 12
+    },
+    {
+      "name": "text.hash",
+      "family": "text",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Compute a SHA256 checksum of this text",
+        "Give me an MD5 digest for hello"
+      ],
+      "case_ids": [
+        "REGISTRY-text.hash-1",
+        "REGISTRY-text.hash-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "text.normalize",
+      "family": "text",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Turn this title into a slug",
+        "Convert this sentence to uppercase"
+      ],
+      "case_ids": [
+        "REGISTRY-text.normalize-1",
+        "REGISTRY-text.normalize-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "text.stats",
+      "family": "text",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Count the words in this paragraph",
+        "Estimate the reading time of this text"
+      ],
+      "case_ids": [
+        "REGISTRY-text.stats-1",
+        "REGISTRY-text.stats-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "time.convert",
+      "family": "time",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "what time is 3pm eastern in pacific",
+        "convert 8pm utc to eastern",
+        "what time is that in central time",
+        "convert this time to utc",
+        "timezone convert 5pm eastern to london",
+        "Convert noon Chicago time to UTC",
+        "What is 9am in London in New York time?"
+      ],
+      "case_ids": [
+        "DATE-TIME-021",
+        "DATE-TIME-022",
+        "DATE-TIME-023",
+        "DATE-TIME-024",
+        "DATE-TIME-025",
+        "REGISTRY-time.convert-1",
+        "REGISTRY-time.convert-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "time.elapsed",
+      "family": "time",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "how long ago was 1pm",
+        "how much time since noon",
+        "time since 9am",
+        "how long has it been since 10am",
+        "how long ago was midnight",
+        "How long ago was 2026-09-20T12:00:00?",
+        "Measure elapsed time since this timestamp"
+      ],
+      "case_ids": [
+        "DATE-TIME-026",
+        "DATE-TIME-027",
+        "DATE-TIME-028",
+        "DATE-TIME-029",
+        "DATE-TIME-030",
+        "REGISTRY-time.elapsed-1",
+        "REGISTRY-time.elapsed-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "time.now",
+      "family": "time",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 23,
+      "aliases_tested": [
+        "what time is it",
+        "what's the local time",
+        "tell me the current time",
+        "current time please",
+        "what time is it right now",
+        "what's today's date",
+        "what day is it",
+        "tell me the date",
+        "what is the date today",
+        "today's date please",
+        "what's tomorrow's date",
+        "what day will tomorrow be",
+        "tell me tomorrow's date",
+        "what date is tomorrow",
+        "which day is tomorrow",
+        "what was yesterday's date",
+        "what day was yesterday",
+        "tell me yesterday's date",
+        "what date was yesterday",
+        "which day was yesterday",
+        "Tell me the current local time",
+        "What date will tomorrow be?",
+        "What time is it and what is on my calendar tomorrow?"
+      ],
+      "case_ids": [
+        "DATE-TIME-001",
+        "DATE-TIME-002",
+        "DATE-TIME-003",
+        "DATE-TIME-004",
+        "DATE-TIME-005",
+        "DATE-TIME-006",
+        "DATE-TIME-007",
+        "DATE-TIME-008",
+        "DATE-TIME-009",
+        "DATE-TIME-010",
+        "DATE-TIME-011",
+        "DATE-TIME-012",
+        "DATE-TIME-013",
+        "DATE-TIME-014",
+        "DATE-TIME-015",
+        "DATE-TIME-016",
+        "DATE-TIME-017",
+        "DATE-TIME-018",
+        "DATE-TIME-019",
+        "DATE-TIME-020",
+        "REGISTRY-time.now-1",
+        "REGISTRY-time.now-2",
+        "HARDENING-011"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 23
+    },
+    {
+      "name": "timer.set",
+      "family": "timer",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Remind me in fifteen minutes",
+        "Start a ten-minute countdown timer"
+      ],
+      "case_ids": [
+        "REGISTRY-timer.set-1",
+        "REGISTRY-timer.set-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "todo.add",
+      "family": "todo",
+      "classification": "sensitive_action",
+      "side_effect": "reversible_write",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Save a homework task due Friday",
+        "Add an assignment for my biology course"
+      ],
+      "case_ids": [
+        "REGISTRY-todo.add-1",
+        "REGISTRY-todo.add-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "todo.complete",
+      "family": "todo",
+      "classification": "sensitive_action",
+      "side_effect": "reversible_write",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Mark task 42 as completed",
+        "Finish the saved assignment with ID 17"
+      ],
+      "case_ids": [
+        "REGISTRY-todo.complete-1",
+        "REGISTRY-todo.complete-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "todo.due",
+      "family": "todo",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Which assignments are overdue?",
+        "What tasks are due in the next three days?"
+      ],
+      "case_ids": [
+        "REGISTRY-todo.due-1",
+        "REGISTRY-todo.due-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "todo.get",
+      "family": "todo",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Show the saved details for task ID 42",
+        "Read back assignment number 17"
+      ],
+      "case_ids": [
+        "REGISTRY-todo.get-1",
+        "REGISTRY-todo.get-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "todo.list",
+      "family": "todo",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "List my open homework tasks",
+        "Show all assignments for biology"
+      ],
+      "case_ids": [
+        "REGISTRY-todo.list-1",
+        "REGISTRY-todo.list-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "ui.active_window",
+      "family": "ui",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "what window is active",
+        "which app am i focused on",
+        "what's the current window",
+        "which window has focus",
+        "tell me the active window",
+        "Which window has keyboard focus?",
+        "Read the title of the foreground window"
+      ],
+      "case_ids": [
+        "PROCESS-SYSTEM-051",
+        "PROCESS-SYSTEM-052",
+        "PROCESS-SYSTEM-053",
+        "PROCESS-SYSTEM-054",
+        "PROCESS-SYSTEM-055",
+        "REGISTRY-ui.active_window-1",
+        "REGISTRY-ui.active_window-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "ui.close_window",
+      "family": "ui",
+      "classification": "sensitive_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Close the Notepad window",
+        "Quit the window titled Untitled"
+      ],
+      "case_ids": [
+        "REGISTRY-ui.close_window-1",
+        "REGISTRY-ui.close_window-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "ui.focus_window",
+      "family": "ui",
+      "classification": "safe_action",
+      "side_effect": null,
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Focus the Discord window",
+        "Bring Notepad to the foreground"
+      ],
+      "case_ids": [
+        "REGISTRY-ui.focus_window-1",
+        "REGISTRY-ui.focus_window-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "ui.list_windows",
+      "family": "ui",
+      "classification": "read_only",
+      "side_effect": null,
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "List visible top-level window titles",
+        "Which windows are visible on the desktop?"
+      ],
+      "case_ids": [
+        "REGISTRY-ui.list_windows-1",
+        "REGISTRY-ui.list_windows-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 2
+    },
+    {
+      "name": "ui.minimize_all",
+      "family": "ui",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Minimize every window",
+        "Show my desktop by hiding the windows"
+      ],
+      "case_ids": [
+        "REGISTRY-ui.minimize_all-1",
+        "REGISTRY-ui.minimize_all-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "ui.window_state",
+      "family": "ui",
+      "classification": "safe_action",
+      "side_effect": "external_action",
+      "exposed": false,
+      "has_routing_test": true,
+      "number_of_routing_cases": 2,
+      "aliases_tested": [
+        "Maximize the Notepad window",
+        "Restore the minimized browser window"
+      ],
+      "case_ids": [
+        "REGISTRY-ui.window_state-1",
+        "REGISTRY-ui.window_state-2"
+      ],
+      "reachable": false,
+      "correctly_blocked": true,
+      "passing_cases": 2
+    },
+    {
+      "name": "ui.windows_detailed",
+      "family": "ui",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "what windows are open",
+        "show my open apps",
+        "what do i have open",
+        "list desktop windows",
+        "which app windows are currently open",
+        "List windows with their owning processes",
+        "Which windows are minimized and what are their PIDs?"
+      ],
+      "case_ids": [
+        "PROCESS-SYSTEM-046",
+        "PROCESS-SYSTEM-047",
+        "PROCESS-SYSTEM-048",
+        "PROCESS-SYSTEM-049",
+        "PROCESS-SYSTEM-050",
+        "REGISTRY-ui.windows_detailed-1",
+        "REGISTRY-ui.windows_detailed-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    },
+    {
+      "name": "unit.convert",
+      "family": "unit",
+      "classification": "read_only",
+      "side_effect": "read",
+      "exposed": true,
+      "has_routing_test": true,
+      "number_of_routing_cases": 7,
+      "aliases_tested": [
+        "convert 5 miles to kilometers",
+        "how many pounds is 10 kg",
+        "convert 72 fahrenheit to celsius",
+        "how many mb in 2 gb",
+        "convert 20 kilometers to miles",
+        "Convert five miles to kilometers",
+        "How many Celsius is 72 Fahrenheit?"
+      ],
+      "case_ids": [
+        "DATE-TIME-036",
+        "DATE-TIME-037",
+        "DATE-TIME-038",
+        "DATE-TIME-039",
+        "DATE-TIME-040",
+        "REGISTRY-unit.convert-1",
+        "REGISTRY-unit.convert-2"
+      ],
+      "reachable": true,
+      "correctly_blocked": false,
+      "passing_cases": 7
+    }
+  ]
+}

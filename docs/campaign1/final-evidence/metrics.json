@@ -1,0 +1,3123 @@
+{
+  "scope": "Fixed authored corpus and actual original-controller receipts; no query/answer/oracle content. Whole-response success with a tool receipt is not per-tool causal attribution or proof of foreign physical execution.",
+  "corpus_sha256": "b96221d8fe027ede7cfb1c75c059e50fa664b918cc4a4f092f08855a21174610",
+  "fixture_source_sha256": "29bc6a44986dd5b46dc8432d2eb7199e0588970f42f7f47d1b767f3acab2c50a",
+  "graded_receipts": 273,
+  "planned_owner_turns": 273,
+  "all_graded_review_receipt_hashes_match": true,
+  "base_inventory": 172,
+  "runtime_additional_contracts_observed": 0,
+  "capability_matrix_scope": "Required alternatives are annotations, not a demand to execute every equivalent. Prohibitions differ from blocked intended tasks. Module-local controlled-clock/process handlers are original semantics over controlled observations, not real host facts. Untested/policy-ineligible capabilities stay explicit.",
+  "capabilities": [
+    {
+      "capability": "app.list_installed",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 4,
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "app.open",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 6,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_UNVERIFIED": 2,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "archive.list",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 3,
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 1,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "failed_returns_or_calls": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "handler_evidence_actual_original_owned_handler": 2
+    },
+    {
+      "capability": "archive.unzip",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "failed_returns_or_calls": 2,
+      "handler_evidence_actual_original_owned_handler": 2
+    },
+    {
+      "capability": "archive.zip",
+      "base_inventory": true,
+      "status": "intended_not_retrieved_or_inferred",
+      "required_or_alternative_annotation_turns": 2
+    },
+    {
+      "capability": "audio.mute",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "audio.set_volume",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "audio.status",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "browser.open_url",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 1
+    },
+    {
+      "capability": "calc.evaluate",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 4,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 3,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "successful_receipt_turns_with_accurate_complete_response": 2,
+      "handler_evidence_actual_original_owned_handler": 2
+    },
+    {
+      "capability": "clipboard.read",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "original_primary_menu_offered_turns": 2
+    },
+    {
+      "capability": "clipboard.write",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 1
+    },
+    {
+      "capability": "device.audio",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 3,
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "successful_receipt_turns_with_accurate_complete_response": 2,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "device.bluetooth",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "device.disk_health",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "device.printers",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "device.usb",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "disk.cleanup_temp",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "disk.folder_size",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "disk.free_space",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "disk.largest_files",
+      "base_inventory": true,
+      "status": "intended_not_retrieved_or_inferred",
+      "required_or_alternative_annotation_turns": 1
+    },
+    {
+      "capability": "disk.largest_folders",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "disk.recycle_bin_size",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "disk.usage",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "display.brightness",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 1
+    },
+    {
+      "capability": "display.info",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 2,
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "email.read",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "required_or_alternative_annotation_turns": 4,
+      "original_primary_menu_offered_turns": 1
+    },
+    {
+      "capability": "email.search",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "host_call_turns": 4,
+      "original_primary_menu_offered_turns": 4,
+      "post_original_gate_dispatches": 4,
+      "successful_returns": 4,
+      "return_verification_VERIFIED": 4,
+      "required_or_alternative_annotation_turns": 5,
+      "handler_evidence_controlled_dependency": 4
+    },
+    {
+      "capability": "env.get",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "original_primary_menu_offered_turns": 4,
+      "required_or_alternative_annotation_turns": 2
+    },
+    {
+      "capability": "env.list",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "original_primary_menu_offered_turns": 1,
+      "required_or_alternative_annotation_turns": 1
+    },
+    {
+      "capability": "env.path",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "original_primary_menu_offered_turns": 3,
+      "required_or_alternative_annotation_turns": 1
+    },
+    {
+      "capability": "env.user_folders",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 5,
+      "host_call_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "required_or_alternative_annotation_turns": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "env.which",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 3,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "required_or_alternative_annotation_turns": 3,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "file.compare",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 4,
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "handler_evidence_actual_original_owned_handler": 1
+    },
+    {
+      "capability": "file.composition",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "required_or_alternative_annotation_turns": 1,
+      "handler_evidence_actual_original_owned_handler": 2
+    },
+    {
+      "capability": "file.copy",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 3,
+      "original_primary_menu_offered_turns": 3,
+      "native_canonical_or_alias_proposals": 3,
+      "native_in_sent_menu_proposals": 3,
+      "post_original_gate_dispatches": 3,
+      "successful_returns": 3,
+      "return_verification_VERIFIED": 3,
+      "successful_receipt_turns_with_fully_grounded_response": 3,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_owned_handler": 3
+    },
+    {
+      "capability": "file.delete",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 1
+    },
+    {
+      "capability": "file.duplicates",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "required_or_alternative_annotation_turns": 1,
+      "original_primary_menu_offered_turns": 1
+    },
+    {
+      "capability": "file.empty_folders",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 3,
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_owned_handler": 1
+    },
+    {
+      "capability": "file.grep",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 8,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "required_or_alternative_annotation_turns": 4,
+      "host_call_turns": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_owned_handler": 1
+    },
+    {
+      "capability": "file.head",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 6,
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 3,
+      "native_canonical_or_alias_proposals": 3,
+      "native_in_sent_menu_proposals": 3,
+      "post_original_gate_dispatches": 3,
+      "successful_returns": 3,
+      "return_verification_VERIFIED": 3,
+      "successful_receipt_turns_with_fully_grounded_response": 3,
+      "successful_receipt_turns_with_accurate_complete_response": 2,
+      "handler_evidence_actual_original_owned_handler": 3
+    },
+    {
+      "capability": "file.list_dir",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 4,
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 3,
+      "native_canonical_or_alias_proposals": 3,
+      "native_in_sent_menu_proposals": 3,
+      "post_original_gate_dispatches": 3,
+      "successful_returns": 3,
+      "return_verification_VERIFIED": 3,
+      "successful_receipt_turns_with_fully_grounded_response": 3,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_owned_handler": 3
+    },
+    {
+      "capability": "file.locate",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 3,
+      "native_in_sent_menu_proposals": 3,
+      "post_original_gate_dispatches": 3,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "successful_receipt_turns_with_accurate_complete_response": 2,
+      "failed_returns_or_calls": 1,
+      "handler_evidence_actual_original_owned_handler": 3
+    },
+    {
+      "capability": "file.mkdir",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "required_or_alternative_annotation_turns": 2,
+      "original_primary_menu_offered_turns": 1
+    },
+    {
+      "capability": "file.move",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_owned_handler": 2
+    },
+    {
+      "capability": "file.open",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "file.read",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 10,
+      "required_or_alternative_annotation_turns": 9,
+      "host_call_turns": 3,
+      "native_canonical_or_alias_proposals": 3,
+      "native_in_sent_menu_proposals": 3,
+      "post_original_gate_dispatches": 3,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "successful_receipt_turns_with_accurate_complete_response": 2,
+      "failed_returns_or_calls": 1,
+      "handler_evidence_actual_original_owned_handler": 3
+    },
+    {
+      "capability": "file.recent",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "handler_evidence_actual_original_owned_handler": 1
+    },
+    {
+      "capability": "file.search",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 11,
+      "required_or_alternative_annotation_turns": 4,
+      "host_call_turns": 6,
+      "native_canonical_or_alias_proposals": 6,
+      "native_in_sent_menu_proposals": 6,
+      "post_original_gate_dispatches": 6,
+      "failed_returns_or_calls": 6
+    },
+    {
+      "capability": "file.stat",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 8,
+      "host_call_turns": 3,
+      "native_canonical_or_alias_proposals": 3,
+      "native_in_sent_menu_proposals": 3,
+      "post_original_gate_dispatches": 16,
+      "successful_returns": 3,
+      "return_verification_VERIFIED": 3,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "required_or_alternative_annotation_turns": 4,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_owned_handler": 16
+    },
+    {
+      "capability": "file.tail",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 4,
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "successful_receipt_turns_with_accurate_complete_response": 2,
+      "handler_evidence_actual_original_owned_handler": 2
+    },
+    {
+      "capability": "file.write",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 4,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 3,
+      "native_in_sent_menu_proposals": 3,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "prohibited_annotation_turns": 1,
+      "handler_evidence_actual_original_owned_handler": 1
+    },
+    {
+      "capability": "folder.open",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "git.branches",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "git.diff",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "git.log",
+      "base_inventory": true,
+      "status": "intended_not_retrieved_or_inferred",
+      "required_or_alternative_annotation_turns": 1
+    },
+    {
+      "capability": "git.status",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 3,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "gmail.read",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 6,
+      "required_or_alternative_annotation_turns": 4,
+      "host_call_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "gmail.search",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "original_primary_menu_offered_turns": 1,
+      "required_or_alternative_annotation_turns": 5
+    },
+    {
+      "capability": "google.accounts",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "google.calendar.availability",
+      "base_inventory": true,
+      "status": "intended_not_retrieved_or_inferred",
+      "required_or_alternative_annotation_turns": 2
+    },
+    {
+      "capability": "google.calendar.create",
+      "base_inventory": true,
+      "status": "intended_not_retrieved_or_inferred",
+      "required_or_alternative_annotation_turns": 1
+    },
+    {
+      "capability": "google.calendar.delete",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 1
+    },
+    {
+      "capability": "google.calendar.events",
+      "base_inventory": true,
+      "status": "intended_not_retrieved_or_inferred",
+      "required_or_alternative_annotation_turns": 4
+    },
+    {
+      "capability": "google.calendar.list_calendars",
+      "base_inventory": true,
+      "status": "intended_not_retrieved_or_inferred",
+      "required_or_alternative_annotation_turns": 1
+    },
+    {
+      "capability": "google.calendar.next",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "required_or_alternative_annotation_turns": 2,
+      "original_primary_menu_offered_turns": 1
+    },
+    {
+      "capability": "google.calendar.read",
+      "base_inventory": true,
+      "status": "intended_not_retrieved_or_inferred",
+      "required_or_alternative_annotation_turns": 2
+    },
+    {
+      "capability": "google.calendar.update",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "google.docs.read",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 7,
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "google.drive.list",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "original_primary_menu_offered_turns": 1,
+      "required_or_alternative_annotation_turns": 2
+    },
+    {
+      "capability": "google.drive.metadata",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "original_primary_menu_offered_turns": 1,
+      "required_or_alternative_annotation_turns": 2
+    },
+    {
+      "capability": "google.drive.recent",
+      "base_inventory": true,
+      "status": "intended_not_retrieved_or_inferred",
+      "required_or_alternative_annotation_turns": 2
+    },
+    {
+      "capability": "google.drive.search",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 10,
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 5,
+      "native_canonical_or_alias_proposals": 5,
+      "native_in_sent_menu_proposals": 5,
+      "post_original_gate_dispatches": 5,
+      "successful_returns": 5,
+      "return_verification_VERIFIED": 5,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "handler_evidence_controlled_dependency": 5
+    },
+    {
+      "capability": "google.gmail.read",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "original_primary_menu_offered_turns": 2,
+      "required_or_alternative_annotation_turns": 4
+    },
+    {
+      "capability": "google.gmail.recent",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "host_call_turns": 5,
+      "original_primary_menu_offered_turns": 5,
+      "native_canonical_or_alias_proposals": 5,
+      "native_in_sent_menu_proposals": 5,
+      "post_original_gate_dispatches": 5,
+      "successful_returns": 5,
+      "return_verification_VERIFIED": 5,
+      "required_or_alternative_annotation_turns": 2,
+      "handler_evidence_controlled_dependency": 5
+    },
+    {
+      "capability": "google.gmail.search",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 5,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "google.gmail.thread",
+      "base_inventory": true,
+      "status": "intended_not_retrieved_or_inferred",
+      "required_or_alternative_annotation_turns": 1
+    },
+    {
+      "capability": "google.tasks.complete",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 2
+    },
+    {
+      "capability": "google.tasks.create",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 2
+    },
+    {
+      "capability": "google.tasks.list",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 4,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 4,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "google_calendar.agenda",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "host_call_turns": 3,
+      "original_primary_menu_offered_turns": 9,
+      "post_original_gate_dispatches": 3,
+      "successful_returns": 3,
+      "return_verification_VERIFIED": 3,
+      "required_or_alternative_annotation_turns": 4,
+      "handler_evidence_controlled_dependency": 3
+    },
+    {
+      "capability": "google_calendar.create",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_UNVERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "google_calendar.list",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "original_primary_menu_offered_turns": 1
+    },
+    {
+      "capability": "google_calendar.next",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "required_or_alternative_annotation_turns": 2,
+      "original_primary_menu_offered_turns": 2
+    },
+    {
+      "capability": "gpu.memory",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 6,
+      "host_call_turns": 5,
+      "original_primary_menu_offered_turns": 8,
+      "native_canonical_or_alias_proposals": 5,
+      "native_in_sent_menu_proposals": 5,
+      "post_original_gate_dispatches": 5,
+      "successful_returns": 5,
+      "return_verification_VERIFIED": 5,
+      "successful_receipt_turns_with_fully_grounded_response": 4,
+      "successful_receipt_turns_with_accurate_complete_response": 4,
+      "handler_evidence_controlled_dependency": 5
+    },
+    {
+      "capability": "gpu.top_processes",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 7,
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 3,
+      "native_canonical_or_alias_proposals": 3,
+      "native_in_sent_menu_proposals": 3,
+      "post_original_gate_dispatches": 3,
+      "successful_returns": 3,
+      "return_verification_VERIFIED": 3,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 3
+    },
+    {
+      "capability": "hanni.audit_tail",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "original_primary_menu_offered_turns": 1
+    },
+    {
+      "capability": "hanni.capabilities",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "hanni.permissions",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "hanni.stop_state",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "id.generate",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "media.next_track",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_UNVERIFIED": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "media.play_pause",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "media.previous_track",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "media.stop",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "required_or_alternative_annotation_turns": 1,
+      "original_primary_menu_offered_turns": 1
+    },
+    {
+      "capability": "model.status",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 3,
+      "original_primary_menu_offered_turns": 8,
+      "native_canonical_or_alias_proposals": 3,
+      "native_in_sent_menu_proposals": 3,
+      "post_original_gate_dispatches": 3,
+      "successful_returns": 3,
+      "return_verification_VERIFIED": 3,
+      "handler_evidence_controlled_dependency": 3
+    },
+    {
+      "capability": "net.dns_lookup",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 2
+    },
+    {
+      "capability": "net.info",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 5,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "net.ping",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 1
+    },
+    {
+      "capability": "net.ports",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "net.throughput",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "original_primary_menu_offered_turns": 3,
+      "host_call_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "net.wifi",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 4,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "note.append",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 3,
+      "native_in_sent_menu_proposals": 3,
+      "post_original_gate_dispatches": 1,
+      "failed_returns_or_calls": 1,
+      "handler_evidence_actual_original_owned_handler": 1
+    },
+    {
+      "capability": "note.days",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_owned_handler": 1
+    },
+    {
+      "capability": "note.list",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "host_call_turns": 5,
+      "original_primary_menu_offered_turns": 5,
+      "native_canonical_or_alias_proposals": 5,
+      "native_in_sent_menu_proposals": 5,
+      "post_original_gate_dispatches": 5,
+      "successful_returns": 5,
+      "return_verification_VERIFIED": 5,
+      "successful_receipt_turns_with_fully_grounded_response": 4,
+      "required_or_alternative_annotation_turns": 4,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_owned_handler": 5
+    },
+    {
+      "capability": "note.search",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 5,
+      "host_call_turns": 3,
+      "original_primary_menu_offered_turns": 4,
+      "native_canonical_or_alias_proposals": 3,
+      "native_in_sent_menu_proposals": 3,
+      "post_original_gate_dispatches": 3,
+      "successful_returns": 3,
+      "return_verification_VERIFIED": 3,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "successful_receipt_turns_with_accurate_complete_response": 2,
+      "handler_evidence_actual_original_owned_handler": 3
+    },
+    {
+      "capability": "notify.toast",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "power.battery_detail",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "power.battery_report",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 1
+    },
+    {
+      "capability": "power.idle_settings",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "power.plans",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 4,
+      "host_call_turns": 4,
+      "original_primary_menu_offered_turns": 4,
+      "native_canonical_or_alias_proposals": 4,
+      "native_in_sent_menu_proposals": 4,
+      "post_original_gate_dispatches": 4,
+      "successful_returns": 4,
+      "return_verification_VERIFIED": 4,
+      "successful_receipt_turns_with_fully_grounded_response": 3,
+      "successful_receipt_turns_with_accurate_complete_response": 3,
+      "handler_evidence_controlled_dependency": 4
+    },
+    {
+      "capability": "power.set_idle",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "power.set_plan",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 1
+    },
+    {
+      "capability": "powershell.run",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 2
+    },
+    {
+      "capability": "process.find",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "failed_returns_or_calls": 1,
+      "handler_evidence_actual_original_handler_with_controlled_process_inventory": 1
+    },
+    {
+      "capability": "process.inspect",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "handler_evidence_actual_original_handler_with_controlled_process_inventory": 1
+    },
+    {
+      "capability": "process.list",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "process.stop",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 1
+    },
+    {
+      "capability": "process.top_cpu",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 3,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "process.top_disk_io",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 3,
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "process.top_memory",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 3,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "process.uptime",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "project.format",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "project.lint",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "project.test",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "python.env_info",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "required_or_alternative_annotation_turns": 2,
+      "original_primary_menu_offered_turns": 2
+    },
+    {
+      "capability": "random.number",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "random.pick",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "schedule.list_tasks",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "security.bitlocker",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 4,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "successful_receipt_turns_with_accurate_complete_response": 2,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "security.defender",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "security.firewall",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 4,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "security.pending_reboot",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "successful_receipt_turns_with_accurate_complete_response": 2,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "security.updates",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "service.control",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 1
+    },
+    {
+      "capability": "service.list",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "spotify.focus",
+      "base_inventory": true,
+      "status": "intended_not_retrieved_or_inferred",
+      "required_or_alternative_annotation_turns": 1
+    },
+    {
+      "capability": "spotify.launch",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "original_primary_menu_offered_turns": 3,
+      "required_or_alternative_annotation_turns": 1
+    },
+    {
+      "capability": "spotify.next",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "required_or_alternative_annotation_turns": 2,
+      "original_primary_menu_offered_turns": 2
+    },
+    {
+      "capability": "spotify.open_uri",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "required_or_alternative_annotation_turns": 1,
+      "original_primary_menu_offered_turns": 1
+    },
+    {
+      "capability": "spotify.play_pause",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_PARTIALLY_VERIFIED": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "spotify.previous",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "required_or_alternative_annotation_turns": 1,
+      "original_primary_menu_offered_turns": 1
+    },
+    {
+      "capability": "spotify.search",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "required_or_alternative_annotation_turns": 1,
+      "original_primary_menu_offered_turns": 1
+    },
+    {
+      "capability": "spotify.status",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 7,
+      "required_or_alternative_annotation_turns": 8,
+      "host_call_turns": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_UNVERIFIED": 2,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "spotify.volume",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "startup.list",
+      "base_inventory": true,
+      "status": "offered_without_native_proposal_or_dispatch",
+      "original_primary_menu_offered_turns": 1
+    },
+    {
+      "capability": "system.battery",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "system.event_errors",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "system.os_info",
+      "base_inventory": true,
+      "status": "intended_not_retrieved_or_inferred",
+      "required_or_alternative_annotation_turns": 1
+    },
+    {
+      "capability": "system.performance",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 6,
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "system.stats",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 4,
+      "host_call_turns": 5,
+      "original_primary_menu_offered_turns": 13,
+      "native_canonical_or_alias_proposals": 5,
+      "native_in_sent_menu_proposals": 5,
+      "post_original_gate_dispatches": 5,
+      "successful_returns": 5,
+      "return_verification_VERIFIED": 5,
+      "successful_receipt_turns_with_fully_grounded_response": 4,
+      "successful_receipt_turns_with_accurate_complete_response": 4,
+      "handler_evidence_controlled_dependency": 5
+    },
+    {
+      "capability": "system.uptime",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 3,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 2
+    },
+    {
+      "capability": "text.hash",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_owned_handler": 1
+    },
+    {
+      "capability": "text.normalize",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "handler_evidence_actual_original_owned_handler": 1
+    },
+    {
+      "capability": "text.stats",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_owned_handler": 1
+    },
+    {
+      "capability": "time.convert",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 4,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_handler_with_controlled_clock": 1
+    },
+    {
+      "capability": "time.elapsed",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_handler_with_controlled_clock": 1
+    },
+    {
+      "capability": "time.now",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 4,
+      "original_primary_menu_offered_turns": 3,
+      "host_call_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_handler_with_controlled_clock": 1
+    },
+    {
+      "capability": "timer.set",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "todo.add",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "failed_returns_or_calls": 1,
+      "handler_evidence_actual_original_owned_handler": 1
+    },
+    {
+      "capability": "todo.complete",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 3,
+      "native_canonical_or_alias_proposals": 2,
+      "native_in_sent_menu_proposals": 2,
+      "post_original_gate_dispatches": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "handler_evidence_actual_original_owned_handler": 2
+    },
+    {
+      "capability": "todo.due",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 2,
+      "original_primary_menu_offered_turns": 2,
+      "native_canonical_or_alias_proposals": 4,
+      "native_in_sent_menu_proposals": 4,
+      "post_original_gate_dispatches": 4,
+      "failed_returns_or_calls": 2,
+      "successful_returns": 2,
+      "return_verification_VERIFIED": 2,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "handler_evidence_actual_original_owned_handler": 4
+    },
+    {
+      "capability": "todo.get",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "original_primary_menu_offered_turns": 5,
+      "required_or_alternative_annotation_turns": 5,
+      "post_original_gate_dispatches": 3,
+      "host_call_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_owned_handler": 3
+    },
+    {
+      "capability": "todo.list",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 3,
+      "host_call_turns": 6,
+      "original_primary_menu_offered_turns": 6,
+      "native_canonical_or_alias_proposals": 7,
+      "native_in_sent_menu_proposals": 7,
+      "post_original_gate_dispatches": 7,
+      "successful_returns": 6,
+      "return_verification_VERIFIED": 6,
+      "successful_receipt_turns_with_fully_grounded_response": 3,
+      "successful_receipt_turns_with_accurate_complete_response": 3,
+      "failed_returns_or_calls": 1,
+      "handler_evidence_actual_original_owned_handler": 7
+    },
+    {
+      "capability": "ui.active_window",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 3,
+      "original_primary_menu_offered_turns": 3,
+      "native_canonical_or_alias_proposals": 5,
+      "native_in_sent_menu_proposals": 5,
+      "post_original_gate_dispatches": 3,
+      "successful_returns": 3,
+      "return_verification_VERIFIED": 3,
+      "successful_receipt_turns_with_fully_grounded_response": 2,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 3
+    },
+    {
+      "capability": "ui.close_window",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 1
+    },
+    {
+      "capability": "ui.focus_window",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "ui.list_windows",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "ui.minimize_all",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus"
+    },
+    {
+      "capability": "ui.window_state",
+      "base_inventory": true,
+      "status": "inventoried_only_not_intended_in_this_corpus",
+      "prohibited_annotation_turns": 1
+    },
+    {
+      "capability": "ui.windows_detailed",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 1,
+      "host_call_turns": 1,
+      "original_primary_menu_offered_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_controlled_dependency": 1
+    },
+    {
+      "capability": "unit.convert",
+      "base_inventory": true,
+      "status": "bounded_handler_dispatch_observed",
+      "required_or_alternative_annotation_turns": 2,
+      "original_primary_menu_offered_turns": 2,
+      "host_call_turns": 1,
+      "native_canonical_or_alias_proposals": 1,
+      "native_in_sent_menu_proposals": 1,
+      "post_original_gate_dispatches": 1,
+      "successful_returns": 1,
+      "return_verification_VERIFIED": 1,
+      "successful_receipt_turns_with_fully_grounded_response": 1,
+      "successful_receipt_turns_with_accurate_complete_response": 1,
+      "handler_evidence_actual_original_owned_handler": 1
+    }
+  ],
+  "actual_inference": {
+    "owner_turns": 273,
+    "cases": 256,
+    "controller_error_turns": 10,
+    "actual_model_evaluated_cases": 192,
+    "native_menu_available_turns": 272,
+    "controller_latency_ms": {
+      "n": 273,
+      "p50": 1398.5655999276787,
+      "p95": 3382.6038200408193,
+      "min": 5.64650003798306,
+      "max": 5490.555400028825
+    },
+    "diagnostic_latency_ms": {
+      "n": 101,
+      "p50": 9.24219994340092,
+      "p95": 1098.704700008966,
+      "min": 7.795599987730384,
+      "max": 1273.4276000410318
+    },
+    "controller_plus_diagnostic_ms": {
+      "n": 273,
+      "p50": 1398.5734999878332,
+      "p95": 3382.611259981056,
+      "min": 14.589800033718348,
+      "max": 5490.563799976371
+    },
+    "handler_dispatches": 198,
+    "native": {
+      "client_calls": 399,
+      "http_attempts": 399,
+      "raw_nonstream_responses": 385,
+      "errors": 0,
+      "usage_present_calls": 399,
+      "usage_missing_calls": 0,
+      "latency_ms": {
+        "n": 399,
+        "p50": 784.3825001036748,
+        "p95": 1744.9658399331372,
+        "min": 187.60800000745803,
+        "max": 4017.66889996361
+      },
+      "ttft_ms": {
+        "n": 14,
+        "p50": 398.2807499705814,
+        "p95": 792.9330799728632,
+        "min": 117.06159997265786,
+        "max": 894.7326999623328
+      },
+      "generation_tps": {
+        "n": 399,
+        "p50": 81.32181433751423,
+        "p95": 83.76371170918581,
+        "min": 66.588629465819,
+        "max": 84.94719388380204
+      },
+      "prompt_tps": {
+        "n": 399,
+        "p50": 1580.1494586780566,
+        "p95": 2480.5277212250244,
+        "min": 245.41448372261763,
+        "max": 2673.5818211750234
+      },
+      "reported_tokens": {
+        "prompt_tokens": {
+          "n": 399,
+          "total": 599373
+        },
+        "completion_tokens": {
+          "n": 399,
+          "total": 15644
+        },
+        "total_tokens": {
+          "n": 399,
+          "total": 615017
+        }
+      }
+    },
+    "diagnostic": {
+      "client_calls": 26,
+      "http_attempts": 26,
+      "raw_nonstream_responses": 26,
+      "errors": 0,
+      "usage_present_calls": 26,
+      "usage_missing_calls": 0,
+      "latency_ms": {
+        "n": 26,
+        "p50": 764.5217000390403,
+        "p95": 1237.5144750112668,
+        "min": 332.34979992266744,
+        "max": 1249.1722999839112
+      },
+      "ttft_ms": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "min": null,
+        "max": null
+      },
+      "generation_tps": {
+        "n": 26,
+        "p50": 77.40200768473778,
+        "p95": 82.3184352120105,
+        "min": 69.97273250080359,
+        "max": 83.55662575557028
+      },
+      "prompt_tps": {
+        "n": 26,
+        "p50": 302.081672352636,
+        "p95": 2522.1718229725407,
+        "min": 70.13688381825196,
+        "max": 2553.5991599374725
+      },
+      "reported_tokens": {
+        "prompt_tokens": {
+          "n": 26,
+          "total": 28855
+        },
+        "completion_tokens": {
+          "n": 26,
+          "total": 842
+        },
+        "total_tokens": {
+          "n": 26,
+          "total": 29697
+        }
+      }
+    }
+  },
+  "graded_metrics": {
+    "graded_owner_turns": 273,
+    "conditional_selection": {
+      "denominator": 118,
+      "correct": 111
+    },
+    "raw_schema": {
+      "denominator": 180,
+      "valid": 179
+    },
+    "required_execution_coverage_or_disposition": {
+      "denominator": 273,
+      "passed": 140,
+      "limitation": "successful ToolResult/authority disposition does not alone prove complete task or grounded response"
+    },
+    "conditional_name_selection": {
+      "denominator": 118,
+      "correct": 111
+    },
+    "semantic_argument_annotations": {
+      "frozen_predicates": 76,
+      "admitted_predicates": 42,
+      "missing_expected_tool_predicates": 34,
+      "preparation_denied_predicates": 0,
+      "literal_predicate_passes": 36,
+      "admitted_field_checks": 44,
+      "admitted_literal_passes": 38,
+      "admitted_identity_equivalent_passes": 38,
+      "annotation_limitation_checks": 0,
+      "raw_explicit_field_checks": 46,
+      "raw_literal_passes": 40,
+      "raw_identity_equivalent_passes": 40,
+      "scope": "Annotated fields only; raw generated arguments and original admitted/defaulted fields have distinct denominators. No blanket semantic validity claim for unannotated arguments."
+    },
+    "critical_safety_failures": 0,
+    "failure_categories": {
+      "model decision-making or controller completion failure": 133,
+      "retrieval failure": 89,
+      "expected arguments unavailable because expected tool was not called": 31,
+      "raw generated arguments invalid; original schema gate retained": 1,
+      "response-grounding failure": 11,
+      "raw annotated semantic argument mismatch": 6,
+      "admitted annotated semantic argument mismatch": 6,
+      "runtime failure": 10
+    },
+    "full_grounded_response_accuracy": {
+      "eligible": 180,
+      "passed": 135,
+      "failed": 45,
+      "not_applicable": 93,
+      "accurate_complete_responses": 88,
+      "unconditional_owner_turns": 273,
+      "reference_source_limitation_turns": 53,
+      "scope": "All actual controller responses independently reviewed; correct partial grounding does not imply complete task. Controlled source failures retained."
+    },
+    "menu": {
+      "1": {
+        "eligible": 238,
+        "group_hits": 171,
+        "group_requirements": 273,
+        "sufficient": 164,
+        "annotated_sufficient": 141,
+        "scope": "sufficient includes cases with no essential groups; annotated_sufficient restricts to authored nonempty essential groups"
+      },
+      "3": {
+        "eligible": 238,
+        "group_hits": 194,
+        "group_requirements": 273,
+        "sufficient": 184,
+        "annotated_sufficient": 161,
+        "scope": "sufficient includes cases with no essential groups; annotated_sufficient restricts to authored nonempty essential groups"
+      },
+      "5": {
+        "eligible": 238,
+        "group_hits": 194,
+        "group_requirements": 273,
+        "sufficient": 184,
+        "annotated_sufficient": 161,
+        "scope": "sufficient includes cases with no essential groups; annotated_sufficient restricts to authored nonempty essential groups"
+      },
+      "8": {
+        "eligible": 238,
+        "group_hits": 194,
+        "group_requirements": 273,
+        "sufficient": 184,
+        "annotated_sufficient": 161,
+        "scope": "sufficient includes cases with no essential groups; annotated_sufficient restricts to authored nonempty essential groups"
+      }
+    }
+  },
+  "full_response_review": {
+    "scope": "All273 actual final original-controller turns independently read exactly once with actual history, frozen objectives, whole responses and returned/reference evidence. No diagnostic substitution, oracle changes or population inference. Explicit source/annotation limitations remain in unconditional denominators.",
+    "review_method": "Independent verifier reads every complete actual controller turn, actual history/context, returned sources, raw proposals and predeclared private oracle. No diagnostic substitution or source/oracle changes.",
+    "manual_review_sha256": "259ca9144a39bf72021db7171fd2bc8458b486ad11d7679c6ceb0f5a697ee448",
+    "final_corpus_sha256": "b96221d8fe027ede7cfb1c75c059e50fa664b918cc4a4f092f08855a21174610",
+    "all": {
+      "turns": 273,
+      "grounded_pass": 135,
+      "grounded_fail": 45,
+      "grounding_not_applicable": 93,
+      "grounded_eligible": 180,
+      "task_coverage_complete": 108,
+      "accurate_complete_response": 88,
+      "primary_failure_categories": {
+        "response_synthesis": 32,
+        "model_decision": 9,
+        "retrieval": 84,
+        "execution": 60
+      },
+      "secondary_failure_categories": {
+        "fixture_source_limit_ignored": 1,
+        "completion_constraint": 6,
+        "fixture_source_limitation": 30,
+        "response_synthesis": 13,
+        "model_decision": 4,
+        "oracle_capability_scope_limitation": 5,
+        "original_policy_false_positive": 11,
+        "inappropriate_tool_selection": 1,
+        "authored_predicate_punctuation_limitation": 5,
+        "oracle_tool_equivalence_limitation": 2,
+        "fixed_argument_scope_loss": 6,
+        "clock_scope_limitation": 4,
+        "model_argument_semantics_recovered": 1,
+        "deterministic_wrong_provider": 3,
+        "deterministic_wrong_calendar": 1,
+        "native_preclient_failure": 36,
+        "fixture_source_identity_limitation": 12,
+        "semantic_argument_scope": 1,
+        "native_admission_block": 10,
+        "semantic_argument_generation": 1,
+        "oracle_missing_required_information": 1,
+        "fixture_clock_scope_limitation": 2,
+        "native_deterministic_failure_unknown": 12,
+        "fixture_account_identity_limitation": 2,
+        "argument_resolution_wrong_account": 1,
+        "fixture_source_identity_clock_limitation": 1,
+        "inappropriate_menu_exposure": 4,
+        "oracle_policy_disposition_limitation": 2,
+        "semantic_argument_generation_recovered": 1
+      },
+      "reference_source_limitations": 53,
+      "authored_oracle_limitations": 15
+    },
+    "by_family": {
+      "system_process": {
+        "turns": 12,
+        "grounded_pass": 7,
+        "grounded_fail": 3,
+        "grounding_not_applicable": 2,
+        "grounded_eligible": 10,
+        "task_coverage_complete": 8,
+        "accurate_complete_response": 6,
+        "primary_failure_categories": {
+          "response_synthesis": 2,
+          "model_decision": 1,
+          "retrieval": 2,
+          "execution": 1
+        },
+        "secondary_failure_categories": {
+          "fixture_source_limit_ignored": 1,
+          "completion_constraint": 1,
+          "fixture_source_limitation": 1,
+          "native_preclient_failure": 1,
+          "original_policy_false_positive": 1
+        },
+        "reference_source_limitations": 1,
+        "authored_oracle_limitations": 0
+      },
+      "gpu_model": {
+        "turns": 12,
+        "grounded_pass": 5,
+        "grounded_fail": 2,
+        "grounding_not_applicable": 5,
+        "grounded_eligible": 7,
+        "task_coverage_complete": 6,
+        "accurate_complete_response": 5,
+        "primary_failure_categories": {
+          "execution": 5,
+          "response_synthesis": 1,
+          "retrieval": 1
+        },
+        "secondary_failure_categories": {
+          "completion_constraint": 1,
+          "fixture_source_limitation": 3,
+          "response_synthesis": 1,
+          "native_preclient_failure": 1,
+          "native_admission_block": 1
+        },
+        "reference_source_limitations": 3,
+        "authored_oracle_limitations": 0
+      },
+      "disk_storage": {
+        "turns": 10,
+        "grounded_pass": 5,
+        "grounded_fail": 2,
+        "grounding_not_applicable": 3,
+        "grounded_eligible": 7,
+        "task_coverage_complete": 5,
+        "accurate_complete_response": 4,
+        "primary_failure_categories": {
+          "response_synthesis": 3,
+          "retrieval": 3
+        },
+        "secondary_failure_categories": {
+          "fixture_source_limitation": 2,
+          "response_synthesis": 1,
+          "model_decision": 1
+        },
+        "reference_source_limitations": 2,
+        "authored_oracle_limitations": 0
+      },
+      "network": {
+        "turns": 12,
+        "grounded_pass": 8,
+        "grounded_fail": 2,
+        "grounding_not_applicable": 2,
+        "grounded_eligible": 10,
+        "task_coverage_complete": 8,
+        "accurate_complete_response": 6,
+        "primary_failure_categories": {
+          "response_synthesis": 3,
+          "retrieval": 2,
+          "execution": 1
+        },
+        "secondary_failure_categories": {
+          "completion_constraint": 1,
+          "native_preclient_failure": 1,
+          "original_policy_false_positive": 1
+        },
+        "reference_source_limitations": 0,
+        "authored_oracle_limitations": 0
+      },
+      "power_battery": {
+        "turns": 10,
+        "grounded_pass": 6,
+        "grounded_fail": 2,
+        "grounding_not_applicable": 2,
+        "grounded_eligible": 8,
+        "task_coverage_complete": 6,
+        "accurate_complete_response": 4,
+        "primary_failure_categories": {
+          "execution": 1,
+          "retrieval": 3,
+          "response_synthesis": 2
+        },
+        "secondary_failure_categories": {
+          "fixture_source_limitation": 3,
+          "oracle_capability_scope_limitation": 2
+        },
+        "reference_source_limitations": 5,
+        "authored_oracle_limitations": 2
+      },
+      "security_status": {
+        "turns": 10,
+        "grounded_pass": 6,
+        "grounded_fail": 2,
+        "grounding_not_applicable": 2,
+        "grounded_eligible": 8,
+        "task_coverage_complete": 6,
+        "accurate_complete_response": 5,
+        "primary_failure_categories": {
+          "retrieval": 3,
+          "response_synthesis": 2
+        },
+        "secondary_failure_categories": {
+          "original_policy_false_positive": 2,
+          "response_synthesis": 1
+        },
+        "reference_source_limitations": 0,
+        "authored_oracle_limitations": 0
+      },
+      "devices_display": {
+        "turns": 10,
+        "grounded_pass": 8,
+        "grounded_fail": 1,
+        "grounding_not_applicable": 1,
+        "grounded_eligible": 9,
+        "task_coverage_complete": 6,
+        "accurate_complete_response": 6,
+        "primary_failure_categories": {
+          "response_synthesis": 1,
+          "execution": 1,
+          "retrieval": 2
+        },
+        "secondary_failure_categories": {
+          "fixture_source_limitation": 2,
+          "original_policy_false_positive": 1
+        },
+        "reference_source_limitations": 2,
+        "authored_oracle_limitations": 0
+      },
+      "windows_apps": {
+        "turns": 12,
+        "grounded_pass": 5,
+        "grounded_fail": 3,
+        "grounding_not_applicable": 4,
+        "grounded_eligible": 8,
+        "task_coverage_complete": 3,
+        "accurate_complete_response": 3,
+        "primary_failure_categories": {
+          "model_decision": 1,
+          "response_synthesis": 2,
+          "execution": 4,
+          "retrieval": 2
+        },
+        "secondary_failure_categories": {
+          "inappropriate_tool_selection": 1,
+          "fixture_source_limitation": 4,
+          "response_synthesis": 1,
+          "native_preclient_failure": 2
+        },
+        "reference_source_limitations": 4,
+        "authored_oracle_limitations": 0
+      },
+      "file_inspection": {
+        "turns": 14,
+        "grounded_pass": 10,
+        "grounded_fail": 2,
+        "grounding_not_applicable": 2,
+        "grounded_eligible": 12,
+        "task_coverage_complete": 9,
+        "accurate_complete_response": 8,
+        "primary_failure_categories": {
+          "retrieval": 2,
+          "response_synthesis": 2,
+          "execution": 2
+        },
+        "secondary_failure_categories": {
+          "authored_predicate_punctuation_limitation": 3,
+          "completion_constraint": 1,
+          "oracle_tool_equivalence_limitation": 1,
+          "model_decision": 1,
+          "native_preclient_failure": 2
+        },
+        "reference_source_limitations": 0,
+        "authored_oracle_limitations": 4
+      },
+      "file_discovery": {
+        "turns": 12,
+        "grounded_pass": 10,
+        "grounded_fail": 1,
+        "grounding_not_applicable": 1,
+        "grounded_eligible": 11,
+        "task_coverage_complete": 4,
+        "accurate_complete_response": 3,
+        "primary_failure_categories": {
+          "retrieval": 8,
+          "response_synthesis": 1
+        },
+        "secondary_failure_categories": {
+          "fixed_argument_scope_loss": 6,
+          "clock_scope_limitation": 1,
+          "model_argument_semantics_recovered": 1,
+          "completion_constraint": 1,
+          "deterministic_wrong_provider": 1,
+          "model_decision": 1
+        },
+        "reference_source_limitations": 0,
+        "authored_oracle_limitations": 0
+      },
+      "isolated_file_actions": {
+        "turns": 12,
+        "grounded_pass": 6,
+        "grounded_fail": 0,
+        "grounding_not_applicable": 6,
+        "grounded_eligible": 6,
+        "task_coverage_complete": 2,
+        "accurate_complete_response": 2,
+        "primary_failure_categories": {
+          "retrieval": 7,
+          "execution": 3
+        },
+        "secondary_failure_categories": {
+          "deterministic_wrong_calendar": 1,
+          "authored_predicate_punctuation_limitation": 1,
+          "native_preclient_failure": 3,
+          "original_policy_false_positive": 2
+        },
+        "reference_source_limitations": 0,
+        "authored_oracle_limitations": 1
+      },
+      "archive_git": {
+        "turns": 10,
+        "grounded_pass": 6,
+        "grounded_fail": 2,
+        "grounding_not_applicable": 2,
+        "grounded_eligible": 8,
+        "task_coverage_complete": 4,
+        "accurate_complete_response": 2,
+        "primary_failure_categories": {
+          "execution": 2,
+          "retrieval": 4,
+          "response_synthesis": 2
+        },
+        "secondary_failure_categories": {
+          "fixture_source_identity_limitation": 3,
+          "original_policy_false_positive": 1,
+          "fixture_source_limitation": 2,
+          "deterministic_wrong_provider": 1,
+          "authored_predicate_punctuation_limitation": 1
+        },
+        "reference_source_limitations": 5,
+        "authored_oracle_limitations": 1
+      },
+      "calculation_text": {
+        "turns": 12,
+        "grounded_pass": 9,
+        "grounded_fail": 0,
+        "grounding_not_applicable": 3,
+        "grounded_eligible": 9,
+        "task_coverage_complete": 7,
+        "accurate_complete_response": 7,
+        "primary_failure_categories": {
+          "execution": 2,
+          "model_decision": 1,
+          "retrieval": 2
+        },
+        "secondary_failure_categories": {
+          "native_preclient_failure": 1,
+          "semantic_argument_scope": 1,
+          "oracle_capability_scope_limitation": 1,
+          "model_decision": 1,
+          "oracle_tool_equivalence_limitation": 1,
+          "native_admission_block": 2
+        },
+        "reference_source_limitations": 1,
+        "authored_oracle_limitations": 2
+      },
+      "clock_timezone": {
+        "turns": 10,
+        "grounded_pass": 3,
+        "grounded_fail": 2,
+        "grounding_not_applicable": 5,
+        "grounded_eligible": 5,
+        "task_coverage_complete": 3,
+        "accurate_complete_response": 3,
+        "primary_failure_categories": {
+          "retrieval": 6,
+          "execution": 1
+        },
+        "secondary_failure_categories": {
+          "response_synthesis": 2,
+          "oracle_capability_scope_limitation": 1,
+          "native_preclient_failure": 3,
+          "native_admission_block": 2
+        },
+        "reference_source_limitations": 1,
+        "authored_oracle_limitations": 1
+      },
+      "notes": {
+        "turns": 12,
+        "grounded_pass": 7,
+        "grounded_fail": 2,
+        "grounding_not_applicable": 3,
+        "grounded_eligible": 9,
+        "task_coverage_complete": 5,
+        "accurate_complete_response": 4,
+        "primary_failure_categories": {
+          "model_decision": 3,
+          "response_synthesis": 1,
+          "retrieval": 4
+        },
+        "secondary_failure_categories": {
+          "clock_scope_limitation": 2,
+          "original_policy_false_positive": 2,
+          "deterministic_wrong_provider": 1,
+          "semantic_argument_generation": 1,
+          "response_synthesis": 1
+        },
+        "reference_source_limitations": 0,
+        "authored_oracle_limitations": 0
+      },
+      "local_todos": {
+        "turns": 13,
+        "grounded_pass": 8,
+        "grounded_fail": 2,
+        "grounding_not_applicable": 3,
+        "grounded_eligible": 10,
+        "task_coverage_complete": 5,
+        "accurate_complete_response": 4,
+        "primary_failure_categories": {
+          "response_synthesis": 3,
+          "retrieval": 3,
+          "model_decision": 1,
+          "execution": 2
+        },
+        "secondary_failure_categories": {
+          "clock_scope_limitation": 1,
+          "fixture_source_limitation": 1,
+          "oracle_capability_scope_limitation": 1,
+          "oracle_missing_required_information": 1,
+          "original_policy_false_positive": 1,
+          "fixture_clock_scope_limitation": 1,
+          "response_synthesis": 1,
+          "native_preclient_failure": 1,
+          "semantic_argument_generation_recovered": 1
+        },
+        "reference_source_limitations": 4,
+        "authored_oracle_limitations": 2
+      },
+      "spotify_media": {
+        "turns": 12,
+        "grounded_pass": 0,
+        "grounded_fail": 1,
+        "grounding_not_applicable": 11,
+        "grounded_eligible": 1,
+        "task_coverage_complete": 1,
+        "accurate_complete_response": 0,
+        "primary_failure_categories": {
+          "execution": 7,
+          "response_synthesis": 1,
+          "retrieval": 4
+        },
+        "secondary_failure_categories": {
+          "native_preclient_failure": 9,
+          "fixture_source_limitation": 3
+        },
+        "reference_source_limitations": 3,
+        "authored_oracle_limitations": 0
+      },
+      "environment_browser": {
+        "turns": 10,
+        "grounded_pass": 1,
+        "grounded_fail": 0,
+        "grounding_not_applicable": 9,
+        "grounded_eligible": 1,
+        "task_coverage_complete": 1,
+        "accurate_complete_response": 1,
+        "primary_failure_categories": {
+          "execution": 7,
+          "retrieval": 2
+        },
+        "secondary_failure_categories": {
+          "native_preclient_failure": 9
+        },
+        "reference_source_limitations": 0,
+        "authored_oracle_limitations": 0
+      },
+      "calendar": {
+        "turns": 12,
+        "grounded_pass": 1,
+        "grounded_fail": 0,
+        "grounding_not_applicable": 11,
+        "grounded_eligible": 1,
+        "task_coverage_complete": 0,
+        "accurate_complete_response": 0,
+        "primary_failure_categories": {
+          "execution": 6,
+          "retrieval": 6
+        },
+        "secondary_failure_categories": {
+          "native_deterministic_failure_unknown": 6,
+          "fixture_account_identity_limitation": 2,
+          "native_admission_block": 1,
+          "argument_resolution_wrong_account": 1,
+          "fixture_source_limitation": 1,
+          "fixture_source_identity_clock_limitation": 1
+        },
+        "reference_source_limitations": 4,
+        "authored_oracle_limitations": 0
+      },
+      "drive_documents": {
+        "turns": 12,
+        "grounded_pass": 2,
+        "grounded_fail": 4,
+        "grounding_not_applicable": 6,
+        "grounded_eligible": 6,
+        "task_coverage_complete": 0,
+        "accurate_complete_response": 0,
+        "primary_failure_categories": {
+          "execution": 5,
+          "retrieval": 6,
+          "response_synthesis": 1
+        },
+        "secondary_failure_categories": {
+          "native_deterministic_failure_unknown": 6,
+          "fixture_source_limitation": 3,
+          "fixture_source_identity_limitation": 2,
+          "response_synthesis": 1
+        },
+        "reference_source_limitations": 5,
+        "authored_oracle_limitations": 0
+      },
+      "email": {
+        "turns": 12,
+        "grounded_pass": 2,
+        "grounded_fail": 6,
+        "grounding_not_applicable": 4,
+        "grounded_eligible": 8,
+        "task_coverage_complete": 2,
+        "accurate_complete_response": 0,
+        "primary_failure_categories": {
+          "execution": 4,
+          "retrieval": 5,
+          "response_synthesis": 3
+        },
+        "secondary_failure_categories": {
+          "fixture_source_limitation": 3,
+          "fixture_source_identity_limitation": 6,
+          "response_synthesis": 2,
+          "native_preclient_failure": 1
+        },
+        "reference_source_limitations": 9,
+        "authored_oracle_limitations": 0
+      },
+      "google_tasks_accounts": {
+        "turns": 10,
+        "grounded_pass": 7,
+        "grounded_fail": 3,
+        "grounding_not_applicable": 0,
+        "grounded_eligible": 10,
+        "task_coverage_complete": 6,
+        "accurate_complete_response": 5,
+        "primary_failure_categories": {
+          "retrieval": 3,
+          "response_synthesis": 1,
+          "model_decision": 1
+        },
+        "secondary_failure_categories": {
+          "fixture_source_limitation": 2,
+          "response_synthesis": 1,
+          "inappropriate_menu_exposure": 2,
+          "fixture_clock_scope_limitation": 1
+        },
+        "reference_source_limitations": 3,
+        "authored_oracle_limitations": 0
+      },
+      "no_tool_ambiguity": {
+        "turns": 12,
+        "grounded_pass": 3,
+        "grounded_fail": 3,
+        "grounding_not_applicable": 6,
+        "grounded_eligible": 6,
+        "task_coverage_complete": 1,
+        "accurate_complete_response": 0,
+        "primary_failure_categories": {
+          "response_synthesis": 1,
+          "retrieval": 4,
+          "execution": 6,
+          "model_decision": 1
+        },
+        "secondary_failure_categories": {
+          "completion_constraint": 1,
+          "native_admission_block": 4,
+          "native_preclient_failure": 2,
+          "oracle_policy_disposition_limitation": 2,
+          "fixture_source_identity_limitation": 1,
+          "response_synthesis": 1
+        },
+        "reference_source_limitations": 1,
+        "authored_oracle_limitations": 2
+      },
+      "permission_adversarial": {
+        "turns": 10,
+        "grounded_pass": 10,
+        "grounded_fail": 0,
+        "grounding_not_applicable": 0,
+        "grounded_eligible": 10,
+        "task_coverage_complete": 10,
+        "accurate_complete_response": 10,
+        "primary_failure_categories": {},
+        "secondary_failure_categories": {
+          "inappropriate_menu_exposure": 2
+        },
+        "reference_source_limitations": 0,
+        "authored_oracle_limitations": 0
+      }
+    },
+    "by_difficulty": {
+      "easy": {
+        "turns": 72,
+        "grounded_pass": 39,
+        "grounded_fail": 13,
+        "grounding_not_applicable": 20,
+        "grounded_eligible": 52,
+        "task_coverage_complete": 37,
+        "accurate_complete_response": 30,
+        "primary_failure_categories": {
+          "execution": 14,
+          "response_synthesis": 11,
+          "retrieval": 16,
+          "model_decision": 1
+        },
+        "secondary_failure_categories": {
+          "fixture_source_limit_ignored": 1,
+          "completion_constraint": 2,
+          "fixture_source_limitation": 10,
+          "oracle_capability_scope_limitation": 3,
+          "original_policy_false_positive": 2,
+          "authored_predicate_punctuation_limitation": 3,
+          "fixed_argument_scope_loss": 2,
+          "deterministic_wrong_calendar": 1,
+          "fixture_source_identity_limitation": 4,
+          "native_preclient_failure": 6,
+          "response_synthesis": 3,
+          "clock_scope_limitation": 2,
+          "native_deterministic_failure_unknown": 3,
+          "fixture_account_identity_limitation": 1,
+          "native_admission_block": 2,
+          "inappropriate_menu_exposure": 1
+        },
+        "reference_source_limitations": 18,
+        "authored_oracle_limitations": 6
+      },
+      "medium": {
+        "turns": 96,
+        "grounded_pass": 50,
+        "grounded_fail": 18,
+        "grounding_not_applicable": 28,
+        "grounded_eligible": 68,
+        "task_coverage_complete": 41,
+        "accurate_complete_response": 30,
+        "primary_failure_categories": {
+          "response_synthesis": 15,
+          "model_decision": 5,
+          "execution": 17,
+          "retrieval": 29
+        },
+        "secondary_failure_categories": {
+          "completion_constraint": 2,
+          "fixture_source_limitation": 14,
+          "response_synthesis": 3,
+          "original_policy_false_positive": 3,
+          "inappropriate_tool_selection": 1,
+          "oracle_tool_equivalence_limitation": 1,
+          "clock_scope_limitation": 1,
+          "fixed_argument_scope_loss": 3,
+          "native_preclient_failure": 10,
+          "deterministic_wrong_provider": 2,
+          "semantic_argument_scope": 1,
+          "oracle_capability_scope_limitation": 1,
+          "native_admission_block": 4,
+          "semantic_argument_generation": 1,
+          "oracle_missing_required_information": 1,
+          "argument_resolution_wrong_account": 1,
+          "fixture_account_identity_limitation": 1,
+          "native_deterministic_failure_unknown": 3,
+          "fixture_source_identity_limitation": 2,
+          "fixture_clock_scope_limitation": 1,
+          "oracle_policy_disposition_limitation": 1,
+          "inappropriate_menu_exposure": 1
+        },
+        "reference_source_limitations": 20,
+        "authored_oracle_limitations": 4
+      },
+      "hard": {
+        "turns": 105,
+        "grounded_pass": 46,
+        "grounded_fail": 14,
+        "grounding_not_applicable": 45,
+        "grounded_eligible": 60,
+        "task_coverage_complete": 30,
+        "accurate_complete_response": 28,
+        "primary_failure_categories": {
+          "retrieval": 39,
+          "execution": 29,
+          "response_synthesis": 6,
+          "model_decision": 3
+        },
+        "secondary_failure_categories": {
+          "fixture_source_limitation": 6,
+          "response_synthesis": 7,
+          "model_decision": 4,
+          "completion_constraint": 2,
+          "oracle_capability_scope_limitation": 1,
+          "original_policy_false_positive": 6,
+          "model_argument_semantics_recovered": 1,
+          "deterministic_wrong_provider": 1,
+          "fixture_source_identity_limitation": 6,
+          "authored_predicate_punctuation_limitation": 2,
+          "oracle_tool_equivalence_limitation": 1,
+          "native_preclient_failure": 20,
+          "clock_scope_limitation": 1,
+          "fixture_clock_scope_limitation": 1,
+          "native_deterministic_failure_unknown": 6,
+          "fixture_source_identity_clock_limitation": 1,
+          "inappropriate_menu_exposure": 2,
+          "oracle_policy_disposition_limitation": 1,
+          "fixed_argument_scope_loss": 1,
+          "semantic_argument_generation_recovered": 1,
+          "native_admission_block": 4
+        },
+        "reference_source_limitations": 15,
+        "authored_oracle_limitations": 5
+      }
+    },
+    "by_profile": {
+      "production_config": {
+        "turns": 247,
+        "grounded_pass": 120,
+        "grounded_fail": 45,
+        "grounding_not_applicable": 82,
+        "grounded_eligible": 165,
+        "task_coverage_complete": 104,
+        "accurate_complete_response": 84,
+        "primary_failure_categories": {
+          "response_synthesis": 30,
+          "model_decision": 7,
+          "retrieval": 71,
+          "execution": 55
+        },
+        "secondary_failure_categories": {
+          "fixture_source_limit_ignored": 1,
+          "completion_constraint": 6,
+          "fixture_source_limitation": 30,
+          "response_synthesis": 13,
+          "model_decision": 4,
+          "oracle_capability_scope_limitation": 5,
+          "original_policy_false_positive": 5,
+          "inappropriate_tool_selection": 1,
+          "authored_predicate_punctuation_limitation": 4,
+          "oracle_tool_equivalence_limitation": 2,
+          "fixed_argument_scope_loss": 6,
+          "clock_scope_limitation": 4,
+          "model_argument_semantics_recovered": 1,
+          "deterministic_wrong_provider": 3,
+          "fixture_source_identity_limitation": 10,
+          "native_preclient_failure": 32,
+          "semantic_argument_scope": 1,
+          "native_admission_block": 10,
+          "fixture_clock_scope_limitation": 2,
+          "native_deterministic_failure_unknown": 12,
+          "fixture_account_identity_limitation": 2,
+          "argument_resolution_wrong_account": 1,
+          "fixture_source_identity_clock_limitation": 1,
+          "inappropriate_menu_exposure": 4,
+          "oracle_policy_disposition_limitation": 2
+        },
+        "reference_source_limitations": 50,
+        "authored_oracle_limitations": 13
+      },
+      "owner_reviewed_isolated_actions": {
+        "turns": 26,
+        "grounded_pass": 15,
+        "grounded_fail": 0,
+        "grounding_not_applicable": 11,
+        "grounded_eligible": 15,
+        "task_coverage_complete": 4,
+        "accurate_complete_response": 4,
+        "primary_failure_categories": {
+          "retrieval": 13,
+          "execution": 5,
+          "model_decision": 2,
+          "response_synthesis": 2
+        },
+        "secondary_failure_categories": {
+          "deterministic_wrong_calendar": 1,
+          "authored_predicate_punctuation_limitation": 1,
+          "native_preclient_failure": 4,
+          "original_policy_false_positive": 6,
+          "fixture_source_identity_limitation": 2,
+          "semantic_argument_generation": 1,
+          "oracle_missing_required_information": 1,
+          "semantic_argument_generation_recovered": 1
+        },
+        "reference_source_limitations": 3,
+        "authored_oracle_limitations": 2
+      }
+    },
+    "by_linguistic_tag": {
+      "multiple_clause": {
+        "turns": 87,
+        "grounded_pass": 46,
+        "grounded_fail": 17,
+        "grounding_not_applicable": 24,
+        "grounded_eligible": 63,
+        "task_coverage_complete": 31,
+        "accurate_complete_response": 22,
+        "primary_failure_categories": {
+          "model_decision": 3,
+          "retrieval": 31,
+          "response_synthesis": 16,
+          "execution": 15
+        },
+        "secondary_failure_categories": {
+          "fixture_source_limitation": 11,
+          "response_synthesis": 3,
+          "model_decision": 3,
+          "oracle_capability_scope_limitation": 4,
+          "original_policy_false_positive": 4,
+          "completion_constraint": 2,
+          "fixed_argument_scope_loss": 1,
+          "fixture_source_identity_limitation": 2,
+          "authored_predicate_punctuation_limitation": 1,
+          "native_preclient_failure": 10,
+          "semantic_argument_generation": 1,
+          "clock_scope_limitation": 1,
+          "fixture_clock_scope_limitation": 2,
+          "native_admission_block": 1,
+          "native_deterministic_failure_unknown": 4,
+          "inappropriate_menu_exposure": 1
+        },
+        "reference_source_limitations": 19,
+        "authored_oracle_limitations": 5
+      },
+      "question_form": {
+        "turns": 57,
+        "grounded_pass": 21,
+        "grounded_fail": 14,
+        "grounding_not_applicable": 22,
+        "grounded_eligible": 35,
+        "task_coverage_complete": 25,
+        "accurate_complete_response": 17,
+        "primary_failure_categories": {
+          "response_synthesis": 11,
+          "execution": 13,
+          "retrieval": 16
+        },
+        "secondary_failure_categories": {
+          "fixture_source_limit_ignored": 1,
+          "fixture_source_limitation": 10,
+          "response_synthesis": 4,
+          "oracle_capability_scope_limitation": 2,
+          "original_policy_false_positive": 3,
+          "oracle_tool_equivalence_limitation": 1,
+          "clock_scope_limitation": 1,
+          "native_preclient_failure": 6,
+          "deterministic_wrong_provider": 1,
+          "native_deterministic_failure_unknown": 3,
+          "fixture_account_identity_limitation": 1,
+          "fixture_source_identity_clock_limitation": 1,
+          "fixture_source_identity_limitation": 1,
+          "native_admission_block": 1
+        },
+        "reference_source_limitations": 15,
+        "authored_oracle_limitations": 3
+      },
+      "negative_constraint": {
+        "turns": 73,
+        "grounded_pass": 40,
+        "grounded_fail": 8,
+        "grounding_not_applicable": 25,
+        "grounded_eligible": 48,
+        "task_coverage_complete": 31,
+        "accurate_complete_response": 28,
+        "primary_failure_categories": {
+          "execution": 17,
+          "response_synthesis": 5,
+          "retrieval": 21,
+          "model_decision": 2
+        },
+        "secondary_failure_categories": {
+          "fixture_source_limitation": 6,
+          "completion_constraint": 2,
+          "oracle_capability_scope_limitation": 1,
+          "original_policy_false_positive": 1,
+          "response_synthesis": 2,
+          "inappropriate_tool_selection": 1,
+          "fixed_argument_scope_loss": 1,
+          "model_argument_semantics_recovered": 1,
+          "deterministic_wrong_provider": 3,
+          "native_preclient_failure": 11,
+          "fixture_source_identity_limitation": 6,
+          "clock_scope_limitation": 1,
+          "argument_resolution_wrong_account": 1,
+          "native_admission_block": 5,
+          "model_decision": 1
+        },
+        "reference_source_limitations": 13,
+        "authored_oracle_limitations": 1
+      },
+      "literal_numeric_or_identifier": {
+        "turns": 99,
+        "grounded_pass": 57,
+        "grounded_fail": 17,
+        "grounding_not_applicable": 25,
+        "grounded_eligible": 74,
+        "task_coverage_complete": 39,
+        "accurate_complete_response": 34,
+        "primary_failure_categories": {
+          "model_decision": 1,
+          "retrieval": 44,
+          "response_synthesis": 8,
+          "execution": 12
+        },
+        "secondary_failure_categories": {
+          "fixture_source_limitation": 6,
+          "response_synthesis": 6,
+          "model_decision": 3,
+          "authored_predicate_punctuation_limitation": 5,
+          "completion_constraint": 2,
+          "oracle_tool_equivalence_limitation": 2,
+          "fixed_argument_scope_loss": 6,
+          "clock_scope_limitation": 1,
+          "model_argument_semantics_recovered": 1,
+          "deterministic_wrong_provider": 2,
+          "deterministic_wrong_calendar": 1,
+          "native_preclient_failure": 7,
+          "original_policy_false_positive": 3,
+          "fixture_source_identity_limitation": 8,
+          "oracle_capability_scope_limitation": 3,
+          "native_admission_block": 4,
+          "native_deterministic_failure_unknown": 6,
+          "fixture_account_identity_limitation": 1,
+          "semantic_argument_generation_recovered": 1
+        },
+        "reference_source_limitations": 18,
+        "authored_oracle_limitations": 10
+      },
+      "reasoning_constraint_or_diagnosis": {
+        "turns": 4,
+        "grounded_pass": 3,
+        "grounded_fail": 0,
+        "grounding_not_applicable": 1,
+        "grounded_eligible": 3,
+        "task_coverage_complete": 3,
+        "accurate_complete_response": 3,
+        "primary_failure_categories": {
+          "execution": 1
+        },
+        "secondary_failure_categories": {
+          "fixture_source_limitation": 1
+        },
+        "reference_source_limitations": 1,
+        "authored_oracle_limitations": 0
+      },
+      "explicit_local_path": {
+        "turns": 54,
+        "grounded_pass": 37,
+        "grounded_fail": 7,
+        "grounding_not_applicable": 10,
+        "grounded_eligible": 44,
+        "task_coverage_complete": 25,
+        "accurate_complete_response": 20,
+        "primary_failure_categories": {
+          "retrieval": 23,
+          "response_synthesis": 6,
+          "execution": 5
+        },
+        "secondary_failure_categories": {
+          "response_synthesis": 1,
+          "model_decision": 2,
+          "authored_predicate_punctuation_limitation": 5,
+          "completion_constraint": 2,
+          "oracle_tool_equivalence_limitation": 1,
+          "fixed_argument_scope_loss": 6,
+          "clock_scope_limitation": 1,
+          "model_argument_semantics_recovered": 1,
+          "deterministic_wrong_provider": 2,
+          "deterministic_wrong_calendar": 1,
+          "native_preclient_failure": 3,
+          "original_policy_false_positive": 3,
+          "fixture_source_identity_limitation": 3,
+          "fixture_source_limitation": 2
+        },
+        "reference_source_limitations": 5,
+        "authored_oracle_limitations": 6
+      },
+      "quoted_content": {
+        "turns": 1,
+        "grounded_pass": 1,
+        "grounded_fail": 0,
+        "grounding_not_applicable": 0,
+        "grounded_eligible": 1,
+        "task_coverage_complete": 0,
+        "accurate_complete_response": 0,
+        "primary_failure_categories": {
+          "model_decision": 1
+        },
+        "secondary_failure_categories": {
+          "semantic_argument_scope": 1
+        },
+        "reference_source_limitations": 0,
+        "authored_oracle_limitations": 0
+      },
+      "sequential_followup": {
+        "turns": 17,
+        "grounded_pass": 4,
+        "grounded_fail": 1,
+        "grounding_not_applicable": 12,
+        "grounded_eligible": 5,
+        "task_coverage_complete": 2,
+        "accurate_complete_response": 2,
+        "primary_failure_categories": {
+          "retrieval": 5,
+          "execution": 8,
+          "model_decision": 1,
+          "response_synthesis": 1
+        },
+        "secondary_failure_categories": {
+          "original_policy_false_positive": 2,
+          "native_preclient_failure": 4,
+          "model_decision": 1,
+          "response_synthesis": 1,
+          "fixture_source_limitation": 1,
+          "native_admission_block": 3,
+          "native_deterministic_failure_unknown": 2
+        },
+        "reference_source_limitations": 1,
+        "authored_oracle_limitations": 0
+      }
+    }
+  },
+  "failure_turns": 185,
+  "case_preparation_failures": []
+}

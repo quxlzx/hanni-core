@@ -1,0 +1,680 @@
+{
+  "at": "2026-10-10T16:26:42.743194+00:00",
+  "scope": "Independent frozen once-only desktop functional holdout plus fresh subjective visual scores; oracle-free publication",
+  "private_inputs_exposed_to_engineers": false,
+  "sealed_before_tuning": true,
+  "sealed_input_sha256": "d7bcf56dc1465fadaa115840c27b4861ce3391a6c9c0f07d2a866eb8fe505b1d",
+  "sealed_oracle_sha256": "0ceb8edab0c4e6c6f3f8c615a9735d316f9ab56bf3b234c2b019a20572c191b4",
+  "sealed_protocol_sha256": "0a49591c8872651b9816731142387d7baca595e6ca4dd9e9be477021dfc0297a",
+  "parent_manifest": {
+    "path": "data/campaign8-manager/final-freeze/MANIFEST.json",
+    "sha256": "e5523c4ad3780c6af2ba10c4efc0c82572c4a4f461c8e5fcb3193bcbe307d56e",
+    "members": 1299
+  },
+  "source_archive_sha256": "8e040f340fa60484bdd8167df84068f2be7dc77ca13edc61cf2b0c12702dbbec",
+  "once_only_claim": {
+    "path": "data/campaign8-verifier/holdout/CLAIM.json",
+    "sha256": "4254ff2118cdc41c8a1eaa477431212a82aadb6c40a71341f49d7f1efd878813"
+  },
+  "closed": {
+    "path": "data/campaign8-verifier/final-once/CLOSED.json",
+    "sha256": "39560561d9ec7452f8772b7bd58f4f3399dcbb9dd0e124cb0207485924fa593a"
+  },
+  "raw_native_receipt": {
+    "path": "C:\\Projects\\HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING\\data\\campaign8-native\\independent-final-once\\RESULTS.json",
+    "sha256": "e9df5da781e9e122b014e190456414e5ed3786a48cd01219933588d9d8f4e959"
+  },
+  "private_review_reference": {
+    "path": "data/campaign8-verifier/final-once/REVIEWS.json",
+    "sha256": "38b7cd91454e3004189e69af292565296863485226c6d0d8d37ae9626e5cbeea",
+    "case_count": 60
+  },
+  "private_grade_reference": {
+    "path": "data/campaign8-verifier/final-once/GRADES.json",
+    "sha256": "680262d5397326eb27e8252fb03dd66e839056e2238fcc2299b2aba0ca29f41d",
+    "case_count": 60
+  },
+  "scorer": {
+    "path": "scripts/campaign8_verification/scoring.py",
+    "sha256": "2138a2005094b81768ec022e903d355126ec7ec6d6a521862636e0bc8423892d",
+    "frozen_oracles_unchanged": true,
+    "missing_evidence_is_nonpass": true
+  },
+  "collection": {
+    "attempted": 60,
+    "collected": 59,
+    "execution_errors": 1,
+    "complete": true,
+    "retries": 0,
+    "source_unchanged": true,
+    "all60_receipt_hashes_match": true,
+    "manual_reviews_complete": 60,
+    "individual_native_PNGs_reviewed_and_hash_matched": 84,
+    "javascript_errors": 0,
+    "native_http_requests": 705,
+    "original_http_mutations": 0,
+    "external_native_HTTP_requests": 0,
+    "model_generation_requests": 0
+  },
+  "strict_grade": {
+    "passed": 57,
+    "denominator": 60,
+    "nonpasses": 3,
+    "percentage": 95.0,
+    "criterion_counts": {
+      "pass": 588,
+      "fail": 1,
+      "unmeasured": 2
+    },
+    "families": {
+      "backend_truth": {
+        "attempted": 10,
+        "strict_pass": 9,
+        "strict_nonpass": 1
+      },
+      "native_interaction": {
+        "attempted": 10,
+        "strict_pass": 8,
+        "strict_nonpass": 2
+      },
+      "surface_layout": {
+        "attempted": 40,
+        "strict_pass": 40,
+        "strict_nonpass": 0
+      }
+    },
+    "regrade_or_promotion": false
+  },
+  "nonpasses": [
+    {
+      "id": "C8F-042",
+      "family": "native_interaction",
+      "route": "home",
+      "classification": "observed_keyboard_focus_limitation",
+      "strict_status": "nonpass",
+      "automatic_execution_error": false,
+      "nonpassing_criterion_count": 1,
+      "raw_sha256": "623514569b458bf259abf550c73be186967401f296aed36e623c9e7653ebff27",
+      "grade_promotion": false,
+      "review_note": "Keyboard-opened Search closes successfully, but focus returns to BODY. The fixed usable-control focus requirement fails. Initial focus was also BODY; this is an observed keyboard usability limitation, not established critical accessibility failure."
+    },
+    {
+      "id": "C8F-043",
+      "family": "native_interaction",
+      "route": "chat",
+      "classification": "authored_precondition_conflict",
+      "strict_status": "nonpass",
+      "automatic_execution_error": true,
+      "nonpassing_criterion_count": 1,
+      "raw_sha256": "dddb6bc5b84bd6957765ee8c394071fc38297412b2e78d0666f5eec55ad24a43",
+      "grade_promotion": false,
+      "review_note": "Draft fill times out on the honestly disabled main Chat editor because the default fixture has no ready assistant. This author precondition conflict stays an execution-error nonpass; no draft or submission is credited."
+    },
+    {
+      "id": "C8F-056",
+      "family": "backend_truth",
+      "route": "workflows",
+      "classification": "unmeasured_conditional_gate",
+      "strict_status": "nonpass",
+      "automatic_execution_error": false,
+      "nonpassing_criterion_count": 1,
+      "raw_sha256": "c49c53a0eafac00b9e5886084449759551d307b4f40dbddbffc5dc65ab87e10e",
+      "grade_promotion": false,
+      "review_note": "The original workflow API has no records or attached controller. Empty-state truth passes, but uncertain-write action gates are unmeasured. The fixed conditional criterion remains a nonpass; no controller defect is asserted from absent evidence."
+    }
+  ],
+  "case_outcomes": [
+    {
+      "id": "C8F-001",
+      "family": "surface_layout",
+      "route": "home",
+      "status": "pass",
+      "raw_sha256": "a149f7f47da6d8ecb3f95a122443ddb1ae8dd080ddc6093662aef4cdce3351ad",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-002",
+      "family": "surface_layout",
+      "route": "home",
+      "status": "pass",
+      "raw_sha256": "6ef0c2b75794e4558e4a2825b085698039140aa771a8ed3cc3041f0a8a40a2a1",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-003",
+      "family": "surface_layout",
+      "route": "chat",
+      "status": "pass",
+      "raw_sha256": "f3751e3d6232115032bddc9d7e942912478fcfc60965d4312b3ee14647ecd5fa",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-004",
+      "family": "surface_layout",
+      "route": "chat",
+      "status": "pass",
+      "raw_sha256": "cf971d66351f4de367983e2d6750fc6ed475edb35d8d22151d57fad93bec2b99",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-005",
+      "family": "surface_layout",
+      "route": "voice",
+      "status": "pass",
+      "raw_sha256": "da5ecb52ca9419e544bd2c3502df95724c2c1d00f40ed24c7291989843a84739",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-006",
+      "family": "surface_layout",
+      "route": "voice",
+      "status": "pass",
+      "raw_sha256": "dd3774dfc89f39ec76bad6fcf6164e8f42f8afc32c23ddc3dc86fefd7fccb70a",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-007",
+      "family": "surface_layout",
+      "route": "planner",
+      "status": "pass",
+      "raw_sha256": "46d46d13ba6e52b4bd332d53b2a5c1d149b0bc1a539bb95d5378a7ae4bf639cb",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-008",
+      "family": "surface_layout",
+      "route": "planner",
+      "status": "pass",
+      "raw_sha256": "9d5e69aed2ab2d11352fbd26e69b59955b4339ea9a89b2a50ff8c60bab517f91",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-009",
+      "family": "surface_layout",
+      "route": "workflows",
+      "status": "pass",
+      "raw_sha256": "ac92f66136fd1b6dac45b5d8671c2e4642e701a6b471f982b64f0daa345a2f74",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-010",
+      "family": "surface_layout",
+      "route": "workflows",
+      "status": "pass",
+      "raw_sha256": "1b5c64623e09b6a92d077bda6ad0d52b062fb758ba583cf007abdc8895bec9af",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-011",
+      "family": "surface_layout",
+      "route": "tasks",
+      "status": "pass",
+      "raw_sha256": "d5d48940a817c20b1b30c80a95211b1b3889fb311c3288a80b809c15492501d9",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-012",
+      "family": "surface_layout",
+      "route": "tasks",
+      "status": "pass",
+      "raw_sha256": "8445d698f4ea48c08306f62b9d48940f641ae50c316f726c0784797f9a917288",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-013",
+      "family": "surface_layout",
+      "route": "calendar",
+      "status": "pass",
+      "raw_sha256": "7072202a102dffba959235bbba0a05126e98a571ec2434664f7becb6a7531fe3",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-014",
+      "family": "surface_layout",
+      "route": "calendar",
+      "status": "pass",
+      "raw_sha256": "68352e98bbfcc6255599eb9e305b9c71bf1cd8ab5a585d5fd62b0c939ec41157",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-015",
+      "family": "surface_layout",
+      "route": "projects",
+      "status": "pass",
+      "raw_sha256": "6a0b706df5a27de41688982424bd41e954272db3a604241e0a264c6f8c64b94a",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-016",
+      "family": "surface_layout",
+      "route": "projects",
+      "status": "pass",
+      "raw_sha256": "a74c78b4b2c64cf6a819e6f774df7986b0202900c290e51b41b911104af1df5e",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-017",
+      "family": "surface_layout",
+      "route": "memory",
+      "status": "pass",
+      "raw_sha256": "0b04b9e5b93931a4a76684eeeddd651c4c22ac77f9a99d16be0f32627f0c4408",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-018",
+      "family": "surface_layout",
+      "route": "memory",
+      "status": "pass",
+      "raw_sha256": "f042fc927ce84ae32134b3295e86bbc2f87a18df5dbebf0949fdf87a962af5a0",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-019",
+      "family": "surface_layout",
+      "route": "mission",
+      "status": "pass",
+      "raw_sha256": "dacbb9d1de2c044bee46594dca971e2b5480a87cde15bb06b406e9315c1bbfe8",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-020",
+      "family": "surface_layout",
+      "route": "mission",
+      "status": "pass",
+      "raw_sha256": "62e1403a4a25c9600475b80dceda14631c67a4112418a765425056afe30f3d49",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-021",
+      "family": "surface_layout",
+      "route": "cluster",
+      "status": "pass",
+      "raw_sha256": "3ff743bc5210b9945ef2574dd2abf385db26aaf4839954facd02d462661b2495",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-022",
+      "family": "surface_layout",
+      "route": "cluster",
+      "status": "pass",
+      "raw_sha256": "b17280d2dcf41fa1f362053d105c1b014f4a1638b0be2b1227d3ee1f4641c082",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-023",
+      "family": "surface_layout",
+      "route": "models",
+      "status": "pass",
+      "raw_sha256": "8f0f0f7fe8a1efd71a455d6eb03a1ee56c8cba6bcda76c9eab4e997fd212800a",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-024",
+      "family": "surface_layout",
+      "route": "models",
+      "status": "pass",
+      "raw_sha256": "5dd49d30758ba430f80915b6c0c210aebbb97cb326ee02a660a6d93dcbc26ff0",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-025",
+      "family": "surface_layout",
+      "route": "model-routing",
+      "status": "pass",
+      "raw_sha256": "e4f559cd309ed6af1ecff772dae02158160aa97144b0ac732faec723b06305cb",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-026",
+      "family": "surface_layout",
+      "route": "model-routing",
+      "status": "pass",
+      "raw_sha256": "f8596a8e0fb941129b3d123c1c8c2b44c74c3b843bef8fe53f9f2b1b40f9369c",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-027",
+      "family": "surface_layout",
+      "route": "agents",
+      "status": "pass",
+      "raw_sha256": "04c4e61d3ae41048eca5af29d14917071820aa7997ae7b9e7535d8ff0ea41ad1",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-028",
+      "family": "surface_layout",
+      "route": "agents",
+      "status": "pass",
+      "raw_sha256": "d41f2074ab48bbbdecfa756f4146f8c052e7d6ce6cdcea084c2351afa0a47695",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-029",
+      "family": "surface_layout",
+      "route": "activity",
+      "status": "pass",
+      "raw_sha256": "ec41963dad8f81bccbd8c1d781d0c3767d391f30a06c275b5c7e37996f9d26a2",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-030",
+      "family": "surface_layout",
+      "route": "activity",
+      "status": "pass",
+      "raw_sha256": "579237786f67bc58dc859fbc0e57432e536d7e282565b622254928e0d2c1b90b",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-031",
+      "family": "surface_layout",
+      "route": "screen",
+      "status": "pass",
+      "raw_sha256": "9f9ba875061f9f6040fa78391c267a97248d1a1d8b886cb94c1f9a0842aa8805",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-032",
+      "family": "surface_layout",
+      "route": "screen",
+      "status": "pass",
+      "raw_sha256": "5fa0be6af93e59c06bd51cc94ee3592cea32310e86d126cba80a8139910561f1",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-033",
+      "family": "surface_layout",
+      "route": "notifications",
+      "status": "pass",
+      "raw_sha256": "4a5ecbf4aaaac1b2eb559ca501c46d89a5d937f0695d4cc128e6fc8fe23a03cd",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-034",
+      "family": "surface_layout",
+      "route": "notifications",
+      "status": "pass",
+      "raw_sha256": "f46a45e8f19c2063a05113bc14e405005a3d90315452c48260ab3a6525018ded",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-035",
+      "family": "surface_layout",
+      "route": "settings",
+      "status": "pass",
+      "raw_sha256": "dad542560146e299f82c7bba9b47c94862ae0ba049f916481f6da99becd1d2a8",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-036",
+      "family": "surface_layout",
+      "route": "settings",
+      "status": "pass",
+      "raw_sha256": "605bf24a0ed475b39048368341ccb771c07f7ef9e95287a647d684c160d64532",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-037",
+      "family": "surface_layout",
+      "route": "mcp",
+      "status": "pass",
+      "raw_sha256": "99bd33ada4d3bf27281be84a4996f8de735606d7297ba37f6d5137be730648ef",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-038",
+      "family": "surface_layout",
+      "route": "mcp",
+      "status": "pass",
+      "raw_sha256": "5fbcf49a6400744ae3d1f33d1258e8f38743246b3260e1cda62c04008a292c9a",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-039",
+      "family": "surface_layout",
+      "route": "mini",
+      "status": "pass",
+      "raw_sha256": "81a2774172f59566f0ccb0718e9f8ae0bfe141c4852afcc0aa2b31ee09ea88f8",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-040",
+      "family": "surface_layout",
+      "route": "mini",
+      "status": "pass",
+      "raw_sha256": "88c2dedd5ae2c0c49ef8dd99d37571ab7033651b00ad6c89681c177652617203",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-041",
+      "family": "native_interaction",
+      "route": "home",
+      "status": "pass",
+      "raw_sha256": "17d89ebc44025d31cff954f68280c1aa8849a11c1013e9e3599e5468d1290748",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-042",
+      "family": "native_interaction",
+      "route": "home",
+      "status": "nonpass",
+      "raw_sha256": "623514569b458bf259abf550c73be186967401f296aed36e623c9e7653ebff27",
+      "classification": "observed_keyboard_focus_limitation"
+    },
+    {
+      "id": "C8F-043",
+      "family": "native_interaction",
+      "route": "chat",
+      "status": "nonpass",
+      "raw_sha256": "dddb6bc5b84bd6957765ee8c394071fc38297412b2e78d0666f5eec55ad24a43",
+      "classification": "authored_precondition_conflict"
+    },
+    {
+      "id": "C8F-044",
+      "family": "native_interaction",
+      "route": "settings",
+      "status": "pass",
+      "raw_sha256": "fe9907c03c8858e41833f169f71f86a202d61edd30878ce028d49b5e8b31550d",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-045",
+      "family": "native_interaction",
+      "route": "settings",
+      "status": "pass",
+      "raw_sha256": "fc4436cd2fd0bb3a37e2c487261220ce62b059e427d31e6e47a92d422fcd308d",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-046",
+      "family": "native_interaction",
+      "route": "mission",
+      "status": "pass",
+      "raw_sha256": "34aaa65b03ccd2ee7ef4aeff7793ff3a01df98d105836215a0a1e02eab5bf12e",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-047",
+      "family": "native_interaction",
+      "route": "voice",
+      "status": "pass",
+      "raw_sha256": "5af0755d205913555e8d4c26ddf04adf5aa905cd97f5ac428b937e7b82e8ba64",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-048",
+      "family": "native_interaction",
+      "route": "home",
+      "status": "pass",
+      "raw_sha256": "89db40c930acf1128de4ada33c9e9c2f96d45e3e777bc47f185c6f722e6a3743",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-049",
+      "family": "native_interaction",
+      "route": "home",
+      "status": "pass",
+      "raw_sha256": "8ff72a2e189f954b8f8854e7dcb15df1d6e7cc7ac4c15a81f789e3de33b5e6da",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-050",
+      "family": "native_interaction",
+      "route": "mini",
+      "status": "pass",
+      "raw_sha256": "6588d5943ea456a7eee8066f6a45f609a5941a162b1235a2a01438004938aae0",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-051",
+      "family": "backend_truth",
+      "route": "screen",
+      "status": "pass",
+      "raw_sha256": "3cabd28ee967c021925f4516f7a6c914529efb5b8d6a2427cbe002e70e5fc969",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-052",
+      "family": "backend_truth",
+      "route": "cluster",
+      "status": "pass",
+      "raw_sha256": "5ba7b4fa20ee3367b1f769a7859ddefe97771ed18d6593dc7a6fb354406f4097",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-053",
+      "family": "backend_truth",
+      "route": "models",
+      "status": "pass",
+      "raw_sha256": "b7347a9e9110814be934737cd59c9e34107389ecfa2983d58372af0adf704ef6",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-054",
+      "family": "backend_truth",
+      "route": "model-routing",
+      "status": "pass",
+      "raw_sha256": "c8260e1cedf71430276e91ced239ac64f04fa3f15f83a15c7db4de047bcd47c1",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-055",
+      "family": "backend_truth",
+      "route": "voice",
+      "status": "pass",
+      "raw_sha256": "fdbd34565abdb114325743b82e91e8b3eb38aaef1e08581eb4d1691fb5a966b4",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-056",
+      "family": "backend_truth",
+      "route": "workflows",
+      "status": "nonpass",
+      "raw_sha256": "c49c53a0eafac00b9e5886084449759551d307b4f40dbddbffc5dc65ab87e10e",
+      "classification": "unmeasured_conditional_gate"
+    },
+    {
+      "id": "C8F-057",
+      "family": "backend_truth",
+      "route": "mcp",
+      "status": "pass",
+      "raw_sha256": "4810227ac456c77833ddeb2683083f58bfd3f000a538502d2ff190cf89d51568",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-058",
+      "family": "backend_truth",
+      "route": "calendar",
+      "status": "pass",
+      "raw_sha256": "8bf5e337cb3bf771cd367478fab187ba6619fada4684839a7ef50513546f4d65",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-059",
+      "family": "backend_truth",
+      "route": "mission",
+      "status": "pass",
+      "raw_sha256": "28d6d04cdbd5177d6a4457bb3701ba12ec82e003667562285ae34031ff9090d4",
+      "classification": "measured_scoped_outcome"
+    },
+    {
+      "id": "C8F-060",
+      "family": "backend_truth",
+      "route": "home",
+      "status": "pass",
+      "raw_sha256": "e98c550d15e05d7c7f4a004a7fcaca294a839e092e355796a9db66db79e8c6b6",
+      "classification": "measured_scoped_outcome"
+    }
+  ],
+  "visual_scores": {
+    "path": "docs/campaign8/FINAL_SCORES.json",
+    "sha256": "7723e73395d0461be1682f71c4b365b04954933510a64a1a0e448f3dac6f81b8",
+    "overall": 8.7583,
+    "minimum_screen": 8.715,
+    "minimum_typography": 8.6,
+    "maximum_template": 1.4,
+    "accepted_surfaces": 20,
+    "denominator": 20,
+    "visual_thresholds_met": true,
+    "fresh_current_bundle": true
+  },
+  "current_control_inventory": {
+    "path": "docs/campaign8/static-controls-final-cycle3/STATIC_SCORECARD.json",
+    "sha256": "ec44334596f102d3cc5f29e973264993410e078aa06783800009b9e253cb4945",
+    "source_slots": 350,
+    "scoped_pass": 282,
+    "blocked": 24,
+    "not_implemented": 1,
+    "not_run": 43,
+    "eligible_fraction": null,
+    "final60_and_development350_are_separate_denominators": true
+  },
+  "acceptance": {
+    "visual_thresholds": true,
+    "all_private_functional_cases_pass": false,
+    "every_implemented_control_exhaustively_verified": false,
+    "complete_campaign_acceptance": false,
+    "no_critical_layout_defect_observed": true,
+    "critical_accessibility_absence_exhaustively_proved": false,
+    "no_fake_telemetry_in_observed_default_states": true,
+    "all_real_Windows_scaling_levels_tested": false
+  },
+  "owner_preservation": {
+    "whitelisted_owner_service_pid_create_command_parent_hashes_unchanged": true,
+    "owner_databases_never_mounted_by_fixtures": true,
+    "owner_database_byte_equality": "NOT_MEASURED: no initial database hash",
+    "all_owner_database_writes_independently_audited": false,
+    "original_read_only_resource_observation_is_not_owner_process_control": true
+  },
+  "cleanup": {
+    "owned_native_closed": true,
+    "native_exit_code": 0,
+    "backend_signed_shutdown": {
+      "path": "data/campaign8-verifier/final-backend/SIGNED_SHUTDOWN.json",
+      "sha256": "e424e1a8053993b4d35fade3cf85e377ded12a10848d3d4d9214740f1354c449",
+      "status": 202
+    },
+    "backend_closed": {
+      "path": "data/campaign8-verifier/final-backend/CLOSED.json",
+      "sha256": "5dd7ff1e92ba45b0c8f9885194bf600a3dd4e61478e6de5761d5afabcca5303b",
+      "http_and_chat_closed": true
+    },
+    "exact_owned_backend_process_absent": true,
+    "owner_services_not_stopped": true
+  },
+  "physical_audio": "BLOCKED: user microphone and speakers unavailable; no activation/capture/playback",
+  "screen_capture_and_vision": "NOT_IMPLEMENTED in original HANNI pipeline; only status/eligibility and owned app QA screenshots measured",
+  "development_real_generation_scope": {
+    "actual_original_guarded_POSTs": 3,
+    "purpose": "Native response display fidelity and isolated history/token lifecycle",
+    "semantic_benchmark": false,
+    "physical_audio": false,
+    "final_holdout_requests": 0
+  },
+  "limitations": [
+    "Default final fixture cannot validate uncertain workflow gates or positive provider/MCP/model-serving states; strict missing evidence remains nonpass.",
+    "Zero original HTTP mutations in this final collection is not a blanket zero-SQL-write or general authority guarantee: original temporary telemetry may persist notifications.",
+    "Final native resize observes app minimum-size clamping and actual125%WindowsDPI only; no other OS scaling setting was changed.",
+    "350 static source slots are not a count of all concrete reachable UI states or runtime-defined controls.",
+    "Default final screenshots do not inherit populated historical pixels or mocked/live integration successes."
+  ]
+}

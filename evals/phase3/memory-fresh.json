@@ -1,0 +1,34 @@
+[
+  {
+    "id": "fresh-save",
+    "prompt": "Remember my preferred code editor is Sublime Text.",
+    "memory_value": "Sublime Text"
+  },
+  {
+    "id": "fresh-natural-recall",
+    "prompt": "Which IDE do I prefer?",
+    "contains": "Sublime Text"
+  },
+  {
+    "id": "fresh-correction",
+    "prompt": "Remember my preferred code editor is Emacs.",
+    "memory_value": "Emacs"
+  },
+  {
+    "id": "fresh-corrected-recall",
+    "prompt": "Which editor is my preference?",
+    "contains": "Emacs",
+    "absent": "Sublime Text"
+  },
+  {
+    "id": "fresh-delete",
+    "prompt": "Forget my preferred code editor.",
+    "deleted": true
+  },
+  {
+    "id": "fresh-post-delete",
+    "prompt": "What do you remember about my preferred code editor?",
+    "deleted": true,
+    "absent": "Emacs"
+  }
+]

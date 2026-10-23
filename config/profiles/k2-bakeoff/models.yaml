@@ -1,0 +1,33 @@
+idle_unload_seconds: 0
+ram_reserve_mb: 3072
+vram_reserve_mb: 1024
+critical_ram_percent: 90
+models:
+- id: k2-horizon-3.7b
+  role: supervisor
+  backend: llama.cpp
+  model_file: K2-Horizon-4B-Q4_K_M.gguf
+  vision_projector: mmproj-Qwen3.5-4B-BF16.gguf
+  hf_repo: IFM/K2-Horizon-3.7B-GGUF
+  quantization: Q4_K_M
+  api_model: supervisor
+  endpoint: http://127.0.0.1:8080/v1
+  keep_loaded: true
+  context_length: 16384
+  parallel: 1
+  kv_key_type: q8_0
+  kv_value_type: q8_0
+  ram_budget_mb: 2048
+  vram_budget_mb: 4600
+  gpu_layers: 99
+  gpu_selection: smallest_8gb
+  gpu_preference: 0
+  max_tokens: 768
+  temperature: 0.35
+  top_p: 0.9
+  thinking_enabled: false
+  jinja_enabled: true
+  mmap: true
+  no_host: false
+  request_timeout_seconds: 120
+  health_timeout_seconds: 3

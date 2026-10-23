@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-10T12:05:20.551782+00:00",
+  "status": "held_production_ready_with_one_retained_known_semantic_failure",
+  "source_held": true,
+  "production_sources": {
+    "src/hanni/speech/microphone.py": "96d7359f9e6c92843e6ed34e7202ed6b69ffd7c8f5e4006c7f7a5d4e613e4cd2",
+    "src/hanni/speech/stt.py": "b8e107a5f5b92a0141e993d2bd0245d3cdd925eea35c672824445f8509bbc41c",
+    "src/hanni/speech/pipeline.py": "93fe0401c20257fe48a90556ddb341d8acee55751d8b3b8b638b788ca198e5dd",
+    "src/hanni/speech/live.py": "9290302f0d97a50de79ae3f3c571b416992193dee77e5b2cfd5b59bb1d03424a",
+    "src/hanni/dashboard/voice.py": "9fd233e68b612bd4e942ed92bf8263c18502fd21d235395f07e10668d9ebd563"
+  },
+  "original_source_archive": {
+    "manifest": "data/campaign7-voice/original-source/manifest.json",
+    "manifest_sha256": "aebe50c62854688410b9b19831b60f3910a489bafabc5db6fe4f3c3b75ebc432",
+    "zip": "data/campaign7-voice/original-source/source.zip",
+    "zip_sha256": "721a95719d2040bea2d3229cdb92380b7f1c31264d855ac3f334abeb24c41b41",
+    "original_scoped_files": 40
+  },
+  "strict_current_suite_accounted": {
+    "checks": 169,
+    "passed": 168,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 2.906,
+    "expected_process_exit": 1,
+    "observed_process_exit": 1
+  },
+  "strict_current_listed_nodes": {
+    "nodes": 167,
+    "passed": 166,
+    "failed": 1,
+    "additional_passing_subtests": 2
+  },
+  "independent_current": {
+    "artifact": "data/campaign7-verifier/independent-final-source.xml",
+    "sha256": "aeab54faec4de0cbdec1af880327fcff5f18c15efbb9071a82cbefa82f44ab90",
+    "suite_accounted_checks": 33,
+    "suite_passed": 32,
+    "suite_failed": 1,
+    "suite_errors": 0,
+    "suite_skipped_including_xfail": 0,
+    "seconds": 0.38
+  },
+  "known_failure": "test_preparing_synthesis_is_not_observed_speech_playback",
+  "review_path": "docs/campaign7/VOICE_REVIEW.md",
+  "review_sha256": "0e0c6ca9dc2e1323dd57a2467c6370f2511516ea5104d1766f3db8ddc4e98c79",
+  "evidence_path": "docs/campaign7/VOICE_EVIDENCE.json",
+  "evidence_sha256": "4b62c4940040d57ec5a694832439d6467798254565850e301b3faa6525eede05",
+  "private_final_inputs_oracles_accessed": false,
+  "private_final_outcomes_included": false,
+  "actual_acoustic_model_quality_claimed": false,
+  "actual_microphone_speaker_test_claimed": false
+}

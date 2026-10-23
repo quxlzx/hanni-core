@@ -1,0 +1,4284 @@
+{
+  "scope": "READ ONLY DEVELOPMENT AUDIT; source mentions are not execution proof",
+  "rows": [
+    {
+      "capability": "app.list_installed",
+      "domain": "applications",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py"
+      ],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-241",
+        "DIAGNOSTICS-242",
+        "DIAGNOSTICS-243",
+        "DIAGNOSTICS-244",
+        "DIAGNOSTICS-245",
+        "DIAGNOSTICS-246",
+        "DIAGNOSTICS-247",
+        "DIAGNOSTICS-248",
+        "DIAGNOSTICS-249",
+        "DIAGNOSTICS-250",
+        "PROCESS-SYSTEM-026",
+        "PROCESS-SYSTEM-027",
+        "PROCESS-SYSTEM-028",
+        "PROCESS-SYSTEM-029",
+        "PROCESS-SYSTEM-030",
+        "REGISTRY-app.list_installed-1",
+        "REGISTRY-app.list_installed-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-APP-LIST_INSTALLED-01",
+        "COV-APP-LIST_INSTALLED-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "app.open",
+      "domain": "applications",
+      "risk": "low_risk_write",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_capability_metadata.py",
+        "tests\\unit\\test_completion_ledger.py",
+        "tests\\unit\\test_mcp_session.py",
+        "tests\\unit\\test_real_world_reliability.py",
+        "tests\\unit\\test_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-app.open-1",
+        "REGISTRY-app.open-2",
+        "HARDENING-012",
+        "VR1-008"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-APP-OPEN-01",
+        "COV-APP-OPEN-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "APP-001",
+        "APP-002",
+        "APP-003",
+        "APP-009",
+        "APP-014",
+        "APP-015",
+        "MIX-005",
+        "MIX-008"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "archive.list",
+      "domain": "files",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-archive.list-1",
+        "REGISTRY-archive.list-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-ARCHIVE-LIST-01",
+        "COV-ARCHIVE-LIST-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "archive.unzip",
+      "domain": "files",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-archive.unzip-1",
+        "REGISTRY-archive.unzip-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "archive.zip",
+      "domain": "files",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-archive.zip-1",
+        "REGISTRY-archive.zip-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "audio.mute",
+      "domain": "media",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-audio.mute-1",
+        "REGISTRY-audio.mute-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "audio.set_volume",
+      "domain": "media",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-audio.set_volume-1",
+        "REGISTRY-audio.set_volume-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "audio.status",
+      "domain": "media",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-211",
+        "DIAGNOSTICS-212",
+        "DIAGNOSTICS-213",
+        "DIAGNOSTICS-214",
+        "DIAGNOSTICS-215",
+        "DIAGNOSTICS-216",
+        "DIAGNOSTICS-217",
+        "DIAGNOSTICS-218",
+        "DIAGNOSTICS-219",
+        "DIAGNOSTICS-220",
+        "REGISTRY-audio.status-1",
+        "REGISTRY-audio.status-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-AUDIO-STATUS-01",
+        "COV-AUDIO-STATUS-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "browser.open_url",
+      "domain": "applications",
+      "risk": "low_risk_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-browser.open_url-1",
+        "REGISTRY-browser.open_url-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "calc.evaluate",
+      "domain": "utilities",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DATE-TIME-031",
+        "DATE-TIME-032",
+        "DATE-TIME-033",
+        "DATE-TIME-034",
+        "DATE-TIME-035",
+        "REGISTRY-calc.evaluate-1",
+        "REGISTRY-calc.evaluate-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-CALC-EVALUATE-01",
+        "COV-CALC-EVALUATE-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "clipboard.read",
+      "domain": "desktop",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-clipboard.read-1",
+        "REGISTRY-clipboard.read-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-CLIPBOARD-READ-01",
+        "COV-CLIPBOARD-READ-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "clipboard.write",
+      "domain": "desktop",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-clipboard.write-1",
+        "REGISTRY-clipboard.write-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "device.audio",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-153",
+        "DIAGNOSTICS-154",
+        "REGISTRY-device.audio-1",
+        "REGISTRY-device.audio-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-DEVICE-AUDIO-01",
+        "COV-DEVICE-AUDIO-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "device.bluetooth",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-151",
+        "DIAGNOSTICS-152",
+        "REGISTRY-device.bluetooth-1",
+        "REGISTRY-device.bluetooth-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-DEVICE-BLUETOOTH-01",
+        "COV-DEVICE-BLUETOOTH-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "device.disk_health",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-081",
+        "DIAGNOSTICS-082",
+        "DIAGNOSTICS-083",
+        "DIAGNOSTICS-084",
+        "DIAGNOSTICS-085",
+        "DIAGNOSTICS-086",
+        "DIAGNOSTICS-087",
+        "DIAGNOSTICS-088",
+        "DIAGNOSTICS-089",
+        "DIAGNOSTICS-090",
+        "REGISTRY-device.disk_health-1",
+        "REGISTRY-device.disk_health-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-DEVICE-DISK_HEALTH-01",
+        "COV-DEVICE-DISK_HEALTH-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "SYS-019"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "device.printers",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-157",
+        "DIAGNOSTICS-158",
+        "REGISTRY-device.printers-1",
+        "REGISTRY-device.printers-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-DEVICE-PRINTERS-01",
+        "COV-DEVICE-PRINTERS-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "device.usb",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-155",
+        "DIAGNOSTICS-156",
+        "REGISTRY-device.usb-1",
+        "REGISTRY-device.usb-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-DEVICE-USB-01",
+        "COV-DEVICE-USB-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "disk.cleanup_temp",
+      "domain": "computer",
+      "risk": "destructive",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-disk.cleanup_temp-1",
+        "REGISTRY-disk.cleanup_temp-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "disk.folder_size",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-disk.folder_size-1",
+        "REGISTRY-disk.folder_size-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-DISK-FOLDER_SIZE-01",
+        "COV-DISK-FOLDER_SIZE-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "FILE-004"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "disk.free_space",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-071",
+        "DIAGNOSTICS-076",
+        "DIAGNOSTICS-080",
+        "MIXED-DOMAIN-021",
+        "MIXED-DOMAIN-022",
+        "MIXED-DOMAIN-023",
+        "MIXED-DOMAIN-024",
+        "MIXED-DOMAIN-025",
+        "SLANG-TYPOS-021",
+        "SLANG-TYPOS-022",
+        "SLANG-TYPOS-023",
+        "SLANG-TYPOS-024",
+        "SLANG-TYPOS-025",
+        "REGISTRY-disk.free_space-1",
+        "REGISTRY-disk.free_space-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-DISK-FREE_SPACE-01",
+        "COV-DISK-FREE_SPACE-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "SYS-006",
+        "FILE-009",
+        "MIX-006"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "disk.largest_files",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py"
+      ],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-073",
+        "DIAGNOSTICS-077",
+        "REGISTRY-disk.largest_files-1",
+        "REGISTRY-disk.largest_files-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-DISK-LARGEST_FILES-01",
+        "COV-DISK-LARGEST_FILES-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "FILE-005"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "disk.largest_folders",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-074",
+        "DIAGNOSTICS-075",
+        "DIAGNOSTICS-079",
+        "REGISTRY-disk.largest_folders-1",
+        "REGISTRY-disk.largest_folders-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-DISK-LARGEST_FOLDERS-01",
+        "COV-DISK-LARGEST_FOLDERS-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "disk.recycle_bin_size",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-181",
+        "DIAGNOSTICS-182",
+        "DIAGNOSTICS-183",
+        "DIAGNOSTICS-184",
+        "DIAGNOSTICS-185",
+        "DIAGNOSTICS-186",
+        "DIAGNOSTICS-187",
+        "DIAGNOSTICS-188",
+        "DIAGNOSTICS-189",
+        "DIAGNOSTICS-190",
+        "REGISTRY-disk.recycle_bin_size-1",
+        "REGISTRY-disk.recycle_bin_size-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-DISK-RECYCLE_BIN_SIZE-01",
+        "COV-DISK-RECYCLE_BIN_SIZE-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "FILE-010"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "disk.usage",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_real_world_reliability.py"
+      ],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-072",
+        "DIAGNOSTICS-078",
+        "REGISTRY-disk.usage-1",
+        "REGISTRY-disk.usage-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-DISK-USAGE-01",
+        "COV-DISK-USAGE-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "display.brightness",
+      "domain": "desktop",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-display.brightness-1",
+        "REGISTRY-display.brightness-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "display.info",
+      "domain": "desktop",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-159",
+        "DIAGNOSTICS-160",
+        "REGISTRY-display.info-1",
+        "REGISTRY-display.info-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-DISPLAY-INFO-01",
+        "COV-DISPLAY-INFO-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "email.read",
+      "domain": "communications",
+      "risk": "credential_sensitive",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_capability_metadata.py",
+        "tests\\unit\\test_email_capability.py"
+      ],
+      "historical_routing_case_ids": [
+        "HARDENING-EMAIL-003",
+        "HARDENING-EMAIL-004"
+      ],
+      "metadata_menu_probe_ids": [
+        "EMAIL-CAPABILITY-003",
+        "EMAIL-CAPABILITY-004"
+      ],
+      "historical_llm_scenario_ids": [
+        "EMAIL-CAPABILITY-003",
+        "EMAIL-CAPABILITY-004"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "email.search",
+      "domain": "communications",
+      "risk": "credential_sensitive",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_email_capability.py",
+        "tests\\unit\\test_email_precision.py",
+        "tests\\unit\\test_email_workflow_reliability.py"
+      ],
+      "historical_routing_case_ids": [
+        "HANNI-MODEL-031",
+        "HANNI-MODEL-032",
+        "HANNI-MODEL-033",
+        "HANNI-MODEL-034",
+        "HANNI-MODEL-035",
+        "HANNI-MODEL-036",
+        "HANNI-MODEL-037",
+        "HANNI-MODEL-040",
+        "HARDENING-EMAIL-001",
+        "HARDENING-EMAIL-002"
+      ],
+      "metadata_menu_probe_ids": [
+        "EMAIL-CAPABILITY-001",
+        "EMAIL-CAPABILITY-002"
+      ],
+      "historical_llm_scenario_ids": [
+        "EMAIL-CAPABILITY-001",
+        "EMAIL-CAPABILITY-002"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "env.get",
+      "domain": "development",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-env.get-1",
+        "REGISTRY-env.get-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-ENV-GET-01",
+        "COV-ENV-GET-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "env.list",
+      "domain": "development",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-env.list-1",
+        "REGISTRY-env.list-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-ENV-LIST-01",
+        "COV-ENV-LIST-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "env.path",
+      "domain": "development",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "PROCESS-SYSTEM-036",
+        "PROCESS-SYSTEM-037",
+        "PROCESS-SYSTEM-038",
+        "PROCESS-SYSTEM-039",
+        "PROCESS-SYSTEM-040",
+        "REGISTRY-env.path-1",
+        "REGISTRY-env.path-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-ENV-PATH-01",
+        "COV-ENV-PATH-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "env.user_folders",
+      "domain": "development",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-env.user_folders-1",
+        "REGISTRY-env.user_folders-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-ENV-USER_FOLDERS-01",
+        "COV-ENV-USER_FOLDERS-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "env.which",
+      "domain": "development",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "PROCESS-SYSTEM-031",
+        "PROCESS-SYSTEM-032",
+        "PROCESS-SYSTEM-033",
+        "PROCESS-SYSTEM-034",
+        "PROCESS-SYSTEM-035",
+        "REGISTRY-env.which-1",
+        "REGISTRY-env.which-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-ENV-WHICH-01",
+        "COV-ENV-WHICH-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.compare",
+      "domain": "files",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py"
+      ],
+      "historical_routing_case_ids": [
+        "FILES-031",
+        "FILES-032",
+        "FILES-033",
+        "FILES-034",
+        "FILES-035",
+        "FILES-036",
+        "FILES-037",
+        "FILES-038",
+        "FILES-039",
+        "FILES-040",
+        "REGISTRY-file.compare-1",
+        "REGISTRY-file.compare-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-FILE-COMPARE-01",
+        "COV-FILE-COMPARE-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.composition",
+      "domain": "files",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-file.composition-1",
+        "REGISTRY-file.composition-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-FILE-COMPOSITION-01",
+        "COV-FILE-COMPOSITION-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.copy",
+      "domain": "files",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-file.copy-1",
+        "REGISTRY-file.copy-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.delete",
+      "domain": "files",
+      "risk": "destructive",
+      "model_facing": false,
+      "unit_source_mentions": [
+        "tests\\unit\\test_capability_metadata.py",
+        "tests\\unit\\test_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-file.delete-1",
+        "REGISTRY-file.delete-2",
+        "HARDENING-034"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.duplicates",
+      "domain": "files",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "FILES-051",
+        "FILES-052",
+        "FILES-053",
+        "FILES-054",
+        "FILES-055",
+        "FILES-056",
+        "FILES-057",
+        "FILES-058",
+        "FILES-059",
+        "FILES-060",
+        "REGISTRY-file.duplicates-1",
+        "REGISTRY-file.duplicates-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-FILE-DUPLICATES-01",
+        "COV-FILE-DUPLICATES-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "FILE-008"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.empty_folders",
+      "domain": "files",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-file.empty_folders-1",
+        "REGISTRY-file.empty_folders-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-FILE-EMPTY_FOLDERS-01",
+        "COV-FILE-EMPTY_FOLDERS-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.grep",
+      "domain": "files",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py"
+      ],
+      "historical_routing_case_ids": [
+        "FILES-011",
+        "FILES-012",
+        "FILES-013",
+        "FILES-014",
+        "FILES-015",
+        "FILES-016",
+        "FILES-017",
+        "FILES-018",
+        "FILES-019",
+        "FILES-020",
+        "REGISTRY-file.grep-1",
+        "REGISTRY-file.grep-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-FILE-GREP-01",
+        "COV-FILE-GREP-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.head",
+      "domain": "files",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-file.head-1",
+        "REGISTRY-file.head-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-FILE-HEAD-01",
+        "COV-FILE-HEAD-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.list_dir",
+      "domain": "files",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py",
+        "tests\\unit\\test_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "FILES-001",
+        "FILES-002",
+        "FILES-003",
+        "FILES-004",
+        "FILES-005",
+        "FILES-006",
+        "FILES-007",
+        "FILES-008",
+        "FILES-009",
+        "FILES-010",
+        "REGISTRY-file.list_dir-1",
+        "REGISTRY-file.list_dir-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-FILE-LIST_DIR-01",
+        "COV-FILE-LIST_DIR-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "FILE-006"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.locate",
+      "domain": "files",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py",
+        "tests\\unit\\test_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-file.locate-1",
+        "REGISTRY-file.locate-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-FILE-LOCATE-01",
+        "COV-FILE-LOCATE-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.mkdir",
+      "domain": "files",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [
+        "tests\\unit\\test_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-file.mkdir-1",
+        "REGISTRY-file.mkdir-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.move",
+      "domain": "files",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-file.move-1",
+        "REGISTRY-file.move-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.open",
+      "domain": "files",
+      "risk": "low_risk_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-file.open-1",
+        "REGISTRY-file.open-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.read",
+      "domain": "files",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-file.read-1",
+        "REGISTRY-file.read-2",
+        "HARDENING-009"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-FILE-READ-01",
+        "COV-FILE-READ-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.recent",
+      "domain": "files",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "FILES-041",
+        "FILES-042",
+        "FILES-043",
+        "FILES-044",
+        "FILES-045",
+        "FILES-046",
+        "FILES-047",
+        "FILES-048",
+        "FILES-049",
+        "FILES-050",
+        "REGISTRY-file.recent-1",
+        "REGISTRY-file.recent-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-FILE-RECENT-01",
+        "COV-FILE-RECENT-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "FILE-003"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.search",
+      "domain": "files",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py",
+        "tests\\unit\\test_real_world_reliability.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-file.search-1",
+        "REGISTRY-file.search-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-FILE-SEARCH-01",
+        "COV-FILE-SEARCH-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "FILE-001",
+        "FILE-002",
+        "MIX-008"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.stat",
+      "domain": "files",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-file.stat-1",
+        "REGISTRY-file.stat-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-FILE-STAT-01",
+        "COV-FILE-STAT-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.tail",
+      "domain": "files",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py"
+      ],
+      "historical_routing_case_ids": [
+        "FILES-021",
+        "FILES-022",
+        "FILES-023",
+        "FILES-024",
+        "FILES-025",
+        "FILES-026",
+        "FILES-027",
+        "FILES-028",
+        "FILES-029",
+        "FILES-030",
+        "REGISTRY-file.tail-1",
+        "REGISTRY-file.tail-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-FILE-TAIL-01",
+        "COV-FILE-TAIL-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "file.write",
+      "domain": "files",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [
+        "tests\\unit\\test_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-file.write-1",
+        "REGISTRY-file.write-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "folder.open",
+      "domain": "files",
+      "risk": "low_risk_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-folder.open-1",
+        "REGISTRY-folder.open-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "git.branches",
+      "domain": "development",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-git.branches-1",
+        "REGISTRY-git.branches-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-GIT-BRANCHES-01",
+        "COV-GIT-BRANCHES-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "git.diff",
+      "domain": "development",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-git.diff-1",
+        "REGISTRY-git.diff-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-GIT-DIFF-01",
+        "COV-GIT-DIFF-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "git.log",
+      "domain": "development",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-git.log-1",
+        "REGISTRY-git.log-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-GIT-LOG-01",
+        "COV-GIT-LOG-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "git.status",
+      "domain": "development",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-git.status-1",
+        "REGISTRY-git.status-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-GIT-STATUS-01",
+        "COV-GIT-STATUS-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "gmail.read",
+      "domain": "communications",
+      "risk": "credential_sensitive",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_capability_metadata.py",
+        "tests\\unit\\test_google_access.py",
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "HANNI-MODEL-038",
+        "HANNI-MODEL-039",
+        "REGISTRY-gmail.read-1",
+        "REGISTRY-gmail.read-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-GMAIL-READ-01",
+        "COV-GMAIL-READ-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "gmail.search",
+      "domain": "communications",
+      "risk": "credential_sensitive",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_google_access.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-gmail.search-1",
+        "REGISTRY-gmail.search-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-GMAIL-SEARCH-01",
+        "COV-GMAIL-SEARCH-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.accounts",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "HANNI-MODEL-026",
+        "HANNI-MODEL-027",
+        "HANNI-MODEL-028",
+        "HANNI-MODEL-029",
+        "HANNI-MODEL-030",
+        "REGISTRY-google.accounts-1",
+        "REGISTRY-google.accounts-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-GOOGLE-ACCOUNTS-01",
+        "COV-GOOGLE-ACCOUNTS-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.calendar.availability",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-AVAILABILITY-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-AVAILABILITY-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-AVAILABILITY-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-AVAILABILITY-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-AVAILABILITY-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-AVAILABILITY-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.calendar.create",
+      "domain": "productivity",
+      "risk": "sensitive_write",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-CREATE-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-CREATE-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-CREATE-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-CREATE-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-CREATE-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-CREATE-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.calendar.delete",
+      "domain": "productivity",
+      "risk": "destructive",
+      "model_facing": false,
+      "unit_source_mentions": [
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-DELETE-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-DELETE-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.calendar.events",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_dashboard_gateway.py",
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-EVENTS-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-EVENTS-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-EVENTS-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-EVENTS-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-EVENTS-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-EVENTS-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.calendar.list_calendars",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-LIST_CALENDARS-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-LIST_CALENDARS-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-LIST_CALENDARS-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-LIST_CALENDARS-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-LIST_CALENDARS-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-LIST_CALENDARS-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.calendar.next",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-NEXT-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-NEXT-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-NEXT-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-NEXT-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-NEXT-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-NEXT-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.calendar.read",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-READ-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-READ-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-READ-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-READ-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-READ-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-READ-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.calendar.update",
+      "domain": "productivity",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-UPDATE-1",
+        "GOOGLE-LAYER-GOOGLE-CALENDAR-UPDATE-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.docs.read",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-DOCS-READ-1",
+        "GOOGLE-LAYER-GOOGLE-DOCS-READ-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-DOCS-READ-1",
+        "GOOGLE-LAYER-GOOGLE-DOCS-READ-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-DOCS-READ-1",
+        "GOOGLE-LAYER-GOOGLE-DOCS-READ-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.drive.list",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-DRIVE-LIST-1",
+        "GOOGLE-LAYER-GOOGLE-DRIVE-LIST-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-DRIVE-LIST-1",
+        "GOOGLE-LAYER-GOOGLE-DRIVE-LIST-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-DRIVE-LIST-1",
+        "GOOGLE-LAYER-GOOGLE-DRIVE-LIST-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.drive.metadata",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-DRIVE-METADATA-1",
+        "GOOGLE-LAYER-GOOGLE-DRIVE-METADATA-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-DRIVE-METADATA-1",
+        "GOOGLE-LAYER-GOOGLE-DRIVE-METADATA-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-DRIVE-METADATA-1",
+        "GOOGLE-LAYER-GOOGLE-DRIVE-METADATA-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.drive.recent",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-DRIVE-RECENT-1",
+        "GOOGLE-LAYER-GOOGLE-DRIVE-RECENT-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-DRIVE-RECENT-1",
+        "GOOGLE-LAYER-GOOGLE-DRIVE-RECENT-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-DRIVE-RECENT-1",
+        "GOOGLE-LAYER-GOOGLE-DRIVE-RECENT-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.drive.search",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-DRIVE-SEARCH-1",
+        "GOOGLE-LAYER-GOOGLE-DRIVE-SEARCH-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-DRIVE-SEARCH-1",
+        "GOOGLE-LAYER-GOOGLE-DRIVE-SEARCH-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-DRIVE-SEARCH-1",
+        "GOOGLE-LAYER-GOOGLE-DRIVE-SEARCH-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.gmail.read",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-GMAIL-READ-1",
+        "GOOGLE-LAYER-GOOGLE-GMAIL-READ-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-GMAIL-READ-1",
+        "GOOGLE-LAYER-GOOGLE-GMAIL-READ-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-GMAIL-READ-1",
+        "GOOGLE-LAYER-GOOGLE-GMAIL-READ-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.gmail.recent",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-GMAIL-RECENT-1",
+        "GOOGLE-LAYER-GOOGLE-GMAIL-RECENT-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-GMAIL-RECENT-1",
+        "GOOGLE-LAYER-GOOGLE-GMAIL-RECENT-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-GMAIL-RECENT-1",
+        "GOOGLE-LAYER-GOOGLE-GMAIL-RECENT-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.gmail.search",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-GMAIL-SEARCH-1",
+        "GOOGLE-LAYER-GOOGLE-GMAIL-SEARCH-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-GMAIL-SEARCH-1",
+        "GOOGLE-LAYER-GOOGLE-GMAIL-SEARCH-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-GMAIL-SEARCH-1",
+        "GOOGLE-LAYER-GOOGLE-GMAIL-SEARCH-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.gmail.thread",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-GMAIL-THREAD-1",
+        "GOOGLE-LAYER-GOOGLE-GMAIL-THREAD-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-GMAIL-THREAD-1",
+        "GOOGLE-LAYER-GOOGLE-GMAIL-THREAD-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-GMAIL-THREAD-1",
+        "GOOGLE-LAYER-GOOGLE-GMAIL-THREAD-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.tasks.complete",
+      "domain": "productivity",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-TASKS-COMPLETE-1",
+        "GOOGLE-LAYER-GOOGLE-TASKS-COMPLETE-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.tasks.create",
+      "domain": "productivity",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-TASKS-CREATE-1",
+        "GOOGLE-LAYER-GOOGLE-TASKS-CREATE-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google.tasks.list",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_google_services.py"
+      ],
+      "historical_routing_case_ids": [
+        "GOOGLE-LAYER-GOOGLE-TASKS-LIST-1",
+        "GOOGLE-LAYER-GOOGLE-TASKS-LIST-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "GOOGLE-LAYER-GOOGLE-TASKS-LIST-1",
+        "GOOGLE-LAYER-GOOGLE-TASKS-LIST-2"
+      ],
+      "historical_llm_scenario_ids": [
+        "GOOGLE-LAYER-GOOGLE-TASKS-LIST-1",
+        "GOOGLE-LAYER-GOOGLE-TASKS-LIST-2"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google_calendar.agenda",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_academic_calendar.py",
+        "tests\\unit\\test_capability_metadata.py",
+        "tests\\unit\\test_google_access.py",
+        "tests\\unit\\test_mcp.py",
+        "tests\\unit\\test_time_calendar_language.py"
+      ],
+      "historical_routing_case_ids": [
+        "CALENDAR-READ-001",
+        "CALENDAR-READ-002",
+        "CALENDAR-READ-003",
+        "CALENDAR-READ-004",
+        "CALENDAR-READ-005",
+        "CALENDAR-READ-006",
+        "CALENDAR-READ-007",
+        "CALENDAR-READ-008",
+        "CALENDAR-READ-009",
+        "CALENDAR-READ-010",
+        "CALENDAR-READ-011",
+        "CALENDAR-READ-012",
+        "CALENDAR-READ-013",
+        "CALENDAR-READ-014",
+        "CALENDAR-READ-015",
+        "CALENDAR-READ-016",
+        "CALENDAR-READ-017",
+        "CALENDAR-READ-018",
+        "CALENDAR-READ-019",
+        "CALENDAR-READ-020",
+        "CALENDAR-READ-021",
+        "CALENDAR-READ-022",
+        "CALENDAR-READ-023",
+        "CALENDAR-READ-024",
+        "CALENDAR-READ-025",
+        "CALENDAR-READ-026",
+        "CALENDAR-READ-027",
+        "CALENDAR-READ-028",
+        "CALENDAR-READ-029",
+        "CALENDAR-READ-030",
+        "CALENDAR-READ-031",
+        "CALENDAR-READ-032",
+        "CALENDAR-READ-033",
+        "CALENDAR-READ-034",
+        "CALENDAR-READ-035",
+        "CALENDAR-READ-036",
+        "CALENDAR-READ-037",
+        "CALENDAR-READ-038",
+        "CALENDAR-READ-039",
+        "CALENDAR-READ-040",
+        "CALENDAR-READ-051",
+        "CALENDAR-READ-052",
+        "CALENDAR-READ-053",
+        "CALENDAR-READ-054",
+        "CALENDAR-READ-055",
+        "CALENDAR-READ-056",
+        "CALENDAR-READ-057",
+        "CALENDAR-READ-058",
+        "CALENDAR-READ-059",
+        "CALENDAR-READ-060",
+        "CALENDAR-READ-061",
+        "CALENDAR-READ-062",
+        "CALENDAR-READ-063",
+        "CALENDAR-READ-064",
+        "CALENDAR-READ-065",
+        "CALENDAR-READ-066",
+        "CALENDAR-READ-067",
+        "CALENDAR-READ-068",
+        "CALENDAR-READ-069",
+        "CALENDAR-READ-070",
+        "CALENDAR-READ-071",
+        "CALENDAR-READ-072",
+        "CALENDAR-READ-073",
+        "CALENDAR-READ-074",
+        "CALENDAR-READ-075",
+        "CALENDAR-READ-076",
+        "CALENDAR-READ-077",
+        "CALENDAR-READ-078",
+        "CALENDAR-READ-079",
+        "CALENDAR-READ-080",
+        "CALENDAR-READ-081",
+        "CALENDAR-READ-082",
+        "CALENDAR-READ-083",
+        "CALENDAR-READ-084",
+        "CALENDAR-READ-085",
+        "CALENDAR-READ-086",
+        "CALENDAR-READ-087",
+        "CALENDAR-READ-088",
+        "CALENDAR-READ-089",
+        "MIXED-DOMAIN-001",
+        "MIXED-DOMAIN-002",
+        "MIXED-DOMAIN-003",
+        "MIXED-DOMAIN-004",
+        "MIXED-DOMAIN-005",
+        "MIXED-DOMAIN-006",
+        "MIXED-DOMAIN-007",
+        "MIXED-DOMAIN-008",
+        "MIXED-DOMAIN-009",
+        "MIXED-DOMAIN-010",
+        "MIXED-DOMAIN-016",
+        "MIXED-DOMAIN-017",
+        "MIXED-DOMAIN-018",
+        "MIXED-DOMAIN-019",
+        "MIXED-DOMAIN-020",
+        "MIXED-DOMAIN-021",
+        "MIXED-DOMAIN-022",
+        "MIXED-DOMAIN-023",
+        "MIXED-DOMAIN-024",
+        "MIXED-DOMAIN-025",
+        "MIXED-DOMAIN-026",
+        "MIXED-DOMAIN-027",
+        "MIXED-DOMAIN-028",
+        "MIXED-DOMAIN-029",
+        "MIXED-DOMAIN-030",
+        "SLANG-TYPOS-016",
+        "SLANG-TYPOS-017",
+        "SLANG-TYPOS-018",
+        "SLANG-TYPOS-019",
+        "SLANG-TYPOS-020",
+        "REGISTRY-google_calendar.agenda-1",
+        "REGISTRY-google_calendar.agenda-2",
+        "HARDENING-001",
+        "HARDENING-002",
+        "HARDENING-003",
+        "HARDENING-004",
+        "HARDENING-005",
+        "HARDENING-006",
+        "HARDENING-007",
+        "HARDENING-008",
+        "HARDENING-011",
+        "HARDENING-013",
+        "HARDENING-015",
+        "VR1-014",
+        "VR1-015"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-GOOGLE_CALENDAR-AGENDA-01",
+        "COV-GOOGLE_CALENDAR-AGENDA-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "CAL-001",
+        "CAL-002",
+        "CAL-004",
+        "CAL-005",
+        "CAL-006",
+        "CAL-007",
+        "CAL-008",
+        "CAL-010",
+        "MIX-001",
+        "MIX-006",
+        "MIX-010"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google_calendar.create",
+      "domain": "productivity",
+      "risk": "sensitive_write",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_capability_metadata.py",
+        "tests\\unit\\test_google_access.py",
+        "tests\\unit\\test_mcp.py",
+        "tests\\unit\\test_mcp_session.py",
+        "tests\\unit\\test_time_calendar_language.py"
+      ],
+      "historical_routing_case_ids": [
+        "CALENDAR-CREATE-001",
+        "CALENDAR-CREATE-002",
+        "CALENDAR-CREATE-003",
+        "CALENDAR-CREATE-004",
+        "CALENDAR-CREATE-005",
+        "CALENDAR-CREATE-006",
+        "CALENDAR-CREATE-007",
+        "CALENDAR-CREATE-008",
+        "CALENDAR-CREATE-009",
+        "CALENDAR-CREATE-010",
+        "CALENDAR-CREATE-011",
+        "CALENDAR-CREATE-012",
+        "CALENDAR-CREATE-013",
+        "CALENDAR-CREATE-014",
+        "CALENDAR-CREATE-015",
+        "CALENDAR-CREATE-016",
+        "CALENDAR-CREATE-017",
+        "CALENDAR-CREATE-018",
+        "CALENDAR-CREATE-019",
+        "CALENDAR-CREATE-020",
+        "CALENDAR-CREATE-021",
+        "CALENDAR-CREATE-022",
+        "CALENDAR-CREATE-023",
+        "CALENDAR-CREATE-024",
+        "CALENDAR-CREATE-025",
+        "CALENDAR-CREATE-026",
+        "CALENDAR-CREATE-027",
+        "CALENDAR-CREATE-028",
+        "CALENDAR-CREATE-029",
+        "CALENDAR-CREATE-030",
+        "CALENDAR-CREATE-031",
+        "CALENDAR-CREATE-032",
+        "CALENDAR-CREATE-033",
+        "CALENDAR-CREATE-034",
+        "CALENDAR-CREATE-035",
+        "CALENDAR-CREATE-036",
+        "CALENDAR-CREATE-037",
+        "CALENDAR-CREATE-038",
+        "CALENDAR-CREATE-039",
+        "CALENDAR-CREATE-040",
+        "CALENDAR-CREATE-041",
+        "CALENDAR-CREATE-042",
+        "CALENDAR-CREATE-043",
+        "CALENDAR-CREATE-044",
+        "CALENDAR-CREATE-045",
+        "CALENDAR-CREATE-046",
+        "CALENDAR-CREATE-047",
+        "CALENDAR-CREATE-048",
+        "CALENDAR-CREATE-049",
+        "CALENDAR-CREATE-050",
+        "CALENDAR-CREATE-051",
+        "CALENDAR-CREATE-052",
+        "CALENDAR-CREATE-053",
+        "CALENDAR-CREATE-054",
+        "CALENDAR-CREATE-055",
+        "CALENDAR-CREATE-056",
+        "CALENDAR-CREATE-057",
+        "CALENDAR-CREATE-058",
+        "CALENDAR-CREATE-059",
+        "CALENDAR-CREATE-060",
+        "CALENDAR-CREATE-061",
+        "CALENDAR-CREATE-062",
+        "CALENDAR-CREATE-063",
+        "CALENDAR-CREATE-064",
+        "CALENDAR-CREATE-065",
+        "CALENDAR-CREATE-066",
+        "CALENDAR-CREATE-067",
+        "CALENDAR-CREATE-068",
+        "CALENDAR-CREATE-069",
+        "CALENDAR-CREATE-070",
+        "REGISTRY-google_calendar.create-1",
+        "REGISTRY-google_calendar.create-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-GOOGLE_CALENDAR-CREATE-01",
+        "COV-GOOGLE_CALENDAR-CREATE-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "CAL-011",
+        "CAL-012",
+        "CAL-013",
+        "CAL-014",
+        "CAL-015",
+        "CAL-016",
+        "CAL-017",
+        "CAL-018"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google_calendar.list",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-google_calendar.list-1",
+        "REGISTRY-google_calendar.list-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-GOOGLE_CALENDAR-LIST-01",
+        "COV-GOOGLE_CALENDAR-LIST-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "google_calendar.next",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py"
+      ],
+      "historical_routing_case_ids": [
+        "CALENDAR-READ-041",
+        "CALENDAR-READ-042",
+        "CALENDAR-READ-043",
+        "CALENDAR-READ-044",
+        "CALENDAR-READ-045",
+        "CALENDAR-READ-046",
+        "CALENDAR-READ-047",
+        "CALENDAR-READ-048",
+        "CALENDAR-READ-049",
+        "CALENDAR-READ-050",
+        "CALENDAR-READ-090",
+        "MIXED-DOMAIN-011",
+        "MIXED-DOMAIN-012",
+        "MIXED-DOMAIN-013",
+        "MIXED-DOMAIN-014",
+        "MIXED-DOMAIN-015",
+        "MIXED-DOMAIN-031",
+        "MIXED-DOMAIN-032",
+        "MIXED-DOMAIN-033",
+        "MIXED-DOMAIN-034",
+        "MIXED-DOMAIN-035",
+        "REGISTRY-google_calendar.next-1",
+        "REGISTRY-google_calendar.next-2",
+        "HARDENING-014"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-GOOGLE_CALENDAR-NEXT-01",
+        "COV-GOOGLE_CALENDAR-NEXT-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "CAL-003",
+        "CAL-009",
+        "CAL-019",
+        "CAL-020",
+        "MIX-003",
+        "MIX-004",
+        "MIX-009"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "gpu.memory",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py"
+      ],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-041",
+        "DIAGNOSTICS-042",
+        "DIAGNOSTICS-043",
+        "DIAGNOSTICS-044",
+        "DIAGNOSTICS-045",
+        "DIAGNOSTICS-046",
+        "DIAGNOSTICS-047",
+        "DIAGNOSTICS-048",
+        "DIAGNOSTICS-049",
+        "DIAGNOSTICS-050",
+        "MIXED-DOMAIN-006",
+        "MIXED-DOMAIN-007",
+        "MIXED-DOMAIN-008",
+        "MIXED-DOMAIN-009",
+        "MIXED-DOMAIN-010",
+        "REGISTRY-gpu.memory-1",
+        "REGISTRY-gpu.memory-2",
+        "HARDENING-010"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-GPU-MEMORY-01",
+        "COV-GPU-MEMORY-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "SYS-003"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "gpu.top_processes",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py",
+        "tests\\unit\\test_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-031",
+        "DIAGNOSTICS-032",
+        "DIAGNOSTICS-033",
+        "DIAGNOSTICS-034",
+        "DIAGNOSTICS-035",
+        "DIAGNOSTICS-036",
+        "DIAGNOSTICS-037",
+        "DIAGNOSTICS-038",
+        "DIAGNOSTICS-039",
+        "DIAGNOSTICS-040",
+        "SLANG-TYPOS-011",
+        "SLANG-TYPOS-012",
+        "SLANG-TYPOS-013",
+        "SLANG-TYPOS-014",
+        "SLANG-TYPOS-015",
+        "REGISTRY-gpu.top_processes-1",
+        "REGISTRY-gpu.top_processes-2",
+        "HARDENING-029"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-GPU-TOP_PROCESSES-01",
+        "COV-GPU-TOP_PROCESSES-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "DIAG-011",
+        "DIAG-012",
+        "DIAG-013",
+        "DIAG-014",
+        "DIAG-015",
+        "DIAG-041",
+        "DIAG-042",
+        "DIAG-043",
+        "DIAG-044",
+        "DIAG-045",
+        "SYS-011"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "hanni.audit_tail",
+      "domain": "assistant",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "HANNI-MODEL-011",
+        "HANNI-MODEL-012",
+        "HANNI-MODEL-013",
+        "HANNI-MODEL-014",
+        "HANNI-MODEL-015",
+        "REGISTRY-hanni.audit_tail-1",
+        "REGISTRY-hanni.audit_tail-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-HANNI-AUDIT_TAIL-01",
+        "COV-HANNI-AUDIT_TAIL-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "HANNI-007"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "hanni.capabilities",
+      "domain": "assistant",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "HANNI-MODEL-006",
+        "HANNI-MODEL-007",
+        "HANNI-MODEL-008",
+        "HANNI-MODEL-009",
+        "HANNI-MODEL-010",
+        "REGISTRY-hanni.capabilities-1",
+        "REGISTRY-hanni.capabilities-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-HANNI-CAPABILITIES-01",
+        "COV-HANNI-CAPABILITIES-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "HANNI-005"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "hanni.permissions",
+      "domain": "assistant",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "HANNI-MODEL-021",
+        "HANNI-MODEL-022",
+        "HANNI-MODEL-023",
+        "HANNI-MODEL-024",
+        "HANNI-MODEL-025",
+        "REGISTRY-hanni.permissions-1",
+        "REGISTRY-hanni.permissions-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-HANNI-PERMISSIONS-01",
+        "COV-HANNI-PERMISSIONS-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "HANNI-006"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "hanni.stop_state",
+      "domain": "assistant",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "HANNI-MODEL-016",
+        "HANNI-MODEL-017",
+        "HANNI-MODEL-018",
+        "HANNI-MODEL-019",
+        "HANNI-MODEL-020",
+        "REGISTRY-hanni.stop_state-1",
+        "REGISTRY-hanni.stop_state-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-HANNI-STOP_STATE-01",
+        "COV-HANNI-STOP_STATE-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "HANNI-004"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "id.generate",
+      "domain": "utilities",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-id.generate-1",
+        "REGISTRY-id.generate-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-ID-GENERATE-01",
+        "COV-ID-GENERATE-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "media.next_track",
+      "domain": "media",
+      "risk": "low_risk_write",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-media.next_track-1",
+        "REGISTRY-media.next_track-2",
+        "VR1-006"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-MEDIA-NEXT_TRACK-01",
+        "COV-MEDIA-NEXT_TRACK-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "media.play_pause",
+      "domain": "media",
+      "risk": "low_risk_write",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-media.play_pause-1",
+        "REGISTRY-media.play_pause-2",
+        "VR1-001",
+        "VR1-002",
+        "VR1-005"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-MEDIA-PLAY_PAUSE-01",
+        "COV-MEDIA-PLAY_PAUSE-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "media.previous_track",
+      "domain": "media",
+      "risk": "low_risk_write",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-media.previous_track-1",
+        "REGISTRY-media.previous_track-2",
+        "VR1-007"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-MEDIA-PREVIOUS_TRACK-01",
+        "COV-MEDIA-PREVIOUS_TRACK-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "media.stop",
+      "domain": "media",
+      "risk": "low_risk_write",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-media.stop-1",
+        "REGISTRY-media.stop-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-MEDIA-STOP-01",
+        "COV-MEDIA-STOP-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "APP-010"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "model.status",
+      "domain": "assistant",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp_session.py"
+      ],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-161",
+        "DIAGNOSTICS-162",
+        "DIAGNOSTICS-163",
+        "DIAGNOSTICS-164",
+        "DIAGNOSTICS-165",
+        "DIAGNOSTICS-166",
+        "DIAGNOSTICS-167",
+        "DIAGNOSTICS-168",
+        "DIAGNOSTICS-169",
+        "DIAGNOSTICS-170",
+        "HANNI-MODEL-001",
+        "HANNI-MODEL-002",
+        "HANNI-MODEL-003",
+        "HANNI-MODEL-004",
+        "HANNI-MODEL-005",
+        "MIXED-DOMAIN-011",
+        "MIXED-DOMAIN-012",
+        "MIXED-DOMAIN-013",
+        "MIXED-DOMAIN-014",
+        "MIXED-DOMAIN-015",
+        "SLANG-TYPOS-026",
+        "SLANG-TYPOS-027",
+        "SLANG-TYPOS-028",
+        "SLANG-TYPOS-029",
+        "SLANG-TYPOS-030",
+        "REGISTRY-model.status-1",
+        "REGISTRY-model.status-2",
+        "HARDENING-013",
+        "HARDENING-033"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-MODEL-STATUS-01",
+        "COV-MODEL-STATUS-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "SYS-004",
+        "SYS-008",
+        "HANNI-001",
+        "HANNI-002",
+        "HANNI-003",
+        "HANNI-008",
+        "HANNI-009",
+        "HANNI-010",
+        "MIX-002",
+        "MIX-007"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "net.dns_lookup",
+      "domain": "network",
+      "risk": "low_risk_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-net.dns_lookup-1",
+        "REGISTRY-net.dns_lookup-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "net.info",
+      "domain": "network",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-095",
+        "DIAGNOSTICS-098",
+        "REGISTRY-net.info-1",
+        "REGISTRY-net.info-2",
+        "HARDENING-028"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-NET-INFO-01",
+        "COV-NET-INFO-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "net.ping",
+      "domain": "network",
+      "risk": "low_risk_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-net.ping-1",
+        "REGISTRY-net.ping-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "net.ports",
+      "domain": "network",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-096",
+        "DIAGNOSTICS-097",
+        "REGISTRY-net.ports-1",
+        "REGISTRY-net.ports-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-NET-PORTS-01",
+        "COV-NET-PORTS-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "net.throughput",
+      "domain": "network",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-091",
+        "DIAGNOSTICS-092",
+        "DIAGNOSTICS-100",
+        "REGISTRY-net.throughput-1",
+        "REGISTRY-net.throughput-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-NET-THROUGHPUT-01",
+        "COV-NET-THROUGHPUT-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "SYS-007"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "net.wifi",
+      "domain": "network",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-093",
+        "DIAGNOSTICS-094",
+        "DIAGNOSTICS-099",
+        "REGISTRY-net.wifi-1",
+        "REGISTRY-net.wifi-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-NET-WIFI-01",
+        "COV-NET-WIFI-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "SYS-017"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "note.append",
+      "domain": "productivity",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-note.append-1",
+        "REGISTRY-note.append-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "note.days",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-note.days-1",
+        "REGISTRY-note.days-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-NOTE-DAYS-01",
+        "COV-NOTE-DAYS-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "note.list",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-note.list-1",
+        "REGISTRY-note.list-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-NOTE-LIST-01",
+        "COV-NOTE-LIST-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "note.search",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-note.search-1",
+        "REGISTRY-note.search-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-NOTE-SEARCH-01",
+        "COV-NOTE-SEARCH-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "FILE-007"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "notify.toast",
+      "domain": "desktop",
+      "risk": "low_risk_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-notify.toast-1",
+        "REGISTRY-notify.toast-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "power.battery_detail",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-145",
+        "DIAGNOSTICS-146",
+        "REGISTRY-power.battery_detail-1",
+        "REGISTRY-power.battery_detail-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-POWER-BATTERY_DETAIL-01",
+        "COV-POWER-BATTERY_DETAIL-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "power.battery_report",
+      "domain": "computer",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-power.battery_report-1",
+        "REGISTRY-power.battery_report-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "power.idle_settings",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-143",
+        "DIAGNOSTICS-144",
+        "DIAGNOSTICS-150",
+        "REGISTRY-power.idle_settings-1",
+        "REGISTRY-power.idle_settings-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-POWER-IDLE_SETTINGS-01",
+        "COV-POWER-IDLE_SETTINGS-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "power.plans",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-141",
+        "DIAGNOSTICS-142",
+        "REGISTRY-power.plans-1",
+        "REGISTRY-power.plans-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-POWER-PLANS-01",
+        "COV-POWER-PLANS-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "power.set_idle",
+      "domain": "computer",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-power.set_idle-1",
+        "REGISTRY-power.set_idle-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "power.set_plan",
+      "domain": "computer",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-power.set_plan-1",
+        "REGISTRY-power.set_plan-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "powershell.run",
+      "domain": "development",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [
+        "tests\\unit\\test_capability_metadata.py",
+        "tests\\unit\\test_desktop_features.py",
+        "tests\\unit\\test_mcp.py",
+        "tests\\unit\\test_mcp_hub_api.py",
+        "tests\\unit\\test_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-powershell.run-1",
+        "REGISTRY-powershell.run-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "process.find",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "PROCESS-SYSTEM-006",
+        "PROCESS-SYSTEM-007",
+        "PROCESS-SYSTEM-008",
+        "PROCESS-SYSTEM-009",
+        "PROCESS-SYSTEM-010",
+        "REGISTRY-process.find-1",
+        "REGISTRY-process.find-2",
+        "HARDENING-010"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-PROCESS-FIND-01",
+        "COV-PROCESS-FIND-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "SYS-012",
+        "MIX-010"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "process.inspect",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "PROCESS-SYSTEM-011",
+        "PROCESS-SYSTEM-012",
+        "PROCESS-SYSTEM-013",
+        "PROCESS-SYSTEM-014",
+        "PROCESS-SYSTEM-015",
+        "REGISTRY-process.inspect-1",
+        "REGISTRY-process.inspect-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-PROCESS-INSPECT-01",
+        "COV-PROCESS-INSPECT-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "process.list",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-201",
+        "DIAGNOSTICS-202",
+        "DIAGNOSTICS-203",
+        "DIAGNOSTICS-204",
+        "DIAGNOSTICS-205",
+        "DIAGNOSTICS-206",
+        "DIAGNOSTICS-207",
+        "DIAGNOSTICS-208",
+        "DIAGNOSTICS-209",
+        "DIAGNOSTICS-210",
+        "PROCESS-SYSTEM-001",
+        "PROCESS-SYSTEM-002",
+        "PROCESS-SYSTEM-003",
+        "PROCESS-SYSTEM-004",
+        "PROCESS-SYSTEM-005",
+        "REGISTRY-process.list-1",
+        "REGISTRY-process.list-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-PROCESS-LIST-01",
+        "COV-PROCESS-LIST-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "process.stop",
+      "domain": "computer",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-process.stop-1",
+        "REGISTRY-process.stop-2",
+        "HARDENING-035"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "process.top_cpu",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py",
+        "tests\\unit\\test_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-021",
+        "DIAGNOSTICS-022",
+        "DIAGNOSTICS-023",
+        "DIAGNOSTICS-024",
+        "DIAGNOSTICS-025",
+        "DIAGNOSTICS-026",
+        "DIAGNOSTICS-027",
+        "DIAGNOSTICS-028",
+        "DIAGNOSTICS-029",
+        "DIAGNOSTICS-030",
+        "MIXED-DOMAIN-016",
+        "MIXED-DOMAIN-017",
+        "MIXED-DOMAIN-018",
+        "MIXED-DOMAIN-019",
+        "MIXED-DOMAIN-020",
+        "SLANG-TYPOS-006",
+        "SLANG-TYPOS-007",
+        "SLANG-TYPOS-008",
+        "SLANG-TYPOS-009",
+        "SLANG-TYPOS-010",
+        "REGISTRY-process.top_cpu-1",
+        "REGISTRY-process.top_cpu-2",
+        "HARDENING-027",
+        "VR1-013"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-PROCESS-TOP_CPU-01",
+        "COV-PROCESS-TOP_CPU-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "DIAG-001",
+        "DIAG-002",
+        "DIAG-003",
+        "DIAG-004",
+        "DIAG-005",
+        "DIAG-031",
+        "DIAG-032",
+        "DIAG-033",
+        "DIAG-034",
+        "DIAG-035",
+        "DIAG-036",
+        "DIAG-037",
+        "DIAG-038",
+        "DIAG-039",
+        "DIAG-040",
+        "SYS-002"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "process.top_disk_io",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py"
+      ],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-061",
+        "DIAGNOSTICS-062",
+        "DIAGNOSTICS-063",
+        "DIAGNOSTICS-064",
+        "DIAGNOSTICS-065",
+        "DIAGNOSTICS-066",
+        "DIAGNOSTICS-067",
+        "DIAGNOSTICS-068",
+        "DIAGNOSTICS-069",
+        "DIAGNOSTICS-070",
+        "REGISTRY-process.top_disk_io-1",
+        "REGISTRY-process.top_disk_io-2",
+        "HARDENING-030"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-PROCESS-TOP_DISK_IO-01",
+        "COV-PROCESS-TOP_DISK_IO-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "DIAG-016",
+        "DIAG-017",
+        "DIAG-018",
+        "DIAG-019",
+        "DIAG-020",
+        "SYS-005"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "process.top_memory",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_dashboard_gateway.py",
+        "tests\\unit\\test_mcp.py",
+        "tests\\unit\\test_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-011",
+        "DIAGNOSTICS-012",
+        "DIAGNOSTICS-013",
+        "DIAGNOSTICS-014",
+        "DIAGNOSTICS-015",
+        "DIAGNOSTICS-016",
+        "DIAGNOSTICS-017",
+        "DIAGNOSTICS-018",
+        "DIAGNOSTICS-019",
+        "DIAGNOSTICS-020",
+        "MIXED-DOMAIN-031",
+        "MIXED-DOMAIN-032",
+        "MIXED-DOMAIN-033",
+        "MIXED-DOMAIN-034",
+        "MIXED-DOMAIN-035",
+        "SLANG-TYPOS-001",
+        "SLANG-TYPOS-002",
+        "SLANG-TYPOS-003",
+        "SLANG-TYPOS-004",
+        "SLANG-TYPOS-005",
+        "REGISTRY-process.top_memory-1",
+        "REGISTRY-process.top_memory-2",
+        "HARDENING-015",
+        "HARDENING-025",
+        "VR1-010",
+        "VR1-012"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-PROCESS-TOP_MEMORY-01",
+        "COV-PROCESS-TOP_MEMORY-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "DIAG-006",
+        "DIAG-007",
+        "DIAG-008",
+        "DIAG-009",
+        "DIAG-010",
+        "SYS-001",
+        "MIX-004"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "process.uptime",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-176",
+        "DIAGNOSTICS-177",
+        "DIAGNOSTICS-178",
+        "DIAGNOSTICS-179",
+        "DIAGNOSTICS-180",
+        "REGISTRY-process.uptime-1",
+        "REGISTRY-process.uptime-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-PROCESS-UPTIME-01",
+        "COV-PROCESS-UPTIME-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "project.format",
+      "domain": "development",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-project.format-1",
+        "REGISTRY-project.format-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "project.lint",
+      "domain": "development",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-project.lint-1",
+        "REGISTRY-project.lint-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "project.test",
+      "domain": "development",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-project.test-1",
+        "REGISTRY-project.test-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "python.env_info",
+      "domain": "development",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "PROCESS-SYSTEM-041",
+        "PROCESS-SYSTEM-042",
+        "PROCESS-SYSTEM-043",
+        "PROCESS-SYSTEM-044",
+        "PROCESS-SYSTEM-045",
+        "REGISTRY-python.env_info-1",
+        "REGISTRY-python.env_info-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-PYTHON-ENV_INFO-01",
+        "COV-PYTHON-ENV_INFO-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "random.number",
+      "domain": "utilities",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-random.number-1",
+        "REGISTRY-random.number-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-RANDOM-NUMBER-01",
+        "COV-RANDOM-NUMBER-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "random.pick",
+      "domain": "utilities",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-random.pick-1",
+        "REGISTRY-random.pick-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-RANDOM-PICK-01",
+        "COV-RANDOM-PICK-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "schedule.list_tasks",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-schedule.list_tasks-1",
+        "REGISTRY-schedule.list_tasks-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SCHEDULE-LIST_TASKS-01",
+        "COV-SCHEDULE-LIST_TASKS-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "security.bitlocker",
+      "domain": "security",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-135",
+        "DIAGNOSTICS-136",
+        "REGISTRY-security.bitlocker-1",
+        "REGISTRY-security.bitlocker-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SECURITY-BITLOCKER-01",
+        "COV-SECURITY-BITLOCKER-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "security.defender",
+      "domain": "security",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-131",
+        "DIAGNOSTICS-132",
+        "REGISTRY-security.defender-1",
+        "REGISTRY-security.defender-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SECURITY-DEFENDER-01",
+        "COV-SECURITY-DEFENDER-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "SYS-020"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "security.firewall",
+      "domain": "security",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-133",
+        "DIAGNOSTICS-134",
+        "REGISTRY-security.firewall-1",
+        "REGISTRY-security.firewall-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SECURITY-FIREWALL-01",
+        "COV-SECURITY-FIREWALL-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "security.pending_reboot",
+      "domain": "security",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-137",
+        "DIAGNOSTICS-138",
+        "REGISTRY-security.pending_reboot-1",
+        "REGISTRY-security.pending_reboot-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SECURITY-PENDING_REBOOT-01",
+        "COV-SECURITY-PENDING_REBOOT-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "security.updates",
+      "domain": "security",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-139",
+        "DIAGNOSTICS-140",
+        "DIAGNOSTICS-221",
+        "DIAGNOSTICS-222",
+        "DIAGNOSTICS-223",
+        "DIAGNOSTICS-224",
+        "DIAGNOSTICS-225",
+        "DIAGNOSTICS-226",
+        "DIAGNOSTICS-227",
+        "DIAGNOSTICS-228",
+        "DIAGNOSTICS-229",
+        "DIAGNOSTICS-230",
+        "REGISTRY-security.updates-1",
+        "REGISTRY-security.updates-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SECURITY-UPDATES-01",
+        "COV-SECURITY-UPDATES-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "service.control",
+      "domain": "computer",
+      "risk": "destructive",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-service.control-1",
+        "REGISTRY-service.control-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "service.list",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-121",
+        "DIAGNOSTICS-122",
+        "DIAGNOSTICS-123",
+        "DIAGNOSTICS-124",
+        "DIAGNOSTICS-125",
+        "DIAGNOSTICS-126",
+        "DIAGNOSTICS-127",
+        "DIAGNOSTICS-128",
+        "DIAGNOSTICS-129",
+        "DIAGNOSTICS-130",
+        "REGISTRY-service.list-1",
+        "REGISTRY-service.list-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SERVICE-LIST-01",
+        "COV-SERVICE-LIST-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "spotify.focus",
+      "domain": "media",
+      "risk": "low_risk_write",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-spotify.focus-1",
+        "REGISTRY-spotify.focus-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SPOTIFY-FOCUS-01",
+        "COV-SPOTIFY-FOCUS-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "APP-011"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "spotify.launch",
+      "domain": "media",
+      "risk": "low_risk_write",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_completion_ledger.py",
+        "tests\\unit\\test_mcp_session.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-spotify.launch-1",
+        "REGISTRY-spotify.launch-2",
+        "VR1-009"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SPOTIFY-LAUNCH-01",
+        "COV-SPOTIFY-LAUNCH-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "APP-004",
+        "APP-012",
+        "MIX-002"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "spotify.next",
+      "domain": "media",
+      "risk": "low_risk_write",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-spotify.next-1",
+        "REGISTRY-spotify.next-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SPOTIFY-NEXT-01",
+        "COV-SPOTIFY-NEXT-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "spotify.open_uri",
+      "domain": "media",
+      "risk": "low_risk_write",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-spotify.open_uri-1",
+        "REGISTRY-spotify.open_uri-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SPOTIFY-OPEN_URI-01",
+        "COV-SPOTIFY-OPEN_URI-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "spotify.play_pause",
+      "domain": "media",
+      "risk": "low_risk_write",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_completion_ledger.py",
+        "tests\\unit\\test_mcp_session.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-spotify.play_pause-1",
+        "REGISTRY-spotify.play_pause-2",
+        "HARDENING-012",
+        "VR1-003",
+        "VR1-004"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SPOTIFY-PLAY_PAUSE-01",
+        "COV-SPOTIFY-PLAY_PAUSE-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "APP-005",
+        "APP-012"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "spotify.previous",
+      "domain": "media",
+      "risk": "low_risk_write",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-spotify.previous-1",
+        "REGISTRY-spotify.previous-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SPOTIFY-PREVIOUS-01",
+        "COV-SPOTIFY-PREVIOUS-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "APP-007"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "spotify.search",
+      "domain": "media",
+      "risk": "low_risk_write",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-spotify.search-1",
+        "REGISTRY-spotify.search-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SPOTIFY-SEARCH-01",
+        "COV-SPOTIFY-SEARCH-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "APP-013"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "spotify.status",
+      "domain": "media",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_completion_ledger.py",
+        "tests\\unit\\test_mcp_session.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-spotify.status-1",
+        "REGISTRY-spotify.status-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SPOTIFY-STATUS-01",
+        "COV-SPOTIFY-STATUS-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "APP-005",
+        "APP-008",
+        "APP-012",
+        "MIX-007"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "spotify.volume",
+      "domain": "media",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-spotify.volume-1",
+        "REGISTRY-spotify.volume-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "startup.list",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-111",
+        "DIAGNOSTICS-112",
+        "DIAGNOSTICS-113",
+        "DIAGNOSTICS-114",
+        "DIAGNOSTICS-115",
+        "DIAGNOSTICS-116",
+        "DIAGNOSTICS-117",
+        "DIAGNOSTICS-118",
+        "DIAGNOSTICS-119",
+        "DIAGNOSTICS-120",
+        "REGISTRY-startup.list-1",
+        "REGISTRY-startup.list-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-STARTUP-LIST-01",
+        "COV-STARTUP-LIST-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "system.battery",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-147",
+        "DIAGNOSTICS-148",
+        "DIAGNOSTICS-149",
+        "REGISTRY-system.battery-1",
+        "REGISTRY-system.battery-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SYSTEM-BATTERY-01",
+        "COV-SYSTEM-BATTERY-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "SYS-015",
+        "MIX-009"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "system.event_errors",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py"
+      ],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-101",
+        "DIAGNOSTICS-102",
+        "DIAGNOSTICS-103",
+        "DIAGNOSTICS-104",
+        "DIAGNOSTICS-105",
+        "DIAGNOSTICS-106",
+        "DIAGNOSTICS-107",
+        "DIAGNOSTICS-108",
+        "DIAGNOSTICS-109",
+        "DIAGNOSTICS-110",
+        "REGISTRY-system.event_errors-1",
+        "REGISTRY-system.event_errors-2",
+        "HARDENING-032"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SYSTEM-EVENT_ERRORS-01",
+        "COV-SYSTEM-EVENT_ERRORS-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "SYS-014"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "system.os_info",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-191",
+        "DIAGNOSTICS-192",
+        "DIAGNOSTICS-193",
+        "DIAGNOSTICS-194",
+        "DIAGNOSTICS-195",
+        "DIAGNOSTICS-196",
+        "DIAGNOSTICS-197",
+        "DIAGNOSTICS-198",
+        "DIAGNOSTICS-199",
+        "DIAGNOSTICS-200",
+        "PROCESS-SYSTEM-016",
+        "PROCESS-SYSTEM-017",
+        "PROCESS-SYSTEM-018",
+        "PROCESS-SYSTEM-019",
+        "PROCESS-SYSTEM-020",
+        "REGISTRY-system.os_info-1",
+        "REGISTRY-system.os_info-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SYSTEM-OS_INFO-01",
+        "COV-SYSTEM-OS_INFO-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "SYS-016"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "system.performance",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py"
+      ],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-001",
+        "DIAGNOSTICS-002",
+        "DIAGNOSTICS-003",
+        "DIAGNOSTICS-004",
+        "DIAGNOSTICS-005",
+        "DIAGNOSTICS-006",
+        "DIAGNOSTICS-007",
+        "DIAGNOSTICS-008",
+        "DIAGNOSTICS-009",
+        "DIAGNOSTICS-010",
+        "DIAGNOSTICS-231",
+        "DIAGNOSTICS-232",
+        "DIAGNOSTICS-233",
+        "DIAGNOSTICS-234",
+        "DIAGNOSTICS-235",
+        "DIAGNOSTICS-236",
+        "DIAGNOSTICS-237",
+        "DIAGNOSTICS-238",
+        "DIAGNOSTICS-239",
+        "DIAGNOSTICS-240",
+        "MIXED-DOMAIN-026",
+        "MIXED-DOMAIN-027",
+        "MIXED-DOMAIN-028",
+        "MIXED-DOMAIN-029",
+        "MIXED-DOMAIN-030",
+        "REGISTRY-system.performance-1",
+        "REGISTRY-system.performance-2",
+        "HARDENING-014",
+        "HARDENING-026",
+        "VR1-011"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SYSTEM-PERFORMANCE-01",
+        "COV-SYSTEM-PERFORMANCE-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "system.stats",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_completion_ledger.py",
+        "tests\\unit\\test_dashboard_gateway.py",
+        "tests\\unit\\test_mcp.py",
+        "tests\\unit\\test_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-051",
+        "DIAGNOSTICS-052",
+        "DIAGNOSTICS-053",
+        "DIAGNOSTICS-054",
+        "DIAGNOSTICS-055",
+        "DIAGNOSTICS-056",
+        "DIAGNOSTICS-057",
+        "DIAGNOSTICS-058",
+        "DIAGNOSTICS-059",
+        "DIAGNOSTICS-060",
+        "MIXED-DOMAIN-001",
+        "MIXED-DOMAIN-002",
+        "MIXED-DOMAIN-003",
+        "MIXED-DOMAIN-004",
+        "MIXED-DOMAIN-005",
+        "REGISTRY-system.stats-1",
+        "REGISTRY-system.stats-2",
+        "HARDENING-009",
+        "HARDENING-031",
+        "VR1-015"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SYSTEM-STATS-01",
+        "COV-SYSTEM-STATS-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "SYS-009",
+        "SYS-010",
+        "SYS-013",
+        "MIX-001",
+        "MIX-003",
+        "MIX-005"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "system.uptime",
+      "domain": "computer",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DIAGNOSTICS-171",
+        "DIAGNOSTICS-172",
+        "DIAGNOSTICS-173",
+        "DIAGNOSTICS-174",
+        "DIAGNOSTICS-175",
+        "PROCESS-SYSTEM-021",
+        "PROCESS-SYSTEM-022",
+        "PROCESS-SYSTEM-023",
+        "PROCESS-SYSTEM-024",
+        "PROCESS-SYSTEM-025",
+        "REGISTRY-system.uptime-1",
+        "REGISTRY-system.uptime-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-SYSTEM-UPTIME-01",
+        "COV-SYSTEM-UPTIME-02"
+      ],
+      "historical_llm_scenario_ids": [
+        "SYS-018"
+      ],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "text.hash",
+      "domain": "utilities",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-text.hash-1",
+        "REGISTRY-text.hash-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-TEXT-HASH-01",
+        "COV-TEXT-HASH-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "text.normalize",
+      "domain": "utilities",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-text.normalize-1",
+        "REGISTRY-text.normalize-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-TEXT-NORMALIZE-01",
+        "COV-TEXT-NORMALIZE-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "text.stats",
+      "domain": "utilities",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-text.stats-1",
+        "REGISTRY-text.stats-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-TEXT-STATS-01",
+        "COV-TEXT-STATS-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "time.convert",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DATE-TIME-021",
+        "DATE-TIME-022",
+        "DATE-TIME-023",
+        "DATE-TIME-024",
+        "DATE-TIME-025",
+        "REGISTRY-time.convert-1",
+        "REGISTRY-time.convert-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-TIME-CONVERT-01",
+        "COV-TIME-CONVERT-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "time.elapsed",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DATE-TIME-026",
+        "DATE-TIME-027",
+        "DATE-TIME-028",
+        "DATE-TIME-029",
+        "DATE-TIME-030",
+        "REGISTRY-time.elapsed-1",
+        "REGISTRY-time.elapsed-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-TIME-ELAPSED-01",
+        "COV-TIME-ELAPSED-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "time.now",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_mcp.py",
+        "tests\\unit\\test_time_calendar_language.py"
+      ],
+      "historical_routing_case_ids": [
+        "DATE-TIME-001",
+        "DATE-TIME-002",
+        "DATE-TIME-003",
+        "DATE-TIME-004",
+        "DATE-TIME-005",
+        "DATE-TIME-006",
+        "DATE-TIME-007",
+        "DATE-TIME-008",
+        "DATE-TIME-009",
+        "DATE-TIME-010",
+        "DATE-TIME-011",
+        "DATE-TIME-012",
+        "DATE-TIME-013",
+        "DATE-TIME-014",
+        "DATE-TIME-015",
+        "DATE-TIME-016",
+        "DATE-TIME-017",
+        "DATE-TIME-018",
+        "DATE-TIME-019",
+        "DATE-TIME-020",
+        "REGISTRY-time.now-1",
+        "REGISTRY-time.now-2",
+        "HARDENING-011"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-TIME-NOW-01",
+        "COV-TIME-NOW-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "timer.set",
+      "domain": "productivity",
+      "risk": "low_risk_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-timer.set-1",
+        "REGISTRY-timer.set-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "todo.add",
+      "domain": "productivity",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [
+        "tests\\unit\\test_task_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-todo.add-1",
+        "REGISTRY-todo.add-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "todo.complete",
+      "domain": "productivity",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-todo.complete-1",
+        "REGISTRY-todo.complete-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "todo.due",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_task_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-todo.due-1",
+        "REGISTRY-todo.due-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-TODO-DUE-01",
+        "COV-TODO-DUE-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "todo.get",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_task_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "REGISTRY-todo.get-1",
+        "REGISTRY-todo.get-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-TODO-GET-01",
+        "COV-TODO-GET-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "todo.list",
+      "domain": "productivity",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-todo.list-1",
+        "REGISTRY-todo.list-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-TODO-LIST-01",
+        "COV-TODO-LIST-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "ui.active_window",
+      "domain": "desktop",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [
+        "tests\\unit\\test_tools.py"
+      ],
+      "historical_routing_case_ids": [
+        "PROCESS-SYSTEM-051",
+        "PROCESS-SYSTEM-052",
+        "PROCESS-SYSTEM-053",
+        "PROCESS-SYSTEM-054",
+        "PROCESS-SYSTEM-055",
+        "REGISTRY-ui.active_window-1",
+        "REGISTRY-ui.active_window-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-UI-ACTIVE_WINDOW-01",
+        "COV-UI-ACTIVE_WINDOW-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "ui.close_window",
+      "domain": "desktop",
+      "risk": "sensitive_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-ui.close_window-1",
+        "REGISTRY-ui.close_window-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "ui.focus_window",
+      "domain": "desktop",
+      "risk": "low_risk_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-ui.focus_window-1",
+        "REGISTRY-ui.focus_window-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "ui.list_windows",
+      "domain": "desktop",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-ui.list_windows-1",
+        "REGISTRY-ui.list_windows-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-UI-LIST_WINDOWS-01",
+        "COV-UI-LIST_WINDOWS-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "ui.minimize_all",
+      "domain": "desktop",
+      "risk": "low_risk_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-ui.minimize_all-1",
+        "REGISTRY-ui.minimize_all-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "ui.window_state",
+      "domain": "desktop",
+      "risk": "low_risk_write",
+      "model_facing": false,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "REGISTRY-ui.window_state-1",
+        "REGISTRY-ui.window_state-2"
+      ],
+      "metadata_menu_probe_ids": [],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "ui.windows_detailed",
+      "domain": "desktop",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "PROCESS-SYSTEM-046",
+        "PROCESS-SYSTEM-047",
+        "PROCESS-SYSTEM-048",
+        "PROCESS-SYSTEM-049",
+        "PROCESS-SYSTEM-050",
+        "REGISTRY-ui.windows_detailed-1",
+        "REGISTRY-ui.windows_detailed-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-UI-WINDOWS_DETAILED-01",
+        "COV-UI-WINDOWS_DETAILED-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    },
+    {
+      "capability": "unit.convert",
+      "domain": "utilities",
+      "risk": "read_only",
+      "model_facing": true,
+      "unit_source_mentions": [],
+      "historical_routing_case_ids": [
+        "DATE-TIME-036",
+        "DATE-TIME-037",
+        "DATE-TIME-038",
+        "DATE-TIME-039",
+        "DATE-TIME-040",
+        "REGISTRY-unit.convert-1",
+        "REGISTRY-unit.convert-2"
+      ],
+      "metadata_menu_probe_ids": [
+        "COV-UNIT-CONVERT-01",
+        "COV-UNIT-CONVERT-02"
+      ],
+      "historical_llm_scenario_ids": [],
+      "actual_model_selection_status": "not_run_in_this_audit",
+      "actual_execution_status": "not_run_in_this_audit",
+      "independent_verification_status": "not_run_in_this_audit"
+    }
+  ]
+}

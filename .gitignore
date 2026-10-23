@@ -1,0 +1,131 @@
+# ---- Secrets: never commit ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+# Local source/deployment backups and release archives are never Git input.
+*.zip
+*.whl
+*.tar.gz
+*.bak
+*.backup
+public-release/
+
+# ---- Runtime data: memory DB, logs, emergency-stop state, task checkpoints ----
+data/
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+jobs.lock
+*.log
+*.jsonl
+!evals/routing/cases.jsonl
+!evals/routing/academic_calendar.jsonl
+!evals/llm_tools/cases.jsonl
+!evals/llm_tools/holdout_v1.jsonl
+!evals/llm_tools/holdout_v2.jsonl
+!evals/llm_tools/holdout_v2_prompts.jsonl
+!evals/llm_tools/capability_coverage_v1.jsonl
+!evals/routing/phrase_probe_v2.jsonl
+!evals/routing/language_generalization_v2.jsonl
+!evals/routing/language_generalization_v3.jsonl
+!evals/routing/language_generalization_v4.jsonl
+!evals/routing/language_generalization_v4b.jsonl
+!evals/routing/false_positive_v4.jsonl
+!evals/routing/multiturn_v1.jsonl
+!evals/routing/voice_routing_v1.jsonl
+!evals/personality/personality_v1.jsonl
+!evals/personality/personality_v2.jsonl
+!evals/retrieval/development_v2.jsonl
+!evals/campaign1/development.jsonl
+!evals/memory/campaign3_development.jsonl
+!evals/reliability/v2_final_holdout/final.jsonl
+evals/real_world/inbox/
+evals/real_world/*.jsonl
+evals/checkpoints/
+evals/**/results/
+
+# ---- Ephemeral perception artifacts: must never reach Git ----
+*.wav
+*.flac
+*.mp3
+*.ogg
+*.opus
+*.pcm
+screenshots/
+frames/
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# ---- Model files ----
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.onnx
+/models/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.pytest-work/
+.pytest-overnight/
+.pytest-*/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+
+# ---- Editors / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local OAuth client downloads and token material must never be exported.
+# Named account refresh tokens belong in Windows Credential Manager, not files.
+credentials.json
+client_secret*.json
+*token*.json
+google-oauth-client*.json
+google_credentials*.json
+service_account*.json
+*secret*.json
+*credential*.json
+*api_key*.json
+*apikey*.json
+# Generated V1 evaluations are local evidence, not source artifacts.
+eval/results/
+
+# ---- Laya private checkpoints and annotations (never public) ----
+laya-models/
+laya-private/
+laya-checkpoints/
+laya-shadow-audit/
+**/adapter_model*
+**/pytorch_model*
+config/models.fleet.local.yaml
+skills/
+
+# ---- belt and braces: runtime secrets at any depth ----
+**/bridge.token
+**/active-catalog.json
+**/models.fleet.local.yaml
+state/
+hanni-core/state/
+
+# get_models output dirs (repo layout)
+/models/
+/binaries/

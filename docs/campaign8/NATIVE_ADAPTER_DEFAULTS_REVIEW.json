@@ -1,0 +1,55 @@
+{
+  "scope": "Independent installed Playwright and original native adapter audit; historical development measurements remain retained",
+  "installed_driver": {
+    "path": ".venv/Lib/site-packages/playwright/driver/package/lib/coreBundle.js",
+    "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171"
+  },
+  "original_connection": {
+    "path": "data/campaign8-verifier/export-before/4-session.py",
+    "sha256": "6ddb2bf54d764c7b84c880f19d32082fa1ad36f6dccbc0862c5fb4dc29993f82",
+    "no_defaults_supplied": false
+  },
+  "installed_code_findings": [
+    {
+      "lines": [
+        43126,
+        43128,
+        51447,
+        51448,
+        38581,
+        38587
+      ],
+      "observation": "Default connect-over-CDP selects acceptDownloads=accept and sends allowAndName download behavior using a temporary adapter artifact directory."
+    },
+    {
+      "lines": [
+        37634,
+        37638
+      ],
+      "observation": "The default connection also enables focus emulation; noDefaults for the browser default context skips this override."
+    },
+    {
+      "lines": [
+        37659,
+        37660
+      ],
+      "observation": "The default connection invokes media-emulation updates; noDefaults skips that initialization. No retrospective claim is made about the exact effective OS/media values in each old frame."
+    }
+  ],
+  "historical_scope": "Prior frames remain actual owned HWND pixel captures of their measured assets and physical DPI. Their CDP-driven interactions and media/focus environment were instrumented; they do not establish untouched physical Windows focus or normal native download behavior. Original per-case grades and raw events remain unchanged.",
+  "corrected_connector_acceptance": {
+    "path": "data/campaign8-verifier/export-before/CONNECTOR_ACCEPTANCE.json",
+    "sha256": "f7ccec7628fba4a3d92601928bb29bfa6c2faf7d83940ebb450b515e90962cc8",
+    "controlled_checks": 11,
+    "passed": 11
+  },
+  "faithful_native_review": {
+    "path": "docs/campaign8/NATIVE_POLICY_CONTROL_REVIEW.json",
+    "sha256": "7739b5ab684c7eb3eb200994a05c93b918d04a7a65783c539659be965108ebd0",
+    "cancelled_exports": 2,
+    "completed_exports": 0,
+    "memory_keys_observed_with_preserved_defaults": true
+  },
+  "final_measurement_requirement": "Final once-only native execution and visual scoring must use the frozen no_defaults=True connector and final source/assets. Historical development scores are not promoted to final scores.",
+  "private_final_attempted": 0
+}

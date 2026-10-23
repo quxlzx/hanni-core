@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "at": "2026-10-10T19:37:53.878684+00:00",
+  "reviewer": "/root/c10_verifier",
+  "publication_approved": true,
+  "acceptance_verdict": "ACCEPTANCE_NOT_MET",
+  "report": "HANNI_FULL_ACCEPTANCE_REPORT.md",
+  "report_sha256": "874e502e19dba6b2fd689f5dcbf0792bae5c642e28ea07e61338b70ced861b0a",
+  "final_results_sha256": "dc34d6b9f2fc56ab34e20f64d54582827c84f2897a5433258056eb20bc5ada5b",
+  "final_details_sha256": "115403ab39dfc72a8b52e1a1bb38145b596fbf552e3be7e923b237262673cb1d",
+  "source_sha256": "669452622a4a9a4a4d68a5022dc97a00d084be2b50fdf59e3bbd7556f94f87d7",
+  "checks": {
+    "fixed45task_denominator": true,
+    "all10dimensions_preserved": true,
+    "selection7_of23_eligible": true,
+    "partial_assertions48_of164_distinct": true,
+    "evidence_categories_and_family_results_match": true,
+    "final_core_eligibility_not_established": true,
+    "task_vs_post_latency_separated": true,
+    "reported_prompt_completion_tokens_match": true,
+    "fabrication_and_limited_safety_scope_explicit": true,
+    "physical_provider_and_whole_native_gaps_explicit": true,
+    "historical_cohorts_and_initial_failures_preserved": true,
+    "no_private_case_oracle_content": true,
+    "normal_owned_cleanup_and_source_preservation_supported": true
+  },
+  "corrections_resolved": [
+    "Latency PASS denotes measurement only.",
+    "Final controlled-core eligibility is NOT_ESTABLISHED; development57/63 separate."
+  ],
+  "new_model_calls": 0,
+  "task_retries": 0,
+  "source_or_criteria_edits": 0
+}

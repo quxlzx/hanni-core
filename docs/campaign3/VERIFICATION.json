@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "review": "INDEPENDENT_REVIEW.md",
+  "final_summary": {
+    "path": "docs/campaign3/FINAL_HOLDOUT.json",
+    "sha256": "fb84c960e1d68cdc640a7e38897b4a9748360ea599425203b7022d86d7eb9027"
+  },
+  "status": "FINAL_ONCE_ONLY_COMPLETE; QUALITY_ACCEPTANCE_NOT_ACHIEVED",
+  "executed_arms": 240,
+  "source_files": 223,
+  "source_archive_sha256": "6d6f5e6861852222e831a936824355ed1bd301e0ca2127a169972fa90f44def9",
+  "sealed_hashes": {
+    "cases.jsonl": "5464dd334fac7b8d8811fbf02c5ba25384c7ca794b075b91341314f956814d53",
+    "oracles.jsonl": "9e69a5098a583c5da6ea501a8f6deb0e1ac3b815ee5cefd916b266f356a2d8f6",
+    "protocol.json": "225638d97d1a0b1c74139c87f16320bc9a2a26eb55caa897381b0376f6d2d7d2",
+    "author.py": "d4fe290f244ba9c9995ecabe96d06179a48e8d758f707deaba7e4905a78f875c"
+  },
+  "acceptance": {
+    "recall_at_5_ge_90": "NOT_MET",
+    "project_resolution_ge_95": "NOT_MET; ORIGINAL_RESOLVER_DIAGNOSTIC_ONLY",
+    "zero_unauthorized_writes": "PASS_IN_INDEPENDENT_CONTROLLED_REPAIRED_PROFILE_PROBES; HOLDOUT_ZERO_RETRIEVAL_MUTATIONS",
+    "controlled_deletion_and_cache": "PASS_FOR_MEASURED_STORE_AND_WARM_TARGET_CONTROLS; NOT_UNIVERSAL_INFERENCE",
+    "graceful_laya_fallback": "ORIGINAL_CONTROLLED_DEVELOPMENT_BOUNDARIES_PASS; FINAL_CONTEXT_4_OF_6_FAULT_BOUNDARIES_EXERCISED",
+    "actual_laya_assisted_model": "BLOCKED_DISABLED; ZERO_CALLS",
+    "actual_model_answer_quality": "BLOCKED_ORIGINAL_ADMISSION; ZERO_GENERATION_HTTP"
+  },
+  "evidence_refs": {
+    "complete": {
+      "path": "data/campaign3-verifier/final-01/COMPLETE.json",
+      "sha256": "49e3eae48411318e0b7b3ea2f9bd85d4b71b27de8b46cc978d02022eff617661",
+      "scope": "240 individual raw receipt SHA commitments"
+    },
+    "raw_aggregate": {
+      "path": "data/campaign3-verifier/final-01/SUMMARY.json",
+      "sha256": "d1dac9f995d0aedc0caae35b574fa2061673bc2e9c6896f25031c1eb4d27c7b5"
+    },
+    "legacy_grades": {
+      "path": "data/campaign3-verifier/final-01/grades/legacy.json",
+      "sha256": "901a20a94313389964d5f9c51b07b8ec735280fb28caead9b4c5089c9cb42926",
+      "private_oracles": true
+    },
+    "context_grades": {
+      "path": "data/campaign3-verifier/final-01/grades/context.json",
+      "sha256": "efde85e325d8e9b542b0904a27775fb12e12eb1033c2796a31950d879b784134",
+      "private_oracles": true
+    },
+    "integrity": {
+      "path": "data/campaign3-verifier/final-integrity.json",
+      "sha256": "67cea1b28b25ab73c02174ec4c15d9d5ee7c71ca33069595dde800e74244fb7e"
+    },
+    "controlled_readbacks": {
+      "path": "data/campaign3-verifier/final-lifecycle-crosscheck.json",
+      "sha256": "53cc9dad5ae32af9220caf2b98f7f535ad303e5baf7505845237777c74c3afcb"
+    },
+    "private_failure_analysis": {
+      "path": "data/campaign3-verifier/final-failure-analysis.json",
+      "sha256": "e3249505cbd5ae618c86e16e9825955b8f1f101e82b4f63117876b5e3c0ec4ec",
+      "private_oracles": true
+    },
+    "model_audit": {
+      "path": "data/campaign3-verifier/final-model-independent-audit.json",
+      "sha256": "b30a9e9081fa307c5b3cddfb66916c51925dc27799ac1845c7533622b7976de3"
+    },
+    "model_raw_summary": {
+      "path": "data/campaign3-manager/final-model/SUMMARY.json",
+      "sha256": "62c9e39387f4b213d3539135e11a1ac75513253dc980e3e87b185804b9fb714d"
+    },
+    "model_runtime": {
+      "path": "data/campaign3-manager/final-model/RUNTIME_IDENTITY.json",
+      "sha256": "cde42e8bab1acf6ae37404b9807e335e16f2268b193fcfabf2c3b76499ce9abf"
+    },
+    "freeze_proof": {
+      "path": "data/campaign3-manager/final-freeze/proof.json",
+      "sha256": "9b0e5be5aea9042680b79fb211584e5e3fdc639233928d7968aa3601224a1a28"
+    },
+    "verifier_tests": {
+      "path": "data/campaign3-verifier/verifier-final-development.xml",
+      "sha256": "26f7e5365df3c43497a6fe8530aeb597ab2e178e8e7c8d03b5db2d5dc12895aa",
+      "passed": 19
+    },
+    "manager_regressions": {
+      "path": "data/campaign3-manager/final-regressions-02.xml",
+      "sha256": "2a53e67112eccb7083407c187c882934b89fe9631f9a95120afef6a202c803ab",
+      "passed": 463
+    },
+    "native_holdout_tokens": {
+      "path": "data/campaign3-verifier/final-native-tokens/SUMMARY.json",
+      "sha256": "202de165b0506a0262e3a341de2d00fd0e98328cc5a2bea6dcc0a36d21db384c"
+    },
+    "native_holdout_token_receipts": {
+      "path": "data\\campaign3-verifier\\final-native-tokens\\TOKEN_RECEIPTS.json",
+      "sha256": "5d799fa576c6cd39d2420ad24a787782aac9fe9d84887517a7332314d2424080"
+    }
+  },
+  "independent_checks": 19,
+  "manager_integrated_regressions": 463,
+  "final_actual_generation_http_requests": 0,
+  "final_actual_laya_model_calls": 0,
+  "original_model_identity_preserved": true,
+  "oracle_conflict_literal_failures_retained_per_arm": 1,
+  "unmeasured_response_requirements_retained_in_every_holdout_case": true
+}

@@ -1,0 +1,40 @@
+{"id":"DEV-UNF-01","query":"Which applications are occupying the greatest amount of RAM?","required_tools":["process.top_memory"]}
+{"id":"DEV-UNF-02","query":"Rank the programs by processor consumption.","required_tools":["process.top_cpu"]}
+{"id":"DEV-UNF-03","query":"Which executable is generating the heaviest read write traffic?","required_tools":["process.top_disk_io"]}
+{"id":"DEV-UNF-04","query":"How much graphics memory remains available on each adapter?","required_tools":["gpu.memory"]}
+{"id":"DEV-UNF-05","query":"Is the SSD showing signs of hardware failure?","required_tools":["device.disk_health"]}
+{"id":"DEV-UNF-06","query":"Please inspect the directories in my command lookup path for duplicates.","required_tools":["env.path"]}
+{"id":"DEV-UNF-07","query":"Where does Windows store this account's Downloads directory?","required_tools":["env.user_folders"]}
+{"id":"DEV-UNF-08","query":"Which sockets are accepting incoming connections and who owns them?","required_tools":["net.ports"]}
+{"id":"DEV-UNF-09","query":"Give me the wireless network name and reception strength.","required_tools":["net.wifi"]}
+{"id":"DEV-UNF-10","query":"How much data is entering and leaving this machine per second?","required_tools":["net.throughput"]}
+{"id":"DEV-UNF-11","query":"Can you compare these two text documents and show the changed lines?","required_tools":["file.compare"]}
+{"id":"DEV-UNF-12","query":"I need the opening ten lines of the log file.","required_tools":["file.head"]}
+{"id":"DEV-UNF-13","query":"Give me only the ending twenty lines of the log file.","required_tools":["file.tail"]}
+{"id":"DEV-UNF-14","query":"Which files were modified most recently beneath this directory?","required_tools":["file.recent"]}
+{"id":"DEV-UNF-15","query":"Find byte identical copies in this directory without removing anything.","required_tools":["file.duplicates"]}
+{"id":"DEV-UNF-16","query":"Show the distribution of file extensions in this folder.","required_tools":["file.composition"]}
+{"id":"DEV-UNF-17","query":"Does this folder tree contain any directories with nothing inside?","required_tools":["file.empty_folders"]}
+{"id":"DEV-UNF-18","query":"How many bytes are held by the recycle bin?","required_tools":["disk.recycle_bin_size"]}
+{"id":"DEV-UNF-19","query":"What is the present charging status and remaining battery estimate?","required_tools":["power.battery_detail"]}
+{"id":"DEV-UNF-20","query":"Is real time antivirus protection enabled and are its signatures fresh?","required_tools":["security.defender"]}
+{"id":"DEV-UNF-21","query":"Are the firewall profiles allowing unsolicited inbound traffic?","required_tools":["security.firewall"]}
+{"id":"DEV-UNF-22","query":"Has Windows installed any hotfixes recently?","required_tools":["security.updates"]}
+{"id":"DEV-UNF-23","query":"Are we waiting for a restart to finish servicing the machine?","required_tools":["security.pending_reboot"]}
+{"id":"DEV-UNF-24","query":"Show the interpreter and installed Python packages in this environment.","required_tools":["python.env_info"]}
+{"id":"DEV-UNF-25","query":"Which git branch is checked out and are there untracked changes?","required_tools":["git.status"]}
+{"id":"DEV-UNF-26","query":"List commit history for the repository newest first.","required_tools":["git.log"]}
+{"id":"DEV-UNF-27","query":"What text is currently in the Windows copy paste buffer?","required_tools":["clipboard.read"]}
+{"id":"DEV-UNF-28","query":"What program owns the foreground window?","required_tools":["ui.active_window"]}
+{"id":"DEV-UNF-29","query":"Which background Windows services are presently running?","required_tools":["service.list"]}
+{"id":"DEV-UNF-30","query":"What's the display resolution and refresh frequency?","required_tools":["display.info"]}
+{"id":"DEV-UNF-31","query":"Check my clipbaord text please.","required_tools":["clipboard.read"]}
+{"id":"DEV-UNF-32","query":"Find identcial duplicate files in this diretory.","required_tools":["file.duplicates"]}
+{"id":"DEV-UNF-33","query":"Which proceses consume the most memroy?","required_tools":["process.top_memory"]}
+{"id":"DEV-UNF-34","query":"Show installd programs and their versins.","required_tools":["app.list_installed"]}
+{"id":"DEV-UNF-35","query":"Inspect network connecitons and listening socktes.","required_tools":["net.ports"]}
+{"id":"DEV-UNF-36","query":"Tell me something encouraging.","required_tools":[]}
+{"id":"DEV-UNF-37","query":"Why do people enjoy music?","required_tools":[]}
+{"id":"DEV-UNF-38","query":"What would you name a fictional computer?","required_tools":[]}
+{"id":"DEV-UNF-39","query":"Explain the idea of a hash table.","required_tools":[]}
+{"id":"DEV-UNF-40","query":"I wish my schedule were less stressful.","required_tools":[]}

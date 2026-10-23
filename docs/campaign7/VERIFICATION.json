@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "acceptance": "partial; physical/model perception blocked or unavailable",
+  "source_manifest_sha256": "bf81ff201ddeb16f7b9fd281dc7e124190042031308fe3b6c8509630502ceffa",
+  "source_archive_sha256": "109c881fd79f40d7c26b8b87897d715a43dedc1f86472fbce6128072afccf604",
+  "frozen_files": 592,
+  "app_js_sha256": "7a972cf36710d96d8659cc3f5f923f06bef7b3d5790c1191d1093c54ab79cca1",
+  "independent_tests": {
+    "executions": 33,
+    "passed": 32,
+    "strict_failures": 1,
+    "errors": 0,
+    "skips": 0
+  },
+  "final": {
+    "cases": 60,
+    "strict_passed": 53,
+    "strict_failed": 7,
+    "harness_errors": 0,
+    "once_only": true,
+    "retries": 0,
+    "grade_promotions": 0
+  },
+  "actual_shipped_ui": {
+    "cases": 7,
+    "passed": 7,
+    "physical_capture": false
+  },
+  "actual_wav_bytes": {
+    "samples": 100,
+    "passed": 100,
+    "asr_accuracy_measured": false
+  },
+  "evidence": [
+    {
+      "kind": "independent_exposed_strict",
+      "path": "data/campaign7-verifier/independent-held-source.xml",
+      "sha256": "650cfc3446b1eb56c21bb921d0f0d20cb7c1f93516ccce86b391d540103656d4"
+    },
+    {
+      "kind": "held_source_ready",
+      "path": "data/campaign7-verifier/SOURCE_READY_FINAL.json",
+      "sha256": "21b5f038cb64d5bea0ab236f5488725a4df255389e917a82575218171cae3b2c"
+    },
+    {
+      "kind": "lifecycle_and_actions_readback",
+      "path": "data/campaign7-verifier/lifecycle-actions-after.json",
+      "sha256": "4ba4458bad5c1fe6f9732e011ed9ee6ba72441976801560f1715de9917f46621"
+    },
+    {
+      "kind": "actual_shipped_ui",
+      "path": "data/campaign7-verifier/ui-independent-copy-final/results.json",
+      "sha256": "4c5b5e9d956adfa1225873a440f95ec8b72ac05c341a78d41e5118a53543f42a"
+    },
+    {
+      "kind": "actual_synthetic_wav_audit",
+      "path": "data/campaign7-verifier/audio-independent-audit-corrected/RESULTS.json",
+      "sha256": "6105666f74bac629f2e34499cbf95aecfb0f78dbf78152dbae87355b6985229d"
+    },
+    {
+      "kind": "native_configured_au_file_probe",
+      "path": "data/campaign7-verifier/configured-native-tts/RESULTS.json",
+      "sha256": "82c2ec593aff35baeeea9fd58e5303e684ea561b2aaa1d54d704c0f5b596d554"
+    },
+    {
+      "kind": "aborted_precheck",
+      "path": "data/campaign7-verifier/final-precheck-blocked.json",
+      "sha256": "668cb744ae389f8d6f80ea2c6c6d547d043e214021d15badd443685d8c479427"
+    },
+    {
+      "kind": "final_integrity",
+      "path": "data/campaign7-verifier/FINAL_INTEGRITY.json",
+      "sha256": "e812ea42b2317cf6ced04838a41a75e9876df2046cbf26138333fe6618b7e469"
+    },
+    {
+      "kind": "final_oracle_free_publication",
+      "path": "docs/campaign7/FINAL_VERIFICATION.json",
+      "sha256": "8f7e2e98be94bb1606743ef28e23d89a3eeeccb60cfafcc84f9da462f67a6cb7"
+    },
+    {
+      "kind": "independent_review",
+      "path": "docs/campaign7/INDEPENDENT_REVIEW.md",
+      "sha256": "4cc1bf0854f3d20509eff1f08adfea90d2f4c98fbd615499a27c6470d3d56985"
+    }
+  ],
+  "manager_report_review": {
+    "path": "docs/campaign7/REPORT.md",
+    "sha256": "70b58a80803b012e041e7d1246dac0d6ab2e3e1f664b17a5365864929834dad5",
+    "accepted": true,
+    "review_evidence": {
+      "path": "docs/campaign7/MANAGER_REPORT_REVIEW.json",
+      "sha256": "14c51222751efc1873b0fa62acf9de2dd40b9211a29ba3fe4851111a28168f04"
+    },
+    "metrics_sha256": "fe68addd7ebc53faddd2cf0b73237f2d5a7c9fb0372a62beadc1e342ba28b3c7"
+  },
+  "notes": [
+    "No private prompts/oracles or raw synthetic answers are published.",
+    "Manual failure explanations do not alter immutable final grades.",
+    "Final JUnit accounts362 checks but lists341 distinct testcase IDs with zero duplicates;21 extra passing accounting entries have no testcase node. Earlier duplicate-ID interpretation withdrawn."
+  ]
+}

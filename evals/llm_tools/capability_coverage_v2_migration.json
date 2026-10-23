@@ -1,0 +1,5178 @@
+{
+  "version": 2,
+  "source": "evals/llm_tools/capability_coverage_v1.jsonl",
+  "target": "evals/llm_tools/capability_coverage_v2.jsonl",
+  "source_sha256": "70468c1c186ef69b6f065120ea548f6698dc39dc2676e0afa98c10d178930833",
+  "target_sha256": "c31a84a3090995320509cc24680918a4b6a434a2f87e60325bb263b83f271308",
+  "case_count": 264,
+  "changed_case_count": 65,
+  "authorized_fields": [
+    "expected_schema",
+    "results.<capability>.data",
+    "results.file.grep schema-only envelope in COV-FILE-SEARCH-01"
+  ],
+  "unchanged": "All prompts, case IDs, required tools, acceptable alternatives, claims, risk/side-effect metadata, fixture messages and all behavioral expectations. Historical v1 bytes remain untouched. Strict drift detection retained.",
+  "reason": "V3.6 independently reproduced truthful payload metadata and argument-schema repairs; migrate schema-only fixture metadata rather than weaken audit or alter frozen behavioral answers.",
+  "changes": [
+    {
+      "case_id": "COV-ENV-USER_FOLDERS-01",
+      "primary_capability": "env.user_folders",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "env.user_folders": {
+          "folders": [],
+          "home": ""
+        }
+      },
+      "new_synthetic_data": {
+        "env.user_folders": {
+          "folders": {},
+          "home": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-ENV-USER_FOLDERS-02",
+      "primary_capability": "env.user_folders",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "env.user_folders": {
+          "folders": [],
+          "home": ""
+        }
+      },
+      "new_synthetic_data": {
+        "env.user_folders": {
+          "folders": {},
+          "home": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-FILE-GREP-01",
+      "primary_capability": "file.grep",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "root": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "pattern": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "case_sensitive": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "root": {
+            "type": "string",
+            "description": "Absolute existing folder whose file contents will be searched."
+          },
+          "query": {
+            "type": "string",
+            "description": "Literal phrase to find inside file contents, not a filename.",
+            "minLength": 1
+          },
+          "pattern": {
+            "type": "string",
+            "description": "Optional filename glob such as *.txt. Leave empty to search supported text files. This is not the content query.",
+            "default": ""
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum matching lines to return.",
+            "default": 40,
+            "minimum": 1,
+            "maximum": 200
+          },
+          "case_sensitive": {
+            "type": "boolean",
+            "description": "Match the content query with exact case.",
+            "default": false
+          }
+        },
+        "required": [
+          "root",
+          "query"
+        ],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "file.grep": {
+          "matches": [],
+          "files": [],
+          "match_count": 0
+        }
+      },
+      "new_synthetic_data": {
+        "file.grep": {
+          "root": "",
+          "query": "",
+          "pattern": "",
+          "matches": [],
+          "files": [],
+          "match_count": 0,
+          "scanned_files": 0,
+          "search_performed": false,
+          "truncated": false
+        }
+      }
+    },
+    {
+      "case_id": "COV-FILE-GREP-02",
+      "primary_capability": "file.grep",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "root": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "pattern": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "case_sensitive": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "root": {
+            "type": "string",
+            "description": "Absolute existing folder whose file contents will be searched."
+          },
+          "query": {
+            "type": "string",
+            "description": "Literal phrase to find inside file contents, not a filename.",
+            "minLength": 1
+          },
+          "pattern": {
+            "type": "string",
+            "description": "Optional filename glob such as *.txt. Leave empty to search supported text files. This is not the content query.",
+            "default": ""
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum matching lines to return.",
+            "default": 40,
+            "minimum": 1,
+            "maximum": 200
+          },
+          "case_sensitive": {
+            "type": "boolean",
+            "description": "Match the content query with exact case.",
+            "default": false
+          }
+        },
+        "required": [
+          "root",
+          "query"
+        ],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "file.grep": {
+          "matches": [],
+          "files": [],
+          "match_count": 0
+        }
+      },
+      "new_synthetic_data": {
+        "file.grep": {
+          "root": "",
+          "query": "",
+          "pattern": "",
+          "matches": [],
+          "files": [],
+          "match_count": 0,
+          "scanned_files": 0,
+          "search_performed": false,
+          "truncated": false
+        }
+      }
+    },
+    {
+      "case_id": "COV-FILE-SEARCH-01",
+      "primary_capability": "file.search",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "root": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "root": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "file.search": {
+          "matches": []
+        }
+      },
+      "new_synthetic_data": {
+        "file.search": {
+          "matches": []
+        },
+        "file.grep": {
+          "root": "",
+          "query": "",
+          "pattern": "",
+          "matches": [],
+          "files": [],
+          "match_count": 0,
+          "scanned_files": 0,
+          "search_performed": false,
+          "truncated": false
+        }
+      }
+    },
+    {
+      "case_id": "COV-FILE-STAT-01",
+      "primary_capability": "file.stat",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "hash": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "hash": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "file.stat": {
+          "path": "",
+          "exists": false,
+          "type": "file",
+          "sha256": null
+        }
+      },
+      "new_synthetic_data": {
+        "file.stat": {
+          "path": "",
+          "exists": false,
+          "type": "file",
+          "size_bytes": null,
+          "sha256": null
+        }
+      }
+    },
+    {
+      "case_id": "COV-FILE-STAT-02",
+      "primary_capability": "file.stat",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "hash": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "hash": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "file.stat": {
+          "path": "",
+          "exists": false,
+          "type": "file",
+          "sha256": null
+        }
+      },
+      "new_synthetic_data": {
+        "file.stat": {
+          "path": "",
+          "exists": false,
+          "type": "file",
+          "size_bytes": null,
+          "sha256": null
+        }
+      }
+    },
+    {
+      "case_id": "COV-GMAIL-READ-01",
+      "primary_capability": "gmail.read",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "gmail.read": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "gmail.read": {
+          "id": "",
+          "account": "",
+          "headers": {},
+          "body": {},
+          "attachments_downloaded": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-GMAIL-READ-02",
+      "primary_capability": "gmail.read",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "gmail.read": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "gmail.read": {
+          "id": "",
+          "account": "",
+          "headers": {},
+          "body": {},
+          "attachments_downloaded": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-GMAIL-SEARCH-01",
+      "primary_capability": "gmail.search",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "gmail.search": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "gmail.search": {
+          "messages": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-GMAIL-SEARCH-02",
+      "primary_capability": "gmail.search",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "gmail.search": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "gmail.search": {
+          "messages": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-GOOGLE-ACCOUNTS-01",
+      "primary_capability": "google.accounts",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.accounts": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.accounts": {
+          "accounts": [],
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-GOOGLE-ACCOUNTS-02",
+      "primary_capability": "google.accounts",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.accounts": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.accounts": {
+          "accounts": [],
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-GOOGLE_CALENDAR-AGENDA-01",
+      "primary_capability": "google_calendar.agenda",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "availability_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_min": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_max": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "academic_concept": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "temporal_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "followup_context_used": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "availability_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_min": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_max": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "academic_concept": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "temporal_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "followup_context_used": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google_calendar.agenda": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google_calendar.agenda": {
+          "events": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "timezone": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-GOOGLE_CALENDAR-AGENDA-02",
+      "primary_capability": "google_calendar.agenda",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "availability_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_min": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_max": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "academic_concept": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "temporal_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "followup_context_used": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "availability_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_min": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_max": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "academic_concept": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "temporal_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "followup_context_used": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google_calendar.agenda": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google_calendar.agenda": {
+          "events": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "timezone": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-GOOGLE_CALENDAR-CREATE-01",
+      "primary_capability": "google_calendar.create",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "calendar_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "all_day": {
+            "type": "boolean"
+          },
+          "start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "summary",
+          "all_day"
+        ],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "calendar_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "all_day": {
+            "type": "boolean"
+          },
+          "start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "summary",
+          "all_day"
+        ],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google_calendar.create": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google_calendar.create": {
+          "id": "",
+          "account": "",
+          "calendar_id": "",
+          "summary": "",
+          "start": {},
+          "end": {},
+          "created": false,
+          "outcome": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-GOOGLE_CALENDAR-CREATE-02",
+      "primary_capability": "google_calendar.create",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "calendar_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "all_day": {
+            "type": "boolean"
+          },
+          "start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "summary",
+          "all_day"
+        ],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "calendar_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "all_day": {
+            "type": "boolean"
+          },
+          "start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "summary",
+          "all_day"
+        ],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google_calendar.create": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google_calendar.create": {
+          "id": "",
+          "account": "",
+          "calendar_id": "",
+          "summary": "",
+          "start": {},
+          "end": {},
+          "created": false,
+          "outcome": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-GOOGLE_CALENDAR-LIST-01",
+      "primary_capability": "google_calendar.list",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google_calendar.list": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google_calendar.list": {
+          "account": "",
+          "calendars": [],
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-GOOGLE_CALENDAR-LIST-02",
+      "primary_capability": "google_calendar.list",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google_calendar.list": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google_calendar.list": {
+          "account": "",
+          "calendars": [],
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-GOOGLE_CALENDAR-NEXT-01",
+      "primary_capability": "google_calendar.next",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google_calendar.next": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google_calendar.next": {
+          "events": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "current_local_time": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-GOOGLE_CALENDAR-NEXT-02",
+      "primary_capability": "google_calendar.next",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google_calendar.next": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google_calendar.next": {
+          "events": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "current_local_time": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-TODO-DUE-01",
+      "primary_capability": "todo.due",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "todo.due": {
+          "task": {},
+          "tasks": []
+        }
+      },
+      "new_synthetic_data": {
+        "todo.due": {
+          "tasks": [],
+          "count": 0
+        }
+      }
+    },
+    {
+      "case_id": "COV-TODO-DUE-02",
+      "primary_capability": "todo.due",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "todo.due": {
+          "task": {},
+          "tasks": []
+        }
+      },
+      "new_synthetic_data": {
+        "todo.due": {
+          "tasks": [],
+          "count": 0
+        }
+      }
+    },
+    {
+      "case_id": "COV-TODO-GET-01",
+      "primary_capability": "todo.get",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "todo.get": {
+          "task": {},
+          "tasks": []
+        }
+      },
+      "new_synthetic_data": {
+        "todo.get": {
+          "task": {},
+          "id": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-TODO-GET-02",
+      "primary_capability": "todo.get",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "todo.get": {
+          "task": {},
+          "tasks": []
+        }
+      },
+      "new_synthetic_data": {
+        "todo.get": {
+          "task": {},
+          "id": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-TODO-LIST-01",
+      "primary_capability": "todo.list",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "todo.list": {
+          "task": {},
+          "tasks": []
+        }
+      },
+      "new_synthetic_data": {
+        "todo.list": {
+          "tasks": [],
+          "count": 0
+        }
+      }
+    },
+    {
+      "case_id": "COV-TODO-LIST-02",
+      "primary_capability": "todo.list",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "todo.list": {
+          "task": {},
+          "tasks": []
+        }
+      },
+      "new_synthetic_data": {
+        "todo.list": {
+          "tasks": [],
+          "count": 0
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-CALENDAR-EVENTS-1",
+      "primary_capability": "google.calendar.events",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "availability_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_min": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_max": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "academic_concept": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "temporal_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "followup_context_used": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "availability_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_min": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_max": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "academic_concept": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "temporal_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "followup_context_used": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.calendar.events": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.calendar.events": {
+          "events": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "timezone": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-CALENDAR-EVENTS-2",
+      "primary_capability": "google.calendar.events",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "availability_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_min": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_max": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "academic_concept": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "temporal_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "followup_context_used": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "availability_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_min": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_max": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "academic_concept": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "temporal_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "followup_context_used": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.calendar.events": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.calendar.events": {
+          "events": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "timezone": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-CALENDAR-AVAILABILITY-1",
+      "primary_capability": "google.calendar.availability",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "availability_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_min": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_max": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "academic_concept": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "temporal_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "followup_context_used": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "availability_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_min": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_max": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "academic_concept": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "temporal_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "followup_context_used": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.calendar.availability": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.calendar.availability": {
+          "events": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "timezone": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-CALENDAR-AVAILABILITY-2",
+      "primary_capability": "google.calendar.availability",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "availability_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_min": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_max": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "academic_concept": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "temporal_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "followup_context_used": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "availability_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "availability_end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_min": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "time_max": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "academic_concept": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "course": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "first_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "temporal_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "followup_context_used": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.calendar.availability": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.calendar.availability": {
+          "events": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "timezone": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-CALENDAR-NEXT-1",
+      "primary_capability": "google.calendar.next",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.calendar.next": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.calendar.next": {
+          "events": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "current_local_time": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-CALENDAR-NEXT-2",
+      "primary_capability": "google.calendar.next",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "days": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.calendar.next": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.calendar.next": {
+          "events": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "current_local_time": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-CALENDAR-CREATE-1",
+      "primary_capability": "google.calendar.create",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "calendar_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "all_day": {
+            "type": "boolean"
+          },
+          "start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "summary",
+          "all_day"
+        ],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "calendar_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "all_day": {
+            "type": "boolean"
+          },
+          "start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "summary",
+          "all_day"
+        ],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.calendar.create": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.calendar.create": {
+          "id": "",
+          "account": "",
+          "calendar_id": "",
+          "summary": "",
+          "start": {},
+          "end": {},
+          "created": false,
+          "outcome": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-CALENDAR-CREATE-2",
+      "primary_capability": "google.calendar.create",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "calendar_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "all_day": {
+            "type": "boolean"
+          },
+          "start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "summary",
+          "all_day"
+        ],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "calendar_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "all_day": {
+            "type": "boolean"
+          },
+          "start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "end_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "location": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "summary",
+          "all_day"
+        ],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.calendar.create": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.calendar.create": {
+          "id": "",
+          "account": "",
+          "calendar_id": "",
+          "summary": "",
+          "start": {},
+          "end": {},
+          "created": false,
+          "outcome": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-CALENDAR-LIST_CALENDARS-1",
+      "primary_capability": "google.calendar.list_calendars",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.calendar.list_calendars": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.calendar.list_calendars": {
+          "account": "",
+          "calendars": [],
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-CALENDAR-LIST_CALENDARS-2",
+      "primary_capability": "google.calendar.list_calendars",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.calendar.list_calendars": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.calendar.list_calendars": {
+          "account": "",
+          "calendars": [],
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-CALENDAR-READ-1",
+      "primary_capability": "google.calendar.read",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "calendar_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "calendar_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.calendar.read": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.calendar.read": {
+          "events": [],
+          "account": "",
+          "calendar_id": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-CALENDAR-READ-2",
+      "primary_capability": "google.calendar.read",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "calendar_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "calendar_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.calendar.read": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.calendar.read": {
+          "events": [],
+          "account": "",
+          "calendar_id": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-GMAIL-RECENT-1",
+      "primary_capability": "google.gmail.recent",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.gmail.recent": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.gmail.recent": {
+          "messages": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-GMAIL-RECENT-2",
+      "primary_capability": "google.gmail.recent",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.gmail.recent": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.gmail.recent": {
+          "messages": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-GMAIL-SEARCH-1",
+      "primary_capability": "google.gmail.search",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.gmail.search": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.gmail.search": {
+          "messages": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-GMAIL-SEARCH-2",
+      "primary_capability": "google.gmail.search",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.gmail.search": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.gmail.search": {
+          "messages": [],
+          "errors": [],
+          "partial": false,
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-GMAIL-READ-1",
+      "primary_capability": "google.gmail.read",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.gmail.read": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.gmail.read": {
+          "id": "",
+          "account": "",
+          "headers": {},
+          "body": {},
+          "attachments_downloaded": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-GMAIL-READ-2",
+      "primary_capability": "google.gmail.read",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.gmail.read": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.gmail.read": {
+          "id": "",
+          "account": "",
+          "headers": {},
+          "body": {},
+          "attachments_downloaded": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-GMAIL-THREAD-1",
+      "primary_capability": "google.gmail.thread",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.gmail.thread": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.gmail.thread": {
+          "messages": [],
+          "account": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-GMAIL-THREAD-2",
+      "primary_capability": "google.gmail.thread",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.gmail.thread": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.gmail.thread": {
+          "messages": [],
+          "account": "",
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-DRIVE-SEARCH-1",
+      "primary_capability": "google.drive.search",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "docs_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "docs_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.drive.search": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.drive.search": {
+          "files": [],
+          "account": "",
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-DRIVE-SEARCH-2",
+      "primary_capability": "google.drive.search",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "docs_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "docs_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.drive.search": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.drive.search": {
+          "files": [],
+          "account": "",
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-DRIVE-LIST-1",
+      "primary_capability": "google.drive.list",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "docs_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "docs_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.drive.list": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.drive.list": {
+          "files": [],
+          "account": "",
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-DRIVE-LIST-2",
+      "primary_capability": "google.drive.list",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "docs_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "docs_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.drive.list": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.drive.list": {
+          "files": [],
+          "account": "",
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-DRIVE-RECENT-1",
+      "primary_capability": "google.drive.recent",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "docs_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "docs_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.drive.recent": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.drive.recent": {
+          "files": [],
+          "account": "",
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-DRIVE-RECENT-2",
+      "primary_capability": "google.drive.recent",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "docs_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "docs_only": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.drive.recent": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.drive.recent": {
+          "files": [],
+          "account": "",
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-DRIVE-METADATA-1",
+      "primary_capability": "google.drive.metadata",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.drive.metadata": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.drive.metadata": {
+          "files": [],
+          "account": "",
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-DRIVE-METADATA-2",
+      "primary_capability": "google.drive.metadata",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.drive.metadata": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.drive.metadata": {
+          "files": [],
+          "account": "",
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-DOCS-READ-1",
+      "primary_capability": "google.docs.read",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.docs.read": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.docs.read": {
+          "files": [],
+          "account": "",
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-DOCS-READ-2",
+      "primary_capability": "google.docs.read",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.docs.read": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.docs.read": {
+          "files": [],
+          "account": "",
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-TASKS-LIST-1",
+      "primary_capability": "google.tasks.list",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tasklist_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tasklist_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.tasks.list": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.tasks.list": {
+          "tasks": [],
+          "account": "",
+          "tasklist_id": "",
+          "provider": "",
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "GOOGLE-LAYER-GOOGLE-TASKS-LIST-2",
+      "primary_capability": "google.tasks.list",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tasklist_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tasklist_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "google.tasks.list": {
+          "data": {}
+        }
+      },
+      "new_synthetic_data": {
+        "google.tasks.list": {
+          "tasks": [],
+          "account": "",
+          "tasklist_id": "",
+          "provider": "",
+          "truncated": false,
+          "state": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-UNIT-CONVERT-01",
+      "primary_capability": "unit.convert",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": [
+              "integer",
+              "number",
+              "null"
+            ]
+          },
+          "from_unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "to_unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": [
+              "integer",
+              "number"
+            ],
+            "description": "Finite numeric value to convert."
+          },
+          "from_unit": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Case-insensitive unit token; surrounding spaces are allowed. Supported: b, bit, bits, byte, bytes, c, celsius, centimeter, centimeters, centimetre, centimetres, cm, day, days, f, fahrenheit, feet, foot, ft, g, gb, gbit, gib, gibibyte, gibibytes, gigabyte, gigabytes, gram, grams, h, hour, hours, hr, in, inch, inches, k, kb, kbit, kelvin, kg, kib, kibibyte, kibibytes, kilobyte, kilobytes, kilogram, kilograms, kilometer, kilometers, kilometre, kilometres, km, kmh, knot, knots, kph, lb, lbs, m, mb, mbit, mebibyte, mebibytes, megabyte, megabytes, meter, meters, metre, metres, mg, mi, mib, mile, miles, milligram, milligrams, millimeter, millimeters, millimetre, millimetres, millisecond, milliseconds, min, minute, minutes, mm, mph, mps, ms, ounce, ounces, oz, pound, pounds, s, sec, second, seconds, st, stone, stones, tb, tebibyte, tebibytes, terabyte, terabytes, tib, week, weeks, yard, yards, yd. KB/MB/GB/TB and their full names use legacy binary 1024 scaling, matching KiB/MiB/GiB/TiB. Bits remain distinct from bytes. Source and target must belong to the same dimension."
+          },
+          "to_unit": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Case-insensitive unit token; surrounding spaces are allowed. Supported: b, bit, bits, byte, bytes, c, celsius, centimeter, centimeters, centimetre, centimetres, cm, day, days, f, fahrenheit, feet, foot, ft, g, gb, gbit, gib, gibibyte, gibibytes, gigabyte, gigabytes, gram, grams, h, hour, hours, hr, in, inch, inches, k, kb, kbit, kelvin, kg, kib, kibibyte, kibibytes, kilobyte, kilobytes, kilogram, kilograms, kilometer, kilometers, kilometre, kilometres, km, kmh, knot, knots, kph, lb, lbs, m, mb, mbit, mebibyte, mebibytes, megabyte, megabytes, meter, meters, metre, metres, mg, mi, mib, mile, miles, milligram, milligrams, millimeter, millimeters, millimetre, millimetres, millisecond, milliseconds, min, minute, minutes, mm, mph, mps, ms, ounce, ounces, oz, pound, pounds, s, sec, second, seconds, st, stone, stones, tb, tebibyte, tebibytes, terabyte, terabytes, tib, week, weeks, yard, yards, yd. KB/MB/GB/TB and their full names use legacy binary 1024 scaling, matching KiB/MiB/GiB/TiB. Bits remain distinct from bytes. Source and target must belong to the same dimension."
+          }
+        },
+        "required": [
+          "value",
+          "from_unit",
+          "to_unit"
+        ],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "unit.convert": {
+          "converted": 0.0,
+          "family": ""
+        }
+      },
+      "new_synthetic_data": {
+        "unit.convert": {
+          "converted": 0.0,
+          "family": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-UNIT-CONVERT-02",
+      "primary_capability": "unit.convert",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": [
+              "integer",
+              "number",
+              "null"
+            ]
+          },
+          "from_unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "to_unit": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": [
+              "integer",
+              "number"
+            ],
+            "description": "Finite numeric value to convert."
+          },
+          "from_unit": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Case-insensitive unit token; surrounding spaces are allowed. Supported: b, bit, bits, byte, bytes, c, celsius, centimeter, centimeters, centimetre, centimetres, cm, day, days, f, fahrenheit, feet, foot, ft, g, gb, gbit, gib, gibibyte, gibibytes, gigabyte, gigabytes, gram, grams, h, hour, hours, hr, in, inch, inches, k, kb, kbit, kelvin, kg, kib, kibibyte, kibibytes, kilobyte, kilobytes, kilogram, kilograms, kilometer, kilometers, kilometre, kilometres, km, kmh, knot, knots, kph, lb, lbs, m, mb, mbit, mebibyte, mebibytes, megabyte, megabytes, meter, meters, metre, metres, mg, mi, mib, mile, miles, milligram, milligrams, millimeter, millimeters, millimetre, millimetres, millisecond, milliseconds, min, minute, minutes, mm, mph, mps, ms, ounce, ounces, oz, pound, pounds, s, sec, second, seconds, st, stone, stones, tb, tebibyte, tebibytes, terabyte, terabytes, tib, week, weeks, yard, yards, yd. KB/MB/GB/TB and their full names use legacy binary 1024 scaling, matching KiB/MiB/GiB/TiB. Bits remain distinct from bytes. Source and target must belong to the same dimension."
+          },
+          "to_unit": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Case-insensitive unit token; surrounding spaces are allowed. Supported: b, bit, bits, byte, bytes, c, celsius, centimeter, centimeters, centimetre, centimetres, cm, day, days, f, fahrenheit, feet, foot, ft, g, gb, gbit, gib, gibibyte, gibibytes, gigabyte, gigabytes, gram, grams, h, hour, hours, hr, in, inch, inches, k, kb, kbit, kelvin, kg, kib, kibibyte, kibibytes, kilobyte, kilobytes, kilogram, kilograms, kilometer, kilometers, kilometre, kilometres, km, kmh, knot, knots, kph, lb, lbs, m, mb, mbit, mebibyte, mebibytes, megabyte, megabytes, meter, meters, metre, metres, mg, mi, mib, mile, miles, milligram, milligrams, millimeter, millimeters, millimetre, millimetres, millisecond, milliseconds, min, minute, minutes, mm, mph, mps, ms, ounce, ounces, oz, pound, pounds, s, sec, second, seconds, st, stone, stones, tb, tebibyte, tebibytes, terabyte, terabytes, tib, week, weeks, yard, yards, yd. KB/MB/GB/TB and their full names use legacy binary 1024 scaling, matching KiB/MiB/GiB/TiB. Bits remain distinct from bytes. Source and target must belong to the same dimension."
+          }
+        },
+        "required": [
+          "value",
+          "from_unit",
+          "to_unit"
+        ],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "unit.convert": {
+          "converted": 0.0,
+          "family": ""
+        }
+      },
+      "new_synthetic_data": {
+        "unit.convert": {
+          "converted": 0.0,
+          "family": ""
+        }
+      }
+    },
+    {
+      "case_id": "COV-POWER-BATTERY_DETAIL-01",
+      "primary_capability": "power.battery_detail",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "power.battery_detail": {
+          "percent": 0.0,
+          "plugged_in": false,
+          "minutes_remaining": 0
+        }
+      },
+      "new_synthetic_data": {
+        "power.battery_detail": {
+          "percent": 0.0,
+          "plugged_in": false,
+          "minutes_remaining": 0,
+          "present": false
+        }
+      }
+    },
+    {
+      "case_id": "COV-POWER-BATTERY_DETAIL-02",
+      "primary_capability": "power.battery_detail",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "power.battery_detail": {
+          "percent": 0.0,
+          "plugged_in": false,
+          "minutes_remaining": 0
+        }
+      },
+      "new_synthetic_data": {
+        "power.battery_detail": {
+          "percent": 0.0,
+          "plugged_in": false,
+          "minutes_remaining": 0,
+          "present": false
+        }
+      }
+    },
+    {
+      "case_id": "COV-SYSTEM-BATTERY-01",
+      "primary_capability": "system.battery",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "system.battery": {
+          "percent": 0.0
+        }
+      },
+      "new_synthetic_data": {
+        "system.battery": {
+          "percent": 0.0,
+          "available": false
+        }
+      }
+    },
+    {
+      "case_id": "COV-SYSTEM-BATTERY-02",
+      "primary_capability": "system.battery",
+      "old_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "new_expected_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "old_synthetic_data": {
+        "system.battery": {
+          "percent": 0.0
+        }
+      },
+      "new_synthetic_data": {
+        "system.battery": {
+          "percent": 0.0,
+          "available": false
+        }
+      }
+    }
+  ],
+  "supplemental_schema_events": [
+    {
+      "classification": "supplemental_schema_probe",
+      "case_id": "COV-FILE-SEARCH-01",
+      "capability_id": "file.grep",
+      "fixture": {
+        "name": "file.grep",
+        "ok": true,
+        "message": "Synthetic schema probe; no capability was executed.",
+        "data": {
+          "root": "",
+          "query": "",
+          "pattern": "",
+          "matches": [],
+          "files": [],
+          "match_count": 0,
+          "scanned_files": 0,
+          "search_performed": false,
+          "truncated": false
+        }
+      },
+      "reason": "Current argument metadata adds a read-only file.grep menu alternative. Cover its schema without altering the original required file.search expectation, prompt, arguments or any behavioral oracle.",
+      "behavioral_expectations_unchanged": true
+    }
+  ],
+  "metadata_addenda": [
+    {
+      "scope": "Campaign 1 independently reproduced unit argument contract alignment",
+      "authorized_fields": [
+        "unit.convert expected_schema only"
+      ],
+      "case_ids": [
+        "COV-UNIT-CONVERT-01",
+        "COV-UNIT-CONVERT-02"
+      ],
+      "before_target_sha256": "ddbd0d5e77e24b8385a13f30a65a97f1f324286d5306cfd774cf1a5a0347e545",
+      "after_target_sha256": "c2cfce88233e6018b7cce719b011626980d1c8037f1db3ad661031cf348076c8",
+      "behavioral_expectations_unchanged": true,
+      "reason": "Required non-null unit fields and finite legal-unit descriptions; strict drift detection, numeric factors and all behavioral objectives retained."
+    },
+    {
+      "scope": "Campaign 2 battery output contract metadata alignment",
+      "authorized_fields": [
+        "results.system.battery.data.available",
+        "results.power.battery_detail.data.present"
+      ],
+      "changes": [
+        {
+          "case_id": "COV-POWER-BATTERY_DETAIL-01",
+          "capability_id": "power.battery_detail",
+          "added_schema_fields": {
+            "present": false
+          },
+          "before": {
+            "percent": 0.0,
+            "plugged_in": false,
+            "minutes_remaining": 0
+          },
+          "after": {
+            "percent": 0.0,
+            "plugged_in": false,
+            "minutes_remaining": 0,
+            "present": false
+          }
+        },
+        {
+          "case_id": "COV-POWER-BATTERY_DETAIL-02",
+          "capability_id": "power.battery_detail",
+          "added_schema_fields": {
+            "present": false
+          },
+          "before": {
+            "percent": 0.0,
+            "plugged_in": false,
+            "minutes_remaining": 0
+          },
+          "after": {
+            "percent": 0.0,
+            "plugged_in": false,
+            "minutes_remaining": 0,
+            "present": false
+          }
+        },
+        {
+          "case_id": "COV-SYSTEM-BATTERY-01",
+          "capability_id": "system.battery",
+          "added_schema_fields": {
+            "available": false
+          },
+          "before": {
+            "percent": 0.0
+          },
+          "after": {
+            "percent": 0.0,
+            "available": false
+          }
+        },
+        {
+          "case_id": "COV-SYSTEM-BATTERY-02",
+          "capability_id": "system.battery",
+          "added_schema_fields": {
+            "available": false
+          },
+          "before": {
+            "percent": 0.0
+          },
+          "after": {
+            "percent": 0.0,
+            "available": false
+          }
+        }
+      ],
+      "before_target_sha256": "c2cfce88233e6018b7cce719b011626980d1c8037f1db3ad661031cf348076c8",
+      "after_target_sha256": "c31a84a3090995320509cc24680918a4b6a434a2f87e60325bb263b83f271308",
+      "historical_v1_sha256": "70468c1c186ef69b6f065120ea548f6698dc39dc2676e0afa98c10d178930833",
+      "behavioral_expectations_unchanged": true,
+      "reason": "Declare observed availability/presence while preserving strict output-key drift checks. No actual provider result, prompt, required tool, answer claim, argument schema or risk metadata is changed."
+    }
+  ]
+}

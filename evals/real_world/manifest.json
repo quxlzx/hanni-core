@@ -1,0 +1,8 @@
+{
+  "name": "HANNI curated real-world failures",
+  "status": "DORMANT_UNTIL_TOOL_INTELLIGENCE_V1_FREEZE",
+  "accepted_cases": 0,
+  "source": "manually reviewed real interactions only",
+  "automatic_capture": false,
+  "automatic_training": false
+}

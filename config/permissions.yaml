@@ -1,0 +1,36 @@
+# Permission levels (Master Spec §20 Autonomy; V1 plan §12 Autonomy Policy) under
+# High Autonomy Owner Mode. See docs/DECISIONS.md D-0004.
+#
+# Enforced in code, not configurable away:
+#   * Level 3 can never be auto-approved.
+#   * No profile may auto-approve above level 2.
+#   * Authorization is decided in code from the actor's verified identity, never
+#     from the LLM (Master Spec §37). In V1 the owner is whoever operates this
+#     laptop (D-0010). `everyone_else` applies to any future non-owner identity
+#     (for example a remote interface) and has no producer in V1.
+
+levels:
+  - level: 0
+    name: read_only
+    description: Read-only observation - system stats, file search, reading ordinary files, screen inspection.
+    auto_approve_allowed: true
+  - level: 1
+    name: safe
+    description: Reversible everyday actions - open/close apps, change volume, open URLs, navigate UI.
+    auto_approve_allowed: true
+  - level: 2
+    name: sensitive
+    description: Modify project files, run commands/scripts, stop processes, install ordinary dev dependencies.
+    auto_approve_allowed: true
+  - level: 3
+    name: dangerous
+    description: Bulk/permanent deletion, disk formatting, security or credential changes, elevated execution, money, external publishing, factory reset.
+    auto_approve_allowed: false
+
+profiles:
+  owner:
+    max_auto_approve_level: 2   # levels 0-2 execute without confirmation; level 3 always confirms
+    chat_only: false
+  everyone_else:
+    max_auto_approve_level: -1  # no tool access of any kind
+    chat_only: true

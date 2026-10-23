@@ -1,0 +1,25 @@
+# Campaign 9 execution protocol
+
+No separate common-instructions document was found in preceding campaigns or this checkout. Apply the exact REQUEST.md and retain prior isolation, independent reproduction, prospective inputs/oracles, preserved failures, durable checkpoints and once-only final separation. No commit or staging without a new user request.
+
+## Authority and isolation
+
+Use only original HANNI implementations with campaign-owned temporary files, SQLite databases, configs and localhost services. Use synthetic secrets and data, never personal credentials. Explicitly mock unsafe OS, remote/provider, hardware or consequential leaves. Label implementation-level controlled and mocked evidence separately from actual loopback SDK/HTTP execution and genuine model inference. No third-party traffic, owner store/config reads by fixtures, owner mutations, node power/SSH operations, installation, new model server, personal capture, microphone or webcam activation.
+
+Baseline original source, native artifact and existing backend/model process identities before production fixes. Preserve all earlier campaign evidence, executable helpers, evaluation corpora, protected owner/deployment files and current uncommitted changes. Prior private holdout input/oracle files are not inspected. Targeted security changes may modify related production files only; source attribution compares with this campaign baseline rather than HEAD. Raw synthetic evidence is ignored under data/campaign9-*; public reports contain hashes and synthetic findings, no genuine secret values.
+
+Two real workers inspect disjoint tool/MCP/controller and workflow/memory/compute/model boundaries. The manager owns API, logging/privacy integration, preservation and final testing. The real independent verifier seals its own untouched holdout before any tuning, without exposing inputs or answers to engineers. Every critical finding is independently reproduced before repair and after repair. Lesser findings still require implementation-level evidence and independent review. Do not loosen restrictions, substitute success responses or hardcode benchmark phrases.
+
+## Evidence and execution
+
+Inventory dynamic registered capabilities and security-relevant API surfaces; do not assume counts. Each of the 20 security and 13 fault categories has a documented outcome with original boundary, preconditions, causal layer, observed handler entries/effects, evidence and limitation. Negative tests must assert actual refusal and absence of forbidden effects, not merely an exception. Positive controls ensure guards are reachable and meaningful. Fault recovery is credited only where the original implementation supports and demonstrates it. Unsupported recovery, untested external environments and hardware remain explicit.
+
+In-process or isolated subprocess fault adapters may raise timeout, disconnection, malformed response, unavailable SQLite/index, disk-full or GPU-OOM errors without exhausting actual hardware or disk. Backend restart closes/restarts only an owned disposable service and compares stale-token behavior. Unsafe shell/remote/destructive actions use denied/mock leaves; benign approved file effects stay within disposable fixture roots. Prompt-injection cases exercise original trust, schemas, permission and execution gates. Injected model decisions are explicitly controlled tests, not real model inference.
+
+Genuine inference may use the already running verified local model only after original adaptive admission plus request-time identity/privacy/resource bounds. All text is synthetic, no tools/speech/remote placement/new server. Bound requests, output tokens and deadlines; no retries on consequential operations. Record blocked admission without reducing limits. Never treat model agreement, safety text or mocked responses as proof of deterministic authority enforcement.
+
+Freeze all executable implementation/helpers/tests, installed relevant driver identity, schemas/protocol and public development evidence before the single private final. The verifier checks seals before its exclusive claim, closes all observations before grading, and never retries or tunes on final answers. Manager and engineers read only oracle-free final publications. Mutable final reports are excluded from the freeze. Preserve original failures and denominators through every checkpoint.
+
+## Reporting and acceptance
+
+Findings are grouped by severity and exploitability in the authorized environment, with exact evidence, mitigation, regression state and residual limitations. Report observed leaks/unauthorized entries honestly before repair; zero post-fix observations are scoped controlled outcomes, not universal guarantees. Acceptance targets are not guaranteed. No fabricated success, no private-context forwarding, no authority bypass and no uncontrolled consequential-write retries may be promoted from incomplete evidence. Final report receives independent overclaim review. Preserve owner process identities and prior artifacts after all owned cleanup.

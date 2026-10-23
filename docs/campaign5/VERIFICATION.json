@@ -1,0 +1,113 @@
+{
+  "source_proof": {
+    "manifest_sha256": "10c73380215acfe307906da905daab58570eea5e7e9b7a53ca3938d66ff85e62",
+    "archive_sha256": "a822b91e45e6e9a62e090eab737fbeb78d7594049df3e2ea780438452c58d466",
+    "files": 427
+  },
+  "private_seal_sha256": "68ebb86a18b09e3188cfab1c154c8dc445ba78dcec08af9ab84fcd9d51b0a665",
+  "final_once": {
+    "cases": 100,
+    "mode_records": 600,
+    "generation_http": 0,
+    "semantic_eligible": 0,
+    "all_blocked": true,
+    "configured_baseline_preserved": true,
+    "source_unchanged": true,
+    "immutable_dev_profile_unchanged": true,
+    "private_seal_unchanged": true,
+    "oracles_parsed_only_after_closed": true,
+    "quality_oracles_supplied_to_inference": false,
+    "no_final_retry_or_tuning": true
+  },
+  "original_runtime_model_process_preserved": true,
+  "evidence": [
+    {
+      "path": "data/campaign5-verifier/implementation-before/tests.xml",
+      "sha256": "196a14e770d8c0f9a896a30c38c23af9d1f9ee15da4633747f20a4920e598db9"
+    },
+    {
+      "path": "data/campaign5-verifier/implementation-before-v2/tests.xml",
+      "sha256": "458058487c0925d219f2ce7359e7c19fe6cb5a6787bdcd0b0b88d69234c4ab3b"
+    },
+    {
+      "path": "data/campaign5-verifier/implementation-before-v2/ERRATUM.json",
+      "sha256": "e8440f86c38cdd9db2e73d9f37c677c31e3e7ad14b3ee2f55aa443f8aa7acf2d"
+    },
+    {
+      "path": "data/campaign5-verifier/http-identity-before/tests.xml",
+      "sha256": "483efa09e6fe82acd48dbce9fd1fbf33a11a2bc1b295b2ef93a73abf0e747959"
+    },
+    {
+      "path": "data/campaign5-verifier/http-identity-repair/tests.xml",
+      "sha256": "62e1954c7518bd2aff8f8ba6660bdbff2927d7728d70b9ab8ed566ceca07018b"
+    },
+    {
+      "path": "data/campaign5-verifier/identity-attribution-before/tests.xml",
+      "sha256": "5863376e6c36ca663108d5b5a223ad527cc4ab61ea9d3af2f7180b7d83526155"
+    },
+    {
+      "path": "data/campaign5-verifier/final-source-ready/tests.xml",
+      "sha256": "a1d050574308b116a9f98c92ab248bcb2d9c0d273bc6366ea97c4b3e5141798a"
+    },
+    {
+      "path": "data/campaign5-verifier/final-source-ready/SUMMARY.json",
+      "sha256": "a5580d8b7a90a8f755fdafe7c9de620eb7e97e0dba6b07c122e3e48c44ab3757"
+    },
+    {
+      "path": "data/campaign5-verifier/final-freeze-check.json",
+      "sha256": "6346c9960dcf2ccd8811e93b327aa82dfad51d33a22f9edfcc939596a18f585d"
+    },
+    {
+      "path": "data/campaign5-verifier/novelty-current-development.json",
+      "sha256": "e3b4b6d96f3fe0e3f9510953f006fbf87c9aef514b888012f944ad8f4462ee60"
+    },
+    {
+      "path": "data/campaign5-verifier/final-runtime-preservation.json",
+      "sha256": "46a0a1aaa5c50c6b622318389b25d3a8d4a23dc560cebb1f1bf25cff9661def7"
+    },
+    {
+      "path": "data/campaign5-verifier/final-once/CLOSED.json",
+      "sha256": "659b96335614da152a5b29b90690db4da23d05a6206a0ea0f9a962dd458c70de"
+    },
+    {
+      "path": "data/campaign5-verifier/final-once/receipts.jsonl",
+      "sha256": "e841249e32a94489fa5d8454161692c4a0b8f2526df8d6d5aa0ac6dc62b72b79"
+    },
+    {
+      "path": "data/campaign5-verifier/final-once/GRADES.json",
+      "sha256": "78aa68cefe1bca600f4ba765b20c6b0f24dcd8c32c6a11fe919033caebd4e66e"
+    },
+    {
+      "path": "data/campaign5-verifier/final-once/ADMISSION_CAUSES.json",
+      "sha256": "a102c52803c9c69777ed321e22589b94186ff8880141fe87c07d7a7f583d1d62"
+    },
+    {
+      "path": "docs/campaign5/FINAL_HOLDOUT.json",
+      "sha256": "537dd5ad9b9c4e99ed916d11cb98e61b707b62617049bda475fdc41713824fd1"
+    },
+    {
+      "path": "docs/campaign5/MEASUREMENT_SEAL.json",
+      "sha256": "a5580d8b7a90a8f755fdafe7c9de620eb7e97e0dba6b07c122e3e48c44ab3757"
+    },
+    {
+      "path": "docs/campaign5/INDEPENDENT_REVIEW.md",
+      "sha256": "ec3445b6ba5f78714a8bcc8d3a686787ac3f15f5cc3bf35c901814c8519244ef"
+    },
+    {
+      "path": "data/campaign5-verifier/final-report-review.json",
+      "sha256": "3376e17f27f1ddc204ab9096667d138b56574f9360ce16d5b990a035e0a4a57c"
+    }
+  ],
+  "acceptance": {
+    "implementation_controlled_suite": "61/61 PASS",
+    "actual_model_quality": "BLOCKED_UNMEASURED",
+    "adaptive_selective_benefit": "UNESTABLISHED",
+    "deployment": "Existing owner processes preserved; no restart/deployment."
+  },
+  "manager_report_review": {
+    "path": "docs/campaign5/REPORT.md",
+    "sha256": "e5e39a7623ae62619e82a6f92a2aeb48ef833799e58c1826afab9d7eb911cb78",
+    "accepted_with_scopes": true,
+    "links_valid": true
+  }
+}

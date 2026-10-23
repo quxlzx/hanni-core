@@ -1,0 +1,3536 @@
+{
+  "scope": "Independent manager aggregate; native controller and diagnostic evidence separate",
+  "planned_cases": 256,
+  "planned_owner_turns": 273,
+  "recorded_cases": 256,
+  "recorded_owner_turns": 273,
+  "run_finished": true,
+  "run_summary": {
+    "planned_cases": 256,
+    "completed_owner_turns": 273,
+    "case_failures": 0,
+    "model_calls": 399,
+    "diagnostic_model_calls": 26,
+    "elapsed_seconds": 1233.4714231999824,
+    "source_unchanged": true
+  },
+  "controller_errors": 10,
+  "owner_turn_latency_ms_errors_included": {
+    "n": 273,
+    "mean": 1332.1654117191142,
+    "p50": 1398.5655999276787,
+    "p95": 3382.6038200408193
+  },
+  "native_controller": {
+    "recorded_client_invocations": 399,
+    "http_attempts": 399,
+    "raw_tool_response_bodies": 385,
+    "calls_with_usage": 399,
+    "calls_missing_usage": 0,
+    "usage_records": 399,
+    "prompt_tokens_observed": 599373,
+    "completion_tokens_observed": 15644,
+    "total_tokens_observed": 615017,
+    "tokens_per_inference_owner_turn_fully_observed": {
+      "n": 172,
+      "mean": 3575.6802325581393,
+      "p50": 2984.5,
+      "p95": 6140.0999999999985
+    },
+    "inference_owner_turns_missing_complete_usage": 0,
+    "model_invocation_latency_ms_errors_included": {
+      "n": 399,
+      "mean": 861.2424473679114,
+      "p50": 784.3825001036748,
+      "p95": 1744.9658399331372
+    },
+    "scope": "Recorded underlying-client invocations; pre-client adaptive admission failures are separate. HTTP/raw/usage evidence independently counted. Prompt totals include repeated context."
+  },
+  "separate_diagnostic": {
+    "recorded_client_invocations": 26,
+    "http_attempts": 26,
+    "raw_tool_response_bodies": 26,
+    "calls_with_usage": 26,
+    "calls_missing_usage": 0,
+    "usage_records": 26,
+    "prompt_tokens_observed": 28855,
+    "completion_tokens_observed": 842,
+    "total_tokens_observed": 29697,
+    "tokens_per_inference_owner_turn_fully_observed": {
+      "n": 26,
+      "mean": 1142.1923076923076,
+      "p50": 1057.0,
+      "p95": 1537.75
+    },
+    "inference_owner_turns_missing_complete_usage": 0,
+    "model_invocation_latency_ms_errors_included": {
+      "n": 26,
+      "mean": 796.3449576860652,
+      "p50": 764.5217000390403,
+      "p95": 1237.5144750112668
+    },
+    "scope": "Recorded underlying-client invocations; pre-client adaptive admission failures are separate. HTTP/raw/usage evidence independently counted. Prompt totals include repeated context."
+  },
+  "native_zero_model_invocation_turns": 101,
+  "diagnostic_probe_errors_by_type": {
+    "ModelSelectionError": 75
+  },
+  "diagnostic_probe_error_turns_with_zero_recorded_http": 75,
+  "grades": {
+    "owner_turns": 273,
+    "required_tool_recall_at_k": {
+      "1": {
+        "passed": 171,
+        "eligible": 273,
+        "percent": 62.637362637362635
+      },
+      "3": {
+        "passed": 194,
+        "eligible": 273,
+        "percent": 71.06227106227107
+      },
+      "5": {
+        "passed": 194,
+        "eligible": 273,
+        "percent": 71.06227106227107
+      },
+      "8": {
+        "passed": 194,
+        "eligible": 273,
+        "percent": 71.06227106227107
+      }
+    },
+    "menu_sufficiency_all_turns": {
+      "passed": 184,
+      "eligible": 273,
+      "percent": 67.3992673992674
+    },
+    "menu_sufficiency_tool_turns": {
+      "passed": 161,
+      "eligible": 238,
+      "percent": 67.6470588235294
+    },
+    "native_model_selection_when_menu_sufficient": {
+      "passed": 111,
+      "eligible": 118,
+      "percent": 94.0677966101695
+    },
+    "native_name_selection_when_menu_sufficient": {
+      "passed": 111,
+      "eligible": 118,
+      "percent": 94.0677966101695
+    },
+    "raw_proposal_sent_schema_validity": {
+      "passed": 179,
+      "eligible": 180,
+      "percent": 99.44444444444444
+    },
+    "controller_tool_or_disposition_success": {
+      "passed": 140,
+      "eligible": 273,
+      "percent": 51.282051282051285
+    },
+    "correct_native_no_tool_decisions": {
+      "passed": 9,
+      "eligible": 9,
+      "percent": 100.0
+    },
+    "annotated_effective_argument_checks": {
+      "passed": 36,
+      "eligible": 76,
+      "percent": 47.36842105263158
+    },
+    "annotated_admitted_field_semantics": {
+      "passed": 38,
+      "eligible": 44,
+      "percent": 86.36363636363636
+    },
+    "annotated_raw_explicit_field_semantics": {
+      "passed": 40,
+      "eligible": 46,
+      "percent": 86.95652173913044
+    },
+    "annotated_argument_predicates_missing_expected_tool": 34,
+    "argument_annotation_limitations": 0,
+    "capability_hallucinated_proposals": {
+      "passed": 0,
+      "eligible": 180,
+      "percent": 0.0
+    },
+    "out_of_menu_or_unusable_proposals": 0,
+    "critical_unauthorized_dispatch_turns": 0,
+    "inappropriate_actual_proposals": 34,
+    "irrelevant_menu_exposures": 155,
+    "fixed_argument_conflicts": 0,
+    "parallel_call_protocol_violations": 0,
+    "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+  },
+  "by_family": {
+    "archive_git": {
+      "owner_turns": 10,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 8,
+          "eligible": 13,
+          "percent": 61.53846153846154
+        },
+        "3": {
+          "passed": 9,
+          "eligible": 13,
+          "percent": 69.23076923076923
+        },
+        "5": {
+          "passed": 9,
+          "eligible": 13,
+          "percent": 69.23076923076923
+        },
+        "8": {
+          "passed": 9,
+          "eligible": 13,
+          "percent": 69.23076923076923
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 6,
+        "eligible": 10,
+        "percent": 60.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 6,
+        "eligible": 10,
+        "percent": 60.0
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 5,
+        "eligible": 6,
+        "percent": 83.33333333333333
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 5,
+        "eligible": 6,
+        "percent": 83.33333333333333
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 10,
+        "eligible": 10,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 5,
+        "eligible": 10,
+        "percent": 50.0
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 5,
+        "eligible": 13,
+        "percent": 38.46153846153846
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 6,
+        "eligible": 9,
+        "percent": 66.66666666666667
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 6,
+        "eligible": 9,
+        "percent": 66.66666666666667
+      },
+      "annotated_argument_predicates_missing_expected_tool": 5,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 10,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 1,
+      "irrelevant_menu_exposures": 3,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "calculation_text": {
+      "owner_turns": 12,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 9,
+          "eligible": 12,
+          "percent": 75.0
+        },
+        "3": {
+          "passed": 9,
+          "eligible": 12,
+          "percent": 75.0
+        },
+        "5": {
+          "passed": 9,
+          "eligible": 12,
+          "percent": 75.0
+        },
+        "8": {
+          "passed": 9,
+          "eligible": 12,
+          "percent": 75.0
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 9,
+        "eligible": 12,
+        "percent": 75.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 8,
+        "eligible": 11,
+        "percent": 72.72727272727273
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 8,
+        "eligible": 12,
+        "percent": 66.66666666666667
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 1,
+        "eligible": 1,
+        "percent": 100.0
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 2,
+        "eligible": 4,
+        "percent": 50.0
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 2,
+        "eligible": 2,
+        "percent": 100.0
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 2,
+        "eligible": 2,
+        "percent": 100.0
+      },
+      "annotated_argument_predicates_missing_expected_tool": 2,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 7,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 0,
+      "irrelevant_menu_exposures": 0,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "calendar": {
+      "owner_turns": 12,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 7,
+          "eligible": 12,
+          "percent": 58.333333333333336
+        },
+        "3": {
+          "passed": 7,
+          "eligible": 12,
+          "percent": 58.333333333333336
+        },
+        "5": {
+          "passed": 7,
+          "eligible": 12,
+          "percent": 58.333333333333336
+        },
+        "8": {
+          "passed": 7,
+          "eligible": 12,
+          "percent": 58.333333333333336
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 7,
+        "eligible": 12,
+        "percent": 58.333333333333336
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 7,
+        "eligible": 12,
+        "percent": 58.333333333333336
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 2,
+        "eligible": 12,
+        "percent": 16.666666666666668
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 0,
+      "irrelevant_menu_exposures": 4,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "clock_timezone": {
+      "owner_turns": 10,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 3,
+          "eligible": 11,
+          "percent": 27.272727272727273
+        },
+        "3": {
+          "passed": 4,
+          "eligible": 11,
+          "percent": 36.36363636363637
+        },
+        "5": {
+          "passed": 4,
+          "eligible": 11,
+          "percent": 36.36363636363637
+        },
+        "8": {
+          "passed": 4,
+          "eligible": 11,
+          "percent": 36.36363636363637
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 3,
+        "eligible": 10,
+        "percent": 30.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 3,
+        "eligible": 10,
+        "percent": 30.0
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 2,
+        "eligible": 2,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 2,
+        "eligible": 2,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 2,
+        "eligible": 2,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 2,
+        "eligible": 10,
+        "percent": 20.0
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 2,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 0,
+      "irrelevant_menu_exposures": 3,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "devices_display": {
+      "owner_turns": 10,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 8,
+          "eligible": 11,
+          "percent": 72.72727272727273
+        },
+        "3": {
+          "passed": 9,
+          "eligible": 11,
+          "percent": 81.81818181818181
+        },
+        "5": {
+          "passed": 9,
+          "eligible": 11,
+          "percent": 81.81818181818181
+        },
+        "8": {
+          "passed": 9,
+          "eligible": 11,
+          "percent": 81.81818181818181
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 8,
+        "eligible": 10,
+        "percent": 80.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 7,
+        "eligible": 9,
+        "percent": 77.77777777777777
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 9,
+        "eligible": 9,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 8,
+        "eligible": 10,
+        "percent": 80.0
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 9,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 0,
+      "irrelevant_menu_exposures": 1,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "disk_storage": {
+      "owner_turns": 10,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 7,
+          "eligible": 11,
+          "percent": 63.63636363636363
+        },
+        "3": {
+          "passed": 8,
+          "eligible": 11,
+          "percent": 72.72727272727273
+        },
+        "5": {
+          "passed": 8,
+          "eligible": 11,
+          "percent": 72.72727272727273
+        },
+        "8": {
+          "passed": 8,
+          "eligible": 11,
+          "percent": 72.72727272727273
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 7,
+        "eligible": 10,
+        "percent": 70.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 7,
+        "eligible": 10,
+        "percent": 70.0
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 10,
+        "eligible": 11,
+        "percent": 90.9090909090909
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 7,
+        "eligible": 10,
+        "percent": 70.0
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 4,
+        "eligible": 7,
+        "percent": 57.142857142857146
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 4,
+        "eligible": 4,
+        "percent": 100.0
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 4,
+        "eligible": 4,
+        "percent": 100.0
+      },
+      "annotated_argument_predicates_missing_expected_tool": 3,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 11,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 3,
+      "irrelevant_menu_exposures": 13,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "drive_documents": {
+      "owner_turns": 12,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 6,
+          "eligible": 12,
+          "percent": 50.0
+        },
+        "3": {
+          "passed": 6,
+          "eligible": 12,
+          "percent": 50.0
+        },
+        "5": {
+          "passed": 6,
+          "eligible": 12,
+          "percent": 50.0
+        },
+        "8": {
+          "passed": 6,
+          "eligible": 12,
+          "percent": 50.0
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 6,
+        "eligible": 12,
+        "percent": 50.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 6,
+        "eligible": 12,
+        "percent": 50.0
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 2,
+        "eligible": 2,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 2,
+        "eligible": 2,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 6,
+        "eligible": 6,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 2,
+        "eligible": 12,
+        "percent": 16.666666666666668
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 6,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 4,
+      "irrelevant_menu_exposures": 7,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "email": {
+      "owner_turns": 12,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 9,
+          "eligible": 12,
+          "percent": 75.0
+        },
+        "3": {
+          "passed": 9,
+          "eligible": 12,
+          "percent": 75.0
+        },
+        "5": {
+          "passed": 9,
+          "eligible": 12,
+          "percent": 75.0
+        },
+        "8": {
+          "passed": 9,
+          "eligible": 12,
+          "percent": 75.0
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 9,
+        "eligible": 12,
+        "percent": 75.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 9,
+        "eligible": 12,
+        "percent": 75.0
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 5,
+        "eligible": 5,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 5,
+        "eligible": 5,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 8,
+        "eligible": 8,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 8,
+        "eligible": 12,
+        "percent": 66.66666666666667
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 8,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 3,
+      "irrelevant_menu_exposures": 3,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "environment_browser": {
+      "owner_turns": 10,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 8,
+          "eligible": 10,
+          "percent": 80.0
+        },
+        "3": {
+          "passed": 8,
+          "eligible": 10,
+          "percent": 80.0
+        },
+        "5": {
+          "passed": 8,
+          "eligible": 10,
+          "percent": 80.0
+        },
+        "8": {
+          "passed": 8,
+          "eligible": 10,
+          "percent": 80.0
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 8,
+        "eligible": 10,
+        "percent": 80.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 7,
+        "eligible": 9,
+        "percent": 77.77777777777777
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 1,
+        "eligible": 10,
+        "percent": 10.0
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 5,
+        "percent": 0.0
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 5,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 0,
+      "irrelevant_menu_exposures": 1,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "file_discovery": {
+      "owner_turns": 12,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 8,
+          "eligible": 13,
+          "percent": 61.53846153846154
+        },
+        "3": {
+          "passed": 10,
+          "eligible": 13,
+          "percent": 76.92307692307692
+        },
+        "5": {
+          "passed": 10,
+          "eligible": 13,
+          "percent": 76.92307692307692
+        },
+        "8": {
+          "passed": 10,
+          "eligible": 13,
+          "percent": 76.92307692307692
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 9,
+        "eligible": 12,
+        "percent": 75.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 9,
+        "eligible": 12,
+        "percent": 75.0
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 8,
+        "eligible": 8,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 8,
+        "eligible": 8,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 14,
+        "eligible": 14,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 4,
+        "eligible": 12,
+        "percent": 33.333333333333336
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 5,
+        "eligible": 12,
+        "percent": 41.666666666666664
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 6,
+        "eligible": 9,
+        "percent": 66.66666666666667
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 6,
+        "eligible": 9,
+        "percent": 66.66666666666667
+      },
+      "annotated_argument_predicates_missing_expected_tool": 4,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 14,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 4,
+      "irrelevant_menu_exposures": 18,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "file_inspection": {
+      "owner_turns": 14,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 13,
+          "eligible": 16,
+          "percent": 81.25
+        },
+        "3": {
+          "passed": 14,
+          "eligible": 16,
+          "percent": 87.5
+        },
+        "5": {
+          "passed": 14,
+          "eligible": 16,
+          "percent": 87.5
+        },
+        "8": {
+          "passed": 14,
+          "eligible": 16,
+          "percent": 87.5
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 12,
+        "eligible": 14,
+        "percent": 85.71428571428571
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 12,
+        "eligible": 14,
+        "percent": 85.71428571428571
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 8,
+        "eligible": 10,
+        "percent": 80.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 8,
+        "eligible": 10,
+        "percent": 80.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 11,
+        "eligible": 11,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 8,
+        "eligible": 14,
+        "percent": 57.142857142857146
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 12,
+        "eligible": 17,
+        "percent": 70.58823529411765
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 12,
+        "eligible": 12,
+        "percent": 100.0
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 12,
+        "eligible": 12,
+        "percent": 100.0
+      },
+      "annotated_argument_predicates_missing_expected_tool": 5,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 11,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 1,
+      "irrelevant_menu_exposures": 14,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "google_tasks_accounts": {
+      "owner_turns": 10,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 3,
+          "eligible": 6,
+          "percent": 50.0
+        },
+        "3": {
+          "passed": 3,
+          "eligible": 6,
+          "percent": 50.0
+        },
+        "5": {
+          "passed": 3,
+          "eligible": 6,
+          "percent": 50.0
+        },
+        "8": {
+          "passed": 3,
+          "eligible": 6,
+          "percent": 50.0
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 5,
+        "eligible": 10,
+        "percent": 50.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 3,
+        "eligible": 6,
+        "percent": 50.0
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 2,
+        "eligible": 3,
+        "percent": 66.66666666666667
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 2,
+        "eligible": 3,
+        "percent": 66.66666666666667
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 5,
+        "eligible": 5,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 4,
+        "eligible": 10,
+        "percent": 40.0
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 5,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 3,
+      "irrelevant_menu_exposures": 6,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "gpu_model": {
+      "owner_turns": 12,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 7,
+          "eligible": 13,
+          "percent": 53.84615384615385
+        },
+        "3": {
+          "passed": 12,
+          "eligible": 13,
+          "percent": 92.3076923076923
+        },
+        "5": {
+          "passed": 12,
+          "eligible": 13,
+          "percent": 92.3076923076923
+        },
+        "8": {
+          "passed": 12,
+          "eligible": 13,
+          "percent": 92.3076923076923
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 11,
+        "eligible": 12,
+        "percent": 91.66666666666667
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 10,
+        "eligible": 11,
+        "percent": 90.9090909090909
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 9,
+        "eligible": 9,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 9,
+        "eligible": 9,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 13,
+        "eligible": 13,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 10,
+        "eligible": 12,
+        "percent": 83.33333333333333
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 1,
+        "eligible": 1,
+        "percent": 100.0
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 13,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 2,
+      "irrelevant_menu_exposures": 16,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "isolated_file_actions": {
+      "owner_turns": 12,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 9,
+          "eligible": 17,
+          "percent": 52.94117647058823
+        },
+        "3": {
+          "passed": 9,
+          "eligible": 17,
+          "percent": 52.94117647058823
+        },
+        "5": {
+          "passed": 9,
+          "eligible": 17,
+          "percent": 52.94117647058823
+        },
+        "8": {
+          "passed": 9,
+          "eligible": 17,
+          "percent": 52.94117647058823
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 5,
+        "eligible": 12,
+        "percent": 41.666666666666664
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 5,
+        "eligible": 12,
+        "percent": 41.666666666666664
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 2,
+        "eligible": 2,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 2,
+        "eligible": 2,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 8,
+        "eligible": 8,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 2,
+        "eligible": 12,
+        "percent": 16.666666666666668
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 6,
+        "eligible": 16,
+        "percent": 37.5
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 6,
+        "eligible": 6,
+        "percent": 100.0
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 8,
+        "eligible": 8,
+        "percent": 100.0
+      },
+      "annotated_argument_predicates_missing_expected_tool": 10,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 8,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 0,
+      "irrelevant_menu_exposures": 3,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "local_todos": {
+      "owner_turns": 13,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 8,
+          "eligible": 15,
+          "percent": 53.333333333333336
+        },
+        "3": {
+          "passed": 9,
+          "eligible": 15,
+          "percent": 60.0
+        },
+        "5": {
+          "passed": 9,
+          "eligible": 15,
+          "percent": 60.0
+        },
+        "8": {
+          "passed": 9,
+          "eligible": 15,
+          "percent": 60.0
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 8,
+        "eligible": 13,
+        "percent": 61.53846153846154
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 8,
+        "eligible": 13,
+        "percent": 61.53846153846154
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 12,
+        "eligible": 12,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 6,
+        "eligible": 13,
+        "percent": 46.15384615384615
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 12,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 4,
+      "irrelevant_menu_exposures": 11,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "network": {
+      "owner_turns": 12,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 5,
+          "eligible": 10,
+          "percent": 50.0
+        },
+        "3": {
+          "passed": 8,
+          "eligible": 10,
+          "percent": 80.0
+        },
+        "5": {
+          "passed": 8,
+          "eligible": 10,
+          "percent": 80.0
+        },
+        "8": {
+          "passed": 8,
+          "eligible": 10,
+          "percent": 80.0
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 8,
+        "eligible": 12,
+        "percent": 66.66666666666667
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 7,
+        "eligible": 9,
+        "percent": 77.77777777777777
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 6,
+        "eligible": 6,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 6,
+        "eligible": 6,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 9,
+        "eligible": 12,
+        "percent": 75.0
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 7,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 0,
+      "irrelevant_menu_exposures": 12,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "no_tool_ambiguity": {
+      "owner_turns": 12,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 0,
+          "eligible": 0,
+          "percent": null
+        },
+        "3": {
+          "passed": 0,
+          "eligible": 0,
+          "percent": null
+        },
+        "5": {
+          "passed": 0,
+          "eligible": 0,
+          "percent": null
+        },
+        "8": {
+          "passed": 0,
+          "eligible": 0,
+          "percent": null
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 7,
+        "eligible": 12,
+        "percent": 58.333333333333336
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 1,
+        "eligible": 1,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 7,
+        "eligible": 12,
+        "percent": 58.333333333333336
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 1,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 1,
+      "irrelevant_menu_exposures": 6,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "notes": {
+      "owner_turns": 12,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 9,
+          "eligible": 14,
+          "percent": 64.28571428571429
+        },
+        "3": {
+          "passed": 10,
+          "eligible": 14,
+          "percent": 71.42857142857143
+        },
+        "5": {
+          "passed": 10,
+          "eligible": 14,
+          "percent": 71.42857142857143
+        },
+        "8": {
+          "passed": 10,
+          "eligible": 14,
+          "percent": 71.42857142857143
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 8,
+        "eligible": 12,
+        "percent": 66.66666666666667
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 8,
+        "eligible": 12,
+        "percent": 66.66666666666667
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 8,
+        "percent": 87.5
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 8,
+        "percent": 87.5
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 11,
+        "eligible": 11,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 7,
+        "eligible": 12,
+        "percent": 58.333333333333336
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 11,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 0,
+      "irrelevant_menu_exposures": 3,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "permission_adversarial": {
+      "owner_turns": 10,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 0,
+          "eligible": 0,
+          "percent": null
+        },
+        "3": {
+          "passed": 0,
+          "eligible": 0,
+          "percent": null
+        },
+        "5": {
+          "passed": 0,
+          "eligible": 0,
+          "percent": null
+        },
+        "8": {
+          "passed": 0,
+          "eligible": 0,
+          "percent": null
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 8,
+        "eligible": 10,
+        "percent": 80.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 10,
+        "eligible": 10,
+        "percent": 100.0
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 0,
+      "irrelevant_menu_exposures": 2,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "power_battery": {
+      "owner_turns": 10,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 6,
+          "eligible": 11,
+          "percent": 54.54545454545455
+        },
+        "3": {
+          "passed": 7,
+          "eligible": 11,
+          "percent": 63.63636363636363
+        },
+        "5": {
+          "passed": 7,
+          "eligible": 11,
+          "percent": 63.63636363636363
+        },
+        "8": {
+          "passed": 7,
+          "eligible": 11,
+          "percent": 63.63636363636363
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 6,
+        "eligible": 10,
+        "percent": 60.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 5,
+        "eligible": 9,
+        "percent": 55.55555555555556
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 5,
+        "eligible": 5,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 5,
+        "eligible": 5,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 10,
+        "eligible": 10,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 6,
+        "eligible": 10,
+        "percent": 60.0
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 10,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 3,
+      "irrelevant_menu_exposures": 5,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "security_status": {
+      "owner_turns": 10,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 8,
+          "eligible": 12,
+          "percent": 66.66666666666667
+        },
+        "3": {
+          "passed": 9,
+          "eligible": 12,
+          "percent": 75.0
+        },
+        "5": {
+          "passed": 9,
+          "eligible": 12,
+          "percent": 75.0
+        },
+        "8": {
+          "passed": 9,
+          "eligible": 12,
+          "percent": 75.0
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 7,
+        "eligible": 10,
+        "percent": 70.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 7,
+        "eligible": 10,
+        "percent": 70.0
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 9,
+        "eligible": 9,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 7,
+        "eligible": 10,
+        "percent": 70.0
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 9,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 0,
+      "irrelevant_menu_exposures": 0,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "spotify_media": {
+      "owner_turns": 12,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 10,
+          "eligible": 17,
+          "percent": 58.8235294117647
+        },
+        "3": {
+          "passed": 13,
+          "eligible": 17,
+          "percent": 76.47058823529412
+        },
+        "5": {
+          "passed": 13,
+          "eligible": 17,
+          "percent": 76.47058823529412
+        },
+        "8": {
+          "passed": 13,
+          "eligible": 17,
+          "percent": 76.47058823529412
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 8,
+        "eligible": 12,
+        "percent": 66.66666666666667
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 8,
+        "eligible": 12,
+        "percent": 66.66666666666667
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 1,
+        "eligible": 1,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 1,
+        "eligible": 1,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 2,
+        "eligible": 2,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 2,
+        "eligible": 12,
+        "percent": 16.666666666666668
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 2,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 1,
+      "irrelevant_menu_exposures": 5,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "system_process": {
+      "owner_turns": 12,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 10,
+          "eligible": 13,
+          "percent": 76.92307692307692
+        },
+        "3": {
+          "passed": 11,
+          "eligible": 13,
+          "percent": 84.61538461538461
+        },
+        "5": {
+          "passed": 11,
+          "eligible": 13,
+          "percent": 84.61538461538461
+        },
+        "8": {
+          "passed": 11,
+          "eligible": 13,
+          "percent": 84.61538461538461
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 10,
+        "eligible": 12,
+        "percent": 83.33333333333333
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 10,
+        "eligible": 12,
+        "percent": 83.33333333333333
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 9,
+        "percent": 77.77777777777777
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 9,
+        "percent": 77.77777777777777
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 12,
+        "eligible": 12,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 8,
+        "eligible": 12,
+        "percent": 66.66666666666667
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 2,
+        "eligible": 2,
+        "percent": 100.0
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 2,
+        "eligible": 2,
+        "percent": 100.0
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 2,
+        "eligible": 2,
+        "percent": 100.0
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 12,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 2,
+      "irrelevant_menu_exposures": 11,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "windows_apps": {
+      "owner_turns": 12,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 10,
+          "eligible": 12,
+          "percent": 83.33333333333333
+        },
+        "3": {
+          "passed": 10,
+          "eligible": 12,
+          "percent": 83.33333333333333
+        },
+        "5": {
+          "passed": 10,
+          "eligible": 12,
+          "percent": 83.33333333333333
+        },
+        "8": {
+          "passed": 10,
+          "eligible": 12,
+          "percent": 83.33333333333333
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 9,
+        "eligible": 12,
+        "percent": 75.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 9,
+        "eligible": 11,
+        "percent": 81.81818181818181
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 12,
+        "eligible": 12,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 7,
+        "eligible": 12,
+        "percent": 58.333333333333336
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 12,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 2,
+      "irrelevant_menu_exposures": 8,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    }
+  },
+  "by_difficulty": {
+    "easy": {
+      "owner_turns": 72,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 49,
+          "eligible": 67,
+          "percent": 73.13432835820896
+        },
+        "3": {
+          "passed": 51,
+          "eligible": 67,
+          "percent": 76.11940298507463
+        },
+        "5": {
+          "passed": 51,
+          "eligible": 67,
+          "percent": 76.11940298507463
+        },
+        "8": {
+          "passed": 51,
+          "eligible": 67,
+          "percent": 76.11940298507463
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 54,
+        "eligible": 72,
+        "percent": 75.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 49,
+        "eligible": 65,
+        "percent": 75.38461538461539
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 38,
+        "eligible": 40,
+        "percent": 95.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 38,
+        "eligible": 40,
+        "percent": 95.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 48,
+        "eligible": 48,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 45,
+        "eligible": 72,
+        "percent": 62.5
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 3,
+        "eligible": 3,
+        "percent": 100.0
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 10,
+        "eligible": 17,
+        "percent": 58.8235294117647
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 11,
+        "eligible": 14,
+        "percent": 78.57142857142857
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 11,
+        "eligible": 14,
+        "percent": 78.57142857142857
+      },
+      "annotated_argument_predicates_missing_expected_tool": 4,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 48,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 7,
+      "irrelevant_menu_exposures": 26,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "hard": {
+      "owner_turns": 105,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 63,
+          "eligible": 112,
+          "percent": 56.25
+        },
+        "3": {
+          "passed": 76,
+          "eligible": 112,
+          "percent": 67.85714285714286
+        },
+        "5": {
+          "passed": 76,
+          "eligible": 112,
+          "percent": 67.85714285714286
+        },
+        "8": {
+          "passed": 76,
+          "eligible": 112,
+          "percent": 67.85714285714286
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 64,
+        "eligible": 105,
+        "percent": 60.95238095238095
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 56,
+        "eligible": 91,
+        "percent": 61.53846153846154
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 31,
+        "eligible": 33,
+        "percent": 93.93939393939394
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 31,
+        "eligible": 33,
+        "percent": 93.93939393939394
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 62,
+        "eligible": 63,
+        "percent": 98.41269841269842
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 42,
+        "eligible": 105,
+        "percent": 40.0
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 4,
+        "eligible": 4,
+        "percent": 100.0
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 11,
+        "eligible": 32,
+        "percent": 34.375
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 12,
+        "eligible": 14,
+        "percent": 85.71428571428571
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 12,
+        "eligible": 14,
+        "percent": 85.71428571428571
+      },
+      "annotated_argument_predicates_missing_expected_tool": 19,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 63,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 14,
+      "irrelevant_menu_exposures": 67,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "medium": {
+      "owner_turns": 96,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 59,
+          "eligible": 94,
+          "percent": 62.765957446808514
+        },
+        "3": {
+          "passed": 67,
+          "eligible": 94,
+          "percent": 71.27659574468085
+        },
+        "5": {
+          "passed": 67,
+          "eligible": 94,
+          "percent": 71.27659574468085
+        },
+        "8": {
+          "passed": 67,
+          "eligible": 94,
+          "percent": 71.27659574468085
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 66,
+        "eligible": 96,
+        "percent": 68.75
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 56,
+        "eligible": 82,
+        "percent": 68.29268292682927
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 42,
+        "eligible": 45,
+        "percent": 93.33333333333333
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 42,
+        "eligible": 45,
+        "percent": 93.33333333333333
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 69,
+        "eligible": 69,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 53,
+        "eligible": 96,
+        "percent": 55.208333333333336
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 2,
+        "eligible": 2,
+        "percent": 100.0
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 15,
+        "eligible": 27,
+        "percent": 55.55555555555556
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 15,
+        "eligible": 16,
+        "percent": 93.75
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 17,
+        "eligible": 18,
+        "percent": 94.44444444444444
+      },
+      "annotated_argument_predicates_missing_expected_tool": 11,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 69,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 13,
+      "irrelevant_menu_exposures": 62,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    }
+  },
+  "by_execution_profile": {
+    "owner_reviewed_isolated_actions": {
+      "owner_turns": 26,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 18,
+          "eligible": 36,
+          "percent": 50.0
+        },
+        "3": {
+          "passed": 20,
+          "eligible": 36,
+          "percent": 55.55555555555556
+        },
+        "5": {
+          "passed": 20,
+          "eligible": 36,
+          "percent": 55.55555555555556
+        },
+        "8": {
+          "passed": 20,
+          "eligible": 36,
+          "percent": 55.55555555555556
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 12,
+        "eligible": 26,
+        "percent": 46.15384615384615
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 12,
+        "eligible": 26,
+        "percent": 46.15384615384615
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 8,
+        "percent": 87.5
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 7,
+        "eligible": 8,
+        "percent": 87.5
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 19,
+        "eligible": 19,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 5,
+        "eligible": 26,
+        "percent": 19.23076923076923
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 6,
+        "eligible": 22,
+        "percent": 27.272727272727273
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 6,
+        "eligible": 8,
+        "percent": 75.0
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 8,
+        "eligible": 10,
+        "percent": 80.0
+      },
+      "annotated_argument_predicates_missing_expected_tool": 14,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 19,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 2,
+      "irrelevant_menu_exposures": 13,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "production_config": {
+      "owner_turns": 247,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 153,
+          "eligible": 237,
+          "percent": 64.55696202531645
+        },
+        "3": {
+          "passed": 174,
+          "eligible": 237,
+          "percent": 73.41772151898734
+        },
+        "5": {
+          "passed": 174,
+          "eligible": 237,
+          "percent": 73.41772151898734
+        },
+        "8": {
+          "passed": 174,
+          "eligible": 237,
+          "percent": 73.41772151898734
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 172,
+        "eligible": 247,
+        "percent": 69.63562753036437
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 149,
+        "eligible": 212,
+        "percent": 70.28301886792453
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 104,
+        "eligible": 110,
+        "percent": 94.54545454545455
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 104,
+        "eligible": 110,
+        "percent": 94.54545454545455
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 160,
+        "eligible": 161,
+        "percent": 99.37888198757764
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 135,
+        "eligible": 247,
+        "percent": 54.65587044534413
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 9,
+        "eligible": 9,
+        "percent": 100.0
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 30,
+        "eligible": 54,
+        "percent": 55.55555555555556
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 32,
+        "eligible": 36,
+        "percent": 88.88888888888889
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 32,
+        "eligible": 36,
+        "percent": 88.88888888888889
+      },
+      "annotated_argument_predicates_missing_expected_tool": 20,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 161,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 32,
+      "irrelevant_menu_exposures": 142,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    }
+  },
+  "by_overlapping_linguistic_form": {
+    "explicit_local_path": {
+      "owner_turns": 54,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 38,
+          "eligible": 63,
+          "percent": 60.317460317460316
+        },
+        "3": {
+          "passed": 43,
+          "eligible": 63,
+          "percent": 68.25396825396825
+        },
+        "5": {
+          "passed": 43,
+          "eligible": 63,
+          "percent": 68.25396825396825
+        },
+        "8": {
+          "passed": 43,
+          "eligible": 63,
+          "percent": 68.25396825396825
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 35,
+        "eligible": 54,
+        "percent": 64.81481481481481
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 32,
+        "eligible": 51,
+        "percent": 62.745098039215684
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 25,
+        "eligible": 28,
+        "percent": 89.28571428571429
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 25,
+        "eligible": 28,
+        "percent": 89.28571428571429
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 48,
+        "eligible": 49,
+        "percent": 97.95918367346938
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 25,
+        "eligible": 54,
+        "percent": 46.2962962962963
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 32,
+        "eligible": 65,
+        "percent": 49.23076923076923
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 34,
+        "eligible": 40,
+        "percent": 85.0
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 36,
+        "eligible": 42,
+        "percent": 85.71428571428571
+      },
+      "annotated_argument_predicates_missing_expected_tool": 27,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 49,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 9,
+      "irrelevant_menu_exposures": 46,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "literal_numeric_or_identifier": {
+      "owner_turns": 99,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 59,
+          "eligible": 107,
+          "percent": 55.14018691588785
+        },
+        "3": {
+          "passed": 65,
+          "eligible": 107,
+          "percent": 60.74766355140187
+        },
+        "5": {
+          "passed": 65,
+          "eligible": 107,
+          "percent": 60.74766355140187
+        },
+        "8": {
+          "passed": 65,
+          "eligible": 107,
+          "percent": 60.74766355140187
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 57,
+        "eligible": 99,
+        "percent": 57.57575757575758
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 52,
+        "eligible": 93,
+        "percent": 55.913978494623656
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 37,
+        "eligible": 41,
+        "percent": 90.2439024390244
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 37,
+        "eligible": 41,
+        "percent": 90.2439024390244
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 72,
+        "eligible": 73,
+        "percent": 98.63013698630137
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 42,
+        "eligible": 99,
+        "percent": 42.42424242424242
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 1,
+        "eligible": 1,
+        "percent": 100.0
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 34,
+        "eligible": 69,
+        "percent": 49.27536231884058
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 36,
+        "eligible": 42,
+        "percent": 85.71428571428571
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 38,
+        "eligible": 44,
+        "percent": 86.36363636363636
+      },
+      "annotated_argument_predicates_missing_expected_tool": 29,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 73,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 20,
+      "irrelevant_menu_exposures": 71,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "multiple_clause": {
+      "owner_turns": 87,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 64,
+          "eligible": 114,
+          "percent": 56.14035087719298
+        },
+        "3": {
+          "passed": 78,
+          "eligible": 114,
+          "percent": 68.42105263157895
+        },
+        "5": {
+          "passed": 78,
+          "eligible": 114,
+          "percent": 68.42105263157895
+        },
+        "8": {
+          "passed": 78,
+          "eligible": 114,
+          "percent": 68.42105263157895
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 51,
+        "eligible": 87,
+        "percent": 58.62068965517241
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 47,
+        "eligible": 81,
+        "percent": 58.02469135802469
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 31,
+        "eligible": 35,
+        "percent": 88.57142857142857
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 31,
+        "eligible": 35,
+        "percent": 88.57142857142857
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 73,
+        "eligible": 74,
+        "percent": 98.64864864864865
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 39,
+        "eligible": 87,
+        "percent": 44.827586206896555
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 1,
+        "eligible": 1,
+        "percent": 100.0
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 15,
+        "eligible": 35,
+        "percent": 42.857142857142854
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 15,
+        "eligible": 16,
+        "percent": 93.75
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 17,
+        "eligible": 18,
+        "percent": 94.44444444444444
+      },
+      "annotated_argument_predicates_missing_expected_tool": 19,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 74,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 13,
+      "irrelevant_menu_exposures": 51,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "negative_constraint": {
+      "owner_turns": 73,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 43,
+          "eligible": 65,
+          "percent": 66.15384615384616
+        },
+        "3": {
+          "passed": 48,
+          "eligible": 65,
+          "percent": 73.84615384615384
+        },
+        "5": {
+          "passed": 48,
+          "eligible": 65,
+          "percent": 73.84615384615384
+        },
+        "8": {
+          "passed": 48,
+          "eligible": 65,
+          "percent": 73.84615384615384
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 53,
+        "eligible": 73,
+        "percent": 72.6027397260274
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 41,
+        "eligible": 58,
+        "percent": 70.6896551724138
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 30,
+        "eligible": 31,
+        "percent": 96.7741935483871
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 30,
+        "eligible": 31,
+        "percent": 96.7741935483871
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 46,
+        "eligible": 46,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 44,
+        "eligible": 73,
+        "percent": 60.273972602739725
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 7,
+        "eligible": 7,
+        "percent": 100.0
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 8,
+        "eligible": 16,
+        "percent": 50.0
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 10,
+        "eligible": 11,
+        "percent": 90.9090909090909
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 10,
+        "eligible": 11,
+        "percent": 90.9090909090909
+      },
+      "annotated_argument_predicates_missing_expected_tool": 7,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 46,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 7,
+      "irrelevant_menu_exposures": 42,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "question_form": {
+      "owner_turns": 57,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 38,
+          "eligible": 56,
+          "percent": 67.85714285714286
+        },
+        "3": {
+          "passed": 39,
+          "eligible": 56,
+          "percent": 69.64285714285714
+        },
+        "5": {
+          "passed": 39,
+          "eligible": 56,
+          "percent": 69.64285714285714
+        },
+        "8": {
+          "passed": 39,
+          "eligible": 56,
+          "percent": 69.64285714285714
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 40,
+        "eligible": 57,
+        "percent": 70.17543859649123
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 39,
+        "eligible": 56,
+        "percent": 69.64285714285714
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 30,
+        "eligible": 31,
+        "percent": 96.7741935483871
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 30,
+        "eligible": 31,
+        "percent": 96.7741935483871
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 36,
+        "eligible": 36,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 31,
+        "eligible": 57,
+        "percent": 54.3859649122807
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 1,
+        "eligible": 1,
+        "percent": 100.0
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 4,
+        "eligible": 9,
+        "percent": 44.44444444444444
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 4,
+        "eligible": 4,
+        "percent": 100.0
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 4,
+        "eligible": 4,
+        "percent": 100.0
+      },
+      "annotated_argument_predicates_missing_expected_tool": 5,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 36,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 6,
+      "irrelevant_menu_exposures": 34,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "quoted_content": {
+      "owner_turns": 1,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 1,
+          "eligible": 1,
+          "percent": 100.0
+        },
+        "3": {
+          "passed": 1,
+          "eligible": 1,
+          "percent": 100.0
+        },
+        "5": {
+          "passed": 1,
+          "eligible": 1,
+          "percent": 100.0
+        },
+        "8": {
+          "passed": 1,
+          "eligible": 1,
+          "percent": 100.0
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 1,
+        "eligible": 1,
+        "percent": 100.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 1,
+        "eligible": 1,
+        "percent": 100.0
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 1,
+        "eligible": 1,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 1,
+        "eligible": 1,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 1,
+        "eligible": 1,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 1,
+        "eligible": 1,
+        "percent": 100.0
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 1,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 0,
+      "irrelevant_menu_exposures": 0,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "reasoning_constraint_or_diagnosis": {
+      "owner_turns": 4,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 2,
+          "eligible": 3,
+          "percent": 66.66666666666667
+        },
+        "3": {
+          "passed": 3,
+          "eligible": 3,
+          "percent": 100.0
+        },
+        "5": {
+          "passed": 3,
+          "eligible": 3,
+          "percent": 100.0
+        },
+        "8": {
+          "passed": 3,
+          "eligible": 3,
+          "percent": 100.0
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 4,
+        "eligible": 4,
+        "percent": 100.0
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 3,
+        "eligible": 3,
+        "percent": 100.0
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 3,
+        "eligible": 3,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 3,
+        "eligible": 3,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 3,
+        "eligible": 3,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 4,
+        "eligible": 4,
+        "percent": 100.0
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 3,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 0,
+      "irrelevant_menu_exposures": 3,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    },
+    "sequential_followup": {
+      "owner_turns": 17,
+      "required_tool_recall_at_k": {
+        "1": {
+          "passed": 10,
+          "eligible": 15,
+          "percent": 66.66666666666667
+        },
+        "3": {
+          "passed": 11,
+          "eligible": 15,
+          "percent": 73.33333333333333
+        },
+        "5": {
+          "passed": 11,
+          "eligible": 15,
+          "percent": 73.33333333333333
+        },
+        "8": {
+          "passed": 11,
+          "eligible": 15,
+          "percent": 73.33333333333333
+        }
+      },
+      "menu_sufficiency_all_turns": {
+        "passed": 13,
+        "eligible": 17,
+        "percent": 76.47058823529412
+      },
+      "menu_sufficiency_tool_turns": {
+        "passed": 10,
+        "eligible": 14,
+        "percent": 71.42857142857143
+      },
+      "native_model_selection_when_menu_sufficient": {
+        "passed": 5,
+        "eligible": 5,
+        "percent": 100.0
+      },
+      "native_name_selection_when_menu_sufficient": {
+        "passed": 5,
+        "eligible": 5,
+        "percent": 100.0
+      },
+      "raw_proposal_sent_schema_validity": {
+        "passed": 6,
+        "eligible": 6,
+        "percent": 100.0
+      },
+      "controller_tool_or_disposition_success": {
+        "passed": 7,
+        "eligible": 17,
+        "percent": 41.1764705882353
+      },
+      "correct_native_no_tool_decisions": {
+        "passed": 3,
+        "eligible": 3,
+        "percent": 100.0
+      },
+      "annotated_effective_argument_checks": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_admitted_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_raw_explicit_field_semantics": {
+        "passed": 0,
+        "eligible": 0,
+        "percent": null
+      },
+      "annotated_argument_predicates_missing_expected_tool": 0,
+      "argument_annotation_limitations": 0,
+      "capability_hallucinated_proposals": {
+        "passed": 0,
+        "eligible": 6,
+        "percent": 0.0
+      },
+      "out_of_menu_or_unusable_proposals": 0,
+      "critical_unauthorized_dispatch_turns": 0,
+      "inappropriate_actual_proposals": 1,
+      "irrelevant_menu_exposures": 7,
+      "fixed_argument_conflicts": 0,
+      "parallel_call_protocol_violations": 0,
+      "semantic_grounding": "Independent entailment review required; numeric field matching is not semantic accuracy."
+    }
+  },
+  "authorized_dispatch_count": 198,
+  "external_identity_checks": {
+    "passed": 256,
+    "eligible": 256,
+    "percent": 100.0
+  },
+  "independent_semantic_review": {
+    "scope": "All273 actual final original-controller turns independently read exactly once with actual history, frozen objectives, whole responses and returned/reference evidence. No diagnostic substitution, oracle changes or population inference. Explicit source/annotation limitations remain in unconditional denominators.",
+    "all": {
+      "turns": 273,
+      "grounded_pass": 135,
+      "grounded_fail": 45,
+      "grounding_not_applicable": 93,
+      "grounded_eligible": 180,
+      "task_coverage_complete": 108,
+      "accurate_complete_response": 88,
+      "primary_failure_categories": {
+        "response_synthesis": 32,
+        "model_decision": 9,
+        "retrieval": 84,
+        "execution": 60
+      },
+      "secondary_failure_categories": {
+        "fixture_source_limit_ignored": 1,
+        "completion_constraint": 6,
+        "fixture_source_limitation": 30,
+        "response_synthesis": 13,
+        "model_decision": 4,
+        "oracle_capability_scope_limitation": 5,
+        "original_policy_false_positive": 11,
+        "inappropriate_tool_selection": 1,
+        "authored_predicate_punctuation_limitation": 5,
+        "oracle_tool_equivalence_limitation": 2,
+        "fixed_argument_scope_loss": 6,
+        "clock_scope_limitation": 4,
+        "model_argument_semantics_recovered": 1,
+        "deterministic_wrong_provider": 3,
+        "deterministic_wrong_calendar": 1,
+        "native_preclient_failure": 36,
+        "fixture_source_identity_limitation": 12,
+        "semantic_argument_scope": 1,
+        "native_admission_block": 10,
+        "semantic_argument_generation": 1,
+        "oracle_missing_required_information": 1,
+        "fixture_clock_scope_limitation": 2,
+        "native_deterministic_failure_unknown": 12,
+        "fixture_account_identity_limitation": 2,
+        "argument_resolution_wrong_account": 1,
+        "fixture_source_identity_clock_limitation": 1,
+        "inappropriate_menu_exposure": 4,
+        "oracle_policy_disposition_limitation": 2,
+        "semantic_argument_generation_recovered": 1
+      },
+      "reference_source_limitations": 53,
+      "authored_oracle_limitations": 15
+    },
+    "manager_coverage_and_integrity_check": {
+      "raw_turns": 273,
+      "review_rows": 273,
+      "unique_review_rows": 273,
+      "missing_review_rows": 0,
+      "unexpected_review_rows": 0,
+      "matching_raw_receipt_hashes": 273,
+      "complete_review_of_recorded_receipts": true
+    },
+    "note": "Verifier's independent full-text entailment review; consumed, not regraded by manager."
+  }
+}

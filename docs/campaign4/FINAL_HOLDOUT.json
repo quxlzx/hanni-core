@@ -1,0 +1,157 @@
+{
+  "planned": 40,
+  "passed": 32,
+  "failed": 8,
+  "scope": "controlled original workflow contracts; no model semantic accuracy",
+  "categories": {
+    "ambiguous_prior_write_outcomes": {
+      "attempted": 2,
+      "passed": 2
+    },
+    "approval_rejection": {
+      "attempted": 2,
+      "passed": 2
+    },
+    "backend_interruption": {
+      "attempted": 2,
+      "passed": 1
+    },
+    "bounded_retries": {
+      "attempted": 2,
+      "passed": 0
+    },
+    "capability_availability": {
+      "attempted": 2,
+      "passed": 1
+    },
+    "checkpoint_persistence": {
+      "attempted": 2,
+      "passed": 2
+    },
+    "dependency_ordering": {
+      "attempted": 2,
+      "passed": 1
+    },
+    "goal_understanding": {
+      "attempted": 2,
+      "passed": 2
+    },
+    "multi_step_tool_usage": {
+      "attempted": 2,
+      "passed": 1
+    },
+    "partial_completion": {
+      "attempted": 2,
+      "passed": 2
+    },
+    "pause_and_resume": {
+      "attempted": 2,
+      "passed": 2
+    },
+    "permission_requests": {
+      "attempted": 2,
+      "passed": 2
+    },
+    "plan_generation": {
+      "attempted": 2,
+      "passed": 2
+    },
+    "recovery_after_restart": {
+      "attempted": 2,
+      "passed": 1
+    },
+    "safe_parallel_execution": {
+      "attempted": 2,
+      "passed": 2
+    },
+    "sequential_execution": {
+      "attempted": 2,
+      "passed": 2
+    },
+    "step_verification": {
+      "attempted": 2,
+      "passed": 2
+    },
+    "task_cancellation": {
+      "attempted": 2,
+      "passed": 2
+    },
+    "worker_disconnection": {
+      "attempted": 2,
+      "passed": 1
+    },
+    "workflow_completion_reporting": {
+      "attempted": 2,
+      "passed": 2
+    }
+  },
+  "actual_original_handler_entries": 46,
+  "native_invocations": 51,
+  "actual_consequential_write_effects": 16,
+  "unauthorized_effects": 0,
+  "unauthorized_sensitive_dispatches": 0,
+  "actual_sensitive_dispatches": 16,
+  "duplicate_consequential_write_effects": 0,
+  "verified_completion": {
+    "eligible_prospectively_expected": 15,
+    "achieved": 11,
+    "scope": "includes original frozen contract annotation conflicts; not all-case refusal pass rate"
+  },
+  "recovery_verified_completion": {
+    "eligible_prospectively_expected": 2,
+    "achieved": 1
+  },
+  "cancellation_outcome": {
+    "eligible": 2,
+    "correct_stopping_state": 2,
+    "scope": "stopping state; no additional dispatch control assertions in individual grades"
+  },
+  "checkpoint_readback": {
+    "eligible": 2,
+    "correct": 2
+  },
+  "actual_owned_restart_cases": 6,
+  "actual_model_calls": 0,
+  "duration_ms": {
+    "n": 40,
+    "p50": 344.0000000409782,
+    "p95": 2733.9999999385327,
+    "scope": "controlled per-case orchestration including fixture and subprocess overhead; not model latency"
+  },
+  "failures_by_assertion": {
+    "stop_status": 7,
+    "artifact_equals_source": 3,
+    "dispatch_order": 2,
+    "writes": 4,
+    "all_declared_controls_exercised": 5,
+    "copied_file": 1,
+    "attempts_by_step": 3
+  },
+  "failure_classifications": {
+    "workflow_contract_failure": 5,
+    "authored_contract_mismatch": 3
+  },
+  "oracles_sha256": "bde5a797735e3a051f8927c3244fc99023360ab018d6cb43af3cccb5168cf764",
+  "grades_sha256": "24130215122f3902efb840a63aa62bef7d76fb0a95855f8d25e79776d568dfc5",
+  "source_unchanged": true,
+  "sealed_inputs_unchanged": true,
+  "once_only": true,
+  "elapsed_seconds": 42.68700000003446,
+  "receipt_provenance": {
+    "private_run": "data/campaign4-verifier/final-holdout",
+    "summary_sha256": "3ae8a7f2374b19884b2b29e9d1f00ae2e3befb38fc0597b3bc23dc7ce942abd3",
+    "grades_sha256": "24130215122f3902efb840a63aa62bef7d76fb0a95855f8d25e79776d568dfc5",
+    "complete_sha256": "b1d80910142d1f69aaba16b93b649aa3d93b6ad357f2c3f272ee4ac2481e5c48",
+    "seal_sha256": "9651ddabd873f91712707628074b47e0c77d20e04d1b79e3d4e7adf9645dfd97"
+  },
+  "acceptance": {
+    "all_controlled_contract_cases_pass": false,
+    "zero_unauthorized_original_effects_in_exercised_fixtures": true,
+    "zero_unauthorized_sensitive_dispatches_in_exercised_fixtures": true,
+    "zero_duplicate_consequential_writes_in_exercised_fixtures": true,
+    "actual_model_goal_understanding": "UNMEASURED",
+    "actual_model_plan_quality": "UNMEASURED",
+    "physical_worker_or_provider_integration": "UNMEASURED",
+    "owner_application_restarted": false
+  }
+}

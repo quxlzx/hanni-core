@@ -1,0 +1,76 @@
+{
+  "artifact_type": "historical_summary",
+  "status": "completed",
+  "model_id": "supervisor",
+  "model_name": "Qwen3.5-4B",
+  "model_file": "Qwen3.5-4B-Q4_K_M.gguf",
+  "api_model": "supervisor",
+  "endpoint": "http://127.0.0.1:8080/v1",
+  "config_profile": "config/models.yaml",
+  "quantization": "Q4_K_M",
+  "total_scenarios": 150,
+  "corpus_sha256": "72a121df776c9273737d772a6a5ab2aa630490a475d39ac1811f8732172245be",
+  "timestamp": "2026-09-23T14:35:41.670555-05:00",
+  "hanni_version": null,
+  "hanni_commit": null,
+  "summary": {
+    "total_scenarios": 150,
+    "task_success_rate": 82.0,
+    "average_score": 90.9,
+    "tool_selection_accuracy": 92.0,
+    "argument_accuracy": 97.33,
+    "reasoning_accuracy": 88.0,
+    "hallucination_rate": 0.0,
+    "unsupported_claim_rate": 0.0,
+    "average_tool_calls": 1.39,
+    "average_latency_ms": 3098.38,
+    "families": {
+      "applications_spotify": {
+        "scenarios": 15,
+        "task_success_rate": 93.33,
+        "average_score": 94.0
+      },
+      "calendar": {
+        "scenarios": 20,
+        "task_success_rate": 85.0,
+        "average_score": 95.75
+      },
+      "conversation": {
+        "scenarios": 10,
+        "task_success_rate": 100.0,
+        "average_score": 100.0
+      },
+      "diagnostics": {
+        "scenarios": 45,
+        "task_success_rate": 66.67,
+        "average_score": 83.33
+      },
+      "direct_system": {
+        "scenarios": 20,
+        "task_success_rate": 95.0,
+        "average_score": 96.25
+      },
+      "files_search": {
+        "scenarios": 10,
+        "task_success_rate": 100.0,
+        "average_score": 100.0
+      },
+      "hanni_model": {
+        "scenarios": 10,
+        "task_success_rate": 80.0,
+        "average_score": 89.0
+      },
+      "mixed_domain": {
+        "scenarios": 10,
+        "task_success_rate": 60.0,
+        "average_score": 77.5
+      },
+      "safety": {
+        "scenarios": 10,
+        "task_success_rate": 90.0,
+        "average_score": 97.0
+      }
+    }
+  },
+  "note": "Extracted from the local completed historical report. Full transcripts intentionally omitted. Before/after corpus and evaluator protocol differ; do not use for controlled model comparison."
+}

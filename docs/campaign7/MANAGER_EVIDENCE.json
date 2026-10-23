@@ -1,0 +1,26 @@
+{
+  "xml_sha256": "dfc4da2e613af4ef4b0a86d9dfb034956e1bccb9f4931a79003b760edb7398e5",
+  "junit_totals": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "1",
+    "skipped": "0",
+    "tests": "362",
+    "time": "29.711",
+    "timestamp": "2026-10-10T07:58:13.529421-04:00",
+    "hostname": "Laynce"
+  },
+  "listed_case_nodes": 341,
+  "distinct_listed_test_ids": 341,
+  "duplicate_listed_nodes": 0,
+  "additional_accounted_entries_without_distinct_nodes": 21,
+  "failed_listed_tests": [
+    {
+      "class": "tests.integration.test_campaign7_verification",
+      "name": "test_preparing_synthesis_is_not_observed_speech_playback"
+    }
+  ],
+  "final_manifest_sha256": "bf81ff201ddeb16f7b9fd281dc7e124190042031308fe3b6c8509630502ceffa",
+  "report_sha256": "70b58a80803b012e041e7d1246dac0d6ab2e3e1f664b17a5365864929834dad5",
+  "metrics_sha256": "fe68addd7ebc53faddd2cf0b73237f2d5a7c9fb0372a62beadc1e342ba28b3c7"
+}

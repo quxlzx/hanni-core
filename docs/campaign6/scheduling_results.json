@@ -1,0 +1,294 @@
+{
+  "baseline": {
+    "cases": 79,
+    "strict_pass": 66,
+    "strict_nonpass": 13,
+    "harness_errors": 1,
+    "receipts": 78,
+    "by_category": {
+      "context_too_large": {
+        "cases": 6,
+        "strict_pass": 5
+      },
+      "correct_worker_selection": {
+        "cases": 6,
+        "strict_pass": 6
+      },
+      "insufficient_vram": {
+        "cases": 6,
+        "strict_pass": 5
+      },
+      "multiple_eligible_workers": {
+        "cases": 6,
+        "strict_pass": 6
+      },
+      "network_interruption": {
+        "cases": 6,
+        "strict_pass": 6
+      },
+      "parallel_tasks": {
+        "cases": 6,
+        "strict_pass": 3
+      },
+      "queue_saturation": {
+        "cases": 6,
+        "strict_pass": 5
+      },
+      "result_verification": {
+        "cases": 6,
+        "strict_pass": 3
+      },
+      "safe_reassignment": {
+        "cases": 6,
+        "strict_pass": 2
+      },
+      "supplemental_controls": {
+        "cases": 13,
+        "strict_pass": 13
+      },
+      "worker_busy": {
+        "cases": 6,
+        "strict_pass": 6
+      },
+      "worker_unavailable": {
+        "cases": 6,
+        "strict_pass": 6
+      }
+    },
+    "failing_case_ids": [
+      "C6DEV-context_too_large-02",
+      "C6DEV-insufficient_vram-06",
+      "C6DEV-parallel_tasks-03",
+      "C6DEV-parallel_tasks-04",
+      "C6DEV-parallel_tasks-06",
+      "C6DEV-queue_saturation-04",
+      "C6DEV-safe_reassignment-01",
+      "C6DEV-safe_reassignment-02",
+      "C6DEV-safe_reassignment-03",
+      "C6DEV-safe_reassignment-04",
+      "C6DEV-result_verification-02",
+      "C6DEV-result_verification-04",
+      "C6DEV-result_verification-05"
+    ],
+    "controlled_provider_http_posts": 78,
+    "receipt_http_posts": 77,
+    "harness_error_http_posts": 1,
+    "harness_errors_with_dispatch_diagnostics": 1,
+    "real_cluster_model_responses": 0,
+    "completed_protocol_deliveries": 52,
+    "job_state_counts": {
+      "COMPLETED": 51,
+      "BLOCKED": 30,
+      "CANCELLED": 4,
+      "LOST_CONNECTION": 9,
+      "VERIFIED": 1,
+      "FAILED": 4
+    },
+    "workflow_controls": {
+      "cases": 6,
+      "completed": 1,
+      "partially_completed": 3,
+      "blocked": 2,
+      "artifact_write_entries": 1
+    },
+    "maximum_observed_controlled_http_overlap": 2,
+    "observed_cleanup_leaks": 0,
+    "harness_error_observed_cleanup_leaks": 0,
+    "harness_errors_without_cleanup_diagnostics": 0,
+    "dependency_bytes_stable_during_cases": true,
+    "source_hashes": {
+      "hanni.compute.scheduler": [
+        "80a7047477d07f2f028bbdc21897e5a59c7fbea3b7311d56635e26200a3b3152"
+      ],
+      "hanni.compute.registry": [
+        "1dd51684d39a0ec4ccb959f4842791652127156f97223ab8a69d4fc929d9f326"
+      ],
+      "hanni.compute.transport": [
+        "9f63bd69c62757582ae4f64f7c5cd68e4404e17800449b0e95233d1dbf832198"
+      ],
+      "hanni.workflows.service": [
+        "ef0d76309eb314a8ab58a1b101b45918f36b04a4bc8ec4f83a44353753b7827c"
+      ]
+    },
+    "model_accuracy": null,
+    "live_model_latency": null,
+    "live_context_capacity": null
+  },
+  "candidate": {
+    "cases": 79,
+    "strict_pass": 69,
+    "strict_nonpass": 10,
+    "harness_errors": 0,
+    "receipts": 79,
+    "by_category": {
+      "context_too_large": {
+        "cases": 6,
+        "strict_pass": 6
+      },
+      "correct_worker_selection": {
+        "cases": 6,
+        "strict_pass": 6
+      },
+      "insufficient_vram": {
+        "cases": 6,
+        "strict_pass": 6
+      },
+      "multiple_eligible_workers": {
+        "cases": 6,
+        "strict_pass": 6
+      },
+      "network_interruption": {
+        "cases": 6,
+        "strict_pass": 6
+      },
+      "parallel_tasks": {
+        "cases": 6,
+        "strict_pass": 4
+      },
+      "queue_saturation": {
+        "cases": 6,
+        "strict_pass": 5
+      },
+      "result_verification": {
+        "cases": 6,
+        "strict_pass": 3
+      },
+      "safe_reassignment": {
+        "cases": 6,
+        "strict_pass": 2
+      },
+      "supplemental_controls": {
+        "cases": 13,
+        "strict_pass": 13
+      },
+      "worker_busy": {
+        "cases": 6,
+        "strict_pass": 6
+      },
+      "worker_unavailable": {
+        "cases": 6,
+        "strict_pass": 6
+      }
+    },
+    "failing_case_ids": [
+      "C6DEV-parallel_tasks-03",
+      "C6DEV-parallel_tasks-04",
+      "C6DEV-queue_saturation-04",
+      "C6DEV-safe_reassignment-01",
+      "C6DEV-safe_reassignment-02",
+      "C6DEV-safe_reassignment-03",
+      "C6DEV-safe_reassignment-04",
+      "C6DEV-result_verification-02",
+      "C6DEV-result_verification-04",
+      "C6DEV-result_verification-05"
+    ],
+    "controlled_provider_http_posts": 77,
+    "receipt_http_posts": 77,
+    "harness_error_http_posts": 0,
+    "harness_errors_with_dispatch_diagnostics": 0,
+    "real_cluster_model_responses": 0,
+    "completed_protocol_deliveries": 52,
+    "job_state_counts": {
+      "COMPLETED": 51,
+      "BLOCKED": 32,
+      "CANCELLED": 4,
+      "LOST_CONNECTION": 9,
+      "VERIFIED": 1,
+      "FAILED": 4
+    },
+    "workflow_controls": {
+      "cases": 6,
+      "completed": 1,
+      "partially_completed": 3,
+      "blocked": 2,
+      "artifact_write_entries": 1
+    },
+    "maximum_observed_controlled_http_overlap": 2,
+    "observed_cleanup_leaks": 0,
+    "harness_error_observed_cleanup_leaks": 0,
+    "harness_errors_without_cleanup_diagnostics": 0,
+    "dependency_bytes_stable_during_cases": true,
+    "source_hashes": {
+      "hanni.compute.scheduler": [
+        "50a2efaf60087d68434e67a2f328ecdfef817b53d09c37d16451d9993c63daf6"
+      ],
+      "hanni.compute.registry": [
+        "d970cbdc32e0870ed69901ef1aec51b01d2a2820b6ebab6ea0ce81f83749b1c5"
+      ],
+      "hanni.compute.transport": [
+        "d6f30ea100282e94eadd806ba1753e95ae7751cc58bd1aa57732140a0c0a3ff0"
+      ],
+      "hanni.workflows.service": [
+        "ef0d76309eb314a8ab58a1b101b45918f36b04a4bc8ec4f83a44353753b7827c"
+      ]
+    },
+    "model_accuracy": null,
+    "live_model_latency": null,
+    "live_context_capacity": null
+  },
+  "supplement": {
+    "cases": 10,
+    "strict_pass": 10,
+    "strict_nonpass": 0,
+    "harness_errors": 0,
+    "receipts": 10,
+    "by_category": {
+      "parallel_tasks": {
+        "cases": 1,
+        "strict_pass": 1
+      },
+      "queue_saturation": {
+        "cases": 2,
+        "strict_pass": 2
+      },
+      "result_verification": {
+        "cases": 3,
+        "strict_pass": 3
+      },
+      "safe_reassignment": {
+        "cases": 4,
+        "strict_pass": 4
+      }
+    },
+    "failing_case_ids": [],
+    "controlled_provider_http_posts": 20,
+    "receipt_http_posts": 20,
+    "harness_error_http_posts": 0,
+    "harness_errors_with_dispatch_diagnostics": 0,
+    "real_cluster_model_responses": 0,
+    "completed_protocol_deliveries": 13,
+    "job_state_counts": {
+      "COMPLETED": 13,
+      "FAILED": 3
+    },
+    "workflow_controls": {
+      "cases": 3,
+      "completed": 0,
+      "partially_completed": 3,
+      "blocked": 0,
+      "artifact_write_entries": 0
+    },
+    "maximum_observed_controlled_http_overlap": 2,
+    "observed_cleanup_leaks": 0,
+    "harness_error_observed_cleanup_leaks": 0,
+    "harness_errors_without_cleanup_diagnostics": 0,
+    "dependency_bytes_stable_during_cases": true,
+    "source_hashes": {
+      "hanni.compute.scheduler": [
+        "50a2efaf60087d68434e67a2f328ecdfef817b53d09c37d16451d9993c63daf6"
+      ],
+      "hanni.compute.registry": [
+        "d970cbdc32e0870ed69901ef1aec51b01d2a2820b6ebab6ea0ce81f83749b1c5"
+      ],
+      "hanni.compute.transport": [
+        "d6f30ea100282e94eadd806ba1753e95ae7751cc58bd1aa57732140a0c0a3ff0"
+      ],
+      "hanni.workflows.service": [
+        "ef0d76309eb314a8ab58a1b101b45918f36b04a4bc8ec4f83a44353753b7827c"
+      ]
+    },
+    "model_accuracy": null,
+    "live_model_latency": null,
+    "live_context_capacity": null
+  }
+}

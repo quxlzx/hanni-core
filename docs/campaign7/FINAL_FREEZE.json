@@ -1,0 +1,28 @@
+{
+  "frozen_at": 1791633479.5376103,
+  "source_files": 592,
+  "manifest_sha256": "bf81ff201ddeb16f7b9fd281dc7e124190042031308fe3b6c8509630502ceffa",
+  "archive_sha256": "109c881fd79f40d7c26b8b87897d715a43dedc1f86472fbce6128072afccf604",
+  "private_holdout_material_read": false,
+  "preservation": {
+    "changed_original_files": [
+      ".gitattributes",
+      "frontend/src/awareness.tsx",
+      "frontend/src/mini.tsx",
+      "frontend/src/workspace.tsx",
+      "src/hanni/dashboard/static/app.js",
+      "src/hanni/dashboard/voice.py",
+      "src/hanni/speech/live.py",
+      "src/hanni/speech/microphone.py",
+      "src/hanni/speech/pipeline.py",
+      "src/hanni/speech/stt.py"
+    ],
+    "unexpected_source_changes": [],
+    "prior_files_checked": 121,
+    "prior_file_mismatches": [],
+    "owner_file_identities_preserved": true,
+    "gitattributes_original_prefix_preserved": true,
+    "configuration_files_unchanged": true,
+    "passed": true
+  }
+}

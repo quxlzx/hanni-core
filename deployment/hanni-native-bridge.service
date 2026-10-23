@@ -1,0 +1,14 @@
+[Unit]
+Description=HANNI native brain bridge (no Hermes)
+After=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/hanni/brain.env
+WorkingDirectory=%h/HANNI-core
+ExecStart=%h/HANNI-core/.venv/bin/python -m hanni.hermes.service --root %h/hanni-cron/state --hermes-config %h/HANNI-core/config/hanni.yaml --token-file %h/hanni-cron/state/bridge.token --brain native --port 8097
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,33 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.ps1 text eol=crlf
+# Preserve the independently evaluated public adapter bytes across checkouts.
+scripts/eval_memory_intelligence_v35.py -text whitespace=cr-at-eol,-blank-at-eof
+scripts/eval_memory_grounding_v35.py -text whitespace=cr-at-eol,-blank-at-eof
+# Keep the recorded V3.6 migration target digest stable on Windows checkouts.
+evals/llm_tools/capability_coverage_v2.jsonl -text
+evals/llm_tools/capability_coverage_v3.jsonl -text
+evals/llm_tools/capability_coverage_v3_migration.json -text
+scripts/v36_verification/calendar_addendum_cases.json -text
+# Preserve the frozen Campaign 3 development corpus digest.
+evals/memory/campaign3_development.jsonl -text
+# Keep public validation evidence byte-stable across Windows checkouts.
+docs/campaign3/*.json -text whitespace=cr-at-eol
+evals/memory/campaign3_*.json -text whitespace=cr-at-eol
+# Preserve the prospectively sealed Campaign 4 corpus and evidence bytes.
+evals/workflows/campaign4_*.json -text whitespace=cr-at-eol
+docs/campaign4/*.json -text whitespace=cr-at-eol
+evals/models/campaign5*.json -text whitespace=cr-at-eol
+docs/campaign5/*.json -text whitespace=cr-at-eol
+evals/compute/campaign6*.json -text whitespace=cr-at-eol
+docs/campaign6/*.json -text whitespace=cr-at-eol
+# Preserve the sealed Campaign 7 references and public evidence bytes.
+evals/voice/campaign7-development/*.json -text whitespace=cr-at-eol
+docs/campaign7/*.json -text whitespace=cr-at-eol
+# Preserve repaired frontend source bytes included in the Campaign 7 freeze.
+frontend/src/awareness.tsx -text whitespace=cr-at-eol
+frontend/src/mini.tsx -text whitespace=cr-at-eol
+frontend/src/workspace.tsx -text whitespace=cr-at-eol

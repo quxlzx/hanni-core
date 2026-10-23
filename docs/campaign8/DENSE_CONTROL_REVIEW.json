@@ -1,0 +1,789 @@
+{
+  "scope": "Independent exposed DEVELOPMENT review of actual owned Windows HANNI UI and original disposable authenticated backend; unchanged raw results and prospective inputs; not private final acceptance",
+  "raw": {
+    "path": "data/campaign8-native/cycle21-safe-remaining32-dense/RESULTS.json",
+    "sha256": "93daf53474a30c207b1616d5514c690f4a7caddee163fd5c6e557cccbbd6b644"
+  },
+  "source_assets": {
+    "src\\hanni\\dashboard\\static\\app.js": "5b77e1673872fe543fa5cc7f69be2705b76b2bc80294bfbf6b8729ebabf53705",
+    "src\\hanni\\dashboard\\static\\style.css": "3ef62c226dcb1190d7eb92309ec59f4b716813e84e696a9b128274d66ed1654e"
+  },
+  "native_identity": {
+    "pid": 18228,
+    "create_time": 1791640271.8643131,
+    "executable_sha256": "9bf90dc1438e1776369f668117d88c2a5f76a33fc6f796c4d9f41a8a7e586263",
+    "physical_windows_system_dpi": 120
+  },
+  "counts": {
+    "total": 32,
+    "native_executed": 29,
+    "PASS_scoped": 27,
+    "PARTIAL": 1,
+    "FAIL_field_fidelity": 1,
+    "HARNESS_ERROR": 3,
+    "all_final_or_error_PNGs_viewed": 32
+  },
+  "case_grades": [
+    {
+      "id": "sweep-task-all-fields",
+      "input_sha256": "a88744c7dd80cdf933eae98c0d12d9dd4105f1261e394f294ecd6e384831f1c9",
+      "status": "PASS",
+      "observed_scope": "Original native create persists exact title/course/priority/no-project/date-only due and all_day=true. Save does not prove every form field remained in a final pixel after dialog closure.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-task-all-fields.png",
+        "sha256": "ee143c14d123317f60e12a30fd94a2658ee4f7e4f64849f0830087fc38ad19bf"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "694dd657b5c59ce04936b50d765e885b339a08f1dfaf46855b64519ddd8cf379"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-task-edit-status",
+      "input_sha256": "d9b3d61dcb1495355fdb1fab39334b7f802053c744940ea6ae992516e36a651a",
+      "status": "FAIL",
+      "observed_scope": "Status persists completed on the same task, but untouched normalized due changes all_day=true to false and its request key changes. Confirmed independently on original disposable store; field-fidelity FAIL retained.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-task-edit-status.png",
+        "sha256": "d3230398decc54e0c6bbd0a09a099d1ad6bd43fd08f882133f087c463519dcc8"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "8a5189560d225510a380befee005e4af1e488e393ee35ef1203346786d4804f8"
+        }
+      ],
+      "scope_complete_only_as_described": false,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-task-refresh",
+      "input_sha256": "dc8c07a00c944439314930cdc720e0ece461b6d61d5a11d312c9d7b9a48ac1f0",
+      "status": "PASS",
+      "observed_scope": "Original refresh retains completed task in persistence, correctly excludes it under Open tasks. Does not repair the preceding all_day change.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-task-refresh.png",
+        "sha256": "89a317a4bdc9e124944a441990cde500b1aa6e94cc5e202d55eea31c132b8c94"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "8a5189560d225510a380befee005e4af1e488e393ee35ef1203346786d4804f8"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-task-project-filter",
+      "input_sha256": "4429d923724a712d6e38af00c65ab3bf3b9849bb6db248763232b96a818ac327",
+      "status": "PASS",
+      "observed_scope": "All-projects selection and cleared query restore current open list. No nonempty project-filter discrimination is exercised.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-task-project-filter.png",
+        "sha256": "03597df61b9333fd26f3bba6eb014a8702ab6c37273d0cecb7cb275be1c19d18"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "8a5189560d225510a380befee005e4af1e488e393ee35ef1203346786d4804f8"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-workspace-backup",
+      "input_sha256": "ec2b50d2cd4de16608e0c31c1c54e9b8b424ebe4ff47c13280ead35e6970b284",
+      "status": "PASS",
+      "observed_scope": "Original native backup request returns saved filename; independently opened that owned SQLite backup read-only, integrity_check=ok, two exact task rows/one project. No restore test; backup faithfully includes preceding all_day defect.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-workspace-backup.png",
+        "sha256": "3b03a5dd3c5817ad046a767d2a3bfb1a96a84c43c664a23edf5fd0b794c2a8f8"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "8a5189560d225510a380befee005e4af1e488e393ee35ef1203346786d4804f8"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-project-link-save",
+      "input_sha256": "fb976b91423374adfbfd9fc638063e1e00cc6f1fd142be61a6b44e43267d6e16",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "No project selected, so Add link is absent; preserved timeout. Prospective URL-kind input also unsupported by original file/conversation schema; no link created.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-project-link-save-error.png",
+        "sha256": "f0d2eeab660dd554722de7fe2e78c749c38023b0e23414091aeda4098fb539b8"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "8a5189560d225510a380befee005e4af1e488e393ee35ef1203346786d4804f8"
+        }
+      ],
+      "scope_complete_only_as_described": false,
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Add link\", exact=True).first\n"
+      }
+    },
+    {
+      "id": "sweep-project-link-delete",
+      "input_sha256": "d0d74c2237bd3b114010839425c9bc2950650a8297ace4871df84ef4ace465fc",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "No selected project and no preceding created link; preserved missing-button timeout. No deletion proof.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-project-link-delete-error.png",
+        "sha256": "f0d2eeab660dd554722de7fe2e78c749c38023b0e23414091aeda4098fb539b8"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "8a5189560d225510a380befee005e4af1e488e393ee35ef1203346786d4804f8"
+        }
+      ],
+      "scope_complete_only_as_described": false,
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Remove Controlled final URL link\", exact=True).first\n"
+      }
+    },
+    {
+      "id": "sweep-project-note-delete",
+      "input_sha256": "ca524c6a5cae3ab567e664e5f6869472256f91aef723bdac3480413912afb186",
+      "status": "HARNESS_ERROR",
+      "observed_scope": "No selected project/note; preserved missing-button timeout. No deletion proof.",
+      "native_executed_flag": false,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-project-note-delete-error.png",
+        "sha256": "f0d2eeab660dd554722de7fe2e78c749c38023b0e23414091aeda4098fb539b8"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/productivity",
+          "status": 200,
+          "data_sha256": "8a5189560d225510a380befee005e4af1e488e393ee35ef1203346786d4804f8"
+        }
+      ],
+      "scope_complete_only_as_described": false,
+      "original_error_retained": {
+        "type": "TimeoutError",
+        "message": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Delete note\", exact=True).first\n"
+      }
+    },
+    {
+      "id": "sweep-memory-type-filter",
+      "input_sha256": "4d6161139f54a98922746d2ecbcf786395510eec75433db602ccd575a27e7142",
+      "status": "PASS",
+      "observed_scope": "Actual select value preference sends original type=preference GET200, native empty matching list; resetting all types restores records. Existing selected record detail remains independently visible and is not a matching-list row.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-memory-type-filter.png",
+        "sha256": "b6c47c3be7df5c337c1991c4efaa4f8303b087b42e4ed868cf7bb510aec8a541"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "1cd759b2ab42ca8bc840167ea506faf94e8df383e0b768b99ee5202e6aa6f036"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "b15a38d98bc6581922585e0906f7c9e2bb753e911cf5c7de03c1bba1835a01b7"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-memory-project-filter",
+      "input_sha256": "725d299fb4cc7534512df1efbdd1d914f0fc676fafbe8a72354e10ad811d8a05",
+      "status": "PASS",
+      "observed_scope": "All-projects selection records its original value and restores all records; no discrimination between populated projects.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-memory-project-filter.png",
+        "sha256": "1a81a2c53975fa0c58f562590228fe17e2915d4cb3d1e6f930292031c940910b"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "1cd759b2ab42ca8bc840167ea506faf94e8df383e0b768b99ee5202e6aa6f036"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "b15a38d98bc6581922585e0906f7c9e2bb753e911cf5c7de03c1bba1835a01b7"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-memory-order",
+      "input_sha256": "775088ebe66211a837ff9dd22f7eb3bc61357a1fa5448b8b62a00a908f22f980",
+      "status": "PASS",
+      "observed_scope": "Actual created sort sends original sort=created GET200, first displayed row differs from recently-updated correction record. One controlled dataset; not exhaustive sort stability.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-memory-order.png",
+        "sha256": "a8344e707e98f06de4401f442f23ed8f77add6c76d891358e639012880cf3d79"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "1cd759b2ab42ca8bc840167ea506faf94e8df383e0b768b99ee5202e6aa6f036"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "b15a38d98bc6581922585e0906f7c9e2bb753e911cf5c7de03c1bba1835a01b7"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-memory-record-pages",
+      "input_sha256": "12bb8a25016e25d01fefc7b49badd89a9d0fac5ac498b9716b0ad31a16a89d8c",
+      "status": "PASS",
+      "observed_scope": "Original GET offset30/limit30 and offset0/limit30 both200; actual second-page rows and Previous/Next reversal visible, first page restored. 36 stored records, original local retrieval only.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-memory-record-pages.png",
+        "sha256": "0e6329abee7161858095895eed46eae875b0a6df63d8a3e637f7f77ec8dce78c"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "1cd759b2ab42ca8bc840167ea506faf94e8df383e0b768b99ee5202e6aa6f036"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "b15a38d98bc6581922585e0906f7c9e2bb753e911cf5c7de03c1bba1835a01b7"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-memory-review-pages",
+      "input_sha256": "5d4f064c830df12f4d086232d4da9577a4240aebae32a582ca872e8c4da35ee9",
+      "status": "PASS",
+      "observed_scope": "Original suggestion GET offset20/limit20 and offset0/limit20 both200; native second-page synthetic proposals and Previous/Next reversal visible. 26 prospective stored proposals, no model generation.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-memory-review-pages.png",
+        "sha256": "3abe1ff059b87eab134b932681ef469f01f8688d3f860b431d3870940d1d5b99"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "1cd759b2ab42ca8bc840167ea506faf94e8df383e0b768b99ee5202e6aa6f036"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "b15a38d98bc6581922585e0906f7c9e2bb753e911cf5c7de03c1bba1835a01b7"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-memory-approve",
+      "input_sha256": "c929c1543cc70179ebe490abf4562a417ca48e8390c84dd9d498f7d56adb7bbb",
+      "status": "PASS",
+      "observed_scope": "Original explicit approval persists exact selected proposal, stored36 to37 and pending26 to25; native acknowledgement agrees with original authenticated readback. No automatic extraction/model quality proof.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-memory-approve.png",
+        "sha256": "17fe751d725c631d846c786e996034f61862ce3ea750281189c7029490dc0fbc"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "1ebaf5565e5195564a38e8cad00ace1f2d6b826aec5ad4a939211422effe6727"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "566d7d099f3e1a2d2ea3351a68d56dcf661e5a4119c24a3d79fffa845af59237"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-memory-edit-approve",
+      "input_sha256": "b6029ad1528f1ce6ccd642ca93c08ec5ac4317ef2bfa6baffec3ea5543b87658",
+      "status": "PASS",
+      "observed_scope": "Original explicit edited approval persists Controlled final edited review statement, stored37 to38/pending25 to24; native acknowledgement matches original readback.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-memory-edit-approve.png",
+        "sha256": "2767fba8dfa173a10e39f5032e51e02daf9784dea0ede36f81420aefef45d1be"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "d6968a5ec3fcfb06a864734c67e0fd8b7076a643a69ccbb60f695487c8774dc2"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "65db790f41bcc95cc51bcc58fb5a155343abe9f6e68a3fd8b39941ebe7e98d25"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-memory-dismiss",
+      "input_sha256": "83556959929393e226eab35f241e42b87d46de46b4c74d8fc38cb5506eec7466",
+      "status": "PASS",
+      "observed_scope": "Original explicit dismissal removes selected proposal from pending24 to23 while stored count stays38. Native acknowledgement/readback agree; no stored-memory deletion claim.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-memory-dismiss.png",
+        "sha256": "7d64632e04ad8d1554d71bf30a9a7d9968df34f67d28154afd4c68b60e867d19"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "b44327e1acf2812a05189079824ac9551d504a3f9df3e7d37f2c2c4427773dbf"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "ca2f09620a4b5e0a8a236d341115f6fc5c5ad9bc92a1d13d7eda2b430de847ea"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-memory-review-dialog-fields",
+      "input_sha256": "47e54b1a8e8479cc9604073f5025c724e23b3221bf7bf7e89756be4651ee1bde",
+      "status": "PASS",
+      "observed_scope": "Statement/scope draft values recorded by original native DOM, Cancel closes dialog; stored38/pending23 unchanged. No Create, model output or suggestion production credited.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-memory-review-dialog-fields.png",
+        "sha256": "7d64632e04ad8d1554d71bf30a9a7d9968df34f67d28154afd4c68b60e867d19"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "b44327e1acf2812a05189079824ac9551d504a3f9df3e7d37f2c2c4427773dbf"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "ca2f09620a4b5e0a8a236d341115f6fc5c5ad9bc92a1d13d7eda2b430de847ea"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-memory-history-pages",
+      "input_sha256": "4e8a54e839f73359ef7bc5b909f734d706723c4ba1be578213e7782b169a82d3",
+      "status": "PARTIAL",
+      "observed_scope": "Older/Newer controls issue original detail GET offset50 then0 (limit50), both200, newest correction list visible on return. Older-page result rows are not independently pixel-visible and returned detail body was not preserved by this collector; full correction-page content PARTIAL.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-memory-history-pages.png",
+        "sha256": "f994797d88ff1b446868e17ce6f71a3408216401ff9e6deb8a731af7fc2db8f6"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "b44327e1acf2812a05189079824ac9551d504a3f9df3e7d37f2c2c4427773dbf"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "ca2f09620a4b5e0a8a236d341115f6fc5c5ad9bc92a1d13d7eda2b430de847ea"
+        }
+      ],
+      "scope_complete_only_as_described": false,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-memory-project-alias",
+      "input_sha256": "934d6a8664633d2db88cf8a34bce3d23ce61d8d632595b52dbe1f8f8b2735894",
+      "status": "PASS",
+      "observed_scope": "Original explicit Add alias persists Controlled UI alias on existing project; native acknowledgement/project index and authenticated explorer aliases agree. No ambiguous project identification quality claim.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-memory-project-alias.png",
+        "sha256": "17885b3190ef0c9e1a3ed41937202c07114f57f4aab0ac43d4fe6981b2b6baa8"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "33324f0028d0db403e6e4736f6515db8d963f814085ae84b2465bb19e2cf7541"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "ca2f09620a4b5e0a8a236d341115f6fc5c5ad9bc92a1d13d7eda2b430de847ea"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-memory-link-workflow-cancel",
+      "input_sha256": "78c7572e21134bc06445d491cb3ccac62d52c60526de8fb0bf38f4d4bbc64de7",
+      "status": "PASS",
+      "observed_scope": "Original workflow-link dialog filled fake identifier then cancelled; original project still has no linked verified workflow. Draft only, no association or workflow execution credited.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-memory-link-workflow-cancel.png",
+        "sha256": "3713c6e57e5a937623832b598819895c67e33661b0861ceb95af938e5af5bda8"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/memory/explorer?limit=30",
+          "status": 200,
+          "data_sha256": "33324f0028d0db403e6e4736f6515db8d963f814085ae84b2465bb19e2cf7541"
+        },
+        {
+          "path": "/api/memory/suggestions?limit=20",
+          "status": 200,
+          "data_sha256": "ca2f09620a4b5e0a8a236d341115f6fc5c5ad9bc92a1d13d7eda2b430de847ea"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-mcp-stdio-fields-cancel",
+      "input_sha256": "091eed40a72b89afa820c6b4e903cea5db0f6e894c91f604de4790aa9a30cbfa",
+      "status": "PASS",
+      "observed_scope": "Actual name/command/arguments/cwd/environment/timeout draft values recorded; Cancel leaves original MCP inventory empty. No process, environment resolution, discovery or connection.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-mcp-stdio-fields-cancel.png",
+        "sha256": "c9c803786e193a713ce201cd942465c13b55faa80eba363fc50491a85f098c4e"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "275ae978b74bed0c513d09bf2cf2b94ca29b42c4f0b939a0940c17e97ba518f6"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-mcp-http-fields-cancel",
+      "input_sha256": "1b770267a4800d7de83ec64cea05e8af57ec65939f9dfef84120bcdc4b78ca85",
+      "status": "PASS",
+      "observed_scope": "Actual HTTP URL/bearer-reference/local-endpoint-checkbox draft values recorded; Cancel leaves original inventory empty. No credential resolve, token transmission or provider call.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-mcp-http-fields-cancel.png",
+        "sha256": "c9c803786e193a713ce201cd942465c13b55faa80eba363fc50491a85f098c4e"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "275ae978b74bed0c513d09bf2cf2b94ca29b42c4f0b939a0940c17e97ba518f6"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-mcp-workspace-navigation",
+      "input_sha256": "ce199ce03ce107309b7cde9d879c45373fd1d315f401f0fb08290d6b5149466e",
+      "status": "PASS",
+      "observed_scope": "Original Workspace settings control changes actual route to Settings and displays original unavailable-device/routing projections. MCP inventory unchanged.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-mcp-workspace-navigation.png",
+        "sha256": "8cbed8e8c4dce5766312768e249090f10708aa3332a2f5fac4405d0d1d9d12d7"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/mcp",
+          "status": 200,
+          "data_sha256": "275ae978b74bed0c513d09bf2cf2b94ca29b42c4f0b939a0940c17e97ba518f6"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-lab-benchmark-fields-only",
+      "input_sha256": "973ae2a981eb0f04aa83482e0e37189f1dfce4f4844abfd61d6806a60814a342",
+      "status": "PASS",
+      "observed_scope": "Actual development-suite/max-cases2/repetitions2/token-cap64/rounds2 draft values recorded; Overview returns. No Start/run/model execution, no semantic benchmark pass.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-lab-benchmark-fields-only.png",
+        "sha256": "59050fe1e867dd2d62a8a13e91198a5106aaf03fc5393db43264d31855efb6e3"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "b8c39432f3aa7bec5155aa05eae71fe2963a3a01db5f2caf7ea97b32a9b43b29"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-lab-history-filters",
+      "input_sha256": "3292ec8b7c810afcb104dab20412d995ad0bc8243d604318393dd552264a895a",
+      "status": "PASS",
+      "observed_scope": "Actual completed/structured suite selections and original query GET200, native empty result table. No populated history discrimination or benchmark execution.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-lab-history-filters.png",
+        "sha256": "d139b6c7f564407776de23cb3d8527423a0a503bb5b48f9b47c9e6606e830dc1"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "b8c39432f3aa7bec5155aa05eae71fe2963a3a01db5f2caf7ea97b32a9b43b29"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-lab-refresh",
+      "input_sha256": "e15ab28dafd666b5aaf4e2e19b08703d407e140452df9e02fce75f12792cc377",
+      "status": "PASS",
+      "observed_scope": "Original refresh returns configured endpoint/unavailable and zero runs, same truthful native projection. Does not establish provider readiness or model serving.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-lab-refresh.png",
+        "sha256": "0d96f6d9a0d66958d68a40a517e014b7b3c386d32b3fd084283c91ddd802eacf"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-lab",
+          "status": 200,
+          "data_sha256": "ee25f3d61d40e83dd8855a88fdc6ec8a159c35aa6cab730f03b14acbeced687a"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-routing-refresh",
+      "input_sha256": "30fe1aa058e26ef284caa55d3ed6fd825458bfd3431ab810cc8cc6c74e3f7f2e",
+      "status": "PASS",
+      "observed_scope": "Original refresh-request acknowledgement and authenticated unavailable endpoint projection; controller unattached, context/latencies unverified. No actual routing/generation.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-routing-refresh.png",
+        "sha256": "2566b5c48db1fbfbf143e3cda463d8d5fc5a58ec557eee5138efcab593e49499"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/model-routing",
+          "status": 200,
+          "data_sha256": "0bfb641620f69232c4993f48f35562de15ceabea36840192ca81d7665cd22660"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-activity-refresh",
+      "input_sha256": "794a83eebf004d4058c4936b36c20a600a73f0bae2798eda2187134730553c82",
+      "status": "PASS",
+      "observed_scope": "Original refresh loads actual isolated mutation task traces and manual verified file trace; native distinguishes Succeeded/Unverified. No autonomous workload or new model execution.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-activity-refresh.png",
+        "sha256": "012cf3235afbbf4e82bff3c4d11b9c6247e883f81a9e7177c5d296919e845e37"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/agents",
+          "status": 200,
+          "data_sha256": "d29022682d4aaa89e8a72ea0b19291d36563f0869e6db16344a26794e9d379a9"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-workflows-refresh",
+      "input_sha256": "6cafcc17ae0efbafe1ad10c680b32abd905bf067222e1bc0ef8a67897718b3d8",
+      "status": "PASS",
+      "observed_scope": "Original refresh shows manual controlled completed/verified workflow and separate awaiting-approval workflow; controller/runner unattached. No autonomous planning/scheduling.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-workflows-refresh.png",
+        "sha256": "717075775001bba6f1fb399db8f95c857f7ba1ff75ec60765df8d83c0ef29e89"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/workflows",
+          "status": 200,
+          "data_sha256": "e668b72cc56656f10fa89b130f3e8a07c62171bccca278b6eeec99bf8b4d5951"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-notifications-refresh",
+      "input_sha256": "7de799dd8e30016c67a8d1e7c8259a2b95d3f016c3d04fd35e7378f4e19f3f59",
+      "status": "PASS",
+      "observed_scope": "Original refresh returns recorded local events and current preferences; native redacts private result payloads. No Windows toast/speaker proof.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-notifications-refresh.png",
+        "sha256": "ef4c9e540e7ffcc893ba3d6bea4e74d17b1c6a091c654725cebffb4309f3f501"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "7faf57a815ba1fa7acecd11656792a1163ca5e8e611626d9992cc9c07f22810f"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-notifications-category-filter",
+      "input_sha256": "1420a804d5e6186f8afbe12e2ddf4163c351ebb28f7851f3fb72bf0d80012232",
+      "status": "PASS",
+      "observed_scope": "Actual application selection shows one original application event instead of agent rows; resetting All categories restores agent rows. Source readback plus intermediate/final pixels agree.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-notifications-category-filter.png",
+        "sha256": "e2e7f94d7b019ae382a1b5d52034eafb4a4e5e91be8b229cd43222bd92b612e5"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "7faf57a815ba1fa7acecd11656792a1163ca5e8e611626d9992cc9c07f22810f"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    },
+    {
+      "id": "sweep-notifications-clear-cancel",
+      "input_sha256": "88e0c4556b98778ba35fce8d7e78400418e5aef1a61c3676fb33e4561911fe0f",
+      "status": "PASS",
+      "observed_scope": "Original Clear all confirmation cancelled; items remain. No destructive clear operation credited.",
+      "native_executed_flag": true,
+      "independent_final_or_error_pixels_viewed": true,
+      "screenshot": {
+        "path": "C:/Projects/HANNI_NEGATIVE_SIGNALS_LLM_FINAL_ROUTING/data/campaign8-native/cycle21-safe-remaining32-dense/screenshots/sweep-notifications-clear-cancel.png",
+        "sha256": "b5f197134a96377485feba67d96da730d4f603db6c24454c18e99ab4c176750b"
+      },
+      "source_API_evidence": [
+        {
+          "path": "/api/notifications",
+          "status": 200,
+          "data_sha256": "7faf57a815ba1fa7acecd11656792a1163ca5e8e611626d9992cc9c07f22810f"
+        }
+      ],
+      "scope_complete_only_as_described": true,
+      "original_error_retained": null
+    }
+  ],
+  "additional_readback": {
+    "path": "data/campaign8-verifier/dense32-readonly-backup.json",
+    "sha256": "4cbff518ea0600af6071cd806b85a62baff077da37fff99a7c4a58eb44cdeedf"
+  },
+  "independent_defect_reproduction": {
+    "path": "data/campaign8-verifier/field-and-preflight-before-01/RESULTS.json",
+    "sha256": "8a15ebf941d033b47d81294c3be18a0a666cefe0b00e4a226567bcc857b3a616"
+  },
+  "cleanup": {
+    "owned_native_cleanup": true,
+    "native_exit_code": 0,
+    "javascript_errors": []
+  },
+  "limitations": [
+    "PASS applies only to described local action and observed source, not every primary control or live integration.",
+    "All_day fidelity failure remains original FAIL, pending separate scoped repair proof.",
+    "Three Project setup failures and unsupported URL-kind authoring limitation remain unchanged.",
+    "History pagination requests do not establish pixel rendering of older correction rows.",
+    "API readback counts/source status do not establish actual model inference, physical audio, connected Google, or autonomous workflow execution."
+  ]
+}

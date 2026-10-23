@@ -1,0 +1,20 @@
+{"id": "FPV4-001", "family": "conversation", "query": "Steam power changed transportation", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-002", "family": "conversation", "query": "Discord communities can be fun", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-003", "family": "conversation", "query": "Chrome is an element on the periodic table", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-004", "family": "conversation", "query": "how does a processor work in general", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-005", "family": "conversation", "query": "what is a calendar invitation", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-006", "family": "conversation", "query": "why do songs get stuck in your head", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-007", "family": "conversation", "query": "explain what quantization means", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-008", "family": "conversation", "query": "what does a file system do", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-009", "family": "conversation", "query": "what is disk io conceptually", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-010", "family": "conversation", "query": "how do batteries store energy", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-011", "family": "conversation", "query": "i have no plans for the story im writing", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-012", "family": "conversation", "query": "this project has a bright future", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-013", "family": "conversation", "query": "we should talk about local models someday", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-014", "family": "conversation", "query": "what does available mean", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-015", "family": "conversation", "query": "the word launch sounds dramatic", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-016", "family": "conversation", "query": "why are computers called computers", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-017", "family": "conversation", "query": "tell me about the history of memory chips", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-018", "family": "conversation", "query": "do apps need a window to run", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-019", "family": "conversation", "query": "what does stop mean in a music score", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}
+{"id": "FPV4-020", "family": "conversation", "query": "that response helped me understand", "expected_domain": "", "expected_intent": "conversation", "mode": "fallback", "now": "2026-09-24T12:00:00-04:00"}

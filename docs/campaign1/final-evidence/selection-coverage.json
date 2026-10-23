@@ -1,0 +1,9 @@
+{
+  "scope": "Coverage supplement from frozen final grades; no inference or oracle changes",
+  "eligible_dispositions": {
+    "tool": 118
+  },
+  "sufficient_tool_turns": 161,
+  "selection_evaluable_tool_turns": 118,
+  "correct_tool_native_selection": 111
+}

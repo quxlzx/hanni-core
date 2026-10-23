@@ -1,0 +1,592 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "C6SUP-01",
+      "category": "parallel_tasks",
+      "description": "Separate corrected control: Interactive job shares reserved second slot",
+      "scenario": "parallel",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 2,
+          "interactive_reserve": 1,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "batch": 2,
+      "release_after_entries": 2,
+      "interactive_index": 1,
+      "original_case_id": "C6DEV-parallel_tasks-06",
+      "start_background_first": true,
+      "supplement_scope": "Explicit occupying background entry before reserved interactive admission, rather than a thread-order race."
+    },
+    {
+      "id": "C6SUP-02",
+      "category": "queue_saturation",
+      "description": "Separate corrected control: Within-class queue preserves admission order.",
+      "scenario": "ordered_queue",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 2.5
+      },
+      "scope": "original_guarded_controlled_provider",
+      "queued_count": 2,
+      "original_case_id": "C6DEV-queue_saturation-04",
+      "policy_timeout_seconds": 3,
+      "supplement_scope": "Prospective total queue/runtime budget accommodates real controlled HTTP startup and retry dispatch; original .15-second expectations remain failures."
+    },
+    {
+      "id": "C6SUP-03",
+      "category": "queue_saturation",
+      "description": "Separate corrected control: Interactive tickets precede waiting background class.",
+      "scenario": "ordered_queue",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 2.5,
+        "interactive": true
+      },
+      "scope": "original_guarded_controlled_provider",
+      "queued_count": 1,
+      "original_case_id": "C6DEV-queue_saturation-05",
+      "policy_timeout_seconds": 3,
+      "supplement_scope": "Prospective total queue/runtime budget accommodates real controlled HTTP startup and retry dispatch; original .15-second expectations remain failures."
+    },
+    {
+      "id": "C6SUP-04",
+      "category": "safe_reassignment",
+      "description": "Separate corrected control: Socket loss reassigns same invocation once.",
+      "scenario": "reassignment",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "disconnect",
+          "latency_ms": 1
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 100
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 2.5
+      },
+      "scope": "original_guarded_controlled_provider",
+      "retry_policy": 1,
+      "original_case_id": "C6DEV-safe_reassignment-01",
+      "policy_timeout_seconds": 3,
+      "supplement_scope": "Prospective total queue/runtime budget accommodates real controlled HTTP startup and retry dispatch; original .15-second expectations remain failures."
+    },
+    {
+      "id": "C6SUP-05",
+      "category": "safe_reassignment",
+      "description": "Separate corrected control: HTTP failure reassigns same invocation once.",
+      "scenario": "reassignment",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "http500",
+          "latency_ms": 1
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 100
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 2.5
+      },
+      "scope": "original_guarded_controlled_provider",
+      "retry_policy": 1,
+      "original_case_id": "C6DEV-safe_reassignment-02",
+      "policy_timeout_seconds": 3,
+      "supplement_scope": "Prospective total queue/runtime budget accommodates real controlled HTTP startup and retry dispatch; original .15-second expectations remain failures."
+    },
+    {
+      "id": "C6SUP-06",
+      "category": "safe_reassignment",
+      "description": "Separate corrected control: Incomplete response reassigns same invocation once.",
+      "scenario": "reassignment",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "truncated",
+          "latency_ms": 1
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 100
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 2.5
+      },
+      "scope": "original_guarded_controlled_provider",
+      "retry_policy": 1,
+      "original_case_id": "C6DEV-safe_reassignment-03",
+      "policy_timeout_seconds": 3,
+      "supplement_scope": "Prospective total queue/runtime budget accommodates real controlled HTTP startup and retry dispatch; original .15-second expectations remain failures."
+    },
+    {
+      "id": "C6SUP-07",
+      "category": "safe_reassignment",
+      "description": "Separate corrected control: Different response model reassigns same invocation once.",
+      "scenario": "reassignment",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "wrong_model",
+          "latency_ms": 1
+        },
+        {
+          "id": "w1",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "complete",
+          "latency_ms": 100
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 2.5
+      },
+      "scope": "original_guarded_controlled_provider",
+      "retry_policy": 1,
+      "original_case_id": "C6DEV-safe_reassignment-04",
+      "policy_timeout_seconds": 3,
+      "supplement_scope": "Prospective total queue/runtime budget accommodates real controlled HTTP startup and retry dispatch; original .15-second expectations remain failures."
+    },
+    {
+      "id": "C6SUP-08",
+      "category": "result_verification",
+      "description": "Separate corrected control: Wrong arithmetic rejected",
+      "scenario": "workflow_verification",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "wrong_value"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "original_case_id": "C6DEV-result_verification-02",
+      "supplement_scope": "Original source read verified but analysis rejected; exact partial status and no report write are the intended original contract."
+    },
+    {
+      "id": "C6SUP-09",
+      "category": "result_verification",
+      "description": "Separate corrected control: Unknown source rejected",
+      "scenario": "workflow_verification",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "wrong_source"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "original_case_id": "C6DEV-result_verification-04",
+      "supplement_scope": "Original source read verified but analysis rejected; exact partial status and no report write are the intended original contract."
+    },
+    {
+      "id": "C6SUP-10",
+      "category": "result_verification",
+      "description": "Separate corrected control: Wrong numeric type rejected",
+      "scenario": "workflow_verification",
+      "workers": [
+        {
+          "id": "w0",
+          "enabled": true,
+          "concurrency": 1,
+          "interactive_reserve": 0,
+          "categories": [
+            "synthetic",
+            "project",
+            "conversation"
+          ],
+          "capabilities": [
+            "analysis",
+            "structured_json"
+          ],
+          "context_configured": 32768,
+          "context_reported": 32768,
+          "verified_context": 32768,
+          "resources": {
+            "ram_available_bytes": 8589934592,
+            "vram_free_bytes": null
+          },
+          "response_behavior": "string_value"
+        }
+      ],
+      "request": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Synthetic delivery request."
+          }
+        ],
+        "categories": [
+          "synthetic"
+        ],
+        "max_tokens": 16,
+        "queue_seconds": 0.15
+      },
+      "scope": "original_guarded_controlled_provider",
+      "original_case_id": "C6DEV-result_verification-05",
+      "supplement_scope": "Original source read verified but analysis rejected; exact partial status and no report write are the intended original contract."
+    }
+  ]
+}
