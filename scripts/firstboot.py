@@ -61,6 +61,7 @@ def pick_binary(facts: Facts) -> Path | None:
             continue
         try:
             done = subprocess.run([str(cand), "--version"], capture_output=True, timeout=10,
+                                  creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0),
                                   env={**os.environ, "LD_LIBRARY_PATH": str(cand.parent)})
             if done.returncode in (0,):
                 if devices(cand.parent):
@@ -89,6 +90,7 @@ def micro_bench(bin_dir: Path, model: str) -> float:
     cmd = [str(stick_exe(bin_dir, "llama-bench")), "-m", str(STICK / "models" / model),
            "-p", "256", "-n", "64", "-r", "1", "-o", "json", *flags(bin_dir, benchmark=True)]
     done = subprocess.run(cmd, capture_output=True, text=True, timeout=600,
+                          creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0),
                           env={**os.environ, "LD_LIBRARY_PATH": str(bin_dir)})
     if done.returncode:
         raise RuntimeError('The local model benchmark failed; check available GPU/system memory.')
@@ -101,6 +103,12 @@ def micro_bench(bin_dir: Path, model: str) -> float:
 _CORES = None
 _owned_job = None
 _supervised = False
+_desktop_alive = None
+
+
+def guard_desktop():
+    if _desktop_alive is not None and not _desktop_alive():
+        raise RuntimeError('The owner application closed; stopping its HANNI session.')
 
 
 def facts_cores() -> int:
@@ -195,6 +203,7 @@ def write_configs(endpoint, model_id, chosen, port, context=65536, *, source=Non
 
 def spawn(command, log_name, env):
     global _owned_job
+    guard_desktop()
     if _supervised and os.name == 'nt' and _owned_job is None:
         from hanni.native.lifecycle import WindowsJob
         _owned_job = WindowsJob()
@@ -215,7 +224,8 @@ def stop_owned(process):
     if process is None or process.poll() is not None:
         return
     if os.name == "nt":
-        subprocess.run(["taskkill", "/T", "/F", "/PID", str(process.pid)], capture_output=True, timeout=10)
+        subprocess.run(["taskkill", "/T", "/F", "/PID", str(process.pid)], capture_output=True, timeout=10,
+                       creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
     else:
         import signal
         os.killpg(process.pid, signal.SIGTERM)
@@ -231,6 +241,7 @@ def wait_ready(url, process, timeout, *, predicate=lambda result: True, token=No
     deadline = time.monotonic() + timeout
     detail = "Service has not accepted a connection."
     while time.monotonic() < deadline:
+        guard_desktop()
         if process.poll() is not None:
             raise RuntimeError(f"Service exited with code {process.returncode} while starting {url}; inspect its log.")
         try:
@@ -248,6 +259,9 @@ def supervise(children, restart_model=None, poll_control=None):
     import time
     restarts = 0
     while True:
+        if _desktop_alive is not None and not _desktop_alive():
+            print('Owner application closed; stopping owned services.', flush=True)
+            return 0
         if poll_control:
             poll_control()
         for name, child in list(children.items()):
@@ -354,7 +368,7 @@ def apply_model_change(control, children, runtime, *, port, timeout, base_env):
 
 
 def main(argv=None) -> int:
-    global _supervised, _owned_job
+    global _supervised, _owned_job, _desktop_alive
     import time
     from hanni.native.provider import NativeClient, normalize_endpoint
     parser = argparse.ArgumentParser(description="Start HANNI: dashboard :8311, agent :8312, model :8411.")
@@ -362,6 +376,8 @@ def main(argv=None) -> int:
     parser.add_argument("--wait", action="store_true", help="supervise owned services and stop them on exit")
     parser.add_argument("--no-browser", action="store_true")
     parser.add_argument("--ui", action="store_true")
+    parser.add_argument('--desktop-owner-pid', type=int, help='stop this owned stack when its desktop app exits')
+    parser.add_argument('--ready-file', type=Path, help='publish nonsecret desktop startup ownership')
     parser.add_argument("--port", type=int, default=8311)
     parser.add_argument("--secure", action="store_true", help="require credentials and per-action approvals")
     parser.add_argument("--tier", choices=("auto", "2b", "3.7b", "7b"), default="auto")
@@ -373,6 +389,14 @@ def main(argv=None) -> int:
     parser.add_argument("--no-cron", action="store_true")
     parser.add_argument("--startup-timeout", type=float, default=180)
     args = parser.parse_args(argv)
+    if args.desktop_owner_pid is not None and (args.desktop_owner_pid <= 0 or not (args.serve and args.wait and args.ui)):
+        parser.error('desktop-owner-pid requires a positive PID and --serve --wait --ui')
+    if args.ready_file is not None and not args.desktop_owner_pid:
+        parser.error('ready-file requires a desktop owner')
+    _desktop_alive = None
+    if args.desktop_owner_pid:
+        from hanni.dashboard.launcher import desktop_owner_alive
+        _desktop_alive = desktop_owner_alive(args.desktop_owner_pid)
     from hanni.native.model_settings import ModelSettings, context_size, atomic_json
     control = ModelSettings(STICK / 'state', STICK / 'models')
     saved = control.active()
@@ -393,6 +417,7 @@ def main(argv=None) -> int:
         parser.error("remote brain selection cannot be combined with local model/tier selection")
     children, leave_running = {}, False
     try:
+        guard_desktop()
         if args.serve:
             ensure_deps(dashboard=args.ui)
             if args.ui and port_in_use(args.port):
@@ -516,16 +541,30 @@ def main(argv=None) -> int:
             dashboard_env = {**bridge_env, "HANNI_MODEL_CONFIG": str(dash_path),
                 "HANNI_BRIDGE_URL": f"http://127.0.0.1:{args.port + 1}", "HANNI_BRIDGE_TOKEN_FILE": str(token),
                 "HANNI_CRON_ROOT": str(state)}
+            dashboard_ready_file = args.ready_file.with_suffix('.dashboard.json') if args.ready_file else None
+            ready_arguments = ['--ready-file', str(dashboard_ready_file)] if dashboard_ready_file else []
             children["dashboard"] = spawn([sys.executable, "-m", "hanni.dashboard.launcher", "--dashboard-only",
                 "--port", str(args.port), "--no-browser", "--config-dir", str(CORE / "config"),
-                "--data-dir", str(state)], "dashboard.log", dashboard_env)
-            wait_ready(f"http://127.0.0.1:{args.port}/api/chat", children["dashboard"], args.startup_timeout,
-                       predicate=lambda d: d.get("ready") is True)
+                "--data-dir", str(state), *ready_arguments], "dashboard.log", dashboard_env)
+            def dashboard_ready(data):
+                if dashboard_ready_file:
+                    if not dashboard_ready_file.is_file(): return False
+                    ready = json.loads(dashboard_ready_file.read_text(encoding='utf-8'))
+                    if (children['dashboard'].pid not in {ready.get('pid'), ready.get('parent_pid')}
+                            or ready.get('url') != f'http://127.0.0.1:{args.port}'
+                            or data.get('epoch') != ready.get('epoch')):
+                        raise RuntimeError('Dashboard ownership did not match this application launch.')
+                return data.get('ready') is True
+            dashboard_state = wait_ready(f"http://127.0.0.1:{args.port}/api/chat", children["dashboard"], args.startup_timeout,
+                                         predicate=dashboard_ready)
         url = f"http://localhost:{args.port if args.ui else args.port + 1}"
         print(f"HANNI ready: {url}\nAgent API: :{args.port + 1}; model API: {endpoint}", flush=True)
         (state / 'launcher.json').write_text(json.dumps({'pid': os.getpid(), 'url': url,
             'model_endpoint': endpoint, 'model_id': model_id, 'model_file': str(chosen or model_id),
             'children': {name: child.pid for name, child in children.items()}}, indent=2), encoding='utf-8')
+        if args.ready_file:
+            atomic_json(args.ready_file, {'pid': os.getpid(), 'parent_pid': os.getppid(),
+                                         'url': f'http://127.0.0.1:{args.port}', 'epoch': dashboard_state['epoch']})
         if not args.no_browser:
             import webbrowser
             webbrowser.open(url)
@@ -560,6 +599,8 @@ def main(argv=None) -> int:
                 if _owned_job is not None:
                     _owned_job.close()
                     _owned_job = None
+                if args.ready_file:
+                    args.ready_file.with_suffix('.dashboard.json').unlink(missing_ok=True)
 
 
 if __name__ == "__main__":

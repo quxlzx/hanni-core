@@ -1,4 +1,4 @@
 @echo off
-rem Compatibility entry point: use the same native stack and ports as START_BRAIN.
-call "%~dp0START_BRAIN.cmd" %*
+rem Open the Windows application; its agent runs in the background.
+call "%~dp0START_HANNI_OS.cmd" %*
 exit /b %ERRORLEVEL%

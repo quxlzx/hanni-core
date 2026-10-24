@@ -196,19 +196,25 @@ def test_foreign_epoch_rejection_only_stops_owned_dashboard_only_child():
     request.assert_called_once_with(desktop.DEFAULT_URL, '/api/chat?before=1')
     assert session.process is None
 
-def test_start_assistant_uses_original_visible_launcher_once():
+def test_start_assistant_uses_hidden_native_stack_once(tmp_path):
     popen = Mock()
     process = Mock()
     process.poll.return_value = None
     popen.return_value = process
     session = desktop.BackendSession(desktop.DEFAULT_URL, ROOT, autostart_assistant=False, verify=lambda url: False, popen=popen)
-    assert 'launch started' in session.start_assistant()
-    assert 'already open' in session.start_assistant()
+    assert 'Starting HANNI' in session.start_assistant(tmp_path)
+    assert 'already open' in session.start_assistant(tmp_path)
     popen.assert_called_once()
     command = popen.call_args.args[0]
-    assert command[-6:] == [str(ROOT / 'scripts/start_dashboard.ps1'), '-NoBrowser', '-DesktopOwnerPid', str(desktop.os.getpid()), '-Port', '8765']
-    assert popen.call_args.kwargs['creationflags'] == getattr(desktop.subprocess, 'CREATE_NEW_CONSOLE', 0)
+    assert command[:2] == [str(ROOT / '.venv/Scripts/python.exe'), str(ROOT / 'scripts/firstboot.py')]
+    assert command[2:6] == ['--serve', '--wait', '--ui', '--no-browser']
+    assert command[command.index('--desktop-owner-pid') + 1] == str(desktop.os.getpid())
+    assert command[-2:] == ['--port', '8311']
+    assert popen.call_args.kwargs['creationflags'] == getattr(desktop.subprocess, 'CREATE_NO_WINDOW', 0)
+    assert popen.call_args.kwargs['stdin'] is desktop.subprocess.DEVNULL
     assert 'shell' not in popen.call_args.kwargs
+    session.process = None
+    session.log.close()
 
 def test_close_to_tray_prevents_close_and_explicit_exit_remains_available(tmp_path):
     app = desktop.DesktopApp(SimpleNamespace(), tmp_path, 'Test', desktop.load_preferences(tmp_path / 'none'))
@@ -218,6 +224,7 @@ def test_close_to_tray_prevents_close_and_explicit_exit_remains_available(tmp_pa
     app.window.x = 100
     app.window.y = 100
     app.tray = Mock()
+    app.preferences['close_to_tray'] = False
     assert app.close_requested() is True
     app.preferences['close_to_tray'] = True
     assert app.close_requested() is False

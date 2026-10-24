@@ -8,7 +8,9 @@ H.A.N.N.I. (Highly Adaptive Neural Network Intelligence) is a **local Windows 11
 
 1. Install **Python 3.12**. The setup command can install llama.cpp with WinGet when available.
 2. Download or clone this repository, open its folder, and run `SETUP_HANNI.cmd`. It creates `.venv` and installs the normal app, speech, and Google dependencies. The first setup needs internet access; model weights are not included in GitHub.
-3. Run `START_BRAIN.cmd` for the native agent and Hanni OS at **http://localhost:8311**. `START_HANNI.cmd` is a compatibility alias for this same launcher. The older Windows voice/controller path remains available through `scripts/start_dashboard.ps1`.
+3. Open **HANNI OS** from the Desktop or Start menu, or run `START_HANNI.cmd`. HANNI opens in its own Windows window and starts its agent in the background. `START_HANNI_OS.cmd` opens the same app. `START_BRAIN.cmd` remains the explicit terminal/browser launcher; the older voice/controller path is available through `scripts/start_dashboard.ps1`.
+
+Closing the app window keeps HANNI in the system tray. Windows notifications are enabled for new installations; existing preferences are retained. Open **Notifications** for unread task results, approval requests, failures, and reminders. Right-click the tray icon to toggle **Desktop notifications**, send a test notification, reopen the app, or **Exit desktop**. Exiting stops services the app started; an already-running session remains independent. See [Windows application setup](docs/WINDOWS_APPLICATION.md).
 
 ## Portable native brain (any machine, no install ritual)
 
@@ -24,7 +26,7 @@ First boot benchmarks candidates from largest to smallest (7B → 3.7B → 2B), 
 
 | Service | Default address | Purpose |
 |---|---|---|
-| Hanni OS | **http://localhost:8311** | Open this in your browser; Conversation runs the native agent |
+| Hanni OS | **http://localhost:8311** | Internal app interface; browser access remains available for development |
 | Agent bridge | `http://127.0.0.1:8312` | Tasks, approvals, receipts, and model status |
 | Model API | `http://127.0.0.1:8411/v1` | Internal llama.cpp endpoint; not the Hanni OS interface |
 
@@ -285,7 +287,7 @@ Google login defaults to Calendar read-only access. Add Calendar writes with `ha
 The native **HANNI OS** workspace includes Assistant, Workspace and Mission
 Control, with sixteen screens and the globally accessible HANNI Mini. It reuses
 the existing local controller, chat inbox, permissions and voice loop. Launch
-`START_HANNI_OS.cmd` for the desktop or `START_HANNI.cmd` for the assistant session.
+`START_HANNI_OS.cmd` or `START_HANNI.cmd` for the desktop application.
 See [desktop setup](docs/HANNI_DESKTOP.md),
 [workspace integration](docs/HANNI_WORKSPACE_INTEGRATION.md), and
 [Phase 1 + Phase 2 verification](docs/HANNI_PHASE12_FINAL_VERIFICATION.md)

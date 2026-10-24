@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([switch]$SkipInstall, [switch]$SkipFrontend)
+param([switch]$SkipInstall, [switch]$SkipFrontend, [switch]$NoShortcuts)
 $ErrorActionPreference = 'Stop'
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $releaseExecutable = Join-Path $repoRoot 'dist\HANNI OS\HANNI OS.exe'
@@ -30,4 +30,7 @@ try {
     & $nativePython -m PyInstaller --noconfirm --distpath 'dist' --workpath 'build\desktop-package' 'desktop\HANNI OS.spec'
     if ($LASTEXITCODE -ne 0) { throw 'Desktop packaging failed.' }
     Write-Host "Built $(Join-Path $repoRoot 'dist\HANNI OS\HANNI OS.exe')"
+    if (-not $NoShortcuts) {
+        & (Join-Path $PSScriptRoot 'install_desktop_shortcuts.ps1')
+    }
 } finally { Pop-Location }

@@ -327,12 +327,8 @@ class ProductivityStore:
                     raise ValueError('Invalid notification identity, category or priority.')
                 if db.execute('SELECT 1 FROM workspace_notification_seen WHERE key=?', (key,)).fetchone():
                     continue
-                if not preferences[category]:
-                    continue
                 now = time.time()
                 recent = db.execute('SELECT count(*) FROM workspace_notifications WHERE category=? AND ingested_at>?', (category, now - 60)).fetchone()[0]
-                if priority == 'informational' and recent >= 5:
-                    continue
                 target = entry.get('target', {})
                 if not isinstance(target, dict) or set(target) - {'screen', 'id'} or not isinstance(target.get('screen'), str):
                     raise ValueError('Notification targets must name a screen.')
@@ -345,6 +341,8 @@ class ProductivityStore:
                 except (ValueError, TypeError):
                     raise ValueError('Notification timestamp must be ISO formatted.') from None
                 db.execute('INSERT INTO workspace_notification_seen VALUES (?)', (key,))
+                if not preferences[category] or (priority == 'informational' and recent >= 5):
+                    continue  # Muted or rate-limited events must not replay later.
                 db.execute('INSERT INTO workspace_notifications (id,key,category,priority,title,message,target,created_at,ingested_at) VALUES (?,?,?,?,?,?,?,?,?)', (uuid4().hex, key, category, priority, title, message, json.dumps(target), created_at, now))
             rows = db.execute('SELECT id FROM workspace_notifications ORDER BY ingested_at DESC LIMIT -1 OFFSET 1000').fetchall()
             for row in rows:

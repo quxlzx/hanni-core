@@ -127,7 +127,7 @@ def test_journal_and_reconnect_backlog_are_bounded(voice):
 def test_voice_alerts_are_enabled_separately_persist_and_are_not_suppressed_by_general_rate_limit(tmp_path,voice):
     control,state=voice
     preferences=load_preferences(tmp_path/'window.json')
-    assert preferences['voice_notifications'] and not preferences['notifications']
+    assert preferences['voice_notifications'] and preferences['notifications']
     request=Mock(side_effect=lambda url,path,**kw: {'token':'ephemeral'} if path.startswith('/api/chat') else control.snapshot())
     app=DesktopApp(SimpleNamespace(url='http://127.0.0.1:8765',request=request),tmp_path,'HANNI OS',preferences)
     app.tray=SimpleNamespace(HAS_NOTIFICATION=True,notify=Mock())

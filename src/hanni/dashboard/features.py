@@ -260,6 +260,8 @@ class DesktopFeatures:
     def _notifications(self, *, telemetry, cluster, contract):
         self.require()
         entries = []
+        from hanni.dashboard.task_notifications import collect
+        entries.extend(collect(self.store, self.root))
         now = datetime.now(timezone.utc).isoformat()
         for event in activity_snapshot(self.root)['events']:
             if event['tool'].startswith('workspace.notification.'):

@@ -63,12 +63,13 @@ def test_native_private_get_sends_ephemeral_authentication_header_without_payloa
     assert headers['X-Hanni-Token'] == 'ephemeral-token'
     connection.close.assert_called_once()
 
-def test_desktop_delivery_is_opt_in_read_only_and_shares_rate_limit_with_connection_notices(tmp_path):
+def test_desktop_delivery_respects_saved_opt_out_and_shares_rate_limit_with_connection_notices(tmp_path):
     request = Mock(side_effect=[{'token': 'ephemeral'}, snapshot(item('old')), {'token': 'ephemeral'}, snapshot(item('new', 'Task due'))])
     session = SimpleNamespace(url=desktop.DEFAULT_URL, request=request)
     app = desktop.DesktopApp(session, tmp_path, 'HANNI OS', desktop.load_preferences(tmp_path / 'window.json'))
     app.tray = SimpleNamespace(HAS_NOTIFICATION=True, notify=Mock())
     app.notification_limit = notices.NotificationRateLimit()
+    app.preferences['notifications'] = False
     app.observe_notifications()
     request.assert_not_called()
     app.preferences['notifications'] = True

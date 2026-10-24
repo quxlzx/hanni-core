@@ -515,8 +515,8 @@ export function NotificationsPage({
       <details className="notification-preferences">
         <summary>Notification preferences</summary>
         <p className="feature-note">
-          Choose which categories are recorded. Native desktop notifications are
-          configured in the application menu when supported.
+          Choose which categories are recorded. Windows alerts can be turned on
+          or off from the HANNI system tray menu using Desktop notifications.
         </p>
         {Object.entries(data?.preferences.categories || {}).map(
           ([key, value]) => (
@@ -537,8 +537,8 @@ export function NotificationsPage({
         )}
       </details>
       <p className="feature-note">
-        Inspect opens the related record. Workflow approvals are reviewed in
-        Workflows; reading or dismissing a notification never approves an action.
+        Inspect opens the related record. Review agent approvals in Tasks &amp;
+        approvals; reading or dismissing a notification never approves an action.
       </p>
       {clear && (
         <FeatureDialog

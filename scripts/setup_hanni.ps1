@@ -11,6 +11,7 @@ param(
     [switch]$SkipTests,
     [switch]$RunTests,
     [switch]$SkipLlamaInstall,
+    [switch]$SkipDesktop,
     [switch]$ForceRecreateVenv
 )
 
@@ -69,9 +70,14 @@ if ($RunTests -and -not $SkipTests) {
     if ($LASTEXITCODE -ne 0) { throw 'Automated tests failed' }
 }
 
+if (-not $SkipDesktop) {
+    Write-Host 'Building the Windows application and installing shortcuts ...'
+    & (Join-Path $PSScriptRoot 'build_desktop.ps1') -SkipFrontend
+}
+
 Write-Host ''
 Write-Host 'HANNI setup complete.' -ForegroundColor Green
 if ($llamaServer) { Write-Host "llama.cpp: ready ($llamaServer)" }
 else { Write-Host 'llama.cpp: not detected; install it before first model start.' -ForegroundColor Yellow }
-Write-Host 'Use START_HANNI.cmd to launch the dashboard + assistant.'
+Write-Host 'Open HANNI OS from the Desktop or Start menu, or run START_HANNI.cmd.'
 Write-Host 'For Google, run .\.venv\Scripts\hanni.exe google login from this folder.'

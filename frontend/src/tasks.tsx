@@ -1,6 +1,6 @@
 // Tasks: native-bridge task list, approvals, and direct submission.
 import { useState, type FormEvent, type ReactNode } from "react";
-import { usePrivateResource } from "./feature_types";
+import { consumeInspection, usePrivateResource } from "./feature_types";
 import { write } from "./api";
 
 function lineNodes(line: string): ReactNode[] {
@@ -54,7 +54,7 @@ export function TasksPage({ token }: { token: string }) {
   const list = usePrivateResource<BridgeTasks>("/api/bridge/tasks", token, 4000);
   const tools = usePrivateResource<{ tools: { name: string; description: string }[] }>(
     "/api/bridge/tools", token, 60000);
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string | null>(() => consumeInspection("tasks"));
   const detail = usePrivateResource<BridgeTaskDetail>(
     selected ? `/api/bridge/task/${selected}` : "/api/bridge/tasks", token, 3000);
   const [prompt, setPrompt] = useState("");

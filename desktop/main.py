@@ -21,7 +21,7 @@ import time
 from urllib.parse import urlsplit
 from uuid import uuid4
 
-DEFAULT_URL = 'http://127.0.0.1:8765'
+DEFAULT_URL = 'http://127.0.0.1:8311'
 LOG = logging.getLogger('hanni.desktop')
 SHORTCUT_CHOICES = ('Ctrl+Shift+Space', 'Ctrl+Alt+Space', 'Alt+Shift+Space', 'Ctrl+Shift+H')
 
@@ -83,8 +83,8 @@ def is_hanni(url, *, request=request_json):
 
 def load_preferences(path):
     defaults = {'width': 1366, 'height': 860, 'x': None, 'y': None,
-                'maximized': False, 'close_to_tray': False,
-                'minimize_to_tray': False, 'notifications': False,
+                'maximized': False, 'close_to_tray': True,
+                'minimize_to_tray': False, 'notifications': True,
                 'voice_notifications': True,
                 'mini_pinned': False, 'mini_shortcut': SHORTCUT_CHOICES[0]}
     try:
@@ -131,7 +131,7 @@ def complete_local_navigation(sender, args, origin, inject):
 
 
 class BackendSession:
-    """Only a monitor process started by this client is owned. Never stop an attached session."""
+    """Own only processes started by this client. Never stop an attached session."""
     def __init__(self, url, repo, *, attach_only=False, popen=subprocess.Popen,
                  request=request_json, verify=is_hanni, run=subprocess.run,
                  autostart_assistant=True):
@@ -164,18 +164,20 @@ class BackendSession:
         if self.repo is None or not (self.repo/'.venv/Scripts/python.exe').is_file():
             raise RuntimeError('The HANNI repository and its Python environment were not found. Run setup first or pass --repo-root.')
         if self.autostart_assistant:
-            # The original launcher observes this desktop's lifetime and stops
-            # only models owned by that assistant session when we exit.
-            self.start_assistant()
-            for _ in range(1200):
+            self.start_assistant(log_dir)
+            for _ in range(9000):
                 if self.exit_requested.is_set():
                     return False
-                if self.verify(self.url):
+                if self.capture_ready():
                     return True
                 if self.assistant_process is not None and self.assistant_process.poll() is not None:
-                    raise RuntimeError('The assistant could not start. Check its launch terminal.')
+                    # Another HANNI launch may have won the port. Attach without
+                    # taking ownership of that other session.
+                    if self.verify(self.url):
+                        return True
+                    raise RuntimeError('The assistant could not start. See assistant.log in the HANNI OS app folder.')
                 self.exit_requested.wait(.1)
-            raise RuntimeError('Assistant startup is still unavailable. Check its launch terminal; the desktop will reconnect automatically.')
+            raise RuntimeError('Assistant startup is still unavailable. See assistant.log; the app will reconnect automatically.')
         log_dir.mkdir(parents=True, exist_ok=True)
         with self.lock:
             # Closing publishes cancellation before cleanup takes this same lock.
@@ -219,6 +221,25 @@ class BackendSession:
             time.sleep(.1)
         raise RuntimeError('The local monitor could not be reached. See desktop monitor.log.')
 
+    def capture_ready(self):
+        process = self.process
+        if process is None or not self.ready_path or not self.ready_path.is_file():
+            return False
+        ready = json.loads(self.ready_path.read_text(encoding='utf-8'))
+        if (not isinstance(ready, dict) or process.pid not in {ready.get('pid'), ready.get('parent_pid')}
+                or not isinstance(ready.get('epoch'), str)):
+            raise RuntimeError('Assistant startup ownership could not be verified.')
+        url = validate_url(ready.get('url', ''))
+        chat = self.request(url, '/api/chat?before=1')
+        if chat.get('epoch') != ready['epoch'] or not isinstance(chat.get('token'), str) or not chat['token']:
+            raise RuntimeError('Assistant startup session identity did not match.')
+        with self.lock:
+            if self.exit_requested.is_set():
+                return False
+            self.url = url
+            self.owned_epoch, self.owned_token = ready['epoch'], chat['token']
+        return True
+
     def stop_owned(self):
         with self.lock:
             process = self.process
@@ -235,7 +256,7 @@ class BackendSession:
             except (OSError, ValueError, RuntimeError, http.client.HTTPException, subprocess.TimeoutExpired):
                 LOG.warning('Owned monitor did not acknowledge graceful shutdown.')
             finally:
-                # The owned child was launched dashboard-only; it never owns a voice/model session.
+                # Fallback is restricted to this client's exact child tree.
                 if process.poll() is None:
                     if os.name == 'nt':
                         # A Windows venv redirector may have its own Python child; stop only this owned tree.
@@ -252,6 +273,8 @@ class BackendSession:
                         process.kill()
                         process.wait(timeout=3)
                 self.process = None
+                if self.assistant_process is process:
+                    self.assistant_process = None
                 self.owned_token = None
                 self.owned_epoch = None
                 if self.ready_path:
@@ -261,26 +284,33 @@ class BackendSession:
                     self.log.close()
                     self.log = None
 
-    def start_assistant(self):
+    def start_assistant(self, log_dir=None):
         with self.lock:
             if self.exit_requested.is_set():
                 return 'Assistant launch cancelled.'
             if self.repo is None:
                 raise RuntimeError('Launch from the HANNI repository or pass --repo-root to use Start Assistant.')
             if self.assistant_process is not None and self.assistant_process.poll() is None:
-                return 'The assistant launch terminal is already open.'
+                return 'The assistant is already open.'
             if self.process is None and self.verify(self.url):
-                return 'A HANNI session is already running. Use its existing launch terminal.'
+                return 'A HANNI session is already running.'
             self.stop_owned()
-            # Fixed foreground launcher, no shell interpolation and no alternate execution pathway.
-            command = [str(Path(os.environ.get('SystemRoot', r'C:\Windows'))/'System32/WindowsPowerShell/v1.0/powershell.exe'),
-                       '-NoLogo', '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File',
-                       str(self.repo/'scripts/start_dashboard.ps1'), '-NoBrowser',
-                       '-DesktopOwnerPid', str(os.getpid()),
-                       '-Port', str(urlsplit(self.url).port)]
-            self.assistant_process = self.popen(command, cwd=str(self.repo),
-                creationflags=getattr(subprocess, 'CREATE_NEW_CONSOLE', 0))
-            return 'Assistant launch started. Keep its terminal open for confirmations.'
+            log_dir = log_dir or Path(os.environ.get('LOCALAPPDATA', str(Path.home()))) / 'HANNI OS'
+            log_dir.mkdir(parents=True, exist_ok=True)
+            self.ready_path = log_dir / f'assistant-ready-{uuid4().hex}.json'
+            self.log = (log_dir / 'assistant.log').open('a', encoding='utf-8')
+            command = [str(self.repo/'.venv/Scripts/python.exe'), str(self.repo/'scripts/firstboot.py'),
+                       '--serve', '--wait', '--ui', '--no-browser',
+                       '--desktop-owner-pid', str(os.getpid()), '--ready-file', str(self.ready_path),
+                       '--port', str(urlsplit(self.url).port)]
+            try:
+                self.assistant_process = self.process = self.popen(command, cwd=str(self.repo),
+                    stdin=subprocess.DEVNULL, stdout=self.log, stderr=self.log,
+                    creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
+            except OSError:
+                self.log.close(); self.log = None
+                raise
+            return 'Starting HANNI. The first model load may take a few minutes.'
 
 
 class MiniBridge:
@@ -378,6 +408,11 @@ class DesktopApp:
         self.window.show()
         self.window.restore()
 
+    def show_notifications(self, *args):
+        self.restore()
+        if self.loaded_url:
+            self.window.evaluate_js("window.dispatchEvent(new CustomEvent('hanni:notifications'))")
+
     def exit(self, *args):
         self.exiting = True
         self.window.destroy()
@@ -439,6 +474,8 @@ class DesktopApp:
                 if not voice and self.notification_limit is not None and not self.notification_limit.admit(time.monotonic()):
                     return
                 self.tray.notify(message, self.title)
+                if not voice:
+                    LOG.info('Desktop notification delivered to Windows.')
                 if voice:
                     LOG.info('Voice mode notification sent to Windows: %s', message)
 
@@ -481,13 +518,7 @@ class DesktopApp:
         if not self.action_lock.acquire(blocking=False):
             return
         try:
-            # Native user-initiated operation, never a webpage bridge.
-            if ctypes.windll.user32.MessageBoxW(None,
-                    'Start the existing HANNI assistant in a visible permissions terminal?\n\n'
-                    'This starts the configured model and voice session. Closing the desktop will leave that session running.',
-                    'Start Assistant', 0x24) != 6:
-                return
-            result = self.session.start_assistant()
+            result = self.session.start_assistant(self.state_dir)
             if 'already' in result:
                 ctypes.windll.user32.MessageBoxW(None, result, 'HANNI OS', 0x40)
             else:
@@ -560,8 +591,6 @@ class DesktopApp:
 
     def monitor(self):
         self.window.events.shown.wait(15)
-        if self.mini:
-            self.mini.events.shown.wait(15)
         if self.closed.is_set():
             return
         try:
@@ -580,6 +609,7 @@ class DesktopApp:
         while not self.closed.is_set():
             connected = self.session.verify(self.session.url)
             if connected and not self.loaded_url:
+                self.session.capture_ready()
                 self.window.load_url(self.session.url + '/#home')
                 if self.mini:
                     self.mini.load_url(self.session.url + '/?view=mini')
@@ -616,8 +646,8 @@ def offline_html(message, url):
             'place-items:center;height:100vh}.body{max-width:560px;padding:32px}h1{font-size:26px}'
             'p{color:#a5a8b0}b{color:#a4c2e9}small{color:#858993}</style></head><body><div class="body">'
             '<b>h.</b><h1>Connect to your workspace</h1><p>' + html.escape(message) + '</p>'
-            '<p>Use Application → Start Assistant to start HANNI in its permissions terminal. '
-            'This window reconnects automatically when the local service becomes available.</p><small>'
+            '<p>HANNI starts its agent in the background. The first model load can take a few minutes. '
+            'If startup fails, use Application → Start Assistant to retry. Logs are saved in the HANNI OS app folder.</p><small>'
             + html.escape(url) + '</small></div></body></html>')
 
 
@@ -643,6 +673,7 @@ def main(argv=None):
     if os.name != 'nt':
         parser.error('HANNI OS desktop requires Windows.')
     args.state_dir.mkdir(parents=True, exist_ok=True)
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID('HANNI.OS.Desktop')
     logging.basicConfig(filename=args.state_dir/'desktop.log', level=logging.INFO,
                         format='%(asctime)s %(levelname)s %(message)s')
     # State path distinguishes isolated reviews; production runs have a single native window.
@@ -682,7 +713,7 @@ def main(argv=None):
         preferences['x'] = preferences['y'] = None
     menu = [Menu('Application', [MenuAction('Open HANNI Mini', app.show_mini), MenuSeparator(),
             MenuAction('Start Assistant…', app.launch_assistant),
-            MenuAction('Restore window', app.restore), MenuSeparator(),
+            MenuAction('Restore window', app.restore), MenuAction('Notifications', app.show_notifications), MenuSeparator(),
             MenuAction('Exit desktop', app.exit)])]
     app.window = webview.create_window(args.title, html=offline_html('Connecting to the local HANNI service.', url),
         width=preferences['width'], height=preferences['height'], x=preferences['x'], y=preferences['y'],
@@ -707,6 +738,8 @@ def main(argv=None):
     tray_menu = pystray.Menu(
         pystray.MenuItem('Open HANNI OS', app.restore, default=True),
         pystray.MenuItem('Open HANNI Mini', app.show_mini),
+        pystray.MenuItem('Notifications', app.show_notifications),
+        pystray.MenuItem('Send test notification', lambda icon, item:app.notify('Desktop notifications are working.')),
         pystray.MenuItem('Start Assistant…', app.launch_assistant),
         pystray.Menu.SEPARATOR,
         pystray.MenuItem('Close to tray', lambda icon, item:app.toggle('close_to_tray'), checked=lambda item:app.preferences['close_to_tray']),

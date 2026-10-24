@@ -386,7 +386,7 @@ function VoiceOrb({
   );
 }
 
-export function App({ embeddedScreen, onPrepare }: { embeddedScreen?: VisibleScreen; onPrepare?: (value: string) => void } = {}) {
+export function App({ embeddedScreen, onPrepare, onNavigate }: { embeddedScreen?: VisibleScreen; onPrepare?: (value: string) => void; onNavigate?: (screen: Screen) => boolean } = {}) {
   const [screen, setScreen] = useState<VisibleScreen>(() => embeddedScreen || readScreen()),
     [sideOpen, setSideOpen] = useState(false);
   const [navigationArea, setNavigationArea] = useState<NavigationArea>(
@@ -479,6 +479,7 @@ export function App({ embeddedScreen, onPrepare }: { embeddedScreen?: VisibleScr
   ].sort((a, b) => a.id - b.id);
   const can = (feature: string) => meta?.features[feature] === true;
   function navigate(requested: Screen) {
+    if (embeddedScreen && onNavigate?.(requested)) return;
     const target = Object.hasOwn(screens, requested) ? requested as VisibleScreen : "home";
     setScreen(target);
     setNavigationArea(screens[target].group);

@@ -14,6 +14,7 @@ import { MCPPanel } from "./mcp_panel";
 import { ModelsPanel } from "./model_settings";
 import { DraftFiles, FilePicker, MessageFiles, useChatFiles } from "./chat_files";
 import { sameFiles } from "./attachment_files";
+import { usePrivateResource, type NotificationData } from "./feature_types";
 import {
   CommandSuggestions,
   CommandOutput,
@@ -36,7 +37,8 @@ type Panel =
   | "memory"
   | "skills"
   | "schedule"
-  | "activity";
+  | "activity"
+  | "notifications";
 type TabState = { selected: string; tabs: string[] };
 const defaultTabs: TabState = { selected: "default", tabs: ["default"] };
 
@@ -127,6 +129,7 @@ export function ChatIcon({ name }: { name: string }) {
       </>
     ),
     menu: <path d="M4 6h16M4 12h16M4 18h16" />,
+    notifications: <><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" /><path d="M10 21h4" /></>,
     stop: <rect x="6" y="6" width="12" height="12" rx="1" />,
     chevron: <path d="m9 5 7 7-7 7" />,
     reasoning: (
@@ -280,7 +283,7 @@ export function ChatApp() {
   const [mobile, setMobile] = useState(
     () => matchMedia("(max-width: 760px)").matches,
   );
-  const [panel, setPanel] = useState<Panel>("chat"),
+  const [panel, setPanel] = useState<Panel>(() => location.hash === "#notifications" ? "notifications" : "chat"),
     [sidebarOpen, setSidebarOpen] = useState(false),
     [collapsed, setCollapsed] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false),
@@ -323,6 +326,8 @@ export function ChatApp() {
     draft = drafts[selected] || "";
   const data = chat.data?.conversation_id === selected ? chat.data : null;
   const token = !chat.error ? chat.data?.token || "" : "";
+  const notifications = usePrivateResource<NotificationData>("/api/notifications", token, 5000);
+  const unreadNotifications = notifications.data?.items.filter((item) => !item.read && !item.dismissed).length || 0;
   const attached = useChatFiles(selected, token);
   const attachmentsAvailable = Boolean(contract.data?.features.attachments);
   useEffect(() => {
@@ -352,6 +357,19 @@ export function ChatApp() {
     };
     query.addEventListener("change", resize);
     return () => query.removeEventListener("change", resize);
+  }, []);
+  useEffect(() => {
+    const navigate = () => {
+      if (location.hash === "#notifications") showPanel("notifications");
+      else if (location.hash === "#chat") showPanel("chat");
+    };
+    const openNotifications = () => showPanel("notifications");
+    window.addEventListener("hashchange", navigate);
+    window.addEventListener("hanni:notifications", openNotifications);
+    return () => {
+      window.removeEventListener("hashchange", navigate);
+      window.removeEventListener("hanni:notifications", openNotifications);
+    };
   }, []);
   useEffect(() => {
     try {
@@ -640,6 +658,7 @@ export function ChatApp() {
   const nav = [
     { id: "models", label: "Models" },
     { id: "mcp", label: "MCP" },
+    { id: "notifications", label: "Notifications" },
     { id: "settings", label: "Settings" },
   ] as const;
 
@@ -703,6 +722,9 @@ export function ChatApp() {
             >
               <ChatIcon name={item.id} />
               {item.label}
+              {item.id === "notifications" && unreadNotifications > 0 && (
+                <span className="hc-unread-count" aria-label={`${unreadNotifications} unread`}>{unreadNotifications > 99 ? "99+" : unreadNotifications}</span>
+              )}
             </button>
           ))}
         </nav>
@@ -1091,6 +1113,13 @@ export function ChatApp() {
             <Workspace
               key={panel}
               embeddedScreen={panel}
+              onNavigate={(screen) => {
+                if (["chat", "models", "mcp", "notifications", "settings", "tasks", "memory", "skills", "schedule", "activity"].includes(screen)) {
+                  showPanel(screen as Panel);
+                  return true;
+                }
+                return false;
+              }}
               onPrepare={(value) => {
                 setDrafts((current) => ({ ...current, [selected]: value }));
                 showPanel("chat");
