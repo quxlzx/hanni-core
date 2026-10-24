@@ -520,7 +520,7 @@
   padding: 10px 0;
   min-height: 40px;
   font: inherit;
-  font-size: 12px;
+  font-size: 13px;
   cursor: pointer;
 }
 .settings-tabs [role="tab"]:hover,
@@ -541,33 +541,33 @@
   grid-template-columns: minmax(165px, 0.45fr) minmax(0, 1fr);
   gap: 25px;
   margin: 0;
-  padding: 14px 0;
+  padding: 22px 0;
   border-bottom: 1px solid var(--line);
   border-top: 0;
 }
 .settings-page .settings-section > div > h2 {
-  font-size: 13px;
+  font-size: 15px;
 }
 .settings-page .settings-section > div > p {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
   margin-top: 5px;
 }
 .settings-page .settings-fields {
   display: grid;
   grid-template-columns: 130px minmax(0, 1fr);
-  gap: 7px 15px;
+  gap: 12px 18px;
   align-items: center;
 }
 .settings-page .settings-fields label {
-  font-size: 12px;
+  font-size: 13px;
   margin: 0;
 }
 .settings-page .settings-fields select {
   width: 100%;
   padding: 6px 9px;
-  min-height: 31px;
-  font-size: 12px;
+  min-height: 40px;
+  font-size: 13px;
 }
 .settings-page .settings-fields > p,
 .settings-page .settings-fields > .empty,
@@ -576,10 +576,10 @@
   margin: 0;
 }
 .settings-page .settings-fields > button {
-  min-height: 29px;
+  min-height: 38px;
   padding: 4px 10px;
   width: fit-content;
-  font-size: 12px;
+  font-size: 13px;
 }
 .settings-page .settings-fields > button[id$="apply"] {
   grid-column: 2;
@@ -596,23 +596,23 @@
   gap: 5px 16px;
 }
 .settings-page .settings-actions button {
-  min-height: 29px;
+  min-height: 38px;
   padding: 4px 10px;
-  font-size: 12px;
+  font-size: 13px;
 }
 .settings-page .settings-actions .text-link {
   padding: 4px 0;
 }
 .settings-page .settings-fields > p.subtle {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
 }
 .settings-page .settings-section .facts > div {
   padding: 5px 0;
-  font-size: 12px;
+  font-size: 13px;
 }
 .settings-page .allowed-actions {
-  font-size: 12px;
+  font-size: 13px;
   margin: 10px 0;
 }
 .settings-page .allowed-actions summary {
@@ -625,9 +625,9 @@
 }
 .settings-page #shutdown {
   margin-top: 12px;
-  min-height: 31px;
+  min-height: 40px;
   padding: 5px 11px;
-  font-size: 12px;
+  font-size: 13px;
 }
 @media (max-width: 1000px) {
   .home-columns,
@@ -786,3 +786,8 @@
     padding: 11px 0;
   }
 }
+
+.settings-page .screen-heading h1 { font-size: 25px; }
+.settings-page .screen-heading p { font-size: 14px; line-height: 1.7; }
+.settings-page .settings-section > div:first-child > p { line-height: 1.7; }
+.settings-page .settings-fields label, .settings-page .settings-fields select { font-size: 14px; }

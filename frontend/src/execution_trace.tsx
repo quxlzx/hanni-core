@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePrivateResource } from "./feature_types";
 import { traceLabel, type ExecutionData } from "./execution_types";
 import "./execution_trace.css";
+import { ActivityChevron, ActivityStatus } from "./activity_runs";
+import { capabilityLabel } from "./activity_format";
 
-export function ExecutionTracePanel({ token }: { token: string }) {
+export function ExecutionTracePanel({ token, refreshSignal = 0 }: { token: string; refreshSignal?: number }) {
   const resource = usePrivateResource<ExecutionData>(
     "/api/executions?limit=50",
     token,
     2500,
   );
+  useEffect(() => { if (refreshSignal) resource.refresh(); }, [refreshSignal, resource.refresh]);
   const [search, setSearch] = useState(""),
     [filter, setFilter] = useState("all");
   const tasks = (resource.data?.tasks || []).filter(
@@ -21,14 +24,12 @@ export function ExecutionTracePanel({ token }: { token: string }) {
   return (
     <section className="execution-traces" aria-label="Task execution traces">
       <div className="section-title">
-        <h2>Task outcomes</h2>
-        <button className="text-link" onClick={resource.refresh}>
-          Refresh task traces
-        </button>
+        <h2>Controller evidence checks</h2>
+        <span>{resource.data?.tasks.length || 0} recently loaded</span>
       </div>
       <p className="feature-note">
-        Execution and evidence checks are recorded separately. Verification
-        applies only to the stated scope.
+        See which controller outcomes were checked and what each check covers.
+        Execution status and verification are recorded separately.
       </p>
       {resource.error && (
         <p role="status" className="feature-error">
@@ -76,42 +77,39 @@ export function ExecutionTracePanel({ token }: { token: string }) {
       ) : !tasks.length ? (
         <p className="feature-empty">
           {resource.error && !resource.data
-            ? "Task traces could not be loaded. Refresh when the connection is available."
+            ? "Evidence checks could not be loaded. Refresh when the connection is available."
             : resource.data?.available === false
-              ? "Task trace history is unavailable. Existing records were retained."
+              ? "Evidence history is unavailable. Existing records were retained."
               : search || filter !== "all"
-                ? "No task traces match this filter."
-                : "No task traces recorded yet. Existing tool audit records appear below."}
+                ? "No evidence checks match this filter."
+                : "No controller evidence checks recorded yet. View Agent runs for native-agent progress and tool receipts."}
         </p>
       ) : (
         tasks.map((task) => (
           <details
-            className="trace-record"
+            className="trace-record activity-run"
             key={task.task_id}
             data-task-id={task.task_id}
           >
             <summary>
-              <span className={`event-status ${task.execution_status}`}>
-                {traceLabel(task.execution_status)}
-              </span>
-              <strong>
-                {task.selected_capabilities.join(", ") || "No tool execution"}
-              </strong>
-              <span>{traceLabel(task.verification_status)}</span>
-              <time title={new Date(task.created_at).toLocaleString()}>
-                {new Date(task.created_at).toLocaleTimeString([], {
+              <div className="activity-run-main">
+                <strong className="activity-run-title">{task.selected_capabilities.map(capabilityLabel).join(", ") || "No tool execution"}</strong>
+                <div className="activity-run-meta"><ActivityStatus state={task.execution_status} label={traceLabel(task.execution_status)} />
+                  <span className="trace-verification">{task.verification_status === "UNVERIFIED" ? "Outcome not verified" : traceLabel(task.verification_status)}</span></div>
+              </div>
+              <time dateTime={task.created_at} title={new Date(task.created_at).toLocaleString()}>
+                {new Date(task.created_at).toLocaleString([], {
+                  month: "short", day: "numeric",
                   hour: "2-digit",
                   minute: "2-digit",
                 })}
               </time>
+              <span className="activity-duration">{task.steps.length} {task.steps.length === 1 ? "step" : "steps"}</span>
+              <ActivityChevron />
             </summary>
             <div className="trace-body">
               <p>{task.summary}</p>
               <dl className="trace-facts">
-                <div>
-                  <dt>Request ID</dt>
-                  <dd>{task.request_id}</dd>
-                </div>
                 <div>
                   <dt>Source</dt>
                   <dd>{task.source}</dd>
@@ -143,11 +141,11 @@ export function ExecutionTracePanel({ token }: { token: string }) {
               {task.steps.map((step) => (
                 <div className="trace-step" key={step.step_id}>
                   <div className="trace-step-heading">
-                    <strong>{step.capability_id}</strong>
+                    <strong>{capabilityLabel(step.capability_id)}</strong>
                     <span>{traceLabel(step.state)}</span>
                     <span>{traceLabel(step.approval)}</span>
                   </div>
-                  <ol
+                  <details className="trace-lifecycle"><summary>Step timeline</summary><ol
                     className="trace-timeline"
                     aria-label={`Lifecycle for ${step.capability_id}`}
                   >
@@ -163,7 +161,7 @@ export function ExecutionTracePanel({ token }: { token: string }) {
                         </time>
                       </li>
                     ))}
-                  </ol>
+                  </ol></details>
                   {step.verification && (
                     <div className="trace-evidence">
                       <span>
@@ -209,6 +207,8 @@ export function ExecutionTracePanel({ token }: { token: string }) {
                   {JSON.stringify(
                     {
                       task_id: task.task_id,
+                      request_id: task.request_id,
+                      selected_capabilities: task.selected_capabilities,
                       candidate_capabilities: task.candidate_capabilities || [],
                       events: task.events,
                     },

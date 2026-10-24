@@ -1,16 +1,16 @@
-.learning-page { max-width: 1180px; }
+.learning-page { max-width: 1180px; font-size: 14px; line-height: 1.7; }
 .learning-tabs { display: flex; flex-wrap: wrap; gap: 4px 20px; border-bottom: 1px solid var(--line); margin: 20px 0 24px; }
 .learning-tabs button { background: transparent; border: 0; border-bottom: 2px solid transparent; border-radius: 0; padding: 10px 0; color: var(--muted); }
 .learning-tabs button[aria-selected="true"] { color: var(--text); border-bottom-color: currentColor; }
-.learning-page h3 { margin: 28px 0 10px; }
+.learning-page h3 { margin: 30px 0 12px; font-size: 16px; }
 .learning-page p { line-height: 1.65; max-width: 75ch; overflow-wrap: anywhere; }
-.learning-page pre { white-space: pre-wrap; overflow-wrap: anywhere; overflow: auto; max-height: 480px; padding: 16px; background: var(--panel); font-size: 12px; }
+.learning-page pre { white-space: pre-wrap; overflow-wrap: anywhere; overflow: auto; max-height: 480px; padding: 16px; background: var(--surface); font: 13px/1.75 var(--mono); }
 .learning-toolbar, .learning-actions { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; margin: 14px 0; }
 .learning-toolbar > label, .learning-toolbar .learning-field { min-width: 180px; flex: 1; max-width: 360px; }
 .learning-page label { display: flex; flex-direction: column; gap: 7px; }
 .learning-page .learning-check { flex-direction: row; align-items: center; gap: 8px; }
 .learning-page input:not([type="checkbox"]), .learning-page select, .learning-page textarea { width: 100%; min-width: 0; }
-.learning-page button { min-height: 34px; }
+.learning-page button { min-height: 38px; font-size: 13px; }
 .learning-row { display: flex; justify-content: space-between; align-items: start; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .learning-row > div { min-width: 0; }
 .learning-row p { margin: 6px 0; }
@@ -25,3 +25,9 @@
 
 .learning-field { display: flex; flex-direction: column; gap: 7px; }
 .learning-memory > textarea { margin-top: 7px; }
+
+.learning-page > .section-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 18px; }
+.learning-page > .section-title h2 { font-size: 25px; }
+.learning-page > .section-title > span { color: var(--muted); font-size: 14px; }
+.learning-tabs [role="tab"] { min-height: 44px; font-size: 14px; }
+.learning-editor input, .learning-editor select, .learning-editor textarea { font-size: 14px; min-height: 40px; }

@@ -1,12 +1,12 @@
-.google-accounts { min-width: 0; font-size: 12px; }
+.google-accounts { min-width: 0; font-size: 14px; }
 .google-accounts p { line-height: 1.6; margin: 6px 0 12px; overflow-wrap: anywhere; }
 .google-account-toolbar { display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
 .google-account-toolbar > span { color: var(--muted); }
 .google-account-row { border-bottom: 1px solid var(--line); padding: 14px 0; }
 .google-account-row strong { overflow-wrap: anywhere; }
 .google-account-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
-.google-accounts button { font-size: inherit; min-height: 32px; }
-.google-accounts h3 { font-size: 13px; margin: 0 0 12px; }
+.google-accounts button { font-size: inherit; min-height: 38px; }
+.google-accounts h3 { font-size: 15px; margin: 0 0 14px; }
 .google-client-setup, .google-account-form { padding: 18px 0; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
 .google-account-form > label { display: block; margin-bottom: 6px; }
 .google-account-form > input { width: 100%; max-width: 320px; min-height: 36px; }

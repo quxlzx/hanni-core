@@ -135,3 +135,32 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+.activity-page .execution-traces > .section-title { margin-bottom: 9px; }
+.activity-page .execution-traces > .feature-note { font-size: 14px; margin-bottom: 22px; max-width: 72ch; }
+.activity-page .execution-traces .feature-toolbar { gap: 12px; margin: 0 0 24px; }
+.activity-page .execution-traces .feature-toolbar input, .activity-page .execution-traces .feature-toolbar select { font-size: 14px; min-height: 40px; }
+.activity-page .trace-body { background: var(--surface); padding: 20px 24px 28px; font-size: 14px; line-height: 1.75; }
+.activity-page .trace-body > p { max-width: 72ch; margin: 0 0 18px; }
+.activity-page .trace-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-bottom: 24px; }
+.activity-page .trace-facts > div { min-width: 0; }
+.activity-page .trace-facts dd { font: 13px/1.7 var(--sans); margin-top: 6px; }
+.activity-page .trace-facts dt { font-size: 12px; }
+.activity-page .trace-step { padding: 18px 0; }
+.activity-page .trace-step-heading { font-size: 13px; gap: 8px 18px; }
+.activity-page .trace-step-heading strong { font-family: var(--sans); font-size: 14px; font-weight: 550; }
+.activity-page .trace-lifecycle { margin: 12px 0; }
+.activity-page .trace-lifecycle > summary { font-size: 13px; color: var(--muted); cursor: pointer; padding: 5px 0; }
+.activity-page .trace-timeline { display: grid; grid-template-columns: 1fr; gap: 0; margin: 10px 0; }
+.activity-page .trace-timeline li { justify-content: space-between; gap: 16px; padding: 7px 0; max-width: 500px; border-bottom: 1px solid var(--line); font-size: 13px; }
+.activity-page .trace-timeline time { font-size: 12px; }
+.activity-page .trace-evidence { font-size: 13px; gap: 6px; }
+.activity-page .trace-evidence strong { font-weight: 550; }
+.activity-page .trace-evidence ul { gap: 6px 20px; margin-top: 8px; }
+.activity-page .trace-technical > summary { font-size: 13px; padding: 8px 0; }
+.activity-page .trace-technical pre { max-height: 360px; overflow: auto; padding: 16px; background: var(--bg); font-size: 12px; line-height: 1.75; }
+@media (max-width: 600px) {
+  .activity-page .trace-body { padding: 20px 16px; }
+  .activity-page .trace-facts { grid-template-columns: 1fr; gap: 12px; }
+  .activity-page .execution-traces .feature-toolbar input, .activity-page .execution-traces .feature-toolbar select { max-width: none; width: 100%; }
+}
