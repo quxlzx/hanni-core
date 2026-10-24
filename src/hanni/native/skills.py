@@ -82,8 +82,15 @@ def load_skills(directory: str | None = None, *, metadata_only=False) -> list[di
 
 def match_skills(skills: list[dict], text: str, *, max_skills: int = 3, char_budget: int = 6000) -> str:
     lowered = text.lower()
-    hits = [s for s in skills if any(t in lowered for t in s["triggers"])]
-    hits.sort(key=lambda s: -sum(len(t) for t in s["triggers"] if t in lowered))
+    def matches(trigger):
+        # File extensions identify a concrete reader; do not match .html inside
+        # .htmlx or let a generic "review" skill crowd out the document reader.
+        if re.fullmatch(r'\.[a-z0-9]+', trigger):
+            return re.search(re.escape(trigger) + r'(?![a-z0-9])', lowered) is not None
+        return trigger in lowered
+    hits = [s for s in skills if any(matches(t) for t in s["triggers"])]
+    hits.sort(key=lambda s: (any(t.startswith('.') and matches(t) for t in s['triggers']),
+                             sum(len(t) for t in s['triggers'] if matches(t))), reverse=True)
     out, used = [], 0
     for skill in hits[:max_skills]:
         separator = 2 if out else 0

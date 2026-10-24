@@ -9,7 +9,7 @@ export type Attachment = {
 
 export const MAX_FILE_BYTES = 8 * 1024 * 1024;
 export const MAX_FILES = 5;
-export const FILE_ACCEPT = ".pdf,.docx,.txt,.md,.markdown,.csv,.tsv,.json,.jsonl,.xml,.yaml,.yml,.log,.py,.js,.jsx,.ts,.tsx,.html,.css,.sql,.sh,.ps1,.toml,.ini,.cfg,.rst,.tex,.c,.h,.cpp,.hpp,.cs,.java,.go,.rs,.rb,.php,.swift,.kt,.r,.ipynb";
+export const FILE_ACCEPT = ".pdf,.docx,.pptx,.odt,.xlsx,.xlsm,.xls,.ods,.txt,.md,.markdown,.csv,.tsv,.json,.jsonl,.xml,.yaml,.yml,.log,.py,.js,.jsx,.ts,.tsx,.html,.htm,.css,.sql,.sh,.ps1,.toml,.ini,.cfg,.rst,.tex,.c,.h,.cpp,.hpp,.cs,.java,.go,.rs,.rb,.php,.swift,.kt,.r,.ipynb";
 
 export function validateFile(file: { name: string; size: number }): string {
   if (!file.name || file.name.length > 200 || /[\u0000-\u001f\u007f/\\]/.test(file.name))
@@ -18,7 +18,7 @@ export function validateFile(file: { name: string; size: number }): string {
   if (file.size > MAX_FILE_BYTES) return `${file.name} exceeds 8 MiB. Choose a smaller file.`;
   const suffix = file.name.slice(file.name.lastIndexOf(".")).toLowerCase();
   if (!FILE_ACCEPT.split(",").includes(suffix))
-    return "Choose a PDF, DOCX, text, CSV, JSON, or source-code file.";
+    return "Choose a PDF, Word, PowerPoint, Excel, OpenDocument, HTML, text, CSV, JSON, or code file. Convert DOC, PPT, XLSB, and RTF first.";
   return "";
 }
 

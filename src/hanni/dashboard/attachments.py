@@ -3,20 +3,11 @@ from __future__ import annotations
 
 import base64
 import hashlib
-from io import BytesIO
 import json
-from pathlib import PurePath
 import time
 import uuid
-import xml.etree.ElementTree as ET
-from zipfile import BadZipFile, ZipFile
 
-MAX_FILE_BYTES = 8 * 1024 * 1024
-MAX_FILES = 5
-MAX_TEXT = 200_000
-TEXT_EXTENSIONS = frozenset(('.txt .md .markdown .csv .tsv .json .jsonl .xml .yaml .yml '
-    '.log .py .js .jsx .ts .tsx .html .css .sql .sh .ps1 .toml .ini .cfg .rst .tex '
-    '.c .h .cpp .hpp .cs .java .go .rs .rb .php .swift .kt .r .ipynb').split())
+from hanni.tools.documents import MAX_FILE_BYTES, MAX_FILES, extract_text
 
 
 def file_id(value):
@@ -24,67 +15,6 @@ def file_id(value):
         return str(uuid.UUID(value))
     except (ValueError, TypeError, AttributeError):
         raise ValueError('Invalid file ID.') from None
-
-
-def extract_text(name, data):
-    suffix = PurePath(name).suffix.lower()
-    if suffix == '.pdf':
-        try:
-            from pypdf import PdfReader
-        except ImportError:
-            raise ValueError('PDF reading is unavailable. Run SETUP_HANNI.cmd to install the reader.') from None
-        try:
-            reader = PdfReader(BytesIO(data))
-            if reader.is_encrypted:
-                raise ValueError('Unlock this PDF before attaching it.')
-            if len(reader.pages) > 200:
-                raise ValueError('This PDF exceeds 200 pages. Split it into smaller documents.')
-            chunks, used = [], 0
-            for number, page in enumerate(reader.pages, 1):
-                text = page.extract_text() or ''
-                chunks.append(f'[Page {number}]\n{text}')
-                used += len(chunks[-1])
-                if used > MAX_TEXT:
-                    break
-            if not any((chunk.partition('\n')[2]).strip() for chunk in chunks):
-                raise ValueError('This PDF has no readable text. Run OCR first, then attach it again.')
-            text = '\n\n'.join(chunks)
-            return text[:MAX_TEXT], 'application/pdf', len(text) > MAX_TEXT
-        except ValueError:
-            raise
-        except Exception:
-            raise ValueError('Could not read this PDF. Check that it is a valid, unlocked document.') from None
-    if suffix == '.docx':
-        try:
-            with ZipFile(BytesIO(data)) as archive:
-                if sum(info.file_size for info in archive.infolist()) > 24 * 1024 * 1024:
-                    raise ValueError('This Word document expands beyond the 24 MiB reading limit.')
-                raw = archive.read('word/document.xml')
-                if len(raw) > 8 * 1024 * 1024 or b'<!DOCTYPE' in raw.upper() or b'<!ENTITY' in raw.upper():
-                    raise ValueError('This Word document has unsupported XML content.')
-                root = ET.fromstring(raw)
-                ns = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
-                text = '\n'.join(''.join(node.text or '' if node.tag == ns + 't'
-                    else '\t' if node.tag == ns + 'tab' else '\n' if node.tag == ns + 'br' else ''
-                    for node in paragraph.iter()) for paragraph in root.iter(ns + 'p'))
-            if not text.strip():
-                raise ValueError('This Word document has no readable text.')
-            return text[:MAX_TEXT], 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', len(text) > MAX_TEXT
-        except (BadZipFile, KeyError, ET.ParseError, RuntimeError):
-            raise ValueError('Could not read this Word document. Use a valid .docx file.') from None
-    if suffix not in TEXT_EXTENSIONS:
-        raise ValueError('Unsupported file type. Choose PDF, DOCX, text, CSV, JSON, or a source-code file.')
-    try:
-        encoding = 'utf-32' if data.startswith((b'\xff\xfe\x00\x00', b'\x00\x00\xfe\xff')) else 'utf-16' if data.startswith((b'\xff\xfe', b'\xfe\xff')) else 'utf-8-sig'
-        text = data.decode(encoding)
-    except UnicodeError:
-        raise ValueError('This file is not readable text. Save it as UTF-8 and try again.') from None
-    if '\x00' in text or any(ord(char) < 32 and char not in '\n\r\t\f' for char in text):
-        raise ValueError('This file contains binary data. Choose a text document instead.')
-    if not text.strip():
-        raise ValueError('This file has no readable text.')
-    text = text.replace('\r\n', '\n')
-    return text[:MAX_TEXT], 'text/plain', len(text) > MAX_TEXT
 
 
 class Attachments:

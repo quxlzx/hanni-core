@@ -3,7 +3,9 @@ import test from "node:test";
 import { MAX_FILE_BYTES, fileSize, sameFiles, validateFile } from "../src/attachment_files.ts";
 
 test("documents and code retain unicode names and literal shell characters", () => {
-  for (const name of ["report Ω.pdf", "budget.csv", "notes.DOCX", "$(literal).py", "README.md"])
+  for (const name of ["report Ω.pdf", "budget.csv", "notes.DOCX", "$(literal).py", "README.md",
+    "budget.xlsx", "macros.XLSM", "legacy.xls", "tables.ods", "letter.odt", "slides.pptx",
+    "export.html", "export.htm", "rows.tsv", "data.jsonl", "config.yaml"])
     assert.equal(validateFile({ name, size: 100 }), "");
 });
 test("unknown binary, empty, oversized and path-like files are rejected before reading", () => {

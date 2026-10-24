@@ -50,14 +50,16 @@ The bottom chat readout shows the last request's context usage against the model
 
 In **MCP**, use **Add server** for a local stdio executable or a Streamable HTTP endpoint, or **Import JSON** for an `mcpServers` configuration. **Save and connect** starts the connection and discovers tools. Choose each tool's permission and select **Enable tool** to make it available to the native chat agent. Reads use the approved definition; other tool effects require an action decision in **Agent tools → Tasks & approvals**. Environment variables and saved credential references keep secrets out of configuration. Local packages must already be installed (`npx --no-install` is supported). Optional startup reconnect pins the exact configuration after a successful connection; **Disconnect** pauses it.
 
-The active **Skills** collection contains 24 procedures. Twelve everyday workplace skills cover email, meeting notes, task planning, spreadsheet analysis, document summaries, memos and proposals, presentations, status updates, business research, calendar planning, customer responses, and process/onboarding guides. They complement the retained research, citations, knowledge management, recurring tasks, and engineering skills. Skills match the task automatically; email, calendar, and file actions still depend on available tools and the user's instructions. A draft is not reported as a sent message, saved event, or finished document file.
+The active **Skills** collection contains 28 procedures. Everyday workplace skills cover email, meeting notes, task planning, spreadsheet analysis, document summaries, memos and proposals, presentations, status updates, business research, calendar planning, customer responses, and process/onboarding guides. Document-reading skills cover PDFs, HTML, JSON/JSONL/XML/YAML, and Word/PowerPoint/OpenDocument text, alongside spreadsheet and CSV/TSV analysis. They complement the retained research, citations, knowledge management, recurring tasks, and engineering skills. Skills match the task automatically; email, calendar, and file actions still depend on available tools and the user's instructions. A draft is not reported as a sent message, saved event, or finished document file.
 
 Run `.\.venv\Scripts\python.exe scripts\diagnose_brain.py` to inspect the current model identity, bridge, dashboard, and generated configuration without running tools or submitting a task.
 
 Type `/` in chat for command suggestions, or `/help` for all 32 commands and examples. Commands run directly in HANNI, including when the inference model is disconnected. `/history [search]` searches titles and saved message text; `/resume <session>` accepts an exact ID, unique ID prefix, or exact title. `/new` retains personal memory. `/remember <fact>` saves explicit memory; `/forget <memory-id>` verifies deletion against the backend.
 
 In native chat, use the **paperclip** or drag files into the conversation to attach
-PDF, Word (`.docx`), text, CSV, JSON, or source-code files. Attach up to **five
+PDF, Word (`.docx`), PowerPoint (`.pptx`), Excel (`.xlsx`, `.xlsm`, `.xls`),
+OpenDocument (`.odt`, `.ods`), HTML (`.html`, `.htm`), text, CSV/TSV,
+JSON/JSONL, XML, YAML, or source-code files. Attach up to **five
 files, 8 MiB each**, then send your question; sending files without a message asks
 Hanni to review them. Uploads can be removed before sending, and unsent files
 return after refreshing. Sent files stay with their conversation and can be
@@ -70,7 +72,21 @@ The reader keeps up to 200,000 extracted characters per file and uses bounded
 excerpts when needed to fit model context. Images and scanned PDFs require OCR
 before upload; password-protected PDFs must be unlocked. PDF reading is limited
 to 200 pages. Original files are kept in the chat database, with a 100 MiB total
-upload limit. Spreadsheet formulas, macros and uploaded code are not executed.
+upload limit. Excel extraction preserves sheet names, cell references, formulas,
+and last-saved cached values when available; XLS exposes saved values only.
+Cached values can be stale. XLSX/XLSM/XLS reading stops at 10,000 rows and 256
+columns per sheet and reports truncation. ODS repeat counts remain explicit.
+Office/OpenDocument archives are limited to 24 MiB expanded and 8 MiB per part.
+HTML is read as static text without loading resources or running scripts.
+Word/slide reading extracts text, not rendered layout, images, or speaker notes.
+Legacy DOC/PPT, RTF, and XLSB require conversion to a supported format first.
+Spreadsheet formulas, macros and uploaded code are not executed.
+
+For documents already in the agent workspace, the `local_read_document` tool
+uses the same readers and supports `offset`/`limit` pagination. Its result states
+whether extraction was truncated and returns `next_offset` for later text.
+Workspace access follows the existing tool approval policy. Uploaded excerpts
+are supplied directly to the model; attachment IDs are not workspace paths.
 
 `/undo` removes the last conversation exchange and retains task receipts; it does not reverse tool actions. `/retry` regenerates the last answer with previous observations and tools disabled, preventing repeated effects. `/stop` cancels queued and active chat responses, stops speech, cancels compression, and reports remaining background work. Scheduled job settings are unchanged. `/compress [focus]` saves a summary for future model context while retaining the full browsable history. `/context` reports the native loop's actual compression threshold and distinguishes estimated context from provider-reported usage.
 
