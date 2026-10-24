@@ -136,6 +136,8 @@ class DashboardServer(ThreadingHTTPServer):
         self.google_accounts = GoogleAccounts(self.features)
         from hanni.dashboard.commands import ChatCommands
         self.chat_commands = ChatCommands(self)
+        from hanni.dashboard.learning import LearningControls
+        self.learning = LearningControls(self)
         from hanni.dashboard.cluster import ClusterMonitor
         self.cluster = cluster if cluster is not None else ClusterMonitor(data_dir=config.paths.data_dir if isinstance(config, AppConfig) else None)
         from hanni.dashboard.cluster_power import ClusterPower
@@ -200,6 +202,9 @@ class DashboardServer(ThreadingHTTPServer):
         return result
 
     def server_close(self):
+        learning = getattr(self, 'learning', None)
+        if learning is not None:
+            learning.close()
         google = getattr(self, 'google_accounts', None)
         if google is not None:
             google.close()
@@ -415,10 +420,11 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send_error(503, exc)
         if route.startswith('/api/inference/'):
             return self._inference_request('GET')
-        private_routes = {'/api/google/accounts', '/api/tool-access', '/api/chat/commands', '/api/chat/command', '/api/model-settings', '/api/productivity', '/api/memory', '/api/calendar',
+        private_routes = {'/api/learning', '/api/google/accounts', '/api/tool-access', '/api/chat/commands', '/api/chat/command', '/api/model-settings', '/api/productivity', '/api/memory', '/api/calendar',
                           '/api/agents', '/api/awareness', '/api/voice', '/api/notifications',
                           '/api/mcp', '/api/mcp/export', '/api/mcp/office', '/api/hermes', '/api/executions', '/api/tasks', '/api/workflows', '/api/compute', '/api/model-routing', '/api/model-lab',
-                          '/api/bridge/tasks', '/api/bridge/tools', '/api/cron/jobs', '/api/skills'}
+                          '/api/bridge/tasks', '/api/bridge/tools', '/api/cron/jobs', '/api/skills',
+                          '/api/learning/journey', '/api/learning/source', '/api/learning/skill', '/api/learning/batches', '/api/learning/export'}
         if route in private_routes or route.startswith(('/api/tasks/', '/api/workflows/', '/api/memory/', '/api/model-lab/', '/api/bridge/task/')):
             if not secrets.compare_digest(self.headers.get('X-Hanni-Token', ''), self.server.chat.token):
                 return self._send(403, b'{"error":"Reload the dashboard before reading personal workspace data."}')
@@ -462,6 +468,17 @@ class Handler(BaseHTTPRequestHandler):
                 elif route == '/api/skills':
                     from hanni.dashboard.bridge_panel import skills_list
                     result = skills_list()
+                elif route == '/api/learning': result = self.server.learning.snapshot()
+                elif route == '/api/learning/journey': result = self.server.learning.journey()
+                elif route in {'/api/learning/source', '/api/learning/skill'}:
+                    engine = self.server.learning.engine
+                    if not engine: raise RuntimeError('Learning is unavailable.')
+                    result = engine.source(query.get('id', '')) if route.endswith('/source') else engine.skills.detail(query.get('name', ''), track=True)
+                elif route in {'/api/learning/batches', '/api/learning/export'}:
+                    from hanni.native.training import TrainingStore
+                    if not feature.root: raise RuntimeError('Training data is unavailable.')
+                    training = TrainingStore(feature.root)
+                    result = training.batches() if route.endswith('/batches') else training.export(query.get('batch', ''), query.get('format', 'trajectory'))
                 elif route == '/api/hermes': result = self.server.hermes.snapshot()
                 elif route == '/api/mcp/export': result = self.server.mcp.export_configs()
                 elif route in {'/api/workflows', '/api/tasks'}:
@@ -663,7 +680,7 @@ class Handler(BaseHTTPRequestHandler):
             except (ValueError, KeyError) as exc:
                 return self._send_error(400, exc)
             return self._send(502 if result.get('error') else 200, json.dumps(result, default=str).encode())
-        if self.path not in {'/api/google/accounts', '/api/tool-access', '/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/chat', '/api/chat/conversations', '/api/chat/clear', '/api/gpu-routing', '/api/audio-devices', '/api/shutdown', '/api/restart', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/hermes', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-routing', '/api/model-lab'}:
+        if self.path not in {'/api/learning', '/api/google/accounts', '/api/tool-access', '/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/chat', '/api/chat/conversations', '/api/chat/clear', '/api/gpu-routing', '/api/audio-devices', '/api/shutdown', '/api/restart', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/hermes', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-routing', '/api/model-lab'}:
             self._discard_small_body()
             return self._send(404, b'{"error":"Not found"}')
         if self.headers.get('Content-Type', '').split(';')[0].strip() != 'application/json':
@@ -672,7 +689,7 @@ class Handler(BaseHTTPRequestHandler):
         data = {}
         try:
             size = int(self.headers.get('Content-Length', '0'))
-            limit = 12 * 1024 * 1024 if self.path == '/api/chat/files' else 262144 if self.path == '/api/mcp' else 65536 if self.path in {'/api/google/accounts', '/api/workflows', '/api/tasks'} else 20000
+            limit = 12 * 1024 * 1024 if self.path == '/api/chat/files' else 262144 if self.path == '/api/mcp' else 65536 if self.path in {'/api/learning', '/api/google/accounts', '/api/workflows', '/api/tasks'} else 20000
             if self.headers.get('Transfer-Encoding') or not 0 < size <= limit:
                 return self._send(413, b'{"error":"Message too large or missing length"}')
             self.connection.settimeout(5)
@@ -680,6 +697,9 @@ class Handler(BaseHTTPRequestHandler):
             if len(raw) != size: raise ValueError('Incomplete request')
             data = json.loads(raw)
             if not isinstance(data, dict): raise ValueError('JSON object required')
+            if self.path == '/api/learning':
+                result = self.server.learning.execute(data)
+                return self._send(200, json.dumps(result, allow_nan=False, default=str).encode())
             if self.path == '/api/google/accounts':
                 result = self.server.google_accounts.execute(data)
                 return self._send(200, json.dumps(result, allow_nan=False).encode())
@@ -820,7 +840,7 @@ class Handler(BaseHTTPRequestHandler):
             key = self.server.chat.submit(data['id'], data['message'], data.get('conversation'), data.get('attachments'))
             return self._send(202, json.dumps({'id':key, 'accepted':True}).encode())
         except ValueError as exc:
-            if self.path in {'/api/google/accounts', '/api/tool-access', '/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/gpu-routing', '/api/audio-devices', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-lab'} or (self.path == '/api/chat' and isinstance(data, dict) and 'attachments' in data):
+            if self.path in {'/api/learning', '/api/google/accounts', '/api/tool-access', '/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/gpu-routing', '/api/audio-devices', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-lab'} or (self.path == '/api/chat' and isinstance(data, dict) and 'attachments' in data):
                 return self._send_error(400, exc)
             return self._send(400, b'{"error":"Enter a valid message (maximum 4000 characters)."}')
         except UnicodeError:

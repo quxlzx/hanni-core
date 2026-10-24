@@ -61,7 +61,7 @@ def _audit_arguments(tool_name: str, arguments: Mapping[str, Any]) -> Mapping[st
     safe = dict(arguments)
     if tool_name.startswith('mcp.'):
         return {key: '[EXTERNAL MCP ARGUMENT]' for key in safe}
-    if tool_name.startswith(('workspace.', 'memory.desktop_')):
+    if tool_name.startswith(('workspace.', 'memory.desktop_', 'learning.desktop_')):
         # Desktop records can contain personal task titles, notes and memories.
         # Preserve the fixed operation name without copying record bodies to logs.
         return {key: '[PRIVATE WORKSPACE DATA]' for key in safe}

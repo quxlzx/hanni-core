@@ -14,7 +14,7 @@ def agent_tool_specs():
                 'schema': {'type': 'function', 'function': {'name': name, 'description': description,
                     'parameters': {'type': 'object', 'properties': properties, 'required': list(required), 'additionalProperties': False}}}}
     short = {'type': 'string', 'minLength': 1, 'maxLength': 500}
-    return [
+    tools = [
         spec('schedule_task', 'Create a persistent repeating task. Use for daily updates, hourly checks, or weekly reports; no workspace inspection is needed. '
              'Defaults to 09:00 in the configured timezone for daily/weekly schedules. Returns schedule ID and next run. '
              'Future runs may use read-only tools automatically; other actions need approval. Results return to this conversation while HANNI runs.',
@@ -36,6 +36,7 @@ def agent_tool_specs():
         spec('memory_search', 'Search persistent personal/environment notes. Optional provider explicitly queries a configured, registered read-only MCP memory provider; never sends memories automatically.',
              {'query': short, 'scope': {'enum': ['all', 'user', 'environment']}, 'provider': short}, ['query']),
         spec('history_search', 'Retrieve older conversations separately from personal notes and current task state.', {'query': short}, ['query']),
+        spec('session_search', 'Search detailed saved conversation history; facts belong in memory, reusable procedures in skills.', {'query': short}, ['query']),
         spec('working_state', 'Read or update this task journal: goals, constraints, completed work, blockers, next steps. Does not save personal memories or claim effects.',
              {key: {'type': 'string', 'maxLength': 3000} for key in ['goal', 'constraints', 'completed', 'blockers', 'next_steps']}),
         spec('delegate_task', 'Start a background subagent with separate messages and terminal working directory. Pass only relevant context and a subset of currently scoped tool names. Returns job ID; use agent_job to retrieve its final summary. Subagents cannot delegate again.',
@@ -45,6 +46,13 @@ def agent_tool_specs():
              {'id': short, 'action': {'enum': ['status', 'result', 'cancel']}}, ['id']),
         spec('execute_code', 'Run bounded Python that can import hanni_tools.call(name, arguments). Calls use this task registry and normal approvals; only printed output is returned. Not an OS sandbox. No recursive orchestration.',
              {'code': {'type': 'string', 'minLength': 1, 'maxLength': 20000}}, ['code'])]
+    staged = deepcopy(next(tool for tool in tools if tool['name'] == 'skill_save'))
+    staged['name'] = staged['schema']['function']['name'] = 'skill_propose'
+    staged['schema']['function']['description'] = ('Stage a reusable procedure learned from actual tool results, error recovery or owner corrections. '
+        'Include working commands, tool names, pitfalls and verification. Read existing skills and patch rather than duplicate. '
+        'Returns a reviewable diff; does not activate instructions or grant action permissions. Owner reviews it in Skills.')
+    tools.append(staged)
+    return tools
 
 
 class AgentTools:
@@ -72,9 +80,13 @@ class AgentTools:
             from .scheduling import manage_schedules
             return {'ok': True, 'data': manage_schedules(self.root, args['operation'], args.get('id'))}
         if name == 'skill_read':
-            return {'ok': True, 'data': self.skills.read(**args)}
+            return {'ok': True, 'data': self.skills.read(**args, source=self.task['id'] + ':' + str(call_id))}
+        if name == 'skill_propose':
+            proposal = self.skills.stage(args, source='task:' + self.task['id'])
+            return {'ok': True, 'data': {'proposal_id': proposal['id'], 'status': proposal['status']},
+                    'message': 'Skill diff staged for owner review in Skills. No instructions or model weights changed.'}
         if name == 'skill_save':
-            return self.skills.save(**args)
+            return self.skills.save(**args, source='task:' + self.task['id'])
         if name == 'working_state':
             with self.store.transaction():
                 previous = self.store.checkpoint(self.task['id']) or {}
@@ -101,7 +113,7 @@ class AgentTools:
             results = memory.search(args['query'], limit=12)
             records = [r.record.to_dict() for r in results if not types or r.record.memory_type in types]
             return {'ok': True, 'data': {'store': 'persistent_notes', 'records': records[:8]}}
-        if name == 'history_search':
+        if name in {'history_search', 'session_search'}:
             path = self.root / 'dashboard-chat.sqlite3'
             if not path.exists():
                 return {'ok': True, 'data': {'store': 'conversation_history', 'matches': []}}

@@ -22,6 +22,9 @@ COMMANDS = [
     ('status', '', 'Show model, connection, activity, and voice.', '/status'),
     ('context', '', 'Show context usage and compression threshold.', '/context'),
     ('compress', '[focus]', 'Summarize earlier context; retain saved history.', '/compress budget decisions'),
+    ('refine', '[focus]', 'Review a separate snapshot for reusable skills and durable memory suggestions.', '/refine endpoint troubleshooting'),
+    ('journey', '', 'Inspect learned skills, memory changes and learning reviews.', '/journey'),
+    ('curator', '[dry-run/consolidate]', 'Maintain learned skills; consolidation stages reviewable proposals.', '/curator dry-run'),
     ('model', '[name]', 'List or switch installed models and saved API profiles.', '/model K2 3.7B'),
     ('reasoning', '[level]', 'View or adjust supported reasoning effort.', '/reasoning high'),
     ('voice', 'on/off', 'Enable or disable the existing voice conversation.', '/voice on'),
@@ -134,6 +137,18 @@ class ChatCommands:
 
     def dispatch(self, name, arg, conversation, key, cancel):
         hub, server = self.hub, self.server
+        if name in {'refine', 'journey', 'curator'}:
+            if not getattr(server, 'learning', None): raise RuntimeError('Learning controls are unavailable.')
+            if name == 'journey':
+                if arg: raise ValueError('/journey does not accept arguments.')
+                journey = server.learning.journey()
+                return {'message': '### Learning journey\n\n' + '\n'.join(f"- {r['kind']}: {r['text']}" for r in journey['items'][:40]) + '\n\n' + journey['message']}
+            if name == 'refine':
+                result = server.learning.execute({'id': key, 'operation': 'refine', 'data': {'conversation': conversation, 'focus': arg}})
+            else:
+                if arg not in {'', 'dry-run', 'consolidate'}: raise ValueError('Use /curator [dry-run/consolidate].')
+                result = server.learning.execute({'id': key, 'operation': 'curator', 'data': {'dry_run': arg == 'dry-run', 'consolidate': arg == 'consolidate'}})
+            return {'message': result.get('message') or 'Curator result: ' + json.dumps(result), 'learning': result}
         if name in {n for n, _, _, _ in WORK_COMMANDS}:
             return self.work.dispatch(name, arg, conversation, key, cancel)
         if name in {'new', 'resume', 'retry', 'undo', 'compress', 'context'} and not hub.native_mode:
@@ -182,6 +197,11 @@ class ChatCommands:
             active = self._bridge('/activity')
             background = [t for t in active.get('tasks', []) if t['id'] not in task_ids]
             lines = [f'Stopped speech and cancelled {stopped} active or queued chat turn(s). Completed tool effects remain.']
+            learning = getattr(server, 'learning', None)
+            if learning and learning.engine:
+                reviews = [r['id'] for r in learning.engine.runs() if r['state'] == 'running']
+                for review_id in reviews: learning.engine.cancel(review_id)
+                if reviews: lines.append('Learning review cancellation requested. An in-flight model request may still be winding down; staged proposals remain reviewable in Skills.')
             if failures:
                 lines.append('Bridge cancellation could not be confirmed for: ' + ', '.join(failures))
             if active.get('error'):

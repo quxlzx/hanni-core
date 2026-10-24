@@ -187,13 +187,40 @@ class NativeClient:
                 return read_chat_stream(response, on_delta)
 
     def chat(self, messages: list[dict], tools: list[dict] | None = None) -> dict:
+        return self._complete(self._payload(messages, tools))
+
+    def chat_json(self, messages, schema):
+        """Bounded structured review; never grant tools or switch providers."""
         import httpx
-        payload = self._payload(messages, tools)
+        payload = self._payload(messages, None)
+        if self.config.get('source') == 'local':
+            payload['response_format'] = {'type': 'json_object', 'schema': schema}
+            payload['chat_template_kwargs'] = {'enable_thinking': False}
+            payload['reasoning_effort'] = 'none'
+        else:
+            payload['response_format'] = {'type': 'json_schema', 'json_schema': {'name': 'learning_review', 'strict': True, 'schema': schema}}
+        try:
+            return self._complete(payload, attempts=1)
+        except httpx.HTTPStatusError as exc:
+            try: error = exc.response.json().get('error', {})
+            except (ValueError, AttributeError): error = {}
+            message = str(error.get('message', '')).lower() if isinstance(error, dict) else ''
+            unsupported = (exc.response.status_code in {400, 422, 501} and isinstance(error, dict) and (
+                error.get('param') == 'response_format' or
+                any(key in message for key in ('response_format', 'json_schema')) and
+                any(word in message for word in ('unsupported', 'not support', 'unknown', 'unrecognized'))))
+            if not unsupported: raise
+            # Explicit rejection only: one ordinary JSON-prompt completion on
+            # this same provider. Output still passes the full review validator.
+            return self._complete(self._payload(messages, None), attempts=1)
+
+    def _complete(self, payload, *, attempts=2):
+        import httpx
         timeout = self.timeout or float(os.environ.get("HANNI_MODEL_TIMEOUT", "180"))
         data: dict = {}
         # a single retry on read timeout: shared single-slot brains queue behind
         # interactive traffic; transient starvation should not fail the task
-        for attempt in (1, 2):
+        for attempt in range(1, attempts + 1):
             try:
                 with httpx.Client(timeout=timeout, trust_env=False) as client:
                     response = client.post(
@@ -207,7 +234,7 @@ class NativeClient:
                     data = response.json()
                 break
             except httpx.ReadTimeout:
-                if attempt == 2:
+                if attempt == attempts:
                     raise
         if not isinstance(data, dict) or not isinstance(data.get("choices"), list) or not data["choices"]:
             raise ValueError("Model server returned no completion choices.")

@@ -13,7 +13,7 @@ from pathlib import Path
 from .loop import run_loop
 from .provider import NativeClient, load_model
 from .soul import build_system_prompt, load_soul
-from .skills import load_skills, match_skills
+from .skills import match_skills
 from .memory_inject import memory_block
 from .runtime import ToolRuntime, error_receipt
 from .agent_tools import AgentTools, agent_tool_specs
@@ -48,7 +48,12 @@ SYSTEM_PROMPT = (
     "to the shared workspace root. Use '.' to list that root; never guess host directories. "
     "For repeating requests (daily updates, weekly reports), call schedule_task directly; "
     "do not search files or write scheduler scripts. In a scheduled_job_id context, perform "
-    "the prompt once and return its result; never schedule it again."
+    "the prompt once and return its result; never schedule it again. "
+    "After discovering a reusable workflow, recovering from errors, or receiving a correction, "
+    "use skill_propose to stage concrete working instructions, commands, pitfalls and verification. "
+    "Read related skills first and update the same skill rather than making duplicates. "
+    "Facts and preferences belong in personal memory; detailed history is retrieved with session_search. "
+    "A staged proposal is not an activated skill and never trains model weights."
 )
 
 
@@ -75,7 +80,7 @@ def run(db_path, task_id, catalog):
             # Keep argument-dependent read operations; dispatch checks their arguments.
             specs = [s for s in specs if is_read(s, {}) or s['name'] == 'scheduled_tasks']
         allowed_tools = task['request']['context'].get('allowed_tools')
-        if task['request']['context'].get('parent_task_id'):
+        if task['request']['context'].get('parent_task_id') or task['request']['context'].get('batch_id'):
             if not isinstance(allowed_tools, list):
                 raise ValueError('Child scope is missing.')
             specs = [s for s in specs if s['name'] in allowed_tools and s['name'] != 'delegate_task']
@@ -123,7 +128,7 @@ def run(db_path, task_id, catalog):
                              Path(db_path).parent / 'workspace')
                 handler = lambda tool_name, tool_args: (agent.execute(tool_name, tool_args, call_id or name)
                     if tool_name in agent_names else execute_local(tool_name, tool_args, workspace))
-                task_read = name in {'skill_read', 'memory_search', 'history_search', 'working_state'} or (
+                task_read = name in {'skill_read', 'memory_search', 'history_search', 'session_search', 'skill_propose', 'working_state'} or (
                     name == 'agent_job' and arguments.get('action') != 'cancel') or (
                     name == 'scheduled_tasks' and arguments.get('operation') == 'list')
                 decision = access.decision(spec, arguments)
@@ -171,7 +176,12 @@ def run(db_path, task_id, catalog):
         if skills_text:
             fired = [line.removeprefix("### skill: ") for line in skills_text.splitlines()
                      if line.startswith("### skill: ")]
+            # The last instruction block can end at the character budget,
+            # including inside its heading. Never treat that fragment as a skill.
+            fired = [name for name in dict.fromkeys(fired) if any(s['name'] == name for s in skills)]
             if fired:
+                for name in fired:
+                    agent.skills.track(name, 'use', source=task_id)
                 store.event(task_id, "Skills applied: " + ", ".join(fired), state="running")
         system_prompt = build_system_prompt(
             SYSTEM_PROMPT, load_soul(), skills_text)

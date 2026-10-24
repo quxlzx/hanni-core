@@ -115,6 +115,8 @@ class DesktopFeatures:
         return result.data['result']
 
     def _fixed_handler(self, name, payload):
+        if name.startswith('learning.desktop_'):
+            return self.learning_controls.handle(name.removeprefix('learning.desktop_'), payload['data'], request_id=payload['id'])
         if name.startswith('memory.desktop_'):
             return self.memory_explorer.handle(name.removeprefix('memory.desktop_'), payload['data'], request_id=payload['id'])
         operation = name.removeprefix('workspace.')

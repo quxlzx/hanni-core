@@ -64,7 +64,7 @@ def exchange(hub, text='Question', answer='Answer', conversation='default', task
 
 
 def test_catalog_has_all_commands_and_help_is_not_truncated(commands):
-    assert len(CATALOG) == 33
+    assert len(CATALOG) == 36
     result = command(commands, '/help')
     assert all(c['name'] in result['message'] for c in CATALOG)
     assert all(c['description'] in result['message'] and c['example'] in result['message'] for c in CATALOG)
