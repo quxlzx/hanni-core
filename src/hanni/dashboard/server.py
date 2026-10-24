@@ -130,6 +130,8 @@ class DashboardServer(ThreadingHTTPServer):
         self.workspace = workspace_contract(config if isinstance(config, AppConfig) else None)
         from hanni.dashboard.features import DesktopFeatures
         self.features = features if features is not None else DesktopFeatures(config if isinstance(config, AppConfig) else None)
+        from hanni.dashboard.tool_access import ToolAccessControls
+        self.tool_access = ToolAccessControls(self.features, self.chat)
         from hanni.dashboard.commands import ChatCommands
         self.chat_commands = ChatCommands(self)
         from hanni.dashboard.cluster import ClusterMonitor
@@ -408,7 +410,7 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send_error(503, exc)
         if route.startswith('/api/inference/'):
             return self._inference_request('GET')
-        private_routes = {'/api/chat/commands', '/api/chat/command', '/api/model-settings', '/api/productivity', '/api/memory', '/api/calendar',
+        private_routes = {'/api/tool-access', '/api/chat/commands', '/api/chat/command', '/api/model-settings', '/api/productivity', '/api/memory', '/api/calendar',
                           '/api/agents', '/api/awareness', '/api/voice', '/api/notifications',
                           '/api/mcp', '/api/mcp/export', '/api/mcp/office', '/api/hermes', '/api/executions', '/api/tasks', '/api/workflows', '/api/compute', '/api/model-routing', '/api/model-lab',
                           '/api/bridge/tasks', '/api/bridge/tools', '/api/cron/jobs', '/api/skills'}
@@ -424,6 +426,7 @@ class Handler(BaseHTTPRequestHandler):
                     result = {'commands': CATALOG}
                 elif route == '/api/chat/command': result = self.server.chat_commands.result(query.get('id'))
                 elif route == '/api/model-settings': result = self.server.model_settings.snapshot()
+                elif route == '/api/tool-access': result = self.server.tool_access.snapshot()
                 elif route == '/api/productivity': result = feature.productivity()
                 elif route == '/api/memory': result = feature.memories(query.get('q', ''))
                 elif route == '/api/memory/explorer': result = feature.memory_explorer.browse(query)
@@ -654,7 +657,7 @@ class Handler(BaseHTTPRequestHandler):
             except (ValueError, KeyError) as exc:
                 return self._send_error(400, exc)
             return self._send(502 if result.get('error') else 200, json.dumps(result, default=str).encode())
-        if self.path not in {'/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/chat', '/api/chat/conversations', '/api/chat/clear', '/api/gpu-routing', '/api/audio-devices', '/api/shutdown', '/api/restart', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/hermes', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-routing', '/api/model-lab'}:
+        if self.path not in {'/api/tool-access', '/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/chat', '/api/chat/conversations', '/api/chat/clear', '/api/gpu-routing', '/api/audio-devices', '/api/shutdown', '/api/restart', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/hermes', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-routing', '/api/model-lab'}:
             self._discard_small_body()
             return self._send(404, b'{"error":"Not found"}')
         if self.headers.get('Content-Type', '').split(';')[0].strip() != 'application/json':
@@ -671,6 +674,9 @@ class Handler(BaseHTTPRequestHandler):
             if len(raw) != size: raise ValueError('Incomplete request')
             data = json.loads(raw)
             if not isinstance(data, dict): raise ValueError('JSON object required')
+            if self.path == '/api/tool-access':
+                result = self.server.tool_access.execute(data)
+                return self._send(200, json.dumps(result, allow_nan=False).encode())
             if self.path == '/api/chat/files':
                 if not self.server.chat.native_mode:
                     raise RuntimeError('Start native chat with START_BRAIN.cmd to attach files.')
@@ -805,7 +811,7 @@ class Handler(BaseHTTPRequestHandler):
             key = self.server.chat.submit(data['id'], data['message'], data.get('conversation'), data.get('attachments'))
             return self._send(202, json.dumps({'id':key, 'accepted':True}).encode())
         except ValueError as exc:
-            if self.path in {'/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/gpu-routing', '/api/audio-devices', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-lab'} or (self.path == '/api/chat' and isinstance(data, dict) and 'attachments' in data):
+            if self.path in {'/api/tool-access', '/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/gpu-routing', '/api/audio-devices', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-lab'} or (self.path == '/api/chat' and isinstance(data, dict) and 'attachments' in data):
                 return self._send_error(400, exc)
             return self._send(400, b'{"error":"Enter a valid message (maximum 4000 characters)."}')
         except UnicodeError:

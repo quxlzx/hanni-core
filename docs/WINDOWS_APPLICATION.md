@@ -25,6 +25,8 @@ Windows alerts show event titles, rather than private prompts, document contents
 
 ## Building and troubleshooting
 
+For an optional personal tab inside Microsoft Teams on the same PC, see [Microsoft Teams setup](MICROSOFT_TEAMS.md). The Teams tab reuses the running assistant and its notifications inbox; Windows alerts remain available through this desktop app.
+
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build_desktop.ps1
 ```

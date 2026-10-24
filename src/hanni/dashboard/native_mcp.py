@@ -69,6 +69,10 @@ class NativeMCP:
                 if (action['state'] != 'dispatching' or task['state'] in TERMINAL
                         or time.time() > action['expires']):
                     raise ValueError('MCP action was not authorized, expired, or its task stopped.')
+                from hanni.native.tool_access import reconcile_action
+                current_action = reconcile_action(store, action)
+                if current_action['state'] == 'rejected':
+                    return current_action['receipt']
                 current = next((tool for tool in self.tools()['tools'] if tool == action['spec']), None)
                 if current is None:
                     raise ValueError('MCP tool was disabled or its approved definition changed.')

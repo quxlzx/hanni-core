@@ -184,6 +184,9 @@ class TaskStore:
                           arguments=arguments, created=time.time(), expires=time.time()+300, receipt=None)
             self.db.execute('INSERT INTO actions VALUES(?,?,?)', (action_id, task_id, json.dumps(action)))
             self.event(task_id, 'Waiting for HANNI capability authorization.', state='approval')
+            from hanni.native.tool_access import ToolAccess, denied_receipt
+            if ToolAccess(self.path.parent).decision(spec, arguments) == 'blocked':
+                return self.settle(action_id, 'rejected', denied_receipt())
             return action
 
     def action(self, action_id):
@@ -211,6 +214,10 @@ class TaskStore:
                 raise Conflict('Task cancelled or approval expired.')
             if state == 'dispatching' and action['state'] != 'pending':
                 raise Conflict('Action already dispatched; do not repeat.')
+            if state == 'dispatching':
+                from hanni.native.tool_access import ToolAccess
+                if ToolAccess(self.path.parent).decision(action['spec'], action['arguments']) == 'blocked':
+                    raise Conflict('Read-only tool access blocks this action.')
             if state == 'fulfilled' and action['state'] != 'dispatching':
                 raise Conflict('Execution must be claimed before reporting a receipt.')
             action.update(state=state, receipt=receipt)

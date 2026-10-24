@@ -17,6 +17,8 @@ def test_real_export_includes_every_source_package(tmp_path):
         assert 'hanni/src/hanni/models/client.py' in names
         assert 'hanni/src/hanni/tools/google_access.py' in names
         assert 'hanni/START_BRAIN.cmd' in names
+        assert 'hanni/SETUP_TEAMS.cmd' in names
+        assert 'hanni/START_TEAMS.cmd' in names
         assert 'hanni/start_brain.sh' in names
         assert 'hanni/soul/SOUL.md' in names
         assert 'hanni/soul/skills/recurring-tasks/SKILL.md' in names

@@ -1,5 +1,6 @@
 include README.md LICENSE CONTRIBUTING.md SECURITY.md START_HANNI.cmd SETUP_HANNI.cmd EXPORT_HANNI_SOURCE.cmd
 include START_HANNI_OS.cmd
+include SETUP_TEAMS.cmd START_TEAMS.cmd
 include START_BRAIN.cmd start_brain.sh
 recursive-include soul *.md *.py *.sh *.txt
 include .env.example .gitignore .gitattributes

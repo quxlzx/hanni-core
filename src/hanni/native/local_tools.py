@@ -393,7 +393,8 @@ def await_local(store, task_id, action, workspace: Path, *, executor=None):
             raise InterruptedError('Owning script stopped.')
         if store.get(task_id)["state"] in TERMINAL:
             raise InterruptedError("Task cancelled.")
-        current = store.action(action["id"])
+        from .tool_access import reconcile_action
+        current = reconcile_action(store, action, auto=True)
         if current["state"] in {"fulfilled", "rejected", "uncertain"}:
             return current["receipt"] or {"ok": False, "error": current["state"]}
         if current["state"] == "dispatching":

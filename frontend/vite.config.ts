@@ -31,7 +31,7 @@ export default defineConfig({
         this.emitFile({
           type: "asset",
           fileName: "THIRD_PARTY_NOTICES.txt",
-          source: `${runtimeLicenses}\n\nGeist Sans\n\n${fontLicenses}`,
+          source: `${runtimeLicenses}\n\nGeist Sans\n\n${fontLicenses}`.replace(/[ \t]+$/gm, ""),
         });
       },
     },

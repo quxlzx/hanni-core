@@ -3,8 +3,11 @@ import { App } from "./workspace";
 import { Mini } from "./mini";
 import "./style.css";
 import { ChatApp } from "./chat_app";
+import { TeamsApp } from "./teams_app";
 createRoot(document.getElementById("app-root")!).render(
-  new URLSearchParams(window.location.search).get("view") === "mini" ? (
+  new URLSearchParams(window.location.search).get("host") === "teams" ? (
+    <TeamsApp />
+  ) : new URLSearchParams(window.location.search).get("view") === "mini" ? (
     <Mini />
   ) : new URLSearchParams(window.location.search).get("view") ===
     "workspace" ? (

@@ -1,14 +1,23 @@
 import { useCallback, useEffect, useState } from "react";
+let teamsSession = "";
+export function setTeamsSession(value: string) { teamsSession = value; }
+export function localFetch(path: string, options: RequestInit = {}) {
+  const headers = new Headers(options.headers);
+  if (teamsSession) headers.set("X-Hanni-Teams-Session", teamsSession);
+  return fetch(path, { ...options, headers });
+}
 export async function request<T>(
   path: string,
   options: RequestInit = {},
 ): Promise<T> {
-  const response = await fetch(path, {
+  const response = await localFetch(path, {
     ...options,
     cache: "no-store",
     signal: options.signal ?? AbortSignal.timeout(12000),
   });
   const data = await response.json();
+  if (response.status === 401 && data.error_code === "teams_session_expired")
+    window.dispatchEvent(new Event("hanni:teams-disconnected"));
   if (!response.ok)
     throw new Error(data.error || `Request failed (${response.status}).`);
   return data as T;

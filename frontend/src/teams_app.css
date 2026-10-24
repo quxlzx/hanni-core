@@ -1,0 +1,32 @@
+.teams-host {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg, #111214);
+  color: var(--text, #eeeeef);
+}
+.teams-connection-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--line, #303136);
+  font-size: 12px;
+}
+.teams-connection-bar button { font-size: inherit; padding: 4px 10px; }
+.teams-content { flex: 1; min-height: 0; overflow: hidden; }
+.teams-content .hc-shell { height: 100%; }
+.teams-pairing {
+  width: min(100%, 640px);
+  padding: clamp(24px, 6vw, 64px) 24px;
+  margin-inline: auto;
+  overflow: auto;
+}
+.teams-pairing h1 { font-size: 24px; line-height: 1.3; margin: 0 0 20px; }
+.teams-pairing p { line-height: 1.6; margin: 0 0 24px; }
+.teams-pairing form { display: grid; gap: 10px; margin-bottom: 28px; }
+.teams-pairing input { width: 100%; min-height: 40px; }
+.teams-pairing form button { justify-self: start; margin-top: 6px; }
+.teams-connection-error { color: var(--danger, #f2a6a6); padding: 8px 16px; line-height: 1.5; }

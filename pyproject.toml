@@ -59,6 +59,7 @@ dependencies = [
 # Add the real repository URL after choosing a GitHub owner; no placeholder links.
 
 [project.optional-dependencies]
+teams = ["cryptography>=46,<51", "Pillow>=12,<14"]
 harness-manager = ["langgraph>=1,<2"]
 dev = [
     "pytest>=9.0,<10",
@@ -103,6 +104,7 @@ packages = [
     "hanni.core",
     "hanni.compute",
     "hanni.dashboard",
+    "hanni.teams",
     "hanni.evals",
     "hanni.hermes",
     "hanni.logs",

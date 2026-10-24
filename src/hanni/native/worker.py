@@ -17,6 +17,7 @@ from .skills import load_skills, match_skills
 from .memory_inject import memory_block
 from .runtime import ToolRuntime, error_receipt
 from .agent_tools import AgentTools, agent_tool_specs
+from .tool_access import ToolAccess, is_read
 from .local_tools import auto_approved, await_local, execute_local, local_tool_specs
 
 from ..hermes.state import Conflict, TaskStore, TERMINAL, digest
@@ -69,6 +70,10 @@ def run(db_path, task_id, catalog):
             store.event(task_id, 'Dashboard MCP tools are unavailable; continuing with other registered tools.')
         remote_tools = remote_tools[:128]
         specs = task["request"]["windows_tools"] + remote_tools + local_tool_specs()
+        access = ToolAccess(Path(db_path).parent)
+        if access.snapshot()['mode'] == 'read_only':
+            # Keep argument-dependent read operations; dispatch checks their arguments.
+            specs = [s for s in specs if is_read(s, {}) or s['name'] == 'scheduled_tasks']
         allowed_tools = task['request']['context'].get('allowed_tools')
         if task['request']['context'].get('parent_task_id'):
             if not isinstance(allowed_tools, list):
@@ -121,15 +126,20 @@ def run(db_path, task_id, catalog):
                 task_read = name in {'skill_read', 'memory_search', 'history_search', 'working_state'} or (
                     name == 'agent_job' and arguments.get('action') != 'cancel') or (
                     name == 'scheduled_tasks' and arguments.get('operation') == 'list')
-                if auto_approved(task, name) or task_read:
+                decision = access.decision(spec, arguments)
+                if decision == 'auto' or decision == 'configured' and (auto_approved(task, name) or task_read):
                     store.settle(action["id"], "dispatching")
                     try:
+                        from .tool_access import reconcile_action
+                        current = reconcile_action(store, action)
+                        if current['state'] == 'rejected':
+                            return current['receipt']
                         receipt = handler(name, arguments)
                     except InterruptedError:
                         raise
                     except Exception as exc:
                         receipt = error_receipt(exc, dispatched=True)
-                    receipt["approved_by"] = "task_policy"
+                    receipt["approved_by"] = "task_policy" if decision == 'configured' else 'tool_access_policy'
                     store.settle(action["id"], "fulfilled", receipt)
                     return store.action(action["id"])["receipt"]
                 return await_local(store, task_id, action, workspace, executor=handler)

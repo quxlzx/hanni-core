@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { write } from "./api";
+import { localFetch, write } from "./api";
 import { FILE_ACCEPT, MAX_FILES, fileSize, readFile, validateFile, type Attachment } from "./attachment_files";
 
 type DraftFile = {
@@ -113,7 +113,7 @@ export function MessageFiles({ files, token, conversation }: { files: Attachment
   async function download(file: Attachment) {
     setError(""); setDownloading(file.id);
     try {
-      const response = await fetch(`/api/chat/file?id=${encodeURIComponent(file.id)}&conversation=${encodeURIComponent(conversation)}`, { headers: { "X-Hanni-Token": token }, cache: "no-store", signal: AbortSignal.timeout(20000) });
+      const response = await localFetch(`/api/chat/file?id=${encodeURIComponent(file.id)}&conversation=${encodeURIComponent(conversation)}`, { headers: { "X-Hanni-Token": token }, cache: "no-store", signal: AbortSignal.timeout(20000) });
       if (!response.ok) throw new Error("File unavailable. Reload the conversation and try again.");
       const url = URL.createObjectURL(await response.blob());
       const link = document.createElement("a"); link.href = url; link.download = file.name;

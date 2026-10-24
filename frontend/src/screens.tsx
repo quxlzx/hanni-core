@@ -13,6 +13,7 @@ import type {
   ToolEvent,
 } from "./types";
 import "./screens.css";
+import { ToolAccessSettings } from "./tool_access";
 
 export type ScreenContext = {
   now: Date;
@@ -664,6 +665,13 @@ export function SettingsScreen({ context: c }: { context: ScreenContext }) {
       </section>
       <section id="policy-settings" className="settings-section">
         <div>
+          <h2>Tool access</h2>
+          <p>Choose what the agent can do.</p>
+        </div>
+        <ToolAccessSettings token={c.chat.data?.token || ""} disabled={Boolean(c.chat.error) || c.stopping} />
+      </section>
+      <section className="settings-section">
+        <div>
           <h2>Privacy &amp; permissions</h2>
           <p>Enforced by HANNI's controller.</p>
         </div>
@@ -681,7 +689,7 @@ export function SettingsScreen({ context: c }: { context: ScreenContext }) {
               <Facts
                 items={[
                   [
-                    "Tool access",
+                    "Controller policy",
                     policies.observe_first
                       ? "Observe-first with allowed actions"
                       : "Controller policy",
@@ -714,7 +722,7 @@ export function SettingsScreen({ context: c }: { context: ScreenContext }) {
                 </ul>
               </details>
               <p className="subtle">
-                Edit these policies in HANNI's configuration.
+                These base policies come from HANNI's configuration. Agent Tool access is selected above.
               </p>
             </>
           ) : (
