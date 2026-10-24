@@ -168,7 +168,9 @@ Workplace commands reuse the same registry permissions, connected accounts, task
 Reminders are durable one-time records in `state/reminders.sqlite3`. The running dashboard delivers them to its notification center and attempts a Windows alert. If HANNI is stopped, due reminders are delivered on the next launch. Notification preferences and Safe Mode remain effective. Screen/clipboard source buffers are not added to conversation history, personal memory, or command records; the requested answer is retained as the command result. Connected inference providers receive the text needed for that requested analysis.
 
 
-To connect Google Calendar, obtain a Google OAuth **Desktop app** client in Google Cloud, then run this from the repository folder in PowerShell:
+To connect Google, open **Settings → Integrations → Google accounts**. The first connection includes **Open Google setup** and **Choose client JSON** for Google's required one-time Desktop OAuth client setup. Then choose services and select **Sign in with Google**. Add personal, work, or school accounts, reconnect, choose a default, or disconnect from the same screen. Calendar and Gmail are read-only by default; Calendar and Tasks changes are optional. Tokens stay in Windows Credential Manager. See [Google setup](docs/GOOGLE.md).
+
+The terminal alternative remains available from the repository folder in PowerShell:
 
 ```powershell
 .\.venv\Scripts\hanni.exe google login

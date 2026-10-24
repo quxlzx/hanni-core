@@ -1,6 +1,19 @@
 # Connect Google to HANNI
 
-Google is optional. HANNI starts and its local tools work without a Google connection. Google results use the existing local Qwen model; this integration adds no cloud inference.
+Google is optional. HANNI starts and its local tools work without a Google connection. Retrieved Google content can be included in replies from your selected inference model.
+
+## Connect from Settings
+
+Open **Settings → Integrations → Google accounts**. No terminal commands or Google passwords are needed in HANNI.
+
+1. On the first connection, select **Open Google setup** and complete the Google Cloud steps below. Download the **Desktop app** client JSON, then use **Choose client JSON** to import it. This setup is shared by subsequent accounts.
+2. Choose a local account name such as `personal`, `work`, or `school`. Select Calendar, Gmail, Drive & documents, or Google Tasks. Calendar and Gmail read access are selected initially. Calendar and Tasks changes require the separate **Allow calendar and task changes** option; Gmail sending and Drive document editing are unsupported.
+3. Select **Sign in with Google**. Choose your email address and approve the requested services in your system browser. HANNI verifies the returned identity and grants before saving credentials in Windows Credential Manager.
+4. Use **Add Google account** for another address. **Make default** changes the account used for unqualified requests; existing service-specific preferences still take priority.
+
+**Reconnect** retains the original email address and selected calendars, keeps existing Google grants, and adds selected services. To remove a grant, disconnect locally, revoke HANNI's access in your Google account, then sign in with fewer services. **Disconnect** asks for confirmation and removes the local credentials and preferences pointing to that account; it does not revoke access at Google. The same email cannot occupy multiple local account labels.
+
+Sign-in runs in the background. **Cancel sign-in** stops waiting for the browser and prevents a late callback from saving credentials. Leaving Settings does not cancel it; shutting down the backend does. Setup JSON goes directly to the account setup endpoint and is not added to chat or attachments. Connected rows show saved grants, not a fresh health check of each service.
 
 ## Google Cloud setup
 
@@ -9,7 +22,7 @@ Google is optional. HANNI starts and its local tools work without a Google conne
 3. Configure the OAuth consent screen. If the app is in Testing, add each account as a test user. Organization administrators may need to allow the app.
 4. Create an OAuth client with application type **Desktop app**, then download its JSON file. Service accounts and Web application clients are unsupported.
 
-HANNI finds a single valid `client_secret*.json` download or prompts for its path, then imports it into the ignored `config/google-oauth-client.json`. Select another file with `--client-secrets C:\path\client.json`. Normal `SETUP_HANNI.cmd` installs the Google dependencies.
+Use **Choose client JSON** in Settings to import the download into the ignored `config/google-oauth-client.json`. Normal `SETUP_HANNI.cmd` installs the Google dependencies. The terminal alternative below also finds a single valid `client_secret*.json` download or prompts for its path. Select another file there with `--client-secrets C:\path\client.json`.
 
 From the repository folder in PowerShell:
 
@@ -110,7 +123,7 @@ These require write scopes and owner permissions. Calendar changes use calendars
 
 ## Security and limits
 
-- Browser OAuth uses a loopback callback and Windows Credential Manager, with no plaintext token fallback. Account indexes and preferences use the same vault.
+- Settings sign-in uses the official Google OAuth library with PKCE, a random loopback port, state validation, and the system browser. Tokens use Windows Credential Manager, with no plaintext token fallback. Account indexes and preferences use the same vault.
 - Client JSON/token filenames are gitignored. Tokens and raw Google error bodies are not printed. Audit records omit Google result content and query text.
 - Adapters use fixed Google origins, no redirects, bounded timeouts and a 2 MB response cap. Authentication libraries load only when needed.
 - Lists/searches are bounded and marked partial. Docs text is limited to 6,000 characters with an explicit truncation flag. PDF/Office content and Gmail attachments are not downloaded.
@@ -131,3 +144,5 @@ These require write scopes and owner permissions. Calendar changes use calendars
 | Missing dependencies | Run `SETUP_HANNI.cmd` or `.\.venv\Scripts\python.exe -m pip install -e ".[google]"` |
 
 An OAuth grant does not prove an API is enabled. `status --verify` checks availability separately. Google consent/testing limits and Workspace administrator restrictions still apply.
+
+Google documents the [installed-app OAuth flow](https://developers.google.com/identity/protocols/oauth2/native-app) and the official library's [Desktop application flow](https://googleapis.dev/python/google-auth-oauthlib/latest/reference/google_auth_oauthlib.flow.html). Automated tests cover the real local callback and dashboard routes with an isolated provider and credential store; live consent and access to your account require your own Google setup and sign-in.

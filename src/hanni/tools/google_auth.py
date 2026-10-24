@@ -41,11 +41,17 @@ def _client_config(path: Path) -> dict:
         config = json.loads(path.read_text(encoding="utf-8-sig"))
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
         raise GoogleAccessError("The Google OAuth client file is not valid JSON.") from exc
+    return validate_client_config(config)
+
+
+def validate_client_config(config):
+    """Validate an owner-imported Desktop client without accepting other endpoints."""
     installed = config.get("installed", {}) if isinstance(config, dict) else {}
     if (not isinstance(installed, dict)
             or installed.get("auth_uri") not in {"https://accounts.google.com/o/oauth2/auth", "https://accounts.google.com/o/oauth2/v2/auth"}
             or installed.get("token_uri") != "https://oauth2.googleapis.com/token"
-            or not installed.get("client_id") or not installed.get("client_secret")):
+            or not isinstance(installed.get("client_id"), str) or not 1 <= len(installed['client_id']) <= 1000
+            or not isinstance(installed.get("client_secret"), str) or not 1 <= len(installed['client_secret']) <= 1000):
         raise GoogleAccessError("Use an official Google OAuth Desktop app client JSON file.")
     return config
 

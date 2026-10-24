@@ -14,6 +14,7 @@ import type {
 } from "./types";
 import "./screens.css";
 import { ToolAccessSettings } from "./tool_access";
+import { GoogleAccountsSettings } from "./google_accounts";
 
 export type ScreenContext = {
   now: Date;
@@ -602,9 +603,13 @@ export function SettingsScreen({ context: c }: { context: ScreenContext }) {
       <div id="settings-panel-integrations" className="settings-tab-panel" role="tabpanel" aria-labelledby="settings-tab-integrations" hidden={tab !== "integrations"} tabIndex={0}>
       <section id="integration-settings" className="settings-section">
         <div>
-          <h2>Integrations</h2>
-          <p>External tools managed through HANNI.</p>
+          <h2>Google accounts</h2>
+          <p>Personal, work and school accounts.</p>
         </div>
+        <GoogleAccountsSettings token={c.chat.data?.token || ""} disabled={Boolean(c.chat.error) || c.stopping} />
+      </section>
+      <section className="settings-section">
+        <div><h2>Tool servers</h2><p>External tools managed through HANNI.</p></div>
         <p className="subtle">Use the MCP page to add servers, manage connections, and choose individual tools.</p>
       </section>
       </div>

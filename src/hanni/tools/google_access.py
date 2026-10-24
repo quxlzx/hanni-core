@@ -86,6 +86,10 @@ class WindowsTokenVault:
         _account(account)
         if self.get(account) is not None:
             self.backend.delete_password(SERVICE, account)
+        settings = self.preferences()
+        remaining = {key: value for key, value in settings.items() if value != account}
+        if remaining != settings:
+            self.backend.set_password(SERVICE, '__settings__', json.dumps(remaining))
 
 
 def _account(value):
