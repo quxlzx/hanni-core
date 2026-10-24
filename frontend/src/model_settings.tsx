@@ -3,6 +3,7 @@ import { write, type useResource } from "./api";
 import { usePrivateResource } from "./feature_types";
 import type { Telemetry } from "./types";
 import { OutputSettings } from "./output_settings";
+import { ReasoningSettings } from "./reasoning_settings";
 
 type Selection = {
   source: "local" | "api";
@@ -204,6 +205,7 @@ export function ModelsPanel({
         </dl>
       )}
       <OutputSettings token={token} disabled={changing} />
+      <ReasoningSettings token={token} disabled={changing} />
       {change && (
         <p
           className={

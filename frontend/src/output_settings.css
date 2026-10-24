@@ -14,4 +14,5 @@
 .output-settings .output-error { color: var(--error); margin-top: 16px; overflow-wrap: anywhere; }
 .output-settings .output-notice { margin-top: 16px; max-width: 72ch; }
 .hc-models-panel > .output-settings { margin: 26px 0; padding: 24px 0; border-block: 1px solid var(--line); }
+.reasoning-reset { margin-top: 12px; }
 @media (max-width: 480px) { .output-fields { grid-template-columns: minmax(0, 1fr); gap: 14px; } }

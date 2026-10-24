@@ -159,6 +159,26 @@ class ModelSettings:
                 raise RuntimeError('Wait for the current model change to finish.')
             return OutputSettings(self.root).save(self.output_model(), body)
 
+    def reasoning_model(self):
+        from .output_settings import OutputSettings
+        return OutputSettings(self.root).apply(self.output_model())
+
+    def reasoning_snapshot(self):
+        from .reasoning_settings import ReasoningSettings
+        try:
+            model = self.reasoning_model()
+        except RuntimeError as exc:
+            return {'available': False, 'reason': str(exc)}
+        return ReasoningSettings(self.root).snapshot(model, NativeClient(model).status())
+
+    def save_reasoning(self, body):
+        from .reasoning_settings import ReasoningSettings
+        with self.lock:
+            if self.pending():
+                raise RuntimeError('Wait for the current model change to finish.')
+            model = self.reasoning_model()
+            return ReasoningSettings(self.root).save(model, body, NativeClient(model).status())
+
     def validate(self, body):
         if not isinstance(body, dict) or set(body) - {'operation', 'id', 'source', 'local_model', 'endpoint', 'api_model', 'api_key', 'context'}:
             raise ValueError('Invalid model settings.')

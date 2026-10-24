@@ -16,6 +16,7 @@ import "./screens.css";
 import { ToolAccessSettings } from "./tool_access";
 import { GoogleAccountsSettings } from "./google_accounts";
 import { OutputSettings } from "./output_settings";
+import { ReasoningSettings } from "./reasoning_settings";
 
 export type ScreenContext = {
   now: Date;
@@ -637,6 +638,10 @@ export function SettingsScreen({ context: c }: { context: ScreenContext }) {
       <section className="settings-section">
         <div><h2>Response length</h2><p>Output limit for the active model.</p></div>
         <OutputSettings token={c.chat.data?.token || ""} disabled={Boolean(c.chat.error) || c.stopping} showHeading={false} />
+      </section>
+      <section id="reasoning-settings" className="settings-section">
+        <div><h2>Reasoning</h2><p>Effort and thinking-token budget.</p></div>
+        <ReasoningSettings token={c.chat.data?.token || ""} disabled={Boolean(c.chat.error) || c.stopping} showHeading={false} />
       </section>
       <section id="model-settings" className="settings-section">
         <div>

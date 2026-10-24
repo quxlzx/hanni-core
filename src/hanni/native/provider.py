@@ -87,20 +87,19 @@ class NativeClient:
         self.config = model_cfg
         state_root = os.environ.get('HANNI_MODEL_STATE')
         self.reasoning_effort = model_cfg.get('native_reasoning_effort')
-        if state_root:
-            from .model_settings import read_json
-            preferences = read_json(Path(state_root) / 'reasoning-settings.json', {})
-            identity = self.endpoint + '|' + self.api_model + '|' + str(model_cfg.get('model_file', ''))
-            setting = preferences.get(identity, {})
-            self.reasoning_effort = setting.get('effort', self.reasoning_effort)
-            self.reasoning_budget = setting.get('budget', self.reasoning_budget)
+        if state_root and model_cfg.get('use_reasoning_preferences', True):
+            from .reasoning_settings import ReasoningSettings
+            setting = ReasoningSettings(state_root).values(model_cfg)
+            self.reasoning_effort = setting['effort']
+            self.reasoning_budget = setting['budget']
 
     def status(self) -> dict:
         import httpx
         result = {"ready": False, "state": "unreachable", "id": self.config["id"],
                   "api_model": self.api_model, "file": self.config.get("model_file") or self.api_model,
                   "context": self.config.get("context_length"), "context_verified": False,
-                  "quantization": self.config.get("quantization") or "Not reported"}
+                  "quantization": self.config.get("quantization") or "Not reported",
+                  "reasoning_budget_supported": False, "reasoning_disable_supported": False}
         try:
             with httpx.Client(timeout=3, trust_env=False) as client:
                 response = client.get(self.endpoint + "/models", headers={"Authorization": f"Bearer {self.api_key}"})
@@ -114,6 +113,7 @@ class NativeClient:
                 advertised = next(m for m in models if m.get('id') == self.api_model or self.api_model in m.get('aliases', []))
                 levels = advertised.get('reasoning_effort_levels') or self.config.get('reasoning_effort_levels') or []
                 result['reasoning_levels'] = [level for level in levels if level in {'low', 'medium', 'high'}]
+                result['reasoning_disable_supported'] = 'none' in levels
                 limit = advertised.get('context_length') or advertised.get('context_window')
                 if type(limit) is int and limit > 0:
                     result.update(context=limit, context_verified=True)
@@ -123,6 +123,8 @@ class NativeClient:
                             props = client.get(self.endpoint.removesuffix('/v1') + '/props', headers={'Authorization': f'Bearer {self.api_key}'})
                             props.raise_for_status()
                             metadata = props.json()
+                            result['reasoning_budget_supported'] = True
+                            result['reasoning_disable_supported'] = True
                             limit = metadata.get('default_generation_settings', {}).get('n_ctx')
                             if metadata.get('chat_template_caps', {}).get('supports_reasoning_effort') is True:
                                 result['reasoning_levels'] = ['low', 'medium', 'high']
@@ -149,6 +151,8 @@ class NativeClient:
             payload["tool_choice"] = "auto"
         if self.reasoning_effort:
             payload['reasoning_effort'] = self.reasoning_effort
+            if self.reasoning_effort == 'none' and self.config.get('source') == 'local':
+                payload['chat_template_kwargs'] = {'enable_thinking': False}
         if self.reasoning_budget is not None and self.config.get('source') != 'api':
             # honored by llama-server (--reasoning-budget) builds
             payload["reasoning_budget_tokens"] = int(self.reasoning_budget)

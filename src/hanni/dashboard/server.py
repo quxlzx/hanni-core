@@ -420,7 +420,7 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send_error(503, exc)
         if route.startswith('/api/inference/'):
             return self._inference_request('GET')
-        private_routes = {'/api/learning', '/api/google/accounts', '/api/tool-access', '/api/chat/commands', '/api/chat/command', '/api/model-settings', '/api/model-output', '/api/productivity', '/api/memory', '/api/calendar',
+        private_routes = {'/api/learning', '/api/google/accounts', '/api/tool-access', '/api/chat/commands', '/api/chat/command', '/api/model-settings', '/api/model-output', '/api/model-reasoning', '/api/productivity', '/api/memory', '/api/calendar',
                           '/api/agents', '/api/awareness', '/api/voice', '/api/notifications',
                           '/api/mcp', '/api/mcp/export', '/api/mcp/office', '/api/hermes', '/api/executions', '/api/tasks', '/api/workflows', '/api/compute', '/api/model-routing', '/api/model-lab',
                           '/api/bridge/tasks', '/api/bridge/tools', '/api/cron/jobs', '/api/skills',
@@ -438,6 +438,7 @@ class Handler(BaseHTTPRequestHandler):
                 elif route == '/api/chat/command': result = self.server.chat_commands.result(query.get('id'))
                 elif route == '/api/model-settings': result = self.server.model_settings.snapshot()
                 elif route == '/api/model-output': result = self.server.model_settings.output_snapshot()
+                elif route == '/api/model-reasoning': result = self.server.model_settings.reasoning_snapshot()
                 elif route == '/api/tool-access': result = self.server.tool_access.snapshot()
                 elif route == '/api/google/accounts': result = self.server.google_accounts.snapshot()
                 elif route == '/api/productivity': result = feature.productivity()
@@ -681,7 +682,7 @@ class Handler(BaseHTTPRequestHandler):
             except (ValueError, KeyError) as exc:
                 return self._send_error(400, exc)
             return self._send(502 if result.get('error') else 200, json.dumps(result, default=str).encode())
-        if self.path not in {'/api/learning', '/api/google/accounts', '/api/tool-access', '/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/model-output', '/api/chat', '/api/chat/conversations', '/api/chat/clear', '/api/gpu-routing', '/api/audio-devices', '/api/shutdown', '/api/restart', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/hermes', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-routing', '/api/model-lab'}:
+        if self.path not in {'/api/learning', '/api/google/accounts', '/api/tool-access', '/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/model-output', '/api/model-reasoning', '/api/chat', '/api/chat/conversations', '/api/chat/clear', '/api/gpu-routing', '/api/audio-devices', '/api/shutdown', '/api/restart', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/hermes', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-routing', '/api/model-lab'}:
             self._discard_small_body()
             return self._send(404, b'{"error":"Not found"}')
         if self.headers.get('Content-Type', '').split(';')[0].strip() != 'application/json':
@@ -731,6 +732,13 @@ class Handler(BaseHTTPRequestHandler):
                         raise RuntimeError('The assistant is restarting or stopping.')
                     result = self.server.features.ledger.execute(data.get('id'), data,
                         lambda: self.server.model_settings.save_output(data))
+                return self._send(200, json.dumps(result).encode())
+            if self.path == '/api/model-reasoning':
+                with self.server.lifecycle_lock:
+                    if self.server.lifecycle_action:
+                        raise RuntimeError('The assistant is restarting or stopping.')
+                    result = self.server.features.ledger.execute(data.get('id'), data,
+                        lambda: self.server.model_settings.save_reasoning(data))
                 return self._send(200, json.dumps(result).encode())
             if self.path == '/api/model-settings':
                 with self.server.lifecycle_lock, self.server.chat.lock:

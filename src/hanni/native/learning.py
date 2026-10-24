@@ -207,7 +207,8 @@ class LearningReview:
     def _run(self, key, snapshot, cancel):
         try:
             from .provider import NativeClient
-            model = {**self.model_loader(), 'native_max_tokens': 5000, 'native_temperature': 0.1, 'native_reasoning_budget': 0}
+            model = {**self.model_loader(), 'native_max_tokens': 5000, 'native_temperature': 0.1,
+                     'native_reasoning_budget': 0, 'native_reasoning_effort': None, 'use_reasoning_preferences': False}
             client = (self.client_factory or NativeClient)(model, timeout=60)
             messages = [{'role': 'system', 'content': REVIEW_PROMPT}, {'role': 'user', 'content': json.dumps(snapshot)}]
             structured = getattr(client, 'chat_json', None)
