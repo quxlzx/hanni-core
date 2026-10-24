@@ -14,6 +14,7 @@ import { MCPPanel } from "./mcp_panel";
 import { ModelsPanel } from "./model_settings";
 import { DraftFiles, FilePicker, MessageFiles, useChatFiles } from "./chat_files";
 import { sameFiles } from "./attachment_files";
+import { NewChatRequest, defaultTabs, restoreTabs, openTab, closeTab as removeTab, type TabState } from "./chat_navigation";
 import { usePrivateResource, type NotificationData } from "./feature_types";
 import {
   CommandSuggestions,
@@ -39,23 +40,12 @@ type Panel =
   | "schedule"
   | "activity"
   | "notifications";
-type TabState = { selected: string; tabs: string[] };
-const defaultTabs: TabState = { selected: "default", tabs: ["default"] };
-
 function readTabs(): TabState {
   const destination = new URLSearchParams(location.search).get("conversation");
   if (destination && /^(?:default|[0-9a-f-]{36})$/i.test(destination))
     return { selected: destination, tabs: [destination] };
   try {
-    const saved = JSON.parse(localStorage.getItem("hanni-chat-tabs") || "null");
-    if (
-      saved &&
-      Array.isArray(saved.tabs) &&
-      saved.tabs.length &&
-      saved.tabs.every((id: unknown) => typeof id === "string") &&
-      saved.tabs.includes(saved.selected)
-    )
-      return { selected: saved.selected, tabs: saved.tabs.slice(0, 30) };
+    return restoreTabs(JSON.parse(localStorage.getItem("hanni-chat-tabs") || "null"));
   } catch {
     /* Preferences are optional. History lives on the server. */
   }
@@ -305,6 +295,9 @@ export function ChatApp() {
     }>({ id: "", epoch: "", messages: [], hasMore: false }),
     [loadingOlder, setLoadingOlder] = useState(false);
   const pending = useRef<Record<string, { id: string; message: string; attachments?: string[] }>>({});
+  const creationRequests = useRef(new NewChatRequest());
+  const navigationRevision = useRef(0);
+  const tabStrip = useRef<HTMLElement>(null);
   const [draggingFiles, setDraggingFiles] = useState(false);
   const dragDepth = useRef(0);
   const input = useRef<HTMLTextAreaElement>(null),
@@ -326,6 +319,8 @@ export function ChatApp() {
     draft = drafts[selected] || "";
   const data = chat.data?.conversation_id === selected ? chat.data : null;
   const token = !chat.error ? chat.data?.token || "" : "";
+  const liveToken = useRef(token);
+  liveToken.current = token;
   const notifications = usePrivateResource<NotificationData>("/api/notifications", token, 5000);
   const unreadNotifications = notifications.data?.items.filter((item) => !item.read && !item.dismissed).length || 0;
   const attached = useChatFiles(selected, token);
@@ -384,8 +379,12 @@ export function ChatApp() {
     if (!list.data) return;
     const ids = new Set(conversations.map((item) => item.id));
     // Keep newly created tabs until the next list refresh has observed them.
-    if (!ids.has(selected) && !creating && chat.error) setSession(defaultTabs);
+    if (!ids.has(selected) && !creating && chat.error === "Invalid conversation or history cursor")
+      setSession(defaultTabs);
   }, [list.data, chat.error, creating, selected]);
+  useEffect(() => {
+    tabStrip.current?.querySelector<HTMLElement>(".is-selected")?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }, [selected, session.tabs, panel]);
   useEffect(() => {
     if (panel === "chat" && nearBottom.current && log.current)
       log.current.scrollTop = log.current.scrollHeight;
@@ -428,17 +427,14 @@ export function ChatApp() {
   }, [searchOpen]);
 
   function showPanel(value: Panel) {
+    navigationRevision.current += 1;
     setPanel(value);
     setSidebarOpen(false);
     requestAnimationFrame(() => document.getElementById("hc-main")?.focus());
   }
   function openChat(id: string) {
-    setSession((current) => ({
-      selected: id,
-      tabs: current.tabs.includes(id)
-        ? current.tabs
-        : [...current.tabs.slice(-29), id],
-    }));
+    navigationRevision.current += 1;
+    setSession((current) => openTab(current, id));
     setSendError("");
     setPanel("chat");
     setSearchOpen(false);
@@ -446,50 +442,49 @@ export function ChatApp() {
     requestAnimationFrame(() => input.current?.focus());
   }
   async function newChat() {
-    if (creating || !token) return;
+    const creation = creationRequests.current.begin(token);
+    if (!creation) return;
+    const revision = navigationRevision.current;
+    let succeeded = false;
     setCreating(true);
     setSendError("");
     try {
-      const id = crypto.randomUUID();
-      await write("/api/chat/conversations", token, { id });
+      const { id } = creation;
+      await write("/api/chat/conversations", creation.token, { id });
+      succeeded = true;
+      if (liveToken.current !== creation.token) return;
       list.setData((current) => ({
         conversations: [
-          {
+          current?.conversations.find((item) => item.id === id) || {
             id,
             title: "New chat",
             updated: Date.now() / 1000,
             message_count: 0,
           },
-          ...(current?.conversations || []),
+          ...(current?.conversations || []).filter((item) => item.id !== id),
         ],
       }));
-      openChat(id);
+      if (navigationRevision.current === revision) openChat(id);
       list.refresh();
     } catch (caught) {
+      if (navigationRevision.current !== revision || liveToken.current !== creation.token) return;
       setSendError(
         caught instanceof Error
           ? caught.message
           : "Could not create a conversation.",
       );
     } finally {
+      creationRequests.current.finish(creation, succeeded);
       setCreating(false);
     }
   }
   function closeTab(id: string) {
+    navigationRevision.current += 1;
     if (session.tabs.length === 1) {
       showPanel("chat");
       return;
     }
-    setSession((current) => {
-      const tabs = current.tabs.filter((tab) => tab !== id);
-      return {
-        tabs,
-        selected:
-          current.selected === id
-            ? tabs[Math.max(0, current.tabs.indexOf(id) - 1)]
-            : current.selected,
-      };
-    });
+    setSession((current) => removeTab(current, id));
     setSendError("");
   }
   function editDraft(value: string) {
@@ -802,7 +797,7 @@ export function ChatApp() {
               }}
             />
           </div>
-          <nav className="hc-tabs" aria-label="Open conversations">
+          <nav ref={tabStrip} className="hc-tabs" aria-label="Open conversations">
             {session.tabs.map((id) => (
               <div
                 className={`hc-tab ${id === selected && panel === "chat" ? "is-selected" : ""}`}

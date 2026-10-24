@@ -31,7 +31,8 @@ export function write<T>(path: string, token: string, body: unknown) {
 }
 export function useResource<T>(path: string, interval: number) {
   const [data, setData] = useState<T | null>(null),
-    [error, setError] = useState("");
+    [failure, setFailure] = useState<{ path: string; message: string } | null>(null);
+  const error = failure?.path === path ? failure.message : "";
   const [revision, setRevision] = useState(0);
   const refresh = useCallback(() => setRevision((v) => v + 1), []);
   useEffect(() => {
@@ -48,11 +49,11 @@ export function useResource<T>(path: string, interval: number) {
         });
         if (live) {
           setData(result);
-          setError("");
+          setFailure(null);
         }
       } catch (e) {
         if (live)
-          setError(e instanceof Error ? e.message : "Connection unavailable.");
+          setFailure({ path, message: e instanceof Error ? e.message : "Connection unavailable." });
       } finally {
         if (live && interval) timer = setTimeout(poll, interval);
       }
