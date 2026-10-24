@@ -79,6 +79,7 @@ export type Cluster = {
   nodes: ClusterNode[];
 };
 export type Message = {
+  attachments?: import("./attachment_files").Attachment[];
   id: number;
   turn: string;
   role: string;
@@ -90,6 +91,7 @@ export type Message = {
   task_id?: string | null;
 };
 export type Chat = {
+  pending_attachments?: import("./attachment_files").Attachment[];
   conversation_id?: string | null;
   messages: Message[];
   ready: boolean;

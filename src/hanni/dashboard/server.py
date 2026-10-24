@@ -185,7 +185,8 @@ class DashboardServer(ThreadingHTTPServer):
 
     def workspace_snapshot(self):
         result = dict(self.workspace)
-        result['features'] = {**result['features'], 'restart': self.restart_event is not None}
+        result['features'] = {**result['features'], 'restart': self.restart_event is not None,
+                              'attachments': bool(self.chat.native_mode)}
         registry = self.mcp.controller_registry
         if registry is not None:
             result['capabilities'] = [
@@ -251,7 +252,7 @@ class Handler(BaseHTTPRequestHandler):
         except (ValueError, OSError):
             pass
 
-    def _send(self, status, body, content_type='application/json'):
+    def _send(self, status, body, content_type='application/json', *, headers=None):
         try:
             self.send_response(status)
             self.send_header('Content-Type', content_type)
@@ -259,6 +260,8 @@ class Handler(BaseHTTPRequestHandler):
             self.send_header('Cache-Control', 'no-store')
             self.send_header('X-Content-Type-Options', 'nosniff')
             self.send_header('Referrer-Policy', 'no-referrer')
+            for key, value in (headers or {}).items():
+                self.send_header(key, value)
             self.send_header('Content-Security-Policy', "default-src 'self'; connect-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'")
             self.end_headers()
             self.wfile.write(body)
@@ -382,6 +385,21 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         if not self._allowed(): return
         route = self.path.split('?', 1)[0]
+        if route == '/api/chat/file':
+            if not secrets.compare_digest(self.headers.get('X-Hanni-Token', ''), self.server.chat.token):
+                return self._send(403, b'{"error":"Reload the dashboard before reading files."}')
+            try:
+                query = parse_qs(urlsplit(self.path).query)
+                with self.server.chat.lock:
+                    conversation = self.server.chat._conversation(query.get('conversation', ['default'])[0])
+                    name, content = self.server.chat.files.read(query.get('id', [''])[0], conversation)
+                from urllib.parse import quote
+                return self._send(200, content, 'application/octet-stream',
+                    headers={'Content-Disposition': "attachment; filename*=UTF-8''" + quote(name, safe='')})
+            except ValueError as exc:
+                return self._send_error(400, exc)
+            except sqlite3.Error:
+                return self._send(503, b'{"error":"Local file storage is unavailable."}')
         if route == '/api/native-mcp/tools':
             if not self.native_mcp_authorized(): return
             try:
@@ -627,15 +645,16 @@ class Handler(BaseHTTPRequestHandler):
             except (ValueError, KeyError) as exc:
                 return self._send_error(400, exc)
             return self._send(502 if result.get('error') else 200, json.dumps(result, default=str).encode())
-        if self.path not in {'/api/chat/command', '/api/model-settings', '/api/chat', '/api/chat/conversations', '/api/chat/clear', '/api/gpu-routing', '/api/audio-devices', '/api/shutdown', '/api/restart', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/hermes', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-routing', '/api/model-lab'}:
+        if self.path not in {'/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/chat', '/api/chat/conversations', '/api/chat/clear', '/api/gpu-routing', '/api/audio-devices', '/api/shutdown', '/api/restart', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/hermes', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-routing', '/api/model-lab'}:
             self._discard_small_body()
             return self._send(404, b'{"error":"Not found"}')
         if self.headers.get('Content-Type', '').split(';')[0].strip() != 'application/json':
             self._discard_small_body()
             return self._send(415, b'{"error":"JSON required"}')
+        data = {}
         try:
             size = int(self.headers.get('Content-Length', '0'))
-            limit = 262144 if self.path == '/api/mcp' else 65536 if self.path in {'/api/workflows', '/api/tasks'} else 20000
+            limit = 12 * 1024 * 1024 if self.path == '/api/chat/files' else 262144 if self.path == '/api/mcp' else 65536 if self.path in {'/api/workflows', '/api/tasks'} else 20000
             if self.headers.get('Transfer-Encoding') or not 0 < size <= limit:
                 return self._send(413, b'{"error":"Message too large or missing length"}')
             self.connection.settimeout(5)
@@ -643,6 +662,21 @@ class Handler(BaseHTTPRequestHandler):
             if len(raw) != size: raise ValueError('Incomplete request')
             data = json.loads(raw)
             if not isinstance(data, dict): raise ValueError('JSON object required')
+            if self.path == '/api/chat/files':
+                if not self.server.chat.native_mode:
+                    raise RuntimeError('Start native chat with START_BRAIN.cmd to attach files.')
+                conversation = data.get('conversation', 'default')
+                with self.server.chat.lock:
+                    self.server.chat._conversation(conversation)
+                    if self.server.chat.closed or self.server.chat.stopping:
+                        raise RuntimeError('Chat is stopping. Files were not uploaded.')
+                if data.get('operation') == 'add' and set(data) == {'operation', 'id', 'conversation', 'name', 'data'}:
+                    result = self.server.chat.files.add(data['id'], conversation, data['name'], data['data'])
+                    return self._send(201, json.dumps(result).encode())
+                if data.get('operation') == 'remove' and set(data) == {'operation', 'id', 'conversation'}:
+                    self.server.chat.files.remove(data['id'], conversation)
+                    return self._send(200, b'{"removed":true}')
+                raise ValueError('Choose a valid file upload or removal.')
             if self.path == '/api/chat/command':
                 result = self.server.chat_commands.execute(data)
                 return self._send(200, json.dumps(result, allow_nan=False).encode())
@@ -755,12 +789,14 @@ class Handler(BaseHTTPRequestHandler):
                 if set(data) != {'id'}: raise ValueError('Expected conversation ID')
                 key = self.server.chat.create_conversation(data['id'])
                 return self._send(201, json.dumps({'id': key}).encode())
-            if set(data) not in ({'id', 'message'}, {'id', 'message', 'conversation'}):
+            if not {'id', 'message'} <= set(data) or set(data) - {'id', 'message', 'conversation', 'attachments'}:
                 raise ValueError('Expected id and message')
-            key = self.server.chat.submit(data['id'], data['message'], data.get('conversation'))
+            if data.get('attachments') and not self.server.chat.native_mode:
+                raise ValueError('Files require native chat. Start HANNI with START_BRAIN.cmd.')
+            key = self.server.chat.submit(data['id'], data['message'], data.get('conversation'), data.get('attachments'))
             return self._send(202, json.dumps({'id':key, 'accepted':True}).encode())
         except ValueError as exc:
-            if self.path in {'/api/chat/command', '/api/model-settings', '/api/gpu-routing', '/api/audio-devices', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-lab'}:
+            if self.path in {'/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/gpu-routing', '/api/audio-devices', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-lab'} or (self.path == '/api/chat' and isinstance(data, dict) and 'attachments' in data):
                 return self._send_error(400, exc)
             return self._send(400, b'{"error":"Enter a valid message (maximum 4000 characters)."}')
         except UnicodeError:

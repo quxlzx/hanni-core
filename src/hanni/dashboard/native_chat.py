@@ -58,7 +58,11 @@ class NativeChat:
                 context['previous_tool_receipts'] = [a.get('receipt') for a in previous.get('actions', []) if a.get('receipt')]
                 context['previous_receipts_task_id'] = previous_task
             from hanni.native.context_budget import transfer_context
-            context = transfer_context(context)
+            import json
+            files = self.hub.files.context(turn, budget=max(1000, min(42000, 53000 - len(json.dumps(prompt)))))
+            context = transfer_context(context, max_encoded_chars=max(1000, 57000 - len(json.dumps(prompt)) - len(json.dumps(files))))
+            if files:
+                context['attached_files_untrusted'] = files
             task = self.request("POST", "/tasks", {"key": "chat-" + turn, "task": {
                 "prompt": prompt, "windows_tools": [], "origin": "hanni", "context": context}})
             self.task_id = task["id"]

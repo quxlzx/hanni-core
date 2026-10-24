@@ -12,6 +12,8 @@ import { App as Workspace } from "./workspace";
 import type { Chat, Contract, Message, Telemetry } from "./types";
 import { MCPPanel } from "./mcp_panel";
 import { ModelsPanel } from "./model_settings";
+import { DraftFiles, FilePicker, MessageFiles, useChatFiles } from "./chat_files";
+import { sameFiles } from "./attachment_files";
 import {
   CommandSuggestions,
   CommandOutput,
@@ -218,7 +220,10 @@ function ChatMessage({
       aria-label={`${row.role === "user" ? "You" : "HANNI"}, ${new Date(row.created * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`}
     >
       {row.role === "user" ? (
-        <p className="hc-user-text">{row.content}</p>
+        <>
+          <MessageFiles files={row.attachments || []} token={token} conversation={row.conversation || "default"} />
+          <p className="hc-user-text">{row.content}</p>
+        </>
       ) : (
         <AssistantResponse row={row} token={token} openTasks={openTasks} />
       )}
@@ -293,7 +298,9 @@ export function ChatApp() {
       hasMore: boolean;
     }>({ id: "", epoch: "", messages: [], hasMore: false }),
     [loadingOlder, setLoadingOlder] = useState(false);
-  const pending = useRef<Record<string, { id: string; message: string }>>({});
+  const pending = useRef<Record<string, { id: string; message: string; attachments?: string[] }>>({});
+  const [draggingFiles, setDraggingFiles] = useState(false);
+  const dragDepth = useRef(0);
   const input = useRef<HTMLTextAreaElement>(null),
     log = useRef<HTMLDivElement>(null),
     nearBottom = useRef(true),
@@ -313,6 +320,11 @@ export function ChatApp() {
     draft = drafts[selected] || "";
   const data = chat.data?.conversation_id === selected ? chat.data : null;
   const token = !chat.error ? chat.data?.token || "" : "";
+  const attached = useChatFiles(selected, token);
+  const attachmentsAvailable = Boolean(contract.data?.features.attachments);
+  useEffect(() => {
+    if (data?.pending_attachments) attached.restore(selected, data.pending_attachments);
+  }, [data?.pending_attachments, selected]);
   const ready = Boolean(data?.ready && !chat.error);
   const rows = [
     ...new Map(
@@ -465,16 +477,22 @@ export function ChatApp() {
   }
   async function submit(event: FormEvent) {
     event.preventDefault();
-    const message = draft.trim();
+    const message = draft.trim() || (attached.files.length ? "Please review the attached files." : "");
     if (message.startsWith("/")) {
+      if (attached.files.length && message.toLowerCase() !== "/stop") {
+        setSendError("Send files with a regular message. Slash commands do not accept files.");
+        return;
+      }
       await runCommand(message);
       return;
     }
-    if (!message || !ready || sending) return;
+    if (!message || !ready || sending || !attached.ready) return;
     const conversation = selected;
+    const fileIds = attached.ids;
     const prior = pending.current[conversation];
     const turn =
-      prior?.message === message ? prior : { id: crypto.randomUUID(), message };
+      prior?.message === message && sameFiles(prior.attachments, fileIds)
+        ? prior : { id: crypto.randomUUID(), message, attachments: fileIds };
     pending.current[conversation] = turn;
     setSending(true);
     setSendError("");
@@ -482,8 +500,9 @@ export function ChatApp() {
     try {
       await write("/api/chat", token, { ...turn, conversation });
       delete pending.current[conversation];
+      attached.clear(conversation, fileIds);
       setDrafts((current) =>
-        current[conversation]?.trim() === message
+        (current[conversation] || "").trim() === draft.trim()
           ? { ...current, [conversation]: "" }
           : current,
       );
@@ -506,7 +525,7 @@ export function ChatApp() {
     const conversation = selected;
     const prior = pending.current[conversation];
     const turn =
-      prior?.message === message ? prior : { id: crypto.randomUUID(), message };
+      prior?.message === message && !prior.attachments?.length ? prior : { id: crypto.randomUUID(), message };
     pending.current[conversation] = turn;
     if (!stopping) setCommandBusy(true);
     setSendError("");
@@ -805,6 +824,14 @@ export function ChatApp() {
           id="hc-main"
           className={`hc-main ${panel === "chat" ? "" : "hc-panel-main"}`}
           tabIndex={-1}
+          onDragOver={event => {
+            if (panel === "chat" && event.dataTransfer.types.includes("Files")) event.preventDefault();
+          }}
+          onDrop={event => {
+            if (panel !== "chat" || !event.dataTransfer.types.includes("Files")) return;
+            event.preventDefault();
+            if (attachmentsAvailable && token && !sending) attached.add(event.dataTransfer.files);
+          }}
         >
           {panel === "chat" ? (
             <>
@@ -913,7 +940,25 @@ export function ChatApp() {
                     </button>
                   </div>
                 )}
-                <form className="hc-composer" onSubmit={submit}>
+                <form className={`hc-composer ${draggingFiles ? "hc-file-dragging" : ""}`} onSubmit={submit}
+                  onDragEnter={event => {
+                    if (!event.dataTransfer.types.includes("Files") || !attachmentsAvailable || !token || sending) return;
+                    event.preventDefault(); dragDepth.current += 1; setDraggingFiles(true);
+                  }}
+                  onDragOver={event => {
+                    if (event.dataTransfer.types.includes("Files")) { event.preventDefault(); event.dataTransfer.dropEffect = attachmentsAvailable && !sending ? "copy" : "none"; }
+                  }}
+                  onDragLeave={event => {
+                    event.preventDefault(); dragDepth.current = Math.max(0, dragDepth.current - 1);
+                    if (!dragDepth.current) setDraggingFiles(false);
+                  }}
+                  onDrop={event => {
+                    if (!event.dataTransfer.types.includes("Files")) return;
+                    event.preventDefault(); event.stopPropagation(); dragDepth.current = 0; setDraggingFiles(false);
+                    if (attachmentsAvailable && token && !sending) attached.add(event.dataTransfer.files);
+                  }}>
+                  {draggingFiles && <div className="hc-file-drop-hint" role="status">Drop files to attach</div>}
+                  <DraftFiles state={attached} disabled={sending} />
                   <CommandSuggestions
                     draft={draft}
                     token={token}
@@ -945,6 +990,7 @@ export function ChatApp() {
                     }}
                   />
                   <div className="hc-composer-toolbar">
+                    <FilePicker disabled={!token || sending || !attachmentsAvailable || attached.files.length >= 5} add={attached.add} />
                     <details className="hc-composer-options">
                       <summary
                         aria-label="Conversation actions"
@@ -1006,7 +1052,8 @@ export function ChatApp() {
                             sending ||
                             (commandBusy &&
                               draft.trim().toLowerCase() !== "/stop") ||
-                            !draft.trim() ||
+                            (!draft.trim() && !attached.files.length) ||
+                            (!attached.ready && draft.trim().toLowerCase() !== "/stop") ||
                             ((data?.queued || 0) >= 8 &&
                               !draft.trim().startsWith("/"))
                           }
@@ -1023,13 +1070,13 @@ export function ChatApp() {
                   model={telemetry.data?.model}
                 />
                 <p className="hc-composer-note">
-                  {commandBusy
+                  {attached.files.length && !attached.ready ? "Finish or remove file uploads before sending." : commandBusy
                     ? "Running command… /stop cancels the response and compression."
                     : sending
                       ? "Sending…"
                       : data?.queued
                         ? `${data.queued} message${data.queued === 1 ? "" : "s"} queued`
-                        : "Shift + Enter for a new line"}
+                        : attached.files.length ? "Files are sent to the selected model. Long text may be excerpted." : "Shift + Enter for a new line"}
                 </p>
               </div>
             </>

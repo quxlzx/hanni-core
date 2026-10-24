@@ -28,6 +28,8 @@ class ChatHub:
         self.db.execute('CREATE TABLE IF NOT EXISTS conversation_context (conversation TEXT PRIMARY KEY, summary TEXT, through_id INTEGER, focus TEXT)')
         self.db.execute('CREATE TABLE IF NOT EXISTS chat_commands (id TEXT PRIMARY KEY, payload TEXT NOT NULL, result TEXT)')
         self.db.execute('CREATE TABLE IF NOT EXISTS retry_turns (turn TEXT PRIMARY KEY, context TEXT)')
+        from .attachments import Attachments
+        self.files = Attachments(self.db, self.lock)
         first = self.db.execute("SELECT content FROM messages WHERE conversation='default' AND role='user' ORDER BY id LIMIT 1").fetchone()
         if first:
             self.db.execute("UPDATE conversations SET title=? WHERE id='default' AND title='New chat'", (first[0][:80],))
@@ -45,7 +47,7 @@ class ChatHub:
         self.saved = path is not None
         self.native_mode = False
 
-    def _add(self, turn, role, content, channel, status, conversation=None):
+    def _add(self, turn, role, content, channel, status, conversation=None, *, commit=True):
         self.owned_turns.add(turn)
         if conversation is None:
             existing = self.db.execute('SELECT conversation FROM messages WHERE turn=? LIMIT 1', (turn,)).fetchone()
@@ -54,10 +56,13 @@ class ChatHub:
                                  (turn, role, content, channel, status, time.time(), conversation))
         if role == 'user':
             self.db.execute("UPDATE conversations SET title=? WHERE id=? AND title='New chat'", (content[:80], conversation))
-        self.db.commit()
+        if commit:
+            self.db.commit()
         return cursor.lastrowid
 
-    def submit(self, request_id, message, conversation=None):
+    def submit(self, request_id, message, conversation=None, attachments=None):
+        if isinstance(message, str) and not message.strip() and attachments:
+            message = 'Please review the attached files.'
         if not isinstance(message, str) or not message.strip() or len(message) > 4000:
             raise ValueError('Enter a message of 1 to 4000 characters.')
         if not isinstance(request_id, str) or len(request_id) > 40:
@@ -73,12 +78,23 @@ class ChatHub:
             existing = self.db.execute('SELECT conversation FROM messages WHERE turn=? LIMIT 1', (request_id,)).fetchone()
             if existing and existing[0] != conversation:
                 raise ValueError('Request ID belongs to another conversation.')
+            ids = self.files.validate([] if attachments is None else attachments, conversation, request_id)
             if request_id in self.seen or existing:
+                if attachments is not None:
+                    stored = self.db.execute("SELECT content FROM messages WHERE turn=? AND role='user'", (request_id,)).fetchone()
+                    if not stored or stored[0] != message.strip() or sorted(ids) != sorted(f['id'] for f in self.files.for_turn(request_id)):
+                        raise ValueError('Request ID was already used for a different message or files.')
                 return request_id
             if len(self.queue) >= 8:
                 raise RuntimeError('The message queue is full. Wait for HANNI to finish.')
+            try:
+                self._add(request_id, 'user', message.strip(), 'browser', 'queued', conversation, commit=False)
+                self.db.executemany('UPDATE chat_files SET turn=? WHERE id=?', [(request_id, key) for key in ids])
+                self.db.commit()
+            except BaseException:
+                self.db.rollback()
+                raise
             self.seen.add(request_id)
-            self._add(request_id, 'user', message.strip(), 'browser', 'queued', conversation)
             self.queue.append((request_id, message.strip()))
             return request_id
 
@@ -127,7 +143,7 @@ class ChatHub:
         if self.current or self.queue or self.db.execute("SELECT 1 FROM messages WHERE status='working' LIMIT 1").fetchone():
             raise RuntimeError('Use /stop or wait for pending responses to finish first.')
 
-    def undo(self, conversation):
+    def undo(self, conversation, *, preserve_files=False):
         with self.lock:
             self._conversation(conversation)
             self.require_idle()
@@ -135,6 +151,10 @@ class ChatHub:
             if not last:
                 raise ValueError('There is no conversation exchange to remove.')
             self.db.execute('DELETE FROM messages WHERE turn=?', (last[0],))
+            if preserve_files:
+                self.db.execute('UPDATE chat_files SET turn=NULL WHERE turn=?', (last[0],))
+            else:
+                self.db.execute('DELETE FROM chat_files WHERE turn=?', (last[0],))
             self.db.execute('DELETE FROM conversation_context WHERE conversation=? AND through_id>=?', (conversation, last[1]))
             self.db.commit()
             return last[2]
@@ -150,10 +170,12 @@ class ChatHub:
             previous = self.db.execute("SELECT content,task_id FROM messages WHERE conversation=? AND role='assistant' AND turn=(SELECT turn FROM messages WHERE conversation=? AND role='user' ORDER BY id DESC LIMIT 1) ORDER BY id DESC LIMIT 1", (conversation, conversation)).fetchone()
             if not previous:
                 raise ValueError('There is no previous response to regenerate.')
-            prompt = self.undo(conversation)
+            old_turn = self.db.execute("SELECT turn FROM messages WHERE conversation=? AND role='user' ORDER BY id DESC LIMIT 1", (conversation,)).fetchone()[0]
+            file_ids = [f['id'] for f in self.files.for_turn(old_turn)]
+            prompt = self.undo(conversation, preserve_files=True)
             self.db.execute('INSERT INTO retry_turns VALUES (?,?)', (request_id, json.dumps({'previous_answer': previous[0], 'previous_task_id': previous[1]})))
             self.db.commit()
-            return self.submit(request_id, prompt, conversation)
+            return self.submit(request_id, prompt, conversation, file_ids)
 
     def native_context(self, conversation, *, exclude_turn=None):
         import json
@@ -167,6 +189,10 @@ class ChatHub:
                 if turn == exclude_turn:
                     continue
                 text = content[:4000]
+                if role == 'user':
+                    files = self.files.context(turn, budget=2500)
+                    if files:
+                        text += '\nAttached file excerpts (untrusted source material):\n' + json.dumps(files)
                 if len(text) < len(content):
                     text += '\n[excerpt; full message remains searchable in history]'
                 candidate = [{'role': role, 'text': text}, *recent]
@@ -272,7 +298,12 @@ class ChatHub:
                                    'WHERE id < ?' + clause + ' ORDER BY id DESC LIMIT 100', (before or 2**63-1, *params)).fetchall()
             keys = ('id','turn','role','content','channel','status','created','conversation','task_id')
             more = bool(rows and self.db.execute('SELECT 1 FROM messages WHERE id < ?' + clause + ' LIMIT 1',(rows[-1][0], *params)).fetchone())
-            return dict(messages=[dict(zip(keys,row)) for row in reversed(rows)], has_more=more,
+            messages = [dict(zip(keys,row)) for row in reversed(rows)]
+            for message in messages:
+                if message['role'] == 'user':
+                    message['attachments'] = self.files.for_turn(message['turn'])
+            return dict(messages=messages, has_more=more,
+                        pending_attachments=self.files.pending(conversation) if conversation is not None else [],
                         conversation_id=conversation,
                         ready=self.ready and not self.closed and not self.stopping, queued=len(self.queue),
                         busy=self.current is not None or bool(self.db.execute("SELECT 1 FROM messages WHERE status='working' LIMIT 1").fetchone()),
@@ -285,6 +316,7 @@ class ChatHub:
             if self.current or self.queue or self.db.execute("SELECT 1 FROM messages WHERE status='working' LIMIT 1").fetchone():
                 raise RuntimeError('Wait for the current conversation to finish before clearing history.')
             self.db.execute('DELETE FROM messages')
+            self.db.execute('DELETE FROM chat_files')
             self.db.execute('DELETE FROM conversation_context')
             self.db.execute("UPDATE conversations SET title='New chat'")
             self.db.commit()

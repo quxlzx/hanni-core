@@ -56,6 +56,22 @@ Run `.\.venv\Scripts\python.exe scripts\diagnose_brain.py` to inspect the curren
 
 Type `/` in chat for command suggestions, or `/help` for all 32 commands and examples. Commands run directly in HANNI, including when the inference model is disconnected. `/history [search]` searches titles and saved message text; `/resume <session>` accepts an exact ID, unique ID prefix, or exact title. `/new` retains personal memory. `/remember <fact>` saves explicit memory; `/forget <memory-id>` verifies deletion against the backend.
 
+In native chat, use the **paperclip** or drag files into the conversation to attach
+PDF, Word (`.docx`), text, CSV, JSON, or source-code files. Attach up to **five
+files, 8 MiB each**, then send your question; sending files without a message asks
+Hanni to review them. Uploads can be removed before sending, and unsent files
+return after refreshing. Sent files stay with their conversation and can be
+downloaded again. `/retry` retains the files while keeping tools disabled;
+`/undo` removes the exchange and its files. Clearing chat history removes stored
+uploads, including unsent files.
+
+Document text goes to the selected inference provider as source material.
+The reader keeps up to 200,000 extracted characters per file and uses bounded
+excerpts when needed to fit model context. Images and scanned PDFs require OCR
+before upload; password-protected PDFs must be unlocked. PDF reading is limited
+to 200 pages. Original files are kept in the chat database, with a 100 MiB total
+upload limit. Spreadsheet formulas, macros and uploaded code are not executed.
+
 `/undo` removes the last conversation exchange and retains task receipts; it does not reverse tool actions. `/retry` regenerates the last answer with previous observations and tools disabled, preventing repeated effects. `/stop` cancels queued and active chat responses, stops speech, cancels compression, and reports remaining background work. Scheduled job settings are unchanged. `/compress [focus]` saves a summary for future model context while retaining the full browsable history. `/context` reports the native loop's actual compression threshold and distinguishes estimated context from provider-reported usage.
 
 `/model` lists installed local models and saved API connections; `/model <name>` switches through the supervising launcher. API connections applied in Models are saved as reusable profiles. `/reasoning low|medium|high` requires advertised model support and applies to subsequent responses from that model. `/status`, `/tools`, and `/connections` show actual availability; an unconfigured service is identified as such.

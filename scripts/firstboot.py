@@ -117,7 +117,7 @@ def ensure_deps(dashboard=False) -> None:
         raise RuntimeError("Hanni OS requires Python 3.12+. Rebuild .venv with SETUP_HANNI.cmd.")
     required = ["dotenv", "httpx", "jsonschema", "psutil", "yaml", "tzdata"]
     if dashboard:
-        required += ["mcp", "httpx2", "httpcore2", "huggingface_hub", "keyring", "google.auth"]
+        required += ["mcp", "httpx2", "httpcore2", "huggingface_hub", "keyring", "google.auth", "pypdf"]
     missing = []
     for name in required:
         try:
