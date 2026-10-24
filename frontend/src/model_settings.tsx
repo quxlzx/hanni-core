@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { write, type useResource } from "./api";
 import { usePrivateResource } from "./feature_types";
 import type { Telemetry } from "./types";
+import { OutputSettings } from "./output_settings";
 
 type Selection = {
   source: "local" | "api";
@@ -202,6 +203,7 @@ export function ModelsPanel({
           </div>
         </dl>
       )}
+      <OutputSettings token={token} disabled={changing} />
       {change && (
         <p
           className={

@@ -40,23 +40,28 @@ def normalize_endpoint(value: str) -> str:
     return endpoint
 
 
-def load_model(config_path: Path | None = None, model_id: str | None = None) -> dict:
+def load_model(config_path: Path | None = None, model_id: str | None = None, *, output_settings=True) -> dict:
     path = Path(config_path or os.environ.get("HANNI_MODEL_CONFIG", DEFAULT_CONFIG))
     doc = yaml.safe_load(path.read_text(encoding="utf-8"))
     models = doc.get("models") or []
     if not models:
         raise ValueError(f"no models defined in {path}")
+    def selected(entry):
+        if not output_settings:
+            return entry
+        from .output_settings import OutputSettings
+        return OutputSettings(os.environ.get('HANNI_MODEL_STATE')).apply(entry)
     wanted = model_id or os.environ.get("HANNI_MODEL_ID")
     for entry in models:
         if wanted and entry.get("id") == wanted:
-            return entry
+            return selected(entry)
     if wanted:
         raise ValueError(f"Model {wanted!r} is not defined in {path}.")
     # fall back to the supervisor role, then the first entry
     for entry in models:
         if entry.get("role") == "supervisor":
-            return entry
-    return models[0]
+            return selected(entry)
+    return selected(models[0])
 
 
 class NativeClient:

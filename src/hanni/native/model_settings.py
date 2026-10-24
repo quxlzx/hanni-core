@@ -138,6 +138,27 @@ class ModelSettings:
                 'change': None if not change else {key: change.get(key) for key in ('id', 'status', 'detail')},
                 'environment_key': bool(os.environ.get('HANNI_MODEL_API_KEY'))}
 
+    def output_model(self):
+        from .provider import load_model
+        if not self.root or not (self.root / 'models.native.yaml').is_file():
+            raise RuntimeError('Output settings require the native model session. Start Hanni with START_HANNI or START_BRAIN.')
+        return load_model(self.root / 'models.native.yaml', output_settings=False)
+
+    def output_snapshot(self):
+        from .output_settings import OutputSettings
+        try:
+            model = self.output_model()
+        except RuntimeError as exc:
+            return {'available': False, 'reason': str(exc)}
+        return OutputSettings(self.root).snapshot(model)
+
+    def save_output(self, body):
+        from .output_settings import OutputSettings
+        with self.lock:
+            if self.pending():
+                raise RuntimeError('Wait for the current model change to finish.')
+            return OutputSettings(self.root).save(self.output_model(), body)
+
     def validate(self, body):
         if not isinstance(body, dict) or set(body) - {'operation', 'id', 'source', 'local_model', 'endpoint', 'api_model', 'api_key', 'context'}:
             raise ValueError('Invalid model settings.')

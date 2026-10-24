@@ -1,0 +1,17 @@
+.output-settings { min-width: 0; font-size: 14px; line-height: 1.7; }
+.output-settings h3 { font-size: 16px; margin: 0 0 10px; }
+.output-settings .output-description { color: var(--muted); max-width: 70ch; margin: 0 0 18px; }
+.output-settings .output-current { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 9px; margin: 0 0 20px; }
+.output-current strong { font-weight: 600; }
+.output-current > span { color: var(--muted); font-size: 12px; margin-left: 5px; }
+.output-settings fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.output-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 220px)); gap: 18px; }
+.output-fields label { display: flex; flex-direction: column; gap: 7px; font-size: 13px; }
+.output-fields input, .output-fields select { min-width: 0; width: 100%; min-height: 40px; font-size: 14px; }
+.output-settings .output-help { color: var(--muted); font-size: 12px; line-height: 1.7; max-width: 72ch; margin: 12px 0 20px; }
+.output-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.output-actions button { min-height: 38px; font-size: 13px; }
+.output-settings .output-error { color: var(--error); margin-top: 16px; overflow-wrap: anywhere; }
+.output-settings .output-notice { margin-top: 16px; max-width: 72ch; }
+.hc-models-panel > .output-settings { margin: 26px 0; padding: 24px 0; border-block: 1px solid var(--line); }
+@media (max-width: 480px) { .output-fields { grid-template-columns: minmax(0, 1fr); gap: 14px; } }
