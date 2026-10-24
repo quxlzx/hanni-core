@@ -35,6 +35,7 @@ dependencies = [
     # Guarded MCP HTTP transport pins verified DNS addresses while preserving TLS.
     "httpx2>=2.5,<3",
     "httpcore2>=2.5,<3",
+    "httpx>=0.27,<1",
     # Imported MCP definitions retain and validate their original JSON Schema.
     "jsonschema>=4.20,<5",
     # Google account setup is a normal HANNI feature, not a developer extra.
@@ -53,6 +54,8 @@ harness-manager = ["langgraph>=1,<2"]
 dev = [
     "pytest>=9.0,<10",
     "pytest-subtests>=0.14",
+    "coverage>=7.10,<8",
+    "build>=1.2,<2",
     # Native-CDP contract tests use the installed API without downloading browsers.
     "playwright>=1.63,<2",
     "numpy>=1.26",
@@ -101,6 +104,7 @@ packages = [
     "hanni.memory",
     "hanni.mcp",
     "hanni.models",
+    "hanni.native",
     "hanni.reliability",
     "hanni.speech",
     "hanni.tools",

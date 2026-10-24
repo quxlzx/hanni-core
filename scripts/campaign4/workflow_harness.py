@@ -317,6 +317,8 @@ def setup_environment(case, root):
         for instance in environment.instances:
             if not instance.workers:
                 instance.store.close()
+        from hanni.reliability.execution import close_service
+        close_service(root / 'data')
 
 def _perform(env, stage, event=None):
     event = event or {}

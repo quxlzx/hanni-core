@@ -80,6 +80,7 @@ def deliver_response(response, *, tts=None, pump=None, barge=None, barge_enabled
     pending_speech = deque()
     text_buffer = SentenceBuffer()
     playback = None
+    playback_mute_revision = interaction.speech_mute_revision
     spoken = ''
     recent_speech = deque(maxlen=3)
     flushed = False
@@ -91,7 +92,7 @@ def deliver_response(response, *, tts=None, pump=None, barge=None, barge_enabled
 
     def accept(text):
         value = sanitize_assistant_text(text)
-        if value and tts is not None:
+        if value and tts is not None and not interaction.speech_muted:
             pending_speech.append(value)
 
     def cancel():
@@ -103,6 +104,12 @@ def deliver_response(response, *, tts=None, pump=None, barge=None, barge_enabled
 
     try:
         while True:
+            if interaction.speech_muted or interaction.speech_mute_revision != playback_mute_revision:
+                pending_speech.clear()
+                if playback is not None:
+                    playback.stop()
+                    playback = None
+                playback_mute_revision = interaction.speech_mute_revision
             if producer.cancelled.is_set():
                 cancel()
                 result.interrupted = True
@@ -144,14 +151,18 @@ def deliver_response(response, *, tts=None, pump=None, barge=None, barge_enabled
                     playback = None
             if playback is None and pending_speech:
                 sentence = pending_speech.popleft()
-                if producer.cancelled.is_set():
+                if producer.cancelled.is_set() or interaction.speech_muted:
                     continue
                 mark('first_tts_dispatch')  # Dispatch is not acoustic onset.
                 recent_speech.append(sentence)
                 spoken = ' '.join(recent_speech)
                 if hasattr(tts, 'start'):
+                    playback_mute_revision = interaction.speech_mute_revision
                     playback = tts.start(sentence)
                     with interaction.condition:
+                        if interaction.speech_muted or interaction.speech_mute_revision != playback_mute_revision:
+                            playback.stop()
+                            playback = None
                         interaction.playback = playback
                 else:
                     tts.speak(sentence)

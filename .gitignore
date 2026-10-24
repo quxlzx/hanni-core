@@ -31,6 +31,9 @@ jobs.lock
 !evals/llm_tools/holdout_v2.jsonl
 !evals/llm_tools/holdout_v2_prompts.jsonl
 !evals/llm_tools/capability_coverage_v1.jsonl
+!evals/llm_tools/capability_coverage_v2.jsonl
+!evals/llm_tools/capability_coverage_v3.jsonl
+!evals/llm_tools/capability_coverage_v4.jsonl
 !evals/routing/phrase_probe_v2.jsonl
 !evals/routing/language_generalization_v2.jsonl
 !evals/routing/language_generalization_v3.jsonl
@@ -79,6 +82,7 @@ __pycache__/
 build/
 dist/
 .venv/
+.venv-review/
 venv/
 .pytest_cache/
 .pytest-work/
@@ -118,6 +122,8 @@ laya-shadow-audit/
 **/pytorch_model*
 config/models.fleet.local.yaml
 skills/
+# Bundled procedures are source; keep local/runtime skill folders ignored.
+!/soul/skills/
 
 # ---- belt and braces: runtime secrets at any depth ----
 **/bridge.token

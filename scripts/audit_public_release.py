@@ -29,6 +29,8 @@ PUBLIC_PERSONAL_PROVIDERS={'gmail.com','outlook.com','hotmail.com','yahoo.com','
 
 def synthetic_email(value):
     local,_,domain=value.decode('ascii',errors='ignore').lower().partition('@')
+    if local == 'git' and domain == 'github.com':
+        return True  # Public SSH service identity, not a personal mailbox.
     return (domain.endswith(('.example','.test','.invalid','.localhost'))
             or (local in PUBLIC_ROLE_MAILBOXES and domain in PUBLIC_MAIL_DOMAINS)
             or (re.fullmatch(r'example-[0-9a-f]{10}',local) and domain in PUBLIC_PERSONAL_PROVIDERS))

@@ -11,6 +11,7 @@ A skill is a markdown file with YAML-ish frontmatter:
 
 Skills are matched against the task prompt by trigger keywords (falling back
 to description words) and injected into the system prompt under a char budget.
+Standard skill frontmatter can put HANNI trigger lists in metadata.hanni.triggers.
 """
 from __future__ import annotations
 
@@ -21,8 +22,8 @@ from pathlib import Path
 FRONT = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.S)
 
 
-def load_skills(directory: str | None = None) -> list[dict]:
-    default = Path(__file__).resolve().parents[3] / "skills"
+def load_skills(directory: str | None = None, *, metadata_only=False) -> list[dict]:
+    default = Path(__file__).resolve().parents[3] / "soul" / "skills"
     root = Path(directory or os.environ.get("HANNI_SKILLS_DIR") or default)
     skills = []
     if not root.is_dir():
@@ -35,23 +36,47 @@ def load_skills(directory: str | None = None) -> list[dict]:
         if path.parent != root and path.name != "SKILL.md":
             continue
         try:
-            raw = path.read_text(encoding="utf-8")
+            if metadata_only:
+                # Read only the YAML header for discovery, not every procedure.
+                with path.open(encoding='utf-8') as stream:
+                    lines = [stream.readline(4096)]
+                    if lines[0].strip() == '---':
+                        for _ in range(80):
+                            line = stream.readline(4096)
+                            lines.append(line)
+                            if not line or line.strip() == '---':
+                                break
+                raw = ''.join(lines) + '\n'
+            else:
+                raw = path.read_text(encoding="utf-8")
         except OSError:
             continue
         meta, body = {}, raw
         match = FRONT.match(raw)
         if match:
             body = raw[match.end():]
-            for line in match.group(1).splitlines():
-                if ":" in line:
-                    key, value = line.split(":", 1)
-                    meta[key.strip().lower()] = value.strip()
+            import yaml
+            try:
+                parsed = yaml.safe_load(match.group(1))
+            except yaml.YAMLError:
+                continue
+            if isinstance(parsed, dict):
+                meta = parsed
         name = meta.get("name") or path.stem
-        triggers = [t.strip().lower() for t in re.split(r"[,;]", meta.get("triggers", "")) if t.strip()]
+        description = str(meta.get('description') or '')
+        metadata = meta.get('metadata')
+        hanni = metadata.get('hanni') if isinstance(metadata, dict) else None
+        raw_triggers = meta.get('triggers') or (hanni.get('triggers') if isinstance(hanni, dict) else None) or []
+        if isinstance(raw_triggers, str):
+            raw_triggers = re.split(r'[,;]', raw_triggers)
+        if not isinstance(raw_triggers, list):
+            raw_triggers = []
+        triggers = [str(t).strip().lower() for t in raw_triggers if str(t).strip()]
         if not triggers:
-            triggers = [w for w in re.findall(r"[a-z0-9/]{4,}", (meta.get("description", "") + " " + name).lower())]
-        skills.append({"name": name, "description": meta.get("description", ""),
-                       "triggers": triggers, "body": body.strip()})
+            triggers = re.findall(r"[a-z0-9/]{4,}", (description + " " + str(name)).lower())
+        skills.append({"name": str(name), "description": description,
+                       "triggers": triggers, "path": str(path.resolve()),
+                       **({} if metadata_only else {'body': body.strip()})})
     return skills
 
 
@@ -61,11 +86,18 @@ def match_skills(skills: list[dict], text: str, *, max_skills: int = 3, char_bud
     hits.sort(key=lambda s: -sum(len(t) for t in s["triggers"] if t in lowered))
     out, used = [], 0
     for skill in hits[:max_skills]:
-        block = f"### skill: {skill['name']}\n{skill['body']}"
-        if used + len(block) > char_budget:
-            block = block[:max(0, char_budget - used)]
+        separator = 2 if out else 0
+        remaining = max(0, char_budget - used - separator)
+        body = skill.get('body')
+        if body is None:
+            raw = Path(skill['path']).read_text(encoding='utf-8')
+            front = FRONT.match(raw)
+            body = raw[front.end():].strip() if front else raw
+        block = f"### skill: {skill['name']}\n{body}"
+        if len(block) > remaining:
+            block = block[:remaining]
         if not block:
             break
         out.append(block)
-        used += len(block)
+        used += separator + len(block)
     return "\n\n".join(out)

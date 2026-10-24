@@ -283,10 +283,15 @@ class GoogleAccess:
         description = _text(args.get('description'), 1500).strip()
         if location: event['location'] = location
         if description: event['description'] = description
-        result = self._post(account, '/calendar/v3/calendars/' + quote(calendar_id, safe='') + '/events', event)
+        try:
+            result = self._post(account, '/calendar/v3/calendars/' + quote(calendar_id, safe='') + '/events', event)
+        except GoogleAccessError as exc:
+            if exc.code in {'api_error', 'partial'}:
+                raise GoogleAccessError('Calendar creation outcome is unknown. Check the calendar before retrying; the request was not replayed.', 'outcome_unknown') from None
+            raise
         event_id = _text(result.get('id'), 500)
         if not event_id:
-            raise GoogleAccessError('Google did not return an event ID; creation could not be confirmed')
+            raise GoogleAccessError('Google did not return an event ID; creation could not be confirmed. Check the calendar before retrying.', 'outcome_unknown')
         return {'account': account, 'email': record['email'], 'calendar_id': calendar_id,
                 'id': event_id, 'summary': _text(result.get('summary') or summary, 300),
                 'start': result.get('start', event['start']), 'end': result.get('end', event['end']),
@@ -635,8 +640,9 @@ def definitions(access=None):
                 return ToolResult(name, not bool(errors), message, data, error=error)
             except GoogleAccessError as exc:
                 return ToolResult(name, False, str(exc), {'error': str(exc), 'state': exc.code,
-                                  'outcome': 'failed' if name == 'google_calendar.create' else None},
-                                  error={'code': exc.code.upper(), 'message': str(exc), 'retryable': exc.code in {'api_error', 'rate_limited'}})
+                                  'outcome': ('unknown' if exc.code == 'outcome_unknown' else 'failed') if name == 'google_calendar.create' else None,
+                                  'created': (None if exc.code == 'outcome_unknown' else False) if name == 'google_calendar.create' else None},
+                                  error={'code': exc.code.upper(), 'message': str(exc), 'retryable': name != 'google_calendar.create' and exc.code in {'api_error', 'rate_limited'}})
         return handler
     rows = [
         ('google.accounts', 'List named Google account connections without a network request.', {}, ('google', 'accounts', 'connected')),

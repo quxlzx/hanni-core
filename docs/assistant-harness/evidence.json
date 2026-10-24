@@ -1,0 +1,1449 @@
+{
+  "environment": {
+    "python": "3.12.10",
+    "pytest": "9.1.1",
+    "coverage": "7.17.0",
+    "node": "24.21.0",
+    "os": "Windows"
+  },
+  "runs": [
+    {
+      "name": "Baseline JUnit",
+      "exit_code": 1,
+      "junit_counts": {
+        "skipped": 6,
+        "passed": 4805,
+        "failed": 21
+      },
+      "artifact": ".pytest-work/assistant-harness/baseline.xml"
+    },
+    {
+      "name": "Protocol/process red",
+      "exit_code": 1,
+      "junit_counts": {
+        "failed": 16,
+        "passed": 11
+      },
+      "artifact": ".pytest-work/assistant-harness/red-regressions.xml"
+    },
+    {
+      "name": "Hermes red",
+      "exit_code": 1,
+      "junit_counts": {
+        "failed": 6,
+        "passed": 2
+      },
+      "artifact": ".pytest-work/assistant-harness/red-hermes.xml"
+    },
+    {
+      "name": "Routing red",
+      "exit_code": 1,
+      "junit_counts": {
+        "failed": 7
+      },
+      "artifact": ".pytest-work/assistant-harness/red-routing.xml"
+    },
+    {
+      "name": "Regression green",
+      "exit_code": 0,
+      "junit_counts": {
+        "passed": 117
+      },
+      "artifact": ".pytest-work/assistant-harness/green-regressions.xml"
+    },
+    {
+      "name": "Regression confirmation",
+      "exit_code": 0,
+      "junit_counts": {
+        "passed": 117
+      },
+      "artifact": ".pytest-work/assistant-harness/green-regressions-confirmed.xml"
+    },
+    {
+      "name": "Focused development",
+      "exit_code": 1,
+      "junit_counts": {
+        "passed": 360,
+        "failed": 2
+      },
+      "artifact": ".pytest-work/assistant-harness/focused.xml"
+    },
+    {
+      "name": "Full coverage run",
+      "exit_code": 1,
+      "junit_counts": {
+        "skipped": 6,
+        "passed": 5102,
+        "failed": 19
+      },
+      "artifact": ".pytest-work/assistant-harness/final/pytest.xml"
+    },
+    {
+      "name": "Corrected fixtures",
+      "exit_code": 0,
+      "junit_counts": {
+        "passed": 161
+      },
+      "artifact": ".pytest-work/assistant-harness/fixture-corrections-complete.xml"
+    },
+    {
+      "name": "Exact failed-case rerun",
+      "exit_code": 0,
+      "junit_counts": {
+        "passed": 19
+      },
+      "artifact": ".pytest-work/assistant-harness/resolved-failures/pytest.xml"
+    },
+    {
+      "name": "Corrected smoke",
+      "exit_code": 0,
+      "junit_counts": {
+        "passed": 5,
+        "skipped": 1
+      },
+      "artifact": ".pytest-work/assistant-harness/smoke-corrected/pytest.xml"
+    },
+    {
+      "name": "Final source/export privacy audit",
+      "exit_code": 0,
+      "junit_counts": {
+        "passed": 8
+      },
+      "artifact": ".pytest-work/assistant-harness/final-source-audit.xml"
+    }
+  ],
+  "full_commands": [
+    {
+      "name": "pytest",
+      "argv": [
+        "C:\\Projects\\HANNI\\.venv\\Scripts\\python.exe",
+        "-m",
+        "coverage",
+        "run",
+        "--branch",
+        "--source=src/hanni",
+        "--data-file=C:\\Projects\\HANNI\\.pytest-work\\assistant-harness\\final\\.coverage",
+        "-m",
+        "pytest",
+        "tests",
+        "-o",
+        "addopts=",
+        "-o",
+        "junit_family=legacy",
+        "-q",
+        "--tb=short",
+        "--junitxml=C:\\Projects\\HANNI\\.pytest-work\\assistant-harness\\final\\pytest.xml"
+      ],
+      "cwd": "C:\\Projects\\HANNI",
+      "exit_code": 1,
+      "seconds": 1358.86
+    },
+    {
+      "name": "coverage-json",
+      "argv": [
+        "C:\\Projects\\HANNI\\.venv\\Scripts\\python.exe",
+        "-m",
+        "coverage",
+        "json",
+        "--data-file=C:\\Projects\\HANNI\\.pytest-work\\assistant-harness\\final\\.coverage",
+        "-o",
+        "C:\\Projects\\HANNI\\.pytest-work\\assistant-harness\\final\\coverage.json"
+      ],
+      "cwd": "C:\\Projects\\HANNI",
+      "exit_code": 0,
+      "seconds": 3.109
+    },
+    {
+      "name": "coverage-report",
+      "argv": [
+        "C:\\Projects\\HANNI\\.venv\\Scripts\\python.exe",
+        "-m",
+        "coverage",
+        "report",
+        "--data-file=C:\\Projects\\HANNI\\.pytest-work\\assistant-harness\\final\\.coverage"
+      ],
+      "cwd": "C:\\Projects\\HANNI",
+      "exit_code": 0,
+      "seconds": 2.328
+    },
+    {
+      "name": "python-compile",
+      "argv": [
+        "C:\\Projects\\HANNI\\.venv\\Scripts\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "src/hanni",
+        "tests"
+      ],
+      "cwd": "C:\\Projects\\HANNI",
+      "exit_code": 0,
+      "seconds": 1.297
+    },
+    {
+      "name": "frontend-types",
+      "argv": [
+        "C:\\Program Files\\nodejs\\npm.CMD",
+        "run",
+        "check",
+        "--prefix",
+        "frontend"
+      ],
+      "cwd": "C:\\Projects\\HANNI",
+      "exit_code": 0,
+      "seconds": 4.297
+    },
+    {
+      "name": "frontend-tests",
+      "argv": [
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "--test",
+        "C:\\Projects\\HANNI\\frontend\\tests\\mcp_types.test.ts",
+        "C:\\Projects\\HANNI\\frontend\\tests\\memory_types.test.ts",
+        "C:\\Projects\\HANNI\\frontend\\tests\\mini_bridge.test.mjs",
+        "C:\\Projects\\HANNI\\frontend\\tests\\workflow_types.test.ts"
+      ],
+      "cwd": "C:\\Projects\\HANNI",
+      "exit_code": 0,
+      "seconds": 0.313
+    },
+    {
+      "name": "frontend-build",
+      "argv": [
+        "C:\\Program Files\\nodejs\\npm.CMD",
+        "run",
+        "build",
+        "--prefix",
+        "frontend"
+      ],
+      "cwd": "C:\\Projects\\HANNI",
+      "exit_code": 0,
+      "seconds": 6.906
+    },
+    {
+      "name": "package-build",
+      "argv": [
+        "C:\\Projects\\HANNI\\.venv\\Scripts\\python.exe",
+        "-m",
+        "build",
+        "--wheel",
+        "--no-isolation",
+        "--outdir",
+        "C:\\Projects\\HANNI\\.pytest-work\\assistant-harness\\final\\dist"
+      ],
+      "cwd": "C:\\Projects\\HANNI",
+      "exit_code": 1,
+      "seconds": 0.078
+    },
+    {
+      "name": "distribution-check",
+      "argv": [
+        "C:\\Projects\\HANNI\\.venv\\Scripts\\python.exe",
+        "scripts/check_distribution.py",
+        "C:\\Projects\\HANNI\\.pytest-work\\assistant-harness\\final\\dist"
+      ],
+      "cwd": "C:\\Projects\\HANNI",
+      "exit_code": 2,
+      "seconds": 0.094
+    }
+  ],
+  "corrected_package_commands": [
+    {
+      "name": "package-build",
+      "argv": [
+        "C:\\Projects\\HANNI\\.venv\\Scripts\\python.exe",
+        "-m",
+        "build",
+        "--wheel",
+        "--no-isolation",
+        "--outdir",
+        "C:\\Projects\\HANNI\\.pytest-work\\assistant-harness\\package-corrected\\dist"
+      ],
+      "cwd": "C:\\Projects\\HANNI",
+      "exit_code": 0,
+      "seconds": 9.36
+    },
+    {
+      "name": "distribution-check",
+      "argv": [
+        "C:\\Projects\\HANNI\\.venv\\Scripts\\python.exe",
+        "scripts/check_distribution.py",
+        "C:\\Projects\\HANNI\\.pytest-work\\assistant-harness\\package-corrected\\dist"
+      ],
+      "cwd": "C:\\Projects\\HANNI",
+      "exit_code": 0,
+      "seconds": 0.281
+    }
+  ],
+  "resolved_failure_commands": [
+    {
+      "name": "pytest",
+      "argv": [
+        "C:\\Projects\\HANNI\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-o",
+        "addopts=",
+        "-o",
+        "junit_family=legacy",
+        "-q",
+        "--tb=short",
+        "--junitxml=C:\\Projects\\HANNI\\.pytest-work\\assistant-harness\\resolved-failures\\pytest.xml",
+        "--lf",
+        "--lfnf=none"
+      ],
+      "cwd": "C:\\Projects\\HANNI",
+      "exit_code": 0,
+      "seconds": 14.61
+    }
+  ],
+  "full_console": "19 failed, 5102 passed, 6 skipped, 71 subtests passed in 1356.70s (0:22:36)",
+  "new_harness_cases": 295,
+  "latest_full_case_counts": {
+    "skipped": 6,
+    "passed": 5121
+  },
+  "unresolved_failed_ids": [],
+  "coverage_totals": {
+    "covered_lines": 28401,
+    "num_statements": 35084,
+    "percent_covered": 78.10617935813876,
+    "percent_covered_display": "78",
+    "missing_lines": 6683,
+    "excluded_lines": 90,
+    "percent_statements_covered": 80.95143085167028,
+    "percent_statements_covered_display": "81",
+    "num_branches": 13400,
+    "num_partial_branches": 2402,
+    "covered_branches": 9468,
+    "missing_branches": 3932,
+    "percent_branches_covered": 70.65671641791045,
+    "percent_branches_covered_display": "71"
+  },
+  "coverage_scope": "Main pytest process and its Python threads; subprocess statements are not instrumented. No source omissions.",
+  "skips": [
+    {
+      "id": "::tests.unit.test_cluster_harness_graph",
+      "reason": "collection skipped"
+    },
+    {
+      "id": "tests.evals.test_failure_ledger::test_all_saved_development_failures_have_a_review_and_evidence",
+      "reason": "historical local inference report is not included in this checkout"
+    },
+    {
+      "id": "tests.integration.test_entry_points.EntryPointTests::test_console_script_if_installed",
+      "reason": "hanni not on PATH (run `pip install -e .`)"
+    },
+    {
+      "id": "tests.test_local_runtime.SafetyTests::test_web_search_live",
+      "reason": "search unavailable (offline or rate-limited)"
+    },
+    {
+      "id": "tests.unit.test_cluster_worker_checks::test_checker_symlink_cannot_modify_an_outside_file",
+      "reason": "Symlink creation unavailable"
+    },
+    {
+      "id": "tests.unit.test_phase3_contract_context::test_shared_contract_source_is_identical",
+      "reason": "Separate Control Center source is unavailable; cross-project byte identity NOT TESTED."
+    }
+  ],
+  "traceability": [
+    {
+      "requirement": "CLI entry point",
+      "source": "cli.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_entrypoint_smoke::test_cli_chat_subprocess_uses_fake_provider_without_model_or_devices",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Direct answer, one tool, invalid arguments/name, iteration bound",
+      "source": "native/loop.py",
+      "tests": [
+        {
+          "id": "tests.test_native_loop.NativeLoopTests::test_invalid_json_arguments_blocked",
+          "status": "passed"
+        },
+        {
+          "id": "tests.test_native_loop.NativeLoopTests::test_iteration_bound_interrupts",
+          "status": "passed"
+        },
+        {
+          "id": "tests.test_native_loop.NativeLoopTests::test_menu_replacement_applies",
+          "status": "passed"
+        },
+        {
+          "id": "tests.test_native_loop.NativeLoopTests::test_plain_answer",
+          "status": "passed"
+        },
+        {
+          "id": "tests.test_native_loop.NativeLoopTests::test_reasoning_stripped",
+          "status": "passed"
+        },
+        {
+          "id": "tests.test_native_loop.NativeLoopTests::test_strip_reasoning_open_tag",
+          "status": "passed"
+        },
+        {
+          "id": "tests.test_native_loop.NativeLoopTests::test_tool_roundtrip",
+          "status": "passed"
+        },
+        {
+          "id": "tests.test_native_loop.NativeLoopTests::test_unknown_tool_blocked",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Whole provider batch validates before effects",
+      "source": "native/loop.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_protocol_contracts::test_invalid_call_envelope_blocks_the_entire_batch_before_effects[invalid0]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_invalid_call_envelope_blocks_the_entire_batch_before_effects[invalid1]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_invalid_call_envelope_blocks_the_entire_batch_before_effects[invalid2]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_invalid_call_envelope_blocks_the_entire_batch_before_effects[invalid3]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_invalid_call_envelope_blocks_the_entire_batch_before_effects[invalid4]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_invalid_call_envelope_blocks_the_entire_batch_before_effects[invalid5]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Unsupported content is a provider failure",
+      "source": "native/loop.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_protocol_contracts::test_invalid_assistant_content_returns_provider_failure_without_escaping[42]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_invalid_assistant_content_returns_provider_failure_without_escaping[True]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_invalid_assistant_content_returns_provider_failure_without_escaping[content2]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_invalid_assistant_content_returns_provider_failure_without_escaping[content3]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Call IDs unique and paired",
+      "source": "native/loop.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_protocol_contracts::test_multiple_rounds_and_multi_call_turn_keep_ids_results_and_order",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Truncated proposals cannot execute",
+      "source": "native/loop.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_protocol_contracts::test_length_truncated_tool_turn_is_not_an_execution_authorization",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Transient failures bounded",
+      "source": "native/loop.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_protocol_contracts::test_transient_failures_have_a_fixed_retry_budget[408]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_transient_failures_have_a_fixed_retry_budget[429]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_transient_failures_have_a_fixed_retry_budget[500]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_transient_failures_have_a_fixed_retry_budget[502]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_transient_failures_have_a_fixed_retry_budget[503]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_transient_failures_have_a_fixed_retry_budget[504]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_transient_failures_have_a_fixed_retry_budget[529]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Completed writes not replayed on provider retry",
+      "source": "native/loop.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_agent_runtime::test_transient_provider_failure_does_not_reexecute_write",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Corrected tool action after schema failure",
+      "source": "native/runtime.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_protocol_contracts::test_tool_failure_can_be_corrected_without_inventing_success",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Cancellation between calls",
+      "source": "native/loop.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_agent_runtime::test_cancellation_between_calls_keeps_pairs_and_skips_second_effect",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Time budget ends without extra generation",
+      "source": "native/loop.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_protocol_contracts::test_time_budget_does_not_request_an_extra_final_generation",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Malformed streams yield protocol errors",
+      "source": "native/streaming.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_protocol_contracts::test_malformed_streams_fail_as_protocol_errors[events0]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_malformed_streams_fail_as_protocol_errors[events1]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_malformed_streams_fail_as_protocol_errors[events2]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_protocol_contracts::test_malformed_streams_fail_as_protocol_errors[events3]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Fragmented streaming arguments",
+      "source": "native/streaming.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_native_streaming::test_fragmented_tool_arguments_are_not_executed_until_the_stream_finishes",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Explicit unsupported-stream fallback only",
+      "source": "native/provider.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_native_streaming::test_provider_falls_back_only_when_streaming_is_explicitly_unsupported",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Provider auth and usage",
+      "source": "native/provider.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_native_streaming::test_provider_streams_with_auth_and_preserves_usage",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Legacy llama HTTP/SSE adapter",
+      "source": "models/client.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_model_client.LlamaCppClientTests::test_health_uses_llama_v1_health",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_model_client.LlamaCppClientTests::test_malformed_stream_is_protocol_error",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_model_client.LlamaCppClientTests::test_optional_stream_usage_does_not_change_text",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_model_client.LlamaCppClientTests::test_retry_only_before_visible_output",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_model_client.LlamaCppClientTests::test_streaming_chat_yields_content_and_sends_qwen_settings",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_model_client.LlamaCppClientTests::test_structured_request_enforces_json_and_disables_thinking",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_model_client.LlamaCppClientTests::test_tool_turn_requests_one_call_at_a_time",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Reasoning requires supported effort",
+      "source": "dashboard/commands.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_chat_commands::test_reasoning_requires_advertised_support_and_applies_per_model",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Late generation cannot overwrite cancellation",
+      "source": "native/streaming.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_native_streaming::test_progress_keeps_events_and_cannot_overwrite_a_cancelled_task",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Schema and handler errors",
+      "source": "tools/base.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_agent_runtime::test_registry_validates_before_dispatch_and_contains_handler_errors",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "MCP invalid arguments rejected before SDK",
+      "source": "mcp/adapter.py",
+      "tests": [
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[stdio-prism.read_alignment]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[stdio-prism.echo_label]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[stdio-prism.sum_samples]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[stdio-prism.decode_profile]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[stdio-prism.create_record]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[stdio-prism.erase_record]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[stdio-prism.defer_read]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[stdio-quartz.inspect_flux_band]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[streamable_http-prism.read_alignment]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[streamable_http-prism.echo_label]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[streamable_http-prism.sum_samples]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[streamable_http-prism.decode_profile]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[streamable_http-prism.create_record]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[streamable_http-prism.erase_record]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[streamable_http-prism.defer_read]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_matrix::test_invalid_arguments_never_reach_sdk[streamable_http-quartz.inspect_flux_band]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "MCP lifecycle and connection recovery",
+      "source": "mcp/manager.py",
+      "tests": [
+        {
+          "id": "tests.integration.test_campaign2_mcp_lifecycle::test_connection_failure_returns_no_tools_then_recovers_after_owned_review",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "MCP reload exact hash and disabled servers",
+      "source": "dashboard/work_commands.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_work_commands::test_mcp_reload_reconnects_enabled_servers_with_exact_config_hash_and_keeps_disabled",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "MCP stale definitions and approvals",
+      "source": "mcp/runtime.py",
+      "tests": [
+        {
+          "id": "tests.integration.test_campaign2_mcp_lifecycle::test_definition_refresh_revokes_old_approval_and_stale_menu[stdio]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_lifecycle::test_definition_refresh_revokes_old_approval_and_stale_menu[streamable_http]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "MCP cancellation suppresses stale result",
+      "source": "mcp/runtime.py",
+      "tests": [
+        {
+          "id": "tests.integration.test_campaign2_mcp_lifecycle::test_removal_during_active_call_cancels_and_never_admits_result[stdio]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_lifecycle::test_removal_during_active_call_cancels_and_never_admits_result[streamable_http]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "MCP ownership cleanup",
+      "source": "mcp/runtime.py",
+      "tests": [
+        {
+          "id": "tests.integration.test_campaign2_mcp_lifecycle::test_owned_stdio_process_is_cleaned_but_external_http_process_is_not_adopted[stdio]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.integration.test_campaign2_mcp_lifecycle::test_owned_stdio_process_is_cleaned_but_external_http_process_is_not_adopted[streamable_http]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Read concurrency does not grant unreviewed parallelism",
+      "source": "tools/base.py",
+      "tests": [
+        {
+          "id": "tests.integration.test_workflow_imported_parallel_verifier::test_owner_classified_external_reads_do_not_infer_safe_local_parallelism",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Exact reviewed approval hash",
+      "source": "dashboard/work_commands.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_work_commands::test_approval_detects_change_after_display_and_inside_atomic_backend_decision",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Approval expiry and denial",
+      "source": "hermes/state.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_hermes_bridge::test_approval_expiry_and_rejection_reach_boundary",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "One concurrent approval claim",
+      "source": "hermes/state.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_state_contracts::test_concurrent_approval_claims_allow_only_one_dispatch",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Code RPC real process and scope",
+      "source": "native/code_execution.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_agent_runtime::test_real_subprocess_cannot_bypass_scope_or_schema",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Code output capture",
+      "source": "native/code_execution.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_agent_runtime::test_real_subprocess_tool_rpc_filters_intermediate_output",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Timeout does not execute deferred approval",
+      "source": "native/code_execution.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_agent_runtime::test_script_timeout_rejects_unapproved_rpc_instead_of_executing_later",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Normal completion reaps owned descendants only",
+      "source": "native/code_execution.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_process_ownership::test_script_completion_reaps_owned_descendants_and_preserves_unrelated_process",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Context groups, goal and bounds",
+      "source": "native/compact.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_agent_runtime::test_compaction_preserves_goal_tool_groups_and_stays_bounded",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Oversized task rejects before inference",
+      "source": "native/context_budget.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_agent_runtime::test_uncompactable_task_fails_before_provider_call",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Summary failure retains active task",
+      "source": "native/compact.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_state_contracts::test_compaction_fallback_retains_request_constraints_and_paired_recent_results",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Cancelled compression discarded",
+      "source": "dashboard/commands.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_chat_commands::test_stop_is_not_blocked_by_summarization_and_discards_cancelled_summary",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Personal memory persists and deduplicates",
+      "source": "memory/store.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_memory.MemoryStoreTests::test_remember_deduplicates_exact_memory",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Memory deletion scope vs history/backups",
+      "source": "memory/store.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_state_contracts::test_memory_deletion_does_not_claim_to_erase_history_or_backups",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Profile roots isolated",
+      "source": "memory/store.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_state_contracts::test_separate_profile_roots_do_not_share_personal_records",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Correction/deletion invalidates retrieval",
+      "source": "memory/retrieval.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_memory_context_v35::test_correction_and_deletion_cannot_use_cached_old_context",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Contradictory/stale records excluded",
+      "source": "memory/grounded.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_campaign3_memory_contracts::test_epistemic_candidates_are_not_owner_preferences[temporary-LocalMemoryRetriever]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_campaign3_memory_contracts::test_epistemic_candidates_are_not_owner_preferences[temporary-ContextAwareRetriever]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_campaign3_memory_contracts::test_epistemic_candidates_are_not_owner_preferences[question-LocalMemoryRetriever]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_campaign3_memory_contracts::test_epistemic_candidates_are_not_owner_preferences[question-ContextAwareRetriever]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_campaign3_memory_contracts::test_epistemic_candidates_are_not_owner_preferences[hypothetical-LocalMemoryRetriever]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_campaign3_memory_contracts::test_epistemic_candidates_are_not_owner_preferences[hypothetical-ContextAwareRetriever]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_campaign3_memory_contracts::test_epistemic_candidates_are_not_owner_preferences[inference-LocalMemoryRetriever]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_campaign3_memory_contracts::test_epistemic_candidates_are_not_owner_preferences[inference-ContextAwareRetriever]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "External memory uses approved read-only provider",
+      "source": "native/agent_tools.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_agent_runtime::test_external_memory_requires_configured_read_only_registered_tool",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Skill metadata/on-demand body",
+      "source": "native/skills.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_state_contracts::test_skill_metadata_does_not_load_unselected_procedure_bodies",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Invalid/missing skill files",
+      "source": "native/skills.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_state_contracts::test_invalid_skill_yaml_and_missing_reference_are_explicit",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Concurrent skill revision protection",
+      "source": "native/skill_store.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_state_contracts::test_concurrent_skill_corrections_cannot_overwrite_an_unseen_revision",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Atomic action/event rollback",
+      "source": "hermes/state.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_state_contracts::test_task_transaction_rolls_back_actions_and_events_together",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Corrupt DB preserved",
+      "source": "hermes/state.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_state_contracts::test_corrupt_task_database_is_reported_not_silently_recreated",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Restart quarantines unknown effects",
+      "source": "hermes/state.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_agent_runtime::test_restart_preserves_queued_work_and_quarantines_unacknowledged_dispatch",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Wake events use actual classifier",
+      "source": "speech/relevance.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_voice_mode_notifications::test_original_wake_and_disengage_router_generate_mode_alerts",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "VAD/transcript pipeline",
+      "source": "speech/pipeline.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_speech_pipeline.SpeechPipelineTests::test_process_chunk_yields_transcript_after_vad_end",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Empty transcript not retained",
+      "source": "speech/pipeline.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_speech_pipeline.SpeechPipelineTests::test_empty_stt_result_is_not_buffered",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Speech mute independent of mic/generation",
+      "source": "dashboard/voice.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_chat_commands::test_voice_mute_does_not_pause_microphone_or_cancel_generation",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Old audio cannot reappear after mute",
+      "source": "speech/live.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_desktop_voice::test_inflight_old_pump_result_is_discarded_after_mute_resume",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Explicit screen/clipboard reads",
+      "source": "dashboard/work_commands.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_work_commands::test_screen_and_clipboard_are_explicit_read_only_and_raw_text_is_not_retained[/screen Explain the error-screen.read_text]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_work_commands::test_screen_and_clipboard_are_explicit_read_only_and_raw_text_is_not_retained[/clipboard Rewrite as an email-clipboard.read]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Calendar write ack vs uncertain readback",
+      "source": "tools/google_access.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_work_commands::test_calendar_write_acknowledged_but_readback_failure_never_promises_no_event",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "DST ambiguous/nonexistent wall times",
+      "source": "tools/reminders.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_state_contracts::test_dst_ambiguous_and_nonexistent_reminder_times_are_not_guessed[2026-11-01T01:30]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_state_contracts::test_dst_ambiguous_and_nonexistent_reminder_times_are_not_guessed[2027-03-14T02:30]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Reminder durable dedup/delivery",
+      "source": "tools/reminders.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_work_commands::test_reminders_return_schedule_and_id_and_deliver_once_after_restart",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Tasks real records and idempotency",
+      "source": "dashboard/work_commands.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_work_commands::test_tasks_add_list_done_are_real_persistent_records_and_retries_do_not_duplicate",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Daily summary sources",
+      "source": "dashboard/work_commands.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_work_commands::test_today_combines_real_tasks_and_reminders_with_calendar_and_deadlines",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Partial calendar outage distinguished",
+      "source": "tools/google_access.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_google_access::test_calendar_empty_result_and_partial_failure_have_distinct_spoken_answers",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Search references retained",
+      "source": "dashboard/work_commands.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_work_commands::test_search_synthesizes_only_from_returned_sources_and_always_returns_real_links",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Explicit web source preserved",
+      "source": "tools/routing_intents.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_routing_regressions::test_explicit_web_research_does_not_read_local_battery_telemetry[search the public web for battery recycling]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_routing_regressions::test_explicit_web_research_does_not_read_local_battery_telemetry[web search recent battery research]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Hermes bounded context and job ID",
+      "source": "dashboard/work_commands.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_work_commands::test_hermes_receives_only_bounded_current_conversation_context_and_returns_owned_job",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Hermes owning-conversation completion",
+      "source": "hermes/client.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_hermes_contracts::test_background_completion_reaches_owning_conversation_and_is_not_duplicated",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Hermes duplicate request recovery",
+      "source": "hermes/client.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_hermes_contracts::test_reconnect_same_request_recovers_acknowledgment_without_duplicate_job",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Cancel before Hermes submission",
+      "source": "hermes/client.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_hermes_contracts::test_cancellation_before_submission_reaches_real_control_without_remote_job",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Hermes malformed replies",
+      "source": "hermes/client.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_hermes_contracts::test_malformed_bridge_top_level_response_is_a_protocol_error[body0]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_hermes_contracts::test_malformed_bridge_top_level_response_is_a_protocol_error[None]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_hermes_contracts::test_malformed_bridge_top_level_response_is_a_protocol_error[42]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_hermes_contracts::test_malformed_bridge_top_level_response_is_a_protocol_error[not an object]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Missing authentication honest",
+      "source": "hermes/client.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_hermes_contracts::test_missing_authentication_reference_is_honest_unavailability_not_path_exception",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Child context/tool isolation",
+      "source": "native/worker.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_agent_runtime::test_child_has_separate_context_and_inherits_only_scoped_tools",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Foreground remains available",
+      "source": "native/worker.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_agent_runtime::test_background_approval_does_not_block_foreground_worker",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Concurrent tabs do not leak context",
+      "source": "dashboard/chat.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_chat_conversations::test_native_chat_never_injects_another_tabs_history",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Queue ordering",
+      "source": "compute/scheduler.py",
+      "tests": [
+        {
+          "id": "tests.integration.test_performance_v42_verifier::test_queue_optimization_preserves_same_worker_fifo",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Owned shutdown",
+      "source": "dashboard/server.py",
+      "tests": [
+        {
+          "id": "tests.integration.test_campaign8_ui_backend::test_owned_shutdown_reaches_original_event_and_chat_lifecycle_only",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Credentials redacted from logs",
+      "source": "logs/redaction.py",
+      "tests": [
+        {
+          "id": "tests.integration.test_campaign9_api_security::test_registered_synthetic_secret_not_in_logs",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Retrieved metadata stays inert",
+      "source": "mcp/host.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_workflow_model_context::test_untrusted_metadata_stays_in_data_message_and_cannot_change_output_contract",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Configuration precedence",
+      "source": "config/loader.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_config.ConfigLoaderTests::test_env_log_level_override",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "GPU/CPU q8 launch configuration",
+      "source": "native/acceleration.py",
+      "tests": [
+        {
+          "id": "tests.unit.test_native_acceleration::test_gpu_preference_and_cpu_fallback_always_keep_q8[found0-Vulkan0]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_native_acceleration::test_gpu_preference_and_cpu_fallback_always_keep_q8[found1-Vulkan1]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.unit.test_native_acceleration::test_gpu_preference_and_cpu_fallback_always_keep_q8[found2-none]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Default no external/live network",
+      "source": "tests/support/hanni_test_guard.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_offline_guard::test_external_tcp_is_blocked_before_connecting",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Default no live production DB",
+      "source": "tests/support/hanni_test_guard.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_offline_guard::test_production_storage_is_unavailable_even_when_application_defaults_are_wrong[open]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_offline_guard::test_production_storage_is_unavailable_even_when_application_defaults_are_wrong[database]",
+          "status": "passed"
+        },
+        {
+          "id": "tests.harness.test_offline_guard::test_production_storage_is_unavailable_even_when_application_defaults_are_wrong[mkdir]",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Offline child inheritance",
+      "source": "tests/support/sitecustomize.py",
+      "tests": [
+        {
+          "id": "tests.harness.test_offline_guard::test_python_child_inherits_the_offline_guard",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "requirement": "Historic eval corpus preserved",
+      "source": "evals/llm_tools/capability_coverage_v4_migration.json",
+      "tests": [
+        {
+          "id": "tests.harness.test_corpus_extension::test_v4_only_appends_existing_workplace_tool_probes_to_unchanged_v3",
+          "status": "passed"
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "src/hanni/native/loop.py": "a944b31c0f56b5094d56372a96ec8f4600ed07f0302cee9ca3bc31fc291d35d5",
+    "src/hanni/native/streaming.py": "31fbba98631e22a1445568872b946fa1fe088eeeeca6d9ba50c32bf88855c893",
+    "src/hanni/native/code_execution.py": "8aa7797fa34284f8854ab7a6d9c265e3ebfbabb69edde912a10189bd8fd9732a",
+    "src/hanni/hermes/client.py": "211011af5bf4bce73a9906ebc88d772cde38b1045bccac960ede04d0bca8ec78",
+    "src/hanni/dashboard/work_commands.py": "386bdee1974e546cc15468feb8dcd0dd7ab4190993a212faa6b61be34d7b6e7d",
+    "src/hanni/tools/routing_intents.py": "b0411d66a598e281ba9e4ca899dc233da9028f5458cce07e784ecf8badd83b17",
+    "src/hanni/tools/capability_metadata.py": "f9697e48d72aca7e30d06319a4077cb38fc8c2decce824e9244a1b7d18df8dee"
+  },
+  "evidence_sha256": {
+    ".pytest-work/assistant-harness/final/pytest.xml": "62a45e0f72b51e70e105fd1ce0fcf362c119065f619427cc6691b1b2373a53ad",
+    ".pytest-work/assistant-harness/final/coverage.json": "6a2f6f867955632e4dff036af5246614d80de27694627ee8f922f565d02b6d7d",
+    ".pytest-work/assistant-harness/fixture-corrections-complete.xml": "dc300c8a48941f8de570010f435ba867123a6c8c25455a0ea76e50008af3fcef",
+    ".pytest-work/assistant-harness/resolved-failures/pytest.xml": "eff5571abb9c219b782aa8b021c9ce83427b21d8f20a579c73a74497c0743488",
+    ".pytest-work/assistant-harness/final-source-audit.xml": "246d5e18046d9c1a289f083dc84ce4bc498001f93a0058fcb70b83daf5028d67"
+  }
+}

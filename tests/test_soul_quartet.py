@@ -57,6 +57,32 @@ class SkillTests(unittest.TestCase):
     def test_no_match_empty(self):
         self.assertEqual(match_skills(load_skills(self.dir.name), "totally unrelated"), "")
 
+    def test_standard_metadata_triggers_select_the_relevant_procedure(self):
+        Path(self.dir.name, 'SKILL.md').write_text(
+            '---\nname: minutes\ndescription: Summarize a discussion.\n'
+            'metadata:\n  hanni:\n    triggers: [meeting notes, action items]\n'
+            '---\nSeparate decisions from proposals.\n')
+        skills = load_skills(self.dir.name)
+        result = match_skills(skills, 'Extract action items from these meeting notes.')
+        self.assertIn('### skill: minutes', result)
+        self.assertNotIn('minutes', match_skills(skills, 'Summarize a discussion.'))
+
+    def test_existing_top_level_triggers_take_precedence(self):
+        Path(self.dir.name, 'SKILL.md').write_text(
+            '---\nname: minutes\ndescription: Summarize a discussion.\n'
+            'triggers: [notes]\nmetadata:\n  hanni:\n    triggers: [ignored]\n'
+            '---\nRecord the decisions.\n')
+        skills = load_skills(self.dir.name)
+        self.assertIn('### skill: minutes', match_skills(skills, 'notes'))
+        self.assertEqual(match_skills(skills, 'ignored'), '')
+
+    def test_multiple_skill_budget_includes_separators(self):
+        skills = [{'name': name, 'triggers': ['notes'], 'body': 'abcdefghij'}
+                  for name in ('first', 'second')]
+        result = match_skills(skills, 'notes', char_budget=50)
+        self.assertIn('### skill: second', result)
+        self.assertLessEqual(len(result), 50)
+
 
 class CompactTests(unittest.TestCase):
     def _messages(self, n=20):

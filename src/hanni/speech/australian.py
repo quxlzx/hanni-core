@@ -87,6 +87,9 @@ class WindowsAustralianTts:
         self._warned = False
 
     def start(self, text, *, output=None):
+        from hanni.core.interaction import interaction
+        if interaction.speech_muted:
+            return CompletedPlayback()
         chunks = split_for_speech(text, max_chars=self.config.chunk_chars)
         if not chunks:
             return CompletedPlayback()

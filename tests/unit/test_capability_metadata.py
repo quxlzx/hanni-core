@@ -10,7 +10,7 @@ def test_every_registered_capability_has_consistent_metadata(tmp_path):
     config = load_config(write_config_dir(tmp_path / 'config'), data_dir=tmp_path / 'data', env={})
     registry = build_default_registry(config)
     catalog = capability_catalog(registry)
-    assert len(catalog) == len(registry.definitions()) == 172
+    assert len(catalog) == len(registry.definitions()) == 175
     assert 12 <= len({cap.family for cap in catalog}) <= 20
     assert {cap.subfamily for cap in catalog} <= NAMESPACE_DOMAIN.keys()
     assert all((cap.family and cap.subfamily and cap.source for cap in catalog))

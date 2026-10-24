@@ -32,7 +32,10 @@ class Client:
             register_secret('HANNI_HERMES_BRIDGE',path.read_text().strip())
 
     def request(self, method, path, body=None):
-        token = Path(self.config['token_file']).read_text().strip()
+        try:
+            token = Path(self.config['token_file']).read_text().strip()
+        except OSError:
+            raise BridgeUnavailable('Hermes bridge authentication reference is unavailable.') from None
         from hanni.logs.redaction import register_secret
         register_secret('HANNI_HERMES_BRIDGE',token)
         if len(token) < 32:
@@ -47,7 +50,10 @@ class Client:
                 raise Conflict('Remote state changed; refresh before retrying.')
             if response.status != 200 or len(wire) > 2097152:
                 raise BridgeUnavailable('Hermes bridge unavailable or authentication rejected. No task was replayed.')
-            return json.loads(wire)
+            result = json.loads(wire)
+            if not isinstance(result, dict):
+                raise BridgeUnavailable('Hermes bridge returned an invalid protocol response; no task was replayed.')
+            return result
         except (OSError, http.client.HTTPException, json.JSONDecodeError):
             raise BridgeUnavailable('Karina connection unavailable. Saved task IDs remain available for review.') from None
         finally:
@@ -217,7 +223,12 @@ class HermesControl:
                         if chat and not chat.closed:
                             # Add an independent notification, never overwrite a foreground turn.
                             with chat.lock:
-                                chat._add(task_id, 'assistant', summary, 'hermes', 'complete')
+                                # Route from the locally saved owner request, not
+                                # from a remote result's untrusted routing claims.
+                                saved = self._owned_task(task_id)
+                                reference = saved.get('context', {}).get('conversation_reference_untrusted') or {}
+                                conversation = reference.get('conversation_id', 'default')
+                                chat._add(task_id, 'assistant', summary, 'hermes', 'complete', conversation=chat._conversation(conversation))
                         from hanni.core.interaction import interaction
                         self.guard()
                         latest = self.client.request('GET', '/tasks/'+task_id)
@@ -303,7 +314,7 @@ class HermesControl:
                     'reason': 'Karina is unavailable or authentication failed. Task IDs are retained; no paid fallback.',
                     'tunnel': self.tunnel.snapshot() if self.tunnel else None, 'saved_tasks': saved}
 
-    def submit(self, prompt, registry, *, key=None, prior_task=None):
+    def submit(self, prompt, registry, *, key=None, prior_task=None, conversation_context=None):
         self.guard()
         if not self.enabled:
             raise BridgeUnavailable('Automatic Hermes delegation is disabled.')
@@ -355,6 +366,14 @@ class HermesControl:
         context = {'windows_execution_scope':{'authorized_roots':self.config.get('windows_roots', [])[:8],
                     'approved_app_names':self.config.get('windows_apps', [])[:12]},
                    'authority_notice':'This metadata proposes no action and grants no execution approval.'}
+        if conversation_context is not None:
+            # Explicit delegation may carry bounded text from this conversation.
+            # Never include clipboard buffers, screenshots, audio, or all memory.
+            from hanni.logs.redaction import redact_text
+            serialized = json.dumps(conversation_context, ensure_ascii=False)
+            if len(serialized) > 8000 or redact_text(serialized) != serialized:
+                raise ValueError('Delegation context is too large or contains credential-like text.')
+            context['conversation_reference_untrusted'] = conversation_context
         if prior_task:
             self._owned_task(prior_task)
             previous = self.require().request('GET', '/tasks/'+prior_task)
@@ -498,7 +517,7 @@ class HermesControl:
         finally:
             _reviewed_read.reset(token)
 
-    def act(self, task_id, action_id, expected_hash, *, reject=False, auto_read=False):
+    def act(self, task_id, action_id, expected_hash, *, reject=False, auto_read=False, reason=None):
         registry = self.guard()
         request = self._owned_task(task_id)
         task = self.require().request('GET', '/tasks/'+task_id)
@@ -509,10 +528,11 @@ class HermesControl:
             raise Conflict('Cancellation was requested locally; no further actions are authorized.')
         if reject:
             return self.client.request('POST', '/actions/'+action_id,
-                {'state': 'rejected', 'receipt': {'ok': False, 'error': 'Owner rejected this action.'}})
+                {'state': 'rejected', 'expected_hash': expected_hash,
+                 'receipt': {'ok': False, 'error': 'Owner rejected this action.' + (' ' + reason if reason else '')}})
         if action['spec']['target'] == 'karina':
             # Owner confirmation is limited to this exact definition and arguments.
-            return self.client.request('POST', '/actions/'+action_id, {'state': 'dispatching'})
+            return self.client.request('POST', '/actions/'+action_id, {'state': 'dispatching', 'expected_hash': expected_hash})
         spec = action['spec']
         if spec not in request['windows_tools']:
             raise ValueError('Remote action escaped the HANNI-selected capability scope.')
@@ -539,7 +559,7 @@ class HermesControl:
                         {'state': 'fulfilled', 'receipt': json.loads(previous[1])})
                 raise Conflict('Windows dispatch acknowledgment is uncertain; automatic replay is prohibited.')
             self.db.execute('INSERT INTO dispatch VALUES(?,?,NULL)', (action_id, 'dispatching'))
-        self.client.request('POST', '/actions/'+action_id, {'state': 'dispatching'})
+        self.client.request('POST', '/actions/'+action_id, {'state': 'dispatching', 'expected_hash': expected_hash})
         from hanni.tools.base import ToolRequest
         from hanni.reliability.execution import ReliabilityService
         service = getattr(registry.context, 'reliability', None) or ReliabilityService()
@@ -635,8 +655,11 @@ class HermesControl:
             result = self.require().request('POST', '/catalog', {**data, 'id': uuid4().hex})
             self.reconcile()
             return result
-        if operation == 'approve' and set(data) == {'task_id', 'action_id', 'expected_hash', 'reject'} and type(data['reject']) is bool:
-            return self.act(data['task_id'], data['action_id'], data['expected_hash'], reject=data['reject'])
+        if operation == 'approve' and set(data) in ({'task_id', 'action_id', 'expected_hash', 'reject'}, {'task_id', 'action_id', 'expected_hash', 'reject', 'reason'}) and type(data['reject']) is bool:
+            reason = data.get('reason')
+            if reason is not None and (not isinstance(reason, str) or len(reason) > 500 or not data['reject']):
+                raise ValueError('A denial reason must be text of at most 500 characters.')
+            return self.act(data['task_id'], data['action_id'], data['expected_hash'], reject=data['reject'], reason=reason)
         if operation == 'cancel' and set(data) == {'task_id'}:
             self._owned_task(data['task_id'])
             with self.lock, self.db:

@@ -86,8 +86,11 @@ export type Message = {
   channel: string;
   status: string;
   created: number;
+  conversation?: string;
+  task_id?: string | null;
 };
 export type Chat = {
+  conversation_id?: string | null;
   messages: Message[];
   ready: boolean;
   busy: boolean;
@@ -120,8 +123,9 @@ export type Telemetry = {
   sampled_at: number | null;
   error: string | null;
   model_status: string;
+  model_detail?: string | null;
   safe_mode: boolean | null;
-  model: { file: string; quantization: string; context: number };
+  model: { file: string; quantization: string; context: number; context_verified?: boolean };
   model_residency: Record<string, ModelState>;
   resources: {
     cpu_percent: number;

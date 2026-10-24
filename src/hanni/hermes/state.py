@@ -30,12 +30,13 @@ class TaskStore:
         self.db.execute('PRAGMA journal_mode=WAL')
         self.db.execute('CREATE TABLE IF NOT EXISTS tasks(id TEXT PRIMARY KEY, key TEXT UNIQUE, hash TEXT, payload TEXT)')
         self.db.execute('CREATE TABLE IF NOT EXISTS actions(id TEXT PRIMARY KEY, task TEXT, payload TEXT)')
+        self.db.execute('CREATE TABLE IF NOT EXISTS checkpoints(task TEXT PRIMARY KEY, payload TEXT NOT NULL, updated REAL NOT NULL)')
         self.db.commit()
         if recover:
             with self.transaction():
                 for row in self.db.execute('SELECT id,payload FROM tasks').fetchall():
                     task = json.loads(row[1])
-                    if task['state'] not in TERMINAL:
+                    if task['state'] not in TERMINAL and task['state'] != 'queued':
                         task.update(state='interrupted', error='Bridge restarted; side effects were not replayed.')
                         self._save(task)
                 for row in self.db.execute('SELECT id,payload FROM actions').fetchall():
@@ -86,25 +87,33 @@ class TaskStore:
                 if row[1] != h:
                     raise Conflict('Idempotency key reused for a different task.')
                 return self.get(row[0])
-            if self.db.execute('SELECT count(*) FROM tasks').fetchone()[0] >= 256:
-                raise ValueError('Task retention limit reached; archive explicitly before adding work.')
-            task = dict(id=uuid4().hex, state='queued', created=time.time(), updated=time.time(),
+            if len(self.active()) >= 256:
+                raise ValueError('Active task limit reached; finish or cancel existing work before adding more.')
+            task = dict(id=uuid4().hex, key=key, state='queued', created=time.time(), updated=time.time(),
                         request=payload, events=[], result=None, error=None)
             self.db.execute('INSERT INTO tasks VALUES(?,?,?,?)', (task['id'], key, h, json.dumps(task)))
             return task
 
     def get(self, task_id):
         with self.lock:
-            row = self.db.execute('SELECT payload FROM tasks WHERE id=?', (task_id,)).fetchone()
+            row = self.db.execute('SELECT payload,key FROM tasks WHERE id=?', (task_id,)).fetchone()
             if row is None:
                 raise KeyError('Task not found.')
             task = json.loads(row[0])
+            task['key'] = row[1]
             task['actions'] = [json.loads(r[0]) for r in self.db.execute('SELECT payload FROM actions WHERE task=?', (task_id,))]
             return task
 
     def list(self):
         with self.lock:
             return [self.get(row[0]) for row in self.db.execute('SELECT id FROM tasks ORDER BY rowid DESC LIMIT 30').fetchall()]
+
+    def active(self):
+        with self.lock:
+            placeholders = ','.join('?' for _ in TERMINAL)
+            return [task for row in self.db.execute(
+                    f"SELECT id FROM tasks WHERE json_extract(payload,'$.state') NOT IN ({placeholders}) ORDER BY rowid", tuple(TERMINAL)).fetchall()
+                    if (task := self.get(row[0]))['state'] not in TERMINAL]
 
     def submission(self, key):
         with self.lock:
@@ -115,8 +124,7 @@ class TaskStore:
 
     def queued(self):
         with self.lock:
-            return [self.get(row[0]) for row in self.db.execute('SELECT id FROM tasks ORDER BY rowid').fetchall()
-                    if self.get(row[0])['state'] == 'queued']
+            return [self.get(row[0]) for row in self.db.execute("SELECT id FROM tasks WHERE json_extract(payload,'$.state')='queued' ORDER BY rowid").fetchall()]
 
     def event(self, task_id, text, *, state=None, result=None, error=None):
         with self.transaction():
@@ -135,8 +143,20 @@ class TaskStore:
                 task['error'] = str(error)[:500]
             self._save(task)
 
+    def progress(self, task_id, result):
+        """Save streamed response details without crowding out the event history."""
+        if len(json.dumps(result)) > 65536:
+            raise ValueError('Result exceeds limit.')
+        with self.transaction():
+            task = self.get(task_id)
+            if task['state'] in TERMINAL:
+                return
+            task.pop('actions')
+            task['result'] = result
+            self._save(task)
+
     def request_action(self, task_id, call_id, spec, arguments):
-        if set(spec) != {'name', 'target', 'hash', 'schema', 'remote'} or spec['target'] not in {'windows', 'karina', 'local'}:
+        if set(spec) != {'name', 'target', 'hash', 'schema', 'remote'} or spec['target'] not in {'windows', 'karina', 'local', 'mcp'}:
             raise ValueError('Invalid scoped capability.')
         if len(json.dumps(arguments)) > 32768:
             raise ValueError('Arguments exceed limit.')
@@ -153,7 +173,10 @@ class TaskStore:
                 raise ValueError('Task stopped or action budget exhausted.')
             # Repeated proposals use existing receipts, never duplicate effects.
             for previous in task['actions']:
-                trusted_read = spec['target']=='windows' and spec['remote'].get('retry_read') is True
+                trusted_read = (spec['target']=='windows' and spec['remote'].get('retry_read') is True) or (
+                    spec['target'] == 'local' and spec['name'] in {
+                        'local_read_file', 'local_list_dir', 'local_search_files', 'system_info',
+                        'web_search', 'web_fetch', 'skill_read', 'memory_search', 'history_search', 'agent_job'})
                 if previous['spec'] == spec and previous['arguments'] == arguments and not trusted_read:
                     return previous
             action = dict(id=action_id, task=task_id, state='pending', spec=spec,
@@ -169,11 +192,13 @@ class TaskStore:
                 raise KeyError('Action not found.')
             return json.loads(row[0])
 
-    def settle(self, action_id, state, receipt=None):
+    def settle(self, action_id, state, receipt=None, *, expected_hash=None):
         if state not in {'dispatching', 'rejected', 'fulfilled', 'uncertain'}:
             raise ValueError('Invalid action transition.')
         with self.transaction():
             action = self.action(action_id)
+            if expected_hash is not None and digest(action) != expected_hash:
+                raise Conflict('Action changed; review the current request before deciding.')
             task = self.get(action['task'])
             if action['state'] in {'fulfilled', 'rejected', 'uncertain'}:
                 if action['state'] == state and action['receipt'] == receipt:
@@ -189,11 +214,60 @@ class TaskStore:
                 raise Conflict('Execution must be claimed before reporting a receipt.')
             action.update(state=state, receipt=receipt)
             self._action_save(action)
+            if task['state'] not in TERMINAL and state in {'fulfilled', 'rejected', 'uncertain'}:
+                if not any(a['id'] != action_id and a['state'] == 'pending' for a in task['actions']):
+                    self.event(task['id'], 'Capability returned a receipt.', state='running')
             return action
 
     def cancel(self, task_id):
         self.event(task_id, 'Cancellation requested; completed effects are retained.', state='cancelled')
+        for task in self.active():
+            if (task['request'].get('context') or {}).get('parent_task_id') == task_id:
+                self.cancel(task['id'])
         return self.get(task_id)
+
+    def worker_lost(self, task_id):
+        """Seal unresolved receipts after the owned worker process has exited."""
+        for action in self.get(task_id)['actions']:
+            if action['state'] == 'dispatching':
+                self.settle(action['id'], 'uncertain', {'ok': False, 'error': 'Worker exited before acknowledgment; do not replay.', 'effects': 'unknown', 'retryable': False})
+
+    def checkpoint(self, task_id, payload=None):
+        """A private working context, separate from personal notes and chat history.
+
+        Checkpoints are inspectable recovery evidence, never automatic write replay.
+        """
+        if payload is None:
+            with self.lock:
+                row = self.db.execute('SELECT payload FROM checkpoints WHERE task=?', (task_id,)).fetchone()
+                return json.loads(row[0]) if row else None
+        from ..logs.redaction import redact_value
+        wire = json.dumps(redact_value(payload), allow_nan=False)
+        if len(wire) > 2000000:
+            raise ValueError('Working context exceeds checkpoint limit.')
+        with self.transaction():
+            self.db.execute('INSERT OR REPLACE INTO checkpoints VALUES(?,?,?)', (task_id, wire, time.time()))
+
+    def background_results(self, task_id):
+        """Return bounded child summaries to the owning parent/conversation only."""
+        owner = self.get(task_id)
+        conversation = owner['request']['context'].get('conversation_id')
+        results = []
+        with self.lock:
+            rows = self.db.execute("SELECT id FROM tasks WHERE json_extract(payload,'$.request.context.parent_task_id') IS NOT NULL ORDER BY rowid").fetchall()
+            for (child_id,) in rows:
+                child = self.get(child_id)
+                parent_id = child['request']['context'].get('parent_task_id')
+                if not parent_id or child['state'] not in TERMINAL:
+                    continue
+                parent = self.get(parent_id)
+                if parent_id != task_id and (not conversation or parent['request']['context'].get('conversation_id') != conversation):
+                    continue
+                result = child.get('result') or {}
+                results.append({'job_id': child_id, 'state': child['state'],
+                                'summary': result.get('model_claims', '')[:3000], 'error': child.get('error'),
+                                'receipt_ids': [a['id'] for a in child['actions']]})
+        return results[-4:]
 
     def close(self):
         self.db.close()

@@ -3,6 +3,8 @@ import json
 from pathlib import Path
 import shutil
 import unittest
+import tempfile
+from unittest.mock import patch
 from uuid import uuid4
 from scripts.campaign4_verification.executor import PRIVATE, run_case
 from scripts.campaign4_verification.scoring import evaluate
@@ -14,8 +16,17 @@ def fixture(key, controls=None, faults=None, steps=None):
 
 class IndependentExecutorTests(unittest.TestCase):
 
+    def setUp(self):
+        self._temporary = tempfile.TemporaryDirectory(prefix='hanni-campaign4-')
+        self.addCleanup(self._temporary.cleanup)
+        self.root = Path(self._temporary.name)
+        for scoped in (patch.dict('os.environ', {'PYTEST_HANNI_CAMPAIGN4_ROOT': str(self.root)}),
+                       patch('scripts.campaign4_verification.executor.PRIVATE', self.root)):
+            scoped.start()
+            self.addCleanup(scoped.stop)
+
     def run_exposed(self, case):
-        root = PRIVATE / 'harness-tests' / str(uuid4())
+        root = self.root / str(uuid4())
         return run_case(case, root)
 
     def test_original_artifact_has_authorized_stable_effect_receipt(self):

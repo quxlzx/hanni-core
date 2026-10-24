@@ -30,59 +30,76 @@ class Bridge:
         self.worker_command = worker_command or [python, '-m', 'hanni.hermes.worker']
         self.stop = threading.Event()
         self.child = None
+        self.children = {}
         self.lock = threading.RLock()
         self.thread = threading.Thread(target=self.run_queue, name='hermes-task-worker', daemon=True)
 
     def run_queue(self):
         while not self.stop.wait(.25):
-            rows = self.store.queued()
-            for task in rows:
-                if task['state'] != 'queued':
+            with self.lock:
+                for task_id, (process, deadline, lane) in list(self.children.items()):
+                    stopped = self.store.get(task_id)['state'] in TERMINAL
+                    if process.poll() is None and (stopped or time.monotonic() > deadline):
+                        self._kill_process(process)
+                        if not stopped:
+                            self.store.event(task_id, 'Worker time limit reached.', state='uncertain', error='Review receipts; no effects replayed.')
+                    if process.poll() is not None:
+                        self.store.worker_lost(task_id)
+                        if self.store.get(task_id)['state'] not in TERMINAL:
+                            self.store.event(task_id, 'Worker exited without a final receipt.', state='interrupted')
+                        del self.children[task_id]
+                from ..native.model_settings import ModelSettings
+                if ModelSettings.from_env().pending():
                     continue
-                snapshot = self.root/'active-catalog.json'
-                snapshot.write_text(json.dumps(self.catalog.snapshot()))
-                with self.lock:
-                    if self.stop.is_set() or self.store.get(task['id'])['state'] != 'queued':
-                        break
-                    werr = open(self.root/'worker-stderr.log', 'ab')
-                    if os.name == 'nt':
-                        self.child = subprocess.Popen([*self.worker_command,
-                            str(self.root/'tasks.sqlite3'), task['id'], str(snapshot)],
-                            stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=werr,
-                            creationflags=subprocess.CREATE_NEW_PROCESS_GROUP)
-                    else:
-                        self.child = subprocess.Popen([*self.worker_command,
-                            str(self.root/'tasks.sqlite3'), task['id'], str(snapshot)],
-                            stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=werr,
-                            start_new_session=True)
-                deadline = time.monotonic()+900
-                while self.child.poll() is None:
-                    if self.stop.wait(.2) or self.store.get(task['id'])['state'] in TERMINAL or time.monotonic() > deadline:
-                        self.kill_child()
-                        if self.store.get(task['id'])['state'] not in TERMINAL:
-                            self.store.event(task['id'], 'Worker time limit reached.', state='uncertain', error='Review receipts; no effects replayed.')
-                        break
-                self.child.wait(timeout=5)
-                if self.store.get(task['id'])['state'] not in TERMINAL:
-                    self.store.event(task['id'], 'Worker exited without a final receipt.', state='interrupted')
-                with self.lock:
-                    self.child = None
-                break
+                # Reserve foreground capacity even when background work needs approval.
+                limits = {'foreground': 1, 'background': 1, 'delegated': 2}
+                for task in self.store.queued():
+                    ctx = task['request'].get('context') or {}
+                    lane = ('delegated' if ctx.get('parent_task_id') else
+                            'foreground' if task['key'].startswith('chat-') else 'background')
+                    if sum(row[2] == lane for row in self.children.values()) >= limits[lane]:
+                        continue
+                    if self.stop.is_set() or self.store.get(task['id'])['state'] != 'queued' or task['id'] in self.children:
+                        continue
+                    snapshot = self.root / ('catalog-' + task['id'] + '.json')
+                    try:
+                        snapshot.write_text(json.dumps(self.catalog.snapshot()))
+                        self.store.event(task['id'], 'Worker admitted in ' + lane + ' lane.', state='running')
+                        with open(self.root/'worker-stderr.log', 'ab') as werr:
+                            flags = ({'creationflags': subprocess.CREATE_NEW_PROCESS_GROUP}
+                                     if os.name == 'nt' else {'start_new_session': True})
+                            process = subprocess.Popen([*self.worker_command,
+                                str(self.root/'tasks.sqlite3'), task['id'], str(snapshot)],
+                                stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=werr, **flags)
+                        self.children[task['id']] = (process, time.monotonic() + 900, lane)
+                    except OSError as exc:
+                        self.store.event(task['id'], 'Worker could not start.', state='failed', error=type(exc).__name__)
+                self.child = next((row[0] for row in self.children.values()), None)
 
     def kill_child(self):
         with self.lock:
-            if self.child is not None and self.child.poll() is None:
+            processes = {row[0] for row in self.children.values()}
+            if self.child is not None:
+                processes.add(self.child)
+            for process in processes:
+                self._kill_process(process)
+
+    def _kill_process(self, process):
+        if process.poll() is None:
+            if os.name == 'nt':
+                # Kill only this owned worker and its descendants.
+                subprocess.run(['taskkill', '/T', '/F', '/PID', str(process.pid)],
+                               capture_output=True, timeout=5)
+            else:
+                os.killpg(process.pid, signal.SIGTERM)
+            try:
+                process.wait(timeout=3)
+            except subprocess.TimeoutExpired:
                 if os.name == 'nt':
-                    # kill the whole process tree; CREATE_NEW_PROCESS_GROUP roots it at the child
-                    subprocess.run(['taskkill', '/T', '/F', '/PID', str(self.child.pid)],
-                                   capture_output=True, timeout=5)
+                    process.kill()
                 else:
-                    os.killpg(self.child.pid, signal.SIGTERM)
-                try:
-                    self.child.wait(timeout=3)
-                except subprocess.TimeoutExpired:
-                    os.killpg(self.child.pid, signal.SIGKILL)
-                    self.child.wait(timeout=3)
+                    os.killpg(process.pid, signal.SIGKILL)
+                process.wait(timeout=3)
 
     def dispatch(self, method, path, body):
         if method == 'POST' and path == '/tasks/cancel_many':
@@ -98,29 +115,51 @@ class Bridge:
             return receive(body, self.shared_root)
         if method == 'GET' and path == '/health':
             return {'protocol': 1, 'ready': not self.stop.is_set(), 'gateway_started': False}
+        if method == 'GET' and path == '/activity':
+            with self.lock:
+                return {'tasks': [{'id': task['id'], 'state': task['state']} for task in self.store.active()],
+                        'worker_running': any(row[0].poll() is None for row in self.children.values()),
+                        'workers': [{'task_id': task_id, 'lane': row[2], 'pid': row[0].pid}
+                                    for task_id, row in self.children.items()]}
+        if method == 'GET' and path in {'/model', '/v1/health'}:
+            from ..native.provider import load_model, NativeClient
+            status = NativeClient(load_model()).status()
+            return status if path == '/model' else {'status': 'ok' if status['ready'] else status['state']}
         if method == 'GET' and path == '/tools':
             from ..native.local_tools import local_tool_specs
             return {'tools': [{'name': t['name'],
                                'description': t['schema']['function']['description']}
                               for t in local_tool_specs()]}
         if method == 'GET' and path == '/tasks':
-            return {'tasks': self.store.list()}
+            with self.lock:
+                return {'tasks': self.store.list()}
+        if method == 'GET' and path.startswith('/actions/'):
+            return self.store.action(path.split('/')[2])
         if method == 'GET' and path.startswith('/submissions/'):
             return self.store.submission(path.split('/')[2])
         if method == 'POST' and path == '/tasks':
-            task = body['task']
-            if os.environ.get('HANNI_AUTO_APPROVE') == '1':
-                # Hermes-like: tools run without an approval freeze. The
-                # denylist, workspace jail and SSRF guard still apply —
-                # only the human-approval ceremony is skipped.
-                ctx = task.setdefault('context', {})
-                ctx.setdefault('local_runtime', {})['auto_approve'] = ['*']
-            return self.store.submit(body['key'], task)
+            with self.lock:
+                from ..native.model_settings import ModelSettings
+                if ModelSettings.from_env().pending():
+                    raise ValueError('A model change is in progress. Wait for the model to reconnect.')
+                task = body['task']
+                if os.environ.get('HANNI_AUTO_APPROVE') == '1':
+                    # Policy remains enforced at the actual tool boundary.
+                    ctx = task.setdefault('context', {})
+                    ctx.setdefault('local_runtime', {})['auto_approve'] = ['*']
+                return self.store.submit(body['key'], task)
         if method == 'GET' and path.startswith('/tasks/'):
+            if path.endswith('/context'):
+                task_id = path.split('/')[2]
+                self.store.get(task_id)  # preserve NOT_FOUND semantics
+                return {'task_id': task_id, 'checkpoint': self.store.checkpoint(task_id),
+                        'automatic_effect_replay': False}
             return self.store.get(path.split('/')[2])
         if method == 'POST' and path.endswith('/cancel') and path.startswith('/tasks/'):
             return self.store.cancel(path.split('/')[2])
         if method == 'POST' and path.startswith('/actions/'):
+            if set(body) - {'state', 'receipt', 'expected_hash'}:
+                raise ValueError('Invalid action decision fields.')
             if body['state'] == 'dispatching':
                 action = self.store.action(path.split('/')[2])
                 if action['spec']['target'] == 'karina':
@@ -131,7 +170,7 @@ class Bridge:
                                     and snapshot['connection_approvals'].get(item['name']) == connection_hash(item) for item in snapshot['entries'])
                     if not permitted:
                         raise Conflict('Remote server disabled, removed, or changed; execution blocked.')
-            return self.store.settle(path.split('/')[2], body['state'], body.get('receipt'))
+            return self.store.settle(path.split('/')[2], body['state'], body.get('receipt'), expected_hash=body.get('expected_hash'))
         if path == '/catalog':
             if method == 'GET':
                 return self.catalog.snapshot()
@@ -166,7 +205,7 @@ class Bridge:
         self.store.close()
 
 
-INDEX_HTML = """<!doctype html><html><head><meta charset="utf-8">
+INDEX_HTML = r"""<!doctype html><html><head><meta charset="utf-8">
 <title>HANNI — stick</title><meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
  body{background:#0d0f14;color:#e8e6f0;font-family:system-ui,sans-serif;margin:0;
@@ -199,7 +238,7 @@ const log=document.getElementById('log'), t=document.getElementById('t'),
 const api=(m,p,body)=>fetch(BASE+p,{method:m,headers:{Authorization:'Bearer '+TOKEN,
       'Content-Type':'application/json'},body:body?JSON.stringify(body):null})
       .then(r=>{if(!r.ok)throw new Error(r.status);return r.json()});
-function md(s){const esc=s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+function md(s){const esc=s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
  return esc.replace(/`([^`\n]+)`/g,'<code>$1</code>')
    .replace(/\*\*([^*\n]+)\*\*/g,'<b>$1</b>')
    .replace(/(^|\W)\*([^*\n]+)\*(?=\W|$)/g,'$1<i>$2</i>')
@@ -238,6 +277,12 @@ class Handler(BaseHTTPRequestHandler):
 
     def handle_request(self, method):
         bridge = self.server.bridge
+        hosts = {f'127.0.0.1:{self.server.server_port}', f'localhost:{self.server.server_port}'}
+        origin = self.headers.get('Origin')
+        if (self.headers.get('Host') not in hosts or self.headers.get('Sec-Fetch-Site') == 'cross-site'
+                or origin and origin not in {'http://' + host for host in hosts}):
+            self.send_error(403, 'Cross-origin bridge access is refused.')
+            return
         if method == 'GET' and self.path in ('/', '/index.html'):
             # The stick's front door: a chat page with the token embedded.
             # The bridge binds loopback-only, so the page is reachable only

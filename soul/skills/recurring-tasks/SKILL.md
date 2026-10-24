@@ -30,10 +30,10 @@ package on the path: prefix with `set PYTHONPATH=src&& ` (Windows) or
 # hourly GPU/heat watch that only speaks up when something is wrong
 python3 -m hanni.native.cron --root state add \
   --prompt "Run system_info; if RAM usage > 90% or disk free < 10GB, append a warning line with timestamp to reports/alerts.log, otherwise do nothing." \
-  --interval 3600 --auto-approve system_info local_append_file
+  --interval 3600 --auto-approve system_info,local_append_file
 ```
 
-Minimum interval is 300s. `--auto-approve a,b,c` pre-authorizes only the
+Minimum interval is 60s. `--auto-approve a,b,c` pre-authorizes only the
 named tools for that job (receipts carry `approved_by: task_policy`);
 `--auto-approve-all` pre-authorizes everything the task requests.
 

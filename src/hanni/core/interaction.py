@@ -14,6 +14,9 @@ class InteractionState:
         self.foreground_requests = 0
         self.response_in_progress = False
         self.voice_engaged = False
+        self.speech_muted = False
+        self.speech_mute_revision = 0
+        self.wake_enabled = True
         self.voice_mode_session = uuid4().hex
         self.voice_mode_revision = 0
         self.voice_mode_events = deque(maxlen=32)
@@ -33,6 +36,7 @@ class InteractionState:
                         tts_preparing=bool(self.synthesizing),
                         tts_playback_active=bool(self.playback and self.playback.active),
                         voice_engaged=self.voice_engaged,
+                        speech_muted=self.speech_muted, wake_enabled=self.wake_enabled,
                         foreground_request_active=self.foreground_requests > 0,
                         active_background_jobs=self.active_background_jobs)
 
@@ -43,6 +47,24 @@ class InteractionState:
                 self.voice_engaged = value
                 self.voice_mode_revision += 1
                 self.voice_mode_events.append({'revision': self.voice_mode_revision, 'engaged': value})
+
+    def mute_speech(self, muted):
+        with self.condition:
+            if self.speech_muted != bool(muted):
+                self.speech_mute_revision += 1
+            self.speech_muted = bool(muted)
+            if muted:
+                if self.playback is not None:
+                    self.playback.stop()
+                self._stop_completion()
+
+    def cancel_response(self):
+        with self.condition:
+            if self.response_cancel_event is not None:
+                self.response_cancel_event.set()
+            if self.playback is not None:
+                self.playback.stop()
+            self._stop_completion()
 
     def voice_modes(self):
         with self.condition:
@@ -94,7 +116,7 @@ class InteractionState:
         # A new foreground turn cancels ONLY completion speech, never owner speech.
         with self.condition:
             state = self.snapshot()
-            if (self.speaker and state['voice_engaged'] and not self.closed and
+            if (self.speaker and not self.speech_muted and state['voice_engaged'] and not self.closed and
                 not any(state[k] for k in ('response_in_progress', 'tts_speaking', 'foreground_request_active'))):
                 try:
                     self.completion_playback = self.speaker(summary[:240])

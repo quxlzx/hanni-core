@@ -134,6 +134,7 @@ class VoiceControl:
             return {'available': available, 'state': phase, 'active': available,
                     'listening_mode': bool(available and not paused and state['voice_engaged']),
                     **mode_snapshot,
+                    'speech_muted': state['speech_muted'], 'wake_enabled': state['wake_enabled'],
                     'muted': muted, 'microphone_active': bool(available and not paused and measured['microphone_active']),
                     'input_level': measured['input_level'] if available and not paused else 0,
                     'speaking': speaking, 'processing': processing,
@@ -149,6 +150,26 @@ class VoiceControl:
                 or body['action'] not in {'listen', 'mute', 'unmute', 'interrupt'}):
             raise ValueError('Choose a supported voice action and request ID.')
         return self.ledger.execute(body['id'], body, lambda: self._apply(body['action']))
+
+    def command(self, name, enabled):
+        if name == 'mute':
+            interaction.mute_speech(enabled)
+        elif name == 'wake':
+            with self.lock, interaction.condition:
+                interaction.wake_enabled = enabled
+                if not enabled and self.classifier is not None:
+                    self.classifier.clear_engagement()
+                    interaction.engaged(False)
+        elif name == 'voice':
+            with self.lock:
+                if enabled:
+                    self._apply('unmute')
+                    self._apply('listen')
+                else:
+                    interaction.cancel_response()
+                    if self.pump is not None and not self.pump.closed:
+                        self._apply('mute')
+        return self.snapshot()
 
     def transcript_observed(self, record, wake):
         with self.lock:

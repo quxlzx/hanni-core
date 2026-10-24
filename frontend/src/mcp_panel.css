@@ -1,0 +1,244 @@
+.hc-mcp-panel {
+  max-width: 900px;
+}
+.hc-mcp-panel > header {
+  align-items: flex-start;
+}
+.hc-mcp-panel .hc-mcp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.hc-mcp-actions button,
+.hc-mcp-panel .hc-mcp-primary {
+  min-height: 34px;
+  background: #242424;
+  border-color: #474747;
+}
+.hc-mcp-panel .hc-mcp-primary {
+  background: #e0e0e0;
+  color: #161616;
+  border-color: transparent;
+  font-weight: 550;
+}
+.hc-mcp-panel .hc-mcp-primary:hover:not(:disabled) {
+  background: #fff;
+  color: #111;
+}
+.hc-mcp-panel .hc-mcp-primary:disabled {
+  color: #333;
+}
+.hc-mcp-policy,
+.hc-mcp-hint,
+.hc-mcp-endpoint {
+  color: var(--muted);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.hc-mcp-notice {
+  margin-block: 16px;
+}
+.hc-mcp-panel .hc-panel-empty button {
+  margin-top: 20px;
+}
+.hc-mcp-editor {
+  margin: 30px 0 40px;
+  padding: 24px 0;
+  border-block: 1px solid var(--line);
+  max-width: 650px;
+}
+.hc-mcp-editor h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.hc-mcp-editor fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.hc-mcp-editor label {
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 550;
+  margin-bottom: 18px;
+}
+.hc-mcp-editor label span,
+.hc-mcp-editor small {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 11px;
+}
+.hc-mcp-editor input,
+.hc-mcp-editor select,
+.hc-mcp-editor textarea {
+  width: 100%;
+  background: #1b1b1b;
+  border-color: #474747;
+  padding: 9px 11px;
+  font-weight: 400;
+  min-height: 39px;
+}
+.hc-mcp-editor input::placeholder,
+.hc-mcp-editor textarea::placeholder {
+  color: #aaa;
+}
+.hc-mcp-editor textarea {
+  resize: vertical;
+  font-family: var(--mono);
+  font-size: 12px;
+  max-height: 450px;
+}
+.hc-mcp-editor .hc-mcp-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-weight: 400;
+  margin-top: 18px;
+}
+.hc-mcp-editor input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  min-height: 0;
+  padding: 0;
+  margin: 3px 0 0;
+  flex-shrink: 0;
+}
+.hc-mcp-editor .hc-mcp-timeout {
+  max-width: 190px;
+}
+.hc-mcp-editor details {
+  margin: 18px 0 24px;
+}
+.hc-mcp-editor details label {
+  margin-top: 12px;
+}
+.hc-mcp-editor .hc-mcp-hint {
+  font-size: 11px;
+  line-height: 1.7;
+  margin: -9px 0 18px;
+}
+.hc-mcp-preview {
+  margin: 16px 0;
+  font-size: 12px;
+}
+.hc-mcp-servers {
+  margin-top: 30px;
+}
+.hc-mcp-server {
+  padding: 24px 0 32px;
+  border-top: 1px solid var(--line);
+}
+.hc-mcp-server > header h2 {
+  font-size: 18px;
+}
+.hc-mcp-server > header p {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 4px;
+}
+.hc-mcp-endpoint {
+  margin: 12px 0;
+  font-family: var(--mono);
+  font-size: 11px;
+}
+.hc-mcp-server > .hc-error-text {
+  margin: 10px 0;
+}
+.hc-mcp-tools {
+  margin-top: 22px;
+}
+.hc-mcp-tools summary,
+.hc-mcp-editor summary {
+  cursor: pointer;
+  color: #c8c8c8;
+  font-size: 12px;
+}
+.hc-mcp-tool {
+  padding: 20px 0;
+  margin-left: 12px;
+  border-bottom: 1px solid #292929;
+}
+.hc-mcp-tool-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.hc-mcp-tool-heading h3 {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.hc-mcp-tool-heading span {
+  color: var(--muted);
+  font-size: 10px;
+  flex-shrink: 0;
+}
+.hc-mcp-tool > p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 8px;
+}
+.hc-mcp-tool > details {
+  margin-top: 12px;
+}
+.hc-mcp-tool details p {
+  font-size: 12px;
+  margin: 10px 0;
+  overflow-wrap: anywhere;
+}
+.hc-mcp-tool pre {
+  overflow: auto;
+  max-height: 250px;
+  border: 1px solid #353535;
+  background: #171717;
+  padding: 12px;
+  border-radius: 7px;
+  font: 11px/1.7 var(--mono);
+}
+.hc-mcp-tool-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.hc-mcp-tool-controls label {
+  display: grid;
+  gap: 5px;
+  font-size: 10px;
+  color: var(--muted);
+}
+.hc-mcp-tool-controls select {
+  min-width: 150px;
+  font-size: 12px;
+  background: #1b1b1b;
+}
+.hc-mcp-remove {
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid #61504b;
+  border-radius: 8px;
+  font-size: 12px;
+}
+.hc-mcp-remove button {
+  margin: 10px 8px 0 0;
+}
+@media (max-width: 760px) {
+  .hc-mcp-panel > header {
+    flex-wrap: wrap;
+  }
+  .hc-mcp-panel > header .hc-mcp-actions {
+    width: 100%;
+  }
+  .hc-mcp-tool-heading {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .hc-mcp-tool {
+    margin-left: 0;
+  }
+}

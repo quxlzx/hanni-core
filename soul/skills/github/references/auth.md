@@ -73,7 +73,7 @@ git config --global credential.helper 'cache --timeout=28800'
 
 ```bash
 # Embed token in the remote URL (avoids credential prompts entirely)
-git remote set-url origin https://<username>:<token>@github.com/<owner>/<repo>.git
+git remote set-url origin https://github.com/<owner>/<repo>.git
 ```
 
 **Step 3: Configure git identity**

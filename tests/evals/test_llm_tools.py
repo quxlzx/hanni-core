@@ -352,8 +352,8 @@ def test_client_preserves_server_usage_for_tool_and_final_turns():
 def test_catalog_preserves_150_cases_and_adds_email_registry_coverage():
     host = build_default_host()
     cases = load_scenarios()
-    assert len(cases) == 194
-    original = [c for c in cases if not c['id'].startswith('GOOGLE-LAYER-')]
+    assert len(cases) == 200
+    original = [c for c in cases if not c['id'].startswith(('GOOGLE-LAYER-', 'HARNESS-LAYER-'))]
     assert len([c for c in original if c['family'] != 'email']) == 150
     assert {c['family'] for c in original} == {'diagnostics', 'direct_system', 'calendar', 'applications_spotify', 'files_search', 'hanni_model', 'mixed_domain', 'conversation', 'safety', 'email'}
     for case in cases:
@@ -362,8 +362,8 @@ def test_catalog_preserves_150_cases_and_adds_email_registry_coverage():
 
 def test_entire_corpus_routes_and_has_mock_results_for_every_exposed_tool():
     audit = audit_scenarios(build_default_host(), load_scenarios())
-    assert audit['total_scenarios'] == 194
-    assert audit['registered_capabilities'] == 172
+    assert audit['total_scenarios'] == 200
+    assert audit['registered_capabilities'] == 175
     assert audit['corpus_failures'] == []
 
 def test_alternate_single_model_config_profile_is_eval_selectable(tmp_path):

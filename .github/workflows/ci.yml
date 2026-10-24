@@ -22,7 +22,7 @@ jobs:
       - name: Build and check shipped frontend
         run: |
           npm ci --prefix frontend
-          node --test frontend/tests/*.test.ts
+          node --test frontend/tests/*.test.ts frontend/tests/*.test.mjs
           npm run build --prefix frontend
           git diff --exit-code -- src/hanni/dashboard/static
 
@@ -50,7 +50,15 @@ jobs:
           .venv/Scripts/python.exe -m pip install -e ".[dev,ui-test]"
 
       - name: Run tests
-        run: .venv/Scripts/python.exe -m pytest -q
+        run: .venv/Scripts/python.exe scripts/test_assistant_harness.py --coverage --output .pytest-work/assistant-harness/ci
+
+      - name: Retain assistant harness evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: assistant-harness-${{ matrix.python-version }}
+          path: .pytest-work/assistant-harness/ci
+          include-hidden-files: true
 
   build:
     runs-on: windows-latest

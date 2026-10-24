@@ -42,7 +42,20 @@ def bridge_proxy(method: str, path: str, body: dict | None = None) -> dict:
 
 
 def cron_root() -> Path:
-    return Path(os.environ.get("HANNI_CRON_ROOT", str(Path.home() / "hanni-cron" / "state")))
+    default = (Path(os.environ["HANNI_BRIDGE_TOKEN_FILE"]).parent
+               if os.environ.get("HANNI_BRIDGE_TOKEN_FILE") else Path.home() / "hanni-cron" / "state")
+    return Path(os.environ.get("HANNI_CRON_ROOT", str(default)))
+
+
+def bridge_decision(action_id: str, body: dict) -> dict:
+    if set(body) != {"state"} or body['state'] not in {'dispatching', 'rejected'}:
+        raise ValueError('Approve or deny the action; execution receipts come from the worker.')
+    action = bridge_proxy('GET', '/actions/' + action_id)
+    if action.get('error'):
+        return action
+    if body['state'] == 'dispatching' and action['spec']['target'] not in {'local', 'mcp'}:
+        raise ValueError('This capability requires its registered HANNI execution controller.')
+    return bridge_proxy('POST', '/actions/' + action_id, body)
 
 
 def cron_jobs() -> dict:
@@ -72,6 +85,6 @@ def cron_set(job_id: str, enabled: bool) -> dict:
 
 
 def skills_list() -> dict:
-    from hanni.native.skills import load_skills
+    from hanni.native.skill_store import SkillStore
     return {"skills": [{"name": s["name"], "description": s["description"],
-                        "triggers": s["triggers"][:8]} for s in load_skills()]}
+                        "triggers": s["triggers"][:8]} for s in SkillStore(cron_root()).catalog()]}

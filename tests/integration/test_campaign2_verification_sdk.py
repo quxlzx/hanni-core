@@ -16,7 +16,7 @@ def owned_sdk(tmp_path_factory):
     hub.close()
 
 def save_receipt(hub, label, **extra):
-    out = Path('data/campaign2-verifier/sdk-stdio')
+    out = hub.path / 'verification-receipts'
     out.mkdir(parents=True, exist_ok=True)
     record = {'scope': 'Actual original MCP Manager and installed SDK stdio transport; controlled local fixture data, no resident model.', 'initialization': hub.initialization, 'snapshot': hub.manager.snapshot(), 'events': hub.events(), 'base_count': hub.base_count, **extra}
     (out / f'{label}.json').write_text(json.dumps(record, indent=2) + '\n', encoding='utf8')

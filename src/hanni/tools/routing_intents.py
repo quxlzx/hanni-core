@@ -505,6 +505,14 @@ def independent_observations(text: str) -> tuple[str, ...]:
 
 def specific_menu(text: str) -> tuple[str, ...]:
     text = normalize(text)
+    # These explicit source requests must not degrade to a similarly worded
+    # local diagnostic or clipboard observation. Eligibility still applies.
+    if re.search(r'\b(?:web search|search (?:the )?(?:public )?web)\b', text):
+        return ('web.search',)
+    if re.search(r'\b(?:capture|read|recognize)\b.*\b(?:screen|desktop)\b.*\btext\b', text):
+        return ('screen.read_text',)
+    if re.search(r'\b(?:create|save)\b.*\b(?:persistent |one.?time )?reminder\b', text):
+        return ('reminder.create',)
     # Narrow operation/object pairs take precedence over broad nouns such as
     # "task", "capacity", and "storage". They do not authorize execution.
     if re.search(r'\b(?:process|pid|program|app)\b',text) and re.search(r'\b(?:uptime|how long|since|started)\b',text):

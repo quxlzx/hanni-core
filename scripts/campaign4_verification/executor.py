@@ -29,7 +29,7 @@ from hanni.workflows.store import WorkflowStore
 from hanni.workflows.types import TERMINAL, WorkflowLimits
 from scripts.campaign4.workflow_harness import expand, setup_environment
 ROOT = Path(__file__).resolve().parents[2]
-PRIVATE = (ROOT / 'data/campaign4-verifier').resolve()
+PRIVATE = Path(os.environ.get('PYTEST_HANNI_CAMPAIGN4_ROOT', ROOT / 'data/campaign4-verifier')).resolve()
 
 def durable(path, value):
     path = Path(path)

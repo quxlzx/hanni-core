@@ -209,6 +209,7 @@ def _run_launcher(args, restart_event):
     shutdown_event = threading.Event()
     serving = None
     workflow_session = None
+    native_chat = None
     try:
         config = load_config(args.config_dir, data_dir=args.data_dir)
         from hanni.models.manager import ModelManager, install as install_manager
@@ -257,6 +258,10 @@ def _run_launcher(args, restart_event):
                 args=(args.desktop_alive, shutdown_event, chat),
                 name='hanni-desktop-lifetime', daemon=True).start()
         if args.dashboard_only:
+            if os.environ.get('HANNI_BRIDGE_URL'):
+                from hanni.dashboard.native_chat import NativeChat
+                native_chat = NativeChat(chat, shutdown_event)
+                native_chat.start()
             shutdown_event.wait()
             return 0
         if args.reuse_model and not create_client(config).health().ok:
@@ -306,6 +311,8 @@ def _run_launcher(args, restart_event):
     finally:
         shutdown_event.set()
         activity.enabled = False
+        if native_chat is not None:
+            native_chat.close()
         # Stop admissions and fence results before closing the model/controller.
         workflows = getattr(server, 'workflows', None)
         from hanni.dashboard.workflows import close_workflows_for_cleanup

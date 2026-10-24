@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 def test_raw_digest_contract_migration_changes_only_synthetic_metadata():
     source = ROOT / 'evals/llm_tools/capability_coverage_v2.jsonl'
-    target = ROOT / DEFAULT_COVERAGE_CASES
+    target = ROOT / 'evals/llm_tools/capability_coverage_v3.jsonl'
     manifest = json.loads((target.parent / 'capability_coverage_v3_migration.json').read_text())
     assert hashlib.sha256(source.read_bytes()).hexdigest() == manifest['source_sha256']
     assert hashlib.sha256(target.read_bytes()).hexdigest() == manifest['target_sha256']

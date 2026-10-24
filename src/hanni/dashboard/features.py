@@ -250,7 +250,7 @@ class DesktopFeatures:
         retention = self.config.privacy.retention.screen_frames_seconds if self.config else None
         return {'available': False, 'capture_active': False, 'enabled': False,
                 'context_available': False, 'expires_at': None, 'retention_seconds': retention,
-                'reason': 'This repository has no registered screen-capture or vision pipeline. No screen is being captured.',
+                'reason': 'No background screen capture is active. Use /screen for one explicit capture and local text recognition.',
                 'actions': {'enable': False, 'disable': False, 'analyze': False}}
 
     def notifications(self, *, telemetry, cluster, contract):

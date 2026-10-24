@@ -10,7 +10,7 @@ from pathlib import Path
 from hanni.evals.llm_tools import audit_scenarios, corpus_sha256, load_scenarios
 from hanni.evals.routing import build_default_host
 
-DEFAULT_COVERAGE_CASES = Path('evals/llm_tools/capability_coverage_v3.jsonl')
+DEFAULT_COVERAGE_CASES = Path('evals/llm_tools/capability_coverage_v4.jsonl')
 
 
 def fixture_for(definition):

@@ -28,11 +28,11 @@ class ToolAuditLog:
             "ok": bool(result.ok) if result is not None else False,
             "message": ("[EXTERNAL MCP RESULT]" if definition.name.startswith('mcp.') else
                         "[PRIVATE GOOGLE RESULT]" if definition.name.startswith(('email.', 'gmail.', 'google.', 'google_calendar.'))
-                        else "[PRIVATE TOOL RESULT]" if definition.name.startswith('note.') or definition.name == 'powershell.run'
+                        else "[PRIVATE TOOL RESULT]" if definition.name.startswith('note.') or definition.name in {'powershell.run', 'notify.toast'}
                         else redact_value(result.message)) if result is not None else None,
             "duration_ms": result.duration_ms if result is not None else duration_ms,
             "error": ('[EXTERNAL MCP ERROR]' if definition.name.startswith('mcp.') else
-                      '[PRIVATE TOOL ERROR]' if definition.name.startswith('note.') or definition.name == 'powershell.run'
+                      '[PRIVATE TOOL ERROR]' if definition.name.startswith('note.') or definition.name in {'powershell.run', 'notify.toast'}
                       else redact_value(str(error))) if error is not None else None,
         }
         if request.correlation_id is not None:
@@ -54,6 +54,10 @@ class ToolAuditLog:
 
 
 def _audit_arguments(tool_name: str, arguments: Mapping[str, Any]) -> Mapping[str, Any]:
+    if tool_name == 'notify.toast':
+        return {key: '[PRIVATE NOTIFICATION]' for key in arguments}
+    if tool_name.startswith('reminder.'):
+        return {key: '[PRIVATE REMINDER]' for key in arguments}
     safe = dict(arguments)
     if tool_name.startswith('mcp.'):
         return {key: '[EXTERNAL MCP ARGUMENT]' for key in safe}

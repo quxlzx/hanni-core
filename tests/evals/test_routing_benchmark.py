@@ -18,7 +18,7 @@ def test_routing_corpus_preserves_750_original_cases_and_expands_registry_covera
     cases = load_cases(CASES)
     assert len(cases) >= 1050
     assert len({case.id for case in cases}) == len(cases)
-    original = [c for c in cases if not c.id.startswith(('REGISTRY-', 'HARDENING-', 'GOOGLE-LAYER-'))]
+    original = [c for c in cases if not c.id.startswith(('REGISTRY-', 'HARDENING-', 'GOOGLE-LAYER-', 'HARNESS-LAYER-'))]
     assert len({case.query for case in original}) == 750
     assert Counter((case.family for case in original)) == EXPECTED_COUNTS
 

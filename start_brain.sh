@@ -21,6 +21,12 @@ echo "(Need models first?  python3 scripts/get_models.py)"
 echo
 PY=python3
 [ -x .venv/bin/python ] && PY=.venv/bin/python
-$PY scripts/firstboot.py --serve --wait --ui --port 8311 --tier "$TIER"
+"$PY" scripts/firstboot.py --serve --wait --ui --port 8311 --tier "$TIER"
+launch_status=$?
 echo
-echo "HANNI stopped. You can close this terminal."
+if [ "$launch_status" -eq 0 ]; then
+  echo "HANNI stopped. You can close this terminal."
+else
+  echo "HANNI failed to start. Read the error above and the service logs." >&2
+fi
+exit "$launch_status"

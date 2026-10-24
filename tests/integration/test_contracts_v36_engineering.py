@@ -1,4 +1,4 @@
-"""Actual result metadata and real PowerShell error classification regressions."""
+"""Actual result metadata and Windows transport error classification contracts."""
 from pathlib import Path
 import os
 import sys
@@ -142,19 +142,28 @@ def test_standard_user_folders_contract_is_object(registry):
     assert_contract(value.get('env.user_folders'), result)
     assert value.get('env.user_folders').output_schema['folders'] == 'object'
 
-@pytest.mark.skipif(os.name != 'nt', reason='Actual Windows PowerShell catch/error-ID behavior')
 @pytest.mark.parametrize('error_id,empty', [('NoMatchingEventsFound', True), ('AccessDenied', False), ('NoMatchingLogsFound', False)])
 def test_event_log_empty_match_is_distinct_from_denied_or_missing_log(monkeypatch, error_id, empty):
+    import subprocess
+    from types import SimpleNamespace
     from hanni.tools import security, winshell
-    prefix = 'function Get-WinEvent { [CmdletBinding()] param([hashtable]$FilterHashtable,[int]$MaxEvents); '
-    prefix += "$e = [System.Management.Automation.ErrorRecord]::new([Exception]::new('controlled provider error'), '" + error_id + "', [System.Management.Automation.ErrorCategory]::InvalidOperation, $null); $PSCmdlet.ThrowTerminatingError($e) }; "
-    monkeypatch.setattr(security, 'run_powershell_json', lambda command, **kwargs: winshell.run_powershell_json(prefix + command, **kwargs))
+    dispatched = []
+    def controlled_process(command, **kwargs):
+        dispatched.append(command)
+        return subprocess.CompletedProcess(command, 0 if empty else 1,
+            '[]' if empty else '', '' if empty else error_id)
+    # Retain the real handler, shell helper and JSON decoding. Only replace the
+    # OS process boundary; actual PowerShell catch semantics need a live check.
+    monkeypatch.setattr(winshell, 'os', SimpleNamespace(name='nt'))
+    monkeypatch.setattr(winshell, 'subprocess', SimpleNamespace(run=controlled_process))
     if empty:
         result = security._event_errors({'log': 'Application', 'hours': 1}, None, None)
         assert result.ok and result.data['events'] == [] and (result.data['total'] == 0)
     else:
         with pytest.raises(RuntimeError, match='system.event_errors failed'):
             security._event_errors({'log': 'Application', 'hours': 1}, None, None)
+    assert len(dispatched) == 1 and dispatched[0][0] == 'powershell.exe'
+    assert "LogName='Application'" in dispatched[0][-1]
 
 def test_digital_silence_never_calls_decoder_but_low_amplitude_still_does():
     from types import SimpleNamespace

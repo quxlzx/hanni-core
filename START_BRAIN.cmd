@@ -1,6 +1,7 @@
 @echo off
+setlocal
 title HANNI brain
-cd /d %~dp0
+cd /d "%~dp0"
 echo.
 echo  Choose HANNI's model:
 echo    [1] Auto   - benchmark and pick the best this machine can host
@@ -19,16 +20,22 @@ echo the models and takes 2-3 minutes. Keep this window open while it runs.
 echo (Need models first?  py scripts\get_models.py)
 echo.
 if exist .venv\Scripts\python.exe (
-    .venv\Scripts\python scripts\firstboot.py --serve --wait --ui --port 8311 --tier %TIER%
+    .venv\Scripts\python -c "import sys; sys.exit(0 if sys.version_info >= (3,12) else 1)"
+    if errorlevel 1 (
+        echo Hanni OS requires Python 3.12+. Rebuild .venv with SETUP_HANNI.cmd.
+        pause
+        exit /b 1
+    )
+    .venv\Scripts\python scripts\firstboot.py --serve --wait --ui --port 8311 --tier %TIER% %*
 ) else (
-    py -3.12 scripts\firstboot.py --serve --wait --ui --port 8311 --tier %TIER% 2>nul
-    if errorlevel 9009 py -3 scripts\firstboot.py --serve --wait --ui --port 8311 --tier %TIER%
-    if errorlevel 9009 python scripts\firstboot.py --serve --wait --ui --port 8311 --tier %TIER%
+    py -3.12 scripts\firstboot.py --serve --wait --ui --port 8311 --tier %TIER% %*
 )
-if errorlevel 1 (
+set "LAUNCH_EXIT=%ERRORLEVEL%"
+if not "%LAUNCH_EXIT%"=="0" (
     echo.
     echo HANNI failed to start. Screenshot this window for the error above.
     pause
+    exit /b %LAUNCH_EXIT%
 ) else (
     echo.
     echo HANNI stopped. You can close this window.

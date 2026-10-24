@@ -12,7 +12,7 @@ from hanni.memory.privacy import validate_memory_text
 from hanni.memory.projects import ProjectContext
 
 
-OPERATIONS = frozenset({'correct', 'forget', 'review', 'analyze', 'consolidate', 'project.alias', 'project.workflow', 'project.unlink'})
+OPERATIONS = frozenset({'remember', 'correct', 'forget', 'review', 'analyze', 'consolidate', 'project.alias', 'project.workflow', 'project.unlink'})
 
 
 def _row(record):
@@ -201,7 +201,9 @@ class MemoryExplorer:
 
     def handle(self, operation, data, *, request_id=None):
         # Called only by the fixed audited registry handler after authorization.
-        if operation == 'forget':
+        if operation == 'remember':
+            expected = {'content'}
+        elif operation == 'forget':
             expected = {'memory_id', 'expected_updated_at'}
         elif operation == 'correct':
             expected = {'memory_id', 'expected_updated_at', 'content', 'project_id', 'semantic_status'}
@@ -231,6 +233,11 @@ class MemoryExplorer:
                 return projects.remove_link(data['project_id'], data['kind'], data['value'], expected_fingerprint=data['expected_fingerprint'])
             return projects.link_workflow(data['project_id'], data['workflow_id'], expected_fingerprint=data['expected_fingerprint'])
         store = self.features.memory_store()
+        if operation == 'remember':
+            if not isinstance(data['content'], str):
+                raise ValueError('Enter a fact or preference to remember.')
+            record, created = store.remember(data['content'], source='owner_explicit:command')
+            return {'record': _row(record), 'duplicate': not created}
         if operation in {'analyze', 'consolidate'}:
             from hanni.laya.intelligence import analyze_statement, analyze_relationships
             if not isinstance(data['project_id'], str):

@@ -227,6 +227,7 @@ export function ConversationScreen({ context: c }: { context: ScreenContext }) {
               : "Session history"}{" "}
             · Text replies stay silent
           </p>
+          {c.state?.model_detail && <p className="error" role="status">{c.state.model_detail}</p>}
         </div>
         <button
           id="chat-clear"

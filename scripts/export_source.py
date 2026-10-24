@@ -9,8 +9,9 @@ import zipfile
 ROOT_FILES = {'.env.example', '.gitignore', '.dockerignore', '.gitattributes', 'pyproject.toml', 'README.md', 'OVERNIGHT_HANDOFF.md',
               'CLAUDE.md', 'AGENTS.md', 'SETUP_HANNI.cmd', 'START_HANNI.cmd', 'START_HANNI_OS.cmd', 'MANIFEST.in',
               'EXPORT_HANNI_SOURCE.cmd', 'SETUP_HANNI_VOICE.cmd', 'LICENSE', 'CONTRIBUTING.md', 'SECURITY.md',
-              'PUBLIC_READINESS.md','PUBLIC_READINESS.json','PUBLIC_RELEASE_REVIEW.json','.PUBLIC_RELEASE_OWNER'}
-SOURCE_DIRS = {'src', 'tests', 'scripts', 'config', 'docs', 'evals', '.github', 'frontend', 'desktop', 'deployment'}
+              'PUBLIC_READINESS.md','PUBLIC_READINESS.json','PUBLIC_RELEASE_REVIEW.json','.PUBLIC_RELEASE_OWNER',
+              'START_BRAIN.cmd', 'start_brain.sh'}
+SOURCE_DIRS = {'src', 'tests', 'scripts', 'config', 'docs', 'evals', '.github', 'frontend', 'desktop', 'deployment', 'soul'}
 BLOCKED = {'.git', '.venv', 'venv', '__pycache__', '.pytest_cache', '.pytest-work',
            '.pytest-overnight', 'data', 'node_modules', 'build', 'dist'}
 EXTENSIONS = {'.py', '.ps1', '.cmd', '.sh', '.md', '.txt', '.yaml', '.yml', '.toml', '.json', '.jsonl', '.html', '.css', '.js', '.cjs', '.mjs', '.ts', '.tsx'}

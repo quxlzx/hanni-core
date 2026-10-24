@@ -16,6 +16,10 @@ def test_real_export_includes_every_source_package(tmp_path):
             assert 'hanni/' + path.relative_to(ROOT).as_posix() in names
         assert 'hanni/src/hanni/models/client.py' in names
         assert 'hanni/src/hanni/tools/google_access.py' in names
+        assert 'hanni/START_BRAIN.cmd' in names
+        assert 'hanni/start_brain.sh' in names
+        assert 'hanni/soul/SOUL.md' in names
+        assert 'hanni/soul/skills/recurring-tasks/SKILL.md' in names
         assert 'hanni/evals/routing/cases.jsonl' in names
         for name in ('evals/routing/language_generalization_v2.jsonl', 'evals/routing/language_generalization_v3.jsonl', 'evals/routing/multiturn_v1.jsonl', 'evals/routing/voice_routing_v1.jsonl', 'evals/llm_tools/cases.jsonl', 'evals/llm_tools/capability_coverage_v1.jsonl', 'evals/personality/personality_v1.jsonl', 'evals/personality/personality_v2.jsonl'):
             assert 'hanni/' + name in names

@@ -111,7 +111,7 @@ def load_config(
     return AppConfig(
         hanni=hanni,
         models=parse_models(load_yaml_mapping(
-            Path(os.environ.get("HANNI_MODEL_CONFIG") or config_dir / "models.yaml"))),
+            Path(env.get("HANNI_MODEL_CONFIG") or config_dir / "models.yaml"))),
         permissions=parse_permissions(load_yaml_mapping(config_dir / "permissions.yaml")),
         privacy=parse_privacy(load_yaml_mapping(config_dir / "privacy.yaml")),
         paths=Paths(config_dir=config_dir, data_dir=data_dir),

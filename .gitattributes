@@ -10,6 +10,7 @@ scripts/eval_memory_grounding_v35.py -text whitespace=cr-at-eol,-blank-at-eof
 # Keep the recorded V3.6 migration target digest stable on Windows checkouts.
 evals/llm_tools/capability_coverage_v2.jsonl -text
 evals/llm_tools/capability_coverage_v3.jsonl -text
+evals/llm_tools/capability_coverage_v4.jsonl -text
 evals/llm_tools/capability_coverage_v3_migration.json -text
 scripts/v36_verification/calendar_addendum_cases.json -text
 # Preserve the frozen Campaign 3 development corpus digest.

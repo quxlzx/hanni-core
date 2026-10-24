@@ -1,0 +1,12 @@
+{
+  "source": "capability_coverage_v3.jsonl",
+  "target": "capability_coverage_v4.jsonl",
+  "source_sha256": "689b12064b499b318cff9277da3288c667497adbe20f1388a65af4d1015071c9",
+  "target_sha256": "436be43fa50c6e5c78e638eff91ba2f20ccc0dd9139c824bad56ea7fe86e306c",
+  "added_case_ids": [
+    "HARNESS-LAYER-WEB-SEARCH-1",
+    "HARNESS-LAYER-WEB-SEARCH-2"
+  ],
+  "preserved_source_bytes": 182487,
+  "reason": "Two explicit source-selection probes for the existing web.search capability. Historical v1-v3 cases and oracles remain unchanged."
+}

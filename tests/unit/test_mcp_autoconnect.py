@@ -50,6 +50,22 @@ def test_startup_discovers_without_granting_tool_approval(approved):
     auto.tick()
     assert factory.call_count == count
 
+
+def test_pin_persists_ui_selected_startup_consent_and_disconnect_pauses_it(tmp_path):
+    manager = Mock()
+    manager.snapshot.return_value = {'servers': []}
+    path = tmp_path / 'mcp' / 'auto-connect.json'
+    auto = AutoConnections(manager, path, lambda: None)
+    try:
+        auto.pin('a' * 32, 'b' * 64)
+        assert auto.policy() == [{'id': 'a' * 32, 'config_hash': 'b' * 64}]
+        assert auto.thread.is_alive()
+        auto.pause('a' * 32)
+        assert auto.policy() == []
+        manager.reconnect_approved.assert_not_called()
+    finally:
+        auto.close()
+
 def test_live_connection_loss_reconnects_only_same_approved_config(approved):
     manager, auto, server, factory = approved
     auto.tick()

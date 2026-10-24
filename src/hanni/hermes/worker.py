@@ -77,7 +77,7 @@ async def mcp_request(url, *, name=None, arguments=None, expected_hash=None, cre
                         'verification': {'verified': success, 'scope': 'mcp_response_only'}}
 
 
-def discover(catalog):
+def discover(catalog, *, on_error=None):
     tools = []
     from .catalog import Catalog
     from .catalog import connection_hash
@@ -88,7 +88,12 @@ def discover(catalog):
             continue
         if catalog.get('connection_approvals',{}).get(item['name']) != connection_hash(item):
             continue  # Registration alone never authorizes a new connection/discovery.
-        definitions = asyncio.run(mcp_request(item['endpoints']['hermes'], credential_ref=item['credential_ref']))
+        try:
+            definitions = asyncio.run(mcp_request(item['endpoints']['hermes'], credential_ref=item['credential_ref']))
+        except Exception as exc:
+            if on_error:
+                on_error(item['name'], type(exc).__name__)
+            continue
         if observations:
             observations.observe(item['name'], definitions)
         for raw in definitions:
@@ -109,12 +114,18 @@ def bounded_menu(specs, query):
         name = spec['remote'].get('name', spec['name']).replace('_', ' ')
         return len(words & set(re.findall(r'\w+', description.casefold()))) + 2*len(words & set(re.findall(r'\w+', name.casefold())))
     windows = [spec for spec in specs if spec['target'] == 'windows'][:8]
-    remote = sorted([spec for spec in specs if spec['target'] == 'karina'], key=lambda spec: (-score(spec), spec['name']))[:12]
+    remote = sorted([spec for spec in specs if spec['target'] in {'karina', 'mcp'}], key=lambda spec: (-score(spec), spec['name']))[:12]
     return windows+remote
 
 
 def await_authority(store, task_id, action):
     while time.time() < action['expires']:
+        from ..native.runtime import scope_cancelled
+        if scope_cancelled():
+            current = store.action(action['id'])
+            if current['state'] == 'pending' and store.get(task_id)['state'] not in TERMINAL:
+                store.settle(action['id'], 'rejected', {'ok': False, 'error': 'Owning script stopped before approval.', 'effects': 'none'})
+            raise InterruptedError('Owning script stopped.')
         if store.get(task_id)['state'] in TERMINAL:
             raise InterruptedError('Task cancelled.')
         current = store.action(action['id'])

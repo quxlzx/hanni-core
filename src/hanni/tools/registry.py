@@ -16,6 +16,8 @@ from hanni.tools.base import ToolContext, ToolRegistry
 from hanni.reliability import get_service
 from hanni.tools import apps as app_tools
 from hanni.tools import todos as todo_tools
+from hanni.tools import reminders as reminder_tools
+from hanni.tools import workplace as workplace_tools
 from hanni.tools import google_access as google_tools
 from hanni.tools import email_tools
 from hanni.tools import google_services
@@ -78,6 +80,8 @@ def build_default_registry(config: AppConfig, *, data_dir: Path | None = None) -
         *overview_tools.definitions(),
         *note_tools.definitions(root),
         *todo_tools.definitions(root),
+        *reminder_tools.definitions(root),
+        *workplace_tools.definitions(config),
         *google_tools.definitions(google_access),
         *email_tools.definitions(google_access),
         *google_services.definitions(google_access),

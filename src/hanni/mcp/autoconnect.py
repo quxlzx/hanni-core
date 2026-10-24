@@ -90,6 +90,19 @@ class AutoConnections:
                 tmp.write_text(json.dumps({'version':1,'servers':[item for item in entries if item['id']!=server_id]},indent=2),encoding='utf-8')
                 tmp.replace(self.path)
 
+    def pin(self, server_id, config_hash):
+        """Persist the exact owner-connected configuration selected in the UI."""
+        with self.lock:
+            entries = [item for item in self.policy() if item['id'] != server_id]
+            if len(entries) >= 8:
+                raise ValueError('At most eight servers can reconnect automatically. Disable startup reconnect on another server first.')
+            entries.append({'id': server_id, 'config_hash': config_hash})
+            self.path.parent.mkdir(parents=True, exist_ok=True)
+            tmp = self.path.with_suffix('.tmp')
+            tmp.write_text(json.dumps({'version': 1, 'servers': entries}, indent=2), encoding='utf-8')
+            tmp.replace(self.path)
+        self.start()
+
     def snapshot(self):
         with self.lock:
             return {'enabled':self.path.exists(),'connections':dict(self.status),'max_consecutive_attempts':8}

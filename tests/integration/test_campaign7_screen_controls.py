@@ -35,7 +35,9 @@ def test_original_http_authority_and_shutdown_states_do_not_add_capture(tmp_path
 def test_registry_does_not_advertise_missing_perception(tmp_path, name):
     row = run(tmp_path, 'registry_capability_missing', request={'name': name})
     assert row['error']['type'] == 'UnknownToolError'
-    assert not row['observation']['perception_definitions']
+    # Explicit OCR is now implemented; unrestricted capture, camera, and
+    # multimodal vision APIs remain unavailable.
+    assert row['observation']['perception_definitions'] == ['screen.read_text']
 
 @pytest.mark.parametrize('content', [[{'type': 'image_url', 'image_url': {'url': 'data:image/png;base64,aQ=='}}], [{'type': 'text', 'text': 'Synthetic'}, {'type': 'image_url', 'image_url': {'url': 'data:image/png;base64,Yg=='}}], {'type': 'image', 'value': 'synthetic'}])
 def test_original_native_adapter_rejects_multimodal_before_network(tmp_path, content):

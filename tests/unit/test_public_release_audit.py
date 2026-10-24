@@ -5,6 +5,10 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from audit_public_release import findings, audit_history
 
+def test_public_github_ssh_identity_is_not_a_personal_mailbox():
+    assert not findings(b'git clone git@github.com:owner/repo.git', 'auth.md')
+    assert findings(b'person' + b'@github.com', 'auth.md')[0]['category'] == 'personal_email'
+
 def test_secret_scan_finds_keys_without_disclosing_values():
     key = 'ghp_' + 'A' * 36
     result = findings(key.encode(), 'test.txt')

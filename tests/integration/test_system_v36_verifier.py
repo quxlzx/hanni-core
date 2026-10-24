@@ -37,6 +37,16 @@ def original(tmp_path):
     finally:
         close_service(tmp_path)
 
+@pytest.fixture
+def connected_calendar(original):
+    """Routing availability must not depend on the owner's credential vault."""
+    import sys
+    sys.path.insert(0, str(ROOT / 'scripts/v36_engineering'))
+    from fixtures import GoogleProvider, GoogleVault
+    _, registry, _ = original
+    registry.google_access._vault = GoogleVault()
+    registry.google_access.transport = GoogleProvider()
+
 def mutation(operation, data, *, confirmed=True, key=None):
     return dict(id=key or str(uuid4()), operation=operation, data=data, confirmed=confirmed)
 
@@ -297,19 +307,25 @@ def test_repair_google_metadata_matches_actual_provider_receipts(original):
     body = registry.execute(ToolRequest('gmail.read', {'id': 'message-v36', 'account': 'personal'})).data['body']
     assert isinstance(body, dict)
 
-@pytest.mark.skipif(os.name != 'nt', reason='Original real PowerShell event-error catch behavior')
 @pytest.mark.parametrize('error_id,should_be_empty', [('NoMatchingEventsFound', True), ('AccessDenied', False), ('FixtureNoMatchingEventsFoundAccessDenied', False)])
 def test_repair_event_empty_scope_does_not_hide_other_failures(monkeypatch, error_id, should_be_empty):
+    import subprocess
+    from types import SimpleNamespace
     from hanni.tools import security, winshell
-    prefix = 'function Get-WinEvent { [CmdletBinding()] param([hashtable]$FilterHashtable,[int]$MaxEvents); '
-    prefix += "$e=[System.Management.Automation.ErrorRecord]::new([Exception]::new('Independent provider failure'),'" + error_id + "',[System.Management.Automation.ErrorCategory]::InvalidOperation,$null);$PSCmdlet.ThrowTerminatingError($e) }; "
-    monkeypatch.setattr(security, 'run_powershell_json', lambda command, **kwargs: winshell.run_powershell_json(prefix + command, **kwargs))
+    dispatched = []
+    def controlled_process(command, **kwargs):
+        dispatched.append(command)
+        return subprocess.CompletedProcess(command, 0 if should_be_empty else 1,
+            '[]' if should_be_empty else '', '' if should_be_empty else error_id)
+    monkeypatch.setattr(winshell, 'os', SimpleNamespace(name='nt'))
+    monkeypatch.setattr(winshell, 'subprocess', SimpleNamespace(run=controlled_process))
     if should_be_empty:
         result = security._event_errors({'log': 'Application', 'hours': 1}, None, None)
         assert result.ok and result.data['total'] == 0 and (result.data['events'] == [])
     else:
         with pytest.raises(RuntimeError, match='system.event_errors failed'):
             security._event_errors({'log': 'Application', 'hours': 1}, None, None)
+    assert len(dispatched) == 1 and dispatched[0][0] == 'powershell.exe'
 
 @pytest.mark.parametrize('utterance', ['Create an offline reminder: meeting tomorrow at 09:00.', 'Add to my notes a reminder about my calendar tomorrow at 09:00.', 'Create a task titled "put this on my calendar" due Friday at 5pm.', "Save a notebook entry for tomorrow's dinner at 8pm.", 'Please add a local record: calendar session next Monday at 11am.', 'Make a file named calendar.txt tomorrow at noon.'])
 def test_repair_unseen_local_destinations_cannot_authorize_calendar_write(original, utterance):
@@ -321,7 +337,7 @@ def test_repair_unseen_local_destinations_cannot_authorize_calendar_write(origin
     assert not any((t.capability_id in {'google_calendar.create', 'google.calendar.create'} for t in decision.tools))
 
 @pytest.mark.parametrize('utterance,title', [('Add "amber36 review" to my calendar tomorrow at 9am.', 'amber36 review'), ('Schedule a "notes cleanup task" in my Google calendar tomorrow at 9am.', 'notes cleanup task'), ('Book dinner next Saturday at 7pm.', 'dinner')])
-def test_repair_unseen_explicit_calendar_destinations_preserve_owner_policy(original, utterance, title):
+def test_repair_unseen_explicit_calendar_destinations_preserve_owner_policy(original, connected_calendar, utterance, title):
     from hanni.mcp.host import McpHost
     from hanni.tools.calendar_routing import calendar_create_request
     _, registry, _ = original
@@ -354,7 +370,7 @@ _CALENDAR_ADDENDUM = json.loads(_CALENDAR_ADDENDUM_PATH.read_text(encoding='utf-
 assert hashlib.sha256(_CALENDAR_ADDENDUM_PATH.read_bytes()).hexdigest() == '6191b2c91f1cbc7c12e6171b02c0afb4ba062e215c7bf8e5e1f44111d17b94fa'
 
 @pytest.mark.parametrize('case', _CALENDAR_ADDENDUM['cases'], ids=lambda case: case['id'])
-def test_calendar_activity_addendum_prospective_independent_cases(original, case):
+def test_calendar_activity_addendum_prospective_independent_cases(original, connected_calendar, case):
     from hanni.mcp.host import McpHost
     from hanni.tools.calendar_routing import calendar_create_request
     _, registry, _ = original
@@ -367,7 +383,7 @@ def test_calendar_activity_addendum_prospective_independent_cases(original, case
     assert not any((tool.capability_id in {'google_calendar.create', 'google.calendar.create'} for tool in denied.tools))
 
 @pytest.mark.parametrize('utterance,title', [('put dentist monday at 9', 'dentist'), ('add game night saturday 8pm', 'game night'), ('add office hours next monday 2pm', 'office hours')])
-def test_calendar_activity_addendum_preserves_legacy_menu_expectations(original, utterance, title):
+def test_calendar_activity_addendum_preserves_legacy_menu_expectations(original, connected_calendar, utterance, title):
     from hanni.mcp.host import McpHost
     from hanni.tools.calendar_routing import calendar_create_request
     _, registry, _ = original
@@ -377,7 +393,7 @@ def test_calendar_activity_addendum_preserves_legacy_menu_expectations(original,
     assert any((tool.capability_id == 'google_calendar.create' for tool in allowed.tools))
 
 @pytest.mark.parametrize('utterance,expected', [('Create note:07:45 class in my calendar next Thursday.', False), ('Add a local record:8pm party on my calendar next Wednesday.', False), ('Put ceramics practice Friday at 07:45 in my calendar.', True), ('Add "amber36 follow-up" at 18:20 to my calendar next Tuesday.', True)])
-def test_calendar_activity_addendum_distinguishes_body_colon_and_clock(original, utterance, expected):
+def test_calendar_activity_addendum_distinguishes_body_colon_and_clock(original, connected_calendar, utterance, expected):
     from hanni.mcp.host import McpHost
     from hanni.tools.calendar_routing import calendar_create_request
     _, registry, _ = original

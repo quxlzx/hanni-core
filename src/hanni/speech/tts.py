@@ -330,6 +330,9 @@ class WindowsSapiTts:
         return bool(self.powershell and os.name == "nt")
 
     def start(self, text: str) -> TtsPlayback:
+        from hanni.core.interaction import interaction
+        if interaction.speech_muted:
+            return CompletedPlayback()
         chunks = split_for_speech(text, max_chars=self.chunk_chars)
         if not chunks:
             return CompletedPlayback()
@@ -359,6 +362,9 @@ class WindowsSapiTts:
         return SubprocessTtsPlayback(proc)
 
     def speak(self, text: str) -> None:
+        from hanni.core.interaction import interaction
+        if interaction.speech_muted:
+            return
         chunks = split_for_speech(text, max_chars=self.chunk_chars)
         if not chunks:
             return

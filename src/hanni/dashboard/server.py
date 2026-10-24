@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 import threading
 import time
 import secrets
@@ -58,7 +59,14 @@ class Telemetry:
                     battery = psutil.sensors_battery()
                 except (OSError, RuntimeError):
                     battery = None
-                health = client.health()
+                native_model = None
+                if os.environ.get('HANNI_BRIDGE_URL'):
+                    from hanni.dashboard.bridge_panel import bridge_proxy
+                    native_model = bridge_proxy('GET', '/model')
+                    from types import SimpleNamespace
+                    health = SimpleNamespace(state=native_model.get('state', 'unreachable'))
+                else:
+                    health = client.health()
                 try:
                     safe_mode = store.load() is not None
                 except Exception:
@@ -73,6 +81,9 @@ class Telemetry:
                         'network': rates, 'uptime_seconds': time.time() - psutil.boot_time(),
                         'battery': None if battery is None else
                         {'percent': battery.percent, 'plugged': battery.power_plugged}}
+                if native_model:
+                    data['model'] = {key: native_model.get(key) for key in ('file', 'context', 'quantization', 'context_verified')}
+                    data['model_detail'] = native_model.get('detail') or native_model.get('error')
                 with self.lock:
                     self.data = data
             except Exception:
@@ -89,7 +100,7 @@ class Telemetry:
                 'model_residency': manager.snapshot() if manager else {},
                 'interaction': interaction.snapshot(),
                 'roles': {'assistant': self.config.models.supervisor.id},
-                'model': {'file': self.config.models.supervisor.model_file,
+                'model': data.get('model') or {'file': self.config.models.supervisor.model_file,
                           'quantization': self.config.models.supervisor.quantization,
                           'context': self.config.models.supervisor.context_length}}
 
@@ -111,12 +122,16 @@ class DashboardServer(ThreadingHTTPServer):
         self.restart_event = restart_event
         self.lifecycle_lock = threading.Lock()
         self.lifecycle_action = None
+        from hanni.native.model_settings import ModelSettings
+        self.model_settings = ModelSettings.from_env()
         from hanni.dashboard.gateway import workspace_contract
         from hanni.config.schema import AppConfig
         config = getattr(telemetry, 'config', None)
         self.workspace = workspace_contract(config if isinstance(config, AppConfig) else None)
         from hanni.dashboard.features import DesktopFeatures
         self.features = features if features is not None else DesktopFeatures(config if isinstance(config, AppConfig) else None)
+        from hanni.dashboard.commands import ChatCommands
+        self.chat_commands = ChatCommands(self)
         from hanni.dashboard.cluster import ClusterMonitor
         self.cluster = cluster if cluster is not None else ClusterMonitor(data_dir=config.paths.data_dir if isinstance(config, AppConfig) else None)
         from hanni.dashboard.cluster_power import ClusterPower
@@ -127,6 +142,9 @@ class DashboardServer(ThreadingHTTPServer):
         super().__init__(('127.0.0.1', port), Handler)
         from hanni.dashboard.mcp_hub import MCPHub
         self.mcp = MCPHub(config if isinstance(config, AppConfig) else None, self.features)
+        from hanni.dashboard.native_mcp import NativeMCP
+        self.native_mcp = NativeMCP(self.mcp)
+        self.native_mcp.attach()
         from hanni.hermes.client import HermesControl
         self.hermes = HermesControl(data_dir, self.mcp, self.shutdown_event)
         from hanni.dashboard.workflows import WorkflowHub
@@ -158,6 +176,9 @@ class DashboardServer(ThreadingHTTPServer):
             config if isinstance(config, AppConfig) else None, self.features, telemetry, compute=self.compute)
         self.mcp.workflows = self.workflows
         self.features.memory_explorer.workflow_reader = self.workflows.detail
+        from hanni.tools.reminders import ReminderDelivery
+        self.reminder_delivery = ReminderDelivery(self.features)
+        self.reminder_delivery.start()
         if self.mcp.root is not None:
             from hanni.mcp.runtime import install
             install(self.mcp)
@@ -174,6 +195,12 @@ class DashboardServer(ThreadingHTTPServer):
         return result
 
     def server_close(self):
+        reminders = getattr(self, 'reminder_delivery', None)
+        if reminders is not None:
+            reminders.close()
+        commands = getattr(self, 'chat_commands', None)
+        if commands is not None:
+            commands.close()
         hermes = getattr(self, 'hermes', None)
         if hermes is not None:
             hermes.close()
@@ -355,9 +382,15 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         if not self._allowed(): return
         route = self.path.split('?', 1)[0]
+        if route == '/api/native-mcp/tools':
+            if not self.native_mcp_authorized(): return
+            try:
+                return self._send(200, json.dumps(self.server.native_mcp.tools()).encode())
+            except (ValueError, RuntimeError, OSError) as exc:
+                return self._send_error(503, exc)
         if route.startswith('/api/inference/'):
             return self._inference_request('GET')
-        private_routes = {'/api/productivity', '/api/memory', '/api/calendar',
+        private_routes = {'/api/chat/commands', '/api/chat/command', '/api/model-settings', '/api/productivity', '/api/memory', '/api/calendar',
                           '/api/agents', '/api/awareness', '/api/voice', '/api/notifications',
                           '/api/mcp', '/api/mcp/export', '/api/hermes', '/api/executions', '/api/tasks', '/api/workflows', '/api/compute', '/api/model-routing', '/api/model-lab',
                           '/api/bridge/tasks', '/api/bridge/tools', '/api/cron/jobs', '/api/skills'}
@@ -368,7 +401,12 @@ class Handler(BaseHTTPRequestHandler):
                 query = {key: values[0] for key, values in parse_qs(urlsplit(self.path).query,
                     keep_blank_values=route == '/api/model-lab/preflight').items()}
                 feature = self.server.features
-                if route == '/api/productivity': result = feature.productivity()
+                if route == '/api/chat/commands':
+                    from hanni.dashboard.commands import CATALOG
+                    result = {'commands': CATALOG}
+                elif route == '/api/chat/command': result = self.server.chat_commands.result(query.get('id'))
+                elif route == '/api/model-settings': result = self.server.model_settings.snapshot()
+                elif route == '/api/productivity': result = feature.productivity()
                 elif route == '/api/memory': result = feature.memories(query.get('q', ''))
                 elif route == '/api/memory/explorer': result = feature.memory_explorer.browse(query)
                 elif route == '/api/memory/suggestions': result = feature.memory_explorer.suggestions(query)
@@ -452,13 +490,20 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(400, b'{"error":"Choose valid workspace fields and refresh before retrying."}')
             except (OSError, RuntimeError, sqlite3.Error):
                 return self._send(503, b'{"error":"The local workspace feature is unavailable. Existing data was retained."}')
+        if route == '/api/chat/conversations':
+            try:
+                return self._send(200, json.dumps({'conversations': self.server.chat.conversations()}).encode())
+            except sqlite3.Error:
+                return self._send(503, b'{"error":"Local conversation storage is unavailable."}')
         if route == '/api/chat':
             try:
-                before = int(parse_qs(urlsplit(self.path).query).get('before', ['0'])[0])
+                query = parse_qs(urlsplit(self.path).query)
+                before = int(query.get('before', ['0'])[0])
                 if not 0 <= before < 2**63: raise ValueError()
+                snapshot = self.server.chat.snapshot(before, conversation=query.get('conversation', [None])[0])
             except ValueError:
-                return self._send(400, b'{"error":"Invalid history cursor"}')
-            return self._send(200, json.dumps(self.server.chat.snapshot(before), allow_nan=False).encode())
+                return self._send(400, b'{"error":"Invalid conversation or history cursor"}')
+            return self._send(200, json.dumps(snapshot, allow_nan=False).encode())
         if route == '/api/state':
             return self._send(200, json.dumps(self.server.telemetry.snapshot(), allow_nan=False).encode())
         if route == '/api/workspace':
@@ -522,7 +567,32 @@ class Handler(BaseHTTPRequestHandler):
         except (ValueError, RuntimeError, OSError, sqlite3.Error, AttributeError) as exc:
             return self._send_error(403, exc)
 
+    def native_mcp_authorized(self):
+        if not self.server.native_mcp.authorized(self.headers.get('Authorization')):
+            self._discard_small_body()
+            self._send(403, b'{"error":"Native MCP requires the owning agent credential."}')
+            return False
+        return True
+
+    def native_mcp_call(self):
+        if not self._allowed() or not self.native_mcp_authorized(): return
+        try:
+            length = int(self.headers.get('Content-Length', '0'))
+            if self.headers.get('Transfer-Encoding') or not 0 < length <= 1024:
+                raise ValueError('Invalid native MCP request.')
+            body = json.loads(self.rfile.read(length))
+            if not isinstance(body, dict) or set(body) != {'action_id'} or not isinstance(body['action_id'], str):
+                raise ValueError('Supply one authorized MCP action ID.')
+            result = self.server.native_mcp.call(body['action_id'])
+            return self._send(200, json.dumps(result).encode())
+        except (ValueError, KeyError, RuntimeError) as exc:
+            return self._send_error(409, exc)
+        except (OSError, sqlite3.Error) as exc:
+            return self._send_error(503, exc)
+
     def do_POST(self):
+        if self.path == '/api/native-mcp/call':
+            return self.native_mcp_call()
         if self.path == '/api/sandbox/v1/chat/completions':
             return self._sandbox_inference()
         if not self._allowed(write=True): return
@@ -532,21 +602,32 @@ class Handler(BaseHTTPRequestHandler):
             if not secrets.compare_digest(self.headers.get('X-Hanni-Token', ''),
                                           getattr(self.server, 'chat', None) and self.server.chat.token or ''):
                 return self._send(403, b'{"error":"Reload the dashboard before authorizing actions."}')
-            from hanni.dashboard.bridge_panel import bridge_proxy, cron_set
-            length = min(int(self.headers.get('Content-Length') or 0), 65536)
+            from hanni.dashboard.bridge_panel import bridge_proxy, bridge_decision, cron_set
             try:
+                length = int(self.headers.get('Content-Length') or 0)
+                if self.headers.get('Transfer-Encoding') or not 0 < length <= 65536:
+                    return self._send(413, b'{"error":"Message too large or missing length"}')
+                self.connection.settimeout(5)
                 body = json.loads(self.rfile.read(length) or b'{}')
-            except ValueError:
-                return self._send(400, b'{"error":"JSON required"}')
-            if self.path.startswith('/api/bridge/action/'):
-                result = bridge_proxy('POST', '/actions/' + self.path.removeprefix('/api/bridge/action/'), body)
-            elif self.path == '/api/bridge/submit':
-                result = bridge_proxy('POST', '/tasks', body)
-            else:
-                parts = self.path.split('/')
-                result = cron_set(parts[3], len(parts) > 4 and parts[4] == 'enable')
-            return self._send(200, json.dumps(result, default=str).encode())
-        if self.path not in {'/api/chat', '/api/chat/clear', '/api/gpu-routing', '/api/audio-devices', '/api/shutdown', '/api/restart', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/hermes', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-routing', '/api/model-lab'}:
+                if not isinstance(body, dict):
+                    raise ValueError('JSON object required')
+                if self.path.startswith('/api/bridge/action/'):
+                    result = bridge_decision(self.path.removeprefix('/api/bridge/action/'), body)
+                elif self.path == '/api/bridge/submit':
+                    result = bridge_proxy('POST', '/tasks', body)
+                elif self.path.startswith('/api/bridge/cancel/'):
+                    result = bridge_proxy('POST', '/tasks/' + self.path.removeprefix('/api/bridge/cancel/') + '/cancel', {})
+                elif self.path.startswith('/api/cron/job/'):
+                    parts = self.path.split('/')
+                    if len(parts) != 6 or parts[5] not in {'enable', 'disable'}:
+                        raise ValueError('Unknown cron operation')
+                    result = cron_set(parts[4], parts[5] == 'enable')
+                else:
+                    return self._send(404, b'{"error":"Unknown bridge operation"}')
+            except (ValueError, KeyError) as exc:
+                return self._send_error(400, exc)
+            return self._send(502 if result.get('error') else 200, json.dumps(result, default=str).encode())
+        if self.path not in {'/api/chat/command', '/api/model-settings', '/api/chat', '/api/chat/conversations', '/api/chat/clear', '/api/gpu-routing', '/api/audio-devices', '/api/shutdown', '/api/restart', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/hermes', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-routing', '/api/model-lab'}:
             self._discard_small_body()
             return self._send(404, b'{"error":"Not found"}')
         if self.headers.get('Content-Type', '').split(';')[0].strip() != 'application/json':
@@ -562,6 +643,27 @@ class Handler(BaseHTTPRequestHandler):
             if len(raw) != size: raise ValueError('Incomplete request')
             data = json.loads(raw)
             if not isinstance(data, dict): raise ValueError('JSON object required')
+            if self.path == '/api/chat/command':
+                result = self.server.chat_commands.execute(data)
+                return self._send(200, json.dumps(result, allow_nan=False).encode())
+            if self.path == '/api/model-settings':
+                with self.server.lifecycle_lock, self.server.chat.lock:
+                    self.server.chat_commands.require_no_compression()
+                    if self.server.lifecycle_action:
+                        raise RuntimeError('The assistant is restarting or stopping.')
+                    if self.server.chat.snapshot()['busy'] or self.server.chat.queue:
+                        raise RuntimeError('Wait for the current conversation to finish before changing models.')
+                    from hanni.dashboard.bridge_panel import bridge_proxy
+                    from hanni.hermes.state import TERMINAL
+                    tasks = bridge_proxy('GET', '/tasks')
+                    if tasks.get('error'):
+                        raise RuntimeError('Cannot verify active tasks. Reconnect to the agent before changing models.')
+                    if any(task.get('state') not in TERMINAL for task in tasks.get('tasks', [])):
+                        raise RuntimeError('Finish or cancel active tasks before changing models.')
+                    result = self.server.model_settings.execute(data)
+                    if self.server.model_settings.pending():
+                        self.server.chat.ready = False
+                return self._send(200, json.dumps(result).encode())
             if self.path == '/api/model-routing':
                 result = self.server.model_routing_controls.execute(data)
                 return self._send(200, json.dumps(result, allow_nan=False).encode())
@@ -649,11 +751,16 @@ class Handler(BaseHTTPRequestHandler):
                 if data: raise ValueError('No arguments expected')
                 self.server.chat.clear()
                 return self._send(200, b'{"cleared":true}')
-            if set(data) != {'id', 'message'}: raise ValueError('Expected id and message')
-            key = self.server.chat.submit(data['id'], data['message'])
+            if self.path == '/api/chat/conversations':
+                if set(data) != {'id'}: raise ValueError('Expected conversation ID')
+                key = self.server.chat.create_conversation(data['id'])
+                return self._send(201, json.dumps({'id': key}).encode())
+            if set(data) not in ({'id', 'message'}, {'id', 'message', 'conversation'}):
+                raise ValueError('Expected id and message')
+            key = self.server.chat.submit(data['id'], data['message'], data.get('conversation'))
             return self._send(202, json.dumps({'id':key, 'accepted':True}).encode())
         except ValueError as exc:
-            if self.path in {'/api/gpu-routing', '/api/audio-devices', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-lab'}:
+            if self.path in {'/api/chat/command', '/api/model-settings', '/api/gpu-routing', '/api/audio-devices', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-lab'}:
                 return self._send_error(400, exc)
             return self._send(400, b'{"error":"Enter a valid message (maximum 4000 characters)."}')
         except UnicodeError:

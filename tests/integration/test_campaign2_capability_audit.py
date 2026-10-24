@@ -49,12 +49,21 @@ def test_arbitrary_powershell_requires_confirmation_before_dispatch(registry, co
         value.execute(ToolRequest('powershell.run', {'command': command}, execution_guard=guard))
     assert dispatched == []
 
-def test_confirmed_safe_powershell_uses_original_handler(registry):
+def test_confirmed_safe_powershell_uses_original_handler(registry, monkeypatch):
+    from types import SimpleNamespace
+    from hanni.tools import powershell
+    dispatched = []
+    def controlled_process(command, **kwargs):
+        dispatched.append(command)
+        return subprocess.CompletedProcess(command, 0, 'campaign-two-confirmed\n', '')
+    monkeypatch.setattr(powershell, 'os', SimpleNamespace(name='nt'))
+    monkeypatch.setattr(powershell, 'subprocess', SimpleNamespace(run=controlled_process))
     value, _ = registry
     definition = value.get('powershell.run')
     result, receipt = invoke(value, definition, {'command': "Write-Output 'campaign-two-confirmed'"})
     assert result.ok and result.data['stdout'].strip() == 'campaign-two-confirmed'
     assert receipt['original_handler_entered'] and receipt['handler_identity_retained']
+    assert len(dispatched) == 1 and dispatched[0][-1] == "Write-Output 'campaign-two-confirmed'"
 
 @pytest.mark.parametrize('apply', [True, False])
 def test_original_formatter_failure_does_not_claim_completion(registry, tmp_path, monkeypatch, apply):

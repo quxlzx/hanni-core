@@ -1058,6 +1058,8 @@ def _run_attend(args: argparse.Namespace, config: AppConfig, *, shutdown_event=N
                     response = conversation_session.stream_response(record.text)
                     voice_control.transcript_observed(record, False)
                 else:
+                    if not interaction.wake_enabled and not interaction.voice_engaged:
+                        continue
                     routed, response = bridge.handle(record)
                     decision = routed.decision
                     if decision.relevant:

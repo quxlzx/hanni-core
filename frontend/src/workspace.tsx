@@ -386,8 +386,8 @@ function VoiceOrb({
   );
 }
 
-export function App() {
-  const [screen, setScreen] = useState<VisibleScreen>(readScreen),
+export function App({ embeddedScreen, onPrepare }: { embeddedScreen?: VisibleScreen; onPrepare?: (value: string) => void } = {}) {
+  const [screen, setScreen] = useState<VisibleScreen>(() => embeddedScreen || readScreen()),
     [sideOpen, setSideOpen] = useState(false);
   const [navigationArea, setNavigationArea] = useState<NavigationArea>(
     () => screens[readScreen()].group,
@@ -482,13 +482,14 @@ export function App() {
     const target = Object.hasOwn(screens, requested) ? requested as VisibleScreen : "home";
     setScreen(target);
     setNavigationArea(screens[target].group);
-    location.hash = target;
+    if (!embeddedScreen) location.hash = target;
     setSideOpen(false);
     setPalette(false);
     setNotice(false);
     if (innerWidth <= 1100) setInspect(false);
   }
   function prepare(message: string) {
+    if (onPrepare) { onPrepare(message); return; }
     setDraft(message);
     navigate("chat");
     setTimeout(() => inputRef.current?.focus(), 0);
@@ -499,7 +500,7 @@ export function App() {
       setScreen(next);
       setNavigationArea(screens[next].group);
     };
-    window.addEventListener("hashchange", onHash);
+    if (!embeddedScreen) window.addEventListener("hashchange", onHash);
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setInspect(false);
@@ -507,7 +508,7 @@ export function App() {
         setSideOpen(false);
         setNotice(false);
       }
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+      if (!embeddedScreen && (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
         setPalette((v) => !v);
         setSearch("");
@@ -874,7 +875,7 @@ export function App() {
 
   return (
     <div
-      className={`app-shell ${inspect ? "with-inspector" : ""} ${sideOpen ? "navigation-open" : ""}`}
+      className={`app-shell ${embeddedScreen ? "chat-embedded" : ""} ${inspect ? "with-inspector" : ""} ${sideOpen ? "navigation-open" : ""}`}
     >
       <a
         className="skip-link"

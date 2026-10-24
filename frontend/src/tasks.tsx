@@ -70,22 +70,16 @@ export function TasksPage({ token }: { token: string }) {
     finally { setBusy(false); }
   }
 
-  async function approve(actionId: string) {
-    await write(`/api/bridge/action/${actionId}`, token, { state: "dispatching" }).catch(() => {});
-    await act(actionId, { state: "fulfilled",
-      receipt: { ok: true, message: "approved in Hanni OS", data: {} } });
-  }
-
   async function submit(event: FormEvent) {
     event.preventDefault();
     if (!prompt.trim() || busy) return;
     setBusy(true); setNote("");
     try {
-      await write("/api/bridge/submit", token, {
+      const task = await write<BridgeTask>("/api/bridge/submit", token, {
         key: crypto.randomUUID(),
         task: { prompt: prompt.trim(), windows_tools: [], origin: "hanni", context: {} },
       });
-      setPrompt(""); list.refresh();
+      setPrompt(""); setSelected(task.id); list.refresh();
     } catch (e) { setNote(e instanceof Error ? e.message : "Submit failed."); }
     finally { setBusy(false); }
   }
@@ -123,7 +117,10 @@ export function TasksPage({ token }: { token: string }) {
         ))}
       </section>
       <section className="screen-section">
-        <div className="section-title"><h2>{selected ? "Task detail" : "Submit a task"}</h2></div>
+        <div className="section-title"><h2>{selected ? "Task detail" : "Submit a task"}</h2>
+          {selected && <button onClick={() => { setSelected(null); setNote(""); }}>New task</button>}
+        </div>
+        {selected && detail.error && <p className="error" role="alert">{detail.error}</p>}
         {selected && detail.data?.id === selected ? (
           <>
             <p className="subtle">{detail.data.request?.prompt?.slice(0, 400) || "No prompt recorded."}</p>
@@ -133,13 +130,25 @@ export function TasksPage({ token }: { token: string }) {
                 <pre>{JSON.stringify(a.arguments, null, 2).slice(0, 600)}</pre>
                 <div className="dialog-actions">
                   <button className="danger-button" disabled={busy}
-                    onClick={() => act(a.id, { state: "rejected", receipt: { ok: false, error: "rejected in Hanni OS" } })}>
+                    onClick={() => act(a.id, { state: "rejected" })}>
                     Deny
                   </button>
-                  <button disabled={busy} onClick={() => approve(a.id)}>Approve</button>
+                  <button disabled={busy || !token || !["local", "mcp"].includes(a.spec.target)}
+                    onClick={() => act(a.id, { state: "dispatching" })}>Approve</button>
                 </div>
+                {!["local", "mcp"].includes(a.spec.target) && <p className="subtle">Review this action through its registered HANNI controller.</p>}
               </div>
             ))}
+            {actions.some((a) => a.state === "dispatching") && <p role="status">Approved. Waiting for the worker’s execution receipt.</p>}
+            {detail.data.error && <p className="error">{detail.data.error}</p>}
+            {["queued", "running", "approval"].includes(detail.data.state) && (
+              <button className="danger-button" disabled={busy} onClick={async () => {
+                setBusy(true); setNote("");
+                try { await write(`/api/bridge/cancel/${selected}`, token, {}); list.refresh(); detail.refresh(); }
+                catch (e) { setNote(e instanceof Error ? e.message : "Cancellation failed."); }
+                finally { setBusy(false); }
+              }}>Cancel task</button>
+            )}
             {detail.data.result?.receipts?.length ? (
               <p className="subtle">{detail.data.result.receipts.length} receipt(s):{" "}
                 {detail.data.result.receipts.map((r) => r.ok ? `ok${r.approved_by ? ` (${r.approved_by})` : ""}` : r.error || "failed").join(", ")}</p>

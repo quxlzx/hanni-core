@@ -107,15 +107,22 @@ class MCPHub:
             return manager.add(data['config'])
         if operation == 'update':
             self._keys(data, {'server_id', 'config', 'expected_config_hash'})
-            return manager.update(data['server_id'], data['config'],
-                                  expected_config_hash=data['expected_config_hash'])
+            result = manager.update(data['server_id'], data['config'],
+                                    expected_config_hash=data['expected_config_hash'])
+            if self.auto_connections:
+                self.auto_connections.pause(data['server_id'])
+            return result
         if operation in {'test_discover', 'reconnect'}:
             self._keys(data, {'server_id', 'approved', 'expected_config_hash'})
             if data['approved'] is not True:
                 raise ValueError('Review and explicitly approve the displayed connection first.')
             action = manager.connect if operation == 'test_discover' else manager.reconnect
-            return action(data['server_id'], approved=True,
-                          expected_config_hash=data['expected_config_hash'])
+            result = action(data['server_id'], approved=True,
+                            expected_config_hash=data['expected_config_hash'])
+            server = next((server for server in result['servers'] if server['id'] == data['server_id']), None)
+            if self.auto_connections and server and server['state'] == 'connected' and server['config']['auto_connect']:
+                self.auto_connections.pin(server['id'], server['config_hash'])
+            return result
         if operation in {'refresh', 'enable_server', 'disable_server', 'disconnect', 'remove'}:
             self._keys(data, {'server_id'})
             if self.auto_connections and operation in {'disable_server','disconnect','remove'}:
