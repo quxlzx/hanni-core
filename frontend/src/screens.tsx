@@ -553,8 +553,18 @@ export function MissionScreen({ context: c }: { context: ScreenContext }) {
   );
 }
 
+const settingsTabs = [
+  ["integrations", "Integrations"],
+  ["audio", "Audio"],
+  ["model", "Model routing"],
+  ["permissions", "Permissions"],
+  ["session", "Session"],
+] as const;
+type SettingsTab = typeof settingsTabs[number][0];
+
 export function SettingsScreen({ context: c }: { context: ScreenContext }) {
   const policies = c.meta?.policies;
+  const [tab, setTab] = useState<SettingsTab>("integrations");
   return (
     <div className="settings-page">
       <header className="screen-heading">
@@ -566,69 +576,39 @@ export function SettingsScreen({ context: c }: { context: ScreenContext }) {
           Refresh settings
         </button>
       </header>
-      <nav className="settings-jumps" aria-label="Settings sections">
-        <a
-          href="#integration-settings"
-          onClick={(event) => {
-            event.preventDefault();
-            document
-              .getElementById("integration-settings")
-              ?.scrollIntoView({ block: "start" });
-          }}
-        >
-          Integrations
-        </a>
-        <a
-          href="#audio-settings"
-          onClick={(event) => {
-            event.preventDefault();
-            document
-              .getElementById("audio-settings")
-              ?.scrollIntoView({ block: "start" });
-          }}
-        >
-          Audio
-        </a>
-        <a
-          href="#model-settings"
-          onClick={(event) => {
-            event.preventDefault();
-            document
-              .getElementById("model-settings")
-              ?.scrollIntoView({ block: "start" });
-          }}
-        >
-          Model routing
-        </a>
-        <a
-          href="#policy-settings"
-          onClick={(event) => {
-            event.preventDefault();
-            document
-              .getElementById("policy-settings")
-              ?.scrollIntoView({ block: "start" });
-          }}
-        >
-          Permissions
-        </a>
-        <a
-          href="#session-settings"
-          onClick={(event) => {
-            event.preventDefault();
-            document
-              .getElementById("session-settings")
-              ?.scrollIntoView({ block: "start" });
-          }}
-        >
-          Session
-        </a>
+      <nav className="settings-tabs" role="tablist" aria-label="Settings sections">
+        {settingsTabs.map(([id, label], index) => (
+          <button
+            key={id}
+            id={`settings-tab-${id}`}
+            type="button"
+            role="tab"
+            aria-selected={tab === id}
+            aria-controls={`settings-panel-${id}`}
+            tabIndex={tab === id ? 0 : -1}
+            onClick={() => setTab(id)}
+            onKeyDown={(event) => {
+              const next = event.key === "ArrowRight" ? (index + 1) % settingsTabs.length
+                : event.key === "ArrowLeft" ? (index + settingsTabs.length - 1) % settingsTabs.length
+                  : event.key === "Home" ? 0 : event.key === "End" ? settingsTabs.length - 1 : -1;
+              if (next < 0) return;
+              event.preventDefault();
+              setTab(settingsTabs[next][0]);
+              document.getElementById(`settings-tab-${settingsTabs[next][0]}`)?.focus();
+            }}
+          >{label}</button>
+        ))}
       </nav>
+      <div id="settings-panel-integrations" className="settings-tab-panel" role="tabpanel" aria-labelledby="settings-tab-integrations" hidden={tab !== "integrations"} tabIndex={0}>
       <section id="integration-settings" className="settings-section">
         <div>
           <h2>Integrations</h2>
           <p>External tools managed through HANNI.</p>
         </div>
+        <p className="subtle">Use the MCP page to add servers, manage connections, and choose individual tools.</p>
       </section>
+      </div>
+      <div id="settings-panel-audio" className="settings-tab-panel" role="tabpanel" aria-labelledby="settings-tab-audio" hidden={tab !== "audio"} tabIndex={0}>
       <section id="audio-settings" className="settings-section">
         <div>
           <h2>Microphone &amp; speaker</h2>
@@ -646,6 +626,8 @@ export function SettingsScreen({ context: c }: { context: ScreenContext }) {
           </Empty>
         )}
       </section>
+      </div>
+      <div id="settings-panel-model" className="settings-tab-panel" role="tabpanel" aria-labelledby="settings-tab-model" hidden={tab !== "model"} tabIndex={0}>
       <section id="model-settings" className="settings-section">
         <div>
           <h2>Model routing</h2>
@@ -663,6 +645,8 @@ export function SettingsScreen({ context: c }: { context: ScreenContext }) {
           </Empty>
         )}
       </section>
+      </div>
+      <div id="settings-panel-permissions" className="settings-tab-panel" role="tabpanel" aria-labelledby="settings-tab-permissions" hidden={tab !== "permissions"} tabIndex={0}>
       <section id="policy-settings" className="settings-section">
         <div>
           <h2>Tool access</h2>
@@ -732,6 +716,8 @@ export function SettingsScreen({ context: c }: { context: ScreenContext }) {
           )}
         </div>
       </section>
+      </div>
+      <div id="settings-panel-session" className="settings-tab-panel" role="tabpanel" aria-labelledby="settings-tab-session" hidden={tab !== "session"} tabIndex={0}>
       <section className="settings-section">
         <div>
           <h2>Interface</h2>
@@ -805,6 +791,7 @@ export function SettingsScreen({ context: c }: { context: ScreenContext }) {
           </p>
         </div>
       </section>
+      </div>
     </div>
   );
 }

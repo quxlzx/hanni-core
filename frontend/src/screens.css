@@ -503,22 +503,39 @@
 .mission-page .network-readings strong {
   font: 500 13px/1.5 var(--mono);
 }
-.settings-jumps {
+.settings-tabs {
   display: flex;
-  gap: 20px;
+  gap: 4px 20px;
   border-bottom: 1px solid var(--line);
   margin-bottom: 0;
-  padding: 0 0 12px;
+  padding: 0;
   flex-wrap: wrap;
 }
-.settings-jumps a {
-  text-decoration: none;
+.settings-tabs [role="tab"] {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
   color: var(--muted);
+  padding: 10px 0;
+  min-height: 40px;
+  font: inherit;
   font-size: 12px;
+  cursor: pointer;
 }
-.settings-jumps a:hover {
+.settings-tabs [role="tab"]:hover,
+.settings-tabs [role="tab"][aria-selected="true"] {
   color: var(--text);
 }
+.settings-tabs [role="tab"][aria-selected="true"] {
+  border-bottom-color: currentColor;
+}
+.settings-tabs [role="tab"]:focus-visible,
+.settings-tab-panel:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.settings-tab-panel[hidden] { display: none; }
 .settings-page .settings-section {
   display: grid;
   grid-template-columns: minmax(165px, 0.45fr) minmax(0, 1fr);
@@ -762,8 +779,8 @@
   .settings-page .screen-heading p {
     display: none;
   }
-  .settings-jumps {
-    padding-bottom: 8px;
+  .settings-tabs [role="tab"] {
+    padding-block: 8px;
   }
   .settings-page .settings-section {
     padding: 11px 0;
