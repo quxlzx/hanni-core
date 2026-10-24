@@ -1,6 +1,7 @@
 import { useRef, useState, type FormEvent } from "react";
 import { request } from "./api";
 import { usePrivateResource } from "./feature_types";
+import { OfficeSetup } from "./office_setup";
 import {
   approvalPayload,
   classificationLabels,
@@ -29,6 +30,8 @@ export function MCPPanel({ token }: { token: string }) {
     [document, setDocument] = useState(""),
     [preview, setPreview] = useState<MCPImportPreview | null>(null);
   const [remove, setRemove] = useState<string | null>(null);
+  const [officeSetup, setOfficeSetup] = useState(false);
+  const [notice, setNotice] = useState("");
   const [classes, setClasses] = useState<
     Record<string, MCPClassification | "">
   >({});
@@ -58,6 +61,7 @@ export function MCPPanel({ token }: { token: string }) {
     lock.current = true;
     setBusy(true);
     setError("");
+    setNotice("");
     try {
       await run();
     } catch (caught) {
@@ -141,7 +145,20 @@ export function MCPPanel({ token }: { token: string }) {
           <button
             disabled={disabled}
             onClick={() => {
+              setOfficeSetup(true);
+              setEditor(null);
+              setImporting(false);
+              setError("");
+              setNotice("");
+            }}
+          >
+            Microsoft Office
+          </button>
+          <button
+            disabled={disabled}
+            onClick={() => {
               setEditor({ form: serverForm() });
+              setOfficeSetup(false);
               setImporting(false);
               setError("");
             }}
@@ -152,6 +169,7 @@ export function MCPPanel({ token }: { token: string }) {
             disabled={disabled}
             onClick={() => {
               setImporting(true);
+              setOfficeSetup(false);
               setEditor(null);
               setError("");
             }}
@@ -164,6 +182,7 @@ export function MCPPanel({ token }: { token: string }) {
         </div>
       </header>
       <p>Connect tool servers and choose which tools HANNI can use.</p>
+      {notice && <p className="hc-mcp-notice" role="status">{notice}</p>}
       {(error || resource.error || data?.reason) && (
         <p className="hc-error-text hc-mcp-notice" role="alert">
           {error || resource.error || data?.reason}
@@ -172,6 +191,28 @@ export function MCPPanel({ token }: { token: string }) {
       {!data && !resource.error && <p role="status">Reading connections…</p>}
       {data?.policy_reason && (
         <p className="hc-mcp-policy">{data.policy_reason}</p>
+      )}
+      {officeSetup && (
+        <OfficeSetup
+          token={token}
+          disabled={disabled}
+          busy={busy}
+          onCancel={() => setOfficeSetup(false)}
+          onCloudSetup={(settings) => {
+            void act(async () => {
+              await call("office_cloud_setup", settings);
+              setOfficeSetup(false);
+              setNotice("Microsoft 365 Work IQ server connected. Review and enable tools below. Account access is checked on your first query.");
+            });
+          }}
+          onSetup={(settings) => {
+            void act(async () => {
+              const result = await call<{ folder: string }>("office_setup", settings);
+              setOfficeSetup(false);
+              setNotice(`Office files connected: ${result.folder}. Review the tools below to enable creating and editing.`);
+            });
+          }}
+        />
       )}
       {editor && (
         <form className="hc-mcp-editor" onSubmit={(event) => save(event, true)}>
@@ -466,7 +507,7 @@ export function MCPPanel({ token }: { token: string }) {
           </div>
         </form>
       )}
-      {data && !data.servers.length && !editor && !importing && (
+      {data && !data.servers.length && !editor && !importing && !officeSetup && (
         <div className="hc-panel-empty">
           <h2>No MCP servers yet</h2>
           <p>
@@ -552,6 +593,7 @@ export function MCPPanel({ token }: { token: string }) {
                     form: serverForm(server.config),
                   });
                   setImporting(false);
+                  setOfficeSetup(false);
                   setError("");
                 }}
               >

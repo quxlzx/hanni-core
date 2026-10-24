@@ -51,6 +51,42 @@
   font-size: 18px;
   margin-bottom: 20px;
 }
+.hc-office-setup > p {
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+.hc-office-setup fieldset > .hc-mcp-policy {
+  margin-block: 20px;
+  line-height: 1.7;
+}
+.hc-office-choice {
+  margin-top: 24px;
+}
+.hc-office-choice button[aria-pressed="true"] {
+  border-color: var(--text);
+  color: var(--text);
+}
+.hc-office-steps {
+  padding-left: 20px;
+  margin-block: 20px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.hc-office-steps li {
+  margin-bottom: 18px;
+}
+.hc-office-steps pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #1b1b1b;
+  padding: 12px;
+  margin-block: 12px;
+  font: 11px/1.8 var(--mono);
+}
+.hc-office-steps button {
+  min-height: 34px;
+}
 .hc-mcp-editor fieldset {
   border: 0;
   padding: 0;

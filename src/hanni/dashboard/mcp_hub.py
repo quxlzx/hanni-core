@@ -19,7 +19,7 @@ from hanni.tools.base import ToolDefinition, ToolRequest, ToolResult
 OPERATIONS = frozenset({
     'add', 'update', 'test_discover', 'refresh', 'reconnect', 'enable_server',
     'disable_server', 'disconnect', 'remove', 'approve_tools', 'disable_tools',
-    'import_preview', 'import', 'export',
+    'import_preview', 'import', 'export', 'office_setup', 'office_cloud_setup',
 })
 _MANAGEMENT_PAYLOAD = ContextVar('hanni_mcp_management_payload', default=None)
 
@@ -95,6 +95,10 @@ class MCPHub:
     def export_configs(self):
         return self.require().export_configs()
 
+    def office_status(self):
+        from hanni.dashboard.office_setup import status
+        return status(self)
+
     @staticmethod
     def _keys(data, required):
         if not isinstance(data, dict) or set(data) != set(required):
@@ -102,6 +106,12 @@ class MCPHub:
 
     def _operation(self, operation, data, correlation_id=None):
         manager = self.require()
+        if operation == 'office_setup':
+            from hanni.dashboard.office_setup import setup
+            return setup(self, data)
+        if operation == 'office_cloud_setup':
+            from hanni.dashboard.office_setup import setup_cloud
+            return setup_cloud(self, data)
         if operation == 'add':
             self._keys(data, {'config'})
             return manager.add(data['config'])

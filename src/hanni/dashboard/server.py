@@ -410,7 +410,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._inference_request('GET')
         private_routes = {'/api/chat/commands', '/api/chat/command', '/api/model-settings', '/api/productivity', '/api/memory', '/api/calendar',
                           '/api/agents', '/api/awareness', '/api/voice', '/api/notifications',
-                          '/api/mcp', '/api/mcp/export', '/api/hermes', '/api/executions', '/api/tasks', '/api/workflows', '/api/compute', '/api/model-routing', '/api/model-lab',
+                          '/api/mcp', '/api/mcp/export', '/api/mcp/office', '/api/hermes', '/api/executions', '/api/tasks', '/api/workflows', '/api/compute', '/api/model-routing', '/api/model-lab',
                           '/api/bridge/tasks', '/api/bridge/tools', '/api/cron/jobs', '/api/skills'}
         if route in private_routes or route.startswith(('/api/tasks/', '/api/workflows/', '/api/memory/', '/api/model-lab/', '/api/bridge/task/')):
             if not secrets.compare_digest(self.headers.get('X-Hanni-Token', ''), self.server.chat.token):
@@ -437,6 +437,7 @@ class Handler(BaseHTTPRequestHandler):
                 elif route == '/api/calendar': result = feature.calendar(query)
                 elif route == '/api/agents': result = feature.agents(self.server.chat.snapshot(), self.server.workspace_snapshot())
                 elif route == '/api/mcp': result = self.server.mcp.snapshot()
+                elif route == '/api/mcp/office': result = self.server.mcp.office_status()
                 elif route == '/api/bridge/tools':
                     from hanni.dashboard.bridge_panel import bridge_proxy
                     result = bridge_proxy('GET', '/tools')
