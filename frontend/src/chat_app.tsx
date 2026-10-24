@@ -759,7 +759,6 @@ export function ChatApp() {
           <nav aria-label="Agent tools">
             {(
               [
-                ["tasks", "Tasks & approvals"],
                 ["memory", "Memory"],
                 ["skills", "Skills"],
                 ["schedule", "Schedule"],
@@ -1025,12 +1024,6 @@ export function ChatApp() {
                           disabled={creating || !token}
                         >
                           New conversation
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => showPanel("tasks")}
-                        >
-                          Tasks &amp; approvals
                         </button>
                         <button
                           type="button"
