@@ -1,6 +1,8 @@
 import { usePrivateResource } from "./feature_types";
 import { ChatIcon } from "./chat_app";
 import { ChatMarkdown } from "./chat_markdown";
+import { ChatTaskReview } from "./chat_task_review";
+import { terminalTask, type ReviewTask } from "./task_review";
 import type { Message } from "./types";
 
 type Stats = {
@@ -11,18 +13,11 @@ type Stats = {
   rate_source: "generation" | "request" | null;
   model_requests: number;
 };
-type TaskDetail = {
+type TaskDetail = ReviewTask & {
   id: string;
   state: string;
   created: number;
   events?: { time: number; text: string }[];
-  actions?: {
-    id: string;
-    state: string;
-    created?: number;
-    spec: { name: string };
-    receipt?: { ok: boolean; message?: string; error?: string } | null;
-  }[];
   result?: {
     reasoning?: { step: number; text: string; truncated: boolean }[];
     stats?: Stats | null;
@@ -42,13 +37,11 @@ function ReasoningDetails({
   data,
   error,
   retry,
-  openTasks,
 }: {
   row: Message;
   data: TaskDetail | null;
   error: string;
   retry: () => void;
-  openTasks: () => void;
 }) {
   const working =
     row.status === "working" &&
@@ -316,11 +309,6 @@ function ReasoningDetails({
                     : "Reasoning was not recorded for this older response."}
               </p>
             )}
-            {actions.length > 0 && (
-              <button className="hc-text-button" onClick={openTasks}>
-                Review tasks &amp; approvals
-              </button>
-            )}
           </>
         )}
       </div>
@@ -372,22 +360,27 @@ export function AssistantResponse({
   openTasks: () => void;
 }) {
   const working = row.status === "working";
+  const [watching, setWatching] = useState(working);
   const task = usePrivateResource<TaskDetail>(
     row.task_id
       ? `/api/bridge/task/${encodeURIComponent(row.task_id)}`
       : "/api/bridge/tasks",
     row.task_id ? token : "",
-    working ? 500 : 0,
+    watching ? 700 : 0,
   );
   const data = task.data?.id === row.task_id ? task.data : null;
+  const detailError = task.error || (!data ? task.data?.error || "" : "");
+  useEffect(() => {
+    setWatching(working || !!data && (!terminalTask(data.state)
+      || !!data.actions?.some(action => action.state === "dispatching")));
+  }, [working, data]);
   return (
     <>
       <ReasoningDetails
         row={row}
         data={data}
-        error={task.error}
+        error={detailError}
         retry={task.refresh}
-        openTasks={openTasks}
       />
       {(!working || data?.result?.draft) && (
         <ChatMarkdown
@@ -395,6 +388,10 @@ export function AssistantResponse({
           working={working}
         />
       )}
+      {data && <ChatTaskReview task={data} token={token} error={detailError} refresh={task.refresh} openTasks={openTasks} />}
+      {row.task_id && !data && detailError && <p className="hc-turn-note" role="alert">
+        Task review is unavailable: {detailError}. <button onClick={task.refresh}>Retry task review</button>
+      </p>}
       {!working && data?.result?.stats && (
         <ResponseStats stats={data.result.stats} />
       )}

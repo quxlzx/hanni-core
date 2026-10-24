@@ -444,8 +444,8 @@ class Handler(BaseHTTPRequestHandler):
                     from hanni.dashboard.bridge_panel import bridge_proxy
                     result = bridge_proxy('GET', '/tasks')
                 elif route.startswith('/api/bridge/task/'):
-                    from hanni.dashboard.bridge_panel import bridge_proxy
-                    result = bridge_proxy('GET', '/tasks/' + route.removeprefix('/api/bridge/task/'))
+                    from hanni.dashboard.bridge_panel import bridge_task_detail
+                    result = bridge_task_detail(route.removeprefix('/api/bridge/task/'))
                 elif route == '/api/cron/jobs':
                     from hanni.dashboard.bridge_panel import cron_jobs
                     result = cron_jobs()

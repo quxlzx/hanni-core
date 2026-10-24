@@ -78,7 +78,7 @@ class NativeChat:
                     answer = result.get("model_claims") or task.get("error") or "No final answer was returned. Review Mission → Tasks."
                     self.hub.update(row, answer, "complete" if task["state"] == "review_required" else "interrupted")
                     return
-                self.hub.update(row, "Waiting for your approval in Mission → Tasks."
+                self.hub.update(row, "Waiting for your approval in Task review below."
                                 if task["state"] == "approval" else "HANNI is working…")
                 self.stop.wait(.5)
             self.hub.update(row, "The response was interrupted.", "interrupted")

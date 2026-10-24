@@ -47,15 +47,35 @@ def cron_root() -> Path:
     return Path(os.environ.get("HANNI_CRON_ROOT", str(default)))
 
 
+def bridge_task_detail(task_id: str) -> dict:
+    """Bind review controls to the precise action record returned by the bridge."""
+    from hanni.hermes.state import digest
+    task = bridge_proxy('GET', '/tasks/' + task_id)
+    if task.get('error') and not task.get('id'):
+        return task
+    return {**task, 'actions': [{**action, 'review_hash': digest(action)} for action in task.get('actions', [])]}
+
+
 def bridge_decision(action_id: str, body: dict) -> dict:
-    if set(body) != {"state"} or body['state'] not in {'dispatching', 'rejected'}:
+    from hanni.hermes.state import digest
+    if (not isinstance(body, dict) or set(body) - {'state', 'expected_hash', 'task_id'}
+            or body.get('state') not in {'dispatching', 'rejected'}):
         raise ValueError('Approve or deny the action; execution receipts come from the worker.')
+    expected = body.get('expected_hash')
+    if expected is not None and (not isinstance(expected, str) or len(expected) != 64
+            or any(char not in '0123456789abcdef' for char in expected)):
+        raise ValueError('Reload the task and review the current action.')
+    if 'task_id' in body and (not isinstance(body['task_id'], str) or not body['task_id'] or expected is None):
+        raise ValueError('Conversation decisions require the reviewed task and action fingerprint.')
     action = bridge_proxy('GET', '/actions/' + action_id)
     if action.get('error'):
         return action
+    if ('task_id' in body and action.get('task') != body['task_id']) or (expected is not None and digest(action) != expected):
+        raise ValueError('Action changed or belongs to another task. Refresh and review the current request.')
     if body['state'] == 'dispatching' and action['spec']['target'] not in {'local', 'mcp'}:
         raise ValueError('This capability requires its registered HANNI execution controller.')
-    return bridge_proxy('POST', '/actions/' + action_id, body)
+    return bridge_proxy('POST', '/actions/' + action_id,
+                        {'state': body['state'], **({'expected_hash': expected} if expected is not None else {})})
 
 
 def cron_jobs() -> dict:

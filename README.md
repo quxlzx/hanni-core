@@ -46,6 +46,16 @@ Local inference detects usable GPUs through the installed llama.cpp backend. It 
 
 Chat shows a live, expandable **Reasoning & activity** view: model-returned reasoning, applied skills, tool requests and receipts, approval waits, and response writing. Supported models stream reasoning and answer text as they generate it. The view opens while working and folds after completion unless you choose to keep it open; its history is saved with the task. Models that return no separate reasoning show actual activity only. A provider that explicitly rejects streaming falls back to ordinary responses. The displayed duration includes model requests, tools, and approval waits.
 
+Each native response also has an inline **Task review**. Expand it to inspect
+tool arguments and execution receipts without leaving the conversation. Pending
+approvals open it automatically, with **Approve** and **Deny** for local and MCP
+actions. Decisions apply only to the exact request displayed; changed, expired,
+or already dispatched requests cannot be approved again. Approval grants
+dispatch, while the eventual receipt reports whether execution succeeded.
+Failed or uncertain outcomes remain visible, and saved reviews can be reopened
+after refreshing. Actions owned by another controller retain their existing
+review path through **Open agent tools**.
+
 The bottom chat readout shows the last request's context usage against the model's context limit, the reply's reported input/output token total, and server-measured **decode t/s**. It refreshes every two minutes and when a reply completes. Missing usage or generation timings appear as unavailable; request latency is not presented as decode speed. Hover over a value for exact counts and its measurement scope.
 
 In **MCP**, use **Add server** for a local stdio executable or a Streamable HTTP endpoint, or **Import JSON** for an `mcpServers` configuration. **Save and connect** starts the connection and discovers tools. Choose each tool's permission and select **Enable tool** to make it available to the native chat agent. Reads use the approved definition; other tool effects require an action decision in **Agent tools → Tasks & approvals**. Environment variables and saved credential references keep secrets out of configuration. Local packages must already be installed (`npx --no-install` is supported). Optional startup reconnect pins the exact configuration after a successful connection; **Disconnect** pauses it.
