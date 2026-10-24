@@ -50,7 +50,7 @@ The bottom chat readout shows the last request's context usage against the model
 
 In **MCP**, use **Add server** for a local stdio executable or a Streamable HTTP endpoint, or **Import JSON** for an `mcpServers` configuration. **Save and connect** starts the connection and discovers tools. Choose each tool's permission and select **Enable tool** to make it available to the native chat agent. Reads use the approved definition; other tool effects require an action decision in **Agent tools → Tasks & approvals**. Environment variables and saved credential references keep secrets out of configuration. Local packages must already be installed (`npx --no-install` is supported). Optional startup reconnect pins the exact configuration after a successful connection; **Disconnect** pauses it.
 
-The active **Skills** collection contains 23 procedures. Twelve everyday workplace skills cover email, meeting notes, task planning, spreadsheet analysis, document summaries, memos and proposals, presentations, status updates, business research, calendar planning, customer responses, and process/onboarding guides. They complement the retained research, citations, knowledge management, recurring tasks, and engineering skills. Skills match the task automatically; email, calendar, and file actions still depend on available tools and the user's instructions. A draft is not reported as a sent message, saved event, or finished document file. Project-specific infrastructure and development experiments remain in [`soul/archived-skills`](soul/archived-skills/README.md), outside the active skills directory.
+The active **Skills** collection contains 24 procedures. Twelve everyday workplace skills cover email, meeting notes, task planning, spreadsheet analysis, document summaries, memos and proposals, presentations, status updates, business research, calendar planning, customer responses, and process/onboarding guides. They complement the retained research, citations, knowledge management, recurring tasks, and engineering skills. Skills match the task automatically; email, calendar, and file actions still depend on available tools and the user's instructions. A draft is not reported as a sent message, saved event, or finished document file.
 
 Run `.\.venv\Scripts\python.exe scripts\diagnose_brain.py` to inspect the current model identity, bridge, dashboard, and generated configuration without running tools or submitting a task.
 
@@ -363,3 +363,6 @@ sudo apt install libportaudio2   # audio stack (speech features; tests that
 
 For the offline assistant test layers, coverage, frontend/package checks, and
 recorded verification results, see [assistant harness testing](docs/assistant-harness/testing.md).
+
+See [repository maintenance](docs/REPOSITORY_MAINTENANCE.md) for generated files,
+retained evaluation evidence, and earlier material available in Git history.

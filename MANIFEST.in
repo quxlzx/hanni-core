@@ -3,7 +3,6 @@ include START_HANNI_OS.cmd
 include START_BRAIN.cmd start_brain.sh
 recursive-include soul *.md *.py *.sh *.txt
 include .env.example .gitignore .gitattributes
-include SETUP_HANNI_VOICE.cmd
 recursive-include config *.yaml
 recursive-include scripts *.py *.ps1 *.cjs *.mjs
 recursive-include docs *.md

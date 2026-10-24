@@ -26,7 +26,7 @@ def snapshot_source(repo):
                 if path.is_symlink() or not path.resolve().is_relative_to(repo):
                     raise ValueError('Source manifest does not follow links outside repository.')
                 rows.append({'path': rel.as_posix(), 'sha256': digest(path), 'size': path.stat().st_size})
-    for name in ('pyproject.toml', '.env.example', 'README.md', 'CLAUDE.md', 'SECURITY.md', 'MANIFEST.in', 'START_HANNI.cmd', 'START_HANNI_OS.cmd', 'SETUP_HANNI.cmd', 'SETUP_HANNI_VOICE.cmd', 'EXPORT_HANNI_SOURCE.cmd'):
+    for name in ('pyproject.toml', '.env.example', 'README.md', 'CLAUDE.md', 'SECURITY.md', 'MANIFEST.in', 'START_HANNI.cmd', 'START_HANNI_OS.cmd', 'SETUP_HANNI.cmd', 'EXPORT_HANNI_SOURCE.cmd'):
         path = repo / name
         if path.exists():
             rows.append({'path': name, 'sha256': digest(path), 'size': path.stat().st_size})

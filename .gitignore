@@ -10,6 +10,7 @@
 *.zip
 *.whl
 *.tar.gz
+/*.tar
 *.bak
 *.backup
 public-release/
@@ -135,3 +136,5 @@ hanni-core/state/
 # get_models output dirs (repo layout)
 /models/
 /binaries/
+/wheels/
+/wheels-win/

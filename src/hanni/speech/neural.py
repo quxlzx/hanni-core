@@ -92,9 +92,9 @@ class KokoroTts:
         reason = self.unavailable_reason()
         if reason:
             if not self.config.sapi_fallback:
-                raise TtsError(f"{reason}; run SETUP_HANNI_VOICE.cmd")
+                raise TtsError(f"{reason}; run python scripts/setup_hanni_voice.py")
             if not self._warned:
-                logging.getLogger(__name__).warning("%s; using Windows SAPI. Run SETUP_HANNI_VOICE.cmd", reason)
+                logging.getLogger(__name__).warning("%s; using Windows SAPI. Run python scripts/setup_hanni_voice.py", reason)
                 self._warned = True
             return self.fallback.start(text)
         payload = dict(chunks=chunks, model_dir=str(self.directory), voice=self.config.voice,
@@ -123,7 +123,7 @@ class KokoroTts:
         """Check the chosen voice before capture starts, without changing it."""
         reason = self.unavailable_reason()
         if reason and not self.config.sapi_fallback:
-            raise TtsError(f'{reason}; run SETUP_HANNI_VOICE.cmd')
+            raise TtsError(f'{reason}; run python scripts/setup_hanni_voice.py')
 
     def speak(self, text):
         from hanni.core.interaction import interaction

@@ -62,9 +62,6 @@ dev = [
     "Pillow>=10.4",
     # Isolated voice/backend tests patch these streams; no microphone is opened.
     "sounddevice>=0.5.0",
-    "google-auth>=2.29,<3",
-    "requests>=2.31,<3",
-    "tzdata>=2024.1",
 ]
 test-speech = ["torch>=2.2"]
 ui-test = ["playwright>=1.63,<2"]

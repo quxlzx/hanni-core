@@ -28,7 +28,7 @@ def test_missing_assets_use_sapi_once_warned_and_can_fail_closed(tmp_path, caplo
     assert engine.fallback.start.call_count == 2
     assert caplog.text.count('using Windows SAPI') == 1
     strict = KokoroTts(config(sapi_fallback=False), data_dir=tmp_path)
-    with pytest.raises(TtsError, match='SETUP_HANNI_VOICE'):
+    with pytest.raises(TtsError, match=r'python scripts/setup_hanni_voice\.py'):
         strict.start('hello')
     assert not strict.start('  ').active
 

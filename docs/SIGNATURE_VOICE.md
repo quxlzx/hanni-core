@@ -22,20 +22,21 @@ voice requires the Windows pack above. Stop the current HANNI session with
 Ctrl+C (answer Y if Windows asks), then run:
 
 ```powershell
-.\START_HANNI.cmd -SkipInstall
+.\scripts\start_dashboard.ps1 -SkipInstall
 ```
 
 For a new checkout, or to repair the voice installation:
 
 ```powershell
-.\SETUP_HANNI_VOICE.cmd --play
+.\.venv\Scripts\python.exe -m pip install -e ".[voice]"
+.\.venv\Scripts\python.exe scripts\setup_hanni_voice.py --play
 ```
 
 Setup generates `data/voice/hanni-preview.wav` with the Australian voice when
 installed. Otherwise it clearly labels the preview as British, prepares the
 Kokoro fallback (approximately 354 MB of assets with pinned SHA-256 checks),
 and raises its pitch. `--play` also plays the preview. It never installs Windows
-language packs itself. The script installs the optional `voice` Python extra.
+language packs itself. Install the optional `voice` extra with the command above.
 No API key or cloud speech account is needed. Setup uses the configured data
 directory (`HANNI_DATA_DIR` when set); `speech.tts.model_dir` is relative to it,
 unless an absolute directory is supplied.
