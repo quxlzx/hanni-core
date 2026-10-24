@@ -20,6 +20,7 @@ from tests.unit.test_desktop_features import config_for
 
 @pytest.fixture
 def commands(tmp_path, monkeypatch):
+    monkeypatch.setenv('HANNI_CRON_ROOT', str(tmp_path / 'state'))
     from hanni.core.interaction import InteractionState
     import hanni.core.interaction as interaction_module
     from hanni.dashboard import voice
@@ -62,8 +63,8 @@ def exchange(hub, text='Question', answer='Answer', conversation='default', task
     return row
 
 
-def test_catalog_has_all_thirty_two_and_help_is_not_truncated(commands):
-    assert len(CATALOG) == 32
+def test_catalog_has_all_commands_and_help_is_not_truncated(commands):
+    assert len(CATALOG) == 33
     result = command(commands, '/help')
     assert all(c['name'] in result['message'] for c in CATALOG)
     assert all(c['description'] in result['message'] and c['example'] in result['message'] for c in CATALOG)

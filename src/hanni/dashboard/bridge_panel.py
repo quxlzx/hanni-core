@@ -79,16 +79,37 @@ def bridge_decision(action_id: str, body: dict) -> dict:
 
 
 def cron_jobs() -> dict:
+    from hanni.native.scheduling import default_timezone
     db = cron_root() / "cron.sqlite3"
     if not db.is_file():
-        return {"jobs": [], "note": "no cron store on this machine"}
-    con = sqlite3.connect(db)
-    con.row_factory = sqlite3.Row
-    jobs = [dict(row) for row in con.execute("SELECT * FROM jobs ORDER BY created_at")]
-    con.close()
-    for job in jobs:
-        job["auto_approve"] = json.loads(job["auto_approve"])
-    return {"jobs": jobs}
+        return {"jobs": [], "timezone": default_timezone()}
+    from hanni.native.scheduling import manage_schedules
+    return {**manage_schedules(cron_root(), 'list'), 'timezone': default_timezone()}
+
+
+def cron_create(body, hub, zone=None):
+    from hanni.native.scheduling import create_schedule
+    import uuid
+    if not isinstance(body, dict) or set(body) - {'id', 'conversation', 'prompt', 'title', 'frequency', 'at_time', 'timezone', 'weekday', 'interval_seconds'}:
+        raise ValueError('Invalid repeating task settings.')
+    try:
+        key = str(uuid.UUID(body.get('id', '')))
+    except (ValueError, TypeError, AttributeError):
+        raise ValueError('A valid schedule request ID is required.') from None
+    conversation = body.get('conversation')
+    with hub.lock:
+        create_conversation = conversation is None
+        if create_conversation:
+            conversation = str(uuid.uuid5(uuid.NAMESPACE_URL, 'hanni-schedule-conversation:' + key))
+        else:
+            hub._conversation(conversation)
+        job = create_schedule(cron_root(), {k: v for k, v in body.items() if k not in {'id', 'conversation'}},
+                              conversation=conversation, request_key=key, zone=zone)
+        if create_conversation:
+            hub.create_conversation(conversation)
+            hub.db.execute("UPDATE conversations SET title=? WHERE id=? AND title='New chat'", (job['title'], conversation))
+            hub.db.commit()
+        return job
 
 
 def cron_set(job_id: str, enabled: bool) -> dict:

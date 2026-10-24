@@ -1,11 +1,13 @@
 ---
 name: requesting-code-review
 description: "Pre-commit review: security scan, quality gates, auto-fix."
-version: 2.1.0
-author: Hermes Agent (adapted from obra/superpowers + MorAlekss)
 license: MIT
-platforms: [linux, macos, windows]
 metadata:
+  version: 2.1.0
+  author: Hermes Agent (adapted from obra/superpowers + MorAlekss)
+  platforms: [linux, macos, windows]
+  hanni:
+    triggers: [code review, pre-commit, review this code, review my code, review changes, review diff]
   hermes:
     tags: [code-review, security, verification, quality, pre-commit, auto-fix]
     related_skills: [subagent-driven-development, test-driven-development, github]

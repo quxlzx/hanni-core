@@ -616,11 +616,11 @@ class Handler(BaseHTTPRequestHandler):
         if not self._allowed(write=True): return
         if self.path.startswith('/api/inference/'):
             return self._inference_request('POST')
-        if self.path.startswith('/api/bridge/') or self.path.startswith('/api/cron/job/'):
+        if self.path.startswith('/api/bridge/') or self.path.startswith('/api/cron/job/') or self.path == '/api/cron/jobs':
             if not secrets.compare_digest(self.headers.get('X-Hanni-Token', ''),
                                           getattr(self.server, 'chat', None) and self.server.chat.token or ''):
                 return self._send(403, b'{"error":"Reload the dashboard before authorizing actions."}')
-            from hanni.dashboard.bridge_panel import bridge_proxy, bridge_decision, cron_set
+            from hanni.dashboard.bridge_panel import bridge_proxy, bridge_decision, cron_set, cron_create, cron_root
             try:
                 length = int(self.headers.get('Content-Length') or 0)
                 if self.headers.get('Transfer-Encoding') or not 0 < length <= 65536:
@@ -629,7 +629,11 @@ class Handler(BaseHTTPRequestHandler):
                 body = json.loads(self.rfile.read(length) or b'{}')
                 if not isinstance(body, dict):
                     raise ValueError('JSON object required')
-                if self.path.startswith('/api/bridge/action/'):
+                if self.path == '/api/cron/jobs':
+                    if not self.server.chat.native_mode:
+                        raise ValueError('Repeating agent tasks require the native chat launcher.')
+                    result = cron_create(body, self.server.chat)
+                elif self.path.startswith('/api/bridge/action/'):
                     result = bridge_decision(self.path.removeprefix('/api/bridge/action/'), body)
                 elif self.path == '/api/bridge/submit':
                     result = bridge_proxy('POST', '/tasks', body)
@@ -637,9 +641,13 @@ class Handler(BaseHTTPRequestHandler):
                     result = bridge_proxy('POST', '/tasks/' + self.path.removeprefix('/api/bridge/cancel/') + '/cancel', {})
                 elif self.path.startswith('/api/cron/job/'):
                     parts = self.path.split('/')
-                    if len(parts) != 6 or parts[5] not in {'enable', 'disable'}:
+                    if len(parts) != 6 or parts[5] not in {'enable', 'disable', 'delete'}:
                         raise ValueError('Unknown cron operation')
-                    result = cron_set(parts[4], parts[5] == 'enable')
+                    if parts[5] == 'delete':
+                        from hanni.native.scheduling import manage_schedules
+                        result = manage_schedules(cron_root(), 'delete', parts[4])
+                    else:
+                        result = cron_set(parts[4], parts[5] == 'enable')
                 else:
                     return self._send(404, b'{"error":"Unknown bridge operation"}')
             except (ValueError, KeyError) as exc:

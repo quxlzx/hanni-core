@@ -18,6 +18,7 @@ _DECISION = ContextVar('hanni_command_decision', default=None)
 
 
 WORK_COMMANDS = [
+    ('schedule', '[list/daily/weekly/hourly/every/pause/resume/delete]', 'Create or manage repeating tasks delivered to a conversation.', '/schedule daily 09:00 | Search current AI news and give me five headlines with source links'),
     ('today', '', 'Summarize today’s calendar, tasks, reminders, and upcoming deadlines.', '/today'),
     ('calendar', '[day/week/create/edit]', 'View your calendar or explicitly create/edit an event.', '/calendar week'),
     ('remind', '<when> <message>', 'Save a one-time reminder and return its scheduled time and ID.', '/remind tomorrow at 9am | Check the report'),
@@ -62,7 +63,53 @@ class WorkCommands:
         if cancel.is_set():
             raise RuntimeError('Command cancelled. Any already completed actions remain in effect.')
 
+    def schedule(self, arg, conversation, key):
+        from .bridge_panel import cron_create, cron_root
+        from hanni.native.scheduling import manage_schedules
+        if not self.hub.native_mode:
+            raise ValueError('Repeating agent tasks require the native chat launcher.')
+        if not arg or arg == 'list':
+            jobs = manage_schedules(cron_root(), 'list')['jobs']
+            return {'message': '### Repeating tasks\n\n' + ('\n\n'.join(
+                f"- **{j['title']}** · {'Active' if j['enabled'] else 'Paused'} · `{j['id']}`\n"
+                f"  {j['cadence']} · next {j['next_run_local']} ({j['timezone']})\n"
+                f"  [Open conversation](/?conversation={j['conversation']})" for j in jobs)
+                or 'No repeating tasks. Example: `/schedule daily 09:00 | Search today’s AI news and summarize it with sources`.')}
+        words = arg.split()
+        if words[0] in {'pause', 'resume', 'delete'}:
+            if len(words) != 2:
+                raise ValueError('Use /schedule pause|resume|delete <exact-schedule-id>.')
+            return {'message': manage_schedules(cron_root(), words[0], words[1])['message']}
+        timing, separator, prompt = arg.partition('|')
+        if not separator or not prompt.strip():
+            raise ValueError('Separate the schedule and task with |. Example: /schedule daily 09:00 | Summarize current AI news with sources')
+        pieces = timing.lower().split()
+        settings = {'id': key, 'conversation': conversation, 'prompt': prompt.strip(),
+                    'title': prompt.strip()[:120], 'timezone': self.zone}
+        if pieces[0] == 'daily' and len(pieces) <= 2:
+            settings.update(frequency='daily', at_time=pieces[1] if len(pieces) == 2 else '09:00')
+        elif pieces[0] == 'weekly' and len(pieces) <= 3:
+            days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+            day = pieces[1][:3] if len(pieces) >= 2 else 'mon'
+            if day not in days:
+                raise ValueError('Use /schedule weekly mon 09:00 | Task (mon through sun).')
+            settings.update(frequency='weekly', weekday=days.index(day), at_time=pieces[2] if len(pieces) == 3 else '09:00')
+        elif pieces == ['hourly']:
+            settings.update(frequency='hourly')
+        elif (match := re.fullmatch(r'every\s+(\d+)\s*(minutes?|mins?|m|hours?|hrs?|h|days?|d)', timing.strip(), re.I)):
+            unit = match[2].lower()[0]
+            settings.update(frequency='interval', interval_seconds=int(match[1]) * {'m': 60, 'h': 3600, 'd': 86400}[unit])
+        else:
+            raise ValueError('Use daily [HH:MM], weekly [mon HH:MM], hourly, or every 2 hours before | Task.')
+        job = cron_create(settings, self.hub, self.zone)
+        return {'message': f"Repeating task saved: **{job['title']}**.\n\n"
+                f"ID: `{job['id']}`\n\nNext run: **{job['next_run_local']}** ({job['timezone']}).\n\n"
+                f"{job['delivery']}\n\nPause with `/schedule pause {job['id']}`. "
+                f"[Open conversation](/?conversation={job['conversation']})."}
+
     def dispatch(self, name, arg, conversation, key, cancel):
+        if name == 'schedule':
+            return self.schedule(arg, conversation, key)
         if name in {'today', 'calendar'}:
             if name == 'calendar' and arg and arg not in {'day', 'week'}:
                 return self.calendar_change(arg, key, cancel)

@@ -1,0 +1,23 @@
+.repeating-tasks { max-width: 760px; }
+.repeat-create { margin: 24px 0; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.repeat-form-heading, .repeat-list-heading, .repeat-job > header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 16px; }
+.repeating-tasks h3 { font-size: 14px; font-weight: 500; margin: 0; }
+.repeat-create > label, .repeat-fields > label { display: grid; gap: 7px; margin-bottom: 16px; font-size: 12px; min-width: 0; }
+.repeat-create input, .repeat-create textarea, .repeat-create select { width: 100%; min-width: 0; padding: 9px 11px; font: inherit; }
+.repeat-create textarea { line-height: 1.6; resize: vertical; }
+.repeat-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0 14px; }
+.repeat-create > p { margin: 0 0 15px; line-height: 1.7; }
+.repeating-tasks button { min-height: 34px; }
+.repeating-tasks button:disabled { opacity: .5; cursor: default; }
+.repeating-tasks button:focus-visible, .repeating-tasks input:focus-visible, .repeating-tasks select:focus-visible, .repeating-tasks textarea:focus-visible, .repeating-tasks a:focus-visible, .repeating-tasks summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.repeat-job { border-top: 1px solid var(--line); padding: 19px 0; overflow-wrap: anywhere; }
+.repeat-job > header { margin-bottom: 8px; }
+.repeat-job > p { margin: 6px 0; font-size: 12px; }
+.repeat-job > header > span, .repeat-job > small { color: var(--muted); font-size: 11px; }
+.repeat-job summary { cursor: pointer; padding: 7px 0; font-size: 12px; }
+.repeat-prompt { white-space: pre-wrap; font-size: 12px; line-height: 1.7; }
+.repeat-job-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 9px 0; font-size: 12px; }
+.repeat-job-actions > a { margin-right: auto; }
+.repeat-saved, .repeat-delete { padding: 12px 0; line-height: 1.7; font-size: 12px; }
+.repeat-delete > button { margin-right: 10px; }
+@media (max-width: 500px) { .repeat-fields { grid-template-columns: minmax(0, 1fr); } }

@@ -64,7 +64,40 @@ The active **Skills** collection contains 28 procedures. Everyday workplace skil
 
 Run `.\.venv\Scripts\python.exe scripts\diagnose_brain.py` to inspect the current model identity, bridge, dashboard, and generated configuration without running tools or submitting a task.
 
-Type `/` in chat for command suggestions, or `/help` for all 32 commands and examples. Commands run directly in HANNI, including when the inference model is disconnected. `/history [search]` searches titles and saved message text; `/resume <session>` accepts an exact ID, unique ID prefix, or exact title. `/new` retains personal memory. `/remember <fact>` saves explicit memory; `/forget <memory-id>` verifies deletion against the backend.
+Type `/` in chat for command suggestions, or `/help` for all 33 commands and examples. Commands run directly in HANNI, including when the inference model is disconnected. `/history [search]` searches titles and saved message text; `/resume <session>` accepts an exact ID, unique ID prefix, or exact title. `/new` retains personal memory. `/remember <fact>` saves explicit memory; `/forget <memory-id>` verifies deletion against the backend.
+
+For repeating work, ask naturally (for example, **“Update me daily on AI news”**)
+or open **Agent tools → Schedule**. Create an hourly, daily, weekly, or custom
+interval task, choose its timezone, and pause, resume, or delete it later.
+The AI news example fills in a source-backed digest prompt; it does not create
+a schedule until you select **Create repeating task**. Natural-language requests
+without a time default to **09:00 in HANNI's configured timezone**, and the agent
+returns the actual next run and schedule ID after saving.
+
+The deterministic conversation command is:
+
+```text
+/schedule daily 09:00 | Search current AI news and summarize five developments with sources
+/schedule weekly mon 09:00 | Review the project notes and summarize next steps
+/schedule every 2 hours | Check system resources and report problems
+/schedule list
+/schedule pause <id>
+/schedule resume <id>
+/schedule delete <id>
+```
+
+Commands and agent-created schedules deliver into the originating conversation;
+the Schedule form creates a separate conversation with an **Open conversation**
+link. Scheduled results and pending approvals appear there with Task review.
+New schedules automatically authorize only built-in read tools; writes, terminal
+execution, and other actions retain normal approval requirements. Existing job
+policies are preserved. HANNI must be running: missed runs catch up once after
+launch, without replaying every missed slot or overlapping the same job. Daily
+and weekly schedules follow local wall time across daylight-saving changes;
+skipped times move to the first valid minute, and repeated times fire once.
+Pausing/deleting a schedule retains already-submitted runs and saved reports;
+use `/jobs` to inspect or cancel an existing run. Existing schedules migrate
+without resetting their enabled state or next run.
 
 In native chat, use the **paperclip** or drag files into the conversation to attach
 PDF, Word (`.docx`), PowerPoint (`.pptx`), Excel (`.xlsx`, `.xlsm`, `.xls`),

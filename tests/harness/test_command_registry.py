@@ -8,7 +8,7 @@ from hanni.dashboard.commands import CATALOG
 from tests.unit.test_chat_commands import commands, command
 
 NAMES = [row['name'][1:] for row in CATALOG]
-EXPECTED = set('help new history resume retry undo stop status context compress model reasoning voice wake mute memory remember forget tools connections today calendar remind tasks search screen clipboard hermes jobs approve deny reload-mcp'.split())
+EXPECTED = set('help new history resume retry undo stop status context compress model reasoning voice wake mute memory remember forget tools connections today calendar remind tasks search screen clipboard hermes jobs approve deny reload-mcp schedule'.split())
 REQUIRED = set('resume voice wake mute remember forget remind search hermes approve deny'.split())
 NO_ARGUMENT = set('help new retry undo stop status context tools connections today reload-mcp'.split())
 FREE_TEXT = set('history compress memory remember search screen clipboard hermes'.split())
@@ -50,6 +50,11 @@ def test_valid_command_selects_handler_and_changes_observable_state(harness, nam
     elif name == 'remind':
         from hanni.tools.reminders import ReminderStore
         assert len(ReminderStore(service.server.features.root).list()) == 1
+    elif name == 'schedule':
+        from hanni.dashboard.bridge_panel import cron_root
+        from hanni.native.cron import CronStore
+        jobs = CronStore(cron_root() / 'cron.sqlite3').list()
+        assert len(jobs) == 1 and jobs[0]['conversation'] == 'default' and jobs[0]['cadence'] == 'daily'
     elif name == 'approve':
         assert h.bridge.store.action(h.action['id'])['state'] == 'dispatching'
     elif name == 'deny':

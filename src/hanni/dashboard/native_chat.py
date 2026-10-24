@@ -15,9 +15,29 @@ class NativeChat:
         from hanni.native.model_settings import ModelSettings
         self.model_settings = ModelSettings.from_env()
         self.thread = threading.Thread(target=self.run, name="hanni-native-chat", daemon=True)
+        self.delivery_thread = threading.Thread(target=self.deliver_scheduled, name='hanni-scheduled-results', daemon=True)
 
     def start(self):
         self.thread.start()
+        self.delivery_thread.start()
+
+    def deliver_scheduled(self):
+        from .bridge_panel import cron_root
+        from hanni.native.cron import CronStore
+        import sqlite3
+        while not self.stop.is_set() and not self.shutdown.is_set():
+            try:
+                store = CronStore(cron_root() / 'cron.sqlite3')
+                for run in store.pending_runs():
+                    if self.stop.is_set() or self.shutdown.is_set():
+                        return
+                    task = self.request('GET', '/tasks/' + run['task_id'])
+                    recorded = self.hub.scheduled_result(run, task)
+                    if recorded and task['state'] in TERMINAL:
+                        store.delivered(task['id'])
+            except (RuntimeError, OSError, ValueError, KeyError, sqlite3.Error):
+                pass  # Keep the durable delivery pending; never replay its tool actions.
+            self.stop.wait(2)
 
     def request(self, method, path, body=None):
         result = self.proxy(method, path, body)
@@ -94,3 +114,5 @@ class NativeChat:
         self.stop.set()
         if self.thread.is_alive():
             self.thread.join(timeout=17)
+        if self.delivery_thread.is_alive():
+            self.delivery_thread.join(timeout=17)

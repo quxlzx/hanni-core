@@ -243,7 +243,7 @@ def _check_command(command: str) -> str | None:
 def _jailed(workspace: Path, rel: str) -> Path:
     target = (workspace / rel).resolve()
     if not str(target).startswith(str(workspace.resolve()) + os.sep) and target != workspace.resolve():
-        raise ValueError("Path escapes the workspace.")
+        raise ValueError("Path escapes the workspace. Use '.' for the workspace root and relative paths such as reports/update.md; do not guess host paths.")
     return target
 
 

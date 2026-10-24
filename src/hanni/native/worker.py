@@ -44,7 +44,10 @@ SYSTEM_PROMPT = (
     "Use delegate_task for scoped background investigations, then retrieve their actual results. "
     "Ordinary and scheduled terminals use the shared workspace root. Child terminals "
     "have their own cwd under workspace/sessions/<task-id>. File tools use paths relative "
-    "to the shared workspace root."
+    "to the shared workspace root. Use '.' to list that root; never guess host directories. "
+    "For repeating requests (daily updates, weekly reports), call schedule_task directly; "
+    "do not search files or write scheduler scripts. In a scheduled_job_id context, perform "
+    "the prompt once and return its result; never schedule it again."
 )
 
 
@@ -116,7 +119,8 @@ def run(db_path, task_id, catalog):
                 handler = lambda tool_name, tool_args: (agent.execute(tool_name, tool_args, call_id or name)
                     if tool_name in agent_names else execute_local(tool_name, tool_args, workspace))
                 task_read = name in {'skill_read', 'memory_search', 'history_search', 'working_state'} or (
-                    name == 'agent_job' and arguments.get('action') != 'cancel')
+                    name == 'agent_job' and arguments.get('action') != 'cancel') or (
+                    name == 'scheduled_tasks' and arguments.get('operation') == 'list')
                 if auto_approved(task, name) or task_read:
                     store.settle(action["id"], "dispatching")
                     try:

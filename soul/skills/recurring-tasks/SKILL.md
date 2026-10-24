@@ -1,60 +1,38 @@
 ---
 name: recurring-tasks
-description: "Create recurring agent jobs (daily digests, monitors) with the built-in cron daemon."
-version: 1
-author: Hanni
-license: MIT
+description: Create and manage persistent daily updates, hourly checks, and weekly reports delivered to a HANNI conversation.
 metadata:
-  hermes:
-    tags: [cron, automation, digest, monitoring]
+  hanni:
+    triggers: [daily, every day, everyday, weekly, every week, hourly, every hour, repeat, recurring, schedule a task, scheduled task]
 ---
 
-# Recurring tasks (cron)
+# Repeating tasks
 
-HANNI ships a durable cron daemon that fires agent tasks on a schedule.
-Jobs are stored in `state/cron.sqlite3`; the daemon submits each due job
-as a normal task and the bridge runs it with the native worker. Restarts
-never double-fire (idempotency key = job id + scheduled slot).
+For a request such as "update me daily on the AI world", call `schedule_task`
+directly. Do not inspect workspace folders, run terminals, write scheduling
+scripts, or generate the current news digest instead of saving the schedule.
+Set a descriptive title and a self-contained execution prompt: search current
+sources, cover the last 24 hours, summarize key developments, and include links.
+A scheduled run has no full conversation or attached documents unless its
+prompt contains the relevant context.
 
-## Create a job
-From the repo root, while HANNI is running. The CLI needs the
-package on the path: prefix with `set PYTHONPATH=src&& ` (Windows) or
-`PYTHONPATH=src ` (Linux).
+Use the user's requested frequency, time, timezone, and weekday (Monday=0).
+When no time is supplied, the tool defaults to 09:00 in HANNI's configured
+timezone. Report that choice and the actual `next_run_local`, timezone, and job
+ID returned by the tool. Only claim scheduling succeeded after an `ok` receipt.
+Hourly/interval schedules repeat from creation; daily/weekly schedules preserve
+local wall time across DST. Results and approval requests return to the linked
+conversation. HANNI must be running; missed slots catch up once on the next
+launch, without producing a backlog of duplicate runs.
 
-```
-# daily AI-news digest (writes a dated report into the workspace)
-.venv\Scripts\python -m hanni.native.cron --root state add ^
-  --prompt "Search the web for the most important AI/ML news of the last 24 hours (model releases, inference research, hardware). Write a 5-bullet digest with links to reports/ai-news-<date>.md and reply with the bullets." ^
-  --interval 86400 --auto-approve-all
+Use `scheduled_tasks` to list, pause, resume, or delete by exact ID. Pausing or
+deleting does not cancel already-submitted work; use the actual job tools to
+inspect/cancel such a run. Future runs may automatically use read-only tools;
+other tool actions still need approval. Never promise silent external sends.
+When the context contains `scheduled_job_id`, execute the prompt once and return
+the answer with sources; do not create another schedule.
 
-# hourly GPU/heat watch that only speaks up when something is wrong
-python3 -m hanni.native.cron --root state add \
-  --prompt "Run system_info; if RAM usage > 90% or disk free < 10GB, append a warning line with timestamp to reports/alerts.log, otherwise do nothing." \
-  --interval 3600 --auto-approve system_info,local_append_file
-```
-
-Minimum interval is 60s. `--auto-approve a,b,c` pre-authorizes only the
-named tools for that job (receipts carry `approved_by: task_policy`);
-`--auto-approve-all` pre-authorizes everything the task requests.
-
-## Manage jobs
-```
-python -m hanni.native.cron --root state list
-python -m hanni.native.cron --root state disable --job ID
-```
-The daemon itself starts automatically with `START_BRAIN` / `start_brain.sh`
-(suppress with `--no-cron`). Fired jobs appear in the Hanni OS Tasks tab
-like any other task, with full receipts.
-
-## Good recurring jobs
-- morning news digest (web_search + web_fetch + local_write_file)
-- price/paper/arxiv watchers (search, compare to last report, alert on change)
-- workspace hygiene (list_dir + search_files for stale temp files)
-- weekly self-review: summarize reports/ and append highlights to notes/journal.md
-
-## Pitfalls
-- The daemon must be running (it is, unless --no-cron); jobs added while
-  it is down fire on its next pass, never retroactively twice.
-- Keep prompts self-contained: a cron task has no conversation, only its
-  prompt plus durable memory.
-- Prefer narrow --auto-approve lists for anything touching local_terminal.
+The deterministic fallback is `/schedule daily 09:00 | Task`, `/schedule weekly
+mon 09:00 | Task`, `/schedule hourly | Task`, or `/schedule every 2 hours | Task`.
+Manage with `/schedule list`, `/schedule pause ID`, `/schedule resume ID`, and
+`/schedule delete ID`. The Schedule page provides the same operations.

@@ -28,6 +28,7 @@ class ChatHub:
         self.db.execute('CREATE TABLE IF NOT EXISTS conversation_context (conversation TEXT PRIMARY KEY, summary TEXT, through_id INTEGER, focus TEXT)')
         self.db.execute('CREATE TABLE IF NOT EXISTS chat_commands (id TEXT PRIMARY KEY, payload TEXT NOT NULL, result TEXT)')
         self.db.execute('CREATE TABLE IF NOT EXISTS retry_turns (turn TEXT PRIMARY KEY, context TEXT)')
+        self.db.execute('CREATE TABLE IF NOT EXISTS scheduled_deliveries(task_id TEXT PRIMARY KEY, row_id INTEGER NOT NULL)')
         from .attachments import Attachments
         self.files = Attachments(self.db, self.lock)
         first = self.db.execute("SELECT content FROM messages WHERE conversation='default' AND role='user' ORDER BY id LIMIT 1").fetchone()
@@ -288,6 +289,31 @@ class ChatHub:
             self.db.execute('UPDATE messages SET task_id=? WHERE id=?', (task_id, row))
             self.db.commit()
 
+    def scheduled_result(self, run, task):
+        """Append/update one background exchange without occupying the chat inbox."""
+        from hanni.hermes.state import TERMINAL
+        terminal = task['state'] in TERMINAL
+        content = ((task.get('result') or {}).get('model_claims') or task.get('error') or 'No final response was recorded.') if terminal else (
+            'Waiting for your approval in Task review below.' if task['state'] == 'approval' else 'Scheduled task is running…')
+        status = ('complete' if task['state'] in {'completed', 'review_required'} else 'interrupted') if terminal else 'working'
+        with self.lock, self.db:
+            if self.closed:
+                return False
+            old = self.db.execute('SELECT row_id FROM scheduled_deliveries WHERE task_id=?', (task['id'],)).fetchone()
+            if not old:
+                conversation = run['conversation']
+                if not self.db.execute('SELECT 1 FROM conversations WHERE id=?', (conversation,)).fetchone():
+                    # A missing destination is never silently rerouted to another conversation.
+                    return False
+                turn = str(uuid.uuid5(uuid.NAMESPACE_URL, 'hanni-scheduled:' + task['id']))
+                self._add(turn, 'user', 'Scheduled task: ' + run['title'], 'scheduled', 'complete', conversation, commit=False)
+                row = self._add(turn, 'assistant', content[:64000], 'scheduled', status, conversation, commit=False)
+                self.db.execute('UPDATE messages SET task_id=? WHERE id=?', (task['id'], row))
+                self.db.execute('INSERT INTO scheduled_deliveries VALUES (?,?)', (task['id'], row))
+            else:
+                self.db.execute('UPDATE messages SET content=?,status=? WHERE id=?', (content[:64000], status, old[0]))
+            return True
+
     def snapshot(self, before=None, conversation=None):
         with self.lock:
             clause, params = '', ()
@@ -306,7 +332,7 @@ class ChatHub:
                         pending_attachments=self.files.pending(conversation) if conversation is not None else [],
                         conversation_id=conversation,
                         ready=self.ready and not self.closed and not self.stopping, queued=len(self.queue),
-                        busy=self.current is not None or bool(self.db.execute("SELECT 1 FROM messages WHERE status='working' LIMIT 1").fetchone()),
+                        busy=self.current is not None or bool(self.db.execute("SELECT 1 FROM messages WHERE status='working' AND channel!='scheduled' LIMIT 1").fetchone()),
                         token=self.token, epoch=self.epoch, saved=self.saved)
 
     def clear(self):

@@ -41,6 +41,9 @@ type TabState = { selected: string; tabs: string[] };
 const defaultTabs: TabState = { selected: "default", tabs: ["default"] };
 
 function readTabs(): TabState {
+  const destination = new URLSearchParams(location.search).get("conversation");
+  if (destination && /^(?:default|[0-9a-f-]{36})$/i.test(destination))
+    return { selected: destination, tabs: [destination] };
   try {
     const saved = JSON.parse(localStorage.getItem("hanni-chat-tabs") || "null");
     if (
@@ -217,7 +220,7 @@ function ChatMessage({
   return (
     <article
       className={`hc-message ${row.role === "user" ? "hc-user" : "hc-assistant"}`}
-      aria-label={`${row.role === "user" ? "You" : "HANNI"}, ${new Date(row.created * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`}
+      aria-label={`${row.channel === "scheduled" ? "Scheduled task" : row.role === "user" ? "You" : "HANNI"}, ${new Date(row.created * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`}
     >
       {row.role === "user" ? (
         <>
@@ -336,7 +339,7 @@ export function ChatApp() {
       ].map((row) => [row.id, row]),
     ).values(),
   ].sort((a, b) => a.id - b.id);
-  const busyRow = rows.find((row) => row.status === "working" && row.task_id);
+  const busyRow = rows.find((row) => row.status === "working" && row.task_id && row.channel !== "scheduled");
   const error =
     sendError || chat.error || (!ready && telemetry.data?.model_detail) || "";
   const lastRow = rows.at(-1);

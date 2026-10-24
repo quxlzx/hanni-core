@@ -107,7 +107,8 @@ def harness(commands, tmp_path, monkeypatch):
     args = {'resume': 'default', 'forget': memory_id, 'reasoning': 'high', 'voice': 'on', 'wake': 'off', 'mute': 'on',
             'remember': 'I prefer Unicode caf\u00e9 summaries', 'remind': 'in 10 minutes Review report',
             'tasks': 'list', 'search': 'report evidence', 'hermes': 'Inspect the report; do not send it',
-            'jobs': 'status ' + task['id'], 'approve': action['id'], 'deny': action['id'], 'calendar': 'day'}
+            'jobs': 'status ' + task['id'], 'approve': action['id'], 'deny': action['id'], 'calendar': 'day',
+            'schedule': 'daily 09:00 | Produce the daily fixture report'}
     value = SimpleNamespace(service=commands, invoke=invoke, args=args, model=model, calendar=calendar,
         bridge=bridge, control=control, task=task, action=action, memory_id=memory_id, todo_id=todo_id,
         threads=threads, state=state, voice=voice_control)

@@ -175,8 +175,9 @@ class TaskStore:
             for previous in task['actions']:
                 trusted_read = (spec['target']=='windows' and spec['remote'].get('retry_read') is True) or (
                     spec['target'] == 'local' and spec['name'] in {
-                        'local_read_file', 'local_list_dir', 'local_search_files', 'system_info',
+                        'local_read_file', 'local_read_document', 'local_list_dir', 'local_search_files', 'system_info',
                         'web_search', 'web_fetch', 'skill_read', 'memory_search', 'history_search', 'agent_job'})
+                trusted_read |= spec['target'] == 'local' and spec['name'] == 'scheduled_tasks' and arguments.get('operation') == 'list'
                 if previous['spec'] == spec and previous['arguments'] == arguments and not trusted_read:
                     return previous
             action = dict(id=action_id, task=task_id, state='pending', spec=spec,

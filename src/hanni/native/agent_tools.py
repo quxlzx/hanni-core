@@ -15,6 +15,17 @@ def agent_tool_specs():
                     'parameters': {'type': 'object', 'properties': properties, 'required': list(required), 'additionalProperties': False}}}}
     short = {'type': 'string', 'minLength': 1, 'maxLength': 500}
     return [
+        spec('schedule_task', 'Create a persistent repeating task. Use for daily updates, hourly checks, or weekly reports; no workspace inspection is needed. '
+             'Defaults to 09:00 in the configured timezone for daily/weekly schedules. Returns schedule ID and next run. '
+             'Future runs may use read-only tools automatically; other actions need approval. Results return to this conversation while HANNI runs.',
+             {'prompt': {'type': 'string', 'minLength': 1, 'maxLength': 8000},
+              'title': {'type': 'string', 'minLength': 1, 'maxLength': 120},
+              'frequency': {'enum': ['hourly', 'daily', 'weekly', 'interval']},
+              'at_time': {'type': 'string', 'pattern': '^(?:[01][0-9]|2[0-3]):[0-5][0-9]$'},
+              'timezone': short, 'weekday': {'type': 'integer', 'minimum': 0, 'maximum': 6},
+              'interval_seconds': {'type': 'integer', 'minimum': 60, 'maximum': 31536000}}, ['prompt', 'title', 'frequency']),
+        spec('scheduled_tasks', 'List, pause, resume, or delete saved repeating tasks by exact schedule ID. Pausing/deleting leaves already-submitted runs intact.',
+             {'operation': {'enum': ['list', 'pause', 'resume', 'delete']}, 'id': short}, ['operation']),
         spec('skill_read', 'Load a named skill or its Markdown reference only when relevant. Returns its revision.',
              {'name': short, 'resource': short}, ['name']),
         spec('skill_save', 'Save or correct a reusable procedure after verification. Requires normal write approval. Read revision before updating; use empty revision to create. Evidence is a claim, not runtime verification.',
@@ -49,6 +60,17 @@ class AgentTools:
         self.workspace.mkdir(parents=True, exist_ok=True)
 
     def execute(self, name, args, call_id):
+        if name == 'schedule_task':
+            if self.task['request']['context'].get('scheduled_job_id'):
+                raise ValueError('This is an existing scheduled run. Perform its task once; do not create another repeating task.')
+            from .scheduling import create_schedule
+            job = create_schedule(self.root, args, conversation=self.task['request']['context'].get('conversation_id', 'default'),
+                                  request_key=self.task['id'] + ':' + call_id)
+            return {'ok': True, 'data': job, 'message': 'Repeating task saved. Next run: ' + job['next_run_local'] +
+                    ' (' + job['timezone'] + '). ' + job['delivery']}
+        if name == 'scheduled_tasks':
+            from .scheduling import manage_schedules
+            return {'ok': True, 'data': manage_schedules(self.root, args['operation'], args.get('id'))}
         if name == 'skill_read':
             return {'ok': True, 'data': self.skills.read(**args)}
         if name == 'skill_save':

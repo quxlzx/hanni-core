@@ -146,7 +146,7 @@ class Bridge:
                 if os.environ.get('HANNI_AUTO_APPROVE') == '1':
                     # Policy remains enforced at the actual tool boundary.
                     ctx = task.setdefault('context', {})
-                    ctx.setdefault('local_runtime', {})['auto_approve'] = ['*']
+                    ctx.setdefault('local_runtime', {}).setdefault('auto_approve', ['*'])
                 return self.store.submit(body['key'], task)
         if method == 'GET' and path.startswith('/tasks/'):
             if path.endswith('/context'):
