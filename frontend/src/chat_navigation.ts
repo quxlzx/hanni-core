@@ -26,6 +26,19 @@ export function closeTab(current: TabState, id: string): TabState {
     ? tabs[Math.max(0, current.tabs.indexOf(id) - 1)] : current.selected };
 }
 
+export function emptyChatCandidates(
+  current: TabState,
+  conversations: { id: string; message_count: number }[],
+  protectedIds: Set<string>,
+  recentEmpty?: string,
+): string[] {
+  const counts = new Map(conversations.map(item => [item.id, item.message_count]));
+  // A successful creation is known before React and list polling catch up.
+  if (recentEmpty && !counts.has(recentEmpty)) counts.set(recentEmpty, 0);
+  return [...new Set([current.selected, ...(recentEmpty ? [recentEmpty] : []), ...current.tabs.slice().reverse()])]
+    .filter(id => counts.get(id) === 0 && !protectedIds.has(id));
+}
+
 type Creation = { id: string; token: string };
 export class NewChatRequest {
   private pending: Creation | null = null;

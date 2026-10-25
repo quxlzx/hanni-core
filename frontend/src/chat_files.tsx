@@ -63,6 +63,7 @@ export function useChatFiles(conversation: string, token: string) {
   }
   const files = drafts[conversation] || [];
   return { files, error: errors[conversation] || "", add, remove,
+    hasFiles: (owner: string) => Boolean(current.current[owner]?.length),
     retry: (entry: DraftFile) => upload(entry, conversation),
     clear: (owner: string, sent: string[]) => {
       sent.forEach(id => settled.current.add(id));

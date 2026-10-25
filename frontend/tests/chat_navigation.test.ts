@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { NewChatRequest, restoreTabs, openTab, closeTab, defaultTabs } from "../src/chat_navigation.ts";
+import { NewChatRequest, emptyChatCandidates, restoreTabs, openTab, closeTab, defaultTabs } from "../src/chat_navigation.ts";
 
 test("a same-frame click burst has only one in-flight creation", () => {
   const requests = new NewChatRequest();
@@ -52,4 +52,24 @@ test("opening beyond the tab limit preserves history references and keeps the ne
   assert.deepEqual(tabs.tabs, ids.slice(-30));
   assert.equal(tabs.selected, ids[39]);
   assert.deepEqual(restoreTabs(tabs), tabs);
+});
+
+test("new chat prefers the selected empty conversation and reuses another open blank from history", () => {
+  const tabs = { selected: "empty", tabs: ["used", "older-empty", "empty"] };
+  const rows = [{ id: "used", message_count: 2 }, { id: "older-empty", message_count: 0 }, { id: "empty", message_count: 0 }];
+  assert.deepEqual(emptyChatCandidates(tabs, rows, new Set()), ["empty", "older-empty"]);
+  assert.deepEqual(emptyChatCandidates({ ...tabs, selected: "used" }, rows, new Set()), ["empty", "older-empty"]);
+});
+
+test("drafts, files and command results protect empty chats, while unknown or used histories are never reused", () => {
+  const tabs = { selected: "draft", tabs: ["draft", "files", "command", "unknown", "used"] };
+  const rows = tabs.tabs.filter(id => id !== "unknown").map(id => ({ id, message_count: id === "used" ? 1 : 0 }));
+  assert.deepEqual(emptyChatCandidates(tabs, rows, new Set(["draft", "files", "command"])), []);
+});
+
+test("a confirmed blank is reusable before polling catches up, but an observed message takes precedence", () => {
+  const rows = [{ id: "default", message_count: 3 }];
+  assert.deepEqual(emptyChatCandidates(defaultTabs, rows, new Set(), "just-created"), ["just-created"]);
+  assert.deepEqual(emptyChatCandidates(defaultTabs, rows, new Set(["just-created"]), "just-created"), []);
+  assert.deepEqual(emptyChatCandidates(defaultTabs, [...rows, { id: "just-created", message_count: 1 }], new Set(), "just-created"), []);
 });

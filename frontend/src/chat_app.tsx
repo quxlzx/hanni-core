@@ -14,7 +14,7 @@ import { MCPPanel } from "./mcp_panel";
 import { ModelsPanel } from "./model_settings";
 import { DraftFiles, FilePicker, MessageFiles, useChatFiles } from "./chat_files";
 import { sameFiles } from "./attachment_files";
-import { NewChatRequest, defaultTabs, restoreTabs, openTab, closeTab as removeTab, type TabState } from "./chat_navigation";
+import { NewChatRequest, emptyChatCandidates, defaultTabs, restoreTabs, openTab, closeTab as removeTab, type TabState } from "./chat_navigation";
 import { usePrivateResource, type NotificationData } from "./feature_types";
 import {
   CommandSuggestions,
@@ -296,6 +296,7 @@ export function ChatApp() {
     [loadingOlder, setLoadingOlder] = useState(false);
   const pending = useRef<Record<string, { id: string; message: string; attachments?: string[] }>>({});
   const creationRequests = useRef(new NewChatRequest());
+  const recentEmptyChat = useRef<{ id: string; token: string } | null>(null);
   const navigationRevision = useRef(0);
   const tabStrip = useRef<HTMLElement>(null);
   const [draggingFiles, setDraggingFiles] = useState(false);
@@ -325,6 +326,8 @@ export function ChatApp() {
   const unreadNotifications = notifications.data?.items.filter((item) => !item.read && !item.dismissed).length || 0;
   const attached = useChatFiles(selected, token);
   const attachmentsAvailable = Boolean(contract.data?.features.attachments);
+  const currentConversationState = useRef({ session, drafts, commandOutput, conversations, data });
+  currentConversationState.current = { session, drafts, commandOutput, conversations, data };
   useEffect(() => {
     if (data?.pending_attachments) attached.restore(selected, data.pending_attachments);
   }, [data?.pending_attachments, selected]);
@@ -449,10 +452,34 @@ export function ChatApp() {
     setCreating(true);
     setSendError("");
     try {
+      const state = currentConversationState.current;
+      const recentEmpty = recentEmptyChat.current?.token === creation.token ? recentEmptyChat.current.id : undefined;
+      const hasWork = (id: string) => Boolean(currentConversationState.current.drafts[id]?.trim()
+        || currentConversationState.current.commandOutput[id] || pending.current[id] || attached.hasFiles(id));
+      const protectedIds = new Set([...state.session.tabs, ...(recentEmpty ? [recentEmpty] : [])].filter(hasWork));
+      const summaries = state.data ? [
+        { id: state.session.selected, message_count: state.data.messages.length || (state.data.has_more ? 1 : 0) },
+        ...state.conversations.filter(item => item.id !== state.session.selected),
+      ] : state.conversations;
+      for (const candidate of emptyChatCandidates(state.session, summaries, protectedIds, recentEmpty)) {
+        // Confirm on the server: a stale list or another window may have added
+        // messages or unsent files since this tab was last visited.
+        const snapshot = await request<Chat>(`/api/chat?conversation=${encodeURIComponent(candidate)}`);
+        if (liveToken.current !== creation.token || navigationRevision.current !== revision) return;
+        if (snapshot.conversation_id === candidate && !snapshot.messages.length && !snapshot.has_more
+            && !snapshot.pending_attachments?.length && !hasWork(candidate)) {
+          recentEmptyChat.current = { id: candidate, token: creation.token };
+          succeeded = true;
+          openChat(candidate);
+          return;
+        }
+      }
+      if (liveToken.current !== creation.token || navigationRevision.current !== revision) return;
       const { id } = creation;
       await write("/api/chat/conversations", creation.token, { id });
       succeeded = true;
       if (liveToken.current !== creation.token) return;
+      recentEmptyChat.current = { id, token: creation.token };
       list.setData((current) => ({
         conversations: [
           current?.conversations.find((item) => item.id === id) || {
