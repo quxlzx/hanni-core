@@ -51,7 +51,7 @@ def test_context_allows_the_full_requested_range(value):
 
 
 def test_installed_models_are_present_and_path_traversal_is_rejected(settings):
-    assert [(m['name'], m['installed']) for m in settings.inventory()] == [('MiniCPM 2B', True), ('K2 3.7B', True), ('K2 7B', True)]
+    assert [(m['name'], m['installed']) for m in settings.inventory()] == [('MiniCPM 2B', True), ('K2 3.7B', True), ('K2 7B', True), ('Qwen 3.5 4B', True), ('Qwen 3.5 9B', True)]
     for file in ['../outside.gguf', '/tmp/outside.gguf', 'missing.gguf', []]:
         with pytest.raises(ValueError):
             settings.validate(local_body(local_model=file))
@@ -143,9 +143,10 @@ def setup_switch(settings, monkeypatch):
     return old, children, runtime
 
 
-def test_launcher_changes_the_actual_process_and_both_configs(settings, monkeypatch):
+@pytest.mark.parametrize('model_file', ['K2-Horizon-4B-Q4_K_M.gguf', 'Qwen3.5-4B-Q4_K_M.gguf', 'Qwen3.5-9B-Q4_K_M.gguf'])
+def test_launcher_changes_the_actual_process_and_both_configs(settings, monkeypatch, model_file):
     old, children, runtime = setup_switch(settings, monkeypatch)
-    settings.execute(local_body(local_model=LOCAL_MODELS[1][1], context=262144))
+    settings.execute(local_body(local_model=model_file, context=262144))
     new = Mock(pid=2)
     with patch.object(firstboot, 'get_json', return_value={'tasks': []}), \
          patch.object(firstboot, 'pick_binary', return_value=Path('/fixture')), \
@@ -157,7 +158,7 @@ def test_launcher_changes_the_actual_process_and_both_configs(settings, monkeypa
     stop.assert_called_once_with(old)
     command = spawn.call_args.args[0]
     assert command[command.index('-c')+1] == '262144'
-    assert command[command.index('-m')+1].endswith(LOCAL_MODELS[1][1])
+    assert command[command.index('-m')+1].endswith(model_file)
     assert children['model'] is new
     assert settings.active()['context'] == 262144
     assert settings.change()['status'] == 'ready'
@@ -253,3 +254,20 @@ def test_below_minimum_context_is_rejected_by_launcher_before_loading(settings, 
     with patch.object(firstboot, 'spawn') as spawn, pytest.raises(SystemExit):
         firstboot.main(['--context', '16384'])
     spawn.assert_not_called()
+
+
+def test_missing_qwen_weights_remain_visible_and_projectors_are_not_model_choices(tmp_path):
+    models = tmp_path / 'models'; models.mkdir()
+    settings = ModelSettings(tmp_path / 'state', models)
+    rows = {row['name']: row for row in settings.inventory()}
+    for name in ('Qwen 3.5 4B', 'Qwen 3.5 9B'):
+        assert not rows[name]['installed']
+        with pytest.raises(ValueError, match='installed'):
+            settings.validate(local_body(local_model=rows[name]['id']))
+    (models / rows['Qwen 3.5 4B']['id']).write_bytes(gguf_metadata(131072))
+    (models / 'mmproj-Qwen3.5-4B-BF16.gguf').write_bytes(b'projector fixture')
+    refreshed = settings.inventory()
+    assert len(refreshed) == len(LOCAL_MODELS)
+    installed = next(row for row in refreshed if row['name'] == 'Qwen 3.5 4B')
+    assert installed['installed'] and installed['max_context'] == 131072
+    assert settings.validate(local_body(local_model=installed['id'], context=131072))['local_model'] == installed['id']

@@ -274,7 +274,7 @@ class Handler(BaseHTTPRequestHandler):
             self.send_header('Referrer-Policy', 'no-referrer')
             for key, value in (headers or {}).items():
                 self.send_header(key, value)
-            self.send_header('Content-Security-Policy', "default-src 'self'; connect-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'")
+            self.send_header('Content-Security-Policy', "default-src 'self'; connect-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self' blob:; frame-ancestors 'none'; base-uri 'none'; form-action 'none'")
             self.end_headers()
             self.wfile.write(body)
         except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError):
@@ -853,6 +853,18 @@ class Handler(BaseHTTPRequestHandler):
                 raise ValueError('Expected id and message')
             if data.get('attachments') and not self.server.chat.native_mode:
                 raise ValueError('Files require native chat. Start HANNI with START_BRAIN.cmd.')
+            if data.get('attachments'):
+                with self.server.chat.lock:
+                    identifiers = self.server.chat.files.validate(data['attachments'], data.get('conversation', 'default'), data['id'])
+                    images = any(self.server.chat.db.execute('SELECT media_type FROM chat_files WHERE id=?', (key,)).fetchone()[0].startswith('image/') for key in identifiers)
+                    accepted = self.server.chat.db.execute('SELECT 1 FROM messages WHERE turn=? LIMIT 1', (data['id'],)).fetchone()
+                if images and not accepted:
+                    from hanni.native.provider import NativeClient
+                    status = NativeClient(self.server.model_settings.reasoning_model()).status()
+                    if not status.get('ready'):
+                        raise ValueError('Connect the selected model before sending images. Your attached images have been kept.')
+                    if status.get('image_input_supported') is False:
+                        raise ValueError('The selected model does not accept images. Choose an image-capable model in Models, then send again. Your attached images have been kept.')
             key = self.server.chat.submit(data['id'], data['message'], data.get('conversation'), data.get('attachments'))
             return self._send(202, json.dumps({'id':key, 'accepted':True}).encode())
         except ValueError as exc:

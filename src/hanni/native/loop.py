@@ -76,7 +76,7 @@ def strip_reasoning(text: str) -> str:
     return THINK_BLOCK.sub("", text or "").split("<think>", 1)[0].strip()
 
 
-def run_loop(client, *, system_prompt: str, user_message: str,
+def run_loop(client, *, system_prompt: str, user_message: str | list[dict],
              tool_specs: list[dict], execute: Callable[[str, dict, str], dict],
              max_iterations: int = 12, budget_seconds: float = 900.0,
              context_budget_tokens: int | None = 24000,

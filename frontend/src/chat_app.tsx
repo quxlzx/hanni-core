@@ -13,7 +13,7 @@ import type { Chat, Contract, Message, Telemetry } from "./types";
 import { MCPPanel } from "./mcp_panel";
 import { ModelsPanel } from "./model_settings";
 import { DraftFiles, FilePicker, MessageFiles, useChatFiles } from "./chat_files";
-import { sameFiles } from "./attachment_files";
+import { clipboardImages, droppedFiles, hasFileDrag, sameFiles } from "./attachment_files";
 import { NewChatRequest, emptyChatCandidates, defaultTabs, restoreTabs, openTab, closeTab as removeTab, type TabState } from "./chat_navigation";
 import { usePrivateResource, type NotificationData } from "./feature_types";
 import {
@@ -326,11 +326,33 @@ export function ChatApp() {
   const unreadNotifications = notifications.data?.items.filter((item) => !item.read && !item.dismissed).length || 0;
   const attached = useChatFiles(selected, token);
   const attachmentsAvailable = Boolean(contract.data?.features.attachments);
+  const canAttach = attachmentsAvailable && Boolean(token) && !sending;
   const currentConversationState = useRef({ session, drafts, commandOutput, conversations, data });
   currentConversationState.current = { session, drafts, commandOutput, conversations, data };
   useEffect(() => {
     if (data?.pending_attachments) attached.restore(selected, data.pending_attachments);
   }, [data?.pending_attachments, selected]);
+  useEffect(() => {
+    dragDepth.current = 0;
+    setDraggingFiles(false);
+  }, [selected, panel, canAttach]);
+  useEffect(() => {
+    const reset = () => { dragDepth.current = 0; setDraggingFiles(false); };
+    const preventFileNavigation = (event: DragEvent) => {
+      if (event.dataTransfer && hasFileDrag(event.dataTransfer)) event.preventDefault();
+      if (event.type === "drop") reset();
+    };
+    window.addEventListener("dragover", preventFileNavigation);
+    window.addEventListener("drop", preventFileNavigation);
+    window.addEventListener("dragend", reset);
+    window.addEventListener("blur", reset);
+    return () => {
+      window.removeEventListener("dragover", preventFileNavigation);
+      window.removeEventListener("drop", preventFileNavigation);
+      window.removeEventListener("dragend", reset);
+      window.removeEventListener("blur", reset);
+    };
+  }, []);
   const ready = Boolean(data?.ready && !chat.error);
   const rows = [
     ...new Map(
@@ -420,6 +442,8 @@ export function ChatApp() {
       if (event.key === "Escape") {
         setSidebarOpen(false);
         setSearchOpen(false);
+        dragDepth.current = 0;
+        setDraggingFiles(false);
       }
     };
     window.addEventListener("keydown", handler);
@@ -870,17 +894,42 @@ export function ChatApp() {
           id="hc-main"
           className={`hc-main ${panel === "chat" ? "" : "hc-panel-main"}`}
           tabIndex={-1}
+          onDragEnter={event => {
+            if (panel !== "chat" || !hasFileDrag(event.dataTransfer)) return;
+            event.preventDefault();
+            dragDepth.current += 1;
+            if (canAttach) setDraggingFiles(true);
+          }}
           onDragOver={event => {
-            if (panel === "chat" && event.dataTransfer.types.includes("Files")) event.preventDefault();
+            if (panel !== "chat" || !hasFileDrag(event.dataTransfer)) return;
+            event.preventDefault();
+            event.dataTransfer.dropEffect = canAttach ? "copy" : "none";
+            if (canAttach) setDraggingFiles(true);
+          }}
+          onDragLeave={event => {
+            if (panel !== "chat") return;
+            dragDepth.current = Math.max(0, dragDepth.current - 1);
+            if (!dragDepth.current) setDraggingFiles(false);
           }}
           onDrop={event => {
-            if (panel !== "chat" || !event.dataTransfer.types.includes("Files")) return;
-            event.preventDefault();
-            if (attachmentsAvailable && token && !sending) attached.add(event.dataTransfer.files);
+            if (panel !== "chat" || !hasFileDrag(event.dataTransfer)) return;
+            event.preventDefault(); event.stopPropagation();
+            dragDepth.current = 0; setDraggingFiles(false);
+            if (!canAttach) {
+              attached.reportError(sending ? "Wait for the current message to finish before adding files." : "Connect to native chat before adding files.");
+              return;
+            }
+            const dropped = droppedFiles(event.dataTransfer);
+            if (dropped.error) { attached.reportError(dropped.error); return; }
+            void attached.add(dropped.files);
+            requestAnimationFrame(() => input.current?.focus());
           }}
         >
           {panel === "chat" ? (
             <>
+              {draggingFiles && <div className="hc-file-drop-target" role="status">
+                <div><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="m8 12 6-6a3 3 0 0 1 4 4l-8 8a5 5 0 0 1-7-7l8-8M7 13l7-7" /></svg><strong>Drop files to attach</strong><p>Images, PDFs, Office documents and text</p><span>Up to 5 files · 8 MiB each</span></div>
+              </div>}
               <div
                 className="hc-log"
                 ref={log}
@@ -986,24 +1035,7 @@ export function ChatApp() {
                     </button>
                   </div>
                 )}
-                <form className={`hc-composer ${draggingFiles ? "hc-file-dragging" : ""}`} onSubmit={submit}
-                  onDragEnter={event => {
-                    if (!event.dataTransfer.types.includes("Files") || !attachmentsAvailable || !token || sending) return;
-                    event.preventDefault(); dragDepth.current += 1; setDraggingFiles(true);
-                  }}
-                  onDragOver={event => {
-                    if (event.dataTransfer.types.includes("Files")) { event.preventDefault(); event.dataTransfer.dropEffect = attachmentsAvailable && !sending ? "copy" : "none"; }
-                  }}
-                  onDragLeave={event => {
-                    event.preventDefault(); dragDepth.current = Math.max(0, dragDepth.current - 1);
-                    if (!dragDepth.current) setDraggingFiles(false);
-                  }}
-                  onDrop={event => {
-                    if (!event.dataTransfer.types.includes("Files")) return;
-                    event.preventDefault(); event.stopPropagation(); dragDepth.current = 0; setDraggingFiles(false);
-                    if (attachmentsAvailable && token && !sending) attached.add(event.dataTransfer.files);
-                  }}>
-                  {draggingFiles && <div className="hc-file-drop-hint" role="status">Drop files to attach</div>}
+                <form className="hc-composer" onSubmit={submit}>
                   <DraftFiles state={attached} disabled={sending} />
                   <CommandSuggestions
                     draft={draft}
@@ -1023,6 +1055,22 @@ export function ChatApp() {
                     maxLength={4000}
                     value={draft}
                     placeholder="Type a message…"
+                    onPaste={event => {
+                      const images = clipboardImages(event.clipboardData);
+                      if (!images.length) return;
+                      event.preventDefault();
+                      if (!attachmentsAvailable || !token || sending) {
+                        attached.reportError("Wait for a connected, idle chat before pasting images."); return;
+                      }
+                      const text = event.clipboardData.getData("text/plain");
+                      if (text) {
+                        const start = event.currentTarget.selectionStart, end = event.currentTarget.selectionEnd;
+                        const next = (draft.slice(0, start) + text + draft.slice(end)).slice(0, 4000);
+                        editDraft(next);
+                        requestAnimationFrame(() => input.current?.setSelectionRange(Math.min(start + text.length, next.length), Math.min(start + text.length, next.length)));
+                      }
+                      void attached.add(images);
+                    }}
                     onChange={(event) => editDraft(event.target.value)}
                     onKeyDown={(event) => {
                       if (
@@ -1116,7 +1164,7 @@ export function ChatApp() {
                       ? "Sending…"
                       : data?.queued
                         ? `${data.queued} message${data.queued === 1 ? "" : "s"} queued`
-                        : attached.files.length ? "Files are sent to the selected model. Long text may be excerpted." : "Shift + Enter for a new line"}
+                  : attached.files.length ? "Files are sent to the selected model. Images require image support; long text may be excerpted." : "Shift + Enter for a new line · Paste images from your clipboard"}
                 </p>
               </div>
             </>

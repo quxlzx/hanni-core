@@ -14,6 +14,15 @@ Closing the app window keeps HANNI in the system tray. Windows notifications are
 
 In **Settings → Permissions → Tool access**, choose **Read only**, **Ask before writes**, or **Full access (read & write)**, then select **Save tool access**. **Existing permissions** preserves the original task and schedule approvals until you choose a mode. Read only blocks agent writes, terminal commands, code execution, and schedule changes; task progress and read-only delegation remain available. Ask before writes overrides earlier automatic write grants and uses Task review. Full access authorizes local agent actions and enabled MCP tools without individual reviews. Disabled tools, approved MCP definitions, file boundaries, cancellation, and connection permissions still apply. Remote Windows controllers keep their own execution checks. The saved mode applies to chat, scheduled runs and child agents before their next tool starts; it does not undo running actions. Direct application controls and explicit slash commands remain owner actions. MCP read-only enforcement relies on the tool classification you approved.
 
+The **Auto-approve** switch in **Settings → Permissions → Tool access** selects
+Full access when on and Ask before writes when off. Select **Save tool access**
+to apply the choice; the saved policy is displayed separately from an unsaved
+selection. Enabling it also releases waiting local and enabled MCP tool requests
+through the existing execution boundary. Turning it off restores write reviews
+before subsequent dispatches. Reads remain automatic in Ask before writes;
+choose Read only to block writes instead. Existing permissions can retain
+task-specific automatic grants. Remote controller checks remain independent.
+
 To use HANNI **inside Microsoft Teams on this PC**, run `SETUP_TEAMS.cmd`, upload `dist/teams/HANNI-Teams.zip` as a custom Teams app, then run `START_TEAMS.cmd` while HANNI is running. Enter the launcher's one-use pairing code in the HANNI tab. Setup trusts a localhost development certificate for your Windows account. Your tenant must allow custom app uploads. See [Microsoft Teams setup](docs/MICROSOFT_TEAMS.md).
 
 ## Portable native brain (any machine, no install ritual)
@@ -44,7 +53,9 @@ To reconnect to an already running local model, run:
 
 For another OpenAI-compatible server, use `--brain-url http://host:port/v1` and, if it advertises multiple models, `--brain-model EXACT_ID`. The ID must match `/v1/models`. API credentials belong in `HANNI_MODEL_API_KEY`. Use `--secure` to require per-action approvals; the default keeps the existing automatic local execution mode.
 
-The **Models** page can switch between installed **MiniCPM 2B**, **K2 3.7B**, **K2 7B**, and an OpenAI-compatible API. Enter the API base URL, exact model ID, and optional key; **Test connection** checks model discovery and **Apply model** switches the agent. Keys entered in the UI use the system credential store (Windows Credential Manager on Windows), and are not written into model configuration files. Model changes require finishing or canceling active tasks; a failed load attempts to restore the previous model. The last successful selection is saved for the next launch when no explicit model or tier is supplied.
+The **Models** page can switch between installed **MiniCPM 2B**, **K2 3.7B**, **K2 7B**, **Qwen 3.5 4B**, **Qwen 3.5 9B**, and an OpenAI-compatible API. Enter the API base URL, exact model ID, and optional key; **Test connection** checks model discovery and **Apply model** switches the agent. Keys entered in the UI use the system credential store (Windows Credential Manager on Windows), and are not written into model configuration files. Model changes require finishing or canceling active tasks; a failed load attempts to restore the previous model. The last successful selection is saved for the next launch when no explicit model or tier is supplied.
+
+Qwen entries use `Qwen3.5-4B-Q4_K_M.gguf` and `Qwen3.5-9B-Q4_K_M.gguf` in the local `models` directory. Missing weights remain listed as **not installed**. Add the model file and select **Refresh** in Models to enable its entry; declared context limits are read from GGUF metadata. Vision projector files (`mmproj*.gguf`) are excluded from language-model choices. Adding a catalog entry does not download weights or switch the running model.
 
 Context defaults to **64K (65,536 tokens)**. Select up to **256K (262,144 tokens)** in Models, or pass `--context 262144` to the launcher. The installed MiniCPM file declares a **128K** maximum, so larger choices are disabled for that model; the installed K2 models support the full selectable range. Local context is verified against the running server. An API provider controls its own actual context limit.
 
@@ -115,7 +126,8 @@ Pausing/deleting a schedule retains already-submitted runs and saved reports;
 use `/jobs` to inspect or cancel an existing run. Existing schedules migrate
 without resetting their enabled state or next run.
 
-In native chat, use the **paperclip** or drag files into the conversation to attach
+In native chat, use the **paperclip**, drag files into the conversation, or paste
+images with **Ctrl+V** (Command+V on macOS) to attach PNG, JPEG, WebP, GIF, BMP,
 PDF, Word (`.docx`), PowerPoint (`.pptx`), Excel (`.xlsx`, `.xlsm`, `.xls`),
 OpenDocument (`.odt`, `.ods`), HTML (`.html`, `.htm`), text, CSV/TSV,
 JSON/JSONL, XML, YAML, or source-code files. Attach up to **five
@@ -126,9 +138,15 @@ downloaded again. `/retry` retains the files while keeping tools disabled;
 `/undo` removes the exchange and its files. Clearing chat history removes stored
 uploads, including unsent files.
 
+Drag one or more files from your file manager anywhere over the conversation,
+including the message history. A full conversation drop target appears while
+dragging; dropping attaches the files once. Folders are not expanded: open the
+folder and choose the individual files. Escape or leaving the chat clears the
+drop target. The same five-file and 8 MiB-per-file limits apply.
+
 Document text goes to the selected inference provider as source material.
 The reader keeps up to 200,000 extracted characters per file and uses bounded
-excerpts when needed to fit model context. Images and scanned PDFs require OCR
+excerpts when needed to fit model context. Scanned PDFs require OCR
 before upload; password-protected PDFs must be unlocked. PDF reading is limited
 to 200 pages. Original files are kept in the chat database, with a 100 MiB total
 upload limit. Excel extraction preserves sheet names, cell references, formulas,
@@ -140,6 +158,22 @@ HTML is read as static text without loading resources or running scripts.
 Word/slide reading extracts text, not rendered layout, images, or speaker notes.
 Legacy DOC/PPT, RTF, and XLSB require conversion to a supported format first.
 Spreadsheet formulas, macros and uploaded code are not executed.
+
+Pasted images show a thumbnail and can be removed, copied with **Copy image**, or
+downloaded from the saved message. Normal text paste still works, and clipboard
+text accompanying an image is inserted at the cursor. No clipboard listener runs
+in the background. Images are decoded and checked before storage; SVG is not
+accepted. Limits are 20 megapixels and 16,384 pixels per side, within the usual
+8 MiB upload limit. The original remains downloadable. Inference uses an
+orientation-corrected JPEG up to 1,536 pixels per side; animations use the first
+frame. Select an image-capable local model/server or API in **Models** to ask
+questions about images. A model that advertises text-only input rejects the send
+and keeps the unsent image attached. API connections without modality metadata
+use the standard image-input request and report provider failures normally.
+Image references stay in task context and checkpoints; pixel data is expanded
+only for the inference request, using files bound to that exact conversation and
+turn. Local image input requires a loaded vision projector; model filenames alone
+do not establish image support. See [llama.cpp image-input metadata](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md#get-v1models-openai-compatible-model-info-api).
 
 For documents already in the agent workspace, the `local_read_document` tool
 uses the same readers and supports `offset`/`limit` pagination. Its result states

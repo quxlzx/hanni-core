@@ -20,6 +20,8 @@ LOCAL_MODELS = (
     ('MiniCPM 2B', 'MiniCPM5-2B-Q4_K_M.gguf'),
     ('K2 3.7B', 'K2-Horizon-4B-Q4_K_M.gguf'),
     ('K2 7B', 'K2-Horizon-7B-Q4_K_M.gguf'),
+    ('Qwen 3.5 4B', 'Qwen3.5-4B-Q4_K_M.gguf'),
+    ('Qwen 3.5 9B', 'Qwen3.5-9B-Q4_K_M.gguf'),
 )
 
 
@@ -118,6 +120,8 @@ class ModelSettings:
         known = dict((file, name) for name, file in LOCAL_MODELS)
         if self.models_dir and self.models_dir.is_dir():
             for file in sorted(self.models_dir.glob('*.gguf')):
+                if file.name.lower().startswith('mmproj'):
+                    continue  # Vision projectors accompany models; they are not language models.
                 known.setdefault(file.name, file.stem)
         return [{'id': file, 'name': name, 'installed': bool(self.models_dir and (self.models_dir / file).is_file()),
                  'max_context': min(MAX_CONTEXT, context_limit(self.models_dir / file) or MAX_CONTEXT) if self.models_dir else MAX_CONTEXT}

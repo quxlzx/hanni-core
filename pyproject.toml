@@ -26,6 +26,7 @@ dependencies = [
     "PyYAML>=6.0",
     # Extract text from user-attached PDFs without rendering or running document code.
     "pypdf>=6,<7",
+    "Pillow>=12,<14",
     # Read Excel workbooks; hardened XML parsing for Office/OpenDocument inputs.
     "openpyxl>=3.1.5,<4",
     "xlrd>=2.0.1,<3",

@@ -85,6 +85,8 @@ class NativeClient:
         self.reasoning_budget = model_cfg.get("native_reasoning_budget")
         self.timeout = timeout
         self.config = model_cfg
+        self.image_resolver = None
+        self._image_support_checked = False
         state_root = os.environ.get('HANNI_MODEL_STATE')
         self.reasoning_effort = model_cfg.get('native_reasoning_effort')
         if state_root and model_cfg.get('use_reasoning_preferences', True):
@@ -100,6 +102,7 @@ class NativeClient:
                   "context": self.config.get("context_length"), "context_verified": False,
                   "quantization": self.config.get("quantization") or "Not reported",
                   "reasoning_budget_supported": False, "reasoning_disable_supported": False}
+        result['image_input_supported'] = False if self.config.get('source') == 'local' else None
         try:
             with httpx.Client(timeout=3, trust_env=False) as client:
                 response = client.get(self.endpoint + "/models", headers={"Authorization": f"Bearer {self.api_key}"})
@@ -111,6 +114,9 @@ class NativeClient:
                 result["detail"] = f"Configured model {self.api_model!r} is not advertised by the server."
             if present:
                 advertised = next(m for m in models if m.get('id') == self.api_model or self.api_model in m.get('aliases', []))
+                modalities = (advertised.get('architecture') or {}).get('input_modalities')
+                if isinstance(modalities, list):
+                    result['image_input_supported'] = 'image' in modalities
                 levels = advertised.get('reasoning_effort_levels') or self.config.get('reasoning_effort_levels') or []
                 result['reasoning_levels'] = [level for level in levels if level in {'low', 'medium', 'high'}]
                 result['reasoning_disable_supported'] = 'none' in levels
@@ -123,6 +129,9 @@ class NativeClient:
                             props = client.get(self.endpoint.removesuffix('/v1') + '/props', headers={'Authorization': f'Bearer {self.api_key}'})
                             props.raise_for_status()
                             metadata = props.json()
+                            vision = (metadata.get('modalities') or {}).get('vision')
+                            if type(vision) is bool:
+                                result['image_input_supported'] = vision
                             result['reasoning_budget_supported'] = True
                             result['reasoning_disable_supported'] = True
                             limit = metadata.get('default_generation_settings', {}).get('n_ctx')
@@ -140,6 +149,19 @@ class NativeClient:
         return result
 
     def _payload(self, messages, tools):
+        if any(isinstance(message.get('content'), list) and any(part.get('type') == 'hanni_image'
+               for part in message['content'] if isinstance(part, dict)) for message in messages):
+            if not callable(self.image_resolver):
+                raise ValueError('Image attachments cannot be resolved in this session.')
+            if not self._image_support_checked:
+                status = self.status()
+                if not status.get('ready'):
+                    raise ValueError('Connect the selected model before sending images.')
+                if status.get('image_input_supported') is False:
+                    raise ValueError('The selected model does not accept images. Choose an image-capable model in Models, then send again.')
+                self._image_support_checked = True
+            messages = [{**message, 'content': [self.image_resolver(part) if isinstance(part, dict) and part.get('type') == 'hanni_image' else part
+                        for part in message['content']]} if isinstance(message.get('content'), list) else message for message in messages]
         payload: dict[str, Any] = {
             "model": self.api_model,
             "messages": messages,

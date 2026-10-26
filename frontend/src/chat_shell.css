@@ -314,6 +314,7 @@
   display: none;
 }
 .hc-main {
+  position: relative;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -825,8 +826,17 @@
 .hc-saved-files .hc-files { justify-content: flex-end; }
 .hc-shell .hc-file-download { width: 100%; text-align: left; background: transparent; border: 0; color: var(--text); border-radius: 10px; }
 .hc-shell .hc-file-download:hover:not(:disabled) { background: #333; }
-.hc-file-dragging { outline: 2px solid var(--text); outline-offset: 3px; }
-.hc-file-drop-hint { padding: 12px 16px 0; color: var(--text); font-size: 12px; }
+.hc-file-drop-target { position: absolute; inset: 14px; z-index: 9; display: grid; place-items: center; padding: 24px; border: 1px dashed var(--muted); border-radius: 12px; background: rgb(13 13 13 / 96%); color: var(--text); text-align: center; pointer-events: none; }
+.hc-file-drop-target > div { display: flex; flex-direction: column; align-items: center; max-width: 36ch; }
+.hc-file-drop-target svg { margin-bottom: 20px; color: var(--muted); }
+.hc-file-drop-target strong { font-size: 20px; line-height: 1.4; font-weight: 550; }
+.hc-file-drop-target p { margin-top: 10px; font-size: 14px; line-height: 1.7; color: var(--muted); }
+.hc-file-drop-target span { margin-top: 18px; font-size: 12px; color: var(--muted); }
+.hc-files > li:has(.hc-image-preview) { flex-wrap: wrap; }
+.hc-image-preview { width: 100%; padding: 10px 10px 0; }
+.hc-image-preview img { display: block; width: 100%; max-height: 180px; object-fit: contain; border-radius: 5px; background: var(--bg); }
+.hc-shell .hc-image-preview button { font-size: 12px; min-height: 32px; margin-top: 7px; padding: 4px 8px; }
+.hc-image-preview small { color: var(--muted); display: block; font-size: 12px; margin-top: 7px; }
 .hc-composer-end {
   display: flex;
   align-items: center;

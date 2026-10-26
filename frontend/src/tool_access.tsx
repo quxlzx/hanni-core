@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { write } from "./api";
 import { usePrivateResource } from "./feature_types";
+import "./tool_access.css";
 
 type Mode = "configured" | "read_only" | "ask" | "full";
 type Access = { available: boolean; mode?: Mode; revision?: string; error?: string | null; reason?: string | null };
@@ -27,6 +28,11 @@ export function ToolAccessSettings({ token, disabled = false }: { token: string;
   const mode = draft?.mode || data?.mode || "configured";
   const stale = Boolean(draft && draft.revision !== data?.revision);
   const unavailable = disabled || !token || !data?.available || Boolean(resource.error);
+  const autoApprove = mode === "full";
+  function choose(next: Mode) {
+    setDraft({ mode: next, revision: data?.revision || "" });
+    setError(""); setNotice("");
+  }
   async function save() {
     if (unavailable || busy || !draft || stale || lock.current) return;
     lock.current = true;
@@ -47,13 +53,23 @@ export function ToolAccessSettings({ token, disabled = false }: { token: string;
   }
   return (
     <div className="settings-fields" aria-busy={busy}>
+      <div className="tool-auto-approve">
+        <div className="tool-auto-heading">
+          <div><h3>Auto-approve</h3><p>Run enabled agent tools without individual action reviews.</p></div>
+          <button type="button" role="switch" aria-label="Auto-approve tool actions" aria-checked={autoApprove}
+            aria-describedby="tool-auto-description" className="tool-auto-toggle" disabled={unavailable || busy}
+            onClick={() => choose(autoApprove ? "ask" : "full")}>
+            <span className="tool-auto-track" aria-hidden="true"><span /></span><span>{autoApprove ? "On" : "Off"}</span>
+          </button>
+        </div>
+        <p id="tool-auto-description">On selects Full access for file writes, terminal commands, code execution and enabled MCP tools. Off selects Ask before writes; reads remain automatic. Existing permissions can still contain task-specific approvals.</p>
+        {data?.mode && <p className="tool-auto-current" role="status">Saved policy: <strong>{labels[data.mode]}</strong>{data.mode === "full" ? " · Auto-approve is on." : ""}</p>}
+        {draft && <p className="tool-auto-pending">Select Save tool access to apply this selection. Waiting tool requests will use the saved policy.</p>}
+      </div>
       <label htmlFor="agent-tool-access">Tool access</label>
       <select id="agent-tool-access" value={mode} disabled={unavailable || busy}
         aria-describedby="agent-tool-access-description"
-        onChange={(event) => {
-          setDraft({ mode: event.target.value as Mode, revision: data?.revision || "" });
-          setError(""); setNotice("");
-        }}>
+        onChange={(event) => choose(event.target.value as Mode)}>
         {(Object.keys(labels) as Mode[]).map((value) => <option key={value} value={value}>{labels[value]}</option>)}
       </select>
       <p id="agent-tool-access-description" className="subtle">{descriptions[mode]}</p>

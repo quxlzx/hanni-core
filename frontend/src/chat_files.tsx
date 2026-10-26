@@ -1,6 +1,6 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { localFetch, write } from "./api";
-import { FILE_ACCEPT, MAX_FILES, fileSize, readFile, validateFile, type Attachment } from "./attachment_files";
+import { FILE_ACCEPT, IMAGE_ACCEPT, MAX_FILES, fileSize, isImage, readFile, validateFile, type Attachment } from "./attachment_files";
 
 type DraftFile = {
   id: string; name: string; size: number; file?: File;
@@ -64,6 +64,8 @@ export function useChatFiles(conversation: string, token: string) {
   const files = drafts[conversation] || [];
   return { files, error: errors[conversation] || "", add, remove,
     hasFiles: (owner: string) => Boolean(current.current[owner]?.length),
+    reportError: (message: string) => setErrors(value => ({ ...value, [conversation]: message })),
+    token, conversation,
     retry: (entry: DraftFile) => upload(entry, conversation),
     clear: (owner: string, sent: string[]) => {
       sent.forEach(id => settled.current.add(id));
@@ -82,14 +84,59 @@ function FileIcon() {
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8Z" /><path d="M14 3v6h5M8 13h8M8 17h5" /></svg>;
 }
 
+function ImagePreview({ file, token, conversation }: { file: Attachment; token: string; conversation: string }) {
+  const [url, setUrl] = useState("");
+  const [error, setError] = useState("");
+  const [copied, setCopied] = useState(false);
+  useEffect(() => {
+    if (!token) return;
+    let live = true, objectUrl = "";
+    const controller = new AbortController();
+    setUrl(""); setError(""); setCopied(false);
+    localFetch(`/api/chat/file?id=${encodeURIComponent(file.id)}&conversation=${encodeURIComponent(conversation)}`, {
+      headers: { "X-Hanni-Token": token }, cache: "no-store", signal: controller.signal,
+    }).then(async response => {
+      if (!response.ok) throw new Error("Image preview unavailable.");
+      const blob = new Blob([await response.arrayBuffer()], { type: file.media_type });
+      if (live) { objectUrl = URL.createObjectURL(blob); setUrl(objectUrl); }
+    }).catch(error => { if (live) setError(error.message || "Image preview unavailable."); });
+    return () => { live = false; controller.abort(); if (objectUrl) URL.revokeObjectURL(objectUrl); };
+  }, [file.id, file.media_type, token, conversation]);
+
+  async function copy() {
+    if (!url) return;
+    setError(""); setCopied(false);
+    try {
+      const png = new Promise<Blob>((resolve, reject) => {
+        const picture = new Image();
+        picture.onload = () => {
+          const canvas = document.createElement("canvas"); canvas.width = picture.naturalWidth; canvas.height = picture.naturalHeight;
+          const context = canvas.getContext("2d");
+          if (!context) { reject(new Error("Image copying is unavailable.")); return; }
+          context.drawImage(picture, 0, 0);
+          canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error("Could not copy this image.")), "image/png");
+        };
+        picture.onerror = () => reject(new Error("Could not copy this image.")); picture.src = url;
+      });
+      await navigator.clipboard.write([new ClipboardItem({ "image/png": png })]);
+      setCopied(true);
+    } catch { setError("Could not copy the image. Download it or check clipboard access."); }
+  }
+  return <div className="hc-image-preview">
+    {url && <img src={url} alt={file.name} loading="lazy" onError={() => setError("Image preview unavailable.")} />}
+    {url && typeof ClipboardItem !== "undefined" && typeof navigator.clipboard?.write === "function" && <button type="button" onClick={copy} aria-label={`Copy image ${file.name}`}>{copied ? "Copied" : "Copy image"}</button>}
+    {error && <small role="status">{error}</small>}
+  </div>;
+}
+
 export function FilePicker({ disabled, add }: { disabled: boolean; add: (files: FileList) => void }) {
   const input = useRef<HTMLInputElement>(null);
   return <>
-    <input ref={input} type="file" multiple accept={FILE_ACCEPT} hidden aria-label="Choose files to attach" onChange={event => {
+    <input ref={input} type="file" multiple accept={`${FILE_ACCEPT},${IMAGE_ACCEPT}`} hidden aria-label="Choose files to attach" onChange={event => {
       if (event.target.files) add(event.target.files);
       event.target.value = "";
     }} />
-    <button type="button" className="hc-icon hc-attach-button" aria-label="Add files" title="Add files · PDF, DOCX, text or code · up to 5 files, 8 MiB each" disabled={disabled} onClick={() => input.current?.click()}>
+    <button type="button" className="hc-icon hc-attach-button" aria-label="Add files" title="Add images or documents · up to 5 files, 8 MiB each" disabled={disabled} onClick={() => input.current?.click()}>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m8 12 6-6a3 3 0 0 1 4 4l-8 8a5 5 0 0 1-7-7l8-8M7 13l7-7" /></svg>
     </button>
   </>;
@@ -99,7 +146,8 @@ export function DraftFiles({ state, disabled }: { state: ReturnType<typeof useCh
   return <>
     {state.files.length > 0 && <ul className="hc-files hc-draft-files" aria-label="Attached files">
       {state.files.map(file => <li key={file.id} className={file.error ? "has-error" : ""}>
-        <div className="hc-file-main"><FileIcon /><span><strong title={file.name}>{file.name}</strong><small role="status">{file.error || (file.status === "uploading" ? "Uploading…" : file.status === "removing" ? "Removing…" : `${fileSize(file.size)} · ${file.attachment?.characters.toLocaleString()} characters`)}{file.attachment?.truncated && !file.error ? " · text excerpt" : ""}</small></span></div>
+        {file.attachment && isImage(file.attachment) && <ImagePreview file={file.attachment} token={state.token} conversation={state.conversation} />}
+        <div className="hc-file-main"><FileIcon /><span><strong title={file.name}>{file.name}</strong><small role="status">{file.error || (file.status === "uploading" ? "Uploading…" : file.status === "removing" ? "Removing…" : isImage(file) ? `${fileSize(file.size)} · Image` : `${fileSize(file.size)} · ${file.attachment?.characters.toLocaleString()} characters`)}{file.attachment?.truncated && !file.error ? " · text excerpt" : ""}</small></span></div>
         {file.status === "failed" && <button type="button" className="hc-file-retry" disabled={disabled} onClick={() => state.retry(file)}>Retry</button>}
         <button type="button" className="hc-file-remove" aria-label={`Remove ${file.name}`} title={`Remove ${file.name}`} disabled={disabled || file.status === "uploading" || file.status === "removing"} onClick={() => state.remove(file.id)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><path d="m7 7 10 10M7 17 17 7" /></svg></button>
       </li>)}
@@ -125,6 +173,7 @@ export function MessageFiles({ files, token, conversation }: { files: Attachment
   }
   if (!files.length) return null;
   return <div className="hc-saved-files"><ul className="hc-files" aria-label="Message files">{files.map(file => <li key={file.id}>
+    {isImage(file) && <ImagePreview file={file} token={token} conversation={conversation} />}
     <button type="button" className="hc-file-main hc-file-download" disabled={!token || Boolean(downloading)} onClick={() => download(file)} title={`Download ${file.name}. Long documents may be excerpted for model context.`}><FileIcon /><span><strong>{file.name}</strong><small>{downloading === file.id ? "Downloading…" : `${fileSize(file.size)} · Download`}{file.truncated ? " · text excerpt" : ""}</small></span></button>
   </li>)}</ul>{error && <p className="hc-file-error" role="alert">{error}</p>}</div>;
 }
