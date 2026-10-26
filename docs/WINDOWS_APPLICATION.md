@@ -16,6 +16,8 @@ The engine bundle does not include GGUF model weights, your accounts, saved conv
 
 ## Automatic setup and Windows sign-in
 
+For a GitHub source ZIP, use File Explorer's **Extract All** before running setup. Choose a permanent folder such as `C:\HANNI`, open the extracted repository folder, and run `SETUP_HANNI.cmd` alongside `scripts`, `src`, and `pyproject.toml`. Double-clicking the command inside the ZIP can extract only that file into a temporary preview, leaving its PowerShell script unavailable. An incomplete copy now stops with extraction instructions before invoking PowerShell.
+
 Run the updated `SETUP_HANNI.cmd` once on each PC. Setup prepares the runtime, validates a runnable CPU server and benchmark, prepares a local model, launches HANNI and waits for the assistant to report ready. It then installs Desktop/Start menu shortcuts and a **current-user Startup folder** shortcut, using the full executable path, repository argument and working directory. This needs no administrator account or scheduled task. HANNI-owned shortcuts from older installations are updated to this installation, including copied shortcuts with stale targets; shortcuts owned by another application are retained.
 
 An already-open desktop is reused while its model/runtime are repaired. If it is disconnected and has no running backend, setup starts an assistant owned by that desktop's lifetime and waits for reconnection. First launch can also prepare a missing runtime automatically. Engine selection tests both `llama-server` and `llama-bench`, and failures include the executable/Windows exit code instead of only “No runnable binary.”
