@@ -19,6 +19,15 @@ GPU_ROUTING_FILENAME = 'gpu-routing.json'
 
 
 def executable_prefix():
+    from hanni.models.bundled_runtime import runtime_directories
+    for directory in runtime_directories():
+        candidate = directory / ('llama-server.exe' if os.name == 'nt' else 'llama-server')
+        if not candidate.is_file(): continue
+        try:
+            result = subprocess.run([str(candidate), '--version'], capture_output=True, timeout=10,
+                creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
+            if result.returncode == 0: return [str(candidate)]
+        except (OSError, subprocess.TimeoutExpired): continue
     for name, suffix in [('llama-server', []), ('llama', ['serve'])]:
         executable = shutil.which(name)
         if executable:
@@ -26,7 +35,7 @@ def executable_prefix():
     cache = Path(os.getenv('LOCALAPPDATA', ''))/'Microsoft/WinGet/Packages/ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe'
     for name, suffix in [('llama-server.exe', []), ('llama.exe', ['serve'])]:
         if (cache/name).is_file(): return [str(cache/name), *suffix]
-    raise RuntimeError('llama.cpp is missing. Install ggml.llamacpp or add llama-server to PATH.')
+    raise RuntimeError('llama.cpp is missing. Run SETUP_HANNI.cmd or rebuild HANNI OS to restore its bundled runtime.')
 
 
 @lru_cache(maxsize=8)

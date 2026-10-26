@@ -88,7 +88,7 @@ Native implementation references: [Windows RegisterHotKey](https://learn.microso
   local dashboard monitor. This does not start a model or microphone.
 - `START_HANNI.cmd` starts the existing assistant session and its desktop window.
   Keep its foreground terminal open for permissions and voice controls.
-- **Application → Start Assistant** (also in the tray menu) explicitly starts
+- **Start Assistant** in the system tray menu explicitly starts
   the existing foreground launcher. If the desktop owns a monitor, it first
   stops only that monitor. It does not duplicate an already attached session.
 - `START_HANNI.cmd -NoBrowser` is the existing terminal-only launch option.
@@ -126,7 +126,7 @@ An occupied port belonging to an unverified service is never replaced or used.
 
 The standard Windows caption provides resize, maximize, minimize, taskbar, and
 Alt+Tab behavior. The manifest requests Per Monitor V2 DPI awareness. The native
-caption and application icon keep the `h.` identity. **Application → Exit desktop**
+caption and application icon keep the `h.` identity. **Exit desktop** in the system tray menu
 always closes the desktop.
 
 The tray menu supports **Open HANNI OS**, **Start Assistant**, **Close to tray**,

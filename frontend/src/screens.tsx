@@ -15,6 +15,7 @@ import type {
 import "./screens.css";
 import { ToolAccessSettings } from "./tool_access";
 import { GoogleAccountsSettings } from "./google_accounts";
+import { TeamsSettings } from "./teams_settings";
 import { OutputSettings } from "./output_settings";
 import { ReasoningSettings } from "./reasoning_settings";
 
@@ -603,6 +604,10 @@ export function SettingsScreen({ context: c }: { context: ScreenContext }) {
         ))}
       </nav>
       <div id="settings-panel-integrations" className="settings-tab-panel" role="tabpanel" aria-labelledby="settings-tab-integrations" hidden={tab !== "integrations"} tabIndex={0}>
+      <section id="teams-settings" className="settings-section">
+        <div><h2>Microsoft Teams</h2><p>HANNI in Teams, plus your chats and channels.</p></div>
+        <TeamsSettings token={c.chat.data?.token || ""} disabled={Boolean(c.chat.error) || c.stopping} />
+      </section>
       <section id="integration-settings" className="settings-section">
         <div>
           <h2>Google accounts</h2>

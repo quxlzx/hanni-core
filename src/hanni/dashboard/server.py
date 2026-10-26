@@ -134,6 +134,8 @@ class DashboardServer(ThreadingHTTPServer):
         self.tool_access = ToolAccessControls(self.features, self.chat)
         from hanni.dashboard.google_accounts import GoogleAccounts
         self.google_accounts = GoogleAccounts(self.features)
+        from hanni.dashboard.teams import TeamsControls
+        self.teams = TeamsControls(self)
         from hanni.dashboard.commands import ChatCommands
         self.chat_commands = ChatCommands(self)
         from hanni.dashboard.learning import LearningControls
@@ -202,6 +204,9 @@ class DashboardServer(ThreadingHTTPServer):
         return result
 
     def server_close(self):
+        teams = getattr(self, 'teams', None)
+        if teams is not None:
+            teams.close()
         learning = getattr(self, 'learning', None)
         if learning is not None:
             learning.close()
@@ -274,7 +279,7 @@ class Handler(BaseHTTPRequestHandler):
             self.send_header('Referrer-Policy', 'no-referrer')
             for key, value in (headers or {}).items():
                 self.send_header(key, value)
-            self.send_header('Content-Security-Policy', "default-src 'self'; connect-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'")
+            self.send_header('Content-Security-Policy', "default-src 'self'; connect-src 'self'; script-src 'self'; style-src 'self'; font-src 'self' data:; img-src 'self' blob:; frame-ancestors 'none'; base-uri 'none'; form-action 'none'")
             self.end_headers()
             self.wfile.write(body)
         except (BrokenPipeError, ConnectionResetError, ConnectionAbortedError):
@@ -420,7 +425,7 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send_error(503, exc)
         if route.startswith('/api/inference/'):
             return self._inference_request('GET')
-        private_routes = {'/api/learning', '/api/google/accounts', '/api/tool-access', '/api/chat/commands', '/api/chat/command', '/api/model-settings', '/api/model-output', '/api/model-reasoning', '/api/productivity', '/api/memory', '/api/calendar',
+        private_routes = {'/api/learning', '/api/google/accounts', '/api/integrations/teams', '/api/tool-access', '/api/chat/commands', '/api/chat/command', '/api/model-settings', '/api/model-output', '/api/model-reasoning', '/api/productivity', '/api/memory', '/api/calendar',
                           '/api/agents', '/api/awareness', '/api/voice', '/api/notifications',
                           '/api/mcp', '/api/mcp/export', '/api/mcp/office', '/api/hermes', '/api/executions', '/api/tasks', '/api/workflows', '/api/compute', '/api/model-routing', '/api/model-lab',
                           '/api/bridge/tasks', '/api/bridge/tools', '/api/cron/jobs', '/api/skills',
@@ -441,6 +446,7 @@ class Handler(BaseHTTPRequestHandler):
                 elif route == '/api/model-reasoning': result = self.server.model_settings.reasoning_snapshot()
                 elif route == '/api/tool-access': result = self.server.tool_access.snapshot()
                 elif route == '/api/google/accounts': result = self.server.google_accounts.snapshot()
+                elif route == '/api/integrations/teams': result = self.server.teams.snapshot()
                 elif route == '/api/productivity': result = feature.productivity()
                 elif route == '/api/memory': result = feature.memories(query.get('q', ''))
                 elif route == '/api/memory/explorer': result = feature.memory_explorer.browse(query)
@@ -682,7 +688,7 @@ class Handler(BaseHTTPRequestHandler):
             except (ValueError, KeyError) as exc:
                 return self._send_error(400, exc)
             return self._send(502 if result.get('error') else 200, json.dumps(result, default=str).encode())
-        if self.path not in {'/api/learning', '/api/google/accounts', '/api/tool-access', '/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/model-output', '/api/model-reasoning', '/api/chat', '/api/chat/conversations', '/api/chat/clear', '/api/gpu-routing', '/api/audio-devices', '/api/shutdown', '/api/restart', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/hermes', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-routing', '/api/model-lab'}:
+        if self.path not in {'/api/learning', '/api/google/accounts', '/api/integrations/teams', '/api/tool-access', '/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/model-output', '/api/model-reasoning', '/api/chat', '/api/chat/conversations', '/api/chat/clear', '/api/gpu-routing', '/api/audio-devices', '/api/shutdown', '/api/restart', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/hermes', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-routing', '/api/model-lab'}:
             self._discard_small_body()
             return self._send(404, b'{"error":"Not found"}')
         if self.headers.get('Content-Type', '').split(';')[0].strip() != 'application/json':
@@ -691,7 +697,7 @@ class Handler(BaseHTTPRequestHandler):
         data = {}
         try:
             size = int(self.headers.get('Content-Length', '0'))
-            limit = 12 * 1024 * 1024 if self.path == '/api/chat/files' else 262144 if self.path == '/api/mcp' else 65536 if self.path in {'/api/learning', '/api/google/accounts', '/api/workflows', '/api/tasks'} else 20000
+            limit = 12 * 1024 * 1024 if self.path == '/api/chat/files' else 262144 if self.path == '/api/mcp' else 65536 if self.path in {'/api/learning', '/api/google/accounts', '/api/integrations/teams', '/api/workflows', '/api/tasks'} else 20000
             if self.headers.get('Transfer-Encoding') or not 0 < size <= limit:
                 return self._send(413, b'{"error":"Message too large or missing length"}')
             self.connection.settimeout(5)
@@ -702,6 +708,9 @@ class Handler(BaseHTTPRequestHandler):
             if self.path == '/api/learning':
                 result = self.server.learning.execute(data)
                 return self._send(200, json.dumps(result, allow_nan=False, default=str).encode())
+            if self.path == '/api/integrations/teams':
+                result = self.server.teams.execute(data)
+                return self._send(200, json.dumps(result, allow_nan=False).encode())
             if self.path == '/api/google/accounts':
                 result = self.server.google_accounts.execute(data)
                 return self._send(200, json.dumps(result, allow_nan=False).encode())
@@ -853,10 +862,22 @@ class Handler(BaseHTTPRequestHandler):
                 raise ValueError('Expected id and message')
             if data.get('attachments') and not self.server.chat.native_mode:
                 raise ValueError('Files require native chat. Start HANNI with START_BRAIN.cmd.')
+            if data.get('attachments'):
+                with self.server.chat.lock:
+                    identifiers = self.server.chat.files.validate(data['attachments'], data.get('conversation', 'default'), data['id'])
+                    images = any(self.server.chat.db.execute('SELECT media_type FROM chat_files WHERE id=?', (key,)).fetchone()[0].startswith('image/') for key in identifiers)
+                    accepted = self.server.chat.db.execute('SELECT 1 FROM messages WHERE turn=? LIMIT 1', (data['id'],)).fetchone()
+                if images and not accepted:
+                    from hanni.native.provider import NativeClient
+                    status = NativeClient(self.server.model_settings.reasoning_model()).status()
+                    if not status.get('ready'):
+                        raise ValueError('Connect the selected model before sending images. Your attached images have been kept.')
+                    if status.get('image_input_supported') is False:
+                        raise ValueError('The selected model does not accept images. Choose an image-capable model in Models, then send again. Your attached images have been kept.')
             key = self.server.chat.submit(data['id'], data['message'], data.get('conversation'), data.get('attachments'))
             return self._send(202, json.dumps({'id':key, 'accepted':True}).encode())
         except ValueError as exc:
-            if self.path in {'/api/learning', '/api/google/accounts', '/api/tool-access', '/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/gpu-routing', '/api/audio-devices', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-lab'} or (self.path == '/api/chat' and isinstance(data, dict) and 'attachments' in data):
+            if self.path in {'/api/learning', '/api/google/accounts', '/api/integrations/teams', '/api/tool-access', '/api/chat/files', '/api/chat/command', '/api/model-settings', '/api/gpu-routing', '/api/audio-devices', '/api/cluster/power', '/api/cluster/terminal', '/api/productivity', '/api/memory', '/api/notifications', '/api/voice', '/api/mcp', '/api/workflows', '/api/tasks', '/api/compute', '/api/model-lab'} or (self.path == '/api/chat' and isinstance(data, dict) and 'attachments' in data):
                 return self._send_error(400, exc)
             return self._send(400, b'{"error":"Enter a valid message (maximum 4000 characters)."}')
         except UnicodeError:

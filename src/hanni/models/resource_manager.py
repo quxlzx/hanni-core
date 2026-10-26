@@ -130,10 +130,12 @@ def _llama_cpp_gpus() -> tuple[tuple[GpuSnapshot, ...], str | None]:
     VRAM totals without relying on Win32_VideoController.AdapterRAM, which can
     truncate values above 4 GiB.
     """
-    command = ["llama-server", "--list-devices"]
     try:
+        from hanni.models.runtime import executable_prefix
+        prefix = executable_prefix()
+        command = [*prefix[:1], *(['cli'] if len(prefix) > 1 else []), '--list-devices']
         result = subprocess.run(command, capture_output=True, text=True, timeout=8, check=False)
-    except (FileNotFoundError, OSError, subprocess.TimeoutExpired) as exc:
+    except (RuntimeError, FileNotFoundError, OSError, subprocess.TimeoutExpired) as exc:
         return (), f"llama.cpp device query unavailable: {exc}"
     if result.returncode != 0:
         detail = (result.stderr or result.stdout or f"exit {result.returncode}").strip()

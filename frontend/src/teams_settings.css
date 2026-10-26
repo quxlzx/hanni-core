@@ -1,0 +1,29 @@
+.teams-settings { min-width: 0; font-size: 14px; }
+.teams-settings p, .teams-settings li { line-height: 1.65; overflow-wrap: anywhere; }
+.teams-settings p { margin: 8px 0 14px; }
+.teams-toolbar, .teams-subheading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 16px; }
+.teams-toolbar > span, .teams-subheading > span, .teams-hint { color: var(--muted); }
+.teams-settings h3 { font-size: 15px; margin: 0; }
+.teams-settings button { min-height: 38px; font-size: inherit; }
+.teams-settings a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+.teams-setup-section { padding-top: 24px; }
+.teams-setup-section + .teams-setup-section { border-top: 1px solid var(--line); margin-top: 24px; }
+.teams-setup-steps { padding-left: 22px; margin: 20px 0 0; }
+.teams-setup-steps > li { padding-left: 4px; margin: 0 0 24px; }
+.teams-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.teams-code { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 16px 0; }
+.teams-code label { width: 100%; }
+.teams-settings input { min-width: 0; width: 100%; min-height: 40px; padding: 8px 10px; font-size: 14px; }
+.teams-code input { flex: 1 1 240px; width: auto; font-family: var(--font-mono, monospace); }
+.teams-settings .teams-hint { font-size: 13px; }
+.teams-registration { margin: 20px 0; }
+.teams-registration summary { cursor: pointer; padding: 8px 0; font-weight: 600; }
+.teams-registration ol { padding-left: 22px; margin: 12px 0; }
+.teams-registration li { margin-bottom: 10px; }
+.teams-registration form { display: grid; gap: 8px; }
+.teams-registration form label:not(:first-child) { margin-top: 8px; }
+.teams-registration form button { justify-self: start; }
+.teams-permissions { overflow-wrap: anywhere; color: var(--muted); }
+.teams-account, .teams-sign-in, .teams-disconnect { padding: 16px 0; }
+.teams-settings button:focus-visible, .teams-settings a:focus-visible, .teams-settings summary:focus-visible, .teams-settings input:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 520px) { .teams-code input { flex-basis: 100%; } }

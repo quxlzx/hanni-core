@@ -238,3 +238,46 @@ def test_offline_html_escapes_errors_and_has_no_command_bridge():
     assert '<script>' not in page and '&lt;script&gt;' in page
     assert "script-src 'none'" in page
     assert 'pywebview.api' not in page
+
+
+def test_fullscreen_shortcuts_ignore_repeat_and_restore_saved_window_geometry(tmp_path):
+    app = desktop.DesktopApp(SimpleNamespace(), tmp_path, 'HANNI OS', desktop.load_preferences(tmp_path/'window.json'))
+    app.window = Mock(width=1000, height=700, x=100, y=80)
+    assert app.fullscreen_key('Escape') is False
+    assert app.fullscreen_key('F11', modified=True) is False
+    assert app.fullscreen_key('F11') is True
+    assert app.fullscreen
+    app.window.width, app.window.height = 1920, 1080
+    app.remember()
+    stored = desktop.load_preferences(tmp_path/'window.json')
+    assert (stored['width'], stored['height'], stored['x'], stored['y']) == (1000, 700, 100, 80)
+    assert app.fullscreen_key('F11') is True
+    app.window.toggle_fullscreen.assert_called_once()
+    assert app.fullscreen_key('F11', released=True) is True
+    assert app.fullscreen_key('Escape') is True
+    assert not app.fullscreen
+    assert app.window.toggle_fullscreen.call_count == 2
+    assert app.fullscreen_key('Escape') is False
+
+
+def test_leaving_fullscreen_restores_maximized_state_and_tray_restore_keeps_fullscreen(tmp_path):
+    prefs = desktop.load_preferences(tmp_path/'window.json'); prefs['maximized'] = True
+    app = desktop.DesktopApp(SimpleNamespace(), tmp_path, 'HANNI OS', prefs)
+    app.window = Mock()
+    app.toggle_fullscreen()
+    app.restore()
+    app.window.restore.assert_not_called()
+    app.toggle_fullscreen()
+    app.window.maximize.assert_called_once()
+    assert not app.fullscreen and app.maximized
+
+
+def test_native_maximize_resize_cannot_overwrite_normal_geometry_before_event_callback(tmp_path):
+    app = desktop.DesktopApp(SimpleNamespace(), tmp_path, 'HANNI OS', desktop.load_preferences(tmp_path/'window.json'))
+    app.window = Mock(width=1000, height=700, x=100, y=80, native=SimpleNamespace(WindowState='Normal'))
+    app.remember()
+    app.window.native.WindowState = 'Maximized'
+    app.window.width, app.window.height = 1920, 1080
+    app.remember()
+    saved = desktop.load_preferences(tmp_path/'window.json')
+    assert saved['maximized'] and (saved['width'], saved['height']) == (1000, 700)

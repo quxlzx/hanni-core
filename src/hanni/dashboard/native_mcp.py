@@ -52,6 +52,27 @@ class NativeMCP:
                         'parameters': tool['input_schema']}},
                     'remote': {'server_id': server['id'], 'name': tool['original_name'],
                                'capability_id': tool['internal_id'], 'classification': tool['classification']}})
+        # The bundled Graph reader shares the same durable native action lane.
+        # Account setup and credentials are never exposed as model capabilities.
+        registry = self.hub.controller_registry
+        access = getattr(registry, 'teams_access', None)
+        try:
+            connected = bool(access and access.config() and (access.vault.get() or {}).get('profile'))
+        except Exception:
+            connected = False
+        if connected:
+            from hanni.workflows.policy import definition_fingerprint
+            for definition in registry.definitions():
+                if not definition.name.startswith('teams.') or definition.side_effect != 'read':
+                    continue
+                fingerprint = definition_fingerprint(definition)
+                name = definition.name.replace('.', '_')
+                result.insert(0, {'name': name, 'target': 'mcp', 'hash': fingerprint,
+                    'schema': {'type': 'function', 'function': {'name': name,
+                        'description': definition.description,
+                        'parameters': definition.argument_schema()}},
+                    'remote': {'server_id': 'hanni-teams', 'name': definition.name,
+                               'capability_id': definition.name, 'classification': 'read_only'}})
         return {'tools': result[:128]}
 
     def call(self, action_id):

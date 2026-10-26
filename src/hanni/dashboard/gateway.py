@@ -106,7 +106,7 @@ def activity_snapshot(data_dir, limit=30):
                     continue
                 arguments = raw.get('arguments', {})
                 arguments = _audit_arguments(raw['tool'], arguments) if isinstance(arguments, dict) else {}
-                private = raw['tool'].startswith(('google.', 'google_calendar.', 'email.', 'gmail.', 'todo.', 'workspace.', 'memory.desktop_', 'note.')) or raw['tool'] == 'powershell.run'
+                private = raw['tool'].startswith(('teams.', 'google.', 'google_calendar.', 'email.', 'gmail.', 'todo.', 'workspace.', 'memory.desktop_', 'note.')) or raw['tool'] == 'powershell.run'
                 row = {
                     'id': len(rows), 'timestamp': raw.get('timestamp'), 'tool': raw['tool'],
                     'status': 'completed' if raw.get('ok') is True else 'failed',

@@ -21,6 +21,7 @@ from hanni.tools import workplace as workplace_tools
 from hanni.tools import google_access as google_tools
 from hanni.tools import email_tools
 from hanni.tools import google_services
+from hanni.tools import teams_access as teams_tools
 from hanni.tools import compute as compute_tools
 from hanni.tools import cluster_harnesses as cluster_harness_tools
 from hanni.tools import content as content_tools
@@ -55,6 +56,7 @@ def build_default_registry(config: AppConfig, *, data_dir: Path | None = None) -
     holder = diagnostic_tools.RegistryHolder()
     google_access = google_tools.GoogleAccess(timezone_name=config.hanni.user.timezone)
     registry.google_access = google_access
+    registry.teams_access = teams_tools.TeamsAccess(root)
     for definition in (
         *system_tools.definitions(),
         *windows_tools.definitions(),
@@ -85,6 +87,7 @@ def build_default_registry(config: AppConfig, *, data_dir: Path | None = None) -
         *google_tools.definitions(google_access),
         *email_tools.definitions(google_access),
         *google_services.definitions(google_access),
+        *teams_tools.definitions(registry.teams_access),
         *diagnostic_tools.definitions(config, holder),
     ):
         registry.register(definition)

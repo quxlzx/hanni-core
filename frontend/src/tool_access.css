@@ -1,0 +1,14 @@
+.settings-fields > .tool-auto-approve { grid-column: 1 / -1; min-width: 0; padding-bottom: 20px; margin-bottom: 6px; border-bottom: 1px solid var(--line); }
+.tool-auto-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.tool-auto-heading h3 { margin: 0 0 6px; font-size: 16px; line-height: 1.5; }
+.tool-auto-heading p, .tool-auto-approve > p { font-size: 13px; line-height: 1.7; color: var(--muted); max-width: 72ch; }
+.tool-auto-approve > p { margin-top: 14px; }
+.tool-auto-approve .tool-auto-current { font-size: 12px; }
+.tool-auto-current strong { color: var(--text); font-weight: 500; }
+.tool-auto-approve .tool-auto-pending { color: var(--text); }
+.hc-shell .tool-auto-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-width: 80px; min-height: 42px; flex-shrink: 0; padding: 6px 8px; background: transparent; border: 0; font-size: 13px; }
+.tool-auto-track { width: 34px; height: 20px; padding: 3px; border-radius: 12px; background: var(--line); display: flex; align-items: center; }
+.tool-auto-track > span { width: 14px; height: 14px; border-radius: 50%; background: var(--muted); }
+.tool-auto-toggle[aria-checked="true"] .tool-auto-track { background: var(--text); justify-content: flex-end; }
+.tool-auto-toggle[aria-checked="true"] .tool-auto-track > span { background: var(--bg); }
+@media (max-width: 480px) { .tool-auto-heading { gap: 12px; align-items: start; } }
