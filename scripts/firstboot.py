@@ -50,26 +50,58 @@ def detach_kwargs() -> dict:
     return {"start_new_session": True}
 
 
+_binary_probe_errors = []
+
+
 def pick_binary(facts: Facts) -> Path | None:
     from hanni.native.acceleration import devices
     from hanni.models.bundled_runtime import runtime_directories
     cpu_fallback = None
+    _binary_probe_errors.clear()
     for directory in runtime_directories(STICK):
         cand = stick_exe(directory, "llama-bench")
         if not cand.is_file() or not stick_exe(cand.parent, 'llama-server').is_file():
             continue
         try:
-            done = subprocess.run([str(cand), "--version"], capture_output=True, timeout=10,
-                                  creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0),
-                                  env={**os.environ, "LD_LIBRARY_PATH": str(cand.parent)})
-            if done.returncode in (0,):
+            for binary in (cand, stick_exe(cand.parent, 'llama-server')):
+                done = subprocess.run([str(binary), "--version"], capture_output=True, timeout=10,
+                                      creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0),
+                                      env={**os.environ, "LD_LIBRARY_PATH": str(cand.parent)})
+                if done.returncode:
+                    raise RuntimeError(f'{binary.name}: exit 0x{done.returncode & 0xffffffff:08x}')
+            if directory.name.endswith('x86_64'):
+                if cpu_fallback is None or not cpu_fallback.name.endswith('x86_64'):
+                    cpu_fallback = cand.parent
+            else:
                 if devices(cand.parent):
                     return cand.parent
                 if cpu_fallback is None or (not cpu_fallback.name.endswith('x86_64') and directory.name.endswith('x86_64')):
                     cpu_fallback = cand.parent
-        except (OSError, RuntimeError, subprocess.TimeoutExpired):
+        except (OSError, RuntimeError, subprocess.TimeoutExpired) as error:
+            _binary_probe_errors.append(directory.name + ': ' + str(error))
             continue
     return cpu_fallback
+
+
+def ensure_binary(facts):
+    selected = pick_binary(facts)
+    if selected is not None: return selected
+    helper = CORE / 'scripts/prepare_llama_runtime.py'
+    if os.name == 'nt' and helper.is_file():
+        print('Preparing the missing local inference runtime. No system-wide llama.cpp install is needed.', flush=True)
+        try:
+            repaired = subprocess.run([sys.executable, str(helper), '--verify'], cwd=CORE,
+                capture_output=True, text=True, timeout=300,
+                creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
+            if repaired.returncode:
+                raise RuntimeError((repaired.stderr or repaired.stdout)[-1400:].strip())
+            selected = pick_binary(facts)
+            if selected is not None: return selected
+        except (OSError, subprocess.TimeoutExpired, RuntimeError) as error:
+            raise RuntimeError('Automatic inference runtime setup failed. ' + str(error) +
+                ' Run the updated SETUP_HANNI.cmd; on a managed laptop, IT may need to allow the application.') from None
+    detail = '; '.join(_binary_probe_errors[-4:]) or 'No server and benchmark executables were found.'
+    raise RuntimeError('No runnable llama.cpp runtime. ' + detail + ' Run SETUP_HANNI.cmd to repair the local runtime.')
 
 
 def candidates(facts: Facts, models_dir: Path | None = None) -> list[str]:
@@ -319,9 +351,7 @@ def apply_model_change(control, children, runtime, *, port, timeout, base_env):
             chosen = control.models_dir / selected['local_model']
             if not chosen.is_file():
                 raise RuntimeError('The selected local model file is no longer available.')
-            bin_dir = pick_binary(probe(str(STICK)))
-            if bin_dir is None:
-                raise RuntimeError('No runnable local model server is installed.')
+            bin_dir = ensure_binary(probe(str(STICK)))
             command = model_command_for(bin_dir, chosen, port, selected['context'])
             stop_owned(children.pop('model', None))
             stopped_old = True
@@ -450,9 +480,7 @@ def main(argv=None) -> int:
             print(f"Using existing model {model_id!r} at {endpoint}", flush=True)
         else:
             facts = probe(str(STICK))
-            bin_dir = pick_binary(facts)
-            if bin_dir is None:
-                raise RuntimeError("No runnable llama.cpp runtime. Run SETUP_HANNI.cmd or rebuild the desktop application to restore its bundled runtime.")
+            bin_dir = ensure_binary(facts)
             if args.model:
                 pool = [str(Path(args.model))]
             elif args.tier != "auto":

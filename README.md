@@ -7,8 +7,10 @@ H.A.N.N.I. (Highly Adaptive Neural Network Intelligence) is a **local Windows 11
 ## Quick start on Windows
 
 1. Install **Python 3.12**. Setup prepares HANNI's pinned CPU and Vulkan llama.cpp runtimes locally; a separate llama.cpp or WinGet installation is not needed.
-2. Download or clone this repository, open its folder, and run `SETUP_HANNI.cmd`. It creates `.venv` and installs the normal app, speech, and Google dependencies. The first setup needs internet access; model weights are not included in GitHub.
-3. Open **HANNI OS** from the Desktop or Start menu, or run `START_HANNI.cmd`. HANNI opens in its own Windows window and starts its agent in the background. `START_HANNI_OS.cmd` opens the same app. `START_BRAIN.cmd` remains the explicit terminal/browser launcher; the older voice/controller path is available through `scripts/start_dashboard.ps1`.
+2. Download or clone this repository, open its folder, and run `SETUP_HANNI.cmd`. It installs dependencies, prepares and tests a local CPU engine, downloads MiniCPM 2B if no model is installed, and launches HANNI. It registers HANNI for your Windows account at sign-in after the assistant becomes ready. Existing models/API choices are retained. First setup needs internet access and can take several minutes; model weights are not included in GitHub.
+3. HANNI then starts automatically when you sign in. You can also open **HANNI OS** from the Desktop or Start menu, or run `START_HANNI.cmd`. `START_HANNI_OS.cmd` opens the same app. `START_BRAIN.cmd` remains the explicit terminal/browser launcher; the older voice/controller path is available through `scripts/start_dashboard.ps1`.
+
+Use `SETUP_HANNI.cmd -NoStartup` to skip sign-in registration, or `-NoLaunch` to prepare without opening HANNI. Setup logs are saved at `%LOCALAPPDATA%\HANNI OS\setup.log`. On managed work laptops, blocked executable/DLL errors are reported explicitly; setup does not override company application policies.
 
 Closing the app window keeps HANNI in the system tray. Windows notifications are enabled for new installations; existing preferences are retained. Open **Notifications** for unread task results, approval requests, failures, and reminders. Right-click the tray icon to toggle **Desktop notifications**, send a test notification, reopen the app, or **Exit desktop**. Exiting stops services the app started; an already-running session remains independent. See [Windows application setup](docs/WINDOWS_APPLICATION.md).
 
@@ -277,8 +279,8 @@ To run that backend without voice capture or interactive input:
 Keep that backend terminal open. Submit `/goal <objective>` from the existing keyboard session. The primary interface now contains Assistant, Mission and Hermes; the former Workspace navigation is removed. Workflow execution still obeys original permissions and Stop; an uncertain write never becomes an automatic retry. Unattended intent execution remains disabled until its task-family acceptance gate passes.
 
 - Exactly **one configured LLM** (`supervisor`).
-- The default model is `Qwen3.5-4B-Q4_K_M.gguf` through llama.cpp.
-- The resident model is intended to stay loaded with a modest 16K context.
+- Fresh setup selects MiniCPM 2B with a 64K context when no model is installed. Existing model/provider choices are retained; additional configured GGUF models remain available in Models.
+- The resident model stays loaded with the configured context, starting at 64K.
 - GPU AUTO routing prefers the **smallest discrete 8 GB-class GPU** that can safely fit the model; dashboard override remains available.
 - The model is exposed to at most a small relevant set of tools per turn.
 - The MCP layer is **observe-first**: read tools and explicitly allowlisted owner actions are exposed. The allowlist includes Calendar creation, existing application launch and media/Spotify controls.

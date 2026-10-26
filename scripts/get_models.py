@@ -34,6 +34,8 @@ def download(url: str, dest: Path) -> None:
     print(f"downloading {url.rsplit('/', 1)[-1]} ...")
     req = urllib.request.Request(url, headers={"User-Agent": "hanni-core/1.0"})
     with urllib.request.urlopen(req, timeout=60) as r, open(tmp, "wb") as out:
+        expected = r.headers.get('Content-Length')
+        expected = int(expected) if expected and expected.isdigit() else None
         got = 0
         while True:
             chunk = r.read(1 << 20)
@@ -43,6 +45,8 @@ def download(url: str, dest: Path) -> None:
             got += len(chunk)
             if got % (32 << 20) < (1 << 20):
                 print(f"  {got / 2**20:.0f} MiB", flush=True)
+        if expected is not None and got != expected:
+            raise RuntimeError('Download was incomplete; rerun setup to retry. The partial file was not activated.')
     tmp.rename(dest)
     print(f"done: {dest.name} ({dest.stat().st_size / 2**20:.0f} MiB)")
 

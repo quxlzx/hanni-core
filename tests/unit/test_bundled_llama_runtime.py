@@ -100,7 +100,7 @@ def test_assembled_cache_detects_damage_missing_dependencies_and_lock_changes(tm
     license_path = cache / f"LICENSE-{lock['release']}.txt"; license_path.write_bytes(b'fixture license')
     lock['license']['sha256'] = builder.checksum(license_path)
     lock_path = tmp_path / 'lock.json'; lock_path.write_text(json.dumps(lock))
-    def copy_crt(stage, assets):
+    def copy_crt(stage, assets, **kwargs):
         for asset in assets:
             for name in builder.WINDOWS_CRT: (stage / asset['directory'] / name).write_bytes(b'fixture-crt')
         (stage / 'THIRD_PARTY_NOTICES.txt').write_text('fixture notices')

@@ -3,7 +3,7 @@ setlocal
 cd /d "%~dp0"
 echo.
 echo Starting H.A.N.N.I. setup...
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\setup_hanni.ps1"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\setup_hanni.ps1" %*
 set "EXITCODE=%ERRORLEVEL%"
 if not "%EXITCODE%"=="0" (
   echo.
@@ -14,5 +14,5 @@ if not "%EXITCODE%"=="0" (
 )
 echo.
 echo Setup finished successfully.
-echo Use START_HANNI.cmd to launch the dashboard and configured assistant model.
+echo See the launch and Windows startup status above. START_HANNI.cmd also opens the assistant.
 pause

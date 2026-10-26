@@ -9,6 +9,7 @@ from pathlib import Path, PurePosixPath
 import re
 import shutil
 import stat
+import struct
 import subprocess
 import tempfile
 import urllib.request
@@ -41,6 +42,14 @@ def load_lock(path=LOCK):
             raise ValueError('Invalid runtime archive size.')
     if lock['license']['url'] != f"https://raw.githubusercontent.com/ggml-org/llama.cpp/{lock['release']}/LICENSE":
         raise ValueError('Runtime license must match the pinned release.')
+    crt = lock.get('windows_crt', {})
+    if (not crt.get('url', '').startswith('https://download.visualstudio.microsoft.com/download/pr/')
+            or not crt['url'].endswith('/VC_redist.x64.exe')
+            or not re.fullmatch(r'[a-f0-9]{64}', crt.get('sha256', ''))
+            or type(crt.get('size')) is not int or not 0 < crt['size'] < 64 * 1024**2
+            or set(crt.get('files', {})) != set(WINDOWS_CRT)
+            or any(not re.fullmatch(r'[a-f0-9]{64}', digest) for digest in crt['files'].values())):
+        raise ValueError('The Microsoft x64 runtime download and DLLs must be pinned.')
     return lock
 
 
@@ -121,13 +130,55 @@ def validate_cache(destination, lock):
     except (OSError, ValueError, KeyError, TypeError): return False
 
 
-def copy_windows_crt(stage, assets, *, source=None):
+def windows_crt_source(item, cache, *, offline=False):
+    """Read Microsoft's pinned redistributable; never execute or install it."""
+    if os.name != 'nt': raise RuntimeError('Prepare the Windows runtime on Windows.')
+    cache = Path(cache).resolve()
+    output = cache / ('crt-' + item['sha256'][:16])
+    if all((output / name).is_file() and checksum(output / name) == digest for name, digest in item['files'].items()):
+        return output
+    installer = cache / 'VC_redist.x64.exe'
+    download(item, installer, offline=offline)
+    raw = installer.read_bytes()
+    expand = Path(os.environ.get('SystemRoot', r'C:\Windows')) / 'System32/expand.exe'
+    output.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix='crt-unpack-', dir=cache) as temporary:
+        stage = Path(temporary)
+        cabinets = []
+        offset = 0
+        while (offset := raw.find(b'MSCF', offset)) >= 0:
+            start = offset; offset += 4
+            if start + 36 > len(raw): continue
+            size = struct.unpack_from('<I', raw, start + 8)[0]
+            if 36 <= size <= len(raw) - start and raw[start + 24:start + 26] == b'\x03\x01':
+                path = stage / f'container-{len(cabinets)}.cab'
+                path.write_bytes(raw[start:start + size]); cabinets.append(path)
+        if not cabinets or len(cabinets) > 10: raise ValueError('Unexpected Microsoft redistributable format.')
+        def extract(cabinet, target):
+            target.mkdir()
+            done = subprocess.run([str(expand), '-F:*', str(cabinet), str(target)],
+                capture_output=True, timeout=60, creationflags=subprocess.CREATE_NO_WINDOW)
+            if done.returncode: raise RuntimeError('Windows could not unpack the Microsoft runtime. Check your organization’s application policy.')
+        for i, cabinet in enumerate(cabinets): extract(cabinet, stage / f'container-{i}')
+        # The Burn payload contains CABs plus MSI metadata. Only CAB extraction
+        # is performed: no MSI administrative install, elevation or registry writes.
+        payloads = [p for p in stage.rglob('*') if p.is_file() and p.suffix != '.cab' and p.read_bytes()[:4] == b'MSCF']
+        for i, payload in enumerate(payloads): extract(payload, stage / f'payload-{i}')
+        for name, digest in item['files'].items():
+            candidates = [p for p in stage.rglob(name + '_amd64') if p.is_file() and checksum(p) == digest]
+            if not candidates: raise ValueError('Microsoft runtime DLL checksum verification failed.')
+            shutil.copy2(candidates[0], output / name)
+    return output
+
+
+def copy_windows_crt(stage, assets, *, source=None, crt=None, cache=None, offline=False):
     """App-local deployment: consumers need no separate VC++ runtime install."""
-    source = Path(source or Path(os.environ.get('SystemRoot', r'C:\Windows')) / 'System32')
+    source = Path(source) if source is not None else windows_crt_source(
+        crt or load_lock()['windows_crt'], cache or ROOT / 'build/llama-downloads', offline=offline)
     for name in WINDOWS_CRT:
         path = source / name
         if not path.is_file():
-            raise RuntimeError('The build machine needs the Microsoft Visual C++ x64 Redistributable to bundle its app-local runtime DLLs. See https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist .')
+            raise RuntimeError('The Microsoft x64 Redistributable is incomplete; rerun setup to prepare its app-local DLLs.')
         # This package targets x64; refuse WOW64/ARM files from a wrong build environment.
         with path.open('rb') as stream:
             header = stream.read(64)
@@ -139,7 +190,7 @@ def copy_windows_crt(stage, assets, *, source=None):
     (stage / 'THIRD_PARTY_NOTICES.txt').write_text(
         'llama.cpp: MIT License; see LICENSE.llama.cpp.txt.\n'
         'Microsoft Visual C++ Runtime: Copyright Microsoft Corporation. All rights reserved.\n'
-        'App-local DLLs originate from the build machine\'s Microsoft redistributable installation.\n'
+        'App-local DLLs are extracted from Microsoft\'s checksum-pinned redistributable.\n'
         'Builders must have redistribution rights under their Microsoft Software License Terms.\n'
         'https://learn.microsoft.com/cpp/windows/redistributing-visual-cpp-files\n'
         'https://visualstudio.microsoft.com/license-terms/\n', encoding='utf-8')
@@ -164,7 +215,7 @@ def prepare(destination, *, lock_path=LOCK, cache=None, offline=False):
         license_path = cache / f"LICENSE-{lock['release']}.txt"
         download(lock['license'], license_path, offline=offline)
         shutil.copy2(license_path, stage / 'LICENSE.llama.cpp.txt')
-        copy_windows_crt(stage, lock['assets'])
+        copy_windows_crt(stage, lock['assets'], crt=lock['windows_crt'], cache=cache, offline=offline)
         manifest = {'schema': 1, 'release': lock['release'], 'source': lock['source'],
             'lock_sha256': hashlib.sha256(json.dumps(lock, sort_keys=True).encode()).hexdigest(),
             'assets': lock['assets'],
@@ -190,12 +241,24 @@ def prepare(destination, *, lock_path=LOCK, cache=None, offline=False):
 
 def verify(destination):
     if os.name != 'nt': raise RuntimeError('Verify the Windows runtime on Windows.')
+    result = {'cpu_ready': False, 'gpu_runtime_ready': False, 'warnings': []}
     for directory in ('windows-x86_64', 'windows-vulkan'):
+        ready = True
         path = Path(destination) / directory
         for name in ('llama-server.exe', 'llama-bench.exe'):
-            result = subprocess.run([str(path / name), '--version'], cwd=path, capture_output=True,
-                timeout=20, creationflags=subprocess.CREATE_NO_WINDOW)
-            if result.returncode: raise RuntimeError(f'Bundled {directory}/{name} failed its version check.')
+            try:
+                done = subprocess.run([str(path / name), '--version'], cwd=path, capture_output=True,
+                    timeout=20, creationflags=subprocess.CREATE_NO_WINDOW)
+                if done.returncode: raise RuntimeError(f'exit 0x{done.returncode & 0xffffffff:08x}')
+            except (OSError, subprocess.TimeoutExpired, RuntimeError) as error:
+                ready = False
+                message = f'{directory}/{name}: {error}'
+                if directory == 'windows-x86_64':
+                    raise RuntimeError('The CPU inference runtime could not run. ' + message +
+                        '. On a managed work laptop, ask IT whether HANNI or its DLLs were blocked; setup does not override company policy.') from None
+                result['warnings'].append(message + '; CPU fallback will be used.')
+        result['cpu_ready' if directory == 'windows-x86_64' else 'gpu_runtime_ready'] = ready
+    return result
 
 
 def package_application(runtime, destination):
@@ -230,7 +293,10 @@ def main():
         if not validate_cache(directory, load_lock()): raise RuntimeError('Packaged runtime integrity check failed. Rebuild the application.')
     else:
         directory = prepare(args.destination, offline=args.offline)
-    if args.verify: verify(directory)
+    if args.verify:
+        report = verify(directory)
+        for warning in report['warnings']: print('Runtime warning: ' + warning)
+        print('CPU inference runtime: verified and ready.')
     if args.archive: print(f'Application archive ready: {package_application(directory, args.archive)}')
     print(f'Bundled llama.cpp {load_lock()["release"]} ready: {directory}')
 
