@@ -53,6 +53,8 @@ dependencies = [
     "google-auth-oauthlib>=1.2,<2",
     "requests>=2.31,<3",
     "keyring>=25,<26",
+    # Teams tab setup is available directly from Integrations.
+    "cryptography>=46,<51",
     "tzdata>=2024.1",
 ]
 

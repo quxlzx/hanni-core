@@ -4,9 +4,13 @@ Run `SETUP_HANNI.cmd` once, then open **HANNI OS** from your Desktop or Start me
 
 The Windows application uses WebView2 to display HANNI’s existing dark interface in its own window. It starts the current native agent, scheduler, model, and interface in the background when they are not running. No browser tab or permissions terminal is required. Internal loopback endpoints remain available for the agent and UI to communicate. The app attaches to a verified existing HANNI session without starting another model or taking ownership of that session.
 
-The saved model/provider selection is retained. First startup can take a few minutes while a local model loads or is benchmarked. If startup fails, use **Application → Start Assistant** to retry. Desktop and assistant startup logs are under `%LOCALAPPDATA%/HANNI OS`; model and agent logs remain in the repository.
+The saved model/provider selection is retained. First startup can take a few minutes while a local model loads or is benchmarked. If startup fails, right-click the HANNI OS tray icon and choose **Start Assistant** to retry. Desktop and assistant startup logs are under `%LOCALAPPDATA%/HANNI OS`; model and agent logs remain in the repository.
+
+Each agent task receives the detected execution OS and workspace, including scheduled runs and delegated tasks. Local instructions use Windows paths and PowerShell syntax. The agent's `local_terminal` tool launches executables directly rather than opening a shell; file tools and Python handle filesystem work. Explicit remote Linux targets retain their own command syntax. Windows command arguments preserve backslashes and quoted paths.
 
 ## Notifications and background operation
+
+Press **F11** to toggle fullscreen and **Escape** to leave it. The system tray menu also has **Fullscreen (F11)**. Leaving fullscreen restores your previous window size or maximized state; fullscreen does not replace your saved window geometry.
 
 Select **Notifications** in the sidebar to see unread alerts, inspect the related task, mark an alert read, dismiss it, or view history. The unread count updates automatically. Native task completion, scheduled task results, pending action approvals, failures, and existing reminders use the same durable notification center. Inspecting or dismissing an alert never approves a tool action.
 

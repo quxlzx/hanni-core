@@ -195,6 +195,9 @@ def run(db_path, task_id, catalog):
             SYSTEM_PROMPT, load_soul(), skills_text)
         system_prompt += ('\n\nAvailable procedure metadata (load full instructions with skill_read when relevant; '
                           'reload after compression if details are needed):\n' + catalog_text)
+        from hanni.core.host_environment import host_environment_prompt
+        system_prompt += '\n\n' + host_environment_prompt(
+            workspace=Path(db_path).parent / 'workspace', terminal_cwd=agent.workspace)
         if conversation:
             user_message += ("\n\nEarlier in this same conversation (real history from "
                              "this session — you DO have this context; use it naturally, "

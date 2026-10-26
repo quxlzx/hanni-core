@@ -5,7 +5,7 @@ Safety model (defense in depth):
    approves it, exactly like remote tools. A task may carry a pre-authorized
    policy in context['local_runtime']['auto_approve'] (set by the owner when
    creating a cron job); auto-approved receipts say so explicitly.
-2. Commands run WITHOUT a shell (shlex + execve): pipes, redirection and
+2. Commands run WITHOUT a shell (native Windows argv parsing / POSIX shlex): pipes, redirection and
    command substitution are structurally impossible.
 3. Binary allowlist + dangerous-pattern denylist; git restricted to safe
    subcommands.
@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import json
 import os
+import platform
 import shutil
 import sys
 import shlex
@@ -53,7 +54,10 @@ def local_tool_specs() -> list[dict]:
     from .agent_tools import agent_tool_specs
     return [
         spec("local_terminal",
-             "Run one allowlisted command (no shell: no pipes/redirection/globs) in the workspace. Requires owner approval unless pre-authorized.",
+             f"Execution host: {platform.system()}. Run one allowlisted executable directly (shell=False), not a shell session. "
+             "No PowerShell cmdlets, cmd/Bash built-ins, aliases, pipes, redirection or glob expansion. "
+             "Prefer local_list_dir, local_read_file, local_search_files or local_python for filesystem work. "
+             "On Windows, group arguments with double quotes and preserve Windows backslashes. Requires owner approval unless pre-authorized.",
              {**obj, "properties": {"command": {"type": "string", "maxLength": 2000}}, "required": ["command"]}),
         spec("local_read_file",
              "Read a text file inside the workspace (capped at 200KB).",
@@ -221,20 +225,58 @@ def _web_fetch(url: str) -> dict:
             "data": {"url": final, "text": _html_to_text(raw)[:8000]}}
 
 
+def _split_command(command: str) -> list[str]:
+    if not isinstance(command, str) or '\0' in command:
+        raise ValueError('Use a plain command string without null characters.')
+    if not command.strip(): return []
+    if os.name != 'nt': return shlex.split(command)
+    # shlex's POSIX escape rules silently remove unquoted Windows path
+    # separators. Use the same Windows quoting convention as CreateProcess.
+    import ctypes
+    from ctypes import wintypes
+    shell32 = ctypes.WinDLL('shell32', use_last_error=True)
+    kernel32 = ctypes.WinDLL('kernel32', use_last_error=True)
+    split = shell32.CommandLineToArgvW
+    split.argtypes = [wintypes.LPCWSTR, ctypes.POINTER(ctypes.c_int)]
+    split.restype = ctypes.POINTER(wintypes.LPWSTR)
+    kernel32.LocalFree.argtypes = [wintypes.HLOCAL]
+    kernel32.LocalFree.restype = wintypes.HLOCAL
+    count = ctypes.c_int()
+    argv = split(command.strip(), ctypes.byref(count))
+    if not argv: raise ValueError('Windows could not parse this command.')
+    try:
+        return [argv[index] for index in range(count.value)]
+    finally:
+        kernel32.LocalFree(ctypes.cast(argv, wintypes.HLOCAL))
+
+
+def _binary_name(value):
+    name = os.path.basename(value)
+    return name.casefold().removesuffix('.exe') if os.name == 'nt' else name
+
+
+def _terminal_hint():
+    if os.name != 'nt': return 'Use an installed executable or the dedicated file tools.'
+    return ('This is Windows, and local_terminal is not PowerShell, cmd.exe or Bash. '
+            'Use local_list_dir, local_read_file, local_search_files or local_python with pathlib; '
+            'cmdlets and shell built-ins cannot run in this tool.')
+
+
 def _check_command(command: str) -> str | None:
+    if not isinstance(command, str): return 'Use a plain command string.'
     if any(p in command for p in DENY_PATTERNS):
         return "Command matches a dangerous pattern; blocked."
     if any(c in command for c in "|;&<>`\n"):
         return "Shell composition characters are not allowed; run one plain command."
     try:
-        argv = shlex.split(command)
+        argv = _split_command(command)
     except ValueError as exc:
         return f"Command could not be parsed: {exc}"
     if not argv:
         return "Empty command."
-    binary = os.path.basename(argv[0])
+    binary = _binary_name(argv[0])
     if binary not in ALLOWED_BINARIES:
-        return f"Binary '{binary}' is not on the allowlist."
+        return f"Binary '{binary}' is not on the allowlist. " + _terminal_hint()
     if binary == "git" and (not argv[1:] or argv[1] not in SAFE_GIT_SUBCOMMANDS):
         return "git is limited to read-only subcommands: " + ", ".join(sorted(SAFE_GIT_SUBCOMMANDS))
     return None
@@ -255,8 +297,8 @@ def execute_local(name: str, arguments: dict, workspace: Path) -> dict:
             problem = _check_command(arguments["command"])
             if problem:
                 return {"ok": False, "error": problem}
-            argv = shlex.split(arguments["command"])
-            if os.name == "nt" and os.path.basename(argv[0]).lower() in ("python", "python3"):
+            argv = _split_command(arguments["command"])
+            if os.name == "nt" and _binary_name(argv[0]) in ("python", "python3"):
                 # Windows PATH often holds the Microsoft Store stub, not a
                 # real interpreter — point at the one running HANNI.
                 argv[0] = sys.executable
@@ -266,7 +308,8 @@ def execute_local(name: str, arguments: dict, workspace: Path) -> dict:
             except subprocess.TimeoutExpired:
                 return {"ok": False, "error": f"Command exceeded {TERMINAL_TIMEOUT:.0f}s; killed."}
             except FileNotFoundError:
-                return {"ok": False, "error": f"Binary '{argv[0]}' is not available on this host."}
+                return {"ok": False, "error": f"Binary '{argv[0]}' is not available on this host.",
+                        "error_code": "EXECUTABLE_NOT_FOUND", "operating_system": platform.system(), "hint": _terminal_hint()}
             return {"ok": done.returncode == 0, "message": f"exit {done.returncode}",
                     "data": {"stdout": done.stdout[:OUTPUT_CAP], "stderr": done.stderr[:OUTPUT_CAP],
                              "exit_code": done.returncode}}
@@ -359,10 +402,11 @@ def execute_local(name: str, arguments: dict, workspace: Path) -> dict:
                     "data": {"stdout": done.stdout[:OUTPUT_CAP], "stderr": done.stderr[:OUTPUT_CAP],
                              "exit_code": done.returncode}}
         if name == "system_info":
-            import platform
             import shutil as _sh
             import psutil
-            info = {"system": f"{platform.system()} {platform.release()} ({platform.machine()})",
+            from hanni.core.host_environment import host_facts
+            info = {**host_facts(workspace=workspace, terminal_cwd=workspace),
+                    "system": f"{platform.system()} {platform.release()} ({platform.machine()})",
                     "cpu": platform.processor() or platform.processor(),
                     "cpu_count": psutil.cpu_count(),
                     "cpu_percent": psutil.cpu_percent(interval=0.3),

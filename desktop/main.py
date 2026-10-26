@@ -372,6 +372,9 @@ class DesktopApp:
         self.closed = getattr(session, 'exit_requested', threading.Event())
         self.loaded_url = False
         self.maximized = preferences['maximized']
+        self.fullscreen = False
+        self.fullscreen_changing = False
+        self.fullscreen_key_held = False
         self.normal_geometry = {key:preferences[key] for key in ['width', 'height', 'x', 'y']}
         self.action_lock = threading.Lock()
         self.preferences_lock = threading.RLock()
@@ -387,7 +390,15 @@ class DesktopApp:
 
     def remember(self, *args):
         with self.preferences_lock:
-            if self.window is not None and not self.maximized:
+            native = getattr(self.window, 'native', None) if self.window is not None else None
+            state = str(getattr(native, 'WindowState', ''))
+            if not self.fullscreen and not self.fullscreen_changing:
+                if state == 'Maximized':
+                    self.maximized = True
+                elif state == 'Normal':
+                    self.maximized = False
+            if (self.window is not None and not self.maximized and not self.fullscreen
+                    and not self.fullscreen_changing and state != 'Minimized'):
                 self.normal_geometry.update(width=int(self.window.width), height=int(self.window.height),
                                             x=int(self.window.x), y=int(self.window.y))
             self.preferences.update(self.normal_geometry, maximized=self.maximized)
@@ -406,7 +417,48 @@ class DesktopApp:
 
     def restore(self, *args):
         self.window.show()
-        self.window.restore()
+        if not self.fullscreen:
+            self.window.restore()
+
+    def toggle_fullscreen(self, *args):
+        if self.window is None or self.closed.is_set() or self.fullscreen_changing:
+            return
+        entering = not self.fullscreen
+        if entering:
+            self.remember()
+        self.fullscreen_changing = True
+        try:
+            if entering:
+                self.fullscreen = True
+            self.window.toggle_fullscreen()
+            if not entering:
+                if self.maximized:
+                    self.window.maximize()
+                self.fullscreen = False
+        except Exception:
+            self.fullscreen = not entering
+            raise
+        finally:
+            self.fullscreen_changing = False
+        if self.tray:
+            self.tray.update_menu()
+
+    def fullscreen_key(self, key, *, released=False, modified=False):
+        if key == 'F11':
+            if released:
+                handled = self.fullscreen_key_held
+                self.fullscreen_key_held = False
+                return handled
+            if modified:
+                return False
+            if not self.fullscreen_key_held:
+                self.fullscreen_key_held = True
+                self.toggle_fullscreen()
+            return True
+        if key == 'Escape' and not released and not modified and self.fullscreen:
+            self.toggle_fullscreen()
+            return True
+        return False
 
     def show_notifications(self, *args):
         self.restore()
@@ -536,6 +588,24 @@ class DesktopApp:
         self.guarded_windows.add(window.uid)
         native = window.native
         control = native.browser.webview
+        if window is self.window:
+            # WebView2 forwards accelerator keys through WinForms even while a
+            # chat input has focus. Keep the Mini window's shortcuts independent.
+            def key_down(sender, args):
+                if self.fullscreen_key(str(args.KeyCode), modified=int(args.Modifiers) != 0):
+                    args.Handled = True
+            def key_up(sender, args):
+                if self.fullscreen_key(str(args.KeyCode), released=True, modified=int(args.Modifiers) != 0):
+                    args.Handled = True
+            def deactivate(sender, args):
+                self.fullscreen_key_held = False
+            native.KeyPreview = True
+            native.KeyDown += key_down
+            native.KeyUp += key_up
+            control.KeyDown += key_down
+            control.KeyUp += key_up
+            native.Deactivate += deactivate
+            self.navigation_handlers.extend([key_down, key_up, deactivate])
         def navigation(sender, args):
             value = str(args.Uri)
             if value != 'about:blank' and not value.startswith(self.session.url + '/'):
@@ -575,19 +645,6 @@ class DesktopApp:
         enabled = ctypes.c_int(1)
         ctypes.windll.dwmapi.DwmSetWindowAttribute(int(native.Handle.ToInt64()), 20,
                                                   ctypes.byref(enabled), ctypes.sizeof(enabled))
-        from System import Action
-        from System.Drawing import Color
-        def menu_colors():
-            background, foreground = Color.FromArgb(28,29,33), Color.FromArgb(238,238,239)
-            for item in native.Controls:
-                if str(item.GetType().Name) == 'MenuStrip':
-                    item.BackColor, item.ForeColor = background, foreground
-                    for entry in item.Items:
-                        entry.BackColor, entry.ForeColor = background, foreground
-                        entry.DropDown.BackColor, entry.DropDown.ForeColor = background, foreground
-                        for action in entry.DropDownItems:
-                            action.BackColor, action.ForeColor = background, foreground
-        native.Invoke(Action(menu_colors))
 
     def monitor(self):
         self.window.events.shown.wait(15)
@@ -647,7 +704,7 @@ def offline_html(message, url):
             'p{color:#a5a8b0}b{color:#a4c2e9}small{color:#858993}</style></head><body><div class="body">'
             '<b>h.</b><h1>Connect to your workspace</h1><p>' + html.escape(message) + '</p>'
             '<p>HANNI starts its agent in the background. The first model load can take a few minutes. '
-            'If startup fails, use Application → Start Assistant to retry. Logs are saved in the HANNI OS app folder.</p><small>'
+            'If startup fails, right-click the HANNI tray icon and choose Start Assistant to retry. Logs are saved in the HANNI OS app folder.</p><small>'
             + html.escape(url) + '</small></div></body></html>')
 
 
@@ -694,7 +751,6 @@ def main(argv=None):
     except ModuleNotFoundError:
         from desktop.hotkey import GlobalHotkey
         from desktop.notifications import NotificationRateLimit
-    from webview.menu import Menu, MenuAction, MenuSeparator
     import pystray
     from PIL import Image
     webview.settings.update(ALLOW_FILE_URLS=False, OPEN_EXTERNAL_LINKS_IN_BROWSER=False,
@@ -711,22 +767,22 @@ def main(argv=None):
             s.x <= preferences['x'] < s.x+s.width-80 and s.y <= preferences['y'] < s.y+s.height-80
             for s in webview.screens):
         preferences['x'] = preferences['y'] = None
-    menu = [Menu('Application', [MenuAction('Open HANNI Mini', app.show_mini), MenuSeparator(),
-            MenuAction('Start Assistant…', app.launch_assistant),
-            MenuAction('Restore window', app.restore), MenuAction('Notifications', app.show_notifications), MenuSeparator(),
-            MenuAction('Exit desktop', app.exit)])]
     app.window = webview.create_window(args.title, html=offline_html('Connecting to the local HANNI service.', url),
         width=preferences['width'], height=preferences['height'], x=preferences['x'], y=preferences['y'],
         min_size=(640,480), resizable=True, maximized=preferences['maximized'],
-        background_color='#18191c', text_select=True, menu=menu)
+        background_color='#18191c', text_select=True)
     app.window.events.closing += app.close_requested
     app.window.events.before_show += lambda: app.constrain_navigation(app.window)
     app.window.events.closed += app.on_closed
     app.window.events.minimized += app.minimize
     app.window.events.resized += app.remember
     app.window.events.moved += app.remember
-    def maximize(): app.maximized = True; app.remember()
-    def normal(): app.maximized = False; app.remember()
+    def maximize():
+        if not app.fullscreen and not app.fullscreen_changing:
+            app.remember()
+    def normal():
+        if not app.fullscreen and not app.fullscreen_changing:
+            app.remember()
     app.window.events.maximized += maximize
     app.window.events.restored += normal
     app.mini = webview.create_window('HANNI Mini', html=offline_html('Connecting to your shared conversation.', url),
@@ -738,6 +794,7 @@ def main(argv=None):
     tray_menu = pystray.Menu(
         pystray.MenuItem('Open HANNI OS', app.restore, default=True),
         pystray.MenuItem('Open HANNI Mini', app.show_mini),
+        pystray.MenuItem('Fullscreen (F11)', app.toggle_fullscreen, checked=lambda item:app.fullscreen),
         pystray.MenuItem('Notifications', app.show_notifications),
         pystray.MenuItem('Send test notification', lambda icon, item:app.notify('Desktop notifications are working.')),
         pystray.MenuItem('Start Assistant…', app.launch_assistant),

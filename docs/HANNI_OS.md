@@ -16,7 +16,7 @@ available for development and compatibility.
 
 The built application is `dist/HANNI OS/HANNI OS.exe`. Launching it by itself
 attaches to a verified running HANNI service or starts a dashboard-only monitor
-from this repository. **Application > Start Assistant** explicitly starts the
+from this repository. **Start Assistant** in the system tray menu explicitly starts the
 original model/voice launcher in its permissions terminal. Closing the desktop
 leaves a live assistant session running; only a monitor started by that client
 is stopped on client exit. Tray preferences support optional close/minimize to
