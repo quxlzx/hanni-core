@@ -15,6 +15,8 @@ from hanni.dashboard.features import DesktopFeatures
 from hanni.dashboard.google_accounts import GoogleAccounts, account_revision
 from hanni.tools.google_access import GoogleAccess, WindowsTokenVault, SERVICE
 from hanni.tools.google_oauth_browser import BrowserGoogleFlow
+from hanni.tools import google_auth
+from hanni.tools.google_identity import GoogleAccessError, IDENTITY_SCOPE, PREFIX, scopes_for
 from tests.unit.test_mcp_hub_api import config_for
 from tests.unit.test_native_mcp import service
 
@@ -236,3 +238,159 @@ def test_disconnect_clears_default_preferences_in_windows_vault():
     vault.delete('personal')
     assert vault.get('personal') is None
     assert vault.preferences() == {'gmail': 'work'}
+
+
+@pytest.mark.parametrize('entrypoint', ['cli', 'settings'])
+def test_real_library_token_exchange_accepts_equivalent_google_identity_grants(tmp_path, monkeypatch, setup, entrypoint):
+    """Real callback, PKCE, oauthlib parsing and account save; Google alone is faked."""
+    import requests
+    from requests_oauthlib import OAuth2Session
+    from urllib.parse import parse_qs, urlencode
+    import webbrowser
+
+    client = tmp_path / 'client.json'
+    client.write_text(json.dumps(CLIENT))
+    requested = scopes_for(['calendar.read', 'gmail.read'])
+    granted = [scope if scope != IDENTITY_SCOPE else 'email' for scope in requested] + ['openid']
+    calls, callbacks, statuses = [], [], []
+    response = requests.Response()
+    response.status_code = 200
+    response.encoding = 'utf-8'
+    response._content = json.dumps({'access_token': 'fixture-access', 'refresh_token': 'fixture-refresh',
+        'id_token': 'fixture-redundant-jwt', 'token_type': 'Bearer', 'expires_in': 3600,
+        'scope': ' '.join(granted)}).encode()
+    response.request = requests.Request('POST', 'https://oauth2.googleapis.com/token').prepare()
+    def exchange(self, **kwargs):
+        calls.append(kwargs)
+        assert kwargs['url'] == 'https://oauth2.googleapis.com/token' and kwargs['timeout'] == 20
+        assert kwargs['data']['code_verifier']
+        return response
+    monkeypatch.setattr(OAuth2Session, 'request', exchange)
+    def open_browser(url, **kwargs):
+        query = parse_qs(urlsplit(url).query)
+        target = urlsplit(query['redirect_uri'][0])
+        def callback():
+            connection = http.client.HTTPConnection(target.hostname, target.port, timeout=3)
+            try:
+                connection.request('GET', '/?' + urlencode({'state': query['state'][0], 'code': 'fixture-code'}))
+                result = connection.getresponse(); result.read(); statuses.append(result.status)
+            finally: connection.close()
+        thread = threading.Thread(target=callback); callbacks.append(thread); thread.start()
+        return True
+    monkeypatch.setattr(webbrowser, 'open', open_browser)
+    vault = Vault(); phases = []
+    try:
+        if entrypoint == 'cli':
+            result = google_auth.connect('personal', None, client, vault=vault, scopes=['calendar.read', 'gmail.read'],
+                transport=lambda *_: {'email': 'personal@example.test'}, progress=phases.append)
+            assert result['connected'] and result['gmail'] and result['calendar']
+            assert phases == ['verifying', 'identity', 'saving']
+        else:
+            c = setup.control; c.flow_factory = None; vault = setup.vault
+            import_client(c); start(c); result = wait_job(c)
+            assert result['job']['state'] == 'connected', result['job']
+            assert result['accounts'][0]['email'] == 'personal@example.test'
+    finally:
+        for thread in callbacks: thread.join(3)
+    assert statuses == [200] and len(calls) == 1
+    saved = vault.get('personal')['credentials']
+    assert set(saved['scopes']) == set(requested) and 'id_token' not in saved
+    assert not any(secret in json.dumps(result) for secret in ('fixture-access', 'fixture-refresh'))
+
+
+@pytest.mark.parametrize('grants', [
+    [IDENTITY_SCOPE],  # Partial consent must not become a full service grant.
+    [*scopes_for(['calendar.read', 'gmail.read']), PREFIX + 'calendar.events'],
+    [*scopes_for(['calendar.read', 'gmail.read']), PREFIX + 'userinfo.profile'],
+])
+def test_real_library_rejects_missing_or_extra_permissions_before_saving(grants):
+    import requests
+    browser = BrowserGoogleFlow(CLIENT, scopes_for(['calendar.read', 'gmail.read']), threading.Event())
+    response = requests.Response(); response._content = json.dumps({'scope': ' '.join(grants)}).encode()
+    with pytest.raises(GoogleAccessError) as error: browser._token_response(response)
+    assert error.value.code == 'scope_mismatch'
+
+
+def test_reconnect_can_upgrade_a_read_scope_without_requesting_redundant_grants(setup):
+    c = setup.control; import_client(c); setup.gate.set()
+    start(c); personal = wait_job(c)['accounts'][0]
+    captured = []
+    original = c.flow_factory
+    def factory(config, scopes): captured.extend(scopes); return original(config, scopes)
+    c.flow_factory = factory
+    start(c, replace=True, expected_revision=personal['revision'], scopes=['calendar.write'])
+    result = wait_job(c)
+    assert result['job']['state'] == 'connected'
+    assert 'calendar.write' in result['accounts'][0]['services']
+    assert PREFIX + 'calendar.events.readonly' not in captured
+
+
+@pytest.mark.parametrize('failure,code,phrase', [
+    ('storage', 'credential_storage', 'Windows Credential Manager'),
+    ('identity', 'identity_unavailable', 'verify the account email'),
+    ('changed', 'account_changed', 'changed during sign-in'),
+])
+def test_post_consent_failure_is_actionable_and_never_exposes_secrets(setup, failure, code, phrase, monkeypatch):
+    c = setup.control; import_client(c)
+    previous = dict(setup.vault.records)
+    if failure == 'storage':
+        monkeypatch.setattr(setup.vault, 'set', lambda *_: (_ for _ in ()).throw(RuntimeError('fixture-private-token')))
+    elif failure == 'identity':
+        c.transport = lambda *_: {}
+    started = start(c)
+    if failure == 'changed':
+        setup.vault.set('personal', {'email': 'other@example.test', 'credentials': {'scopes': []}})
+    setup.gate.set()
+    result = wait_job(c)
+    assert result['job']['state'] == 'failed' and result['job']['error_code'] == code
+    assert phrase in result['job']['message']
+    assert 'fixture-private-token' not in json.dumps(result)
+    if failure != 'changed': assert setup.vault.records == previous
+
+
+@pytest.mark.parametrize('error,code', [
+    (TimeoutError('fixture-secret'), 'sign_in_timeout'),
+    (RuntimeError('fixture-secret'), 'sign_in_failed'),
+])
+def test_sign_in_failure_classification_never_displays_provider_exception_text(error, code):
+    result = google_auth._flow_error(error)
+    assert result.code == code and 'fixture-secret' not in str(result)
+
+
+def test_silent_credential_storage_failure_is_not_reported_connected(tmp_path):
+    client = tmp_path / 'client.json'; client.write_text(json.dumps(CLIENT))
+    class Credentials:
+        refresh_token = 'fixture-refresh'
+        granted_scopes = scopes_for()
+        def to_json(self):
+            return json.dumps({'token_uri': 'https://oauth2.googleapis.com/token', 'scopes': list(self.granted_scopes)})
+    class Flow:
+        def run_local_server(self, **kwargs): return Credentials()
+    class SilentVault(Vault):
+        def set(self, *args): pass
+    with pytest.raises(GoogleAccessError) as error:
+        google_auth.connect('personal', None, client, vault=SilentVault(), flow_factory=lambda *_: Flow(),
+            transport=lambda *_: {'email': 'personal@example.test'})
+    assert error.value.code == 'credential_storage'
+
+
+@pytest.mark.parametrize('failure,code', [
+    ('invalid_client', 'invalid_client'), ('invalid_grant', 'invalid_grant'),
+    ('connection', 'network_error'), ('timeout', 'network_error'),
+])
+def test_failed_reconnect_retains_existing_credentials_and_explains_the_failure(setup, failure, code):
+    from oauthlib.oauth2 import InvalidClientError, InvalidGrantError
+    from requests.exceptions import ConnectionError, ReadTimeout
+    c = setup.control; import_client(c); setup.gate.set()
+    start(c); personal = wait_job(c)['accounts'][0]
+    previous = dict(setup.vault.get('personal'))
+    errors = {'invalid_client': InvalidClientError, 'invalid_grant': InvalidGrantError,
+              'connection': ConnectionError, 'timeout': ReadTimeout}
+    class Flow:
+        def run_local_server(self, **kwargs): raise errors[failure]('fixture-private-token')
+    c.flow_factory = lambda *_: Flow()
+    start(c, replace=True, expected_revision=personal['revision'])
+    result = wait_job(c)
+    assert result['job']['state'] == 'failed' and result['job']['error_code'] == code
+    assert setup.vault.get('personal') == previous
+    assert 'fixture-private-token' not in json.dumps(result)

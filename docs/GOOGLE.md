@@ -15,6 +15,29 @@ Open **Settings → Integrations → Google accounts**. No terminal commands or 
 
 Sign-in runs in the background. **Cancel sign-in** stops waiting for the browser and prevents a late callback from saving credentials. Leaving Settings does not cancel it; shutting down the backend does. Setup JSON goes directly to the account setup endpoint and is not added to chat or attachments. Connected rows show saved grants, not a fresh health check of each service.
 
+The browser's return page means Google authorization was received; wait for **Google account connected** in HANNI. Settings reports permission checking, email verification, and credential saving separately. Equivalent email/OpenID scope labels are accepted, while missing or additional service permissions are rejected. Sign-in is marked connected only after Windows Credential Manager returns the saved record. Unused ID tokens are omitted from that record.
+
+If the browser finishes but HANNI stays disconnected, read the sign-in message in Settings. A permissions mismatch requires approving all selected services, or revoking an older grant in your Google account before retrying. A network failure after consent means HANNI could not finish its calls to Google. A credential-storage failure means Windows could not save or return the connection; check Credential Manager access on that PC. Client, expired-code, wrong-account, and timeout failures have separate messages. A reconnect that fails before saving retains the existing connection.
+
+## Google skills
+
+Six bundled procedures load automatically for relevant requests:
+
+| Skill | Example request |
+| --- | --- |
+| `google-gmail` | "Triage my Gmail and draft a reply to the project update." |
+| `google-calendar` | "What's on my Google Calendar tomorrow?" |
+| `google-drive` | "Find the onboarding guide in Drive." |
+| `google-docs` | "Summarize my Google Doc about the launch." |
+| `google-tasks` | "Show my Google Tasks." |
+| `google-workday-briefing` | "Give me a morning briefing." |
+
+The skills use the connected account and available service permissions. They
+guide existing tools; they do not enable unsupported Gmail sending, Docs editing,
+Sheets editing, task due-date writes, or Calendar invitations. A briefing runs on
+demand unless you explicitly ask for a recurring schedule. Skill names appear in
+the Skills collection and in activity when applied.
+
 ## Google Cloud setup
 
 1. Create or select your own [Google Cloud project](https://console.cloud.google.com/).

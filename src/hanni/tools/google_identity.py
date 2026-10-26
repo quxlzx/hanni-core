@@ -46,6 +46,29 @@ def scopes_for(capabilities=None):
     return tuple(sorted(scopes))
 
 
+def normalized_scopes(scopes):
+    """Compare Google grants by meaning, including its email identity alias."""
+    if isinstance(scopes, str): scopes = scopes.split()
+    if not isinstance(scopes, (list, tuple, set, frozenset)) or any(not isinstance(s, str) for s in scopes):
+        raise GoogleAccessError('Google returned invalid service permissions.', 'scope_mismatch')
+    result = {IDENTITY_SCOPE if scope == 'email' else scope for scope in scopes}
+    # Google may attach OpenID identity metadata to the email grant. It confers
+    # no Calendar/Gmail/Drive/Tasks access and is not stored as a service grant.
+    result.discard('openid')
+    for broad, narrower in IMPLIES.items():
+        if broad in result: result.difference_update(narrower)
+    return tuple(sorted(result))
+
+
+def verified_scopes(granted, requested):
+    actual, wanted = normalized_scopes(granted), normalized_scopes(requested)
+    if not set(actual) <= ALLOWED_SCOPES or actual != wanted:
+        raise GoogleAccessError(
+            'Google returned different service permissions. Retry and approve every selected service. '
+            'If older permissions remain, revoke HANNI in your Google account and sign in again.', 'scope_mismatch')
+    return actual
+
+
 def authorized(scopes, capability):
     expanded = set(scopes)
     for scope in tuple(expanded):

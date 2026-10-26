@@ -4,16 +4,48 @@ from __future__ import annotations
 import json
 import os
 from pathlib import Path
+import threading
 
 from hanni.tools.google_access import (
     ACCOUNTS, SCOPES, GoogleAccess, GoogleAccessError, WindowsTokenVault,
     validate_credentials,
 )
 
-from hanni.tools.google_identity import account_label, account_labels, scopes_for, authorized, CAPABILITY_SCOPES, preferences
+from hanni.tools.google_identity import (account_label, account_labels, scopes_for, authorized,
+    CAPABILITY_SCOPES, preferences, normalized_scopes, verified_scopes)
 
 DEFAULT_CLIENT_FILENAME = "google-oauth-client.json"
 GOOGLE_CLIENTS_URL = "https://console.cloud.google.com/auth/clients"
+
+SIGN_IN_FAILURES = {
+    'scope_mismatch': 'Google returned different service permissions. Retry and approve every selected service. If old permissions remain, revoke HANNI in your Google account and try again.',
+    'sign_in_timeout': 'Google sign-in timed out. Start sign-in again and finish in the browser within three minutes.',
+    'network_error': 'Google authorization returned, but HANNI could not contact Google to finish verification. Check your connection, proxy or work network and retry.',
+    'invalid_client': 'Google rejected the Desktop app client. Import a current Desktop app client JSON from the same Google Cloud project and retry.',
+    'invalid_grant': 'Google rejected the sign-in code. Start a fresh sign-in and complete it once; check that Windows date and time are correct.',
+    'access_denied': 'Google sign-in was declined or blocked. Check consent, test-user access and any Workspace administrator restrictions.',
+    'offline_access_missing': 'Google did not provide offline access. Revoke HANNI in your Google account, then sign in again and approve access.',
+    'identity_unavailable': 'Google authorization returned, but HANNI could not verify the account email. Check your connection and try again.',
+    'account_mismatch': 'The signed-in Google account does not match the saved account. Reconnect using the original email or add another account.',
+    'account_exists': 'That Google email is already connected under another account name. Use the existing connection.',
+    'credential_storage': 'Google sign-in succeeded, but HANNI could not save or verify the credentials in Windows Credential Manager. Check Windows credential-storage access and retry.',
+    'account_changed': 'The saved account changed during sign-in. Refresh accounts and retry; the existing connection was retained.',
+    'sign_in_failed': 'Google sign-in did not complete. Check the Desktop client, browser consent and network, then try again.',
+}
+
+
+def sign_in_failure(code):
+    code = code if isinstance(code, str) and code in SIGN_IN_FAILURES else 'sign_in_failed'
+    return GoogleAccessError(SIGN_IN_FAILURES[code], code)
+
+
+def _flow_error(error):
+    """Classify known failures without exposing provider bodies, codes or tokens."""
+    from requests.exceptions import ConnectionError, Timeout
+    if isinstance(error, (ConnectionError, Timeout)): return sign_in_failure('network_error')
+    if isinstance(error, TimeoutError): return sign_in_failure('sign_in_timeout')
+    code = getattr(error, 'error', None)
+    return sign_in_failure(code if isinstance(code, str) and code in {'invalid_client', 'invalid_grant', 'access_denied'} else 'sign_in_failed')
 
 
 def dependency_error() -> str | None:
@@ -118,7 +150,7 @@ def prepare_client_secrets(config_dir: Path, *, explicit: Path | None = None,
 
 
 def connect(account, expected_email, client_secrets, *, calendar_ids=None,
-            replace=False, vault=None, flow_factory=None, transport=None, scopes=None):
+            replace=False, vault=None, flow_factory=None, transport=None, scopes=None, progress=None):
     """Run browser OAuth, verify the selected account and scopes, then save the token."""
     vault = vault or WindowsTokenVault()
     account_label(account)
@@ -136,14 +168,14 @@ def connect(account, expected_email, client_secrets, *, calendar_ids=None,
         missing = dependency_error()
         if missing:
             raise GoogleAccessError(missing)
-        from google_auth_oauthlib.flow import InstalledAppFlow
-        flow_factory = InstalledAppFlow.from_client_config
+        from hanni.tools.google_oauth_browser import BrowserGoogleFlow
+        flow_factory = lambda config, scopes: BrowserGoogleFlow(config, scopes, threading.Event())
     requested_scopes = set(scopes_for(scopes))
     existing = vault.get(account)
     if existing and replace:
         validate_credentials(existing['credentials'])
         requested_scopes.update(existing['credentials']['scopes'])
-    requested_scopes = tuple(sorted(requested_scopes))
+    requested_scopes = normalized_scopes(requested_scopes)
     flow_args = dict(
         host="127.0.0.1", port=0, open_browser=True,
         authorization_prompt_message="Opening Google sign-in in your browser...",
@@ -156,33 +188,53 @@ def connect(account, expected_email, client_secrets, *, calendar_ids=None,
         flow = flow_factory(config, requested_scopes)
         credentials = flow.run_local_server(**flow_args)
         info = json.loads(credentials.to_json())
-    except Exception:
-        raise GoogleAccessError('Google sign-in did not finish. Check the Desktop client, consent screen, browser and network; retry login.', 'not_connected') from None
+    except (GoogleAccessError, InterruptedError):
+        raise
+    except Exception as error:
+        raise _flow_error(error) from None
+    if progress: progress('verifying')
     granted = getattr(credentials, "granted_scopes", None)
-    if granted is not None and set(granted) != set(requested_scopes):
-        raise GoogleAccessError("Approve the requested service scopes; broader or partial grants are not accepted.")
+    if granted is not None: verified_scopes(granted, requested_scopes)
+    info['scopes'] = list(verified_scopes(info.get('scopes'), requested_scopes))
     validate_credentials(info)
-    if set(info['scopes']) != set(requested_scopes):
-        raise GoogleAccessError('The granted service scopes differ from the request; nothing was saved.')
     if not credentials.refresh_token:
-        raise GoogleAccessError("Google did not provide offline access; reconnect with consent.")
+        raise sign_in_failure('offline_access_missing')
     record = {"email": email or "pending", "credentials": info, "calendar_ids": calendars}
     class PendingVault:
         def get(self, label): return record if label == account else None
         def set(self, label, value): record.update(value)
     access = GoogleAccess(PendingVault(), transport=transport)
-    profile = access._get(account, "/oauth2/v2/userinfo")
+    if progress: progress('identity')
+    try:
+        profile = access._get(account, "/oauth2/v2/userinfo")
+    except GoogleAccessError:
+        raise sign_in_failure('identity_unavailable') from None
     actual = str(profile.get("email", "")).strip().casefold()
     if "@" not in actual:
-        raise GoogleAccessError("Google sign-in succeeded, but Google did not return an account address. Nothing was saved.")
+        raise sign_in_failure('identity_unavailable')
     if email and actual != email:
-        raise GoogleAccessError("The signed-in address does not match --email. Nothing was saved; select the intended account.")
+        raise sign_in_failure('account_mismatch')
     for other in account_labels(vault):
         existing = vault.get(other) if other != account else None
         if existing and str(existing.get("email", "")).casefold() == actual:
-            raise GoogleAccessError("That address is already connected in the other slot; select your second account.")
+            raise sign_in_failure('account_exists')
     record["email"] = actual
-    vault.set(account, record)
+    # ID tokens are not used by HANNI; identity was verified through Google's
+    # authenticated userinfo endpoint. Avoid storing this large redundant JWT.
+    info.pop('id_token', None)
+    record['credentials'].pop('id_token', None)
+    if progress: progress('saving')
+    try:
+        vault.set(account, record)
+        saved = vault.get(account)
+        if saved != record: raise RuntimeError('Credential write could not be verified.')
+    except InterruptedError:
+        raise
+    except GoogleAccessError as error:
+        if error.code == 'account_changed': raise
+        raise sign_in_failure('credential_storage') from None
+    except Exception:
+        raise sign_in_failure('credential_storage') from None
     return {"account": account, "email": actual, "calendar_ids": calendars,
             "connected": True, "calendar": authorized(info['scopes'], 'calendar.read'),
             "gmail": authorized(info['scopes'], 'gmail.read'),

@@ -2,11 +2,14 @@
 from __future__ import annotations
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
+import json
 import secrets
 import socket
 import time
 from urllib.parse import parse_qs, urlsplit
 import webbrowser
+
+from hanni.tools.google_identity import GoogleAccessError, verified_scopes
 
 
 class BrowserGoogleFlow:
@@ -16,6 +19,22 @@ class BrowserGoogleFlow:
             flow = InstalledAppFlow.from_client_config(config, scopes, autogenerate_code_verifier=True)
         self.flow, self.cancel = flow, cancel
         self.open_browser = open_browser or webbrowser.open
+        session = getattr(flow, 'oauth2session', None)
+        if session is not None:
+            session.register_compliance_hook('access_token_response', self._token_response)
+
+    def _token_response(self, response):
+        """Normalize only equivalent grants before oauthlib's exact comparison."""
+        payload = response.json()
+        if isinstance(payload, dict) and 'scope' in payload and 'error' not in payload:
+            requested = self.flow.oauth2session.scope
+            verified_scopes(payload['scope'], requested)
+            # Keep oauthlib's checks enabled. Only equivalent spelling, OpenID
+            # metadata and redundant narrower grants have been accepted above.
+            payload['scope'] = ' '.join(requested)
+            response._content = json.dumps(payload).encode('utf-8')
+            response.headers['Content-Length'] = str(len(response._content))
+        return response
 
     def run_local_server(self, *, host, port, timeout_seconds, **options):
         if host != '127.0.0.1' or port != 0:
@@ -78,7 +97,7 @@ class BrowserGoogleFlow:
                 server.handle_request()
         if self.cancel.is_set(): raise InterruptedError('Google sign-in cancelled.')
         if not captured: raise TimeoutError('Google sign-in timed out.')
-        if 'error' in captured: raise ValueError('Google sign-in was declined.')
+        if 'error' in captured: raise GoogleAccessError('Google sign-in was declined.', 'access_denied')
         self.flow.fetch_token(code=captured['code'][0], timeout=20)
         if self.cancel.is_set(): raise InterruptedError('Google sign-in cancelled.')
         return self.flow.credentials

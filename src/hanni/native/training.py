@@ -11,7 +11,7 @@ from hanni.hermes.state import TaskStore, TERMINAL, digest
 from hanni.logs.redaction import redact_text
 
 BATCH_TOOLS = ('local_read_file', 'local_read_document', 'local_list_dir', 'local_search_files',
-               'web_search', 'web_fetch', 'system_info', 'skill_read', 'session_search', 'history_search', 'memory_search', 'working_state')
+               'web_search', 'web_fetch', 'system_info', 'skill_read', 'skill_search', 'session_search', 'history_search', 'memory_search', 'working_state')
 
 
 class TrainingStore:

@@ -65,7 +65,7 @@ class ToolRuntime:
                 data = result.get('data')
                 data = data if isinstance(data, dict) else {}
                 read_only = (spec.get('remote') or {}).get('classification') == 'read_only' or name in {
-                    'skill_read', 'memory_search', 'history_search', 'session_search', 'skill_propose', 'local_read_file',
+                    'skill_read', 'skill_search', 'memory_search', 'history_search', 'session_search', 'skill_propose', 'local_read_file',
                     'local_list_dir', 'local_search_files', 'web_fetch', 'web_search', 'system_info'}
                 result.setdefault('effects', 'none' if read_only or data.get('created') is False else 'unknown')
                 result.setdefault('retryable', bool(detail.get('retryable')) and result['effects'] == 'none')

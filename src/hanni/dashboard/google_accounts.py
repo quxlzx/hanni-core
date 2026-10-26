@@ -51,7 +51,7 @@ class GoogleAccounts:
             return {'ready': False, 'revision': 'invalid'}
 
     def public_job(self):
-        return ({key: self.job[key] for key in ('id', 'account', 'state', 'message')} if self.job else None)
+        return ({key: self.job[key] for key in ('id', 'account', 'state', 'message', 'error_code') if key in self.job} if self.job else None)
 
     def snapshot(self):
         with self.lock:
@@ -167,23 +167,31 @@ class GoogleAccounts:
                 with control.lock:
                     if control.closed or job['cancel'].is_set(): raise InterruptedError('Sign-in cancelled.')
                     if account_revision(vault.get(name)) != data['expected_revision']:
-                        raise ValueError('Account changed during sign-in. No credentials were saved.')
+                        raise google_auth.sign_in_failure('account_changed')
                     vault.set(name, record)
                     job['saved'] = True
+        def progress(phase):
+            messages = {'verifying': 'Google authorization received. Checking the selected permissions…',
+                        'identity': 'Verifying your Google account email…',
+                        'saving': 'Saving and checking the connection in Windows Credential Manager…'}
+            with control.lock:
+                if not job['cancel'].is_set() and not control.closed:
+                    job['message'] = messages[phase]
         try:
             from hanni.tools.google_oauth_browser import BrowserGoogleFlow
             factory = self.flow_factory or (lambda config, scopes: BrowserGoogleFlow(config, scopes, job['cancel']))
             google_auth.connect(data['account'], previous['email'] if previous else None, self.client_path,
                 calendar_ids=previous.get('calendar_ids', ['primary']) if previous else None,
                 replace=data['replace'], scopes=data['scopes'], vault=GuardedVault(),
-                flow_factory=factory, transport=self.transport)
+                flow_factory=factory, transport=self.transport, progress=progress)
             with self.lock:
                 job.update(state='connected', message='Google account connected. You can use it in HANNI.')
-        except Exception:
+        except Exception as error:
             with self.lock:
                 cancelled = job['cancel'].is_set() or self.closed
+                failure = google_auth.sign_in_failure(getattr(error, 'code', None))
                 job.update(state='cancelled' if cancelled else 'failed', message='Google sign-in cancelled. No new credentials were saved.' if cancelled else
-                           'Google sign-in did not complete. Check the client setup, Google consent, selected services and browser, then try again. Existing credentials were retained.')
+                           str(failure), error_code='cancelled' if cancelled else failure.code)
 
     def close(self):
         with self.lock:

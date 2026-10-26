@@ -28,6 +28,10 @@ def agent_tool_specs():
              {'operation': {'enum': ['list', 'pause', 'resume', 'delete']}, 'id': short}, ['operation']),
         spec('skill_read', 'Load a named skill or its Markdown reference only when relevant. Returns its revision.',
              {'name': short, 'resource': short}, ['name']),
+        spec('skill_search', 'Discover relevant installed skills by capability. Use online=true only if local skills do not cover the task or alternatives are needed; online search sends the query to skills.sh. Use a short generic capability, never private messages, account addresses or task content.',
+             {'query': short, 'online': {'type': 'boolean'}}, ['query']),
+        spec('skill_install', 'Download one discovered public GitHub skill and its bounded support package into HANNI. Does not run scripts, install dependencies, grant permissions or overwrite existing skills. Load with skill_read, check compatibility, then use only available tools.',
+             {'repository': short, 'name': short}, ['repository', 'name']),
         spec('skill_save', 'Save or correct a reusable procedure after verification. Requires normal write approval. Read revision before updating; use empty revision to create. Evidence is a claim, not runtime verification.',
              {'name': short, 'description': short, 'instructions': {'type': 'string', 'maxLength': 20000},
               'triggers': {'type': 'array', 'maxItems': 12, 'items': short}, 'expected_revision': {'type': 'string', 'maxLength': 64},
@@ -81,6 +85,34 @@ class AgentTools:
             return {'ok': True, 'data': manage_schedules(self.root, args['operation'], args.get('id'))}
         if name == 'skill_read':
             return {'ok': True, 'data': self.skills.read(**args, source=self.task['id'] + ':' + str(call_id))}
+        if name == 'skill_search':
+            rows = [{k: row[k] for k in ('name', 'description', 'origin', 'score', 'learned_match') if k in row}
+                    for row in self.skills.search(args['query'])]
+            result = {'local': rows, 'online': [], 'execution_authority_granted': False}
+            if args.get('online'):
+                searches = sum(a['spec']['name'] == name and bool(a['arguments'].get('online'))
+                               for a in self.store.get(self.task['id'])['actions'])
+                if searches > 3: raise ValueError('Online skill discovery is limited to three searches per task.')
+                from .skill_discovery import online_search
+                if self.cancelled(): raise InterruptedError('Task cancelled.')
+                try: result['online'] = online_search(args['query'])
+                except (OSError, ValueError):
+                    result['online_error'] = 'Online discovery is unavailable or the query was rejected. Local skills remain available; use a short generic capability.'
+                if self.cancelled(): raise InterruptedError('Task cancelled.')
+            return {'ok': True, 'data': result, 'message': 'Skill discovery completed. Load a local result with skill_read, or install a relevant online result with skill_install.'}
+        if name == 'skill_install':
+            from .skill_discovery import download_skill
+            from .tool_access import ToolAccess
+            access = ToolAccess(self.root)
+            before = access.snapshot()
+            if before['mode'] == 'read_only': raise ValueError('Read-only access blocks skill installation.')
+            installs = sum(a['spec']['name'] == name for a in self.store.get(self.task['id'])['actions'])
+            if installs > 2: raise ValueError('Skill installation is limited to two packages per task.')
+            payload, files, provenance = download_skill(args['repository'], args['name'], cancelled=self.cancelled)
+            if self.cancelled(): raise InterruptedError('Task cancelled.')
+            if access.snapshot()['revision'] != before['revision']:
+                raise ValueError('Tool access changed during download; no skill was installed. Retry under the current policy.')
+            return self.skills.install_package(payload, files, provenance)
         if name == 'skill_propose':
             proposal = self.skills.stage(args, source='task:' + self.task['id'])
             return {'ok': True, 'data': {'proposal_id': proposal['id'], 'status': proposal['status']},

@@ -10,7 +10,7 @@ import sqlite3
 import tempfile
 import time
 from uuid import uuid4
-from .skills import load_skills
+from .skills import load_skills, search_skills, skill_terms
 
 
 class SkillStore:
@@ -27,6 +27,10 @@ class SkillStore:
                 CREATE TABLE IF NOT EXISTS skill_events(id TEXT PRIMARY KEY, name TEXT, action TEXT, revision TEXT, source TEXT, created REAL);
                 CREATE TABLE IF NOT EXISTS skill_proposals(id TEXT PRIMARY KEY, fingerprint TEXT UNIQUE, payload TEXT, before_text TEXT,
                     after_text TEXT, source TEXT, status TEXT, created REAL, updated REAL);
+                CREATE TABLE IF NOT EXISTS skill_routes(query_key TEXT, name TEXT, task TEXT, created REAL,
+                    PRIMARY KEY(query_key,name,task));
+                CREATE TABLE IF NOT EXISTS skill_sources(name TEXT PRIMARY KEY, repository TEXT, commit_sha TEXT,
+                    source_path TEXT, content_sha256 TEXT, installed REAL);
             ''')
 
     @contextmanager
@@ -55,6 +59,64 @@ class SkillStore:
     def catalog(self):
         return [s for s in self.inventory() if s['state'] != 'archived']
 
+    def search(self, query, *, limit=6):
+        if not isinstance(query, str) or not 1 <= len(query.strip()) <= 500:
+            raise ValueError('Use a skill search of 1 to 500 characters.')
+        catalog = self.catalog()
+        key = self._route_key(query)
+        with self._db() as db:
+            learned = {r[0] for r in db.execute('SELECT DISTINCT name FROM skill_routes WHERE query_key=?', (key,))}
+        ranked = search_skills(catalog, query, limit=12)
+        by_name = {s['name']: s for s in ranked}
+        for skill in catalog:
+            if skill['name'] in learned:
+                by_name[skill['name']] = {**by_name.get(skill['name'], skill), 'learned_match': True}
+        return sorted(by_name.values(), key=lambda s: (not s.get('learned_match', False),
+            -s.get('extension_match', False), -s.get('score', 0), s['name']))[:max(0, min(limit, 12))]
+
+    @staticmethod
+    def _route_key(query):
+        # Persist no owner prompt, email content, calendar title or argument values.
+        terms = '\n'.join(sorted(skill_terms(query)))
+        return hashlib.sha256(terms.encode()).hexdigest() if terms else ''
+
+    def remember_success(self, task, names):
+        actions = task.get('actions', [])
+        internal = {'skill_search', 'skill_read', 'skill_install', 'skill_save', 'skill_propose',
+                    'working_state', 'memory_search', 'history_search', 'session_search', 'hanni_hermes_discover',
+                    'delegate_task', 'agent_job'}
+        evidence = [a for a in actions if a['spec']['name'] not in internal]
+        if (task.get('state') in {'cancelled', 'failed'} or not evidence
+                or any(a['state'] != 'fulfilled' or (a.get('receipt') or {}).get('ok') is not True
+                       or (a.get('receipt') or {}).get('error') for a in evidence)):
+            return []
+        for action in evidence:
+            data = (action.get('receipt') or {}).get('data')
+            if isinstance(data, dict) and (data.get('partial') or data.get('truncated') or data.get('errors')
+                    or data.get('state') in {'partial', 'failed', 'api_error', 'unknown'}): return []
+        query = task['request']['prompt']
+        key = self._route_key(query)
+        if not key: return []
+        active = {s['name'] for s in self.catalog()}
+        names = list(dict.fromkeys(n for n in names if n in active))[:3]
+        observed = {str((a['spec'].get('remote') or {}).get('name') or a['spec']['name']) for a in evidence}
+        def family(name):
+            name = name.replace('google_calendar.', 'google.calendar.')
+            if name.startswith('gmail.'): name = 'google.' + name
+            return '.'.join(name.split('.')[:2]) if name.startswith('google.') else name
+        references = {name: re.findall(r'`([A-Za-z][A-Za-z0-9_.-]+)`', self._read(name)['content']) for name in names}
+        focused = [name for name in names if any(family(tool) == family(used)
+                   for tool in references[name] for used in observed)]
+        generic = [name for name in names if not any('.' in tool or '_' in tool for tool in references[name])]
+        names = focused or generic[:1]
+        with self._db() as db:
+            for name in names:
+                inserted = db.execute('INSERT OR IGNORE INTO skill_routes VALUES(?,?,?,?)',
+                    (key, name, task['id'], time.time())).rowcount
+                if inserted: self._event(db, name, 'learned_match', source='task:' + task['id'])
+            db.execute('DELETE FROM skill_routes WHERE rowid IN (SELECT rowid FROM skill_routes ORDER BY created DESC LIMIT -1 OFFSET 2000)')
+        return names
+
     def _read(self, name, resource=None, *, archived=False):
         skill = next((s for s in (self.inventory() if archived else self.catalog()) if s['name'] == name), None)
         if not skill: raise ValueError('Skill not found.')
@@ -65,8 +127,10 @@ class SkillStore:
                 raise ValueError('Skill reference must be a Markdown file inside the skill.')
             path = target
         raw = path.read_text(encoding='utf-8-sig')
+        with self._db() as db:
+            origin = db.execute('SELECT * FROM skill_sources WHERE name=?', (name,)).fetchone()
         return {'name': name, 'content': raw[:24000], 'truncated': len(raw) > 24000,
-                'revision': hashlib.sha256(raw.encode()).hexdigest()}
+                'revision': hashlib.sha256(raw.encode()).hexdigest(), **({'provenance': dict(origin)} if origin else {})}
 
     def read(self, name, resource=None, *, source=None):
         result = self._read(name, resource)
@@ -104,7 +168,7 @@ class SkillStore:
     def _event(self, db, name, action, revision='', source='owner'):
         db.execute('INSERT INTO skill_events VALUES(?,?,?,?,?,?)', (uuid4().hex, name, action, revision, source[:200], time.time()))
 
-    def _save(self, db, payload, *, source):
+    def _save(self, db, payload, *, source, resources=None):
         raw = self.render(**payload)
         name = payload['name']
         try: previous = self._read(name, archived=True)
@@ -140,7 +204,17 @@ class SkillStore:
                    (name, revision, raw, payload['verification'], payload['correction']))
         fd, temp = tempfile.mkstemp(dir=folder, suffix='.tmp')
         try:
-            with os.fdopen(fd, 'w', encoding='utf-8', newline='') as stream: stream.write(raw)
+            with os.fdopen(fd, 'w', encoding='utf-8', newline='') as stream:
+                for relative, content in (resources or {}).items():
+                    target = folder / relative
+                    if not target.resolve().is_relative_to(folder.resolve()) or target.is_symlink():
+                        raise ValueError('Skill reference escapes its package.')
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    if target.exists() and target.read_bytes() != content:
+                        raise ValueError('A skill reference already has local changes.')
+                    if not target.exists():
+                        with target.open('xb') as resource: resource.write(content)
+                stream.write(raw)
             os.replace(temp, folder / 'SKILL.md')
         finally:
             if Path(temp).exists(): Path(temp).unlink()
@@ -155,6 +229,27 @@ class SkillStore:
         with self._db() as db:
             db.execute('BEGIN IMMEDIATE')
             return self._save(db, payload, source=source)
+
+    def install_package(self, payload, resources, provenance):
+        name = payload['name']
+        source = 'internet:' + provenance['repository'] + '@' + provenance['commit_sha'] + ':' + provenance['source_path']
+        # Validate the complete document before creating any package files.
+        self.render(**payload)
+        with self._db() as db:
+            db.execute('BEGIN IMMEDIATE')
+            existing = next((s for s in self.inventory() if s['name'] == name), None)
+            if existing:
+                origin = db.execute('SELECT * FROM skill_sources WHERE name=?', (name,)).fetchone()
+                if origin and all(origin[k] == v for k, v in provenance.items()):
+                    return {'ok': True, 'data': {'name': name, 'installed': False, 'state': existing['state'], **provenance},
+                            'message': 'This revision is already installed; local instructions were retained.'}
+                raise ValueError('A bundled or saved skill already owns this name. Existing instructions were retained.')
+            result = self._save(db, payload, source=source, resources=resources)
+            db.execute('INSERT INTO skill_sources VALUES(?,?,?,?,?,?)',
+                (name, provenance['repository'], provenance['commit_sha'], provenance['source_path'], provenance['content_sha256'], time.time()))
+            result['data'].update(installed=True, files=len(resources) + 1, **provenance)
+            result['message'] = 'Skill package installed. No downloaded scripts or installers were executed. Load with skill_read and check required tools before use.'
+            return result
 
     def stage(self, payload, *, source='agent_tool', absorbs=None, replaces=None):
         raw = self.render(**payload)

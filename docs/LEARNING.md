@@ -4,6 +4,55 @@ Open **Agent tools → Skills**. The page separates Library, Review, Journey, Le
 
 HANNI learns by saving instructions and personal notes. These features do not change model weights.
 
+## Automatic skill discovery
+
+Ask for the task normally, for example **"Can you check my calendar?"** The native
+worker searches installed skill names, descriptions and trigger phrases, and
+loads up to three relevant procedures within the existing context budget. You do
+not need to know a skill's name. Activity shows which skills were discovered and
+applied. `skill_search` can find additional procedures during a task;
+`skill_read` loads the selected instructions or Markdown references.
+
+After a completed task has successful tool receipts, HANNI remembers the skill
+match for that kind of request. These matches survive restart and appear in the
+Skills journey. The matching index stores a hash of normalized request terms,
+skill names and task IDs, not copies of prompts, email bodies or calendar data.
+Failed, cancelled, uncertain or partial tool results do not establish a successful
+match. Reading or downloading a skill alone is not success evidence. Archived
+skills remain excluded. This reuse does not create duplicate calendar procedures
+or change the original instructions; new or corrected procedures still use the
+versioned proposal/review workflow below.
+
+When installed skills do not cover the task, the model can call
+`skill_search` with `online: true`. It queries the public
+[skills.sh directory using its CLI search endpoint](https://github.com/vercel-labs/skills/blob/main/src/find.ts).
+Only a short generic capability should be sent, such as "calendar scheduling";
+private message contents and account addresses do not belong in online searches.
+An online failure leaves local discovery available. There are at most three
+online searches and two package installations per task.
+
+`skill_install` accepts an exact public GitHub `owner/repository` and skill name.
+It resolves the repository to an immutable commit, validates each downloaded
+file against that commit's Git tree, and retains instructions and support files
+under the local learned-skills directory. Packages are limited to 32 files and
+1 MiB, with no symlinks, nested skill packages or conflicting Windows filenames.
+The source repository, commit, path and content checksum are retained in the
+installation receipt, `skill_read` provenance and journey. The original
+frontmatter and license information remain in `UPSTREAM_SKILL.md`.
+
+Downloading a package runs no scripts, installers or dependency commands. The
+model must read its instructions and check tool/provider compatibility before
+using it. Existing skills and local edits are retained on a name conflict; no
+silent replacement or automatic update occurs. A skill does not connect a Google
+account, enable an API or grant tool access. Unsupported prerequisites remain
+limitations, not completed setup.
+
+Configured access and Full access allow the model to import a selected skill
+without another installation prompt. Ask-before-writes requires the existing
+approval path, and Read-only blocks installation. Download cancellation or a
+tool-access change before saving prevents activation. Subsequent actions, including
+running any downloaded helper, still require their normal tool permissions.
+
 ## Capture a working procedure
 
 The native agent can use `skill_propose` after a useful workflow, error recovery, or owner correction. A proposal includes the procedure, working commands and tool usage, trigger keywords, pitfalls, verification evidence, and the correction that motivated it. It should update a relevant existing skill rather than create a duplicate. Verification text is a claim backed by the source task; it is not a runtime certification.

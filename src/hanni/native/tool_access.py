@@ -13,7 +13,7 @@ from uuid import uuid4
 MODES = frozenset({'configured', 'read_only', 'ask', 'full'})
 READ_TOOLS = frozenset({
     'local_read_file', 'local_read_document', 'local_list_dir', 'local_search_files',
-    'system_info', 'web_search', 'web_fetch', 'skill_read', 'memory_search',
+    'system_info', 'web_search', 'web_fetch', 'skill_read', 'skill_search', 'memory_search',
     'history_search', 'session_search', 'skill_propose', 'working_state', 'delegate_task',
 })
 

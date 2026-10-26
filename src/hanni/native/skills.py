@@ -16,6 +16,7 @@ Standard skill frontmatter can put HANNI trigger lists in metadata.hanni.trigger
 from __future__ import annotations
 
 import os
+import math
 import re
 from pathlib import Path
 
@@ -80,6 +81,52 @@ def load_skills(directory: str | None = None, *, metadata_only=False) -> list[di
     return skills
 
 
+STOP_WORDS = frozenset('a an and are as at be can check could do for from get give have help i in inspect is it me my of on or please read review see show some tell that the there this to use want what whats when will with would you your'.split())
+
+
+def skill_terms(text):
+    return {word[:-1] if word.endswith('s') and len(word) > 4 else word
+            for word in re.findall(r'[a-z][a-z0-9]{2,}', text.casefold()) if word not in STOP_WORDS}
+
+
+def search_skills(skills, query, *, limit=6):
+    """Rank metadata without loading procedure bodies or contacting a provider."""
+    words = skill_terms(query)
+    if not words: return []
+    documents = [skill_terms(' '.join([s['name'], s.get('description', ''), *s['triggers']])) for s in skills]
+    weights = {w: math.log(1 + len(skills) / (1 + sum(w in doc for doc in documents))) for w in words}
+    ranked = []
+    for skill, document in zip(skills, documents):
+        overlap = words & document
+        exact = [t for t in skill['triggers'] if re.search(r'(?<!\w)' + re.escape(t) + r'(?!\w)', query, re.I)]
+        if not overlap and not exact: continue
+        name_words = skill_terms(skill['name'])
+        score = sum(weights[w] * (4 if w in name_words else 1) for w in overlap)
+        score += sum(6 + min(len(t), 80) / 20 for t in exact)
+        extension = any(re.fullmatch(r'\.[a-z0-9]+', t) for t in exact)
+        ranked.append({**skill, 'score': round(score, 3), 'extension_match': extension})
+    ranked.sort(key=lambda s: (-s['extension_match'], -s['score'], s['name']))
+    return ranked[:max(0, min(limit, 12))]
+
+
+def render_skills(skills, *, char_budget=6000):
+    out, used = [], 0
+    for skill in skills:
+        separator = 2 if out else 0
+        remaining = max(0, char_budget - used - separator)
+        body = skill.get('body')
+        if body is None:
+            raw = Path(skill['path']).read_text(encoding='utf-8')
+            front = FRONT.match(raw)
+            body = raw[front.end():].strip() if front else raw
+        block = f"### skill: {skill['name']}\n{body}"
+        if len(block) > remaining: block = block[:remaining]
+        if not block: break
+        out.append(block)
+        used += separator + len(block)
+    return '\n\n'.join(out)
+
+
 def match_skills(skills: list[dict], text: str, *, max_skills: int = 3, char_budget: int = 6000) -> str:
     lowered = text.lower()
     def matches(trigger):
@@ -91,20 +138,4 @@ def match_skills(skills: list[dict], text: str, *, max_skills: int = 3, char_bud
     hits = [s for s in skills if any(matches(t) for t in s["triggers"])]
     hits.sort(key=lambda s: (any(t.startswith('.') and matches(t) for t in s['triggers']),
                              sum(len(t) for t in s['triggers'] if matches(t))), reverse=True)
-    out, used = [], 0
-    for skill in hits[:max_skills]:
-        separator = 2 if out else 0
-        remaining = max(0, char_budget - used - separator)
-        body = skill.get('body')
-        if body is None:
-            raw = Path(skill['path']).read_text(encoding='utf-8')
-            front = FRONT.match(raw)
-            body = raw[front.end():].strip() if front else raw
-        block = f"### skill: {skill['name']}\n{body}"
-        if len(block) > remaining:
-            block = block[:remaining]
-        if not block:
-            break
-        out.append(block)
-        used += separator + len(block)
-    return "\n\n".join(out)
+    return render_skills(hits[:max_skills], char_budget=char_budget)
