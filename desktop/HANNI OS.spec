@@ -2,8 +2,11 @@
 from pathlib import Path
 
 desktop = Path(SPECPATH)
+runtime = desktop.parent / 'build/llama-runtime'
+if not (runtime / 'runtime-manifest.json').is_file():
+    raise RuntimeError('Prepare the bundled engine first: python scripts/prepare_llama_runtime.py --verify')
 a = Analysis([str(desktop/'main.py')], pathex=[str(desktop)],
-    binaries=[], datas=[(str(desktop/'hanni.ico'), '.')],
+    binaries=[], datas=[(str(desktop/'hanni.ico'), '.'), (str(runtime), 'runtimes/llama.cpp')],
     hiddenimports=['webview.platforms.winforms', 'webview.platforms.edgechromium', 'pystray._win32'],
     excludes=['PyQt5', 'PyQt6', 'PySide2', 'PySide6', 'cefpython3', 'tkinter', 'gi', 'hanni', 'torch', 'transformers'],
     noarchive=False)

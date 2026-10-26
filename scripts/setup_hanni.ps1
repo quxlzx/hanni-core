@@ -33,22 +33,11 @@ if ($LASTEXITCODE -ne 0) { throw 'pip upgrade failed' }
 & $python -m pip install -e '.[speech]'
 if ($LASTEXITCODE -ne 0) { throw 'HANNI dependency installation failed' }
 
-function Find-LlamaServer {
-    $cmd = Get-Command llama-server -ErrorAction SilentlyContinue
-    if ($cmd) { return $cmd.Source }
-    $winGetBase = Join-Path $env:LOCALAPPDATA 'Microsoft\WinGet\Packages\ggml.llamacpp_Microsoft.Winget.Source_8wekyb3d8bbwe'
-    $candidate = Join-Path $winGetBase 'llama-server.exe'
-    if (Test-Path $candidate) { return $candidate }
-    return $null
-}
-
-$llamaServer = Find-LlamaServer
-if (-not $llamaServer -and -not $SkipLlamaInstall -and (Get-Command winget -ErrorAction SilentlyContinue)) {
-    Write-Host 'llama.cpp not found. Installing with WinGet ...'
-    & winget install --id ggml.llamacpp --source winget --accept-source-agreements --accept-package-agreements
-    if ($LASTEXITCODE -ne 0) { throw "WinGet could not install llama.cpp (exit code $LASTEXITCODE)." }
-    $llamaServer = Find-LlamaServer
-}
+Write-Host 'Preparing app-local llama.cpp (CPU and Vulkan; no WinGet install required) ...'
+$runtimeArguments = @('scripts\prepare_llama_runtime.py', '--verify')
+if ($SkipLlamaInstall) { $runtimeArguments += '--offline' }
+& $python @runtimeArguments
+if ($LASTEXITCODE -ne 0) { throw 'The bundled inference runtime could not be prepared. Check the connection or populate the verified offline cache first.' }
 
 Write-Host 'Validating HANNI configuration ...'
 & $python -m hanni.cli health --no-file-log
@@ -72,12 +61,11 @@ if ($RunTests -and -not $SkipTests) {
 
 if (-not $SkipDesktop) {
     Write-Host 'Building the Windows application and installing shortcuts ...'
-    & (Join-Path $PSScriptRoot 'build_desktop.ps1') -SkipFrontend
+    & (Join-Path $PSScriptRoot 'build_desktop.ps1') -SkipFrontend -OfflineLlamaRuntime:$SkipLlamaInstall
 }
 
 Write-Host ''
 Write-Host 'HANNI setup complete.' -ForegroundColor Green
-if ($llamaServer) { Write-Host "llama.cpp: ready ($llamaServer)" }
-else { Write-Host 'llama.cpp: not detected; install it before first model start.' -ForegroundColor Yellow }
+Write-Host 'llama.cpp: included locally (CPU + Vulkan)'
 Write-Host 'Open HANNI OS from the Desktop or Start menu, or run START_HANNI.cmd.'
 Write-Host 'For Google, run .\.venv\Scripts\hanni.exe google login from this folder.'

@@ -52,11 +52,10 @@ def detach_kwargs() -> dict:
 
 def pick_binary(facts: Facts) -> Path | None:
     from hanni.native.acceleration import devices
-    names = (("windows-cuda", "windows-vulkan", "windows-x86_64") if os.name == "nt"
-             else ("linux-cuda", "linux-vulkan", "linux-x86_64"))
+    from hanni.models.bundled_runtime import runtime_directories
     cpu_fallback = None
-    for name in names:
-        cand = stick_exe(STICK / "binaries" / name, "llama-bench")
+    for directory in runtime_directories(STICK):
+        cand = stick_exe(directory, "llama-bench")
         if not cand.is_file() or not stick_exe(cand.parent, 'llama-server').is_file():
             continue
         try:
@@ -66,7 +65,7 @@ def pick_binary(facts: Facts) -> Path | None:
             if done.returncode in (0,):
                 if devices(cand.parent):
                     return cand.parent
-                if cpu_fallback is None or name.endswith('x86_64'):
+                if cpu_fallback is None or (not cpu_fallback.name.endswith('x86_64') and directory.name.endswith('x86_64')):
                     cpu_fallback = cand.parent
         except (OSError, RuntimeError, subprocess.TimeoutExpired):
             continue
@@ -453,7 +452,7 @@ def main(argv=None) -> int:
             facts = probe(str(STICK))
             bin_dir = pick_binary(facts)
             if bin_dir is None:
-                raise RuntimeError("No runnable llama.cpp binary. Run scripts/get_models.py first.")
+                raise RuntimeError("No runnable llama.cpp runtime. Run SETUP_HANNI.cmd or rebuild the desktop application to restore its bundled runtime.")
             if args.model:
                 pool = [str(Path(args.model))]
             elif args.tier != "auto":

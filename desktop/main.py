@@ -304,7 +304,12 @@ class BackendSession:
                        '--desktop-owner-pid', str(os.getpid()), '--ready-file', str(self.ready_path),
                        '--port', str(urlsplit(self.url).port)]
             try:
+                environment = dict(os.environ)
+                runtime = resource_path('runtimes/llama.cpp')
+                if (runtime / 'runtime-manifest.json').is_file():
+                    environment['HANNI_LLAMA_RUNTIME_DIR'] = str(runtime.resolve())
                 self.assistant_process = self.process = self.popen(command, cwd=str(self.repo),
+                    env=environment,
                     stdin=subprocess.DEVNULL, stdout=self.log, stderr=self.log,
                     creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
             except OSError:

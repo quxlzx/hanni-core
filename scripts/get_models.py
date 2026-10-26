@@ -64,6 +64,11 @@ def latest_llama_release() -> tuple[str, list[dict]]:
 
 
 def fetch_binaries(root: Path) -> None:
+    if sys.platform == 'win32':
+        import subprocess
+        subprocess.run([sys.executable, str(Path(__file__).with_name('prepare_llama_runtime.py')),
+                        '--destination', str(root / 'build' / 'llama-runtime')], check=True)
+        return
     tag, assets = latest_llama_release()
     print(f"llama.cpp release: {tag}")
     for asset_sub, dir_name in BINARIES["nt" if sys.platform == "win32" else "posix"]:

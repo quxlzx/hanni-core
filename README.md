@@ -6,7 +6,7 @@ H.A.N.N.I. (Highly Adaptive Neural Network Intelligence) is a **local Windows 11
 
 ## Quick start on Windows
 
-1. Install **Python 3.12**. The setup command can install llama.cpp with WinGet when available.
+1. Install **Python 3.12**. Setup prepares HANNI's pinned CPU and Vulkan llama.cpp runtimes locally; a separate llama.cpp or WinGet installation is not needed.
 2. Download or clone this repository, open its folder, and run `SETUP_HANNI.cmd`. It creates `.venv` and installs the normal app, speech, and Google dependencies. The first setup needs internet access; model weights are not included in GitHub.
 3. Open **HANNI OS** from the Desktop or Start menu, or run `START_HANNI.cmd`. HANNI opens in its own Windows window and starts its agent in the background. `START_HANNI_OS.cmd` opens the same app. `START_BRAIN.cmd` remains the explicit terminal/browser launcher; the older voice/controller path is available through `scripts/start_dashboard.ps1`.
 
