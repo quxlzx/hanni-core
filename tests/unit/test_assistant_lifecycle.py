@@ -211,15 +211,27 @@ def test_desktop_shortcut_automatically_starts_full_assistant_once(tmp_path):
     verified = [False]
     process = Mock()
     process.poll.return_value = None
+    process.pid = 4242
+
+    def exited(timeout=None):
+        process.poll.return_value = 0  # The owned child acknowledges graceful shutdown.
+    process.wait.side_effect = exited
+    holder = {}
 
     def spawn(command, **kwargs):
         assert '--dashboard-only' not in command
         assert 'firstboot.py' in str(command)
         assert '--serve' in command and '--no-browser' in command
+        # The owned firstboot child publishes its ready file; the shortcut
+        # attaches to that identity instead of polling a live service.
+        holder['session'].ready_path.write_text(json.dumps(
+            {'pid': process.pid, 'epoch': 'fixture-epoch', 'url': desktop.DEFAULT_URL}), encoding='utf-8')
         verified[0] = True
         return process
     popen = Mock(side_effect=spawn)
-    session = desktop.BackendSession(desktop.DEFAULT_URL, ROOT, popen=popen, verify=lambda url: verified[0])
+    session = holder['session'] = desktop.BackendSession(
+        desktop.DEFAULT_URL, ROOT, popen=popen, verify=lambda url: verified[0],
+        request=lambda url, path, **kwargs: {'epoch': 'fixture-epoch', 'token': 'fixture-token'})
     with patch.object(desktop.socket, 'create_connection', side_effect=ConnectionRefusedError()):
         assert session.connect(tmp_path)
         assert session.connect(tmp_path)

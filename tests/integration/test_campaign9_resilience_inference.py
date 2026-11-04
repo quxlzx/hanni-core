@@ -66,7 +66,7 @@ def test_credentials_never_enter_remote_message_or_response_schema(tmp_path, mon
             monkeypatch.setitem(redaction._registry, 'C9_REMOTE', value)
             messages = [{'role': 'user', 'content': value}]
         with pytest.raises(ValueError):
-            engine.compute.chat(messages, workflow_id='c9', step_id='privacy', invocation_id='c9-privacy', categories={'synthetic'}, max_tokens=32, max_retries_override=0, max_queue_seconds=0.1, **options)
+            engine.compute.chat(messages, workflow_id='c9', step_id='privacy', invocation_id='c9-privacy', categories={'synthetic'}, max_tokens=32, max_retries_override=0, max_queue_seconds=2.0, **options)
         assert not engine.compute.transport.calls and sum(engine.compute.registry.active.values()) == 0
 
 @pytest.mark.parametrize('fault', ['network', 'gpu_oom', 'malformed_choices', 'truncated', 'invalid_identity'])
@@ -89,7 +89,7 @@ def test_remote_fault_releases_reservation_without_verified_success_or_retry(tmp
             return result
         transport.request = broken
         with pytest.raises(ComputeError):
-            engine.compute.chat(MESSAGES, workflow_id='c9', step_id='fault', invocation_id='c9-fault', categories={'synthetic'}, max_tokens=32, max_retries_override=0, max_queue_seconds=0.1)
+            engine.compute.chat(MESSAGES, workflow_id='c9', step_id='fault', invocation_id='c9-fault', categories={'synthetic'}, max_tokens=32, max_retries_override=0, max_queue_seconds=2.0)
         record_property('observed', json.dumps({'transport_posts': len(transport.calls), 'active_total': sum(engine.compute.registry.active.values()), 'queued': len(engine.compute.queued)}))
         assert len(transport.calls) == 1 and sum(engine.compute.registry.active.values()) == 0
         assert not engine.compute.waiting and (not engine.compute.queued)
@@ -103,7 +103,7 @@ def test_remote_cancel_does_not_retry_or_poison_worker_health(tmp_path, phase):
         else:
             engine.compute.transport.before_return = cancellation.set
         with pytest.raises(ComputeError):
-            engine.compute.chat(MESSAGES, workflow_id='c9', step_id='cancel', invocation_id='c9-cancel', categories={'synthetic'}, max_tokens=32, cancellation=cancellation, max_retries_override=0, max_queue_seconds=0.1)
+            engine.compute.chat(MESSAGES, workflow_id='c9', step_id='cancel', invocation_id='c9-cancel', categories={'synthetic'}, max_tokens=32, cancellation=cancellation, max_retries_override=0, max_queue_seconds=2.0)
         assert len(engine.compute.transport.calls) == (0 if phase == 'pre_dispatch' else 1)
         assert engine.compute.registry.observations['controlled']['status'] == 'healthy'
         assert sum(engine.compute.registry.active.values()) == 0
