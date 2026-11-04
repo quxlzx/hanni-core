@@ -194,7 +194,7 @@ def test_retained_context_proof_cannot_override_actual_configured_allocation(tmp
 def public_case(scenario='chat', **kwargs):
     worker = {'id': 'public-development', 'node_id': 'owned-public', 'enabled': True, 'protocol': 'openai', 'concurrency': 1, 'interactive_reserve': 0, 'categories': ['synthetic'], 'capabilities': ['analysis', 'structured_json'], 'context_configured': 8192, 'context_reported': 8192, 'verified_context': 8192, 'health': 'healthy', 'heartbeat_age_seconds': 0, 'resource_sample_age_seconds': 0, 'resources': {'ram_available_bytes': 6 * GIB, 'vram_free_bytes': GIB}, 'gpu': 'controlled-gpu', 'latency_ms': 30, 'active_jobs': 0, 'response_behavior': 'complete'}
     worker.update(kwargs.pop('worker', {}))
-    case = {'id': 'PUBLIC-C6-CONTRACT', 'category': 'public_contract', 'scenario': scenario, 'workers': [worker], 'request': {'messages': [{'role': 'user', 'content': 'Independent exposed synthetic receipt.'}], 'categories': ['synthetic'], 'max_tokens': 48, 'interactive': False, 'retry_override': 0, 'queue_seconds': 0.2}, 'controls': {}, 'policy': {'max_queue': 2, 'max_retries': 1, 'timeout_seconds': 2}, 'scope': 'Controlled public executor contract; no private final data or actual model.'}
+    case = {'id': 'PUBLIC-C6-CONTRACT', 'category': 'public_contract', 'scenario': scenario, 'workers': [worker], 'request': {'messages': [{'role': 'user', 'content': 'Independent exposed synthetic receipt.'}], 'categories': ['synthetic'], 'max_tokens': 48, 'interactive': False, 'retry_override': 0, 'queue_seconds': 1.5}, 'controls': {}, 'policy': {'max_queue': 2, 'max_retries': 1, 'timeout_seconds': 2}, 'scope': 'Controlled public executor contract; no private final data or actual model.'}
     case.update(kwargs)
     return case
 
