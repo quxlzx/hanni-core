@@ -373,7 +373,9 @@ class Execution:
 def run_case(case, root):
     started = time.monotonic()
     root = Path(root).resolve()
-    if not root.is_relative_to(PRIVATE):
+    # A short (8.3) TEMP spelling on Windows runners must not defeat the
+    # containment check: compare both sides in resolved long-path form.
+    if not root.is_relative_to(Path(PRIVATE).resolve()):
         raise ValueError('Verifier execution must remain inside its private owned directory')
     if any((row.get('operation') == 'owned_process_exit' for row in case.get('controls', []))):
         return run_process_case(case, root)
@@ -395,7 +397,7 @@ def process_identity(phase, root):
 
 def child(root, phase, nonce):
     marker = json.loads((root / 'owned-process.json').read_text(encoding='utf8'))
-    if marker.get('nonce') != nonce or marker.get('root') != str(root) or (not root.is_relative_to(PRIVATE)):
+    if marker.get('nonce') != nonce or marker.get('root') != str(root) or (not root.is_relative_to(Path(PRIVATE).resolve())):
         raise ValueError('A verified parent-owned nonce is required')
     case = json.loads((root / 'input.json').read_text(encoding='utf8'))
     execution_root = root / 'fixture'

@@ -20,10 +20,11 @@ class ResourceManagerTests(unittest.TestCase):
         self.assertEqual(snap.gpus[0].memory_total_mb, 8192)
         self.assertIn('RTX 5060', snap.render_text())
 
+    @mock.patch('hanni.models.runtime.executable_prefix', return_value=['llama'])
     @mock.patch('hanni.models.resource_manager.subprocess.run')
     @mock.patch('hanni.models.resource_manager.psutil.cpu_percent', return_value=7.0)
     @mock.patch('hanni.models.resource_manager.psutil.virtual_memory')
-    def test_amd_vulkan_multi_gpu_fallback(self, memory, cpu, run) -> None:
+    def test_amd_vulkan_multi_gpu_fallback(self, memory, cpu, run, prefix) -> None:
         memory.return_value = SimpleNamespace(total=32 * 1024 ** 3, used=12 * 1024 ** 3, percent=37.5)
 
         def side_effect(command, **kwargs):

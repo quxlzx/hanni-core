@@ -46,6 +46,28 @@ def synthetic_auth_url(data,match):
             and (url.hostname.endswith(('.example','.test','.invalid')) or url.hostname in {'example.com','example.org','example.net'}))
 
 
+ALLOWLIST_PATH = 'config/audit-allowlist.json'
+_allowlist_cache = None
+
+
+def allowlist(root):
+    """Reviewed benign fixtures: exact location+category+value, never a blanket file skip."""
+    global _allowlist_cache
+    if _allowlist_cache is None:
+        path = Path(root) / ALLOWLIST_PATH
+        _allowlist_cache = json.loads(path.read_text(encoding='utf-8'))['entries'] if path.is_file() else []
+    return _allowlist_cache
+
+
+def is_allowed(location, category, value, root=None):
+    text = value.decode('utf-8', errors='replace')
+    for entry in allowlist(root or Path(__file__).resolve().parents[1]):
+        if entry['location'] == location and entry['category'] == category \
+                and re.fullmatch(entry['value_pattern'], text, re.I):
+            return True
+    return False
+
+
 def findings(data, location):
     result = []
     for category, pattern in PATTERNS.items():
@@ -57,6 +79,7 @@ def findings(data, location):
                 value = match.group(1).lower()
                 if value.startswith((b'fixture-',b'test-',b'example-',b'your-',b'<',b'${',b'{env:')):
                     continue
+            if is_allowed(location, category, match.group()):continue
             result.append({'location':location,'line':data.count(b'\n',0,match.start())+1,'category':category})
     for pattern in (IP,IP6):
         for match in pattern.finditer(data):
@@ -66,6 +89,7 @@ def findings(data, location):
             if suffix and (match.group()+suffix.group()).decode() in STANDARD_NETWORKS:continue
             if address.is_loopback or address.is_unspecified or any(address.version==n.version and address in n for n in DOCUMENTATION):
                 continue
+            if is_allowed(location, 'nonpublic_endpoint' if address.is_private or address in ipaddress.ip_network('100.64.0.0/10') else 'network_address', match.group()):continue
             result.append({'location':location,'line':data.count(b'\n',0,match.start())+1,'category':'nonpublic_endpoint' if address.is_private or address in ipaddress.ip_network('100.64.0.0/10') else 'network_address'})
     return result
 

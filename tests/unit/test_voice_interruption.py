@@ -67,7 +67,6 @@ def test_original_voice_loop_keeps_http_session_and_handles_next_turn(tmp_path, 
     thread.start()
     initial_epoch = hub.epoch
     calls, playbacks, survived = ([], [], [])
-    interrupted = [False]
     client = Mock()
     client.health.return_value = SimpleNamespace(ok=True)
     session = Mock()
@@ -103,20 +102,37 @@ def test_original_voice_loop_keeps_http_session_and_handles_next_turn(tmp_path, 
         finally:
             conn.close()
 
+    state = {'barge': False, 'second': False}
+
+    def closed_assistant_rows():
+        return [r for r in hub.snapshot()['messages'] if r['role'] == 'assistant' and r['status'] in {'complete', 'interrupted'}]
+
     def get(timeout=None):
         if pump_count[0] == 0:
             pump_count[0] += 1
             return TranscriptRecord(text='Hanni first request', started_at=1, ended_at=2)
-        if len(calls) == 1 and playbacks and playbacks[0].active and (not interrupted[0]):
-            interrupted[0] = True
-            if mode == 'button':
-                assert request('/api/voice', body={'id': str(uuid.uuid4()), 'action': 'interrupt'})[0] == 200
-                raise queue.Empty()
-            if mode == 'spoken':
-                return TranscriptRecord(text='wait', started_at=3, ended_at=4)
-            playbacks[0].process.wait(timeout=3)
+        if len(calls) == 1 and mode != 'model_failure' and not state['barge']:
+            # The barge-in must land while the first response is playing; a poll
+            # that arrives before playback exists holds instead of racing ahead.
+            deadline = time.time() + 5
+            while not playbacks and time.time() < deadline:
+                time.sleep(0.01)
+            if playbacks and playbacks[0].active:
+                state['barge'] = True
+                if mode == 'button':
+                    assert request('/api/voice', body={'id': str(uuid.uuid4()), 'action': 'interrupt'})[0] == 200
+                elif mode == 'spoken':
+                    return TranscriptRecord(text='wait', started_at=3, ended_at=4)
+                else:
+                    playbacks[0].process.wait(timeout=3)
             raise queue.Empty()
-        if len(calls) == 1:
+        if len(calls) == 1 and (mode == 'model_failure' or state['barge']) and closed_assistant_rows():
+            # The second turn is fed only after the first turn's row has closed,
+            # so it can never be swallowed by a still-finishing delivery loop;
+            # and it is delivered exactly once.
+            if state['second']:
+                raise queue.Empty()
+            state['second'] = True
             pump.stop.assert_not_called()
             snapshot = voice_control.snapshot()
             assert snapshot['available'] and (not snapshot['muted'])
@@ -126,7 +142,12 @@ def test_original_voice_loop_keeps_http_session_and_handles_next_turn(tmp_path, 
             assert not stop.is_set() and (not restart.is_set())
             survived.append(True)
             return TranscriptRecord(text='Hanni second request', started_at=5, ended_at=6)
-        stop.set()
+        # Stop only once the second response has been fully delivered and its
+        # row closed; setting stop mid-delivery would race the delivery loop's
+        # own shutdown check and mark the row interrupted.
+        rows = hub.snapshot()['messages']
+        if rows and rows[-1]['role'] == 'assistant' and rows[-1]['status'] == 'complete':
+            stop.set()
         raise queue.Empty()
     pump.get.side_effect = get
     was_enabled = activity.enabled

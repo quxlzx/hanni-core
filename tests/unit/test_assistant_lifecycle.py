@@ -7,6 +7,7 @@ import time
 from dataclasses import replace
 from pathlib import Path
 from types import SimpleNamespace
+import sys
 from unittest.mock import Mock, patch
 import pytest
 from hanni.config.loader import load_config
@@ -204,6 +205,7 @@ def test_projector_configuration_rejects_paths(projector):
     with pytest.raises(ConfigError, match='GGUF filename'):
         parse_models({'models': [{'id': 'supervisor', 'role': 'supervisor', 'backend': 'llama.cpp', 'model_file': 'weights.gguf', 'endpoint': 'http://127.0.0.1:8080/v1', 'vision_projector': projector}]})
 
+@pytest.mark.skipif(sys.platform != 'win32', reason='The desktop launcher contract assumes the Windows venv layout (.venv/Scripts).')
 def test_desktop_shortcut_automatically_starts_full_assistant_once(tmp_path):
     spec = importlib.util.spec_from_file_location('startup_desktop', ROOT / 'desktop/main.py')
     desktop = importlib.util.module_from_spec(spec)
@@ -211,15 +213,27 @@ def test_desktop_shortcut_automatically_starts_full_assistant_once(tmp_path):
     verified = [False]
     process = Mock()
     process.poll.return_value = None
+    process.pid = 4242
+
+    def exited(timeout=None):
+        process.poll.return_value = 0  # The owned child acknowledges graceful shutdown.
+    process.wait.side_effect = exited
+    holder = {}
 
     def spawn(command, **kwargs):
         assert '--dashboard-only' not in command
-        assert 'start_dashboard.ps1' in str(command)
-        assert '-NoBrowser' in command
+        assert 'firstboot.py' in str(command)
+        assert '--serve' in command and '--no-browser' in command
+        # The owned firstboot child publishes its ready file; the shortcut
+        # attaches to that identity instead of polling a live service.
+        holder['session'].ready_path.write_text(json.dumps(
+            {'pid': process.pid, 'epoch': 'fixture-epoch', 'url': desktop.DEFAULT_URL}), encoding='utf-8')
         verified[0] = True
         return process
     popen = Mock(side_effect=spawn)
-    session = desktop.BackendSession(desktop.DEFAULT_URL, ROOT, popen=popen, verify=lambda url: verified[0])
+    session = holder['session'] = desktop.BackendSession(
+        desktop.DEFAULT_URL, ROOT, popen=popen, verify=lambda url: verified[0],
+        request=lambda url, path, **kwargs: {'epoch': 'fixture-epoch', 'token': 'fixture-token'})
     with patch.object(desktop.socket, 'create_connection', side_effect=ConnectionRefusedError()):
         assert session.connect(tmp_path)
         assert session.connect(tmp_path)

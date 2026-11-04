@@ -58,8 +58,11 @@ def test_complete_owner_source_with_spaces_remains_a_literal_path(host, tmp_path
     plan = WorkflowPlanner(host, plan_client(step('read', source))).plan(goal, mode='assisted', artifact_root=tmp_path / 'artifacts')
     assert resource_identity(plan['steps'][0]['arguments']['path']) == resource_identity(source)
 
-def test_normalized_source_spelling_and_explicit_relative_path_remain_valid(host, tmp_path):
+def test_normalized_source_spelling_and_explicit_relative_path_remain_valid(host, tmp_path, monkeypatch):
     source = tmp_path / 'data' / 'original.txt'
+    # Windows CI keeps the checkout on D: and TEMP on C:; a relative path is
+    # only meaningful from a working directory on the same drive.
+    monkeypatch.chdir(tmp_path)
     requested = os.path.relpath(source, Path.cwd())
     alias = source.parent / 'subdirectory' / '..' / source.name
     plan = WorkflowPlanner(host, plan_client(step('read', alias))).plan('Read the text file ' + requested, mode='assisted', artifact_root=tmp_path / 'artifacts')

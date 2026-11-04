@@ -42,8 +42,9 @@ def test_versioned_contract_migration_preserves_all_behavioral_oracles_and_v1_by
     old = ROOT / 'evals/llm_tools/capability_coverage_v1.jsonl'
     new = ROOT / 'evals/llm_tools/capability_coverage_v2.jsonl'
     manifest = json.loads((ROOT / 'evals/llm_tools/capability_coverage_v2_migration.json').read_text(encoding='utf-8'))
-    assert hashlib.sha256(old.read_bytes()).hexdigest() == manifest['source_sha256']
-    assert hashlib.sha256(new.read_bytes()).hexdigest() == manifest['target_sha256']
+    # Digests are recorded over canonical LF bytes so a CRLF Windows checkout cannot break the seal.
+    assert hashlib.sha256(old.read_bytes().replace(b'\r\n', b'\n')).hexdigest() == manifest['source_sha256']
+    assert hashlib.sha256(new.read_bytes().replace(b'\r\n', b'\n')).hexdigest() == manifest['target_sha256']
     before, after = (load_scenarios(old), load_scenarios(new))
     assert len(before) == len(after) == manifest['case_count']
     supplements = {e['case_id']: [e['capability_id']] for e in manifest.get('supplemental_schema_events', [])}

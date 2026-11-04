@@ -5,7 +5,9 @@ import json
 import threading
 from pathlib import Path
 from types import SimpleNamespace
+import sys
 from unittest.mock import patch
+import pytest
 from hanni.config.loader import load_config
 from hanni.config.schema import TtsConfig
 from hanni.dashboard.chat import ChatHub
@@ -60,6 +62,7 @@ def test_selection_rejects_stale_devices_without_replacing_saved_choice(tmp_path
         assert selected_input(tmp_path) is None
         assert selected_output(tmp_path) is None
 
+@pytest.mark.skipif(sys.platform != 'win32', reason='windows_sapi TTS and the SAPI factory exist only on Windows.')
 def test_saved_choices_reach_microphone_and_sapi_factory(tmp_path):
     config = load_config(ROOT / 'config', data_dir=tmp_path, env={})
     with patch('hanni.speech.audio_devices.list_inputs', return_value=MICS), patch('hanni.speech.audio_devices.list_outputs', return_value=SPEAKERS):

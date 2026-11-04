@@ -2,6 +2,7 @@
 from dataclasses import replace
 from pathlib import Path
 import subprocess
+import sys
 import pytest
 from hanni.config.loader import load_config
 from hanni.tools.base import ConfirmationRequired, ToolRequest, ToolResult
@@ -99,7 +100,8 @@ def test_schema_only_fixture_generator_supports_every_current_output_descriptor(
         assert payload['message'] == 'Synthetic schema probe; no capability was executed.'
         assert not output_errors(definition, ToolResult(payload['name'], payload['ok'], payload['message'], payload['data']))
 
-@pytest.mark.parametrize('name', ['file.write', 'file.copy', 'file.delete', 'archive.unzip', 'note.append', 'todo.complete', 'calc.evaluate', 'unit.convert', 'google.calendar.create', 'google.calendar.delete', 'file.open', 'notify.toast'])
+@pytest.mark.parametrize('name', ['file.write', 'file.copy', 'file.delete', 'archive.unzip', 'note.append', 'todo.complete', 'calc.evaluate', 'unit.convert', 'google.calendar.create', 'google.calendar.delete',
+                                  pytest.param('file.open', marks=pytest.mark.skipif(sys.platform != 'win32', reason='file.open dispatches via os.startfile, a Windows API.')), 'notify.toast'])
 def test_original_implementation_receipt_and_independent_readback(name, tmp_path, registry):
     value, config = registry
     inventory = next((row for row in capture(value, config)['builtins'] if row['id'] == name))

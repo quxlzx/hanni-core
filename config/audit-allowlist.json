@@ -1,0 +1,59 @@
+{
+  "purpose": "Reviewed benign matches that the publication audit must not re-flag. Each entry pins the exact location, category and matched value; it never whitelists a whole file or pattern class. History entries are pinned to immutable Git blob IDs, so they can only ever describe the past object they name.",
+  "entries": [
+    {
+      "location": "tests/test_local_runtime.py",
+      "category": "nonpublic_endpoint",
+      "value_pattern": "192\\.168\\.1\\.1",
+      "reason": "Test fixture: an RFC1918 address used to prove web_fetch refuses private networks."
+    },
+    {
+      "location": "tests/test_native_dashboard_integration.py",
+      "category": "network_address",
+      "value_pattern": "93\\.184\\.216\\.34",
+      "reason": "Test fixture: the public example.com address used to prove SSRF redirect blocking; no private data."
+    },
+    {
+      "location": "tests/unit/test_learning.py",
+      "category": "credential_assignment",
+      "value_pattern": "password\":\"private-fixture-secret\"",
+      "reason": "Test fixture: a synthetic secret inside the redaction test that proves such values are stripped."
+    },
+    {
+      "location": "git:eb579ed560ea51a12b48d99cb842e5f84e22d8ba:tests/test_local_runtime.py",
+      "category": "nonpublic_endpoint",
+      "value_pattern": "192\\.168\\.1\\.1",
+      "reason": "Same SSRF-blocking fixture in an earlier immutable revision of the test file."
+    },
+    {
+      "location": "git:86cb99201b3e208b07486ef07576940e87c0804c:tests/test_local_runtime.py",
+      "category": "nonpublic_endpoint",
+      "value_pattern": "192\\.168\\.1\\.1",
+      "reason": "Same SSRF-blocking fixture in an earlier immutable revision of the test file."
+    },
+    {
+      "location": "git:dfa6e58072d20ae769b0f122cbc52112baf429e9:tests/test_native_dashboard_integration.py",
+      "category": "network_address",
+      "value_pattern": "93\\.184\\.216\\.34",
+      "reason": "Same public example.com fixture in an earlier immutable revision of the test file."
+    },
+    {
+      "location": "git:39f1a341f575e770db38846fdbd4d8f06626f975:tests/unit/test_learning.py",
+      "category": "credential_assignment",
+      "value_pattern": "password\":\"private-fixture-secret\"",
+      "reason": "Same synthetic redaction fixture in an earlier immutable revision of the test file."
+    },
+    {
+      "location": "git:7d13a5110bbd652621d420d89550ee8191631c41:soul/skills/github/references/auth.md",
+      "category": "authenticated_url",
+      "value_pattern": "https:\\/\\/<username>:<token>@",
+      "reason": "Documentation placeholder in a superseded skill revision; angle-bracket template, never a real URL."
+    },
+    {
+      "location": "git:35074cd7f70b8b0d51f659530188296ec122fa86:soul/skills/strata-server-ops/SKILL.md",
+      "category": "private_user_path",
+      "value_pattern": "\\/home\\/won\\w+",
+      "reason": "Superseded skill revision naming a home-lab machine account path; no credential, and the current tree no longer contains it."
+    }
+  ]
+}

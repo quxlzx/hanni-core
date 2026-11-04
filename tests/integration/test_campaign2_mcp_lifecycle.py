@@ -198,7 +198,21 @@ def test_timeout_and_error_results_are_not_success_and_session_recovers(owned):
         assert len(hub.registry.definitions()) == hub.base_count
         assert not any((row['available'] for row in hub.snapshot()['tools']))
         hub.connect()
-    assert hub.call('prism.defer_read').ok
+    # The timed-out call may still occupy the single-threaded fixture server
+    # for the remainder of its delay; the subject here is that the session
+    # recovers, so wait (bounded) for the next call to admit and succeed.
+    deadline = time.monotonic() + 10
+    while True:
+        try:
+            recovered = hub.call('prism.defer_read')
+        except ToolPermissionError:
+            recovered = None
+        if recovered is not None and recovered.ok:
+            break
+        if time.monotonic() >= deadline:
+            break
+        time.sleep(0.2)
+    assert recovered is not None and recovered.ok
     hub.change(tool_error=True)
     try:
         result = hub.call('prism.echo_label')

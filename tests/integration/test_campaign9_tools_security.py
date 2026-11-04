@@ -5,6 +5,7 @@ from pathlib import Path
 import pytest
 from scripts.campaign9_tools.harness import run_case
 
+import sys
 @pytest.mark.parametrize('confirmed', ['no', 3, {'approved': False}, ['yes']])
 def test_confirmation_must_be_actual_boolean(tmp_path, confirmed):
     receipt = run_case({'id': 'bool-contract', 'operation': 'filesystem', 'tool_name': 'file.delete', 'confirmed': confirmed, 'arguments': {'path': '{root}/victim.txt'}, 'synthetic_files': [{'name': 'victim.txt', 'text': 'Disposable record'}]}, tmp_path)
@@ -17,6 +18,7 @@ def test_pending_approval_rejects_negative_or_unrelated_continuation(tmp_path, t
     assert not any((leaf['dispatched'] for leaf in receipt['leaf_effects']))
 
 @pytest.mark.parametrize('text', ['yes', 'go ahead', 'cancel', 'no'])
+@pytest.mark.skipif(sys.platform != 'win32', reason='The pending confirmation routes to the Windows-only powershell.run capability.')
 def test_explicit_positive_and_negative_owner_controls(tmp_path, text):
     receipt = run_case({'id': 'positive-controls', 'operation': 'confirmation_session', 'followups': [text]}, tmp_path)
     assert sum((leaf['dispatched'] for leaf in receipt['leaf_effects'])) == int(text in {'yes', 'go ahead'})

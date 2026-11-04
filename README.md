@@ -1,10 +1,54 @@
 # H.A.N.N.I.
 
-**Experimental alpha.** Use the current [publication checklist](docs/PUBLIC_RELEASE_PREPARATION.md) and `PUBLIC_READINESS.json` in the prepared release copy. Automated software checks do not certify live voice latency, model planning quality, or external integrations. Historical evaluation reports retain their original scope and failures.
+**H**ighly **A**daptive **N**eural **N**etwork **I**ntelligence — a personal, portable, self-hosted AI agent. Clone it, double-click, and talk to her.
 
-H.A.N.N.I. (Highly Adaptive Neural Network Intelligence) is a **local Windows 11 assistant** with bounded, permission-aware workflows for persistent goals.
+![The Hanni OS interface](docs/images/hanni-os.png)
 
-## Quick start on Windows
+**Experimental alpha.** Automated software checks do not certify live voice latency, model planning quality, or external integrations. Historical evaluation reports retain their original scope and failures. Current scope is recorded in the [publication checklist](docs/PUBLIC_RELEASE_PREPARATION.md) and `PUBLIC_READINESS.json`.
+
+## Three things HANNI does
+
+1. **Runs tasks, not just chat.** Multi-step workflows (read → analyze → write → schedule) execute under an explicit permission mode — read-only, ask-before-writes, or full access. Every action leaves an approval receipt you can inspect, and cancellation fences work already in flight.
+2. **Runs fully local, tuned to your machine.** Pinned llama.cpp runtimes (CPU + Vulkan); first boot benchmarks candidate GGUF tiers (7B → 3.7B → 2B) and keeps the first that meets a measured tokens-per-second floor. No cloud account is required to run her.
+3. **Remembers and schedules.** Durable personal memory with revision history, a learned-skills store with owner review, cron-style scheduled tasks, and Windows notifications for results and approval requests.
+
+## Architecture at a glance
+
+One resident language model, one model-facing capability path:
+
+```text
+Owner (text / voice / dashboard)
+            |
+            v
+family / sub-intent retrieval + resolved local dates
+            |
+            v
+1-8 relevant MCP schemas -> local model chooses tool calls
+            |
+            v
+validated HANNI capability registry
+            |
+            v
+live local computer state / approved MCP servers
+```
+
+The model is conversational and interpretive. It is never the source of truth for live machine state: CPU, RAM, GPU, process, storage, network, application, and service information must come from validated local tools. The full contract, including the MCP Hub and permission model, is below.
+
+## Quick start
+
+**Windows 11:** install **Python 3.12**, clone or fully extract this repository to a permanent folder, and run `SETUP_HANNI.cmd`. It installs dependencies, prepares and tests a local CPU engine, downloads a first model if none is installed, and launches HANNI; sign-in autostart is registered once the assistant is ready (`-NoStartup` to skip). Details: [Windows application setup](docs/WINDOWS_APPLICATION.md).
+
+**Linux or any terminal:**
+
+```bash
+git clone https://github.com/quxlzx/hanni-core && cd hanni-core
+python scripts/get_models.py            # tier models + llama.cpp binaries
+./start_brain.sh                        # Windows: START_BRAIN.cmd
+```
+
+Detailed setup, permission modes, Teams integration, and model management follow.
+
+## Setup in detail: Windows
 
 1. Install **Python 3.12**. Setup prepares HANNI's pinned CPU and Vulkan llama.cpp runtimes locally; a separate llama.cpp or WinGet installation is not needed.
 2. Download or clone this repository. If you downloaded a ZIP, right-click it, choose **Extract All**, and extract the entire archive to a permanent folder such as `C:\HANNI`. Open the extracted repository folder and run `SETUP_HANNI.cmd` beside the `scripts` and `src` folders. It installs dependencies, prepares and tests a local CPU engine, downloads MiniCPM 2B if no model is installed, and launches HANNI. It registers HANNI for your Windows account at sign-in after the assistant becomes ready. Existing models/API choices are retained. First setup needs internet access and can take several minutes; model weights are not included in GitHub.
@@ -228,27 +272,9 @@ This repository does **not** include model weights, Google credentials, account 
 
 Models now opens the integrated four-model inference control center, with lifecycle controls, streaming chats, comparison, saved histories and live metrics. The same controls appear in HANNI and Wonyoung cluster details. See [control-center integration and deployment](docs/CONTROL_CENTER_INTEGRATION.md).
 
-## Current architecture
+## Current architecture (detail)
 
-This checkpoint intentionally has one resident language model and one model-facing capability path:
-
-```text
-Owner (text / voice / dashboard)
-            |
-            v
-family / sub-intent retrieval + resolved local dates
-            |
-            v
-1-8 relevant MCP schemas -> Qwen3.5-4B chooses tool calls
-            |
-            v
-validated HANNI capability registry
-            |
-            v
-live local computer state / approved MCP servers
-```
-
-The model is conversational and interpretive. It is not the source of truth for live machine state. CPU, RAM, GPU, process, storage, network, application, and service information must come from validated local tools.
+The architecture diagram in the introduction is the whole path; this section records the invariants. This checkpoint intentionally has one resident language model and one model-facing capability path. The model is conversational and interpretive. It is not the source of truth for live machine state. CPU, RAM, GPU, process, storage, network, application, and service information must come from validated local tools.
 
 **Settings → Integrations → MCP Hub** adds owner-configured stdio and Streamable HTTP servers to this same execution path. Connect approval, hash-bound tool approval and execution confirmation remain separate; imported tools start disabled. See [MCP Hub setup and policy](docs/MCP_HUB.md) for safe connection settings, import/export, persistence and the observe-first model limits. [Implementation checkpoints](docs/MCP_HUB_CHECKPOINTS.md) record actual verification progress.
 

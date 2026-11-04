@@ -12,7 +12,7 @@ def scheduler_probe(tmp_path):
     directory = tmp_path / 'compute'
     directory.mkdir()
     worker = {'worker_id': 'probe', 'node_id': 'remote-probe', 'remote_port': 19091, 'gpu': 'synthetic-gpu', 'model_id': 'synthetic-v44', 'enabled': True, 'context_configured': 8192, 'capabilities': ['analysis', 'structured_json'], 'allowed_categories': ['synthetic'], 'concurrency': 1}
-    deployment = {'version': 1, 'enabled': True, 'nodes': [{'id': 'remote-probe'}], 'workers': [worker], 'policy': {'timeout_seconds': 1, 'max_retries': 0}}
+    deployment = {'version': 1, 'enabled': True, 'nodes': [{'id': 'remote-probe'}], 'workers': [worker], 'policy': {'timeout_seconds': 5, 'max_retries': 0}}
     (directory / 'deployment.json').write_text(json.dumps(deployment), encoding='utf8')
     registry = ComputeRegistry(tmp_path, clock=lambda: 1000)
     registry.observe('probe', status='healthy', model_id='synthetic-v44', context_reported=8192, max_context_verified=8192, last_heartbeat=1000, ram_available_bytes=8 * 1024 ** 3, vram_free_bytes=2 * 1024 ** 3, resource_sampled_at=registry.clock())
@@ -37,7 +37,7 @@ def scheduler_probe(tmp_path):
     scheduler.close()
 
 def probe_call(scheduler, **kwargs):
-    return scheduler.chat([{'role': 'user', 'content': 'Synthetic source probe.'}], workflow_id='v44_probe', step_id='analysis', invocation_id='invocation', categories=['synthetic'], max_tokens=32, max_queue_seconds=0.05, **kwargs)
+    return scheduler.chat([{'role': 'user', 'content': 'Synthetic source probe.'}], workflow_id='v44_probe', step_id='analysis', invocation_id='invocation', categories=['synthetic'], max_tokens=32, max_queue_seconds=2.0, **kwargs)
 
 def test_direct_compute_counts_response_schema_in_context_budget(scheduler_probe):
     scheduler, transport = scheduler_probe

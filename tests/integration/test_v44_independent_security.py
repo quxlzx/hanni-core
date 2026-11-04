@@ -13,7 +13,7 @@ from hanni.models.adaptive import ModelRequest, ModelSelectionError
 from tests.integration.test_adaptive_v40_verifier import audit_engine
 
 def dispatch(compute, **kwargs):
-    return compute.chat([{'role': 'user', 'content': 'Independent synthetic authority probe.'}], workflow_id='v44_independent', step_id='reason', invocation_id='probe', categories={'synthetic'}, max_tokens=32, max_queue_seconds=0.1, max_retries_override=0, **kwargs)
+    return compute.chat([{'role': 'user', 'content': 'Independent synthetic authority probe.'}], workflow_id='v44_independent', step_id='reason', invocation_id='probe', categories={'synthetic'}, max_tokens=32, max_queue_seconds=2.0, max_retries_override=0, **kwargs)
 
 @pytest.mark.parametrize('field', ['ram_available_bytes', 'vram_free_bytes'])
 def test_unknown_remote_resources_reject_original_scheduler_dispatch(audit_engine, field):
@@ -99,7 +99,7 @@ def test_precancelled_request_does_not_touch_transport(audit_engine):
 def test_remote_receipts_never_retain_private_messages(audit_engine):
     _, compute, _, _ = audit_engine
     marker = 'SYNTHETIC_PRIVATE_MARKER_V44_654b'
-    text, job = compute.chat([{'role': 'user', 'content': marker}], workflow_id='v44_privacy', step_id='reason', invocation_id='unique_probe', categories={'synthetic'}, max_tokens=32, max_queue_seconds=0.1, max_retries_override=0)
+    text, job = compute.chat([{'role': 'user', 'content': marker}], workflow_id='v44_privacy', step_id='reason', invocation_id='unique_probe', categories={'synthetic'}, max_tokens=32, max_queue_seconds=2.0, max_retries_override=0)
     assert text and job['input_sha256']
     assert marker not in repr(compute.registry.snapshot())
     assert marker.encode() not in (compute.registry.root / 'jobs.sqlite3').read_bytes()

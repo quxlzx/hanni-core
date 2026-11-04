@@ -8,7 +8,11 @@
 scripts/eval_memory_intelligence_v35.py -text whitespace=cr-at-eol,-blank-at-eof
 scripts/eval_memory_grounding_v35.py -text whitespace=cr-at-eol,-blank-at-eof
 # Keep the recorded V3.6 migration target digest stable on Windows checkouts.
+evals/llm_tools/capability_coverage_v1.jsonl -text
 evals/llm_tools/capability_coverage_v2.jsonl -text
+evals/llm_tools/capability_coverage_v5.jsonl -text
+evals/llm_tools/capability_coverage_v5_migration.json -text
+evals/routing/phrase_probe_v2.jsonl -text
 evals/llm_tools/capability_coverage_v3.jsonl -text
 evals/llm_tools/capability_coverage_v4.jsonl -text
 evals/llm_tools/capability_coverage_v3_migration.json -text

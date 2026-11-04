@@ -27,15 +27,20 @@ jobs:
           git diff --exit-code -- src/hanni/dashboard/static
 
   tests:
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
+        os: [windows-latest, ubuntu-latest]
         python-version: ["3.12"]
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
+      - name: Install Linux audio dependency
+        if: matrix.os == 'ubuntu-latest'
+        run: sudo apt-get update && sudo apt-get install -y libportaudio2
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -44,19 +49,34 @@ jobs:
           cache: pip
 
       - name: Install dependencies
+        shell: bash
         run: |
           python -m venv .venv
-          .venv/Scripts/python.exe -m pip install --upgrade pip
-          .venv/Scripts/python.exe -m pip install -e ".[dev,ui-test,teams]"
+          if [ "$RUNNER_OS" = "Windows" ]; then VENVBIN=.venv/Scripts; else VENVBIN=.venv/bin; fi
+          "$VENVBIN/python" -m pip install --upgrade pip
+          "$VENVBIN/python" -m pip install -e ".[dev,ui-test,teams]"
+
+      - name: Set up Node for frontend source-audit tests
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install shipped frontend dependencies
+        run: npm ci --prefix frontend
 
       - name: Run tests
-        run: .venv/Scripts/python.exe scripts/test_assistant_harness.py --coverage --output .pytest-work/assistant-harness/ci
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" = "Windows" ]; then VENVBIN=.venv/Scripts; else VENVBIN=.venv/bin; fi
+          "$VENVBIN/python" scripts/test_assistant_harness.py --coverage --output .pytest-work/assistant-harness/ci
 
       - name: Retain assistant harness evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: assistant-harness-${{ matrix.python-version }}
+          name: assistant-harness-${{ matrix.os }}-${{ matrix.python-version }}
           path: .pytest-work/assistant-harness/ci
           include-hidden-files: true
 

@@ -5,8 +5,11 @@ import json
 import threading
 from pathlib import Path
 from types import SimpleNamespace
+import sys
 from unittest.mock import Mock
 import pytest
+
+pytestmark = pytest.mark.skipif(sys.platform != 'win32', reason='Desktop app launcher tests assume the Windows venv layout and Windows process ownership.')
 ROOT = Path(__file__).resolve().parents[2]
 spec = importlib.util.spec_from_file_location('hanni_desktop_client', ROOT / 'desktop/main.py')
 desktop = importlib.util.module_from_spec(spec)

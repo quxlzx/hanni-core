@@ -117,9 +117,22 @@ def install():
         path = Path(raw).resolve()
         return path == repo / '.env' or any(path == parent or path.is_relative_to(parent) for parent in protected)
 
-    def check_path(value):
+    def check_path(value, dir_fd=None):
         if isinstance(value, (str, bytes, os.PathLike)) and value not in {':memory:', b':memory:'}:
-            if private_path(os.fsdecode(value)):
+            raw = os.fsdecode(value)
+            if not os.path.isabs(raw):
+                # A bare single-component relative name is ambiguous: directory
+                # walkers (shutil.rmtree, tempfile cleanup) pass entry names
+                # relative to a dir_fd that the audit event does not expose.
+                # Those names cannot express a live-state path; anything with a
+                # separator or an absolute path is still resolved and checked.
+                if os.sep not in raw and (os.altsep is None or os.altsep not in raw) and '/' not in raw and dir_fd is None:
+                    return
+                # A relative path with dir_fd is relative to that descriptor,
+                # not to the process CWD (Linux exposes descriptors via /proc).
+                if dir_fd is not None and dir_fd >= 0 and os.name != 'nt':
+                    raw = str(Path('/proc/self/fd') / str(dir_fd) / raw)
+            if private_path(raw):
                 raise TestBoundaryBlocked('Live HANNI state and credentials are unavailable to tests; use temporary storage.')
 
     def audit(event, args):
@@ -134,7 +147,10 @@ def install():
         elif event in {'open', 'sqlite3.connect'}:
             check_path(args[0])
         elif event in {'os.mkdir', 'os.remove', 'os.rmdir', 'os.chmod', 'os.utime'}:
-            check_path(args[0])
+            # Audit arg layout differs: os.mkdir is (path, mode, dir_fd); the
+            # others carry dir_fd as the second argument.
+            index = 2 if event == 'os.mkdir' else 1
+            check_path(args[0], args[index] if len(args) > index else None)
         elif event in {'os.rename', 'os.symlink', 'os.link', 'shutil.copyfile'}:
             check_path(args[0])
             check_path(args[1])

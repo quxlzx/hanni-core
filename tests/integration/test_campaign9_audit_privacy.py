@@ -1,8 +1,11 @@
+import sys
+import pytest
 """Audit retains diagnostic metadata without duplicating personal content."""
 from pathlib import Path
 from scripts.campaign8_ui.backend import original_backend
 from scripts.campaign9_manager.audit_privacy import historical_projection, probe
 
+@pytest.mark.skipif(sys.platform != 'win32', reason='The audited shell tool (PowerShell) is registered only on Windows.')
 def test_original_tool_audit_does_not_duplicate_private_note_shell_or_secret_metadata(tmp_path):
     with original_backend(tmp_path / 'runtime') as backend:
         try:

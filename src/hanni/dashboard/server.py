@@ -112,7 +112,10 @@ class Telemetry:
 
 class DashboardServer(ThreadingHTTPServer):
     daemon_threads = False
-    allow_reuse_address = False
+    # POSIX: allow an immediate same-port restart over the socket's own
+    # TIME_WAIT connections. Windows: keep SO_REUSEADDR off so a restart can
+    # never hijack another live listener (hermes/service.py uses the same rule).
+    allow_reuse_address = (os.name != 'nt')
 
     def __init__(self, port, telemetry, chat=None, *, shutdown_event=None, restart_event=None, cluster=None, cluster_power=None, cluster_terminal=None, features=None, workflows=None):
         from hanni.dashboard.chat import ChatHub

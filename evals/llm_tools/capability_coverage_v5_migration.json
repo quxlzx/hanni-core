@@ -1,0 +1,22 @@
+{
+  "source": "capability_coverage_v4.jsonl",
+  "target": "capability_coverage_v5.jsonl",
+  "source_sha256": "436be43fa50c6e5c78e638eff91ba2f20ccc0dd9139c824bad56ea7fe86e306c",
+  "target_sha256": "9bb612ca06dc9b47cd50e6e4fe4b3afe0084a19e9c16dca4b6633aafa3a5db12",
+  "added_case_ids": [
+    "TEAMS-READ-TEAMS-TEAMS-1",
+    "TEAMS-READ-TEAMS-TEAMS-2",
+    "TEAMS-READ-TEAMS-CHANNELS-1",
+    "TEAMS-READ-TEAMS-CHANNELS-2",
+    "TEAMS-READ-TEAMS-CHANNEL_MESSAGES-1",
+    "TEAMS-READ-TEAMS-CHANNEL_MESSAGES-2",
+    "TEAMS-READ-TEAMS-CHAT_MESSAGES-1",
+    "TEAMS-READ-TEAMS-CHAT_MESSAGES-2",
+    "TEAMS-READ-TEAMS-CHATS-1",
+    "TEAMS-READ-TEAMS-CHATS-2",
+    "TEAMS-READ-TEAMS-REPLIES-1",
+    "TEAMS-READ-TEAMS-REPLIES-2"
+  ],
+  "preserved_source_bytes": 183672,
+  "reason": "Two routing probes, two LLM scenarios and two schema probes for each of the six model-facing Teams read capabilities. Historical v1-v4 cases and oracles remain unchanged."
+}

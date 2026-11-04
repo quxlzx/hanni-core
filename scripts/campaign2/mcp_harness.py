@@ -99,7 +99,18 @@ class OwnedHub:
             self.control['revision'] = self.control.get('revision', 0) + 1
         temporary = self.control_path.with_suffix('.tmp')
         temporary.write_text(json.dumps(self.control), encoding='utf8')
-        os.replace(temporary, self.control_path)
+        # Windows denies replacing a file another process has open without
+        # FILE_SHARE_DELETE; the polled control file is briefly held by the
+        # reader. Retry briefly instead of failing the harness.
+        deadline = time.monotonic() + 5
+        while True:
+            try:
+                os.replace(temporary, self.control_path)
+                return
+            except PermissionError:
+                if time.monotonic() >= deadline:
+                    raise
+                time.sleep(0.05)
 
     def events(self):
         return [json.loads(line) for line in self.ledger_path.read_text(encoding='utf8').splitlines()] if self.ledger_path.exists() else []

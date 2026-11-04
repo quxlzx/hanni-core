@@ -8,10 +8,10 @@ from hanni.dashboard.commands import CATALOG
 from tests.unit.test_chat_commands import commands, command
 
 NAMES = [row['name'][1:] for row in CATALOG]
-EXPECTED = set('help new history resume retry undo stop status context compress model reasoning voice wake mute memory remember forget tools connections today calendar remind tasks search screen clipboard hermes jobs approve deny reload-mcp schedule'.split())
+EXPECTED = set('help new history resume retry undo stop status context compress refine journey curator model reasoning voice wake mute memory remember forget tools connections today calendar remind tasks search screen clipboard hermes jobs approve deny reload-mcp schedule'.split())
 REQUIRED = set('resume voice wake mute remember forget remind search hermes approve deny'.split())
 NO_ARGUMENT = set('help new retry undo stop status context tools connections today reload-mcp'.split())
-FREE_TEXT = set('history compress memory remember search screen clipboard hermes'.split())
+FREE_TEXT = set('history compress refine memory remember search screen clipboard hermes'.split())
 
 
 def test_registry_and_semantic_cases_cannot_drift():

@@ -1,6 +1,7 @@
 """Independent actual Service admission, sequencing and dynamic MCP boundaries."""
 from pathlib import Path
 import json
+import sys
 import threading
 import time
 import pytest
@@ -13,6 +14,7 @@ from tests.integration.test_workflow_service_verifier import artifact_plan, arti
 from tests.integration.test_mcp_hub_controller_verifier import approve
 from tests.integration.test_mcp_hub_verifier import connected, entries, local_config
 
+@pytest.mark.skipif(sys.platform != 'win32', reason='The behavior under test is Windows case-insensitive path aliasing.')
 def test_same_windows_case_alias_writes_have_nonoverlapping_original_intervals(tmp_path):
     client = QueuedStructuredClient()
 
@@ -189,6 +191,12 @@ def test_expired_scope_renews_explicitly_and_preserves_actual_completed_read(tmp
         finally:
             release.set()
         paused = fixture.await_state(key, 'blocked', 'paused')
+        # The lease can expire while the released read is still being settled;
+        # the completed read must still be recorded as verified before renewal.
+        settle = time.time() + 10
+        while paused['steps'][0]['status'] == 'running' and time.time() < settle:
+            time.sleep(0.05)
+            paused = fixture.detail(key)
         assert paused['steps'][0]['status'] == 'verified', paused
         assert fixture.ledger.entries('file.write') == 0
         original_deadline = paused['deadline']

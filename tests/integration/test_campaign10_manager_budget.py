@@ -6,6 +6,7 @@ from unittest.mock import patch
 import pytest
 from scripts.campaign10_manager.model import ModelBudget, AdmissionError
 
+import sys
 def payload(**changes):
     value = {'messages': [{'role': 'user', 'content': 'Owned synthetic task'}], 'max_tokens': 256, 'temperature': 0}
     value.update(changes)
@@ -15,6 +16,7 @@ def request(body=None, url='http://127.0.0.1:8080/v1/chat/completions'):
     return Request(url, data=json.dumps(body or payload()).encode(), method='POST')
 
 @pytest.mark.parametrize('fault', ['none', 'foreign', 'unassigned', 'wrong_prompt', 'oversized', 'boolean_tokens', 'fourth_call', 'global_exhausted'])
+@pytest.mark.skipif(sys.platform != 'win32', reason='The guard under test wraps msvcrt, a Windows-only module.')
 def test_guard_before_original_transport(tmp_path, fault):
     budget = ModelBudget(tmp_path / 'receipts')
     budget.ledger = tmp_path / 'ledger.json'

@@ -190,6 +190,15 @@ class ClusterPower:
         row = next(item for item in snapshot['nodes'] if item['id'] == node.id)
         allowed = row['power']['actions'][data['action']]
         if not allowed['enabled']:
+            # A same-request retry (tab reload, double click) must deduplicate to
+            # the reserved operation even when the snapshot gate already shows a
+            # pending request; only a different request is rejected here.
+            with self._lock:
+                previous = self._operations.get(key)
+            if previous:
+                if (previous['node'], previous['action']) != (node.id, data['action']):
+                    raise ValueError('This request ID belongs to a different power action.')
+                return deepcopy(previous)
             raise RuntimeError(allowed['reason'] or 'This power action is unavailable.')
         with self._lock:
             # Recheck under the reservation lock: simultaneous clicks/tab retries

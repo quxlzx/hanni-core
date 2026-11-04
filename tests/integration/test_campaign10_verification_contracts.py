@@ -8,6 +8,7 @@ from scripts.campaign10_verification.contracts import DIMENSIONS, contained_path
 from scripts.campaign10_verification.integrity import assert_freeze, canonical_digest, claim_once, digest, snapshot_source, verify_go
 from scripts.campaign10_verification.score import score_task
 
+import sys
 def case():
     return {'version': 1, 'id': 'PUBLIC-CONTRACT-001', 'family': 'public_contract', 'difficulty': 'medium', 'description': 'Read the disposable checklist.', 'user_turns': [{'prompt': 'Read the disposable checklist.', 'actor_profile': 'owner', 'confirmed': False}], 'fixtures': {'files': {'checklist.txt': 'inspect labels'}}, 'actions': [{'operation': 'file.read', 'args': {'path': 'checklist.txt'}}]}
 
@@ -59,7 +60,7 @@ def test_workflow_criterion_exception_cannot_smuggle_an_oracle(mutation):
     with pytest.raises(ValueError, match='Oracles'):
         validate_case(value)
 
-@pytest.mark.parametrize('relative', ['../outside', '../../a', 'C:/not-owned/secret.txt'])
+@pytest.mark.parametrize('relative', ['../outside', '../../a', pytest.param('C:/not-owned/secret.txt', marks=pytest.mark.skipif(sys.platform != 'win32', reason='Windows drive-path escape semantics.'))])
 def test_fixture_path_cannot_escape_disposable_root(tmp_path, relative):
     with pytest.raises(ValueError, match='disposable'):
         contained_path(tmp_path / 'owned', relative)
