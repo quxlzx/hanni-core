@@ -116,6 +116,14 @@ def test_original_voice_loop_keeps_http_session_and_handles_next_turn(tmp_path, 
                 return TranscriptRecord(text='wait', started_at=3, ended_at=4)
             playbacks[0].process.wait(timeout=3)
             raise queue.Empty()
+        if len(calls) == 1 and mode != 'model_failure' and (not interrupted[0]):
+            # A poll that arrives before the first response's playback exists must
+            # not consume the second turn early; hold until playback exists so the
+            # barge-in lands deterministically.
+            deadline = time.time() + 5
+            while not playbacks and time.time() < deadline:
+                time.sleep(0.01)
+            raise queue.Empty()
         if len(calls) == 1:
             pump.stop.assert_not_called()
             snapshot = voice_control.snapshot()
@@ -126,7 +134,12 @@ def test_original_voice_loop_keeps_http_session_and_handles_next_turn(tmp_path, 
             assert not stop.is_set() and (not restart.is_set())
             survived.append(True)
             return TranscriptRecord(text='Hanni second request', started_at=5, ended_at=6)
-        stop.set()
+        # Stop only once the second response has been fully delivered and its
+        # row closed; setting stop mid-delivery would race the delivery loop's
+        # own shutdown check and mark the row interrupted.
+        rows = hub.snapshot()['messages']
+        if rows and rows[-1]['role'] == 'assistant' and rows[-1]['status'] == 'complete':
+            stop.set()
         raise queue.Empty()
     pump.get.side_effect = get
     was_enabled = activity.enabled
