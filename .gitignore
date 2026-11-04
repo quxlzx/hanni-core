@@ -138,3 +138,6 @@ hanni-core/state/
 /binaries/
 /wheels/
 /wheels-win/
+
+# Documentation screenshots
+!docs/images/*.png

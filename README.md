@@ -6,12 +6,29 @@
 
 ![The Hanni OS interface](docs/images/hanni-os.png)
 
+## See it work
+
+Owner types in the dashboard: **“How much free disk space does this machine have?”**
+
+![A live task in the Hanni OS chat](docs/images/hanni-demo.png)
+
+HANNI plans the task, picks a tool, executes it under policy, and answers from the tool's receipt — not from the model's memory:
+
+```text
+→ Task prepared; relevant skill applied (process-guides)
+→ Model requests the system_info capability (local telemetry tool)
+→ Capability executes; receipt approved by task_policy: disk_free_gb = 38.0
+→ Answer: "39 GB of free disk space on the root filesystem (/dev/nvme0n1p2)"
+```
+
+Every tool call leaves an inspectable receipt like that one. The model is conversational; live machine state always comes from validated local tools.
+
 **Experimental alpha.** Automated software checks do not certify live voice latency, model planning quality, or external integrations. Historical evaluation reports retain their original scope and failures. Current scope is recorded in the [publication checklist](docs/PUBLIC_RELEASE_PREPARATION.md) and `PUBLIC_READINESS.json`.
 
 ## Three things HANNI does
 
 1. **Runs tasks, not just chat.** Multi-step workflows (read → analyze → write → schedule) execute under an explicit permission mode — read-only, ask-before-writes, or full access. Every action leaves an approval receipt you can inspect, and cancellation fences work already in flight.
-2. **Runs fully local, tuned to your machine.** Pinned llama.cpp runtimes (CPU + Vulkan); first boot benchmarks candidate GGUF tiers (7B → 3.7B → 2B) and keeps the first that meets a measured tokens-per-second floor. No cloud account is required to run her.
+2. **Runs fully local.** Pinned llama.cpp runtimes (CPU + Vulkan), with the model tier auto-selected for your hardware on first boot. No cloud account is required to run her.
 3. **Remembers and schedules.** Durable personal memory with revision history, a learned-skills store with owner review, cron-style scheduled tasks, and Windows notifications for results and approval requests.
 
 ## Architecture at a glance
