@@ -54,6 +54,12 @@
       "category": "private_user_path",
       "value_pattern": "\\/home\\/won\\w+",
       "reason": "Superseded skill revision naming a home-lab machine account path; no credential, and the current tree no longer contains it."
+    },
+    {
+      "location": "git:6145835623386febe6e11a736e298bf611d13a8f:tests/test_local_runtime.py",
+      "category": "nonpublic_endpoint",
+      "value_pattern": "192\\.168\\.1\\.1",
+      "reason": "Same SSRF-blocking fixture in the revision that added the disk_free_units assertion."
     }
   ]
 }
