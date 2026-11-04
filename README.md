@@ -1,5 +1,7 @@
 # H.A.N.N.I.
 
+[![CI](https://github.com/quxlzx/hanni-core/actions/workflows/ci.yml/badge.svg)](https://github.com/quxlzx/hanni-core/actions/workflows/ci.yml) [![Public privacy gate](https://github.com/quxlzx/hanni-core/actions/workflows/public-privacy.yml/badge.svg)](https://github.com/quxlzx/hanni-core/actions/workflows/public-privacy.yml)
+
 **H**ighly **A**daptive **N**eural **N**etwork **I**ntelligence — a personal, portable, self-hosted AI agent. Clone it, double-click, and talk to her.
 
 ![The Hanni OS interface](docs/images/hanni-os.png)
