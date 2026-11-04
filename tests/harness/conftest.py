@@ -41,6 +41,15 @@ def harness(commands, tmp_path, monkeypatch):
                      'enabled': True, 'connection_only': True, 'windows_capabilities': []}
     client = Client(client_config)
     commands.proxy = client.request
+    # Learning commands run their real controls; only automatic background
+    # reviews are disabled so the harness stays deterministic.
+    commands.server.chat_commands = commands
+    from hanni.dashboard.learning import LearningControls
+    commands.server.learning = learning = LearningControls(commands.server)
+    learning_settings = learning.engine.settings()
+    learning.engine.configure({key: (False if key in ('enabled', 'curator_enabled') else value)
+                               for key, value in learning_settings.items() if key != 'revision'},
+                              learning_settings['revision'])
     registry = commands.server.features.registry
     calendar = CalendarService()
     credentials = {'token': 'fixture-google-access', 'refresh_token': 'fixture-google-refresh',
@@ -116,6 +125,7 @@ def harness(commands, tmp_path, monkeypatch):
         yield value
     finally:
         model.release.set()
+        learning.close()
         commands.close()
         for thread in threads:
             thread.join(timeout=10)

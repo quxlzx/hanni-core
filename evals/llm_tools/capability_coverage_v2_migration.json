@@ -2,7 +2,7 @@
   "version": 2,
   "source": "evals/llm_tools/capability_coverage_v1.jsonl",
   "target": "evals/llm_tools/capability_coverage_v2.jsonl",
-  "source_sha256": "70468c1c186ef69b6f065120ea548f6698dc39dc2676e0afa98c10d178930833",
+  "source_sha256": "16c1183fad70df7b44b1b648543af0f04f5bed0fefe1bc8f5f90ded57b558c3a",
   "target_sha256": "c31a84a3090995320509cc24680918a4b6a434a2f87e60325bb263b83f271308",
   "case_count": 264,
   "changed_case_count": 65,
@@ -5170,7 +5170,7 @@
       ],
       "before_target_sha256": "c2cfce88233e6018b7cce719b011626980d1c8037f1db3ad661031cf348076c8",
       "after_target_sha256": "c31a84a3090995320509cc24680918a4b6a434a2f87e60325bb263b83f271308",
-      "historical_v1_sha256": "70468c1c186ef69b6f065120ea548f6698dc39dc2676e0afa98c10d178930833",
+      "historical_v1_sha256": "16c1183fad70df7b44b1b648543af0f04f5bed0fefe1bc8f5f90ded57b558c3a",
       "behavioral_expectations_unchanged": true,
       "reason": "Declare observed availability/presence while preserving strict output-key drift checks. No actual provider result, prompt, required tool, answer claim, argument schema or risk metadata is changed."
     }

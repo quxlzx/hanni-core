@@ -27,6 +27,7 @@ NAMESPACE_DOMAIN = {
     "text": "utilities", "time": "productivity", "timer": "productivity",
     "todo": "productivity", "ui": "desktop", "unit": "utilities",
     "web": "research", "screen": "desktop", "reminder": "productivity",
+    "teams": "communications",
 }
 
 STATES = frozenset({"production", "experimental", "proposed", "deprecated", "blocked"})

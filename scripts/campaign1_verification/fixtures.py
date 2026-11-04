@@ -82,6 +82,9 @@ def substitute(value, root):
     return value
 
 def setup(case, root, state, sources):
+    # Windows runners can hand TEMP as an 8.3 short path (RUNNER~1); resolve()
+    # gives both sides of every containment check the same long spelling.
+    root, state = root.resolve(), state.resolve()
     root.mkdir(parents=True, exist_ok=False)
     state.mkdir(parents=True, exist_ok=True)
     fixture = case['fixture']

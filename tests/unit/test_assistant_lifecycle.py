@@ -214,8 +214,8 @@ def test_desktop_shortcut_automatically_starts_full_assistant_once(tmp_path):
 
     def spawn(command, **kwargs):
         assert '--dashboard-only' not in command
-        assert 'start_dashboard.ps1' in str(command)
-        assert '-NoBrowser' in command
+        assert 'firstboot.py' in str(command)
+        assert '--serve' in command and '--no-browser' in command
         verified[0] = True
         return process
     popen = Mock(side_effect=spawn)

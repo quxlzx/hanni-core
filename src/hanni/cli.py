@@ -1093,7 +1093,8 @@ def _run_attend(args: argparse.Namespace, config: AppConfig, *, shutdown_event=N
                 try:
                     with turn_scope(TurnTimings(speech_ended_at=record.ended_at if not from_browser else None)) as response_timings:
                         delivered = deliver_response(
-                            response, tts=tts if not from_browser else None, pump=pump,
+                            response, tts=tts if not from_browser else None,
+                            pump=None if from_browser else pump,
                             barge=barge, barge_enabled=barge_cfg.enabled,
                             echo_suppression=barge_cfg.echo_suppression,
                             poll_seconds=barge_cfg.poll_ms / 1000.0,

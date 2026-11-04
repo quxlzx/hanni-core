@@ -11,7 +11,8 @@ def test_phrase_probe_lock_and_request_separation():
     routing_development = [json.loads(line) for line in (root / 'evals' / 'routing' / 'cases.jsonl').read_text(encoding='utf-8').splitlines()]
     llm_holdout = [json.loads(line) for line in (root / 'evals' / 'llm_tools' / 'holdout_v1.jsonl').read_text(encoding='utf-8').splitlines()]
     assert len(rows) == lock['scenario_count'] == 30
-    assert hashlib.sha256(path.read_bytes()).hexdigest() == lock['sha256_file']
+    # The seal is recorded over canonical LF bytes so a CRLF Windows checkout cannot break it.
+    assert hashlib.sha256(path.read_bytes().replace(b'\r\n', b'\n')).hexdigest() == lock['sha256_file']
     assert len({row['id'] for row in rows}) == len({row['query'].casefold() for row in rows}) == 30
     assert not {row['query'].casefold() for row in rows} & {row['query'].casefold() for row in routing_development + llm_holdout}
     assert all((row.get('mode') == 'blocked' or row.get('required') for row in rows))
