@@ -212,6 +212,11 @@ class NewToolTests(unittest.TestCase):
         r = execute_local("system_info", {}, self.ws)
         self.assertTrue(r["ok"])
         self.assertIn("ram_total_gb", r["data"])
+        # Disk free must be self-describing: system_info rounds to 1 decimal
+        # GiB while df -h rounds up to whole units, so a bare number invites
+        # silent reconciliation errors by the model.
+        self.assertIn("disk_free_units", r["data"])
+        self.assertIn("df -h", r["data"]["disk_free_units"])
 
     def test_specs_advertised(self):
         names = {s["name"] for s in local_tool_specs()}

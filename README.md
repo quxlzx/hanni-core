@@ -12,16 +12,17 @@ Owner types in the dashboard: **“How much free disk space does this machine ha
 
 ![A live task in the Hanni OS chat](docs/images/hanni-demo.png)
 
-HANNI plans the task, picks a tool, executes it under policy, and answers from the tool's receipt — not from the model's memory:
+HANNI plans the task, picks tools, executes them under policy, and answers from the tools' receipts — not from the model's memory:
 
 ```text
 → Task prepared; relevant skill applied (process-guides)
-→ Model requests the system_info capability (local telemetry tool)
-→ Capability executes; receipt approved by task_policy: disk_free_gb = 38.0
+→ Model calls system_info:  disk_free_gb = 38.0   (GiB, rounded to 1 decimal)
+→ Model cross-checks with local_terminal `df -h`:  /dev/nvme0n1p2  116G  72G  39G
+   (df rounds up to whole units; the exact figure is 38.04 GiB)
 → Answer: "39 GB of free disk space on the root filesystem (/dev/nvme0n1p2)"
 ```
 
-Every tool call leaves an inspectable receipt like that one. The model is conversational; live machine state always comes from validated local tools.
+Every tool call leaves an inspectable receipt like those, and the answer quotes its source verbatim. The model is conversational; live machine state always comes from validated local tools.
 
 **Experimental alpha.** Automated software checks do not certify live voice latency, model planning quality, or external integrations. Historical evaluation reports retain their original scope and failures. Current scope is recorded in the [publication checklist](docs/PUBLIC_RELEASE_PREPARATION.md) and `PUBLIC_READINESS.json`.
 

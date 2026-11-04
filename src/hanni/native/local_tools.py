@@ -414,6 +414,7 @@ def execute_local(name: str, arguments: dict, workspace: Path) -> dict:
                     "ram_total_gb": round(psutil.virtual_memory().total / 2**30, 1),
                     "ram_used_percent": psutil.virtual_memory().percent,
                     "disk_free_gb": round(shutil.disk_usage(str(workspace)).free / 2**30, 1),
+                    "disk_free_units": "GiB (2**30) rounded to 1 decimal; note that df -h rounds up to whole units",
                     "gpu_tools": [t for t in ("nvidia-smi", "rocm-smi") if _sh.which(t)]}
             return {"ok": True, "message": "telemetry", "data": info}
         if name == "web_search":
