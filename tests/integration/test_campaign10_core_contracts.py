@@ -9,6 +9,7 @@ from scripts.campaign10_core import harness
 from scripts.campaign10_core.author import corpus
 from scripts.campaign10_core.grading import score, live_readback_score
 
+import sys
 def case(**kwargs):
     return {'id': 'public-adapter', 'category': 'adapter', 'query': 'Inspect owned data.', 'actions': [], **kwargs}
 
@@ -26,7 +27,7 @@ def test_runtime_never_receives_expected_answers():
     assert 'oracle' not in inspect.signature(harness.dispatch).parameters
     assert 'oracle' not in inspect.signature(harness.original_session).parameters
 
-@pytest.mark.parametrize('value', ['../outside.txt', 'C:/Windows/system.ini'])
+@pytest.mark.parametrize('value', ['../outside.txt', pytest.param('C:/Windows/system.ini', marks=pytest.mark.skipif(sys.platform != 'win32', reason='Windows drive-path escape semantics.'))])
 def test_fixture_paths_cannot_escape(tmp_path, value):
     with pytest.raises(ValueError, match='HARNESS_ISOLATION'):
         harness.owned(tmp_path, value)
@@ -67,6 +68,7 @@ def test_shared_nonowner_does_not_fake_owner_authority(tmp_path):
     assert raw['actions']['actual_turn_1']['error']['type'] == 'UNSUPPORTED_INTERFACE_ACTOR'
     assert not raw['audit']
 
+@pytest.mark.skipif(sys.platform != 'win32', reason='The owner lock denies reads through Windows file-share modes; POSIX locks do not deny reads.')
 def test_original_lab_lock_preserved_and_unknown_hash_reported(tmp_path):
     with harness.environment(tmp_path) as state:
         lab = harness._lab(state)

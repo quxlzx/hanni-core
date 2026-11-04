@@ -7,6 +7,8 @@ from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import Mock
 import pytest
+
+pytestmark = pytest.mark.skipif(sys.platform != 'win32', reason='Mini-window control drives ctypes.windll, a Windows-only API.')
 ROOT = Path(__file__).resolve().parents[2]
 
 def load(name, path):

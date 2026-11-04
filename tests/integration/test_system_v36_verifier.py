@@ -5,6 +5,7 @@ microphone, clipboard, power and remote-control handlers are not executed.
 No ReviewFixture or synthetic telemetry/controller response is used.
 """
 from __future__ import annotations
+import sys
 import hashlib
 import http.client
 import json
@@ -245,6 +246,7 @@ def test_core_actual_http_authentication_and_origin_reject_before_mutation(origi
         server.chat.close()
         telemetry.close()
 
+@pytest.mark.skipif(sys.platform != 'win32', reason='audio.status is a winshell (Windows) capability.')
 def test_repair_audio_unavailable_is_not_verified_unmuted(original, monkeypatch):
     from hanni.tools import media
     monkeypatch.setattr(media, '_endpoint_volume', lambda: None)

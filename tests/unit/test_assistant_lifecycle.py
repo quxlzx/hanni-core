@@ -7,6 +7,7 @@ import time
 from dataclasses import replace
 from pathlib import Path
 from types import SimpleNamespace
+import sys
 from unittest.mock import Mock, patch
 import pytest
 from hanni.config.loader import load_config
@@ -204,6 +205,7 @@ def test_projector_configuration_rejects_paths(projector):
     with pytest.raises(ConfigError, match='GGUF filename'):
         parse_models({'models': [{'id': 'supervisor', 'role': 'supervisor', 'backend': 'llama.cpp', 'model_file': 'weights.gguf', 'endpoint': 'http://127.0.0.1:8080/v1', 'vision_projector': projector}]})
 
+@pytest.mark.skipif(sys.platform != 'win32', reason='The desktop launcher contract assumes the Windows venv layout (.venv/Scripts).')
 def test_desktop_shortcut_automatically_starts_full_assistant_once(tmp_path):
     spec = importlib.util.spec_from_file_location('startup_desktop', ROOT / 'desktop/main.py')
     desktop = importlib.util.module_from_spec(spec)

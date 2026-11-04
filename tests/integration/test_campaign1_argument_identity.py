@@ -1,9 +1,11 @@
+import sys
 import unittest
 from pathlib import Path
 from scripts.campaign1_verification.argument_review import compare
 
 class ArgumentIdentity(unittest.TestCase):
 
+    @unittest.skipIf(sys.platform != 'win32', 'Windows path identity semantics (drive paths, backslash separators).')
     def test_relative_invocation_cannot_change_owned_path_identity(self):
         root = Path('data/campaign1-verifier/argument-test-fixture')
         actual = str(root.resolve() / 'incoming')
@@ -13,6 +15,7 @@ class ArgumentIdentity(unittest.TestCase):
         self.assertEqual(relative, absolute)
         self.assertTrue(relative['literal_pass'])
 
+    @unittest.skipIf(sys.platform != 'win32', 'Windows path identity semantics (drive paths, backslash separators).')
     def test_windows_separators_and_app_case_are_identity_only(self):
         predicate = {'tool': 'file.read', 'field': 'path', 'op': 'eq', 'value': 'C:\\EvalFixture\\\\incoming'}
         x = compare({'path': 'C:\\owned\\incoming'}, predicate, 'C:\\owned', 'List path.')
@@ -26,6 +29,7 @@ class ArgumentIdentity(unittest.TestCase):
         self.assertFalse(app['literal_pass'])
         self.assertTrue(app['identity_equivalent'])
 
+    @unittest.skipIf(sys.platform != 'win32', 'Windows path identity semantics (drive paths, backslash separators).')
     def test_sentence_punctuation_is_disclosed_without_rewriting_oracle(self):
         p = {'tool': 'file.write', 'field': 'path', 'op': 'eq', 'value': 'C:\\EvalFixture\\agenda.txt.'}
         x = compare({'path': 'C:\\owned\\agenda.txt'}, p, 'C:\\owned', 'Write to C:\\owned\\agenda.txt.')

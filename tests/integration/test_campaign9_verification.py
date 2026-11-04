@@ -2,7 +2,8 @@
 import pytest
 from scripts.campaign9_verification import development
 
-@pytest.mark.parametrize('probe', [development.malformed_confirmation, development.pending_confirmation, development.sensitive_source, development.dispatch_boundary, development.mcp_outgoing_credentials, development.memory_disclosure, lambda root: development.logging_disclosure(), development.http_disclosure, development.client_boundaries])
+import sys
+@pytest.mark.parametrize('probe', [development.malformed_confirmation, pytest.param(development.pending_confirmation, marks=pytest.mark.skipif(sys.platform != 'win32', reason='The pending-confirmation leaf is the Windows-only powershell handler.')), development.sensitive_source, development.dispatch_boundary, development.mcp_outgoing_credentials, development.memory_disclosure, lambda root: development.logging_disclosure(), development.http_disclosure, development.client_boundaries])
 def test_independent_original_security_boundaries(tmp_path, probe, subtests):
     for row in probe(tmp_path):
         with subtests.test(id=row['id'], scope=row['scope']):
