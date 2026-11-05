@@ -247,6 +247,12 @@ def write_configs(endpoint, model_id, chosen, port, context=65536, *, source=Non
 def spawn(command, log_name, env):
     global _owned_job
     guard_desktop()
+    if os.name != 'nt' and command:
+        # Linux llama.cpp builds keep their .so files beside the executable
+        # and (for builds predating the rpath flag) need the directory on
+        # LD_LIBRARY_PATH; without it the server dies in the loader (exit 127).
+        binary_dir = str(Path(str(command[0])).parent)
+        env = {**env, 'LD_LIBRARY_PATH': binary_dir + os.pathsep + env.get('LD_LIBRARY_PATH', '')}
     if _supervised and os.name == 'nt' and _owned_job is None:
         from hanni.native.lifecycle import WindowsJob
         _owned_job = WindowsJob()
