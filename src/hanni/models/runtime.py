@@ -41,8 +41,21 @@ def executable_prefix():
 @lru_cache(maxsize=8)
 def inspect_help(prefix, version_stamp):
     result = subprocess.run([*prefix, '--help'], capture_output=True, text=True, timeout=15,
+                            env=_binary_env(prefix),
                             creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
     return result.stdout + '\n' + result.stderr
+
+
+def _binary_env(prefix):
+    # Linux builds ship their .so files beside the executable but carry no
+    # rpath; probes that run --help/--list-devices without LD_LIBRARY_PATH
+    # die in the dynamic loader and read as an empty capability list.
+    if os.name == 'nt' or not prefix:
+        return None
+    env = os.environ.copy()
+    binary_dir = str(Path(prefix[0]).parent)
+    env['LD_LIBRARY_PATH'] = binary_dir + os.pathsep + env.get('LD_LIBRARY_PATH', '')
+    return env
 
 
 def supported_options(prefix):
@@ -54,6 +67,7 @@ def list_devices(prefix=None):
     prefix = prefix or executable_prefix()
     probe = prefix[:1] + (['cli'] if len(prefix) > 1 else [])
     result = subprocess.run([*probe, '--list-devices'], capture_output=True, text=True, timeout=10,
+                            env=_binary_env(prefix),
                             creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
     if result.returncode:
         raise RuntimeError('llama.cpp GPU discovery failed: ' + (result.stderr or result.stdout)[-500:])

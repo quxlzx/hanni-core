@@ -101,6 +101,18 @@ def ensure_binary(facts):
             raise RuntimeError('Automatic inference runtime setup failed. ' + str(error) +
                 ' Run the updated SETUP_HANNI.cmd; on a managed laptop, IT may need to allow the application.') from None
     detail = '; '.join(_binary_probe_errors[-4:]) or 'No server and benchmark executables were found.'
+    if os.name != 'nt':
+        import shutil as _shutil
+        builder = CORE / 'scripts/build_llama.sh'
+        if builder.is_file() and all(_shutil.which(t) for t in ('git', 'cmake', 'cc')):
+            print('No local llama.cpp runtime found; building it now. First run takes about 5-15 minutes.', flush=True)
+            built = subprocess.run(['/bin/sh', str(builder)], cwd=CORE)
+            if built.returncode == 0:
+                selected = pick_binary(facts)
+                if selected is not None: return selected
+            raise RuntimeError('Automatic llama.cpp build failed. Install git, cmake, and a C/C++ compiler, then run: ./scripts/build_llama.sh')
+        raise RuntimeError('No runnable llama.cpp runtime. ' + detail +
+            ' Build the local runtime with: ./scripts/build_llama.sh (needs git, cmake, and a C/C++ compiler).')
     raise RuntimeError('No runnable llama.cpp runtime. ' + detail + ' Run SETUP_HANNI.cmd to repair the local runtime.')
 
 
@@ -399,7 +411,6 @@ def apply_model_change(control, children, runtime, *, port, timeout, base_env):
 def main(argv=None) -> int:
     global _supervised, _owned_job, _desktop_alive
     import time
-    from hanni.native.provider import NativeClient, normalize_endpoint
     parser = argparse.ArgumentParser(description="Start HANNI: dashboard :8311, agent :8312, model :8411.")
     parser.add_argument("--serve", action="store_true")
     parser.add_argument("--wait", action="store_true", help="supervise owned services and stop them on exit")
@@ -418,6 +429,10 @@ def main(argv=None) -> int:
     parser.add_argument("--no-cron", action="store_true")
     parser.add_argument("--startup-timeout", type=float, default=180)
     args = parser.parse_args(argv)
+    # Bootstrap dependencies BEFORE importing anything that needs them:
+    # a fresh venv has no yaml/httpx yet, and hanni.native.provider needs both.
+    ensure_deps(dashboard=args.ui)
+    from hanni.native.provider import NativeClient, normalize_endpoint
     if args.desktop_owner_pid is not None and (args.desktop_owner_pid <= 0 or not (args.serve and args.wait and args.ui)):
         parser.error('desktop-owner-pid requires a positive PID and --serve --wait --ui')
     if args.ready_file is not None and not args.desktop_owner_pid:

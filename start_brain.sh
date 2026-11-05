@@ -20,7 +20,16 @@ echo "takes 2-3 minutes. Keep this terminal open while HANNI is running."
 echo "(Need models first?  python3 scripts/get_models.py)"
 echo
 PY=python3
-[ -x .venv/bin/python ] && PY=.venv/bin/python
+if [ ! -x .venv/bin/python ]; then
+  echo "No .venv found; creating a private virtual environment (first run)..."
+  if ! python3 -m venv .venv; then
+    echo "Could not create .venv. On Debian/Ubuntu install the venv module first:" >&2
+    echo "    sudo apt install python3-venv" >&2
+    echo "Then run ./start_brain.sh again." >&2
+    exit 1
+  fi
+fi
+PY=.venv/bin/python
 "$PY" scripts/firstboot.py --serve --wait --ui --port 8311 --tier "$TIER"
 launch_status=$?
 echo
